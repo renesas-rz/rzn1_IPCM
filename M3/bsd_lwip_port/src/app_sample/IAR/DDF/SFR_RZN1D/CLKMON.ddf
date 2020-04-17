@@ -1,0 +1,46 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : CLKMON
+;               ClockMonitoring
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "CLKMON/SetEnable"                                                                       , "Memory", 0x51005000,        4, base=16, writeOnly
+sfr = "CLKMON/SetEnable.[31:0]SetEnable"                                                       , "Memory", 0x51005000,        4, base=16, writeOnly, bitRange=0-31
+sfr = "CLKMON/ClearEnable"                                                                     , "Memory", 0x51005004,        4, base=16, writeOnly
+sfr = "CLKMON/ClearEnable.[31:0]ClearEnable"                                                   , "Memory", 0x51005004,        4, base=16, writeOnly, bitRange=0-31
+sfr = "CLKMON/SetEnableResetSoft"                                                              , "Memory", 0x51005008,        4, base=16, writeOnly
+sfr = "CLKMON/SetEnableResetSoft.[31:0]SetEnableResetSoft"                                     , "Memory", 0x51005008,        4, base=16, writeOnly, bitRange=0-31
+sfr = "CLKMON/ClearEnableResetSoft"                                                            , "Memory", 0x5100500C,        4, base=16, writeOnly
+sfr = "CLKMON/ClearEnableResetSoft.[31:0]ClearEnableResetSoft"                                 , "Memory", 0x5100500C,        4, base=16, writeOnly, bitRange=0-31
+sfr = "CLKMON/SetEnable100Khz"                                                                 , "Memory", 0x51005010,        4, base=16, writeOnly
+sfr = "CLKMON/SetEnable100Khz.[31:0]SetEnable100Khz"                                           , "Memory", 0x51005010,        4, base=16, writeOnly, bitRange=0-31
+sfr = "CLKMON/ClearEnable100Khz"                                                               , "Memory", 0x51005014,        4, base=16, writeOnly
+sfr = "CLKMON/ClearEnable100Khz.[31:0]ClearEnable100Khz"                                       , "Memory", 0x51005014,        4, base=16, writeOnly, bitRange=0-31
+sfr = "CLKMON/Status"                                                                          , "Memory", 0x51005018,        4, base=16, readOnly
+sfr = "CLKMON/Status.[0]Enable100Khz"                                                          , "Memory", 0x51005018,        4, base=16, readOnly, bitRange=0
+sfr = "CLKMON/Status.[1]EnableResetSoft"                                                       , "Memory", 0x51005018,        4, base=16, readOnly, bitRange=1
+sfr = "CLKMON/Status.[2]Enable"                                                                , "Memory", 0x51005018,        4, base=16, readOnly, bitRange=2
+sfr = "CLKMON/Status.[3]ClkFailure"                                                            , "Memory", 0x51005018,        4, base=16, readOnly, bitRange=3
+sfr = "CLKMON/Status.[4]BadSequence"                                                           , "Memory", 0x51005018,        4, base=16, readOnly, bitRange=4
+sfr = "CLKMON/Status.[5]ResetSoft"                                                             , "Memory", 0x51005018,        4, base=16, readOnly, bitRange=5
+sfr = "CLKMON/Status.[6]TestMode"                                                              , "Memory", 0x51005018,        4, base=16, readOnly, bitRange=6
+sfr = "CLKMON/SetTestMode"                                                                     , "Memory", 0x5100501C,        4, base=16, writeOnly
+sfr = "CLKMON/SetTestMode.[31:0]SetTestMode"                                                   , "Memory", 0x5100501C,        4, base=16, writeOnly, bitRange=0-31
+sfr = "CLKMON/ClearTestMode"                                                                   , "Memory", 0x51005020,        4, base=16, writeOnly
+sfr = "CLKMON/ClearTestMode.[31:0]ClearTestMode"                                               , "Memory", 0x51005020,        4, base=16, writeOnly, bitRange=0-31
+sfr = "CLKMON/ClearStatusWindow"                                                               , "Memory", 0x51005024,        4, base=16, writeOnly
+sfr = "CLKMON/ClearStatusWindow.[31:0]ClearStatusWindow"                                       , "Memory", 0x51005024,        4, base=16, writeOnly, bitRange=0-31
+sfr = "CLKMON/StatusWindow"                                                                    , "Memory", 0x51005028,        4, base=16
+sfr = "CLKMON/StatusWindow.[0]StatusWindow"                                                    , "Memory", 0x51005028,        4, base=16, bitRange=0
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// ClockMonitoring -----
+group = "CLKMON","CLKMON/SetEnable","CLKMON/ClearEnable","CLKMON/SetEnableResetSoft","CLKMON/ClearEnableResetSoft","CLKMON/SetEnable100Khz","CLKMON/ClearEnable100Khz","CLKMON/Status","CLKMON/SetTestMode","CLKMON/ClearTestMode","CLKMON/ClearStatusWindow","CLKMON/StatusWindow"

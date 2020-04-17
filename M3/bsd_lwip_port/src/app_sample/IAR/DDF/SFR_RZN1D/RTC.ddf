@@ -1,0 +1,118 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : RTC
+;               RealTimeClock
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "RTCA0CTL0"                                                                              , "Memory", 0x40006000,        4, base=16
+sfr = "RTCA0CTL0.[4]SLSB"                                                                      , "Memory", 0x40006000,        4, base=16, bitRange=4
+sfr = "RTCA0CTL0.[5]AMPM"                                                                      , "Memory", 0x40006000,        4, base=16, bitRange=5
+sfr = "RTCA0CTL0.[6]CEST"                                                                      , "Memory", 0x40006000,        4, base=16, bitRange=6
+sfr = "RTCA0CTL0.[7]CE"                                                                        , "Memory", 0x40006000,        4, base=16, bitRange=7
+sfr = "RTCA0CTL1"                                                                              , "Memory", 0x40006004,        4, base=16
+sfr = "RTCA0CTL1.[0]CT0"                                                                       , "Memory", 0x40006004,        4, base=16, bitRange=0
+sfr = "RTCA0CTL1.[1]CT1"                                                                       , "Memory", 0x40006004,        4, base=16, bitRange=1
+sfr = "RTCA0CTL1.[2]CT2"                                                                       , "Memory", 0x40006004,        4, base=16, bitRange=2
+sfr = "RTCA0CTL1.[3]1SE"                                                                       , "Memory", 0x40006004,        4, base=16, bitRange=3
+sfr = "RTCA0CTL1.[4]ALME"                                                                      , "Memory", 0x40006004,        4, base=16, bitRange=4
+sfr = "RTCA0CTL1.[5]1HZE"                                                                      , "Memory", 0x40006004,        4, base=16, bitRange=5
+sfr = "RTCA0CTL2"                                                                              , "Memory", 0x40006008,        4, base=16
+sfr = "RTCA0CTL2.[0]WAIT"                                                                      , "Memory", 0x40006008,        4, base=16, bitRange=0
+sfr = "RTCA0CTL2.[1]WST"                                                                       , "Memory", 0x40006008,        4, base=16, bitRange=1
+sfr = "RTCA0CTL2.[2]RSUB"                                                                      , "Memory", 0x40006008,        4, base=16, bitRange=2
+sfr = "RTCA0CTL2.[3]RSST"                                                                      , "Memory", 0x40006008,        4, base=16, bitRange=3
+sfr = "RTCA0CTL2.[4]WSST"                                                                      , "Memory", 0x40006008,        4, base=16, bitRange=4
+sfr = "RTCA0CTL2.[5]WUST"                                                                      , "Memory", 0x40006008,        4, base=16, bitRange=5
+sfr = "RTCA0SUBC"                                                                              , "Memory", 0x4000600C,        4, base=16, readOnly
+sfr = "RTCA0SUBC.[21:0]SUBC"                                                                   , "Memory", 0x4000600C,        4, base=16, readOnly, bitRange=0-21
+sfr = "RTCA0SRBU"                                                                              , "Memory", 0x40006010,        4, base=16, readOnly
+sfr = "RTCA0SRBU.[21:0]SRBU"                                                                   , "Memory", 0x40006010,        4, base=16, readOnly, bitRange=0-21
+sfr = "RTCA0SEC"                                                                               , "Memory", 0x40006014,        4, base=16
+sfr = "RTCA0SEC.[6:0]SEC"                                                                      , "Memory", 0x40006014,        4, base=16, bitRange=0-6
+sfr = "RTCA0MIN"                                                                               , "Memory", 0x40006018,        4, base=16
+sfr = "RTCA0MIN.[6:0]MIN"                                                                      , "Memory", 0x40006018,        4, base=16, bitRange=0-6
+sfr = "RTCA0HOUR"                                                                              , "Memory", 0x4000601C,        4, base=16
+sfr = "RTCA0HOUR.[5:0]HOUR"                                                                    , "Memory", 0x4000601C,        4, base=16, bitRange=0-5
+sfr = "RTCA0WEEK"                                                                              , "Memory", 0x40006020,        4, base=16
+sfr = "RTCA0WEEK.[2:0]WEEK"                                                                    , "Memory", 0x40006020,        4, base=16, bitRange=0-2
+sfr = "RTCA0DAY"                                                                               , "Memory", 0x40006024,        4, base=16
+sfr = "RTCA0DAY.[5:0]DAY"                                                                      , "Memory", 0x40006024,        4, base=16, bitRange=0-5
+sfr = "RTCA0MONTH"                                                                             , "Memory", 0x40006028,        4, base=16
+sfr = "RTCA0MONTH.[4:0]MONTH"                                                                  , "Memory", 0x40006028,        4, base=16, bitRange=0-4
+sfr = "RTCA0YEAR"                                                                              , "Memory", 0x4000602C,        4, base=16
+sfr = "RTCA0YEAR.[7:0]YEAR"                                                                    , "Memory", 0x4000602C,        4, base=16, bitRange=0-7
+sfr = "RTCA0TIME"                                                                              , "Memory", 0x40006030,        4, base=16
+sfr = "RTCA0TIME.[7:0]SEC"                                                                     , "Memory", 0x40006030,        4, base=16, bitRange=0-7
+sfr = "RTCA0TIME.[15:8]MIN"                                                                    , "Memory", 0x40006030,        4, base=16, bitRange=8-15
+sfr = "RTCA0TIME.[23:16]HOUR"                                                                  , "Memory", 0x40006030,        4, base=16, bitRange=16-23
+sfr = "RTCA0CAL"                                                                               , "Memory", 0x40006034,        4, base=16
+sfr = "RTCA0CAL.[7:0]WEEK"                                                                     , "Memory", 0x40006034,        4, base=16, bitRange=0-7
+sfr = "RTCA0CAL.[15:8]DAY"                                                                     , "Memory", 0x40006034,        4, base=16, bitRange=8-15
+sfr = "RTCA0CAL.[23:16]MONTH"                                                                  , "Memory", 0x40006034,        4, base=16, bitRange=16-23
+sfr = "RTCA0CAL.[31:24]YEAR"                                                                   , "Memory", 0x40006034,        4, base=16, bitRange=24-31
+sfr = "RTCA0SUBU"                                                                              , "Memory", 0x40006038,        4, base=16
+sfr = "RTCA0SUBU.[0]F0"                                                                        , "Memory", 0x40006038,        4, base=16, bitRange=0
+sfr = "RTCA0SUBU.[1]F1"                                                                        , "Memory", 0x40006038,        4, base=16, bitRange=1
+sfr = "RTCA0SUBU.[2]F2"                                                                        , "Memory", 0x40006038,        4, base=16, bitRange=2
+sfr = "RTCA0SUBU.[3]F3"                                                                        , "Memory", 0x40006038,        4, base=16, bitRange=3
+sfr = "RTCA0SUBU.[4]F4"                                                                        , "Memory", 0x40006038,        4, base=16, bitRange=4
+sfr = "RTCA0SUBU.[5]F5"                                                                        , "Memory", 0x40006038,        4, base=16, bitRange=5
+sfr = "RTCA0SUBU.[6]F6"                                                                        , "Memory", 0x40006038,        4, base=16, bitRange=6
+sfr = "RTCA0SUBU.[7]DEV"                                                                       , "Memory", 0x40006038,        4, base=16, bitRange=7
+sfr = "RTCA0SCMP"                                                                              , "Memory", 0x4000603C,        4, base=16
+sfr = "RTCA0SCMP.[21:0]SCMP"                                                                   , "Memory", 0x4000603C,        4, base=16, bitRange=0-21
+sfr = "RTCA0ALM"                                                                               , "Memory", 0x40006040,        4, base=16
+sfr = "RTCA0ALM.[6:0]ALM"                                                                      , "Memory", 0x40006040,        4, base=16, bitRange=0-6
+sfr = "RTCA0ALH"                                                                               , "Memory", 0x40006044,        4, base=16
+sfr = "RTCA0ALH.[5:0]ALH"                                                                      , "Memory", 0x40006044,        4, base=16, bitRange=0-5
+sfr = "RTCA0ALW"                                                                               , "Memory", 0x40006048,        4, base=16
+sfr = "RTCA0ALW.[0]ALW0"                                                                       , "Memory", 0x40006048,        4, base=16, bitRange=0
+sfr = "RTCA0ALW.[1]ALW1"                                                                       , "Memory", 0x40006048,        4, base=16, bitRange=1
+sfr = "RTCA0ALW.[2]ALW2"                                                                       , "Memory", 0x40006048,        4, base=16, bitRange=2
+sfr = "RTCA0ALW.[3]ALW3"                                                                       , "Memory", 0x40006048,        4, base=16, bitRange=3
+sfr = "RTCA0ALW.[4]ALW4"                                                                       , "Memory", 0x40006048,        4, base=16, bitRange=4
+sfr = "RTCA0ALW.[5]ALW5"                                                                       , "Memory", 0x40006048,        4, base=16, bitRange=5
+sfr = "RTCA0ALW.[6]ALW6"                                                                       , "Memory", 0x40006048,        4, base=16, bitRange=6
+sfr = "RTCA0SECC"                                                                              , "Memory", 0x4000604C,        4, base=16, readOnly
+sfr = "RTCA0SECC.[6:0]SECC"                                                                    , "Memory", 0x4000604C,        4, base=16, readOnly, bitRange=0-6
+sfr = "RTCA0MINC"                                                                              , "Memory", 0x40006050,        4, base=16, readOnly
+sfr = "RTCA0MINC.[6:0]MINC"                                                                    , "Memory", 0x40006050,        4, base=16, readOnly, bitRange=0-6
+sfr = "RTCA0HOURC"                                                                             , "Memory", 0x40006054,        4, base=16, readOnly
+sfr = "RTCA0HOURC.[5:0]HOURC"                                                                  , "Memory", 0x40006054,        4, base=16, readOnly, bitRange=0-5
+sfr = "RTCA0WEEKC"                                                                             , "Memory", 0x40006058,        4, base=16, readOnly
+sfr = "RTCA0WEEKC.[2:0]WEEKC"                                                                  , "Memory", 0x40006058,        4, base=16, readOnly, bitRange=0-2
+sfr = "RTCA0DAYC"                                                                              , "Memory", 0x4000605C,        4, base=16, readOnly
+sfr = "RTCA0DAYC.[5:0]DAYC"                                                                    , "Memory", 0x4000605C,        4, base=16, readOnly, bitRange=0-5
+sfr = "RTCA0MONC"                                                                              , "Memory", 0x40006060,        4, base=16, readOnly
+sfr = "RTCA0MONC.[4:0]MONC"                                                                    , "Memory", 0x40006060,        4, base=16, readOnly, bitRange=0-4
+sfr = "RTCA0YEARC"                                                                             , "Memory", 0x40006064,        4, base=16, readOnly
+sfr = "RTCA0YEARC.[7:0]YEARC"                                                                  , "Memory", 0x40006064,        4, base=16, readOnly, bitRange=0-7
+sfr = "RTCA0TIMEC"                                                                             , "Memory", 0x40006068,        4, base=16, readOnly
+sfr = "RTCA0TIMEC.[7:0]SECC"                                                                   , "Memory", 0x40006068,        4, base=16, readOnly, bitRange=0-7
+sfr = "RTCA0TIMEC.[15:8]MINC"                                                                  , "Memory", 0x40006068,        4, base=16, readOnly, bitRange=8-15
+sfr = "RTCA0TIMEC.[23:16]HOURC"                                                                , "Memory", 0x40006068,        4, base=16, readOnly, bitRange=16-23
+sfr = "RTCA0CALC"                                                                              , "Memory", 0x4000606C,        4, base=16, readOnly
+sfr = "RTCA0CALC.[7:0]WEEKC"                                                                   , "Memory", 0x4000606C,        4, base=16, readOnly, bitRange=0-7
+sfr = "RTCA0CALC.[15:8]DAYC"                                                                   , "Memory", 0x4000606C,        4, base=16, readOnly, bitRange=8-15
+sfr = "RTCA0CALC.[23:16]MONC"                                                                  , "Memory", 0x4000606C,        4, base=16, readOnly, bitRange=16-23
+sfr = "RTCA0CALC.[31:24]YEARC"                                                                 , "Memory", 0x4000606C,        4, base=16, readOnly, bitRange=24-31
+sfr = "RTCA0TCR"                                                                               , "Memory", 0x40006070,        4, base=16
+sfr = "RTCA0TCR.[0]OS0"                                                                        , "Memory", 0x40006070,        4, base=16, bitRange=0
+sfr = "RTCA0TCR.[1]OS1"                                                                        , "Memory", 0x40006070,        4, base=16, bitRange=1
+sfr = "RTCA0TCR.[2]OS2"                                                                        , "Memory", 0x40006070,        4, base=16, bitRange=2
+sfr = "RTCA0TCR.[3]OS3"                                                                        , "Memory", 0x40006070,        4, base=16, bitRange=3
+sfr = "RTCA0TCR.[15]OSE"                                                                       , "Memory", 0x40006070,        4, base=16, bitRange=15
+sfr = "RTCA0EMU"                                                                               , "Memory", 0x40006074,        4, base=16
+sfr = "RTCA0EMU.[7]SVSDIS"                                                                     , "Memory", 0x40006074,        4, base=16, bitRange=7
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// RealTimeClock -----
+group = "RTC","RTCA0CTL0","RTCA0CTL1","RTCA0CTL2","RTCA0SUBC","RTCA0SRBU","RTCA0SEC","RTCA0MIN","RTCA0HOUR","RTCA0WEEK","RTCA0DAY","RTCA0MONTH","RTCA0YEAR","RTCA0TIME","RTCA0CAL","RTCA0SUBU","RTCA0SCMP","RTCA0ALM","RTCA0ALH","RTCA0ALW","RTCA0SECC","RTCA0MINC","RTCA0HOURC","RTCA0WEEKC","RTCA0DAYC","RTCA0MONC","RTCA0YEARC","RTCA0TIMEC","RTCA0CALC","RTCA0TCR","RTCA0EMU"

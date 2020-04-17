@@ -1,0 +1,109 @@
+/*###ICF### Section handled by ICF editor, don't touch! ****/
+/*-Editor annotation file-*/
+/* IcfEditorFile="$TOOLKIT_DIR$\config\ide\IcfEditor\a_v1_1.xml" */
+/*-Specials-*/
+define symbol __ICFEDIT_intvec_start__ = 0x04000000;
+/*-Memory Regions-*/
+define symbol __ICFEDIT_region_ROM_start__ = 0x04000000; 		/* Instruction RAM  */
+define symbol __ICFEDIT_region_ROM_end__   = 0x040BFFFF;
+define symbol __ICFEDIT_region_RAM_start__ = 0x20000000; 		/* Data RAM */
+define symbol __ICFEDIT_region_RAM_end__   = 0x200FFFFF;
+
+define symbol _region_EHCI_MEM1_start__  = 0x20080000;
+define symbol _region_EHCI_MEM1_end__    = 0x200803FF;
+define symbol _region_EHCI_MEM2_start__  = 0x20080400;
+define symbol _region_EHCI_MEM2_end__    = 0x20099FFF;
+define symbol _region_OHCI_MEM1_start__  = 0x2009A000;
+define symbol _region_OHCI_MEM1_end__    = 0x2009A0FF;
+define symbol _region_OHCI_MEM2_start__  = 0x2009A100;
+define symbol _region_OHCI_MEM2_end__    = 0x2009FFFF;
+
+/*-Sizes-*/
+define symbol __ICFEDIT_size_cstack__ = 0x8000;
+define symbol __ICFEDIT_size_heap__   = 0x8000;
+/**** End of ICF editor section. ###ICF###*/
+
+/*============================================================================*/
+/* S Y M B O L  D E F I N I T I O N S                                         */
+/*============================================================================*/
+define symbol _region_IRAM0_start__    = 0x04000000;
+define symbol _region_IRAM0_end__      = 0x0407FFFF;
+define symbol _region_IRAM1_start__    = 0x04080000;
+define symbol _region_IRAM1_end__      = 0x040FFFFF;
+define symbol _region_DRAM0_start__    = 0x20000000;
+define symbol _region_DRAM0_end__      = 0x2007FFFF;
+define symbol _region_DRAM1_start__    = 0x20080000;
+define symbol _region_DRAM1_end__      = 0x200FFFFF;
+
+define symbol _region_RAM4M0_start__   = 0x80000000;
+define symbol _region_RAM4M0_end__     = 0x800FFFFF;
+define symbol _region_RAM4M1_start__   = 0x80100000;
+define symbol _region_RAM4M1_end__     = 0x801FFFFF;
+define symbol _region_RAM4M2_start__   = 0x80200000;
+define symbol _region_RAM4M2_end__     = 0x802FFFFF;
+define symbol _region_RAM4M3_start__   = 0x80300000;
+define symbol _region_RAM4M3_end__     = 0x803FFFFF;
+
+
+/*============================================================================*/
+/* M E M O R Y   R E G I O N                                                  */
+/*============================================================================*/
+define memory mem with size = 4G;
+
+define region IRAM0_region = mem:[from _region_IRAM0_start__ to _region_IRAM0_end__];
+define region IRAM1_region = mem:[from _region_IRAM1_start__ to _region_IRAM1_end__];
+define region DRAM0_region = mem:[from _region_DRAM0_start__ to _region_DRAM0_end__];
+define region DRAM1_region = mem:[from _region_DRAM1_start__ to _region_DRAM1_end__];
+
+
+define region EHCI_MEM1_region = mem:[from _region_EHCI_MEM1_start__ to _region_EHCI_MEM1_end__];
+define region EHCI_MEM2_region = mem:[from _region_EHCI_MEM2_start__ to _region_EHCI_MEM2_end__];
+define region OHCI_MEM1_region = mem:[from _region_OHCI_MEM1_start__ to _region_OHCI_MEM1_end__];
+define region OHCI_MEM2_region = mem:[from _region_OHCI_MEM2_start__ to _region_OHCI_MEM2_end__];
+
+/*============================================================================*/
+/* B L O C K   L A Y O U T                                                    */
+/*============================================================================*/
+define block CSTACK    with alignment = 8, size = __ICFEDIT_size_cstack__   { };
+define block HEAP      with alignment = 8, size = __ICFEDIT_size_heap__     { };
+
+do not initialize  { section .noinit };
+initialize by copy { readwrite } except { rw data section vectors };
+
+/* Add block for shared memory (SHM) */
+define block SHM       with alignment = 4, size = 0x8000                    { };
+keep {block SHM};
+
+/* place SHM block at Data RAM (starting at address 0x200F 8000 */
+place at address mem:0x200F8000 { block SHM };
+
+
+/*============================================================================*/
+/* S E C T I O N   L A Y O U T                                                */
+/*============================================================================*/
+//---------------------------------
+// Flash ROM
+//---------------------------------
+
+//---------------------------------
+// Instruction RAM
+//---------------------------------
+place at address mem:__ICFEDIT_intvec_start__ { section vectors };
+place in IRAM0_region { readonly };
+
+//---------------------------------
+// Data RAM
+//---------------------------------
+place in EHCI_MEM1_region { section EHCI_PFL };
+place in EHCI_MEM2_region { section EHCI_QH, section EHCI_QTD, section EHCI_ITD, section EHCI_SITD };
+place in OHCI_MEM1_region { section OHCI_HCCA };
+place in OHCI_MEM2_region { section OHCI_TD, section OHCI_ED };
+
+place in IRAM0_region   {readwrite section .iram0};
+place in IRAM1_region   {readwrite section .iram1};
+
+place in DRAM0_region   {readwrite section .dram0};
+place in DRAM0_region   {readwrite};
+place in DRAM0_region   {block CSTACK, block HEAP};
+place in DRAM1_region   {readwrite section .dram1};
+

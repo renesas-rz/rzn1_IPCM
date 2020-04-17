@@ -1,0 +1,189 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : MSEBIS
+;               MSEBI Slave from CPU
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "rMSEBIS_CYCLESIZE_CS0_N"                                                                , "Memory", 0x400C2000,        4, base=16
+sfr = "rMSEBIS_CYCLESIZE_CS0_N.[0]ALEDATA"                                                     , "Memory", 0x400C2000,        4, base=16, bitRange=0
+sfr = "rMSEBIS_CYCLESIZE_CS0_N.[1]CLEDATA"                                                     , "Memory", 0x400C2000,        4, base=16, bitRange=1
+sfr = "rMSEBIS_CYCLESIZE_CS0_N.[9:8]RDDLEDATA_B"                                               , "Memory", 0x400C2000,        4, base=16, bitRange=8-9
+sfr = "rMSEBIS_CYCLESIZE_CS0_N.[13:12]WRDLEDATA_B"                                             , "Memory", 0x400C2000,        4, base=16, bitRange=12-13
+sfr = "rMSEBIS_CYCLESIZE_CS0_N.[23:16]RDDLEDATA_NB"                                            , "Memory", 0x400C2000,        4, base=16, bitRange=16-23
+sfr = "rMSEBIS_CYCLESIZE_CS0_N.[31:24]WRDLEDATA_NB"                                            , "Memory", 0x400C2000,        4, base=16, bitRange=24-31
+sfr = "rMSEBIS_SETUPHOLD_CS0_N"                                                                , "Memory", 0x400C2004,        4, base=16
+sfr = "rMSEBIS_SETUPHOLD_CS0_N.[5:0]RDDLESETUP"                                                , "Memory", 0x400C2004,        4, base=16, bitRange=0-5
+sfr = "rMSEBIS_SETUPHOLD_CS0_N.[13:8]WRDLESETUP"                                               , "Memory", 0x400C2004,        4, base=16, bitRange=8-13
+sfr = "rMSEBIS_MMU_ADDR_CS0_N"                                                                 , "Memory", 0x400C2008,        4, base=16
+sfr = "rMSEBIS_MMU_ADDR_CS0_N.[31:12]MMU_ADDR"                                                 , "Memory", 0x400C2008,        4, base=16, bitRange=12-31
+sfr = "rMSEBIS_MMU_ADDR_MASK_CS0_N"                                                            , "Memory", 0x400C200C,        4, base=16
+sfr = "rMSEBIS_MMU_ADDR_MASK_CS0_N.[31:12]MMU_ADDR_MASK"                                       , "Memory", 0x400C200C,        4, base=16, bitRange=12-31
+sfr = "rMSEBIS_DMATX_REQ_CS0_N"                                                                , "Memory", 0x400C2010,        4, base=16
+sfr = "rMSEBIS_DMATX_REQ_CS0_N.[0]DMATX_FORCE"                                                 , "Memory", 0x400C2010,        4, base=16, bitRange=0
+sfr = "rMSEBIS_DMATX_REQ_CS0_N.[1]DMATX_ENABLE"                                                , "Memory", 0x400C2010,        4, base=16, bitRange=1
+sfr = "rMSEBIS_DMARX_REQ_CS0_N"                                                                , "Memory", 0x400C2014,        4, base=16
+sfr = "rMSEBIS_DMARX_REQ_CS0_N.[0]DMARX_FORCE"                                                 , "Memory", 0x400C2014,        4, base=16, bitRange=0
+sfr = "rMSEBIS_DMARX_REQ_CS0_N.[1]DMARX_ENABLE"                                                , "Memory", 0x400C2014,        4, base=16, bitRange=1
+sfr = "rMSEBIS_DMATDLR_CS0_N"                                                                  , "Memory", 0x400C2018,        4, base=16
+sfr = "rMSEBIS_DMATDLR_CS0_N.[1:0]DMATX_MAX_BURST"                                             , "Memory", 0x400C2018,        4, base=16, bitRange=0-1
+sfr = "rMSEBIS_DMATDLR_CS0_N.[2]DMATX_OPT_BURST"                                               , "Memory", 0x400C2018,        4, base=16, bitRange=2
+sfr = "rMSEBIS_DMATDLR_CS0_N.[3]DMATX_FLOW_CTRL"                                               , "Memory", 0x400C2018,        4, base=16, bitRange=3
+sfr = "rMSEBIS_DMATDLR_CS0_N.[13:8]DMATX_FIFO_LVL"                                             , "Memory", 0x400C2018,        4, base=16, bitRange=8-13
+sfr = "rMSEBIS_DMATDLR_CS0_N.[31]DMA_TRANSMIT_DISABLEBUS"                                      , "Memory", 0x400C2018,        4, base=16, bitRange=31
+sfr = "rMSEBIS_DMARDLR_CS0_N"                                                                  , "Memory", 0x400C201C,        4, base=16
+sfr = "rMSEBIS_DMARDLR_CS0_N.[1:0]DMARX_MAX_BURST"                                             , "Memory", 0x400C201C,        4, base=16, bitRange=0-1
+sfr = "rMSEBIS_DMARDLR_CS0_N.[2]DMARX_FLOW_CTRL"                                               , "Memory", 0x400C201C,        4, base=16, bitRange=2
+sfr = "rMSEBIS_DMARDLR_CS0_N.[13:8]DMARX_FIFO_L"                                               , "Memory", 0x400C201C,        4, base=16, bitRange=8-13
+sfr = "rMSEBIS_DMARDLR_CS0_N.[31]DMA_RECEIVE_DISABLEBUS"                                       , "Memory", 0x400C201C,        4, base=16, bitRange=31
+sfr = "rMSEBIS_CONFIG_CS0_N"                                                                   , "Memory", 0x400C2060,        4, base=16
+sfr = "rMSEBIS_CONFIG_CS0_N.[1:0]CONFIG"                                                       , "Memory", 0x400C2060,        4, base=16, bitRange=0-1
+sfr = "rMSEBIS_CONFIG_CS0_N.[2]BUSY"                                                           , "Memory", 0x400C2060,        4, base=16, bitRange=2
+sfr = "rMSEBIS_CONFIG_CS0_N.[3]WEN"                                                            , "Memory", 0x400C2060,        4, base=16, bitRange=3
+sfr = "rMSEBIS_CONFIG_CS0_N.[4]SHARE_REGISTER"                                                 , "Memory", 0x400C2060,        4, base=16, bitRange=4
+sfr = "rMSEBIS_CONFIG_CS0_N.[6:5]MODE_WAIT"                                                    , "Memory", 0x400C2060,        4, base=16, bitRange=5-6
+sfr = "rMSEBIS_CONFIG_CS0_N.[7]BURST_ENABLE"                                                   , "Memory", 0x400C2060,        4, base=16, bitRange=7
+sfr = "rMSEBIS_CONFIG_CS0_N.[8]ADDR_MODE"                                                      , "Memory", 0x400C2060,        4, base=16, bitRange=8
+sfr = "rMSEBIS_CONFIG_CS0_N.[9]CS_ENABLE"                                                      , "Memory", 0x400C2060,        4, base=16, bitRange=9
+sfr = "rMSEBIS_CONFIG_CS0_N.[12]CSkN_ROUNTING_CS1_N"                                           , "Memory", 0x400C2060,        4, base=16, bitRange=12
+sfr = "rMSEBIS_CONFIG_CS0_N.[13]CSkN_ROUNTING_CS2_N"                                           , "Memory", 0x400C2060,        4, base=16, bitRange=13
+sfr = "rMSEBIS_CONFIG_CS0_N.[14]CSkN_ROUNTING_CS3_N"                                           , "Memory", 0x400C2060,        4, base=16, bitRange=14
+sfr = "rMSEBIS_CYCLESIZE_CS1_N"                                                                , "Memory", 0x400C2100,        4, base=16
+sfr = "rMSEBIS_CYCLESIZE_CS1_N.[0]ALEDATA"                                                     , "Memory", 0x400C2100,        4, base=16, bitRange=0
+sfr = "rMSEBIS_CYCLESIZE_CS1_N.[1]CLEDATA"                                                     , "Memory", 0x400C2100,        4, base=16, bitRange=1
+sfr = "rMSEBIS_CYCLESIZE_CS1_N.[9:8]RDDLEDATA_B"                                               , "Memory", 0x400C2100,        4, base=16, bitRange=8-9
+sfr = "rMSEBIS_CYCLESIZE_CS1_N.[13:12]WRDLEDATA_B"                                             , "Memory", 0x400C2100,        4, base=16, bitRange=12-13
+sfr = "rMSEBIS_CYCLESIZE_CS1_N.[23:16]RDDLEDATA_NB"                                            , "Memory", 0x400C2100,        4, base=16, bitRange=16-23
+sfr = "rMSEBIS_CYCLESIZE_CS1_N.[31:24]WRDLEDATA_NB"                                            , "Memory", 0x400C2100,        4, base=16, bitRange=24-31
+sfr = "rMSEBIS_SETUPHOLD_CS1_N"                                                                , "Memory", 0x400C2104,        4, base=16
+sfr = "rMSEBIS_SETUPHOLD_CS1_N.[5:0]RDDLESETUP"                                                , "Memory", 0x400C2104,        4, base=16, bitRange=0-5
+sfr = "rMSEBIS_SETUPHOLD_CS1_N.[13:8]WRDLESETUP"                                               , "Memory", 0x400C2104,        4, base=16, bitRange=8-13
+sfr = "rMSEBIS_MMU_ADDR_CS1_N"                                                                 , "Memory", 0x400C2108,        4, base=16
+sfr = "rMSEBIS_MMU_ADDR_CS1_N.[31:12]MMU_ADDR"                                                 , "Memory", 0x400C2108,        4, base=16, bitRange=12-31
+sfr = "rMSEBIS_MMU_ADDR_MASK_CS1_N"                                                            , "Memory", 0x400C210C,        4, base=16
+sfr = "rMSEBIS_MMU_ADDR_MASK_CS1_N.[31:12]MMU_ADDR_MASK"                                       , "Memory", 0x400C210C,        4, base=16, bitRange=12-31
+sfr = "rMSEBIS_DMATX_REQ_CS1_N"                                                                , "Memory", 0x400C2110,        4, base=16
+sfr = "rMSEBIS_DMATX_REQ_CS1_N.[0]DMATX_FORCE"                                                 , "Memory", 0x400C2110,        4, base=16, bitRange=0
+sfr = "rMSEBIS_DMATX_REQ_CS1_N.[1]DMATX_ENABLE"                                                , "Memory", 0x400C2110,        4, base=16, bitRange=1
+sfr = "rMSEBIS_DMARX_REQ_CS1_N"                                                                , "Memory", 0x400C2114,        4, base=16
+sfr = "rMSEBIS_DMARX_REQ_CS1_N.[0]DMARX_FORCE"                                                 , "Memory", 0x400C2114,        4, base=16, bitRange=0
+sfr = "rMSEBIS_DMARX_REQ_CS1_N.[1]DMARX_ENABLE"                                                , "Memory", 0x400C2114,        4, base=16, bitRange=1
+sfr = "rMSEBIS_DMATDLR_CS1_N"                                                                  , "Memory", 0x400C2118,        4, base=16
+sfr = "rMSEBIS_DMATDLR_CS1_N.[1:0]DMATX_MAX_BURST"                                             , "Memory", 0x400C2118,        4, base=16, bitRange=0-1
+sfr = "rMSEBIS_DMATDLR_CS1_N.[2]DMATX_OPT_BURST"                                               , "Memory", 0x400C2118,        4, base=16, bitRange=2
+sfr = "rMSEBIS_DMATDLR_CS1_N.[3]DMATX_FLOW_CTRL"                                               , "Memory", 0x400C2118,        4, base=16, bitRange=3
+sfr = "rMSEBIS_DMATDLR_CS1_N.[13:8]DMATX_FIFO_LVL"                                             , "Memory", 0x400C2118,        4, base=16, bitRange=8-13
+sfr = "rMSEBIS_DMATDLR_CS1_N.[31]DMA_TRANSMIT_DISABLEBUS"                                      , "Memory", 0x400C2118,        4, base=16, bitRange=31
+sfr = "rMSEBIS_DMARDLR_CS1_N"                                                                  , "Memory", 0x400C211C,        4, base=16
+sfr = "rMSEBIS_DMARDLR_CS1_N.[1:0]DMARX_MAX_BURST"                                             , "Memory", 0x400C211C,        4, base=16, bitRange=0-1
+sfr = "rMSEBIS_DMARDLR_CS1_N.[2]DMARX_FLOW_CTRL"                                               , "Memory", 0x400C211C,        4, base=16, bitRange=2
+sfr = "rMSEBIS_DMARDLR_CS1_N.[13:8]DMARX_FIFO_L"                                               , "Memory", 0x400C211C,        4, base=16, bitRange=8-13
+sfr = "rMSEBIS_DMARDLR_CS1_N.[31]DMA_RECEIVE_DISABLEBUS"                                       , "Memory", 0x400C211C,        4, base=16, bitRange=31
+sfr = "rMSEBIS_CONFIG_CS1_N"                                                                   , "Memory", 0x400C2160,        4, base=16
+sfr = "rMSEBIS_CONFIG_CS1_N.[1:0]CONFIG"                                                       , "Memory", 0x400C2160,        4, base=16, bitRange=0-1
+sfr = "rMSEBIS_CONFIG_CS1_N.[2]BUSY"                                                           , "Memory", 0x400C2160,        4, base=16, bitRange=2
+sfr = "rMSEBIS_CONFIG_CS1_N.[3]WEN"                                                            , "Memory", 0x400C2160,        4, base=16, bitRange=3
+sfr = "rMSEBIS_CONFIG_CS1_N.[4]SHARE_REGISTER"                                                 , "Memory", 0x400C2160,        4, base=16, bitRange=4
+sfr = "rMSEBIS_CONFIG_CS1_N.[6:5]MODE_WAIT"                                                    , "Memory", 0x400C2160,        4, base=16, bitRange=5-6
+sfr = "rMSEBIS_CONFIG_CS1_N.[7]BURST_ENABLE"                                                   , "Memory", 0x400C2160,        4, base=16, bitRange=7
+sfr = "rMSEBIS_CONFIG_CS1_N.[8]ADDR_MODE"                                                      , "Memory", 0x400C2160,        4, base=16, bitRange=8
+sfr = "rMSEBIS_CONFIG_CS1_N.[9]CS_ENABLE"                                                      , "Memory", 0x400C2160,        4, base=16, bitRange=9
+sfr = "rMSEBIS_CONFIG_CS1_N.[12]CSkN_ROUNTING_CS1_N"                                           , "Memory", 0x400C2160,        4, base=16, bitRange=12
+sfr = "rMSEBIS_CONFIG_CS1_N.[13]CSkN_ROUNTING_CS2_N"                                           , "Memory", 0x400C2160,        4, base=16, bitRange=13
+sfr = "rMSEBIS_CONFIG_CS1_N.[14]CSkN_ROUNTING_CS3_N"                                           , "Memory", 0x400C2160,        4, base=16, bitRange=14
+sfr = "rMSEBIS_CYCLESIZE_CS2_N"                                                                , "Memory", 0x400C2200,        4, base=16
+sfr = "rMSEBIS_CYCLESIZE_CS2_N.[0]ALEDATA"                                                     , "Memory", 0x400C2200,        4, base=16, bitRange=0
+sfr = "rMSEBIS_CYCLESIZE_CS2_N.[1]CLEDATA"                                                     , "Memory", 0x400C2200,        4, base=16, bitRange=1
+sfr = "rMSEBIS_CYCLESIZE_CS2_N.[9:8]RDDLEDATA_B"                                               , "Memory", 0x400C2200,        4, base=16, bitRange=8-9
+sfr = "rMSEBIS_CYCLESIZE_CS2_N.[13:12]WRDLEDATA_B"                                             , "Memory", 0x400C2200,        4, base=16, bitRange=12-13
+sfr = "rMSEBIS_CYCLESIZE_CS2_N.[23:16]RDDLEDATA_NB"                                            , "Memory", 0x400C2200,        4, base=16, bitRange=16-23
+sfr = "rMSEBIS_CYCLESIZE_CS2_N.[31:24]WRDLEDATA_NB"                                            , "Memory", 0x400C2200,        4, base=16, bitRange=24-31
+sfr = "rMSEBIS_SETUPHOLD_CS2_N"                                                                , "Memory", 0x400C2204,        4, base=16
+sfr = "rMSEBIS_SETUPHOLD_CS2_N.[5:0]RDDLESETUP"                                                , "Memory", 0x400C2204,        4, base=16, bitRange=0-5
+sfr = "rMSEBIS_SETUPHOLD_CS2_N.[13:8]WRDLESETUP"                                               , "Memory", 0x400C2204,        4, base=16, bitRange=8-13
+sfr = "rMSEBIS_MMU_ADDR_CS2_N"                                                                 , "Memory", 0x400C2208,        4, base=16
+sfr = "rMSEBIS_MMU_ADDR_CS2_N.[31:12]MMU_ADDR"                                                 , "Memory", 0x400C2208,        4, base=16, bitRange=12-31
+sfr = "rMSEBIS_MMU_ADDR_MASK_CS2_N"                                                            , "Memory", 0x400C220C,        4, base=16
+sfr = "rMSEBIS_MMU_ADDR_MASK_CS2_N.[31:12]MMU_ADDR_MASK"                                       , "Memory", 0x400C220C,        4, base=16, bitRange=12-31
+sfr = "rMSEBIS_CONFIG_CS2_N"                                                                   , "Memory", 0x400C2260,        4, base=16
+sfr = "rMSEBIS_CONFIG_CS2_N.[1:0]CONFIG"                                                       , "Memory", 0x400C2260,        4, base=16, bitRange=0-1
+sfr = "rMSEBIS_CONFIG_CS2_N.[2]BUSY"                                                           , "Memory", 0x400C2260,        4, base=16, bitRange=2
+sfr = "rMSEBIS_CONFIG_CS2_N.[3]WEN"                                                            , "Memory", 0x400C2260,        4, base=16, bitRange=3
+sfr = "rMSEBIS_CONFIG_CS2_N.[4]SHARE_REGISTER"                                                 , "Memory", 0x400C2260,        4, base=16, bitRange=4
+sfr = "rMSEBIS_CONFIG_CS2_N.[6:5]MODE_WAIT"                                                    , "Memory", 0x400C2260,        4, base=16, bitRange=5-6
+sfr = "rMSEBIS_CONFIG_CS2_N.[7]BURST_ENABLE"                                                   , "Memory", 0x400C2260,        4, base=16, bitRange=7
+sfr = "rMSEBIS_CONFIG_CS2_N.[8]ADDR_MODE"                                                      , "Memory", 0x400C2260,        4, base=16, bitRange=8
+sfr = "rMSEBIS_CONFIG_CS2_N.[9]CS_ENABLE"                                                      , "Memory", 0x400C2260,        4, base=16, bitRange=9
+sfr = "rMSEBIS_CONFIG_CS2_N.[12]CSkN_ROUNTING_CS1_N"                                           , "Memory", 0x400C2260,        4, base=16, bitRange=12
+sfr = "rMSEBIS_CONFIG_CS2_N.[13]CSkN_ROUNTING_CS2_N"                                           , "Memory", 0x400C2260,        4, base=16, bitRange=13
+sfr = "rMSEBIS_CONFIG_CS2_N.[14]CSkN_ROUNTING_CS3_N"                                           , "Memory", 0x400C2260,        4, base=16, bitRange=14
+sfr = "rMSEBIS_CYCLESIZE_CS3_N"                                                                , "Memory", 0x400C2300,        4, base=16
+sfr = "rMSEBIS_CYCLESIZE_CS3_N.[0]ALEDATA"                                                     , "Memory", 0x400C2300,        4, base=16, bitRange=0
+sfr = "rMSEBIS_CYCLESIZE_CS3_N.[1]CLEDATA"                                                     , "Memory", 0x400C2300,        4, base=16, bitRange=1
+sfr = "rMSEBIS_CYCLESIZE_CS3_N.[9:8]RDDLEDATA_B"                                               , "Memory", 0x400C2300,        4, base=16, bitRange=8-9
+sfr = "rMSEBIS_CYCLESIZE_CS3_N.[13:12]WRDLEDATA_B"                                             , "Memory", 0x400C2300,        4, base=16, bitRange=12-13
+sfr = "rMSEBIS_CYCLESIZE_CS3_N.[23:16]RDDLEDATA_NB"                                            , "Memory", 0x400C2300,        4, base=16, bitRange=16-23
+sfr = "rMSEBIS_CYCLESIZE_CS3_N.[31:24]WRDLEDATA_NB"                                            , "Memory", 0x400C2300,        4, base=16, bitRange=24-31
+sfr = "rMSEBIS_SETUPHOLD_CS3_N"                                                                , "Memory", 0x400C2304,        4, base=16
+sfr = "rMSEBIS_SETUPHOLD_CS3_N.[5:0]RDDLESETUP"                                                , "Memory", 0x400C2304,        4, base=16, bitRange=0-5
+sfr = "rMSEBIS_SETUPHOLD_CS3_N.[13:8]WRDLESETUP"                                               , "Memory", 0x400C2304,        4, base=16, bitRange=8-13
+sfr = "rMSEBIS_MMU_ADDR_CS3_N"                                                                 , "Memory", 0x400C2308,        4, base=16
+sfr = "rMSEBIS_MMU_ADDR_CS3_N.[31:12]MMU_ADDR"                                                 , "Memory", 0x400C2308,        4, base=16, bitRange=12-31
+sfr = "rMSEBIS_MMU_ADDR_MASK_CS3_N"                                                            , "Memory", 0x400C230C,        4, base=16
+sfr = "rMSEBIS_MMU_ADDR_MASK_CS3_N.[31:12]MMU_ADDR_MASK"                                       , "Memory", 0x400C230C,        4, base=16, bitRange=12-31
+sfr = "rMSEBIS_CONFIG_CS3_N"                                                                   , "Memory", 0x400C2360,        4, base=16
+sfr = "rMSEBIS_CONFIG_CS3_N.[1:0]CONFIG"                                                       , "Memory", 0x400C2360,        4, base=16, bitRange=0-1
+sfr = "rMSEBIS_CONFIG_CS3_N.[2]BUSY"                                                           , "Memory", 0x400C2360,        4, base=16, bitRange=2
+sfr = "rMSEBIS_CONFIG_CS3_N.[3]WEN"                                                            , "Memory", 0x400C2360,        4, base=16, bitRange=3
+sfr = "rMSEBIS_CONFIG_CS3_N.[4]SHARE_REGISTER"                                                 , "Memory", 0x400C2360,        4, base=16, bitRange=4
+sfr = "rMSEBIS_CONFIG_CS3_N.[6:5]MODE_WAIT"                                                    , "Memory", 0x400C2360,        4, base=16, bitRange=5-6
+sfr = "rMSEBIS_CONFIG_CS3_N.[7]BURST_ENABLE"                                                   , "Memory", 0x400C2360,        4, base=16, bitRange=7
+sfr = "rMSEBIS_CONFIG_CS3_N.[8]ADDR_MODE"                                                      , "Memory", 0x400C2360,        4, base=16, bitRange=8
+sfr = "rMSEBIS_CONFIG_CS3_N.[9]CS_ENABLE"                                                      , "Memory", 0x400C2360,        4, base=16, bitRange=9
+sfr = "rMSEBIS_CONFIG_CS3_N.[12]CSkN_ROUNTING_CS1_N"                                           , "Memory", 0x400C2360,        4, base=16, bitRange=12
+sfr = "rMSEBIS_CONFIG_CS3_N.[13]CSkN_ROUNTING_CS2_N"                                           , "Memory", 0x400C2360,        4, base=16, bitRange=13
+sfr = "rMSEBIS_CONFIG_CS3_N.[14]CSkN_ROUNTING_CS3_N"                                           , "Memory", 0x400C2360,        4, base=16, bitRange=14
+sfr = "rMSEBIS_CONFIG"                                                                         , "Memory", 0x400C2800,        4, base=16
+sfr = "rMSEBIS_CONFIG.[1:0]BURST_SIZEMAX_CPUREAD"                                              , "Memory", 0x400C2800,        4, base=16, bitRange=0-1
+sfr = "rMSEBIS_CONFIG.[3:2]BURST_SIZEMAX_CPUWRITE"                                             , "Memory", 0x400C2800,        4, base=16, bitRange=2-3
+sfr = "rMSEBIS_CONFIG.[13:8]CPURX_FIFO_LVL"                                                    , "Memory", 0x400C2800,        4, base=16, bitRange=8-13
+sfr = "rMSEBIS_CONFIG.[21:16]CPUTX_FIFO_LVL"                                                   , "Memory", 0x400C2800,        4, base=16, bitRange=16-21
+sfr = "rMSEBIS_CONFIG.[22]AHB_MASTER_BUF"                                                      , "Memory", 0x400C2800,        4, base=16, bitRange=22
+sfr = "rMSEBIS_CONFIG.[23]AHB_MASTER_CACHE"                                                    , "Memory", 0x400C2800,        4, base=16, bitRange=23
+sfr = "rMSEBIS_CONFIG.[27:24]TIMEOUT_REG_ACCESS_DELAY"                                         , "Memory", 0x400C2800,        4, base=16, bitRange=24-27
+sfr = "rMSEBIS_CONFIG.[28]TIMEOUT_REG_ACCESS"                                                  , "Memory", 0x400C2800,        4, base=16, bitRange=28
+sfr = "rMSEBIS_CONFIG.[29]LEGACY"                                                              , "Memory", 0x400C2800,        4, base=16, bitRange=29
+sfr = "rMSEBIS_CONFIG.[31]CPU_DISABLEBUS"                                                      , "Memory", 0x400C2800,        4, base=16, bitRange=31
+sfr = "rMSEBIS_STATUS_INT0"                                                                    , "Memory", 0x400C2804,        4, base=16, readOnly
+sfr = "rMSEBIS_STATUS_INT0.[3:0]INT0_CPURX"                                                    , "Memory", 0x400C2804,        4, base=16, readOnly, bitRange=0-3
+sfr = "rMSEBIS_STATUS_INT0.[7:4]INT0_CPUTX"                                                    , "Memory", 0x400C2804,        4, base=16, readOnly, bitRange=4-7
+sfr = "rMSEBIS_STATUS_INT0.[9:8]INT0_DMARX"                                                    , "Memory", 0x400C2804,        4, base=16, readOnly, bitRange=8-9
+sfr = "rMSEBIS_STATUS_INT0.[13:12]INT0_DMATX"                                                  , "Memory", 0x400C2804,        4, base=16, readOnly, bitRange=12-13
+sfr = "rMSEBIS_STATUS_INT1"                                                                    , "Memory", 0x400C2808,        4, base=16, readOnly
+sfr = "rMSEBIS_STATUS_INT1.[3:0]INT1_CPURX"                                                    , "Memory", 0x400C2808,        4, base=16, readOnly, bitRange=0-3
+sfr = "rMSEBIS_STATUS_INT1.[7:4]INT1_CPUTX"                                                    , "Memory", 0x400C2808,        4, base=16, readOnly, bitRange=4-7
+sfr = "rMSEBIS_STATUS_INT1.[9:8]INT1_DMARX"                                                    , "Memory", 0x400C2808,        4, base=16, readOnly, bitRange=8-9
+sfr = "rMSEBIS_STATUS_INT1.[13:12]INT1_DMATX"                                                  , "Memory", 0x400C2808,        4, base=16, readOnly, bitRange=12-13
+sfr = "rMSEBIS_MASK_INT"                                                                       , "Memory", 0x400C280C,        4, base=16
+sfr = "rMSEBIS_MASK_INT.[3:0]MASK_INT_CPURX"                                                   , "Memory", 0x400C280C,        4, base=16, bitRange=0-3
+sfr = "rMSEBIS_MASK_INT.[7:4]MASK_INT_CPUTX"                                                   , "Memory", 0x400C280C,        4, base=16, bitRange=4-7
+sfr = "rMSEBIS_MASK_INT.[9:8]MASK_INT_DMARX"                                                   , "Memory", 0x400C280C,        4, base=16, bitRange=8-9
+sfr = "rMSEBIS_MASK_INT.[13:12]MASK_INT_DMATX"                                                 , "Memory", 0x400C280C,        4, base=16, bitRange=12-13
+sfr = "rMSEBIS_CLR_INT"                                                                        , "Memory", 0x400C2810,        4, base=16
+sfr = "rMSEBIS_CLR_INT.[3:0]CLR_INT_CPURX"                                                     , "Memory", 0x400C2810,        4, base=16, bitRange=0-3
+sfr = "rMSEBIS_CLR_INT.[7:4]CLR_INT_CPUTX"                                                     , "Memory", 0x400C2810,        4, base=16, bitRange=4-7
+sfr = "rMSEBIS_CLR_INT.[9:8]CLR_INT_DMARX"                                                     , "Memory", 0x400C2810,        4, base=16, bitRange=8-9
+sfr = "rMSEBIS_CLR_INT.[13:12]CLR_INT_DMATX"                                                   , "Memory", 0x400C2810,        4, base=16, bitRange=12-13
+sfr = "rMSEBIS_EOB_ADDR"                                                                       , "Memory", 0x400C2814,        4, base=16
+sfr = "rMSEBIS_EOB_ADDR.[31:2]EOB_ADDR"                                                        , "Memory", 0x400C2814,        4, base=16, bitRange=2-31
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// MSEBI Slave from CPU -----
+group = "MSEBIS","rMSEBIS_CYCLESIZE_CS0_N","rMSEBIS_SETUPHOLD_CS0_N","rMSEBIS_MMU_ADDR_CS0_N","rMSEBIS_MMU_ADDR_MASK_CS0_N","rMSEBIS_DMATX_REQ_CS0_N","rMSEBIS_DMARX_REQ_CS0_N","rMSEBIS_DMATDLR_CS0_N","rMSEBIS_DMARDLR_CS0_N","rMSEBIS_CONFIG_CS0_N","rMSEBIS_CYCLESIZE_CS1_N","rMSEBIS_SETUPHOLD_CS1_N","rMSEBIS_MMU_ADDR_CS1_N","rMSEBIS_MMU_ADDR_MASK_CS1_N","rMSEBIS_DMATX_REQ_CS1_N","rMSEBIS_DMARX_REQ_CS1_N","rMSEBIS_DMATDLR_CS1_N","rMSEBIS_DMARDLR_CS1_N","rMSEBIS_CONFIG_CS1_N","rMSEBIS_CYCLESIZE_CS2_N","rMSEBIS_SETUPHOLD_CS2_N","rMSEBIS_MMU_ADDR_CS2_N","rMSEBIS_MMU_ADDR_MASK_CS2_N","rMSEBIS_CONFIG_CS2_N","rMSEBIS_CYCLESIZE_CS3_N","rMSEBIS_SETUPHOLD_CS3_N","rMSEBIS_MMU_ADDR_CS3_N","rMSEBIS_MMU_ADDR_MASK_CS3_N","rMSEBIS_CONFIG_CS3_N","rMSEBIS_CONFIG","rMSEBIS_STATUS_INT0","rMSEBIS_STATUS_INT1","rMSEBIS_MASK_INT","rMSEBIS_CLR_INT","rMSEBIS_EOB_ADDR"

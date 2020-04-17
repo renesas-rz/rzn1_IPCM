@@ -1,0 +1,703 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : GMAC1
+;               GMAC1
+;    revision : 0.20 (2.Nov.2017)
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "GMAC1/MAC_Configuration"                                                                , "Memory", 0x44000000,        4, base=16
+sfr = "GMAC1/MAC_Configuration.[1:0]PRELEN"                                                    , "Memory", 0x44000000,        4, base=16, bitRange=0-1
+sfr = "GMAC1/MAC_Configuration.[2]RE"                                                          , "Memory", 0x44000000,        4, base=16, bitRange=2
+sfr = "GMAC1/MAC_Configuration.[3]TE"                                                          , "Memory", 0x44000000,        4, base=16, bitRange=3
+sfr = "GMAC1/MAC_Configuration.[4]DC"                                                          , "Memory", 0x44000000,        4, base=16, bitRange=4
+sfr = "GMAC1/MAC_Configuration.[6:5]BL"                                                        , "Memory", 0x44000000,        4, base=16, bitRange=5-6
+sfr = "GMAC1/MAC_Configuration.[7]ACS"                                                         , "Memory", 0x44000000,        4, base=16, bitRange=7
+sfr = "GMAC1/MAC_Configuration.[9]DR"                                                          , "Memory", 0x44000000,        4, base=16, bitRange=9
+sfr = "GMAC1/MAC_Configuration.[10]IPC"                                                        , "Memory", 0x44000000,        4, base=16, bitRange=10
+sfr = "GMAC1/MAC_Configuration.[11]DM"                                                         , "Memory", 0x44000000,        4, base=16, bitRange=11
+sfr = "GMAC1/MAC_Configuration.[12]LM"                                                         , "Memory", 0x44000000,        4, base=16, bitRange=12
+sfr = "GMAC1/MAC_Configuration.[13]DO"                                                         , "Memory", 0x44000000,        4, base=16, bitRange=13
+sfr = "GMAC1/MAC_Configuration.[14]FES"                                                        , "Memory", 0x44000000,        4, base=16, bitRange=14
+sfr = "GMAC1/MAC_Configuration.[15]PS"                                                         , "Memory", 0x44000000,        4, base=16, bitRange=15
+sfr = "GMAC1/MAC_Configuration.[16]DCRS"                                                       , "Memory", 0x44000000,        4, base=16, bitRange=16
+sfr = "GMAC1/MAC_Configuration.[19:17]IFG"                                                     , "Memory", 0x44000000,        4, base=16, bitRange=17-19
+sfr = "GMAC1/MAC_Configuration.[20]JE"                                                         , "Memory", 0x44000000,        4, base=16, bitRange=20
+sfr = "GMAC1/MAC_Configuration.[21]BE"                                                         , "Memory", 0x44000000,        4, base=16, bitRange=21
+sfr = "GMAC1/MAC_Configuration.[22]JD"                                                         , "Memory", 0x44000000,        4, base=16, bitRange=22
+sfr = "GMAC1/MAC_Configuration.[23]WD"                                                         , "Memory", 0x44000000,        4, base=16, bitRange=23
+sfr = "GMAC1/MAC_Configuration.[25]CST"                                                        , "Memory", 0x44000000,        4, base=16, bitRange=25
+sfr = "GMAC1/MAC_Configuration.[27]TWOKPE"                                                     , "Memory", 0x44000000,        4, base=16, bitRange=27
+sfr = "GMAC1/MAC_Frame_Filter"                                                                 , "Memory", 0x44000004,        4, base=16
+sfr = "GMAC1/MAC_Frame_Filter.[0]PR"                                                           , "Memory", 0x44000004,        4, base=16, bitRange=0
+sfr = "GMAC1/MAC_Frame_Filter.[1]HUC"                                                          , "Memory", 0x44000004,        4, base=16, bitRange=1
+sfr = "GMAC1/MAC_Frame_Filter.[2]HMC"                                                          , "Memory", 0x44000004,        4, base=16, bitRange=2
+sfr = "GMAC1/MAC_Frame_Filter.[3]DAIF"                                                         , "Memory", 0x44000004,        4, base=16, bitRange=3
+sfr = "GMAC1/MAC_Frame_Filter.[4]PM"                                                           , "Memory", 0x44000004,        4, base=16, bitRange=4
+sfr = "GMAC1/MAC_Frame_Filter.[5]DBF"                                                          , "Memory", 0x44000004,        4, base=16, bitRange=5
+sfr = "GMAC1/MAC_Frame_Filter.[7:6]PCF"                                                        , "Memory", 0x44000004,        4, base=16, bitRange=6-7
+sfr = "GMAC1/MAC_Frame_Filter.[8]SAIF"                                                         , "Memory", 0x44000004,        4, base=16, bitRange=8
+sfr = "GMAC1/MAC_Frame_Filter.[9]SAF"                                                          , "Memory", 0x44000004,        4, base=16, bitRange=9
+sfr = "GMAC1/MAC_Frame_Filter.[10]HPF"                                                         , "Memory", 0x44000004,        4, base=16, bitRange=10
+sfr = "GMAC1/MAC_Frame_Filter.[16]VTFE"                                                        , "Memory", 0x44000004,        4, base=16, bitRange=16
+sfr = "GMAC1/MAC_Frame_Filter.[31]RA"                                                          , "Memory", 0x44000004,        4, base=16, bitRange=31
+sfr = "GMAC1/GMII_Address"                                                                     , "Memory", 0x44000010,        4, base=16
+sfr = "GMAC1/GMII_Address.[0]GB"                                                               , "Memory", 0x44000010,        4, base=16, bitRange=0
+sfr = "GMAC1/GMII_Address.[1]GW"                                                               , "Memory", 0x44000010,        4, base=16, bitRange=1
+sfr = "GMAC1/GMII_Address.[5:2]CR"                                                             , "Memory", 0x44000010,        4, base=16, bitRange=2-5
+sfr = "GMAC1/GMII_Address.[10:6]GR"                                                            , "Memory", 0x44000010,        4, base=16, bitRange=6-10
+sfr = "GMAC1/GMII_Address.[15:11]PA"                                                           , "Memory", 0x44000010,        4, base=16, bitRange=11-15
+sfr = "GMAC1/GMII_Data"                                                                        , "Memory", 0x44000014,        4, base=16
+sfr = "GMAC1/GMII_Data.[15:0]GD"                                                               , "Memory", 0x44000014,        4, base=16, bitRange=0-15
+sfr = "GMAC1/Flow_Control"                                                                     , "Memory", 0x44000018,        4, base=16
+sfr = "GMAC1/Flow_Control.[0]FCA_BPA"                                                          , "Memory", 0x44000018,        4, base=16, bitRange=0
+sfr = "GMAC1/Flow_Control.[1]TFE"                                                              , "Memory", 0x44000018,        4, base=16, bitRange=1
+sfr = "GMAC1/Flow_Control.[2]RFE"                                                              , "Memory", 0x44000018,        4, base=16, bitRange=2
+sfr = "GMAC1/Flow_Control.[3]UP"                                                               , "Memory", 0x44000018,        4, base=16, bitRange=3
+sfr = "GMAC1/Flow_Control.[5:4]PLT"                                                            , "Memory", 0x44000018,        4, base=16, bitRange=4-5
+sfr = "GMAC1/Flow_Control.[7]DZPQ"                                                             , "Memory", 0x44000018,        4, base=16, bitRange=7
+sfr = "GMAC1/Flow_Control.[31:16]PT"                                                           , "Memory", 0x44000018,        4, base=16, bitRange=16-31
+sfr = "GMAC1/VLAN_Tag"                                                                         , "Memory", 0x4400001C,        4, base=16
+sfr = "GMAC1/VLAN_Tag.[15:0]VL"                                                                , "Memory", 0x4400001C,        4, base=16, bitRange=0-15
+sfr = "GMAC1/VLAN_Tag.[16]ETV"                                                                 , "Memory", 0x4400001C,        4, base=16, bitRange=16
+sfr = "GMAC1/VLAN_Tag.[17]VTIM"                                                                , "Memory", 0x4400001C,        4, base=16, bitRange=17
+sfr = "GMAC1/VLAN_Tag.[18]ESVL"                                                                , "Memory", 0x4400001C,        4, base=16, bitRange=18
+sfr = "GMAC1/VLAN_Tag.[19]VTHM"                                                                , "Memory", 0x4400001C,        4, base=16, bitRange=19
+sfr = "GMAC1/Version"                                                                          , "Memory", 0x44000020,        4, base=16, readOnly
+sfr = "GMAC1/Version.[15:0]VER"                                                                , "Memory", 0x44000020,        4, base=16, readOnly, bitRange=0-15
+sfr = "GMAC1/Debug"                                                                            , "Memory", 0x44000024,        4, base=16, readOnly
+sfr = "GMAC1/Debug.[0]RPESTS"                                                                  , "Memory", 0x44000024,        4, base=16, readOnly, bitRange=0
+sfr = "GMAC1/Debug.[2:1]RFCFCSTS"                                                              , "Memory", 0x44000024,        4, base=16, readOnly, bitRange=1-2
+sfr = "GMAC1/Debug.[4]RWCSTS"                                                                  , "Memory", 0x44000024,        4, base=16, readOnly, bitRange=4
+sfr = "GMAC1/Debug.[6:5]RRCSTS"                                                                , "Memory", 0x44000024,        4, base=16, readOnly, bitRange=5-6
+sfr = "GMAC1/Debug.[9:8]RXFSTS"                                                                , "Memory", 0x44000024,        4, base=16, readOnly, bitRange=8-9
+sfr = "GMAC1/Debug.[16]TPESTS"                                                                 , "Memory", 0x44000024,        4, base=16, readOnly, bitRange=16
+sfr = "GMAC1/Debug.[18:17]TFCSTS"                                                              , "Memory", 0x44000024,        4, base=16, readOnly, bitRange=17-18
+sfr = "GMAC1/Debug.[19]TXPAUSED"                                                               , "Memory", 0x44000024,        4, base=16, readOnly, bitRange=19
+sfr = "GMAC1/Debug.[21:20]TRCSTS"                                                              , "Memory", 0x44000024,        4, base=16, readOnly, bitRange=20-21
+sfr = "GMAC1/Debug.[22]TWCSTS"                                                                 , "Memory", 0x44000024,        4, base=16, readOnly, bitRange=22
+sfr = "GMAC1/Debug.[24]TXFSTS"                                                                 , "Memory", 0x44000024,        4, base=16, readOnly, bitRange=24
+sfr = "GMAC1/Debug.[25]TXSTSFSTS"                                                              , "Memory", 0x44000024,        4, base=16, readOnly, bitRange=25
+sfr = "GMAC1/Remote_Wake_Up_Frame_Filter"                                                      , "Memory", 0x44000028,        4, base=16
+sfr = "GMAC1/Remote_Wake_Up_Frame_Filter.[31:0]WKUPFRMFTR"                                     , "Memory", 0x44000028,        4, base=16, bitRange=0-31
+sfr = "GMAC1/PMT_Control_Status"                                                               , "Memory", 0x4400002C,        4, base=16
+sfr = "GMAC1/PMT_Control_Status.[0]PWRDWN"                                                     , "Memory", 0x4400002C,        4, base=16, bitRange=0
+sfr = "GMAC1/PMT_Control_Status.[1]MGKPKTEN"                                                   , "Memory", 0x4400002C,        4, base=16, bitRange=1
+sfr = "GMAC1/PMT_Control_Status.[2]RWKPKTEN"                                                   , "Memory", 0x4400002C,        4, base=16, bitRange=2
+sfr = "GMAC1/PMT_Control_Status.[5]MGKPRCVD"                                                   , "Memory", 0x4400002C,        4, base=16, readOnly, bitRange=5
+sfr = "GMAC1/PMT_Control_Status.[6]RWKPRCVD"                                                   , "Memory", 0x4400002C,        4, base=16, readOnly, bitRange=6
+sfr = "GMAC1/PMT_Control_Status.[9]GLBLUCAST"                                                  , "Memory", 0x4400002C,        4, base=16, bitRange=9
+sfr = "GMAC1/PMT_Control_Status.[10]RWKPFE"                                                    , "Memory", 0x4400002C,        4, base=16, bitRange=10
+sfr = "GMAC1/PMT_Control_Status.[26:24]RWKPTR"                                                 , "Memory", 0x4400002C,        4, base=16, bitRange=24-26
+sfr = "GMAC1/PMT_Control_Status.[31]RWKFILTRST"                                                , "Memory", 0x4400002C,        4, base=16, bitRange=31
+sfr = "GMAC1/LPI_Control_Status"                                                               , "Memory", 0x44000030,        4, base=16
+sfr = "GMAC1/LPI_Control_Status.[0]TLPIEN"                                                     , "Memory", 0x44000030,        4, base=16, readOnly, bitRange=0
+sfr = "GMAC1/LPI_Control_Status.[1]TLPIEX"                                                     , "Memory", 0x44000030,        4, base=16, readOnly, bitRange=1
+sfr = "GMAC1/LPI_Control_Status.[2]RLPIEN"                                                     , "Memory", 0x44000030,        4, base=16, readOnly, bitRange=2
+sfr = "GMAC1/LPI_Control_Status.[3]RLPIEX"                                                     , "Memory", 0x44000030,        4, base=16, readOnly, bitRange=3
+sfr = "GMAC1/LPI_Control_Status.[8]TLPIST"                                                     , "Memory", 0x44000030,        4, base=16, readOnly, bitRange=8
+sfr = "GMAC1/LPI_Control_Status.[9]RLPIST"                                                     , "Memory", 0x44000030,        4, base=16, readOnly, bitRange=9
+sfr = "GMAC1/LPI_Control_Status.[16]LPIEN"                                                     , "Memory", 0x44000030,        4, base=16, bitRange=16
+sfr = "GMAC1/LPI_Control_Status.[17]PLS"                                                       , "Memory", 0x44000030,        4, base=16, bitRange=17
+sfr = "GMAC1/LPI_Control_Status.[19]LPITXA"                                                    , "Memory", 0x44000030,        4, base=16, bitRange=19
+sfr = "GMAC1/LPI_Timers_Control"                                                               , "Memory", 0x44000034,        4, base=16
+sfr = "GMAC1/LPI_Timers_Control.[15:0]TWT"                                                     , "Memory", 0x44000034,        4, base=16, bitRange=0-15
+sfr = "GMAC1/LPI_Timers_Control.[25:16]LST"                                                    , "Memory", 0x44000034,        4, base=16, bitRange=16-25
+sfr = "GMAC1/Interrupt_Status"                                                                 , "Memory", 0x44000038,        4, base=16, readOnly
+sfr = "GMAC1/Interrupt_Status.[3]PMTIS"                                                        , "Memory", 0x44000038,        4, base=16, readOnly, bitRange=3
+sfr = "GMAC1/Interrupt_Status.[4]MMCIS"                                                        , "Memory", 0x44000038,        4, base=16, readOnly, bitRange=4
+sfr = "GMAC1/Interrupt_Status.[5]MMCRXIS"                                                      , "Memory", 0x44000038,        4, base=16, readOnly, bitRange=5
+sfr = "GMAC1/Interrupt_Status.[6]MMCTXIS"                                                      , "Memory", 0x44000038,        4, base=16, readOnly, bitRange=6
+sfr = "GMAC1/Interrupt_Status.[7]MMCRXIPIS"                                                    , "Memory", 0x44000038,        4, base=16, readOnly, bitRange=7
+sfr = "GMAC1/Interrupt_Status.[9]TSIS"                                                         , "Memory", 0x44000038,        4, base=16, readOnly, bitRange=9
+sfr = "GMAC1/Interrupt_Status.[10]LPIIS"                                                       , "Memory", 0x44000038,        4, base=16, readOnly, bitRange=10
+sfr = "GMAC1/Interrupt_Mask"                                                                   , "Memory", 0x4400003C,        4, base=16
+sfr = "GMAC1/Interrupt_Mask.[3]PMTIM"                                                          , "Memory", 0x4400003C,        4, base=16, bitRange=3
+sfr = "GMAC1/Interrupt_Mask.[9]TSIM"                                                           , "Memory", 0x4400003C,        4, base=16, bitRange=9
+sfr = "GMAC1/Interrupt_Mask.[10]LPIIM"                                                         , "Memory", 0x4400003C,        4, base=16, bitRange=10
+sfr = "GMAC1/MAC_Address0_High"                                                                , "Memory", 0x44000040,        4, base=16
+sfr = "GMAC1/MAC_Address0_High.[15:0]ADDRHI"                                                   , "Memory", 0x44000040,        4, base=16, bitRange=0-15
+sfr = "GMAC1/MAC_Address0_High.[31]AE"                                                         , "Memory", 0x44000040,        4, base=16, readOnly, bitRange=31
+sfr = "GMAC1/MAC_Address0_Low"                                                                 , "Memory", 0x44000044,        4, base=16
+sfr = "GMAC1/MAC_Address0_Low.[31:0]ADDRLO"                                                    , "Memory", 0x44000044,        4, base=16, bitRange=0-31
+sfr = "GMAC1/MAC_Address1_High"                                                                , "Memory", 0x44000048,        4, base=16
+sfr = "GMAC1/MAC_Address1_High.[15:0]ADDRHI"                                                   , "Memory", 0x44000048,        4, base=16, bitRange=0-15
+sfr = "GMAC1/MAC_Address1_High.[29:24]MBC"                                                     , "Memory", 0x44000048,        4, base=16, bitRange=24-29
+sfr = "GMAC1/MAC_Address1_High.[30]SA"                                                         , "Memory", 0x44000048,        4, base=16, bitRange=30
+sfr = "GMAC1/MAC_Address1_High.[31]AE"                                                         , "Memory", 0x44000048,        4, base=16, bitRange=31
+sfr = "GMAC1/MAC_Address1_Low"                                                                 , "Memory", 0x4400004C,        4, base=16
+sfr = "GMAC1/MAC_Address1_Low.[31:0]ADDRLO"                                                    , "Memory", 0x4400004C,        4, base=16, bitRange=0-31
+sfr = "GMAC1/MAC_Address2_High"                                                                , "Memory", 0x44000050,        4, base=16
+sfr = "GMAC1/MAC_Address2_High.[15:0]ADDRHI"                                                   , "Memory", 0x44000050,        4, base=16, bitRange=0-15
+sfr = "GMAC1/MAC_Address2_High.[29:24]MBC"                                                     , "Memory", 0x44000050,        4, base=16, bitRange=24-29
+sfr = "GMAC1/MAC_Address2_High.[30]SA"                                                         , "Memory", 0x44000050,        4, base=16, bitRange=30
+sfr = "GMAC1/MAC_Address2_High.[31]AE"                                                         , "Memory", 0x44000050,        4, base=16, bitRange=31
+sfr = "GMAC1/MAC_Address2_Low"                                                                 , "Memory", 0x44000054,        4, base=16
+sfr = "GMAC1/MAC_Address2_Low.[31:0]ADDRLO"                                                    , "Memory", 0x44000054,        4, base=16, bitRange=0-31
+sfr = "GMAC1/MAC_Address3_High"                                                                , "Memory", 0x44000058,        4, base=16
+sfr = "GMAC1/MAC_Address3_High.[15:0]ADDRHI"                                                   , "Memory", 0x44000058,        4, base=16, bitRange=0-15
+sfr = "GMAC1/MAC_Address3_High.[29:24]MBC"                                                     , "Memory", 0x44000058,        4, base=16, bitRange=24-29
+sfr = "GMAC1/MAC_Address3_High.[30]SA"                                                         , "Memory", 0x44000058,        4, base=16, bitRange=30
+sfr = "GMAC1/MAC_Address3_High.[31]AE"                                                         , "Memory", 0x44000058,        4, base=16, bitRange=31
+sfr = "GMAC1/MAC_Address3_Low"                                                                 , "Memory", 0x4400005C,        4, base=16
+sfr = "GMAC1/MAC_Address3_Low.[31:0]ADDRLO"                                                    , "Memory", 0x4400005C,        4, base=16, bitRange=0-31
+sfr = "GMAC1/MAC_Address4_High"                                                                , "Memory", 0x44000060,        4, base=16
+sfr = "GMAC1/MAC_Address4_High.[15:0]ADDRHI"                                                   , "Memory", 0x44000060,        4, base=16, bitRange=0-15
+sfr = "GMAC1/MAC_Address4_High.[29:24]MBC"                                                     , "Memory", 0x44000060,        4, base=16, bitRange=24-29
+sfr = "GMAC1/MAC_Address4_High.[30]SA"                                                         , "Memory", 0x44000060,        4, base=16, bitRange=30
+sfr = "GMAC1/MAC_Address4_High.[31]AE"                                                         , "Memory", 0x44000060,        4, base=16, bitRange=31
+sfr = "GMAC1/MAC_Address4_Low"                                                                 , "Memory", 0x44000064,        4, base=16
+sfr = "GMAC1/MAC_Address4_Low.[31:0]ADDRLO"                                                    , "Memory", 0x44000064,        4, base=16, bitRange=0-31
+sfr = "GMAC1/MAC_Address5_High"                                                                , "Memory", 0x44000068,        4, base=16
+sfr = "GMAC1/MAC_Address5_High.[15:0]ADDRHI"                                                   , "Memory", 0x44000068,        4, base=16, bitRange=0-15
+sfr = "GMAC1/MAC_Address5_High.[29:24]MBC"                                                     , "Memory", 0x44000068,        4, base=16, bitRange=24-29
+sfr = "GMAC1/MAC_Address5_High.[30]SA"                                                         , "Memory", 0x44000068,        4, base=16, bitRange=30
+sfr = "GMAC1/MAC_Address5_High.[31]AE"                                                         , "Memory", 0x44000068,        4, base=16, bitRange=31
+sfr = "GMAC1/MAC_Address5_Low"                                                                 , "Memory", 0x4400006C,        4, base=16
+sfr = "GMAC1/MAC_Address5_Low.[31:0]ADDRLO"                                                    , "Memory", 0x4400006C,        4, base=16, bitRange=0-31
+sfr = "GMAC1/MAC_Address6_High"                                                                , "Memory", 0x44000070,        4, base=16
+sfr = "GMAC1/MAC_Address6_High.[15:0]ADDRHI"                                                   , "Memory", 0x44000070,        4, base=16, bitRange=0-15
+sfr = "GMAC1/MAC_Address6_High.[29:24]MBC"                                                     , "Memory", 0x44000070,        4, base=16, bitRange=24-29
+sfr = "GMAC1/MAC_Address6_High.[30]SA"                                                         , "Memory", 0x44000070,        4, base=16, bitRange=30
+sfr = "GMAC1/MAC_Address6_High.[31]AE"                                                         , "Memory", 0x44000070,        4, base=16, bitRange=31
+sfr = "GMAC1/MAC_Address6_Low"                                                                 , "Memory", 0x44000074,        4, base=16
+sfr = "GMAC1/MAC_Address6_Low.[31:0]ADDRLO"                                                    , "Memory", 0x44000074,        4, base=16, bitRange=0-31
+sfr = "GMAC1/MAC_Address7_High"                                                                , "Memory", 0x44000078,        4, base=16
+sfr = "GMAC1/MAC_Address7_High.[15:0]ADDRHI"                                                   , "Memory", 0x44000078,        4, base=16, bitRange=0-15
+sfr = "GMAC1/MAC_Address7_High.[29:24]MBC"                                                     , "Memory", 0x44000078,        4, base=16, bitRange=24-29
+sfr = "GMAC1/MAC_Address7_High.[30]SA"                                                         , "Memory", 0x44000078,        4, base=16, bitRange=30
+sfr = "GMAC1/MAC_Address7_High.[31]AE"                                                         , "Memory", 0x44000078,        4, base=16, bitRange=31
+sfr = "GMAC1/MAC_Address7_Low"                                                                 , "Memory", 0x4400007C,        4, base=16
+sfr = "GMAC1/MAC_Address7_Low.[31:0]ADDRLO"                                                    , "Memory", 0x4400007C,        4, base=16, bitRange=0-31
+sfr = "GMAC1/MAC_Address8_High"                                                                , "Memory", 0x44000080,        4, base=16
+sfr = "GMAC1/MAC_Address8_High.[15:0]ADDRHI"                                                   , "Memory", 0x44000080,        4, base=16, bitRange=0-15
+sfr = "GMAC1/MAC_Address8_High.[29:24]MBC"                                                     , "Memory", 0x44000080,        4, base=16, bitRange=24-29
+sfr = "GMAC1/MAC_Address8_High.[30]SA"                                                         , "Memory", 0x44000080,        4, base=16, bitRange=30
+sfr = "GMAC1/MAC_Address8_High.[31]AE"                                                         , "Memory", 0x44000080,        4, base=16, bitRange=31
+sfr = "GMAC1/MAC_Address8_Low"                                                                 , "Memory", 0x44000084,        4, base=16
+sfr = "GMAC1/MAC_Address8_Low.[31:0]ADDRLO"                                                    , "Memory", 0x44000084,        4, base=16, bitRange=0-31
+sfr = "GMAC1/MAC_Address9_High"                                                                , "Memory", 0x44000088,        4, base=16
+sfr = "GMAC1/MAC_Address9_High.[15:0]ADDRHI"                                                   , "Memory", 0x44000088,        4, base=16, bitRange=0-15
+sfr = "GMAC1/MAC_Address9_High.[29:24]MBC"                                                     , "Memory", 0x44000088,        4, base=16, bitRange=24-29
+sfr = "GMAC1/MAC_Address9_High.[30]SA"                                                         , "Memory", 0x44000088,        4, base=16, bitRange=30
+sfr = "GMAC1/MAC_Address9_High.[31]AE"                                                         , "Memory", 0x44000088,        4, base=16, bitRange=31
+sfr = "GMAC1/MAC_Address9_Low"                                                                 , "Memory", 0x4400008C,        4, base=16
+sfr = "GMAC1/MAC_Address9_Low.[31:0]ADDRLO"                                                    , "Memory", 0x4400008C,        4, base=16, bitRange=0-31
+sfr = "GMAC1/MAC_Address10_High"                                                               , "Memory", 0x44000090,        4, base=16
+sfr = "GMAC1/MAC_Address10_High.[15:0]ADDRHI"                                                  , "Memory", 0x44000090,        4, base=16, bitRange=0-15
+sfr = "GMAC1/MAC_Address10_High.[29:24]MBC"                                                    , "Memory", 0x44000090,        4, base=16, bitRange=24-29
+sfr = "GMAC1/MAC_Address10_High.[30]SA"                                                        , "Memory", 0x44000090,        4, base=16, bitRange=30
+sfr = "GMAC1/MAC_Address10_High.[31]AE"                                                        , "Memory", 0x44000090,        4, base=16, bitRange=31
+sfr = "GMAC1/MAC_Address10_Low"                                                                , "Memory", 0x44000094,        4, base=16
+sfr = "GMAC1/MAC_Address10_Low.[31:0]ADDRLO"                                                   , "Memory", 0x44000094,        4, base=16, bitRange=0-31
+sfr = "GMAC1/MAC_Address11_High"                                                               , "Memory", 0x44000098,        4, base=16
+sfr = "GMAC1/MAC_Address11_High.[15:0]ADDRHI"                                                  , "Memory", 0x44000098,        4, base=16, bitRange=0-15
+sfr = "GMAC1/MAC_Address11_High.[29:24]MBC"                                                    , "Memory", 0x44000098,        4, base=16, bitRange=24-29
+sfr = "GMAC1/MAC_Address11_High.[30]SA"                                                        , "Memory", 0x44000098,        4, base=16, bitRange=30
+sfr = "GMAC1/MAC_Address11_High.[31]AE"                                                        , "Memory", 0x44000098,        4, base=16, bitRange=31
+sfr = "GMAC1/MAC_Address11_Low"                                                                , "Memory", 0x4400009C,        4, base=16
+sfr = "GMAC1/MAC_Address11_Low.[31:0]ADDRLO"                                                   , "Memory", 0x4400009C,        4, base=16, bitRange=0-31
+sfr = "GMAC1/MAC_Address12_High"                                                               , "Memory", 0x440000A0,        4, base=16
+sfr = "GMAC1/MAC_Address12_High.[15:0]ADDRHI"                                                  , "Memory", 0x440000A0,        4, base=16, bitRange=0-15
+sfr = "GMAC1/MAC_Address12_High.[29:24]MBC"                                                    , "Memory", 0x440000A0,        4, base=16, bitRange=24-29
+sfr = "GMAC1/MAC_Address12_High.[30]SA"                                                        , "Memory", 0x440000A0,        4, base=16, bitRange=30
+sfr = "GMAC1/MAC_Address12_High.[31]AE"                                                        , "Memory", 0x440000A0,        4, base=16, bitRange=31
+sfr = "GMAC1/MAC_Address12_Low"                                                                , "Memory", 0x440000A4,        4, base=16
+sfr = "GMAC1/MAC_Address12_Low.[31:0]ADDRLO"                                                   , "Memory", 0x440000A4,        4, base=16, bitRange=0-31
+sfr = "GMAC1/MAC_Address13_High"                                                               , "Memory", 0x440000A8,        4, base=16
+sfr = "GMAC1/MAC_Address13_High.[15:0]ADDRHI"                                                  , "Memory", 0x440000A8,        4, base=16, bitRange=0-15
+sfr = "GMAC1/MAC_Address13_High.[29:24]MBC"                                                    , "Memory", 0x440000A8,        4, base=16, bitRange=24-29
+sfr = "GMAC1/MAC_Address13_High.[30]SA"                                                        , "Memory", 0x440000A8,        4, base=16, bitRange=30
+sfr = "GMAC1/MAC_Address13_High.[31]AE"                                                        , "Memory", 0x440000A8,        4, base=16, bitRange=31
+sfr = "GMAC1/MAC_Address13_Low"                                                                , "Memory", 0x440000AC,        4, base=16
+sfr = "GMAC1/MAC_Address13_Low.[31:0]ADDRLO"                                                   , "Memory", 0x440000AC,        4, base=16, bitRange=0-31
+sfr = "GMAC1/MAC_Address14_High"                                                               , "Memory", 0x440000B0,        4, base=16
+sfr = "GMAC1/MAC_Address14_High.[15:0]ADDRHI"                                                  , "Memory", 0x440000B0,        4, base=16, bitRange=0-15
+sfr = "GMAC1/MAC_Address14_High.[29:24]MBC"                                                    , "Memory", 0x440000B0,        4, base=16, bitRange=24-29
+sfr = "GMAC1/MAC_Address14_High.[30]SA"                                                        , "Memory", 0x440000B0,        4, base=16, bitRange=30
+sfr = "GMAC1/MAC_Address14_High.[31]AE"                                                        , "Memory", 0x440000B0,        4, base=16, bitRange=31
+sfr = "GMAC1/MAC_Address14_Low"                                                                , "Memory", 0x440000B4,        4, base=16
+sfr = "GMAC1/MAC_Address14_Low.[31:0]ADDRLO"                                                   , "Memory", 0x440000B4,        4, base=16, bitRange=0-31
+sfr = "GMAC1/MAC_Address15_High"                                                               , "Memory", 0x440000B8,        4, base=16
+sfr = "GMAC1/MAC_Address15_High.[15:0]ADDRHI"                                                  , "Memory", 0x440000B8,        4, base=16, bitRange=0-15
+sfr = "GMAC1/MAC_Address15_High.[29:24]MBC"                                                    , "Memory", 0x440000B8,        4, base=16, bitRange=24-29
+sfr = "GMAC1/MAC_Address15_High.[30]SA"                                                        , "Memory", 0x440000B8,        4, base=16, bitRange=30
+sfr = "GMAC1/MAC_Address15_High.[31]AE"                                                        , "Memory", 0x440000B8,        4, base=16, bitRange=31
+sfr = "GMAC1/MAC_Address15_Low"                                                                , "Memory", 0x440000BC,        4, base=16
+sfr = "GMAC1/MAC_Address15_Low.[31:0]ADDRLO"                                                   , "Memory", 0x440000BC,        4, base=16, bitRange=0-31
+sfr = "GMAC1/WDog_Timeout"                                                                     , "Memory", 0x440000DC,        4, base=16
+sfr = "GMAC1/WDog_Timeout.[13:0]WTO"                                                           , "Memory", 0x440000DC,        4, base=16, bitRange=0-13
+sfr = "GMAC1/WDog_Timeout.[16]PWE"                                                             , "Memory", 0x440000DC,        4, base=16, bitRange=16
+sfr = "GMAC1/MMC_Control"                                                                      , "Memory", 0x44000100,        4, base=16
+sfr = "GMAC1/MMC_Control.[0]CNTRST"                                                            , "Memory", 0x44000100,        4, base=16, bitRange=0
+sfr = "GMAC1/MMC_Control.[1]CNTSTOPRO"                                                         , "Memory", 0x44000100,        4, base=16, bitRange=1
+sfr = "GMAC1/MMC_Control.[2]RSTONRD"                                                           , "Memory", 0x44000100,        4, base=16, bitRange=2
+sfr = "GMAC1/MMC_Control.[3]CNTFREEZ"                                                          , "Memory", 0x44000100,        4, base=16, bitRange=3
+sfr = "GMAC1/MMC_Control.[4]CNTPRST"                                                           , "Memory", 0x44000100,        4, base=16, bitRange=4
+sfr = "GMAC1/MMC_Control.[5]CNTPRSTLVL"                                                        , "Memory", 0x44000100,        4, base=16, bitRange=5
+sfr = "GMAC1/MMC_Control.[8]UCDBC"                                                             , "Memory", 0x44000100,        4, base=16, bitRange=8
+sfr = "GMAC1/MMC_Receive_Interrupt"                                                            , "Memory", 0x44000104,        4, base=16, readOnly
+sfr = "GMAC1/MMC_Receive_Interrupt.[0]RXGBFRMIS"                                               , "Memory", 0x44000104,        4, base=16, readOnly, bitRange=0
+sfr = "GMAC1/MMC_Receive_Interrupt.[1]RXGBOCTIS"                                               , "Memory", 0x44000104,        4, base=16, readOnly, bitRange=1
+sfr = "GMAC1/MMC_Receive_Interrupt.[2]RXGOCTIS"                                                , "Memory", 0x44000104,        4, base=16, readOnly, bitRange=2
+sfr = "GMAC1/MMC_Receive_Interrupt.[3]RXBCGFIS"                                                , "Memory", 0x44000104,        4, base=16, readOnly, bitRange=3
+sfr = "GMAC1/MMC_Receive_Interrupt.[4]RXMCGFIS"                                                , "Memory", 0x44000104,        4, base=16, readOnly, bitRange=4
+sfr = "GMAC1/MMC_Receive_Interrupt.[5]RXCRCERFIS"                                              , "Memory", 0x44000104,        4, base=16, readOnly, bitRange=5
+sfr = "GMAC1/MMC_Receive_Interrupt.[6]RXALGNERFIS"                                             , "Memory", 0x44000104,        4, base=16, readOnly, bitRange=6
+sfr = "GMAC1/MMC_Receive_Interrupt.[7]RXRUNTFIS"                                               , "Memory", 0x44000104,        4, base=16, readOnly, bitRange=7
+sfr = "GMAC1/MMC_Receive_Interrupt.[8]RXJABERFIS"                                              , "Memory", 0x44000104,        4, base=16, readOnly, bitRange=8
+sfr = "GMAC1/MMC_Receive_Interrupt.[9]RXUSIZEGFIS"                                             , "Memory", 0x44000104,        4, base=16, readOnly, bitRange=9
+sfr = "GMAC1/MMC_Receive_Interrupt.[10]RXOSIZEGFIS"                                            , "Memory", 0x44000104,        4, base=16, readOnly, bitRange=10
+sfr = "GMAC1/MMC_Receive_Interrupt.[11]RX64OCTGBFIS"                                           , "Memory", 0x44000104,        4, base=16, readOnly, bitRange=11
+sfr = "GMAC1/MMC_Receive_Interrupt.[12]RX65T127OCTGBFIS"                                       , "Memory", 0x44000104,        4, base=16, readOnly, bitRange=12
+sfr = "GMAC1/MMC_Receive_Interrupt.[13]RX128T255OCTGBFIS"                                      , "Memory", 0x44000104,        4, base=16, readOnly, bitRange=13
+sfr = "GMAC1/MMC_Receive_Interrupt.[14]RX256T511OCTGBFIS"                                      , "Memory", 0x44000104,        4, base=16, readOnly, bitRange=14
+sfr = "GMAC1/MMC_Receive_Interrupt.[15]RX512T1023OCTGBFIS"                                     , "Memory", 0x44000104,        4, base=16, readOnly, bitRange=15
+sfr = "GMAC1/MMC_Receive_Interrupt.[16]RX1024TMAXOCTGBFIS"                                     , "Memory", 0x44000104,        4, base=16, readOnly, bitRange=16
+sfr = "GMAC1/MMC_Receive_Interrupt.[17]RXUCGFIS"                                               , "Memory", 0x44000104,        4, base=16, readOnly, bitRange=17
+sfr = "GMAC1/MMC_Receive_Interrupt.[18]RXLENERFIS"                                             , "Memory", 0x44000104,        4, base=16, readOnly, bitRange=18
+sfr = "GMAC1/MMC_Receive_Interrupt.[19]RXORANGEFIS"                                            , "Memory", 0x44000104,        4, base=16, readOnly, bitRange=19
+sfr = "GMAC1/MMC_Receive_Interrupt.[20]RXPAUSFIS"                                              , "Memory", 0x44000104,        4, base=16, readOnly, bitRange=20
+sfr = "GMAC1/MMC_Receive_Interrupt.[21]RXFOVFIS"                                               , "Memory", 0x44000104,        4, base=16, readOnly, bitRange=21
+sfr = "GMAC1/MMC_Receive_Interrupt.[22]RXVLANGBFIS"                                            , "Memory", 0x44000104,        4, base=16, readOnly, bitRange=22
+sfr = "GMAC1/MMC_Receive_Interrupt.[23]RXWDOGFIS"                                              , "Memory", 0x44000104,        4, base=16, readOnly, bitRange=23
+sfr = "GMAC1/MMC_Receive_Interrupt.[24]RXRCVERRFIS"                                            , "Memory", 0x44000104,        4, base=16, readOnly, bitRange=24
+sfr = "GMAC1/MMC_Receive_Interrupt.[25]RXCTRLFIS"                                              , "Memory", 0x44000104,        4, base=16, readOnly, bitRange=25
+sfr = "GMAC1/MMC_Transmit_Interrupt"                                                           , "Memory", 0x44000108,        4, base=16, readOnly
+sfr = "GMAC1/MMC_Transmit_Interrupt.[0]TXGBOCTIS"                                              , "Memory", 0x44000108,        4, base=16, readOnly, bitRange=0
+sfr = "GMAC1/MMC_Transmit_Interrupt.[1]TXGBFRMIS"                                              , "Memory", 0x44000108,        4, base=16, readOnly, bitRange=1
+sfr = "GMAC1/MMC_Transmit_Interrupt.[2]TXBCGFIS"                                               , "Memory", 0x44000108,        4, base=16, readOnly, bitRange=2
+sfr = "GMAC1/MMC_Transmit_Interrupt.[3]TXMCGFIS"                                               , "Memory", 0x44000108,        4, base=16, readOnly, bitRange=3
+sfr = "GMAC1/MMC_Transmit_Interrupt.[4]TX64OCTGBFIS"                                           , "Memory", 0x44000108,        4, base=16, readOnly, bitRange=4
+sfr = "GMAC1/MMC_Transmit_Interrupt.[5]TX65T127OCTGBFIS"                                       , "Memory", 0x44000108,        4, base=16, readOnly, bitRange=5
+sfr = "GMAC1/MMC_Transmit_Interrupt.[6]TX128T255OCTGBFIS"                                      , "Memory", 0x44000108,        4, base=16, readOnly, bitRange=6
+sfr = "GMAC1/MMC_Transmit_Interrupt.[7]TX256T511OCTGBFIS"                                      , "Memory", 0x44000108,        4, base=16, readOnly, bitRange=7
+sfr = "GMAC1/MMC_Transmit_Interrupt.[8]TX512T1023OCTGBFIS"                                     , "Memory", 0x44000108,        4, base=16, readOnly, bitRange=8
+sfr = "GMAC1/MMC_Transmit_Interrupt.[9]TX1024TMAXOCTGBFIS"                                     , "Memory", 0x44000108,        4, base=16, readOnly, bitRange=9
+sfr = "GMAC1/MMC_Transmit_Interrupt.[10]TXUCGBFIS"                                             , "Memory", 0x44000108,        4, base=16, readOnly, bitRange=10
+sfr = "GMAC1/MMC_Transmit_Interrupt.[11]TXMCGBFIS"                                             , "Memory", 0x44000108,        4, base=16, readOnly, bitRange=11
+sfr = "GMAC1/MMC_Transmit_Interrupt.[12]TXBCGBFIS"                                             , "Memory", 0x44000108,        4, base=16, readOnly, bitRange=12
+sfr = "GMAC1/MMC_Transmit_Interrupt.[13]TXUFLOWERFIS"                                          , "Memory", 0x44000108,        4, base=16, readOnly, bitRange=13
+sfr = "GMAC1/MMC_Transmit_Interrupt.[14]TXSCOLGFIS"                                            , "Memory", 0x44000108,        4, base=16, readOnly, bitRange=14
+sfr = "GMAC1/MMC_Transmit_Interrupt.[15]TXMCOLGFIS"                                            , "Memory", 0x44000108,        4, base=16, readOnly, bitRange=15
+sfr = "GMAC1/MMC_Transmit_Interrupt.[16]TXDEFFIS"                                              , "Memory", 0x44000108,        4, base=16, readOnly, bitRange=16
+sfr = "GMAC1/MMC_Transmit_Interrupt.[17]TXLATCOLFIS"                                           , "Memory", 0x44000108,        4, base=16, readOnly, bitRange=17
+sfr = "GMAC1/MMC_Transmit_Interrupt.[18]TXEXCOLFIS"                                            , "Memory", 0x44000108,        4, base=16, readOnly, bitRange=18
+sfr = "GMAC1/MMC_Transmit_Interrupt.[19]TXCARERFIS"                                            , "Memory", 0x44000108,        4, base=16, readOnly, bitRange=19
+sfr = "GMAC1/MMC_Transmit_Interrupt.[20]TXGOCTIS"                                              , "Memory", 0x44000108,        4, base=16, readOnly, bitRange=20
+sfr = "GMAC1/MMC_Transmit_Interrupt.[21]TXGFRMIS"                                              , "Memory", 0x44000108,        4, base=16, readOnly, bitRange=21
+sfr = "GMAC1/MMC_Transmit_Interrupt.[22]TXEXDEFFIS"                                            , "Memory", 0x44000108,        4, base=16, readOnly, bitRange=22
+sfr = "GMAC1/MMC_Transmit_Interrupt.[23]TXPAUSFIS"                                             , "Memory", 0x44000108,        4, base=16, readOnly, bitRange=23
+sfr = "GMAC1/MMC_Transmit_Interrupt.[24]TXVLANGFIS"                                            , "Memory", 0x44000108,        4, base=16, readOnly, bitRange=24
+sfr = "GMAC1/MMC_Transmit_Interrupt.[25]TXOSIZEGFIS"                                           , "Memory", 0x44000108,        4, base=16, readOnly, bitRange=25
+sfr = "GMAC1/MMC_Receive_Interrupt_Mask"                                                       , "Memory", 0x4400010C,        4, base=16
+sfr = "GMAC1/MMC_Receive_Interrupt_Mask.[0]RXGBFRMIM"                                          , "Memory", 0x4400010C,        4, base=16, bitRange=0
+sfr = "GMAC1/MMC_Receive_Interrupt_Mask.[1]RXGBOCTIM"                                          , "Memory", 0x4400010C,        4, base=16, bitRange=1
+sfr = "GMAC1/MMC_Receive_Interrupt_Mask.[2]RXGOCTIM"                                           , "Memory", 0x4400010C,        4, base=16, bitRange=2
+sfr = "GMAC1/MMC_Receive_Interrupt_Mask.[3]RXBCGFIM"                                           , "Memory", 0x4400010C,        4, base=16, bitRange=3
+sfr = "GMAC1/MMC_Receive_Interrupt_Mask.[4]RXMCGFIM"                                           , "Memory", 0x4400010C,        4, base=16, bitRange=4
+sfr = "GMAC1/MMC_Receive_Interrupt_Mask.[5]RXCRCERFIM"                                         , "Memory", 0x4400010C,        4, base=16, bitRange=5
+sfr = "GMAC1/MMC_Receive_Interrupt_Mask.[6]RXALGNERFIM"                                        , "Memory", 0x4400010C,        4, base=16, bitRange=6
+sfr = "GMAC1/MMC_Receive_Interrupt_Mask.[7]RXRUNTFIM"                                          , "Memory", 0x4400010C,        4, base=16, bitRange=7
+sfr = "GMAC1/MMC_Receive_Interrupt_Mask.[8]RXJABERFIM"                                         , "Memory", 0x4400010C,        4, base=16, bitRange=8
+sfr = "GMAC1/MMC_Receive_Interrupt_Mask.[9]RXUSIZEGFIM"                                        , "Memory", 0x4400010C,        4, base=16, bitRange=9
+sfr = "GMAC1/MMC_Receive_Interrupt_Mask.[10]RXOSIZEGFIM"                                       , "Memory", 0x4400010C,        4, base=16, bitRange=10
+sfr = "GMAC1/MMC_Receive_Interrupt_Mask.[11]RX64OCTGBFIM"                                      , "Memory", 0x4400010C,        4, base=16, bitRange=11
+sfr = "GMAC1/MMC_Receive_Interrupt_Mask.[12]RX65T127OCTGBFIM"                                  , "Memory", 0x4400010C,        4, base=16, bitRange=12
+sfr = "GMAC1/MMC_Receive_Interrupt_Mask.[13]RX128T255OCTGBFIM"                                 , "Memory", 0x4400010C,        4, base=16, bitRange=13
+sfr = "GMAC1/MMC_Receive_Interrupt_Mask.[14]RX256T511OCTGBFIM"                                 , "Memory", 0x4400010C,        4, base=16, bitRange=14
+sfr = "GMAC1/MMC_Receive_Interrupt_Mask.[15]RX512T1023OCTGBFIM"                                , "Memory", 0x4400010C,        4, base=16, bitRange=15
+sfr = "GMAC1/MMC_Receive_Interrupt_Mask.[16]RX1024TMAXOCTGBFIM"                                , "Memory", 0x4400010C,        4, base=16, bitRange=16
+sfr = "GMAC1/MMC_Receive_Interrupt_Mask.[17]RXUCGFIM"                                          , "Memory", 0x4400010C,        4, base=16, bitRange=17
+sfr = "GMAC1/MMC_Receive_Interrupt_Mask.[18]RXLENERFIM"                                        , "Memory", 0x4400010C,        4, base=16, bitRange=18
+sfr = "GMAC1/MMC_Receive_Interrupt_Mask.[19]RXORANGEFIM"                                       , "Memory", 0x4400010C,        4, base=16, bitRange=19
+sfr = "GMAC1/MMC_Receive_Interrupt_Mask.[20]RXPAUSFIM"                                         , "Memory", 0x4400010C,        4, base=16, bitRange=20
+sfr = "GMAC1/MMC_Receive_Interrupt_Mask.[21]RXFOVFIM"                                          , "Memory", 0x4400010C,        4, base=16, bitRange=21
+sfr = "GMAC1/MMC_Receive_Interrupt_Mask.[22]RXVLANGBFIM"                                       , "Memory", 0x4400010C,        4, base=16, bitRange=22
+sfr = "GMAC1/MMC_Receive_Interrupt_Mask.[23]RXWDOGFIM"                                         , "Memory", 0x4400010C,        4, base=16, bitRange=23
+sfr = "GMAC1/MMC_Receive_Interrupt_Mask.[24]RXRCVERRFIM"                                       , "Memory", 0x4400010C,        4, base=16, bitRange=24
+sfr = "GMAC1/MMC_Receive_Interrupt_Mask.[25]RXCTRLFIM"                                         , "Memory", 0x4400010C,        4, base=16, bitRange=25
+sfr = "GMAC1/MMC_Transmit_Interrupt_Mask"                                                      , "Memory", 0x44000110,        4, base=16
+sfr = "GMAC1/MMC_Transmit_Interrupt_Mask.[0]TXGBOCTIM"                                         , "Memory", 0x44000110,        4, base=16, bitRange=0
+sfr = "GMAC1/MMC_Transmit_Interrupt_Mask.[1]TXGBFRMIM"                                         , "Memory", 0x44000110,        4, base=16, bitRange=1
+sfr = "GMAC1/MMC_Transmit_Interrupt_Mask.[2]TXBCGFIM"                                          , "Memory", 0x44000110,        4, base=16, bitRange=2
+sfr = "GMAC1/MMC_Transmit_Interrupt_Mask.[3]TXMCGFIM"                                          , "Memory", 0x44000110,        4, base=16, bitRange=3
+sfr = "GMAC1/MMC_Transmit_Interrupt_Mask.[4]TX64OCTGBFIM"                                      , "Memory", 0x44000110,        4, base=16, bitRange=4
+sfr = "GMAC1/MMC_Transmit_Interrupt_Mask.[5]TX65T127OCTGBFIM"                                  , "Memory", 0x44000110,        4, base=16, bitRange=5
+sfr = "GMAC1/MMC_Transmit_Interrupt_Mask.[6]TX128T255OCTGBFIM"                                 , "Memory", 0x44000110,        4, base=16, bitRange=6
+sfr = "GMAC1/MMC_Transmit_Interrupt_Mask.[7]TX256T511OCTGBFIM"                                 , "Memory", 0x44000110,        4, base=16, bitRange=7
+sfr = "GMAC1/MMC_Transmit_Interrupt_Mask.[8]TX512T1023OCTGBFIM"                                , "Memory", 0x44000110,        4, base=16, bitRange=8
+sfr = "GMAC1/MMC_Transmit_Interrupt_Mask.[9]TX1024TMAXOCTGBFIM"                                , "Memory", 0x44000110,        4, base=16, bitRange=9
+sfr = "GMAC1/MMC_Transmit_Interrupt_Mask.[10]TXUCGBFIM"                                        , "Memory", 0x44000110,        4, base=16, bitRange=10
+sfr = "GMAC1/MMC_Transmit_Interrupt_Mask.[11]TXMCGBFIM"                                        , "Memory", 0x44000110,        4, base=16, bitRange=11
+sfr = "GMAC1/MMC_Transmit_Interrupt_Mask.[12]TXBCGBFIM"                                        , "Memory", 0x44000110,        4, base=16, bitRange=12
+sfr = "GMAC1/MMC_Transmit_Interrupt_Mask.[13]TXUFLOWERFIM"                                     , "Memory", 0x44000110,        4, base=16, bitRange=13
+sfr = "GMAC1/MMC_Transmit_Interrupt_Mask.[14]TXSCOLGFIM"                                       , "Memory", 0x44000110,        4, base=16, bitRange=14
+sfr = "GMAC1/MMC_Transmit_Interrupt_Mask.[15]TXMCOLGFIM"                                       , "Memory", 0x44000110,        4, base=16, bitRange=15
+sfr = "GMAC1/MMC_Transmit_Interrupt_Mask.[16]TXDEFFIM"                                         , "Memory", 0x44000110,        4, base=16, bitRange=16
+sfr = "GMAC1/MMC_Transmit_Interrupt_Mask.[17]TXLATCOLFIM"                                      , "Memory", 0x44000110,        4, base=16, bitRange=17
+sfr = "GMAC1/MMC_Transmit_Interrupt_Mask.[18]TXEXCOLFIM"                                       , "Memory", 0x44000110,        4, base=16, bitRange=18
+sfr = "GMAC1/MMC_Transmit_Interrupt_Mask.[19]TXCARERFIM"                                       , "Memory", 0x44000110,        4, base=16, bitRange=19
+sfr = "GMAC1/MMC_Transmit_Interrupt_Mask.[20]TXGOCTIM"                                         , "Memory", 0x44000110,        4, base=16, bitRange=20
+sfr = "GMAC1/MMC_Transmit_Interrupt_Mask.[21]TXGFRMIM"                                         , "Memory", 0x44000110,        4, base=16, bitRange=21
+sfr = "GMAC1/MMC_Transmit_Interrupt_Mask.[22]TXEXDEFFIM"                                       , "Memory", 0x44000110,        4, base=16, bitRange=22
+sfr = "GMAC1/MMC_Transmit_Interrupt_Mask.[23]TXPAUSFIM"                                        , "Memory", 0x44000110,        4, base=16, bitRange=23
+sfr = "GMAC1/MMC_Transmit_Interrupt_Mask.[24]TXVLANGFIM"                                       , "Memory", 0x44000110,        4, base=16, bitRange=24
+sfr = "GMAC1/MMC_Transmit_Interrupt_Mask.[25]TXOSIZEGFIM"                                      , "Memory", 0x44000110,        4, base=16, bitRange=25
+sfr = "GMAC1/Tx_Octet_Count_Good_Bad"                                                          , "Memory", 0x44000114,        4, base=16, readOnly
+sfr = "GMAC1/Tx_Octet_Count_Good_Bad.[31:0]TXOCTGB"                                            , "Memory", 0x44000114,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Tx_Frame_Count_Good_Bad"                                                          , "Memory", 0x44000118,        4, base=16, readOnly
+sfr = "GMAC1/Tx_Frame_Count_Good_Bad.[31:0]TXFRMGB"                                            , "Memory", 0x44000118,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Tx_Broadcast_Frames_Good"                                                         , "Memory", 0x4400011C,        4, base=16, readOnly
+sfr = "GMAC1/Tx_Broadcast_Frames_Good.[31:0]TXBCASTG"                                          , "Memory", 0x4400011C,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Tx_Multicast_Frames_Good"                                                         , "Memory", 0x44000120,        4, base=16, readOnly
+sfr = "GMAC1/Tx_Multicast_Frames_Good.[31:0]TXMCASTG"                                          , "Memory", 0x44000120,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Tx_64Octets_Frames_Good_Bad"                                                      , "Memory", 0x44000124,        4, base=16, readOnly
+sfr = "GMAC1/Tx_64Octets_Frames_Good_Bad.[31:0]TX64OCTGB"                                      , "Memory", 0x44000124,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Tx_65To127Octets_Frames_Good_Bad"                                                 , "Memory", 0x44000128,        4, base=16, readOnly
+sfr = "GMAC1/Tx_65To127Octets_Frames_Good_Bad.[31:0]TX65_127OCTGB"                             , "Memory", 0x44000128,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Tx_128To255Octets_Frames_Good_Bad"                                                , "Memory", 0x4400012C,        4, base=16, readOnly
+sfr = "GMAC1/Tx_128To255Octets_Frames_Good_Bad.[31:0]TX128_255OCTGB"                           , "Memory", 0x4400012C,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Tx_256To511Octets_Frames_Good_Bad"                                                , "Memory", 0x44000130,        4, base=16, readOnly
+sfr = "GMAC1/Tx_256To511Octets_Frames_Good_Bad.[31:0]TX256_511OCTGB"                           , "Memory", 0x44000130,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Tx_512To1023Octets_Frames_Good_Bad"                                               , "Memory", 0x44000134,        4, base=16, readOnly
+sfr = "GMAC1/Tx_512To1023Octets_Frames_Good_Bad.[31:0]TX512_1023OCTGB"                         , "Memory", 0x44000134,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Tx_1024ToMaxOctets_Frames_Good_Bad"                                               , "Memory", 0x44000138,        4, base=16, readOnly
+sfr = "GMAC1/Tx_1024ToMaxOctets_Frames_Good_Bad.[31:0]TX1024_MAXOCTGB"                         , "Memory", 0x44000138,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Tx_Unicast_Frames_Good_Bad"                                                       , "Memory", 0x4400013C,        4, base=16, readOnly
+sfr = "GMAC1/Tx_Unicast_Frames_Good_Bad.[31:0]TXUCASTGB"                                       , "Memory", 0x4400013C,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Tx_Multicast_Frames_Good_Bad"                                                     , "Memory", 0x44000140,        4, base=16, readOnly
+sfr = "GMAC1/Tx_Multicast_Frames_Good_Bad.[31:0]TXMCASTGB"                                     , "Memory", 0x44000140,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Tx_Broadcast_Frames_Good_Bad"                                                     , "Memory", 0x44000144,        4, base=16, readOnly
+sfr = "GMAC1/Tx_Broadcast_Frames_Good_Bad.[31:0]TXBCASTGB"                                     , "Memory", 0x44000144,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Tx_Underflow_Error_Frames"                                                        , "Memory", 0x44000148,        4, base=16, readOnly
+sfr = "GMAC1/Tx_Underflow_Error_Frames.[15:0]TXUNDRFLW"                                        , "Memory", 0x44000148,        4, base=16, readOnly, bitRange=0-15
+sfr = "GMAC1/Tx_Single_Collision_Good_Frames"                                                  , "Memory", 0x4400014C,        4, base=16, readOnly
+sfr = "GMAC1/Tx_Single_Collision_Good_Frames.[15:0]TXSNGLCOLG"                                 , "Memory", 0x4400014C,        4, base=16, readOnly, bitRange=0-15
+sfr = "GMAC1/Tx_Multiple_Collision_Good_Frames"                                                , "Memory", 0x44000150,        4, base=16, readOnly
+sfr = "GMAC1/Tx_Multiple_Collision_Good_Frames.[15:0]TXMULTCOLG"                               , "Memory", 0x44000150,        4, base=16, readOnly, bitRange=0-15
+sfr = "GMAC1/Tx_Deferred_Frames"                                                               , "Memory", 0x44000154,        4, base=16, readOnly
+sfr = "GMAC1/Tx_Deferred_Frames.[15:0]TXDEFRD"                                                 , "Memory", 0x44000154,        4, base=16, readOnly, bitRange=0-15
+sfr = "GMAC1/Tx_Late_Collision_Frames"                                                         , "Memory", 0x44000158,        4, base=16, readOnly
+sfr = "GMAC1/Tx_Late_Collision_Frames.[15:0]TXLATECOL"                                         , "Memory", 0x44000158,        4, base=16, readOnly, bitRange=0-15
+sfr = "GMAC1/Tx_Excessive_Collision_Frames"                                                    , "Memory", 0x4400015C,        4, base=16, readOnly
+sfr = "GMAC1/Tx_Excessive_Collision_Frames.[15:0]TXEXSCOL"                                     , "Memory", 0x4400015C,        4, base=16, readOnly, bitRange=0-15
+sfr = "GMAC1/Tx_Carrier_Error_Frames"                                                          , "Memory", 0x44000160,        4, base=16, readOnly
+sfr = "GMAC1/Tx_Carrier_Error_Frames.[15:0]TXCARR"                                             , "Memory", 0x44000160,        4, base=16, readOnly, bitRange=0-15
+sfr = "GMAC1/Tx_Octet_Count_Good"                                                              , "Memory", 0x44000164,        4, base=16, readOnly
+sfr = "GMAC1/Tx_Octet_Count_Good.[31:0]TXOCTG"                                                 , "Memory", 0x44000164,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Tx_Frame_Count_Good"                                                              , "Memory", 0x44000168,        4, base=16, readOnly
+sfr = "GMAC1/Tx_Frame_Count_Good.[31:0]TXFRMG"                                                 , "Memory", 0x44000168,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Tx_Excessive_Deferral_Error"                                                      , "Memory", 0x4400016C,        4, base=16, readOnly
+sfr = "GMAC1/Tx_Excessive_Deferral_Error.[15:0]TXEXSDEF"                                       , "Memory", 0x4400016C,        4, base=16, readOnly, bitRange=0-15
+sfr = "GMAC1/Tx_Pause_Frames"                                                                  , "Memory", 0x44000170,        4, base=16, readOnly
+sfr = "GMAC1/Tx_Pause_Frames.[15:0]TXPAUSE"                                                    , "Memory", 0x44000170,        4, base=16, readOnly, bitRange=0-15
+sfr = "GMAC1/Tx_VLAN_Frames_Good"                                                              , "Memory", 0x44000174,        4, base=16, readOnly
+sfr = "GMAC1/Tx_VLAN_Frames_Good.[31:0]TXVLANG"                                                , "Memory", 0x44000174,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Tx_OSize_Frames_Good"                                                             , "Memory", 0x44000178,        4, base=16, readOnly
+sfr = "GMAC1/Tx_OSize_Frames_Good.[15:0]TXOSIZG"                                               , "Memory", 0x44000178,        4, base=16, readOnly, bitRange=0-15
+sfr = "GMAC1/Rx_Frames_Count_Good_Bad"                                                         , "Memory", 0x44000180,        4, base=16, readOnly
+sfr = "GMAC1/Rx_Frames_Count_Good_Bad.[31:0]RXFRMGB"                                           , "Memory", 0x44000180,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Rx_Octet_Count_Good_Bad"                                                          , "Memory", 0x44000184,        4, base=16, readOnly
+sfr = "GMAC1/Rx_Octet_Count_Good_Bad.[31:0]RXOCTGB"                                            , "Memory", 0x44000184,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Rx_Octet_Count_Good"                                                              , "Memory", 0x44000188,        4, base=16, readOnly
+sfr = "GMAC1/Rx_Octet_Count_Good.[31:0]RXOCTG"                                                 , "Memory", 0x44000188,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Rx_Broadcast_Frames_Good"                                                         , "Memory", 0x4400018C,        4, base=16, readOnly
+sfr = "GMAC1/Rx_Broadcast_Frames_Good.[31:0]RXBCASTG"                                          , "Memory", 0x4400018C,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Rx_Multicast_Frames_Good"                                                         , "Memory", 0x44000190,        4, base=16, readOnly
+sfr = "GMAC1/Rx_Multicast_Frames_Good.[31:0]RXMCASTG"                                          , "Memory", 0x44000190,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Rx_CRC_Error_Frames"                                                              , "Memory", 0x44000194,        4, base=16, readOnly
+sfr = "GMAC1/Rx_CRC_Error_Frames.[15:0]RXCRCERR"                                               , "Memory", 0x44000194,        4, base=16, readOnly, bitRange=0-15
+sfr = "GMAC1/Rx_Alignment_Error_Frames"                                                        , "Memory", 0x44000198,        4, base=16, readOnly
+sfr = "GMAC1/Rx_Alignment_Error_Frames.[15:0]RXALGNERR"                                        , "Memory", 0x44000198,        4, base=16, readOnly, bitRange=0-15
+sfr = "GMAC1/Rx_Runt_Error_Frames"                                                             , "Memory", 0x4400019C,        4, base=16, readOnly
+sfr = "GMAC1/Rx_Runt_Error_Frames.[15:0]RXRUNTERR"                                             , "Memory", 0x4400019C,        4, base=16, readOnly, bitRange=0-15
+sfr = "GMAC1/Rx_Jabber_Error_Frames"                                                           , "Memory", 0x440001A0,        4, base=16, readOnly
+sfr = "GMAC1/Rx_Jabber_Error_Frames.[15:0]RXJABERR"                                            , "Memory", 0x440001A0,        4, base=16, readOnly, bitRange=0-15
+sfr = "GMAC1/Rx_Undersize_Frames_Good"                                                         , "Memory", 0x440001A4,        4, base=16, readOnly
+sfr = "GMAC1/Rx_Undersize_Frames_Good.[15:0]RXUNDERSZG"                                        , "Memory", 0x440001A4,        4, base=16, readOnly, bitRange=0-15
+sfr = "GMAC1/Rx_Oversize_Frames_Good"                                                          , "Memory", 0x440001A8,        4, base=16, readOnly
+sfr = "GMAC1/Rx_Oversize_Frames_Good.[15:0]RXOVERSZG"                                          , "Memory", 0x440001A8,        4, base=16, readOnly, bitRange=0-15
+sfr = "GMAC1/Rx_64Octets_Frames_Good_Bad"                                                      , "Memory", 0x440001AC,        4, base=16, readOnly
+sfr = "GMAC1/Rx_64Octets_Frames_Good_Bad.[31:0]RX64OCTGB"                                      , "Memory", 0x440001AC,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Rx_65To127Octets_Frames_Good_Bad"                                                 , "Memory", 0x440001B0,        4, base=16, readOnly
+sfr = "GMAC1/Rx_65To127Octets_Frames_Good_Bad.[31:0]RX65_127OCTGB"                             , "Memory", 0x440001B0,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Rx_128To255Octets_Frames_Good_Bad"                                                , "Memory", 0x440001B4,        4, base=16, readOnly
+sfr = "GMAC1/Rx_128To255Octets_Frames_Good_Bad.[31:0]RX128_255OCTGB"                           , "Memory", 0x440001B4,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Rx_256To511Octets_Frames_Good_Bad"                                                , "Memory", 0x440001B8,        4, base=16, readOnly
+sfr = "GMAC1/Rx_256To511Octets_Frames_Good_Bad.[31:0]RX256_511OCTGB"                           , "Memory", 0x440001B8,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Rx_512To1023Octets_Frames_Good_Bad"                                               , "Memory", 0x440001BC,        4, base=16, readOnly
+sfr = "GMAC1/Rx_512To1023Octets_Frames_Good_Bad.[31:0]RX512_1023OCTGB"                         , "Memory", 0x440001BC,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Rx_1024ToMaxOctets_Frames_Good_Bad"                                               , "Memory", 0x440001C0,        4, base=16, readOnly
+sfr = "GMAC1/Rx_1024ToMaxOctets_Frames_Good_Bad.[31:0]RX1024_MAXOCTGB"                         , "Memory", 0x440001C0,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Rx_Unicast_Frames_Good"                                                           , "Memory", 0x440001C4,        4, base=16, readOnly
+sfr = "GMAC1/Rx_Unicast_Frames_Good.[31:0]RXUCASTG"                                            , "Memory", 0x440001C4,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Rx_Length_Error_Frames"                                                           , "Memory", 0x440001C8,        4, base=16, readOnly
+sfr = "GMAC1/Rx_Length_Error_Frames.[15:0]RXLENERR"                                            , "Memory", 0x440001C8,        4, base=16, readOnly, bitRange=0-15
+sfr = "GMAC1/Rx_Out_Of_Range_Type_Frames"                                                      , "Memory", 0x440001CC,        4, base=16, readOnly
+sfr = "GMAC1/Rx_Out_Of_Range_Type_Frames.[15:0]RXOUTOFRNG"                                     , "Memory", 0x440001CC,        4, base=16, readOnly, bitRange=0-15
+sfr = "GMAC1/Rx_Pause_Frames"                                                                  , "Memory", 0x440001D0,        4, base=16, readOnly
+sfr = "GMAC1/Rx_Pause_Frames.[15:0]RXPAUSEFRM"                                                 , "Memory", 0x440001D0,        4, base=16, readOnly, bitRange=0-15
+sfr = "GMAC1/Rx_FIFO_Overflow_Frames"                                                          , "Memory", 0x440001D4,        4, base=16, readOnly
+sfr = "GMAC1/Rx_FIFO_Overflow_Frames.[15:0]RXFIFOOVFL"                                         , "Memory", 0x440001D4,        4, base=16, readOnly, bitRange=0-15
+sfr = "GMAC1/Rx_VLAN_Frames_Good_Bad"                                                          , "Memory", 0x440001D8,        4, base=16, readOnly
+sfr = "GMAC1/Rx_VLAN_Frames_Good_Bad.[31:0]RXVLANFRGB"                                         , "Memory", 0x440001D8,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Rx_Watchdog_Error_Frames"                                                         , "Memory", 0x440001DC,        4, base=16, readOnly
+sfr = "GMAC1/Rx_Watchdog_Error_Frames.[15:0]RXWDGERR"                                          , "Memory", 0x440001DC,        4, base=16, readOnly, bitRange=0-15
+sfr = "GMAC1/Rx_Receive_Error_Frames"                                                          , "Memory", 0x440001E0,        4, base=16, readOnly
+sfr = "GMAC1/Rx_Receive_Error_Frames.[15:0]RXRCVERR"                                           , "Memory", 0x440001E0,        4, base=16, readOnly, bitRange=0-15
+sfr = "GMAC1/Rx_Control_Frames_Good"                                                           , "Memory", 0x440001E4,        4, base=16, readOnly
+sfr = "GMAC1/Rx_Control_Frames_Good.[31:0]RXCTRLG"                                             , "Memory", 0x440001E4,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Hash_Table_Reg0"                                                                  , "Memory", 0x44000500,        4, base=16
+sfr = "GMAC1/Hash_Table_Reg0.[31:0]HT0"                                                        , "Memory", 0x44000500,        4, base=16, bitRange=0-31
+sfr = "GMAC1/Hash_Table_Reg1"                                                                  , "Memory", 0x44000504,        4, base=16
+sfr = "GMAC1/Hash_Table_Reg1.[31:0]HT1"                                                        , "Memory", 0x44000504,        4, base=16, bitRange=0-31
+sfr = "GMAC1/Hash_Table_Reg2"                                                                  , "Memory", 0x44000508,        4, base=16
+sfr = "GMAC1/Hash_Table_Reg2.[31:0]HT2"                                                        , "Memory", 0x44000508,        4, base=16, bitRange=0-31
+sfr = "GMAC1/Hash_Table_Reg3"                                                                  , "Memory", 0x4400050C,        4, base=16
+sfr = "GMAC1/Hash_Table_Reg3.[31:0]HT3"                                                        , "Memory", 0x4400050C,        4, base=16, bitRange=0-31
+sfr = "GMAC1/Hash_Table_Reg4"                                                                  , "Memory", 0x44000510,        4, base=16
+sfr = "GMAC1/Hash_Table_Reg4.[31:0]HT4"                                                        , "Memory", 0x44000510,        4, base=16, bitRange=0-31
+sfr = "GMAC1/Hash_Table_Reg5"                                                                  , "Memory", 0x44000514,        4, base=16
+sfr = "GMAC1/Hash_Table_Reg5.[31:0]HT5"                                                        , "Memory", 0x44000514,        4, base=16, bitRange=0-31
+sfr = "GMAC1/Hash_Table_Reg6"                                                                  , "Memory", 0x44000518,        4, base=16
+sfr = "GMAC1/Hash_Table_Reg6.[31:0]HT6"                                                        , "Memory", 0x44000518,        4, base=16, bitRange=0-31
+sfr = "GMAC1/Hash_Table_Reg7"                                                                  , "Memory", 0x4400051C,        4, base=16
+sfr = "GMAC1/Hash_Table_Reg7.[31:0]HT7"                                                        , "Memory", 0x4400051C,        4, base=16, bitRange=0-31
+sfr = "GMAC1/VLAN_Hash_Table_Reg"                                                              , "Memory", 0x44000588,        4, base=16
+sfr = "GMAC1/VLAN_Hash_Table_Reg.[15:0]VLHT"                                                   , "Memory", 0x44000588,        4, base=16, bitRange=0-15
+sfr = "GMAC1/Timestamp_Control"                                                                , "Memory", 0x44000700,        4, base=16
+sfr = "GMAC1/Timestamp_Control.[0]TSENA"                                                       , "Memory", 0x44000700,        4, base=16, bitRange=0
+sfr = "GMAC1/Timestamp_Control.[1]TSCFUPDT"                                                    , "Memory", 0x44000700,        4, base=16, bitRange=1
+sfr = "GMAC1/Timestamp_Control.[2]TSINIT"                                                      , "Memory", 0x44000700,        4, base=16, bitRange=2
+sfr = "GMAC1/Timestamp_Control.[3]TSUPDT"                                                      , "Memory", 0x44000700,        4, base=16, bitRange=3
+sfr = "GMAC1/Timestamp_Control.[4]TSTRIG"                                                      , "Memory", 0x44000700,        4, base=16, bitRange=4
+sfr = "GMAC1/Timestamp_Control.[5]TSADDREG"                                                    , "Memory", 0x44000700,        4, base=16, bitRange=5
+sfr = "GMAC1/Timestamp_Control.[8]TSENALL"                                                     , "Memory", 0x44000700,        4, base=16, bitRange=8
+sfr = "GMAC1/Timestamp_Control.[9]TSCTRLSSR"                                                   , "Memory", 0x44000700,        4, base=16, bitRange=9
+sfr = "GMAC1/Timestamp_Control.[10]TSVER2ENA"                                                  , "Memory", 0x44000700,        4, base=16, bitRange=10
+sfr = "GMAC1/Timestamp_Control.[11]TSIPENA"                                                    , "Memory", 0x44000700,        4, base=16, bitRange=11
+sfr = "GMAC1/Timestamp_Control.[12]TSIPV6ENA"                                                  , "Memory", 0x44000700,        4, base=16, bitRange=12
+sfr = "GMAC1/Timestamp_Control.[13]TSIPV4ENA"                                                  , "Memory", 0x44000700,        4, base=16, bitRange=13
+sfr = "GMAC1/Timestamp_Control.[14]TSEVNTENA"                                                  , "Memory", 0x44000700,        4, base=16, bitRange=14
+sfr = "GMAC1/Timestamp_Control.[15]TSMSTRENA"                                                  , "Memory", 0x44000700,        4, base=16, bitRange=15
+sfr = "GMAC1/Timestamp_Control.[17:16]SNAPTYPSEL"                                              , "Memory", 0x44000700,        4, base=16, bitRange=16-17
+sfr = "GMAC1/Timestamp_Control.[18]TSENMACADDR"                                                , "Memory", 0x44000700,        4, base=16, bitRange=18
+sfr = "GMAC1/Timestamp_Control.[24]ATSFC"                                                      , "Memory", 0x44000700,        4, base=16, bitRange=24
+sfr = "GMAC1/Timestamp_Control.[25]ATSEN0"                                                     , "Memory", 0x44000700,        4, base=16, bitRange=25
+sfr = "GMAC1/Sub_Second_Increment"                                                             , "Memory", 0x44000704,        4, base=16
+sfr = "GMAC1/Sub_Second_Increment.[7:0]SSINC"                                                  , "Memory", 0x44000704,        4, base=16, bitRange=0-7
+sfr = "GMAC1/System_Time_Seconds"                                                              , "Memory", 0x44000708,        4, base=16, readOnly
+sfr = "GMAC1/System_Time_Seconds.[31:0]TSS"                                                    , "Memory", 0x44000708,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/System_Time_Nanoseconds"                                                          , "Memory", 0x4400070C,        4, base=16, readOnly
+sfr = "GMAC1/System_Time_Nanoseconds.[30:0]TSSS"                                               , "Memory", 0x4400070C,        4, base=16, readOnly, bitRange=0-30
+sfr = "GMAC1/System_Time_Seconds_Update"                                                       , "Memory", 0x44000710,        4, base=16
+sfr = "GMAC1/System_Time_Seconds_Update.[31:0]TSS"                                             , "Memory", 0x44000710,        4, base=16, bitRange=0-31
+sfr = "GMAC1/System_Time_Nanoseconds_Update"                                                   , "Memory", 0x44000714,        4, base=16
+sfr = "GMAC1/System_Time_Nanoseconds_Update.[30:0]TSSS"                                        , "Memory", 0x44000714,        4, base=16, bitRange=0-30
+sfr = "GMAC1/System_Time_Nanoseconds_Update.[31]ADDSUB"                                        , "Memory", 0x44000714,        4, base=16, bitRange=31
+sfr = "GMAC1/Timestamp_Addend"                                                                 , "Memory", 0x44000718,        4, base=16
+sfr = "GMAC1/Timestamp_Addend.[31:0]TSAR"                                                      , "Memory", 0x44000718,        4, base=16, bitRange=0-31
+sfr = "GMAC1/Target_Time_Seconds"                                                              , "Memory", 0x4400071C,        4, base=16
+sfr = "GMAC1/Target_Time_Seconds.[31:0]TSTR"                                                   , "Memory", 0x4400071C,        4, base=16, bitRange=0-31
+sfr = "GMAC1/Target_Time_Nanoseconds"                                                          , "Memory", 0x44000720,        4, base=16
+sfr = "GMAC1/Target_Time_Nanoseconds.[30:0]TTSLO"                                              , "Memory", 0x44000720,        4, base=16, bitRange=0-30
+sfr = "GMAC1/Target_Time_Nanoseconds.[31]TRGTBUSY"                                             , "Memory", 0x44000720,        4, base=16, bitRange=31
+sfr = "GMAC1/Timestamp_Status"                                                                 , "Memory", 0x44000728,        4, base=16, readOnly
+sfr = "GMAC1/Timestamp_Status.[0]TSSOVF"                                                       , "Memory", 0x44000728,        4, base=16, readOnly, bitRange=0
+sfr = "GMAC1/Timestamp_Status.[1]TSTARGT"                                                      , "Memory", 0x44000728,        4, base=16, readOnly, bitRange=1
+sfr = "GMAC1/Timestamp_Status.[2]AUXTSTRIG"                                                    , "Memory", 0x44000728,        4, base=16, readOnly, bitRange=2
+sfr = "GMAC1/Timestamp_Status.[3]TSTRGTERR"                                                    , "Memory", 0x44000728,        4, base=16, readOnly, bitRange=3
+sfr = "GMAC1/Timestamp_Status.[4]TSTARGT1"                                                     , "Memory", 0x44000728,        4, base=16, readOnly, bitRange=4
+sfr = "GMAC1/Timestamp_Status.[5]TSTRGTERR1"                                                   , "Memory", 0x44000728,        4, base=16, readOnly, bitRange=5
+sfr = "GMAC1/Timestamp_Status.[19:16]ATSSTN"                                                   , "Memory", 0x44000728,        4, base=16, readOnly, bitRange=16-19
+sfr = "GMAC1/Timestamp_Status.[24]ATSSTM"                                                      , "Memory", 0x44000728,        4, base=16, readOnly, bitRange=24
+sfr = "GMAC1/Timestamp_Status.[29:25]ATSNS"                                                    , "Memory", 0x44000728,        4, base=16, readOnly, bitRange=25-29
+sfr = "GMAC1/PPS_Control"                                                                      , "Memory", 0x4400072C,        4, base=16
+sfr = "GMAC1/PPS_Control.[3:0]PPSCTRL_PPSCMD"                                                  , "Memory", 0x4400072C,        4, base=16, bitRange=0-3
+sfr = "GMAC1/PPS_Control.[4]PPSEN0"                                                            , "Memory", 0x4400072C,        4, base=16, bitRange=4
+sfr = "GMAC1/PPS_Control.[6:5]TRGTMODSEL0"                                                     , "Memory", 0x4400072C,        4, base=16, bitRange=5-6
+sfr = "GMAC1/PPS_Control.[10:8]PPSCMD1"                                                        , "Memory", 0x4400072C,        4, base=16, bitRange=8-10
+sfr = "GMAC1/PPS_Control.[14:13]TRGTMODSEL1"                                                   , "Memory", 0x4400072C,        4, base=16, bitRange=13-14
+sfr = "GMAC1/PPS_Control.[18:16]PPSCMD2"                                                       , "Memory", 0x4400072C,        4, base=16, bitRange=16-18
+sfr = "GMAC1/PPS_Control.[22:21]TRGTMODSEL2"                                                   , "Memory", 0x4400072C,        4, base=16, bitRange=21-22
+sfr = "GMAC1/PPS_Control.[26:24]PPSCMD3"                                                       , "Memory", 0x4400072C,        4, base=16, bitRange=24-26
+sfr = "GMAC1/PPS_Control.[30:29]TRGTMODSEL3"                                                   , "Memory", 0x4400072C,        4, base=16, bitRange=29-30
+sfr = "GMAC1/Auxiliary_Timestamp_Nanoseconds"                                                  , "Memory", 0x44000730,        4, base=16, readOnly
+sfr = "GMAC1/Auxiliary_Timestamp_Nanoseconds.[30:0]AUXTSLO"                                    , "Memory", 0x44000730,        4, base=16, readOnly, bitRange=0-30
+sfr = "GMAC1/Auxiliary_Timestamp_Seconds"                                                      , "Memory", 0x44000734,        4, base=16, readOnly
+sfr = "GMAC1/Auxiliary_Timestamp_Seconds.[31:0]AUXTSHI"                                        , "Memory", 0x44000734,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/PPS0_Interval"                                                                    , "Memory", 0x44000760,        4, base=16
+sfr = "GMAC1/PPS0_Interval.[31:0]PPSINT"                                                       , "Memory", 0x44000760,        4, base=16, bitRange=0-31
+sfr = "GMAC1/PPS0_Width"                                                                       , "Memory", 0x44000764,        4, base=16
+sfr = "GMAC1/PPS0_Width.[31:0]PPSWIDTH"                                                        , "Memory", 0x44000764,        4, base=16, bitRange=0-31
+sfr = "GMAC1/PPS1_Target_Time_Seconds"                                                         , "Memory", 0x44000780,        4, base=16
+sfr = "GMAC1/PPS1_Target_Time_Seconds.[31:0]TSTRH1"                                            , "Memory", 0x44000780,        4, base=16, bitRange=0-31
+sfr = "GMAC1/PPS1_Target_Time_Nanoseconds"                                                     , "Memory", 0x44000784,        4, base=16
+sfr = "GMAC1/PPS1_Target_Time_Nanoseconds.[30:0]TTSL1"                                         , "Memory", 0x44000784,        4, base=16, bitRange=0-30
+sfr = "GMAC1/PPS1_Target_Time_Nanoseconds.[31]TRGTBUSY1"                                       , "Memory", 0x44000784,        4, base=16, bitRange=31
+sfr = "GMAC1/PPS1_Interval"                                                                    , "Memory", 0x44000788,        4, base=16
+sfr = "GMAC1/PPS1_Interval.[31:0]PPSINT"                                                       , "Memory", 0x44000788,        4, base=16, bitRange=0-31
+sfr = "GMAC1/PPS1_Width"                                                                       , "Memory", 0x4400078C,        4, base=16
+sfr = "GMAC1/PPS1_Width.[31:0]PPSWIDTH"                                                        , "Memory", 0x4400078C,        4, base=16, bitRange=0-31
+sfr = "GMAC1/MAC_Address16_High"                                                               , "Memory", 0x44000800,        4, base=16
+sfr = "GMAC1/MAC_Address16_High.[15:0]ADDRHI"                                                  , "Memory", 0x44000800,        4, base=16, bitRange=0-15
+sfr = "GMAC1/MAC_Address16_High.[29:24]MBC"                                                    , "Memory", 0x44000800,        4, base=16, bitRange=24-29
+sfr = "GMAC1/MAC_Address16_High.[30]SA"                                                        , "Memory", 0x44000800,        4, base=16, bitRange=30
+sfr = "GMAC1/MAC_Address16_High.[31]AE"                                                        , "Memory", 0x44000800,        4, base=16, bitRange=31
+sfr = "GMAC1/MAC_Address16_Low"                                                                , "Memory", 0x44000804,        4, base=16
+sfr = "GMAC1/MAC_Address16_Low.[31:0]ADDRLO"                                                   , "Memory", 0x44000804,        4, base=16, bitRange=0-31
+sfr = "GMAC1/MAC_Address17_High"                                                               , "Memory", 0x44000808,        4, base=16
+sfr = "GMAC1/MAC_Address17_High.[15:0]ADDRHI"                                                  , "Memory", 0x44000808,        4, base=16, bitRange=0-15
+sfr = "GMAC1/MAC_Address17_High.[29:24]MBC"                                                    , "Memory", 0x44000808,        4, base=16, bitRange=24-29
+sfr = "GMAC1/MAC_Address17_High.[30]SA"                                                        , "Memory", 0x44000808,        4, base=16, bitRange=30
+sfr = "GMAC1/MAC_Address17_High.[31]AE"                                                        , "Memory", 0x44000808,        4, base=16, bitRange=31
+sfr = "GMAC1/MAC_Address17_Low"                                                                , "Memory", 0x4400080C,        4, base=16
+sfr = "GMAC1/MAC_Address17_Low.[31:0]ADDRLO"                                                   , "Memory", 0x4400080C,        4, base=16, bitRange=0-31
+sfr = "GMAC1/Bus_Mode"                                                                         , "Memory", 0x44001000,        4, base=16
+sfr = "GMAC1/Bus_Mode.[0]SWR"                                                                  , "Memory", 0x44001000,        4, base=16, bitRange=0
+sfr = "GMAC1/Bus_Mode.[1]DA"                                                                   , "Memory", 0x44001000,        4, base=16, readOnly, bitRange=1
+sfr = "GMAC1/Bus_Mode.[6:2]DSL"                                                                , "Memory", 0x44001000,        4, base=16, bitRange=2-6
+sfr = "GMAC1/Bus_Mode.[7]ATDS"                                                                 , "Memory", 0x44001000,        4, base=16, bitRange=7
+sfr = "GMAC1/Bus_Mode.[13:8]PBL"                                                               , "Memory", 0x44001000,        4, base=16, bitRange=8-13
+sfr = "GMAC1/Bus_Mode.[15:14]PR"                                                               , "Memory", 0x44001000,        4, base=16, readOnly, bitRange=14-15
+sfr = "GMAC1/Bus_Mode.[16]FB"                                                                  , "Memory", 0x44001000,        4, base=16, bitRange=16
+sfr = "GMAC1/Bus_Mode.[22:17]RPBL"                                                             , "Memory", 0x44001000,        4, base=16, bitRange=17-22
+sfr = "GMAC1/Bus_Mode.[23]USP"                                                                 , "Memory", 0x44001000,        4, base=16, bitRange=23
+sfr = "GMAC1/Bus_Mode.[24]PBLx8"                                                               , "Memory", 0x44001000,        4, base=16, bitRange=24
+sfr = "GMAC1/Bus_Mode.[25]AAL"                                                                 , "Memory", 0x44001000,        4, base=16, bitRange=25
+sfr = "GMAC1/Bus_Mode.[26]MB"                                                                  , "Memory", 0x44001000,        4, base=16, readOnly, bitRange=26
+sfr = "GMAC1/Bus_Mode.[27]TXPR"                                                                , "Memory", 0x44001000,        4, base=16, readOnly, bitRange=27
+sfr = "GMAC1/Bus_Mode.[29:28]PRWG"                                                             , "Memory", 0x44001000,        4, base=16, readOnly, bitRange=28-29
+sfr = "GMAC1/Bus_Mode.[31]RIB"                                                                 , "Memory", 0x44001000,        4, base=16, readOnly, bitRange=31
+sfr = "GMAC1/Transmit_Poll_Demand"                                                             , "Memory", 0x44001004,        4, base=16
+sfr = "GMAC1/Transmit_Poll_Demand.[31:0]TPD"                                                   , "Memory", 0x44001004,        4, base=16, bitRange=0-31
+sfr = "GMAC1/Receive_Poll_Demand"                                                              , "Memory", 0x44001008,        4, base=16
+sfr = "GMAC1/Receive_Poll_Demand.[31:0]RPD"                                                    , "Memory", 0x44001008,        4, base=16, bitRange=0-31
+sfr = "GMAC1/Receive_Descriptor_List_Address"                                                  , "Memory", 0x4400100C,        4, base=16
+sfr = "GMAC1/Receive_Descriptor_List_Address.[31:2]RDESLA_32bit"                               , "Memory", 0x4400100C,        4, base=16, bitRange=2-31
+sfr = "GMAC1/Transmit_Descriptor_List_Address"                                                 , "Memory", 0x44001010,        4, base=16
+sfr = "GMAC1/Transmit_Descriptor_List_Address.[31:2]TDESLA_32bit"                              , "Memory", 0x44001010,        4, base=16, bitRange=2-31
+sfr = "GMAC1/Status"                                                                           , "Memory", 0x44001014,        4, base=16
+sfr = "GMAC1/Status.[0]TI"                                                                     , "Memory", 0x44001014,        4, base=16, bitRange=0
+sfr = "GMAC1/Status.[1]TPS"                                                                    , "Memory", 0x44001014,        4, base=16, bitRange=1
+sfr = "GMAC1/Status.[2]TU"                                                                     , "Memory", 0x44001014,        4, base=16, bitRange=2
+sfr = "GMAC1/Status.[3]TJT"                                                                    , "Memory", 0x44001014,        4, base=16, bitRange=3
+sfr = "GMAC1/Status.[4]OVF"                                                                    , "Memory", 0x44001014,        4, base=16, bitRange=4
+sfr = "GMAC1/Status.[5]UNF"                                                                    , "Memory", 0x44001014,        4, base=16, bitRange=5
+sfr = "GMAC1/Status.[6]RI"                                                                     , "Memory", 0x44001014,        4, base=16, bitRange=6
+sfr = "GMAC1/Status.[7]RU"                                                                     , "Memory", 0x44001014,        4, base=16, bitRange=7
+sfr = "GMAC1/Status.[8]RPS"                                                                    , "Memory", 0x44001014,        4, base=16, bitRange=8
+sfr = "GMAC1/Status.[9]RWT"                                                                    , "Memory", 0x44001014,        4, base=16, bitRange=9
+sfr = "GMAC1/Status.[10]ETI"                                                                   , "Memory", 0x44001014,        4, base=16, bitRange=10
+sfr = "GMAC1/Status.[13]FBI"                                                                   , "Memory", 0x44001014,        4, base=16, bitRange=13
+sfr = "GMAC1/Status.[14]ERI"                                                                   , "Memory", 0x44001014,        4, base=16, bitRange=14
+sfr = "GMAC1/Status.[15]AIS"                                                                   , "Memory", 0x44001014,        4, base=16, bitRange=15
+sfr = "GMAC1/Status.[16]NIS"                                                                   , "Memory", 0x44001014,        4, base=16, bitRange=16
+sfr = "GMAC1/Status.[19:17]RS"                                                                 , "Memory", 0x44001014,        4, base=16, readOnly, bitRange=17-19
+sfr = "GMAC1/Status.[22:20]TS"                                                                 , "Memory", 0x44001014,        4, base=16, readOnly, bitRange=20-22
+sfr = "GMAC1/Status.[25:23]EB"                                                                 , "Memory", 0x44001014,        4, base=16, readOnly, bitRange=23-25
+sfr = "GMAC1/Status.[27]GMI"                                                                   , "Memory", 0x44001014,        4, base=16, readOnly, bitRange=27
+sfr = "GMAC1/Status.[28]GPI"                                                                   , "Memory", 0x44001014,        4, base=16, readOnly, bitRange=28
+sfr = "GMAC1/Status.[29]TTI"                                                                   , "Memory", 0x44001014,        4, base=16, readOnly, bitRange=29
+sfr = "GMAC1/Status.[30]GLPII"                                                                 , "Memory", 0x44001014,        4, base=16, readOnly, bitRange=30
+sfr = "GMAC1/Operation_Mode"                                                                   , "Memory", 0x44001018,        4, base=16
+sfr = "GMAC1/Operation_Mode.[1]SR"                                                             , "Memory", 0x44001018,        4, base=16, bitRange=1
+sfr = "GMAC1/Operation_Mode.[2]OSF"                                                            , "Memory", 0x44001018,        4, base=16, bitRange=2
+sfr = "GMAC1/Operation_Mode.[4:3]RTC"                                                          , "Memory", 0x44001018,        4, base=16, bitRange=3-4
+sfr = "GMAC1/Operation_Mode.[5]DGF"                                                            , "Memory", 0x44001018,        4, base=16, bitRange=5
+sfr = "GMAC1/Operation_Mode.[6]FUF"                                                            , "Memory", 0x44001018,        4, base=16, bitRange=6
+sfr = "GMAC1/Operation_Mode.[7]FEF"                                                            , "Memory", 0x44001018,        4, base=16, bitRange=7
+sfr = "GMAC1/Operation_Mode.[8]EFC"                                                            , "Memory", 0x44001018,        4, base=16, bitRange=8
+sfr = "GMAC1/Operation_Mode.[10:9]RFA"                                                         , "Memory", 0x44001018,        4, base=16, bitRange=9-10
+sfr = "GMAC1/Operation_Mode.[12:11]RFD"                                                        , "Memory", 0x44001018,        4, base=16, bitRange=11-12
+sfr = "GMAC1/Operation_Mode.[13]ST"                                                            , "Memory", 0x44001018,        4, base=16, bitRange=13
+sfr = "GMAC1/Operation_Mode.[16:14]TTC"                                                        , "Memory", 0x44001018,        4, base=16, bitRange=14-16
+sfr = "GMAC1/Operation_Mode.[20]FTF"                                                           , "Memory", 0x44001018,        4, base=16, bitRange=20
+sfr = "GMAC1/Operation_Mode.[21]TSF"                                                           , "Memory", 0x44001018,        4, base=16, bitRange=21
+sfr = "GMAC1/Operation_Mode.[22]RFD_2"                                                         , "Memory", 0x44001018,        4, base=16, readOnly, bitRange=22
+sfr = "GMAC1/Operation_Mode.[25]RSF"                                                           , "Memory", 0x44001018,        4, base=16, bitRange=25
+sfr = "GMAC1/Operation_Mode.[26]DT"                                                            , "Memory", 0x44001018,        4, base=16, bitRange=26
+sfr = "GMAC1/Interrupt_Enable"                                                                 , "Memory", 0x4400101C,        4, base=16
+sfr = "GMAC1/Interrupt_Enable.[0]TIE"                                                          , "Memory", 0x4400101C,        4, base=16, bitRange=0
+sfr = "GMAC1/Interrupt_Enable.[1]TSE"                                                          , "Memory", 0x4400101C,        4, base=16, bitRange=1
+sfr = "GMAC1/Interrupt_Enable.[2]TUE"                                                          , "Memory", 0x4400101C,        4, base=16, bitRange=2
+sfr = "GMAC1/Interrupt_Enable.[3]TJE"                                                          , "Memory", 0x4400101C,        4, base=16, bitRange=3
+sfr = "GMAC1/Interrupt_Enable.[4]OVE"                                                          , "Memory", 0x4400101C,        4, base=16, bitRange=4
+sfr = "GMAC1/Interrupt_Enable.[5]UNE"                                                          , "Memory", 0x4400101C,        4, base=16, bitRange=5
+sfr = "GMAC1/Interrupt_Enable.[6]RIE"                                                          , "Memory", 0x4400101C,        4, base=16, bitRange=6
+sfr = "GMAC1/Interrupt_Enable.[7]RUE"                                                          , "Memory", 0x4400101C,        4, base=16, bitRange=7
+sfr = "GMAC1/Interrupt_Enable.[8]RSE"                                                          , "Memory", 0x4400101C,        4, base=16, bitRange=8
+sfr = "GMAC1/Interrupt_Enable.[9]RWE"                                                          , "Memory", 0x4400101C,        4, base=16, bitRange=9
+sfr = "GMAC1/Interrupt_Enable.[10]ETE"                                                         , "Memory", 0x4400101C,        4, base=16, bitRange=10
+sfr = "GMAC1/Interrupt_Enable.[13]FBE"                                                         , "Memory", 0x4400101C,        4, base=16, bitRange=13
+sfr = "GMAC1/Interrupt_Enable.[14]ERE"                                                         , "Memory", 0x4400101C,        4, base=16, bitRange=14
+sfr = "GMAC1/Interrupt_Enable.[15]AIE"                                                         , "Memory", 0x4400101C,        4, base=16, bitRange=15
+sfr = "GMAC1/Interrupt_Enable.[16]NIE"                                                         , "Memory", 0x4400101C,        4, base=16, bitRange=16
+sfr = "GMAC1/Missed_Frame_And_Buffer_Overflow_Counter"                                         , "Memory", 0x44001020,        4, base=16, readOnly
+sfr = "GMAC1/Missed_Frame_And_Buffer_Overflow_Counter.[15:0]MISFRMCNT"                         , "Memory", 0x44001020,        4, base=16, readOnly, bitRange=0-15
+sfr = "GMAC1/Missed_Frame_And_Buffer_Overflow_Counter.[16]MISCNTOVF"                           , "Memory", 0x44001020,        4, base=16, readOnly, bitRange=16
+sfr = "GMAC1/Missed_Frame_And_Buffer_Overflow_Counter.[27:17]OVFFRMCNT"                        , "Memory", 0x44001020,        4, base=16, readOnly, bitRange=17-27
+sfr = "GMAC1/Missed_Frame_And_Buffer_Overflow_Counter.[28]OVFCNTOVF"                           , "Memory", 0x44001020,        4, base=16, readOnly, bitRange=28
+sfr = "GMAC1/Receive_Interrupt_Watchdog_Timer"                                                 , "Memory", 0x44001024,        4, base=16
+sfr = "GMAC1/Receive_Interrupt_Watchdog_Timer.[7:0]RIWT"                                       , "Memory", 0x44001024,        4, base=16, bitRange=0-7
+sfr = "GMAC1/AXI_Bus_Mode"                                                                     , "Memory", 0x44001028,        4, base=16
+sfr = "GMAC1/AXI_Bus_Mode.[0]UNDEF"                                                            , "Memory", 0x44001028,        4, base=16, readOnly, bitRange=0
+sfr = "GMAC1/AXI_Bus_Mode.[1]BLEN4"                                                            , "Memory", 0x44001028,        4, base=16, bitRange=1
+sfr = "GMAC1/AXI_Bus_Mode.[2]BLEN8"                                                            , "Memory", 0x44001028,        4, base=16, bitRange=2
+sfr = "GMAC1/AXI_Bus_Mode.[3]BLEN16"                                                           , "Memory", 0x44001028,        4, base=16, bitRange=3
+sfr = "GMAC1/AXI_Bus_Mode.[12]AXI_AAL"                                                         , "Memory", 0x44001028,        4, base=16, readOnly, bitRange=12
+sfr = "GMAC1/AXI_Bus_Mode.[13]ONEKBBE"                                                         , "Memory", 0x44001028,        4, base=16, bitRange=13
+sfr = "GMAC1/AXI_Bus_Mode.[17:16]RD_OSR_LMT"                                                   , "Memory", 0x44001028,        4, base=16, bitRange=16-17
+sfr = "GMAC1/AXI_Bus_Mode.[21:20]WR_OSR_LMT"                                                   , "Memory", 0x44001028,        4, base=16, bitRange=20-21
+sfr = "GMAC1/AXI_Bus_Mode.[30]LPI_XIT_FRM"                                                     , "Memory", 0x44001028,        4, base=16, bitRange=30
+sfr = "GMAC1/AXI_Bus_Mode.[31]EN_LPI"                                                          , "Memory", 0x44001028,        4, base=16, bitRange=31
+sfr = "GMAC1/AXI_Status"                                                                       , "Memory", 0x4400102C,        4, base=16, readOnly
+sfr = "GMAC1/AXI_Status.[0]AXWHSTS"                                                            , "Memory", 0x4400102C,        4, base=16, readOnly, bitRange=0
+sfr = "GMAC1/AXI_Status.[1]AXIRDSTS"                                                           , "Memory", 0x4400102C,        4, base=16, readOnly, bitRange=1
+sfr = "GMAC1/Current_Host_Transmit_Descriptor"                                                 , "Memory", 0x44001048,        4, base=16, readOnly
+sfr = "GMAC1/Current_Host_Transmit_Descriptor.[31:0]CURTDESAPTR"                               , "Memory", 0x44001048,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Current_Host_Receive_Descriptor"                                                  , "Memory", 0x4400104C,        4, base=16, readOnly
+sfr = "GMAC1/Current_Host_Receive_Descriptor.[31:0]CURRDESAPTR"                                , "Memory", 0x4400104C,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Current_Host_Transmit_Buffer_Address"                                             , "Memory", 0x44001050,        4, base=16, readOnly
+sfr = "GMAC1/Current_Host_Transmit_Buffer_Address.[31:0]CURTBUFAPTR"                           , "Memory", 0x44001050,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/Current_Host_Receive_Buffer_Address"                                              , "Memory", 0x44001054,        4, base=16, readOnly
+sfr = "GMAC1/Current_Host_Receive_Buffer_Address.[31:0]CURRBUFAPTR"                            , "Memory", 0x44001054,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC1/HW_Feature"                                                                       , "Memory", 0x44001058,        4, base=16, readOnly
+sfr = "GMAC1/HW_Feature.[0]MIISEL"                                                             , "Memory", 0x44001058,        4, base=16, readOnly, bitRange=0
+sfr = "GMAC1/HW_Feature.[1]GMIISEL"                                                            , "Memory", 0x44001058,        4, base=16, readOnly, bitRange=1
+sfr = "GMAC1/HW_Feature.[2]HDSEL"                                                              , "Memory", 0x44001058,        4, base=16, readOnly, bitRange=2
+sfr = "GMAC1/HW_Feature.[3]EXTHASHEN"                                                          , "Memory", 0x44001058,        4, base=16, readOnly, bitRange=3
+sfr = "GMAC1/HW_Feature.[4]HASHSEL"                                                            , "Memory", 0x44001058,        4, base=16, readOnly, bitRange=4
+sfr = "GMAC1/HW_Feature.[5]ADDMACADRSEL"                                                       , "Memory", 0x44001058,        4, base=16, readOnly, bitRange=5
+sfr = "GMAC1/HW_Feature.[7]L3L4FLTREN"                                                         , "Memory", 0x44001058,        4, base=16, readOnly, bitRange=7
+sfr = "GMAC1/HW_Feature.[8]SMASEL"                                                             , "Memory", 0x44001058,        4, base=16, readOnly, bitRange=8
+sfr = "GMAC1/HW_Feature.[9]RWKSEL"                                                             , "Memory", 0x44001058,        4, base=16, readOnly, bitRange=9
+sfr = "GMAC1/HW_Feature.[10]MGKSEL"                                                            , "Memory", 0x44001058,        4, base=16, readOnly, bitRange=10
+sfr = "GMAC1/HW_Feature.[11]MMCSEL"                                                            , "Memory", 0x44001058,        4, base=16, readOnly, bitRange=11
+sfr = "GMAC1/HW_Feature.[12]TSVER1SEL"                                                         , "Memory", 0x44001058,        4, base=16, readOnly, bitRange=12
+sfr = "GMAC1/HW_Feature.[13]TSVER2SEL"                                                         , "Memory", 0x44001058,        4, base=16, readOnly, bitRange=13
+sfr = "GMAC1/HW_Feature.[14]EEESEL"                                                            , "Memory", 0x44001058,        4, base=16, readOnly, bitRange=14
+sfr = "GMAC1/HW_Feature.[15]AVSEL"                                                             , "Memory", 0x44001058,        4, base=16, readOnly, bitRange=15
+sfr = "GMAC1/HW_Feature.[16]TXCOESEL"                                                          , "Memory", 0x44001058,        4, base=16, readOnly, bitRange=16
+sfr = "GMAC1/HW_Feature.[17]RXTYP1COE"                                                         , "Memory", 0x44001058,        4, base=16, readOnly, bitRange=17
+sfr = "GMAC1/HW_Feature.[18]RXTYP2COE"                                                         , "Memory", 0x44001058,        4, base=16, readOnly, bitRange=18
+sfr = "GMAC1/HW_Feature.[19]RXFIFOSIZE"                                                        , "Memory", 0x44001058,        4, base=16, readOnly, bitRange=19
+sfr = "GMAC1/HW_Feature.[21:20]RXCHCNT"                                                        , "Memory", 0x44001058,        4, base=16, readOnly, bitRange=20-21
+sfr = "GMAC1/HW_Feature.[23:22]TXCHCNT"                                                        , "Memory", 0x44001058,        4, base=16, readOnly, bitRange=22-23
+sfr = "GMAC1/HW_Feature.[24]ENHDESSEL"                                                         , "Memory", 0x44001058,        4, base=16, readOnly, bitRange=24
+sfr = "GMAC1/HW_Feature.[25]INTTSEN"                                                           , "Memory", 0x44001058,        4, base=16, readOnly, bitRange=25
+sfr = "GMAC1/HW_Feature.[26]FLEXIPPSEN"                                                        , "Memory", 0x44001058,        4, base=16, readOnly, bitRange=26
+sfr = "GMAC1/HW_Feature.[27]SAVLANINS"                                                         , "Memory", 0x44001058,        4, base=16, readOnly, bitRange=27
+sfr = "GMAC1/HW_Feature.[30:28]ACTPHYIF"                                                       , "Memory", 0x44001058,        4, base=16, readOnly, bitRange=28-30
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// GMAC1 -----
+group = "GMAC1","GMAC1/MAC_Configuration","GMAC1/MAC_Frame_Filter","GMAC1/GMII_Address","GMAC1/GMII_Data","GMAC1/Flow_Control","GMAC1/VLAN_Tag","GMAC1/Version","GMAC1/Debug","GMAC1/Remote_Wake_Up_Frame_Filter","GMAC1/PMT_Control_Status","GMAC1/LPI_Control_Status","GMAC1/LPI_Timers_Control","GMAC1/Interrupt_Status","GMAC1/Interrupt_Mask","GMAC1/MAC_Address0_High","GMAC1/MAC_Address0_Low","GMAC1/MAC_Address1_High","GMAC1/MAC_Address1_Low","GMAC1/MAC_Address2_High","GMAC1/MAC_Address2_Low","GMAC1/MAC_Address3_High","GMAC1/MAC_Address3_Low","GMAC1/MAC_Address4_High","GMAC1/MAC_Address4_Low","GMAC1/MAC_Address5_High","GMAC1/MAC_Address5_Low","GMAC1/MAC_Address6_High","GMAC1/MAC_Address6_Low","GMAC1/MAC_Address7_High","GMAC1/MAC_Address7_Low","GMAC1/MAC_Address8_High","GMAC1/MAC_Address8_Low","GMAC1/MAC_Address9_High","GMAC1/MAC_Address9_Low","GMAC1/MAC_Address10_High","GMAC1/MAC_Address10_Low","GMAC1/MAC_Address11_High","GMAC1/MAC_Address11_Low","GMAC1/MAC_Address12_High","GMAC1/MAC_Address12_Low","GMAC1/MAC_Address13_High","GMAC1/MAC_Address13_Low","GMAC1/MAC_Address14_High","GMAC1/MAC_Address14_Low","GMAC1/MAC_Address15_High","GMAC1/MAC_Address15_Low","GMAC1/WDog_Timeout","GMAC1/MMC_Control","GMAC1/MMC_Receive_Interrupt","GMAC1/MMC_Transmit_Interrupt","GMAC1/MMC_Receive_Interrupt_Mask","GMAC1/MMC_Transmit_Interrupt_Mask","GMAC1/Tx_Octet_Count_Good_Bad","GMAC1/Tx_Frame_Count_Good_Bad","GMAC1/Tx_Broadcast_Frames_Good","GMAC1/Tx_Multicast_Frames_Good","GMAC1/Tx_64Octets_Frames_Good_Bad","GMAC1/Tx_65To127Octets_Frames_Good_Bad","GMAC1/Tx_128To255Octets_Frames_Good_Bad","GMAC1/Tx_256To511Octets_Frames_Good_Bad","GMAC1/Tx_512To1023Octets_Frames_Good_Bad","GMAC1/Tx_1024ToMaxOctets_Frames_Good_Bad","GMAC1/Tx_Unicast_Frames_Good_Bad","GMAC1/Tx_Multicast_Frames_Good_Bad","GMAC1/Tx_Broadcast_Frames_Good_Bad","GMAC1/Tx_Underflow_Error_Frames","GMAC1/Tx_Single_Collision_Good_Frames","GMAC1/Tx_Multiple_Collision_Good_Frames","GMAC1/Tx_Deferred_Frames","GMAC1/Tx_Late_Collision_Frames","GMAC1/Tx_Excessive_Collision_Frames","GMAC1/Tx_Carrier_Error_Frames","GMAC1/Tx_Octet_Count_Good","GMAC1/Tx_Frame_Count_Good","GMAC1/Tx_Excessive_Deferral_Error","GMAC1/Tx_Pause_Frames","GMAC1/Tx_VLAN_Frames_Good","GMAC1/Tx_OSize_Frames_Good","GMAC1/Rx_Frames_Count_Good_Bad","GMAC1/Rx_Octet_Count_Good_Bad","GMAC1/Rx_Octet_Count_Good","GMAC1/Rx_Broadcast_Frames_Good","GMAC1/Rx_Multicast_Frames_Good","GMAC1/Rx_CRC_Error_Frames","GMAC1/Rx_Alignment_Error_Frames","GMAC1/Rx_Runt_Error_Frames","GMAC1/Rx_Jabber_Error_Frames","GMAC1/Rx_Undersize_Frames_Good","GMAC1/Rx_Oversize_Frames_Good","GMAC1/Rx_64Octets_Frames_Good_Bad","GMAC1/Rx_65To127Octets_Frames_Good_Bad","GMAC1/Rx_128To255Octets_Frames_Good_Bad","GMAC1/Rx_256To511Octets_Frames_Good_Bad","GMAC1/Rx_512To1023Octets_Frames_Good_Bad","GMAC1/Rx_1024ToMaxOctets_Frames_Good_Bad","GMAC1/Rx_Unicast_Frames_Good","GMAC1/Rx_Length_Error_Frames","GMAC1/Rx_Out_Of_Range_Type_Frames","GMAC1/Rx_Pause_Frames","GMAC1/Rx_FIFO_Overflow_Frames","GMAC1/Rx_VLAN_Frames_Good_Bad","GMAC1/Rx_Watchdog_Error_Frames","GMAC1/Rx_Receive_Error_Frames","GMAC1/Rx_Control_Frames_Good","GMAC1/Hash_Table_Reg0","GMAC1/Hash_Table_Reg1","GMAC1/Hash_Table_Reg2","GMAC1/Hash_Table_Reg3","GMAC1/Hash_Table_Reg4","GMAC1/Hash_Table_Reg5","GMAC1/Hash_Table_Reg6","GMAC1/Hash_Table_Reg7","GMAC1/VLAN_Hash_Table_Reg","GMAC1/Timestamp_Control","GMAC1/Sub_Second_Increment","GMAC1/System_Time_Seconds","GMAC1/System_Time_Nanoseconds","GMAC1/System_Time_Seconds_Update","GMAC1/System_Time_Nanoseconds_Update","GMAC1/Timestamp_Addend","GMAC1/Target_Time_Seconds","GMAC1/Target_Time_Nanoseconds","GMAC1/Timestamp_Status","GMAC1/PPS_Control","GMAC1/Auxiliary_Timestamp_Nanoseconds","GMAC1/Auxiliary_Timestamp_Seconds","GMAC1/PPS0_Interval","GMAC1/PPS0_Width","GMAC1/PPS1_Target_Time_Seconds","GMAC1/PPS1_Target_Time_Nanoseconds","GMAC1/PPS1_Interval","GMAC1/PPS1_Width","GMAC1/MAC_Address16_High","GMAC1/MAC_Address16_Low","GMAC1/MAC_Address17_High","GMAC1/MAC_Address17_Low","GMAC1/Bus_Mode","GMAC1/Transmit_Poll_Demand","GMAC1/Receive_Poll_Demand","GMAC1/Receive_Descriptor_List_Address","GMAC1/Transmit_Descriptor_List_Address","GMAC1/Status","GMAC1/Operation_Mode","GMAC1/Interrupt_Enable","GMAC1/Missed_Frame_And_Buffer_Overflow_Counter","GMAC1/Receive_Interrupt_Watchdog_Timer","GMAC1/AXI_Bus_Mode","GMAC1/AXI_Status","GMAC1/Current_Host_Transmit_Descriptor","GMAC1/Current_Host_Receive_Descriptor","GMAC1/Current_Host_Transmit_Buffer_Address","GMAC1/Current_Host_Receive_Buffer_Address","GMAC1/HW_Feature"

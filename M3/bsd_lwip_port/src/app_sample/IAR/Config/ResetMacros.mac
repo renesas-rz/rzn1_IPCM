@@ -1,0 +1,25 @@
+execUserReset()
+{
+   __message "Start 'execUserReset'!\n";
+
+
+   __writeMemory32(0x40, 0x4000C120, "Memory");  /* SYSCTRL_RSTEN */
+   __writeMemory32(0x40, 0x4000C198, "Memory");  /* SYSCTRL_RSTCTRL */
+
+   __message "End 'execUserReset'!\n";
+}
+
+// after linked with target system
+execUserPreload()
+{
+}
+
+/*
+execUserPreReset()
+{
+   __message "Start 'execUserPreReset'!\n";
+
+
+   __message "End 'execUserPreReset'!\n";
+}
+*/

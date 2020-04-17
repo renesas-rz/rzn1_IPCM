@@ -1,0 +1,702 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : CFGS1
+;               ConfigSys1(IO Mux Level1)
+;    revision : 0.20 (2.Nov.2017)
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "Level1_ConfigA_0"                                                                       , "Memory", 0x40067000,        4, base=16
+sfr = "Level1_ConfigA_0.[3:0]IOFunction"                                                       , "Memory", 0x40067000,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_0.[9:8]PulUp_PullDown"                                                   , "Memory", 0x40067000,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_0.[11:10]DriveStrength"                                                  , "Memory", 0x40067000,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_1"                                                                       , "Memory", 0x40067004,        4, base=16
+sfr = "Level1_ConfigA_1.[3:0]IOFunction"                                                       , "Memory", 0x40067004,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_1.[9:8]PulUp_PullDown"                                                   , "Memory", 0x40067004,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_1.[11:10]DriveStrength"                                                  , "Memory", 0x40067004,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_2"                                                                       , "Memory", 0x40067008,        4, base=16
+sfr = "Level1_ConfigA_2.[3:0]IOFunction"                                                       , "Memory", 0x40067008,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_2.[9:8]PulUp_PullDown"                                                   , "Memory", 0x40067008,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_2.[11:10]DriveStrength"                                                  , "Memory", 0x40067008,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_3"                                                                       , "Memory", 0x4006700C,        4, base=16
+sfr = "Level1_ConfigA_3.[3:0]IOFunction"                                                       , "Memory", 0x4006700C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_3.[9:8]PulUp_PullDown"                                                   , "Memory", 0x4006700C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_3.[11:10]DriveStrength"                                                  , "Memory", 0x4006700C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_4"                                                                       , "Memory", 0x40067010,        4, base=16
+sfr = "Level1_ConfigA_4.[3:0]IOFunction"                                                       , "Memory", 0x40067010,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_4.[9:8]PulUp_PullDown"                                                   , "Memory", 0x40067010,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_4.[11:10]DriveStrength"                                                  , "Memory", 0x40067010,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_5"                                                                       , "Memory", 0x40067014,        4, base=16
+sfr = "Level1_ConfigA_5.[3:0]IOFunction"                                                       , "Memory", 0x40067014,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_5.[9:8]PulUp_PullDown"                                                   , "Memory", 0x40067014,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_5.[11:10]DriveStrength"                                                  , "Memory", 0x40067014,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_6"                                                                       , "Memory", 0x40067018,        4, base=16
+sfr = "Level1_ConfigA_6.[3:0]IOFunction"                                                       , "Memory", 0x40067018,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_6.[9:8]PulUp_PullDown"                                                   , "Memory", 0x40067018,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_6.[11:10]DriveStrength"                                                  , "Memory", 0x40067018,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_7"                                                                       , "Memory", 0x4006701C,        4, base=16
+sfr = "Level1_ConfigA_7.[3:0]IOFunction"                                                       , "Memory", 0x4006701C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_7.[9:8]PulUp_PullDown"                                                   , "Memory", 0x4006701C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_7.[11:10]DriveStrength"                                                  , "Memory", 0x4006701C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_8"                                                                       , "Memory", 0x40067020,        4, base=16
+sfr = "Level1_ConfigA_8.[3:0]IOFunction"                                                       , "Memory", 0x40067020,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_8.[9:8]PulUp_PullDown"                                                   , "Memory", 0x40067020,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_8.[11:10]DriveStrength"                                                  , "Memory", 0x40067020,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_9"                                                                       , "Memory", 0x40067024,        4, base=16
+sfr = "Level1_ConfigA_9.[3:0]IOFunction"                                                       , "Memory", 0x40067024,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_9.[9:8]PulUp_PullDown"                                                   , "Memory", 0x40067024,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_9.[11:10]DriveStrength"                                                  , "Memory", 0x40067024,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_10"                                                                      , "Memory", 0x40067028,        4, base=16
+sfr = "Level1_ConfigA_10.[3:0]IOFunction"                                                      , "Memory", 0x40067028,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_10.[9:8]PulUp_PullDown"                                                  , "Memory", 0x40067028,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_10.[11:10]DriveStrength"                                                 , "Memory", 0x40067028,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_11"                                                                      , "Memory", 0x4006702C,        4, base=16
+sfr = "Level1_ConfigA_11.[3:0]IOFunction"                                                      , "Memory", 0x4006702C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_11.[9:8]PulUp_PullDown"                                                  , "Memory", 0x4006702C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_11.[11:10]DriveStrength"                                                 , "Memory", 0x4006702C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_12"                                                                      , "Memory", 0x40067030,        4, base=16
+sfr = "Level1_ConfigA_12.[3:0]IOFunction"                                                      , "Memory", 0x40067030,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_12.[9:8]PulUp_PullDown"                                                  , "Memory", 0x40067030,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_12.[11:10]DriveStrength"                                                 , "Memory", 0x40067030,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_13"                                                                      , "Memory", 0x40067034,        4, base=16
+sfr = "Level1_ConfigA_13.[3:0]IOFunction"                                                      , "Memory", 0x40067034,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_13.[9:8]PulUp_PullDown"                                                  , "Memory", 0x40067034,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_13.[11:10]DriveStrength"                                                 , "Memory", 0x40067034,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_14"                                                                      , "Memory", 0x40067038,        4, base=16
+sfr = "Level1_ConfigA_14.[3:0]IOFunction"                                                      , "Memory", 0x40067038,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_14.[9:8]PulUp_PullDown"                                                  , "Memory", 0x40067038,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_14.[11:10]DriveStrength"                                                 , "Memory", 0x40067038,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_15"                                                                      , "Memory", 0x4006703C,        4, base=16
+sfr = "Level1_ConfigA_15.[3:0]IOFunction"                                                      , "Memory", 0x4006703C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_15.[9:8]PulUp_PullDown"                                                  , "Memory", 0x4006703C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_15.[11:10]DriveStrength"                                                 , "Memory", 0x4006703C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_16"                                                                      , "Memory", 0x40067040,        4, base=16
+sfr = "Level1_ConfigA_16.[3:0]IOFunction"                                                      , "Memory", 0x40067040,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_16.[9:8]PulUp_PullDown"                                                  , "Memory", 0x40067040,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_16.[11:10]DriveStrength"                                                 , "Memory", 0x40067040,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_17"                                                                      , "Memory", 0x40067044,        4, base=16
+sfr = "Level1_ConfigA_17.[3:0]IOFunction"                                                      , "Memory", 0x40067044,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_17.[9:8]PulUp_PullDown"                                                  , "Memory", 0x40067044,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_17.[11:10]DriveStrength"                                                 , "Memory", 0x40067044,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_18"                                                                      , "Memory", 0x40067048,        4, base=16
+sfr = "Level1_ConfigA_18.[3:0]IOFunction"                                                      , "Memory", 0x40067048,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_18.[9:8]PulUp_PullDown"                                                  , "Memory", 0x40067048,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_18.[11:10]DriveStrength"                                                 , "Memory", 0x40067048,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_19"                                                                      , "Memory", 0x4006704C,        4, base=16
+sfr = "Level1_ConfigA_19.[3:0]IOFunction"                                                      , "Memory", 0x4006704C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_19.[9:8]PulUp_PullDown"                                                  , "Memory", 0x4006704C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_19.[11:10]DriveStrength"                                                 , "Memory", 0x4006704C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_20"                                                                      , "Memory", 0x40067050,        4, base=16
+sfr = "Level1_ConfigA_20.[3:0]IOFunction"                                                      , "Memory", 0x40067050,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_20.[9:8]PulUp_PullDown"                                                  , "Memory", 0x40067050,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_20.[11:10]DriveStrength"                                                 , "Memory", 0x40067050,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_21"                                                                      , "Memory", 0x40067054,        4, base=16
+sfr = "Level1_ConfigA_21.[3:0]IOFunction"                                                      , "Memory", 0x40067054,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_21.[9:8]PulUp_PullDown"                                                  , "Memory", 0x40067054,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_21.[11:10]DriveStrength"                                                 , "Memory", 0x40067054,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_22"                                                                      , "Memory", 0x40067058,        4, base=16
+sfr = "Level1_ConfigA_22.[3:0]IOFunction"                                                      , "Memory", 0x40067058,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_22.[9:8]PulUp_PullDown"                                                  , "Memory", 0x40067058,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_22.[11:10]DriveStrength"                                                 , "Memory", 0x40067058,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_23"                                                                      , "Memory", 0x4006705C,        4, base=16
+sfr = "Level1_ConfigA_23.[3:0]IOFunction"                                                      , "Memory", 0x4006705C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_23.[9:8]PulUp_PullDown"                                                  , "Memory", 0x4006705C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_23.[11:10]DriveStrength"                                                 , "Memory", 0x4006705C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_24"                                                                      , "Memory", 0x40067060,        4, base=16
+sfr = "Level1_ConfigA_24.[3:0]IOFunction"                                                      , "Memory", 0x40067060,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_24.[9:8]PulUp_PullDown"                                                  , "Memory", 0x40067060,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_24.[11:10]DriveStrength"                                                 , "Memory", 0x40067060,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_25"                                                                      , "Memory", 0x40067064,        4, base=16
+sfr = "Level1_ConfigA_25.[3:0]IOFunction"                                                      , "Memory", 0x40067064,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_25.[9:8]PulUp_PullDown"                                                  , "Memory", 0x40067064,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_25.[11:10]DriveStrength"                                                 , "Memory", 0x40067064,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_26"                                                                      , "Memory", 0x40067068,        4, base=16
+sfr = "Level1_ConfigA_26.[3:0]IOFunction"                                                      , "Memory", 0x40067068,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_26.[9:8]PulUp_PullDown"                                                  , "Memory", 0x40067068,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_26.[11:10]DriveStrength"                                                 , "Memory", 0x40067068,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_27"                                                                      , "Memory", 0x4006706C,        4, base=16
+sfr = "Level1_ConfigA_27.[3:0]IOFunction"                                                      , "Memory", 0x4006706C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_27.[9:8]PulUp_PullDown"                                                  , "Memory", 0x4006706C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_27.[11:10]DriveStrength"                                                 , "Memory", 0x4006706C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_28"                                                                      , "Memory", 0x40067070,        4, base=16
+sfr = "Level1_ConfigA_28.[3:0]IOFunction"                                                      , "Memory", 0x40067070,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_28.[9:8]PulUp_PullDown"                                                  , "Memory", 0x40067070,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_28.[11:10]DriveStrength"                                                 , "Memory", 0x40067070,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_29"                                                                      , "Memory", 0x40067074,        4, base=16
+sfr = "Level1_ConfigA_29.[3:0]IOFunction"                                                      , "Memory", 0x40067074,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_29.[9:8]PulUp_PullDown"                                                  , "Memory", 0x40067074,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_29.[11:10]DriveStrength"                                                 , "Memory", 0x40067074,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_30"                                                                      , "Memory", 0x40067078,        4, base=16
+sfr = "Level1_ConfigA_30.[3:0]IOFunction"                                                      , "Memory", 0x40067078,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_30.[9:8]PulUp_PullDown"                                                  , "Memory", 0x40067078,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_30.[11:10]DriveStrength"                                                 , "Memory", 0x40067078,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_31"                                                                      , "Memory", 0x4006707C,        4, base=16
+sfr = "Level1_ConfigA_31.[3:0]IOFunction"                                                      , "Memory", 0x4006707C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_31.[9:8]PulUp_PullDown"                                                  , "Memory", 0x4006707C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_31.[11:10]DriveStrength"                                                 , "Memory", 0x4006707C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_32"                                                                      , "Memory", 0x40067080,        4, base=16
+sfr = "Level1_ConfigA_32.[3:0]IOFunction"                                                      , "Memory", 0x40067080,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_32.[9:8]PulUp_PullDown"                                                  , "Memory", 0x40067080,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_32.[11:10]DriveStrength"                                                 , "Memory", 0x40067080,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_33"                                                                      , "Memory", 0x40067084,        4, base=16
+sfr = "Level1_ConfigA_33.[3:0]IOFunction"                                                      , "Memory", 0x40067084,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_33.[9:8]PulUp_PullDown"                                                  , "Memory", 0x40067084,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_33.[11:10]DriveStrength"                                                 , "Memory", 0x40067084,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_34"                                                                      , "Memory", 0x40067088,        4, base=16
+sfr = "Level1_ConfigA_34.[3:0]IOFunction"                                                      , "Memory", 0x40067088,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_34.[9:8]PulUp_PullDown"                                                  , "Memory", 0x40067088,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_34.[11:10]DriveStrength"                                                 , "Memory", 0x40067088,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_35"                                                                      , "Memory", 0x4006708C,        4, base=16
+sfr = "Level1_ConfigA_35.[3:0]IOFunction"                                                      , "Memory", 0x4006708C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_35.[9:8]PulUp_PullDown"                                                  , "Memory", 0x4006708C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_35.[11:10]DriveStrength"                                                 , "Memory", 0x4006708C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_36"                                                                      , "Memory", 0x40067090,        4, base=16
+sfr = "Level1_ConfigA_36.[3:0]IOFunction"                                                      , "Memory", 0x40067090,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_36.[9:8]PulUp_PullDown"                                                  , "Memory", 0x40067090,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_36.[11:10]DriveStrength"                                                 , "Memory", 0x40067090,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_37"                                                                      , "Memory", 0x40067094,        4, base=16
+sfr = "Level1_ConfigA_37.[3:0]IOFunction"                                                      , "Memory", 0x40067094,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_37.[9:8]PulUp_PullDown"                                                  , "Memory", 0x40067094,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_37.[11:10]DriveStrength"                                                 , "Memory", 0x40067094,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_38"                                                                      , "Memory", 0x40067098,        4, base=16
+sfr = "Level1_ConfigA_38.[3:0]IOFunction"                                                      , "Memory", 0x40067098,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_38.[9:8]PulUp_PullDown"                                                  , "Memory", 0x40067098,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_38.[11:10]DriveStrength"                                                 , "Memory", 0x40067098,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_39"                                                                      , "Memory", 0x4006709C,        4, base=16
+sfr = "Level1_ConfigA_39.[3:0]IOFunction"                                                      , "Memory", 0x4006709C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_39.[9:8]PulUp_PullDown"                                                  , "Memory", 0x4006709C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_39.[11:10]DriveStrength"                                                 , "Memory", 0x4006709C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_40"                                                                      , "Memory", 0x400670A0,        4, base=16
+sfr = "Level1_ConfigA_40.[3:0]IOFunction"                                                      , "Memory", 0x400670A0,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_40.[9:8]PulUp_PullDown"                                                  , "Memory", 0x400670A0,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_40.[11:10]DriveStrength"                                                 , "Memory", 0x400670A0,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_41"                                                                      , "Memory", 0x400670A4,        4, base=16
+sfr = "Level1_ConfigA_41.[3:0]IOFunction"                                                      , "Memory", 0x400670A4,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_41.[9:8]PulUp_PullDown"                                                  , "Memory", 0x400670A4,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_41.[11:10]DriveStrength"                                                 , "Memory", 0x400670A4,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_42"                                                                      , "Memory", 0x400670A8,        4, base=16
+sfr = "Level1_ConfigA_42.[3:0]IOFunction"                                                      , "Memory", 0x400670A8,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_42.[9:8]PulUp_PullDown"                                                  , "Memory", 0x400670A8,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_42.[11:10]DriveStrength"                                                 , "Memory", 0x400670A8,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_43"                                                                      , "Memory", 0x400670AC,        4, base=16
+sfr = "Level1_ConfigA_43.[3:0]IOFunction"                                                      , "Memory", 0x400670AC,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_43.[9:8]PulUp_PullDown"                                                  , "Memory", 0x400670AC,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_43.[11:10]DriveStrength"                                                 , "Memory", 0x400670AC,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_44"                                                                      , "Memory", 0x400670B0,        4, base=16
+sfr = "Level1_ConfigA_44.[3:0]IOFunction"                                                      , "Memory", 0x400670B0,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_44.[9:8]PulUp_PullDown"                                                  , "Memory", 0x400670B0,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_44.[11:10]DriveStrength"                                                 , "Memory", 0x400670B0,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_45"                                                                      , "Memory", 0x400670B4,        4, base=16
+sfr = "Level1_ConfigA_45.[3:0]IOFunction"                                                      , "Memory", 0x400670B4,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_45.[9:8]PulUp_PullDown"                                                  , "Memory", 0x400670B4,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_45.[11:10]DriveStrength"                                                 , "Memory", 0x400670B4,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_46"                                                                      , "Memory", 0x400670B8,        4, base=16
+sfr = "Level1_ConfigA_46.[3:0]IOFunction"                                                      , "Memory", 0x400670B8,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_46.[9:8]PulUp_PullDown"                                                  , "Memory", 0x400670B8,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_46.[11:10]DriveStrength"                                                 , "Memory", 0x400670B8,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_47"                                                                      , "Memory", 0x400670BC,        4, base=16
+sfr = "Level1_ConfigA_47.[3:0]IOFunction"                                                      , "Memory", 0x400670BC,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_47.[9:8]PulUp_PullDown"                                                  , "Memory", 0x400670BC,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_47.[11:10]DriveStrength"                                                 , "Memory", 0x400670BC,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_48"                                                                      , "Memory", 0x400670C0,        4, base=16
+sfr = "Level1_ConfigA_48.[3:0]IOFunction"                                                      , "Memory", 0x400670C0,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_48.[9:8]PulUp_PullDown"                                                  , "Memory", 0x400670C0,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_48.[11:10]DriveStrength"                                                 , "Memory", 0x400670C0,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_49"                                                                      , "Memory", 0x400670C4,        4, base=16
+sfr = "Level1_ConfigA_49.[3:0]IOFunction"                                                      , "Memory", 0x400670C4,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_49.[9:8]PulUp_PullDown"                                                  , "Memory", 0x400670C4,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_49.[11:10]DriveStrength"                                                 , "Memory", 0x400670C4,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_50"                                                                      , "Memory", 0x400670C8,        4, base=16
+sfr = "Level1_ConfigA_50.[3:0]IOFunction"                                                      , "Memory", 0x400670C8,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_50.[9:8]PulUp_PullDown"                                                  , "Memory", 0x400670C8,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_50.[11:10]DriveStrength"                                                 , "Memory", 0x400670C8,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_51"                                                                      , "Memory", 0x400670CC,        4, base=16
+sfr = "Level1_ConfigA_51.[3:0]IOFunction"                                                      , "Memory", 0x400670CC,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_51.[9:8]PulUp_PullDown"                                                  , "Memory", 0x400670CC,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_51.[11:10]DriveStrength"                                                 , "Memory", 0x400670CC,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_52"                                                                      , "Memory", 0x400670D0,        4, base=16
+sfr = "Level1_ConfigA_52.[3:0]IOFunction"                                                      , "Memory", 0x400670D0,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_52.[9:8]PulUp_PullDown"                                                  , "Memory", 0x400670D0,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_52.[11:10]DriveStrength"                                                 , "Memory", 0x400670D0,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_53"                                                                      , "Memory", 0x400670D4,        4, base=16
+sfr = "Level1_ConfigA_53.[3:0]IOFunction"                                                      , "Memory", 0x400670D4,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_53.[9:8]PulUp_PullDown"                                                  , "Memory", 0x400670D4,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_53.[11:10]DriveStrength"                                                 , "Memory", 0x400670D4,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_54"                                                                      , "Memory", 0x400670D8,        4, base=16
+sfr = "Level1_ConfigA_54.[3:0]IOFunction"                                                      , "Memory", 0x400670D8,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_54.[9:8]PulUp_PullDown"                                                  , "Memory", 0x400670D8,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_54.[11:10]DriveStrength"                                                 , "Memory", 0x400670D8,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_55"                                                                      , "Memory", 0x400670DC,        4, base=16
+sfr = "Level1_ConfigA_55.[3:0]IOFunction"                                                      , "Memory", 0x400670DC,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_55.[9:8]PulUp_PullDown"                                                  , "Memory", 0x400670DC,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_55.[11:10]DriveStrength"                                                 , "Memory", 0x400670DC,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_56"                                                                      , "Memory", 0x400670E0,        4, base=16
+sfr = "Level1_ConfigA_56.[3:0]IOFunction"                                                      , "Memory", 0x400670E0,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_56.[9:8]PulUp_PullDown"                                                  , "Memory", 0x400670E0,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_56.[11:10]DriveStrength"                                                 , "Memory", 0x400670E0,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_57"                                                                      , "Memory", 0x400670E4,        4, base=16
+sfr = "Level1_ConfigA_57.[3:0]IOFunction"                                                      , "Memory", 0x400670E4,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_57.[9:8]PulUp_PullDown"                                                  , "Memory", 0x400670E4,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_57.[11:10]DriveStrength"                                                 , "Memory", 0x400670E4,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_58"                                                                      , "Memory", 0x400670E8,        4, base=16
+sfr = "Level1_ConfigA_58.[3:0]IOFunction"                                                      , "Memory", 0x400670E8,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_58.[9:8]PulUp_PullDown"                                                  , "Memory", 0x400670E8,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_58.[11:10]DriveStrength"                                                 , "Memory", 0x400670E8,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigA_59"                                                                      , "Memory", 0x400670EC,        4, base=16
+sfr = "Level1_ConfigA_59.[3:0]IOFunction"                                                      , "Memory", 0x400670EC,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigA_59.[9:8]PulUp_PullDown"                                                  , "Memory", 0x400670EC,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigA_59.[11:10]DriveStrength"                                                 , "Memory", 0x400670EC,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_60"                                                                      , "Memory", 0x400670F0,        4, base=16
+sfr = "Level1_ConfigB_60.[3:0]Standard_IOFunction"                                             , "Memory", 0x400670F0,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_60.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x400670F0,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_60.[11:10]Standard_DriveStrength"                                        , "Memory", 0x400670F0,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_61"                                                                      , "Memory", 0x400670F4,        4, base=16
+sfr = "Level1_ConfigB_61.[3:0]Standard_IOFunction"                                             , "Memory", 0x400670F4,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_61.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x400670F4,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_61.[11:10]Standard_DriveStrength"                                        , "Memory", 0x400670F4,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_62"                                                                      , "Memory", 0x400670F8,        4, base=16
+sfr = "Level1_ConfigB_62.[3:0]Standard_IOFunction"                                             , "Memory", 0x400670F8,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_62.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x400670F8,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_62.[11:10]Standard_DriveStrength"                                        , "Memory", 0x400670F8,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_63"                                                                      , "Memory", 0x400670FC,        4, base=16
+sfr = "Level1_ConfigB_63.[3:0]Standard_IOFunction"                                             , "Memory", 0x400670FC,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_63.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x400670FC,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_63.[11:10]Standard_DriveStrength"                                        , "Memory", 0x400670FC,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_64"                                                                      , "Memory", 0x40067100,        4, base=16
+sfr = "Level1_ConfigB_64.[3:0]Standard_IOFunction"                                             , "Memory", 0x40067100,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_64.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x40067100,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_64.[11:10]Standard_DriveStrength"                                        , "Memory", 0x40067100,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_65"                                                                      , "Memory", 0x40067104,        4, base=16
+sfr = "Level1_ConfigB_65.[3:0]Standard_IOFunction"                                             , "Memory", 0x40067104,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_65.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x40067104,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_65.[11:10]Standard_DriveStrength"                                        , "Memory", 0x40067104,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_66"                                                                      , "Memory", 0x40067108,        4, base=16
+sfr = "Level1_ConfigB_66.[3:0]Standard_IOFunction"                                             , "Memory", 0x40067108,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_66.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x40067108,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_66.[11:10]Standard_DriveStrength"                                        , "Memory", 0x40067108,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_67"                                                                      , "Memory", 0x4006710C,        4, base=16
+sfr = "Level1_ConfigB_67.[3:0]Standard_IOFunction"                                             , "Memory", 0x4006710C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_67.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x4006710C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_67.[11:10]Standard_DriveStrength"                                        , "Memory", 0x4006710C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_68"                                                                      , "Memory", 0x40067110,        4, base=16
+sfr = "Level1_ConfigB_68.[3:0]Standard_IOFunction"                                             , "Memory", 0x40067110,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_68.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x40067110,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_68.[11:10]Standard_DriveStrength"                                        , "Memory", 0x40067110,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_69"                                                                      , "Memory", 0x40067114,        4, base=16
+sfr = "Level1_ConfigB_69.[3:0]Standard_IOFunction"                                             , "Memory", 0x40067114,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_69.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x40067114,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_69.[11:10]Standard_DriveStrength"                                        , "Memory", 0x40067114,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_70"                                                                      , "Memory", 0x40067118,        4, base=16
+sfr = "Level1_ConfigB_70.[3:0]Standard_IOFunction"                                             , "Memory", 0x40067118,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_70.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x40067118,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_70.[11:10]Standard_DriveStrength"                                        , "Memory", 0x40067118,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_71"                                                                      , "Memory", 0x4006711C,        4, base=16
+sfr = "Level1_ConfigB_71.[3:0]Standard_IOFunction"                                             , "Memory", 0x4006711C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_71.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x4006711C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_71.[11:10]Standard_DriveStrength"                                        , "Memory", 0x4006711C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_72"                                                                      , "Memory", 0x40067120,        4, base=16
+sfr = "Level1_ConfigB_72.[3:0]Standard_IOFunction"                                             , "Memory", 0x40067120,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_72.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x40067120,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_72.[11:10]Standard_DriveStrength"                                        , "Memory", 0x40067120,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_73"                                                                      , "Memory", 0x40067124,        4, base=16
+sfr = "Level1_ConfigB_73.[3:0]Standard_IOFunction"                                             , "Memory", 0x40067124,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_73.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x40067124,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_73.[11:10]Standard_DriveStrength"                                        , "Memory", 0x40067124,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_74"                                                                      , "Memory", 0x40067128,        4, base=16
+sfr = "Level1_ConfigB_74.[3:0]Standard_IOFunction"                                             , "Memory", 0x40067128,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_74.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x40067128,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_74.[11:10]Standard_DriveStrength"                                        , "Memory", 0x40067128,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_75"                                                                      , "Memory", 0x4006712C,        4, base=16
+sfr = "Level1_ConfigB_75.[3:0]Standard_IOFunction"                                             , "Memory", 0x4006712C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_75.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x4006712C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_75.[11:10]Standard_DriveStrength"                                        , "Memory", 0x4006712C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_76"                                                                      , "Memory", 0x40067130,        4, base=16
+sfr = "Level1_ConfigB_76.[3:0]Standard_IOFunction"                                             , "Memory", 0x40067130,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_76.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x40067130,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_76.[11:10]Standard_DriveStrength"                                        , "Memory", 0x40067130,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_77"                                                                      , "Memory", 0x40067134,        4, base=16
+sfr = "Level1_ConfigB_77.[3:0]Standard_IOFunction"                                             , "Memory", 0x40067134,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_77.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x40067134,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_77.[11:10]Standard_DriveStrength"                                        , "Memory", 0x40067134,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_78"                                                                      , "Memory", 0x40067138,        4, base=16
+sfr = "Level1_ConfigB_78.[3:0]Standard_IOFunction"                                             , "Memory", 0x40067138,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_78.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x40067138,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_78.[11:10]Standard_DriveStrength"                                        , "Memory", 0x40067138,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_79"                                                                      , "Memory", 0x4006713C,        4, base=16
+sfr = "Level1_ConfigB_79.[3:0]Standard_IOFunction"                                             , "Memory", 0x4006713C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_79.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x4006713C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_79.[11:10]Standard_DriveStrength"                                        , "Memory", 0x4006713C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_80"                                                                      , "Memory", 0x40067140,        4, base=16
+sfr = "Level1_ConfigB_80.[3:0]Standard_IOFunction"                                             , "Memory", 0x40067140,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_80.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x40067140,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_80.[11:10]Standard_DriveStrength"                                        , "Memory", 0x40067140,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_81"                                                                      , "Memory", 0x40067144,        4, base=16
+sfr = "Level1_ConfigB_81.[3:0]Standard_IOFunction"                                             , "Memory", 0x40067144,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_81.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x40067144,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_81.[11:10]Standard_DriveStrength"                                        , "Memory", 0x40067144,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_82"                                                                      , "Memory", 0x40067148,        4, base=16
+sfr = "Level1_ConfigB_82.[3:0]Standard_IOFunction"                                             , "Memory", 0x40067148,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_82.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x40067148,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_82.[11:10]Standard_DriveStrength"                                        , "Memory", 0x40067148,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_83"                                                                      , "Memory", 0x4006714C,        4, base=16
+sfr = "Level1_ConfigB_83.[3:0]Standard_IOFunction"                                             , "Memory", 0x4006714C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_83.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x4006714C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_83.[11:10]Standard_DriveStrength"                                        , "Memory", 0x4006714C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_84"                                                                      , "Memory", 0x40067150,        4, base=16
+sfr = "Level1_ConfigB_84.[3:0]Standard_IOFunction"                                             , "Memory", 0x40067150,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_84.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x40067150,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_84.[11:10]Standard_DriveStrength"                                        , "Memory", 0x40067150,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_85"                                                                      , "Memory", 0x40067154,        4, base=16
+sfr = "Level1_ConfigB_85.[3:0]Standard_IOFunction"                                             , "Memory", 0x40067154,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_85.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x40067154,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_85.[11:10]Standard_DriveStrength"                                        , "Memory", 0x40067154,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_86"                                                                      , "Memory", 0x40067158,        4, base=16
+sfr = "Level1_ConfigB_86.[3:0]Standard_IOFunction"                                             , "Memory", 0x40067158,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_86.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x40067158,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_86.[11:10]Standard_DriveStrength"                                        , "Memory", 0x40067158,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_87"                                                                      , "Memory", 0x4006715C,        4, base=16
+sfr = "Level1_ConfigB_87.[3:0]Standard_IOFunction"                                             , "Memory", 0x4006715C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_87.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x4006715C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_87.[11:10]Standard_DriveStrength"                                        , "Memory", 0x4006715C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_88"                                                                      , "Memory", 0x40067160,        4, base=16
+sfr = "Level1_ConfigB_88.[3:0]Standard_IOFunction"                                             , "Memory", 0x40067160,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_88.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x40067160,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_88.[11:10]Standard_DriveStrength"                                        , "Memory", 0x40067160,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_89"                                                                      , "Memory", 0x40067164,        4, base=16
+sfr = "Level1_ConfigB_89.[3:0]Standard_IOFunction"                                             , "Memory", 0x40067164,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_89.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x40067164,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_89.[11:10]Standard_DriveStrength"                                        , "Memory", 0x40067164,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_90"                                                                      , "Memory", 0x40067168,        4, base=16
+sfr = "Level1_ConfigB_90.[3:0]Standard_IOFunction"                                             , "Memory", 0x40067168,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_90.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x40067168,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_90.[11:10]Standard_DriveStrength"                                        , "Memory", 0x40067168,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_91"                                                                      , "Memory", 0x4006716C,        4, base=16
+sfr = "Level1_ConfigB_91.[3:0]Standard_IOFunction"                                             , "Memory", 0x4006716C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_91.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x4006716C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_91.[11:10]Standard_DriveStrength"                                        , "Memory", 0x4006716C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_92"                                                                      , "Memory", 0x40067170,        4, base=16
+sfr = "Level1_ConfigB_92.[3:0]Standard_IOFunction"                                             , "Memory", 0x40067170,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_92.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x40067170,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_92.[11:10]Standard_DriveStrength"                                        , "Memory", 0x40067170,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_93"                                                                      , "Memory", 0x40067174,        4, base=16
+sfr = "Level1_ConfigB_93.[3:0]Standard_IOFunction"                                             , "Memory", 0x40067174,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_93.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x40067174,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_93.[11:10]Standard_DriveStrength"                                        , "Memory", 0x40067174,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_94"                                                                      , "Memory", 0x40067178,        4, base=16
+sfr = "Level1_ConfigB_94.[3:0]Standard_IOFunction"                                             , "Memory", 0x40067178,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_94.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x40067178,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_94.[11:10]Standard_DriveStrength"                                        , "Memory", 0x40067178,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_95"                                                                      , "Memory", 0x4006717C,        4, base=16
+sfr = "Level1_ConfigB_95.[3:0]Standard_IOFunction"                                             , "Memory", 0x4006717C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_95.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x4006717C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_95.[11:10]Standard_DriveStrength"                                        , "Memory", 0x4006717C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_96"                                                                      , "Memory", 0x40067180,        4, base=16
+sfr = "Level1_ConfigB_96.[3:0]Standard_IOFunction"                                             , "Memory", 0x40067180,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_96.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x40067180,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_96.[11:10]Standard_DriveStrength"                                        , "Memory", 0x40067180,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_97"                                                                      , "Memory", 0x40067184,        4, base=16
+sfr = "Level1_ConfigB_97.[3:0]Standard_IOFunction"                                             , "Memory", 0x40067184,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_97.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x40067184,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_97.[11:10]Standard_DriveStrength"                                        , "Memory", 0x40067184,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_98"                                                                      , "Memory", 0x40067188,        4, base=16
+sfr = "Level1_ConfigB_98.[3:0]Standard_IOFunction"                                             , "Memory", 0x40067188,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_98.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x40067188,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_98.[11:10]Standard_DriveStrength"                                        , "Memory", 0x40067188,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_99"                                                                      , "Memory", 0x4006718C,        4, base=16
+sfr = "Level1_ConfigB_99.[3:0]Standard_IOFunction"                                             , "Memory", 0x4006718C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_99.[9:8]Standard_PulUp_PullDown"                                         , "Memory", 0x4006718C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_99.[11:10]Standard_DriveStrength"                                        , "Memory", 0x4006718C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_100"                                                                     , "Memory", 0x40067190,        4, base=16
+sfr = "Level1_ConfigB_100.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067190,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_100.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067190,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_100.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067190,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_101"                                                                     , "Memory", 0x40067194,        4, base=16
+sfr = "Level1_ConfigB_101.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067194,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_101.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067194,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_101.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067194,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_102"                                                                     , "Memory", 0x40067198,        4, base=16
+sfr = "Level1_ConfigB_102.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067198,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_102.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067198,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_102.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067198,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_103"                                                                     , "Memory", 0x4006719C,        4, base=16
+sfr = "Level1_ConfigB_103.[3:0]Standard_IOFunction"                                            , "Memory", 0x4006719C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_103.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x4006719C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_103.[11:10]Standard_DriveStrength"                                       , "Memory", 0x4006719C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_104"                                                                     , "Memory", 0x400671A0,        4, base=16
+sfr = "Level1_ConfigB_104.[3:0]Standard_IOFunction"                                            , "Memory", 0x400671A0,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_104.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x400671A0,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_104.[11:10]Standard_DriveStrength"                                       , "Memory", 0x400671A0,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_105"                                                                     , "Memory", 0x400671A4,        4, base=16
+sfr = "Level1_ConfigB_105.[3:0]Standard_IOFunction"                                            , "Memory", 0x400671A4,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_105.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x400671A4,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_105.[11:10]Standard_DriveStrength"                                       , "Memory", 0x400671A4,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_106"                                                                     , "Memory", 0x400671A8,        4, base=16
+sfr = "Level1_ConfigB_106.[3:0]Standard_IOFunction"                                            , "Memory", 0x400671A8,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_106.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x400671A8,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_106.[11:10]Standard_DriveStrength"                                       , "Memory", 0x400671A8,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_107"                                                                     , "Memory", 0x400671AC,        4, base=16
+sfr = "Level1_ConfigB_107.[3:0]Standard_IOFunction"                                            , "Memory", 0x400671AC,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_107.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x400671AC,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_107.[11:10]Standard_DriveStrength"                                       , "Memory", 0x400671AC,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_108"                                                                     , "Memory", 0x400671B0,        4, base=16
+sfr = "Level1_ConfigB_108.[3:0]Standard_IOFunction"                                            , "Memory", 0x400671B0,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_108.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x400671B0,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_108.[11:10]Standard_DriveStrength"                                       , "Memory", 0x400671B0,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_109"                                                                     , "Memory", 0x400671B4,        4, base=16
+sfr = "Level1_ConfigB_109.[3:0]Standard_IOFunction"                                            , "Memory", 0x400671B4,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_109.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x400671B4,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_109.[11:10]Standard_DriveStrength"                                       , "Memory", 0x400671B4,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_110"                                                                     , "Memory", 0x400671B8,        4, base=16
+sfr = "Level1_ConfigB_110.[3:0]Standard_IOFunction"                                            , "Memory", 0x400671B8,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_110.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x400671B8,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_110.[11:10]Standard_DriveStrength"                                       , "Memory", 0x400671B8,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_111"                                                                     , "Memory", 0x400671BC,        4, base=16
+sfr = "Level1_ConfigB_111.[3:0]Standard_IOFunction"                                            , "Memory", 0x400671BC,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_111.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x400671BC,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_111.[11:10]Standard_DriveStrength"                                       , "Memory", 0x400671BC,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_112"                                                                     , "Memory", 0x400671C0,        4, base=16
+sfr = "Level1_ConfigB_112.[3:0]Standard_IOFunction"                                            , "Memory", 0x400671C0,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_112.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x400671C0,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_112.[11:10]Standard_DriveStrength"                                       , "Memory", 0x400671C0,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_113"                                                                     , "Memory", 0x400671C4,        4, base=16
+sfr = "Level1_ConfigB_113.[3:0]Standard_IOFunction"                                            , "Memory", 0x400671C4,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_113.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x400671C4,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_113.[11:10]Standard_DriveStrength"                                       , "Memory", 0x400671C4,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_114"                                                                     , "Memory", 0x400671C8,        4, base=16
+sfr = "Level1_ConfigB_114.[3:0]Standard_IOFunction"                                            , "Memory", 0x400671C8,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_114.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x400671C8,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_114.[11:10]Standard_DriveStrength"                                       , "Memory", 0x400671C8,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_115"                                                                     , "Memory", 0x400671CC,        4, base=16
+sfr = "Level1_ConfigB_115.[3:0]Standard_IOFunction"                                            , "Memory", 0x400671CC,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_115.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x400671CC,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_115.[11:10]Standard_DriveStrength"                                       , "Memory", 0x400671CC,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_116"                                                                     , "Memory", 0x400671D0,        4, base=16
+sfr = "Level1_ConfigB_116.[3:0]Standard_IOFunction"                                            , "Memory", 0x400671D0,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_116.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x400671D0,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_116.[11:10]Standard_DriveStrength"                                       , "Memory", 0x400671D0,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_117"                                                                     , "Memory", 0x400671D4,        4, base=16
+sfr = "Level1_ConfigB_117.[3:0]Standard_IOFunction"                                            , "Memory", 0x400671D4,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_117.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x400671D4,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_117.[11:10]Standard_DriveStrength"                                       , "Memory", 0x400671D4,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_118"                                                                     , "Memory", 0x400671D8,        4, base=16
+sfr = "Level1_ConfigB_118.[3:0]Standard_IOFunction"                                            , "Memory", 0x400671D8,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_118.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x400671D8,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_118.[11:10]Standard_DriveStrength"                                       , "Memory", 0x400671D8,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_119"                                                                     , "Memory", 0x400671DC,        4, base=16
+sfr = "Level1_ConfigB_119.[3:0]Standard_IOFunction"                                            , "Memory", 0x400671DC,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_119.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x400671DC,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_119.[11:10]Standard_DriveStrength"                                       , "Memory", 0x400671DC,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_120"                                                                     , "Memory", 0x400671E0,        4, base=16
+sfr = "Level1_ConfigB_120.[3:0]Standard_IOFunction"                                            , "Memory", 0x400671E0,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_120.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x400671E0,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_120.[11:10]Standard_DriveStrength"                                       , "Memory", 0x400671E0,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_121"                                                                     , "Memory", 0x400671E4,        4, base=16
+sfr = "Level1_ConfigB_121.[3:0]Standard_IOFunction"                                            , "Memory", 0x400671E4,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_121.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x400671E4,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_121.[11:10]Standard_DriveStrength"                                       , "Memory", 0x400671E4,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_122"                                                                     , "Memory", 0x400671E8,        4, base=16
+sfr = "Level1_ConfigB_122.[3:0]Standard_IOFunction"                                            , "Memory", 0x400671E8,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_122.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x400671E8,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_122.[11:10]Standard_DriveStrength"                                       , "Memory", 0x400671E8,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_123"                                                                     , "Memory", 0x400671EC,        4, base=16
+sfr = "Level1_ConfigB_123.[3:0]Standard_IOFunction"                                            , "Memory", 0x400671EC,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_123.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x400671EC,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_123.[11:10]Standard_DriveStrength"                                       , "Memory", 0x400671EC,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_124"                                                                     , "Memory", 0x400671F0,        4, base=16
+sfr = "Level1_ConfigB_124.[3:0]Standard_IOFunction"                                            , "Memory", 0x400671F0,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_124.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x400671F0,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_124.[11:10]Standard_DriveStrength"                                       , "Memory", 0x400671F0,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_125"                                                                     , "Memory", 0x400671F4,        4, base=16
+sfr = "Level1_ConfigB_125.[3:0]Standard_IOFunction"                                            , "Memory", 0x400671F4,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_125.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x400671F4,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_125.[11:10]Standard_DriveStrength"                                       , "Memory", 0x400671F4,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_126"                                                                     , "Memory", 0x400671F8,        4, base=16
+sfr = "Level1_ConfigB_126.[3:0]Standard_IOFunction"                                            , "Memory", 0x400671F8,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_126.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x400671F8,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_126.[11:10]Standard_DriveStrength"                                       , "Memory", 0x400671F8,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_127"                                                                     , "Memory", 0x400671FC,        4, base=16
+sfr = "Level1_ConfigB_127.[3:0]Standard_IOFunction"                                            , "Memory", 0x400671FC,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_127.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x400671FC,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_127.[11:10]Standard_DriveStrength"                                       , "Memory", 0x400671FC,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_128"                                                                     , "Memory", 0x40067200,        4, base=16
+sfr = "Level1_ConfigB_128.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067200,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_128.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067200,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_128.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067200,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_129"                                                                     , "Memory", 0x40067204,        4, base=16
+sfr = "Level1_ConfigB_129.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067204,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_129.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067204,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_129.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067204,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_130"                                                                     , "Memory", 0x40067208,        4, base=16
+sfr = "Level1_ConfigB_130.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067208,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_130.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067208,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_130.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067208,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_131"                                                                     , "Memory", 0x4006720C,        4, base=16
+sfr = "Level1_ConfigB_131.[3:0]Standard_IOFunction"                                            , "Memory", 0x4006720C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_131.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x4006720C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_131.[11:10]Standard_DriveStrength"                                       , "Memory", 0x4006720C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_132"                                                                     , "Memory", 0x40067210,        4, base=16
+sfr = "Level1_ConfigB_132.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067210,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_132.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067210,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_132.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067210,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_133"                                                                     , "Memory", 0x40067214,        4, base=16
+sfr = "Level1_ConfigB_133.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067214,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_133.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067214,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_133.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067214,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_134"                                                                     , "Memory", 0x40067218,        4, base=16
+sfr = "Level1_ConfigB_134.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067218,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_134.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067218,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_134.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067218,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_135"                                                                     , "Memory", 0x4006721C,        4, base=16
+sfr = "Level1_ConfigB_135.[3:0]Standard_IOFunction"                                            , "Memory", 0x4006721C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_135.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x4006721C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_135.[11:10]Standard_DriveStrength"                                       , "Memory", 0x4006721C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_136"                                                                     , "Memory", 0x40067220,        4, base=16
+sfr = "Level1_ConfigB_136.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067220,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_136.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067220,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_136.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067220,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_137"                                                                     , "Memory", 0x40067224,        4, base=16
+sfr = "Level1_ConfigB_137.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067224,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_137.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067224,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_137.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067224,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_138"                                                                     , "Memory", 0x40067228,        4, base=16
+sfr = "Level1_ConfigB_138.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067228,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_138.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067228,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_138.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067228,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_139"                                                                     , "Memory", 0x4006722C,        4, base=16
+sfr = "Level1_ConfigB_139.[3:0]Standard_IOFunction"                                            , "Memory", 0x4006722C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_139.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x4006722C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_139.[11:10]Standard_DriveStrength"                                       , "Memory", 0x4006722C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_140"                                                                     , "Memory", 0x40067230,        4, base=16
+sfr = "Level1_ConfigB_140.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067230,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_140.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067230,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_140.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067230,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_141"                                                                     , "Memory", 0x40067234,        4, base=16
+sfr = "Level1_ConfigB_141.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067234,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_141.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067234,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_141.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067234,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_142"                                                                     , "Memory", 0x40067238,        4, base=16
+sfr = "Level1_ConfigB_142.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067238,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_142.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067238,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_142.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067238,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_143"                                                                     , "Memory", 0x4006723C,        4, base=16
+sfr = "Level1_ConfigB_143.[3:0]Standard_IOFunction"                                            , "Memory", 0x4006723C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_143.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x4006723C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_143.[11:10]Standard_DriveStrength"                                       , "Memory", 0x4006723C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_144"                                                                     , "Memory", 0x40067240,        4, base=16
+sfr = "Level1_ConfigB_144.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067240,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_144.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067240,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_144.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067240,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_145"                                                                     , "Memory", 0x40067244,        4, base=16
+sfr = "Level1_ConfigB_145.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067244,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_145.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067244,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_145.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067244,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_146"                                                                     , "Memory", 0x40067248,        4, base=16
+sfr = "Level1_ConfigB_146.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067248,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_146.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067248,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_146.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067248,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_147"                                                                     , "Memory", 0x4006724C,        4, base=16
+sfr = "Level1_ConfigB_147.[3:0]Standard_IOFunction"                                            , "Memory", 0x4006724C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_147.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x4006724C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_147.[11:10]Standard_DriveStrength"                                       , "Memory", 0x4006724C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_148"                                                                     , "Memory", 0x40067250,        4, base=16
+sfr = "Level1_ConfigB_148.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067250,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_148.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067250,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_148.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067250,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_149"                                                                     , "Memory", 0x40067254,        4, base=16
+sfr = "Level1_ConfigB_149.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067254,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_149.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067254,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_149.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067254,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_150"                                                                     , "Memory", 0x40067258,        4, base=16
+sfr = "Level1_ConfigB_150.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067258,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_150.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067258,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_150.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067258,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_151"                                                                     , "Memory", 0x4006725C,        4, base=16
+sfr = "Level1_ConfigB_151.[3:0]Standard_IOFunction"                                            , "Memory", 0x4006725C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_151.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x4006725C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_151.[11:10]Standard_DriveStrength"                                       , "Memory", 0x4006725C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_152"                                                                     , "Memory", 0x40067260,        4, base=16
+sfr = "Level1_ConfigB_152.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067260,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_152.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067260,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_152.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067260,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_153"                                                                     , "Memory", 0x40067264,        4, base=16
+sfr = "Level1_ConfigB_153.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067264,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_153.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067264,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_153.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067264,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_154"                                                                     , "Memory", 0x40067268,        4, base=16
+sfr = "Level1_ConfigB_154.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067268,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_154.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067268,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_154.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067268,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_155"                                                                     , "Memory", 0x4006726C,        4, base=16
+sfr = "Level1_ConfigB_155.[3:0]Standard_IOFunction"                                            , "Memory", 0x4006726C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_155.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x4006726C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_155.[11:10]Standard_DriveStrength"                                       , "Memory", 0x4006726C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_156"                                                                     , "Memory", 0x40067270,        4, base=16
+sfr = "Level1_ConfigB_156.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067270,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_156.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067270,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_156.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067270,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_157"                                                                     , "Memory", 0x40067274,        4, base=16
+sfr = "Level1_ConfigB_157.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067274,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_157.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067274,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_157.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067274,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_158"                                                                     , "Memory", 0x40067278,        4, base=16
+sfr = "Level1_ConfigB_158.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067278,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_158.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067278,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_158.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067278,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_159"                                                                     , "Memory", 0x4006727C,        4, base=16
+sfr = "Level1_ConfigB_159.[3:0]Standard_IOFunction"                                            , "Memory", 0x4006727C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_159.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x4006727C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_159.[11:10]Standard_DriveStrength"                                       , "Memory", 0x4006727C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_160"                                                                     , "Memory", 0x40067280,        4, base=16
+sfr = "Level1_ConfigB_160.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067280,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_160.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067280,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_160.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067280,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_161"                                                                     , "Memory", 0x40067284,        4, base=16
+sfr = "Level1_ConfigB_161.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067284,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_161.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067284,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_161.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067284,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_162"                                                                     , "Memory", 0x40067288,        4, base=16
+sfr = "Level1_ConfigB_162.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067288,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_162.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067288,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_162.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067288,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_163"                                                                     , "Memory", 0x4006728C,        4, base=16
+sfr = "Level1_ConfigB_163.[3:0]Standard_IOFunction"                                            , "Memory", 0x4006728C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_163.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x4006728C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_163.[11:10]Standard_DriveStrength"                                       , "Memory", 0x4006728C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_164"                                                                     , "Memory", 0x40067290,        4, base=16
+sfr = "Level1_ConfigB_164.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067290,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_164.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067290,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_164.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067290,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_165"                                                                     , "Memory", 0x40067294,        4, base=16
+sfr = "Level1_ConfigB_165.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067294,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_165.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067294,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_165.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067294,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_166"                                                                     , "Memory", 0x40067298,        4, base=16
+sfr = "Level1_ConfigB_166.[3:0]Standard_IOFunction"                                            , "Memory", 0x40067298,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_166.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x40067298,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_166.[11:10]Standard_DriveStrength"                                       , "Memory", 0x40067298,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_167"                                                                     , "Memory", 0x4006729C,        4, base=16
+sfr = "Level1_ConfigB_167.[3:0]Standard_IOFunction"                                            , "Memory", 0x4006729C,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_167.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x4006729C,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_167.[11:10]Standard_DriveStrength"                                       , "Memory", 0x4006729C,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_168"                                                                     , "Memory", 0x400672A0,        4, base=16
+sfr = "Level1_ConfigB_168.[3:0]Standard_IOFunction"                                            , "Memory", 0x400672A0,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_168.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x400672A0,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_168.[11:10]Standard_DriveStrength"                                       , "Memory", 0x400672A0,        4, base=16, bitRange=10-11
+sfr = "Level1_ConfigB_169"                                                                     , "Memory", 0x400672A4,        4, base=16
+sfr = "Level1_ConfigB_169.[3:0]Standard_IOFunction"                                            , "Memory", 0x400672A4,        4, base=16, bitRange=0-3
+sfr = "Level1_ConfigB_169.[9:8]Standard_PulUp_PullDown"                                        , "Memory", 0x400672A4,        4, base=16, bitRange=8-9
+sfr = "Level1_ConfigB_169.[11:10]Standard_DriveStrength"                                       , "Memory", 0x400672A4,        4, base=16, bitRange=10-11
+sfr = "Level1_StatusProtect"                                                                   , "Memory", 0x40067400,        4, base=16
+sfr = "Level1_StatusProtect.[0]Config_StatusProtect"                                           , "Memory", 0x40067400,        4, base=16, bitRange=0
+sfr = "Level1_StatusProtect.[4]BadSequence"                                                    , "Memory", 0x40067400,        4, base=16, bitRange=4
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// ConfigSys1(IO Mux Level1) -----
+group = "CFGS1","Level1_ConfigA_0","Level1_ConfigA_1","Level1_ConfigA_2","Level1_ConfigA_3","Level1_ConfigA_4","Level1_ConfigA_5","Level1_ConfigA_6","Level1_ConfigA_7","Level1_ConfigA_8","Level1_ConfigA_9","Level1_ConfigA_10","Level1_ConfigA_11","Level1_ConfigA_12","Level1_ConfigA_13","Level1_ConfigA_14","Level1_ConfigA_15","Level1_ConfigA_16","Level1_ConfigA_17","Level1_ConfigA_18","Level1_ConfigA_19","Level1_ConfigA_20","Level1_ConfigA_21","Level1_ConfigA_22","Level1_ConfigA_23","Level1_ConfigA_24","Level1_ConfigA_25","Level1_ConfigA_26","Level1_ConfigA_27","Level1_ConfigA_28","Level1_ConfigA_29","Level1_ConfigA_30","Level1_ConfigA_31","Level1_ConfigA_32","Level1_ConfigA_33","Level1_ConfigA_34","Level1_ConfigA_35","Level1_ConfigA_36","Level1_ConfigA_37","Level1_ConfigA_38","Level1_ConfigA_39","Level1_ConfigA_40","Level1_ConfigA_41","Level1_ConfigA_42","Level1_ConfigA_43","Level1_ConfigA_44","Level1_ConfigA_45","Level1_ConfigA_46","Level1_ConfigA_47","Level1_ConfigA_48","Level1_ConfigA_49","Level1_ConfigA_50","Level1_ConfigA_51","Level1_ConfigA_52","Level1_ConfigA_53","Level1_ConfigA_54","Level1_ConfigA_55","Level1_ConfigA_56","Level1_ConfigA_57","Level1_ConfigA_58","Level1_ConfigA_59","Level1_ConfigB_60","Level1_ConfigB_61","Level1_ConfigB_62","Level1_ConfigB_63","Level1_ConfigB_64","Level1_ConfigB_65","Level1_ConfigB_66","Level1_ConfigB_67","Level1_ConfigB_68","Level1_ConfigB_69","Level1_ConfigB_70","Level1_ConfigB_71","Level1_ConfigB_72","Level1_ConfigB_73","Level1_ConfigB_74","Level1_ConfigB_75","Level1_ConfigB_76","Level1_ConfigB_77","Level1_ConfigB_78","Level1_ConfigB_79","Level1_ConfigB_80","Level1_ConfigB_81","Level1_ConfigB_82","Level1_ConfigB_83","Level1_ConfigB_84","Level1_ConfigB_85","Level1_ConfigB_86","Level1_ConfigB_87","Level1_ConfigB_88","Level1_ConfigB_89","Level1_ConfigB_90","Level1_ConfigB_91","Level1_ConfigB_92","Level1_ConfigB_93","Level1_ConfigB_94","Level1_ConfigB_95","Level1_ConfigB_96","Level1_ConfigB_97","Level1_ConfigB_98","Level1_ConfigB_99","Level1_ConfigB_100","Level1_ConfigB_101","Level1_ConfigB_102","Level1_ConfigB_103","Level1_ConfigB_104","Level1_ConfigB_105","Level1_ConfigB_106","Level1_ConfigB_107","Level1_ConfigB_108","Level1_ConfigB_109","Level1_ConfigB_110","Level1_ConfigB_111","Level1_ConfigB_112","Level1_ConfigB_113","Level1_ConfigB_114","Level1_ConfigB_115","Level1_ConfigB_116","Level1_ConfigB_117","Level1_ConfigB_118","Level1_ConfigB_119","Level1_ConfigB_120","Level1_ConfigB_121","Level1_ConfigB_122","Level1_ConfigB_123","Level1_ConfigB_124","Level1_ConfigB_125","Level1_ConfigB_126","Level1_ConfigB_127","Level1_ConfigB_128","Level1_ConfigB_129","Level1_ConfigB_130","Level1_ConfigB_131","Level1_ConfigB_132","Level1_ConfigB_133","Level1_ConfigB_134","Level1_ConfigB_135","Level1_ConfigB_136","Level1_ConfigB_137","Level1_ConfigB_138","Level1_ConfigB_139","Level1_ConfigB_140","Level1_ConfigB_141","Level1_ConfigB_142","Level1_ConfigB_143","Level1_ConfigB_144","Level1_ConfigB_145","Level1_ConfigB_146","Level1_ConfigB_147","Level1_ConfigB_148","Level1_ConfigB_149","Level1_ConfigB_150","Level1_ConfigB_151","Level1_ConfigB_152","Level1_ConfigB_153","Level1_ConfigB_154","Level1_ConfigB_155","Level1_ConfigB_156","Level1_ConfigB_157","Level1_ConfigB_158","Level1_ConfigB_159","Level1_ConfigB_160","Level1_ConfigB_161","Level1_ConfigB_162","Level1_ConfigB_163","Level1_ConfigB_164","Level1_ConfigB_165","Level1_ConfigB_166","Level1_ConfigB_167","Level1_ConfigB_168","Level1_ConfigB_169","Level1_StatusProtect"

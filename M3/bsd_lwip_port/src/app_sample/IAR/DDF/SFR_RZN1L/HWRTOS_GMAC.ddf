@@ -1,0 +1,229 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : HWRTOS_GMAC
+;               HW_RTOS (GMAC)
+;    revision : 0.13 (15.September.2017)
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "GMAC_TXID"                                                                              , "Memory", 0x400F000C,        4, base=16, readOnly
+sfr = "GMAC_TXID.[31:0]TXID"                                                                   , "Memory", 0x400F000C,        4, base=16, readOnly, bitRange=0-31
+sfr = "GMAC_TXRESULT"                                                                          , "Memory", 0x400F0010,        4, base=16, readOnly
+sfr = "GMAC_MODE"                                                                              , "Memory", 0x400F0020,        4, base=16
+sfr = "GMAC_MODE.[30]DUPMODE"                                                                  , "Memory", 0x400F0020,        4, base=16, bitRange=30
+sfr = "GMAC_MODE.[31]ETHMODE"                                                                  , "Memory", 0x400F0020,        4, base=16, bitRange=31
+sfr = "GMAC_RXMODE"                                                                            , "Memory", 0x400F0024,        4, base=16
+sfr = "GMAC_RXMODE.[11:9]RRTTH"                                                                , "Memory", 0x400F0024,        4, base=16, bitRange=9-11
+sfr = "GMAC_RXMODE.[13:12]RFULLTH"                                                             , "Memory", 0x400F0024,        4, base=16, bitRange=12-13
+sfr = "GMAC_RXMODE.[15:14]REMPTH"                                                              , "Memory", 0x400F0024,        4, base=16, bitRange=14-15
+sfr = "GMAC_RXMODE.[28]RAMASKEN"                                                               , "Memory", 0x400F0024,        4, base=16, bitRange=28
+sfr = "GMAC_RXMODE.[29]SFRXFIFO"                                                               , "Memory", 0x400F0024,        4, base=16, bitRange=29
+sfr = "GMAC_RXMODE.[30]MFILLTEREN"                                                             , "Memory", 0x400F0024,        4, base=16, bitRange=30
+sfr = "GMAC_RXMODE.[31]AFILLTEREN"                                                             , "Memory", 0x400F0024,        4, base=16, bitRange=31
+sfr = "GMAC_TXMODE"                                                                            , "Memory", 0x400F0028,        4, base=16
+sfr = "GMAC_TXMODE.[7:6]TRBMODE"                                                               , "Memory", 0x400F0028,        4, base=16, bitRange=6-7
+sfr = "GMAC_TXMODE.[10:9]TFULLTH"                                                              , "Memory", 0x400F0028,        4, base=16, bitRange=9-10
+sfr = "GMAC_TXMODE.[13:11]TEMPTH"                                                              , "Memory", 0x400F0028,        4, base=16, bitRange=11-13
+sfr = "GMAC_TXMODE.[15:14]Frame Start Threshold"                                               , "Memory", 0x400F0028,        4, base=16, bitRange=14-15
+sfr = "GMAC_TXMODE.[28]SPTXEN"                                                                 , "Memory", 0x400F0028,        4, base=16, bitRange=28
+sfr = "GMAC_TXMODE.[29]SF"                                                                     , "Memory", 0x400F0028,        4, base=16, bitRange=29
+sfr = "GMAC_TXMODE.[30]LPTXEN"                                                                 , "Memory", 0x400F0028,        4, base=16, bitRange=30
+sfr = "GMAC_RESET"                                                                             , "Memory", 0x400F0030,        4, base=16, writeOnly
+sfr = "GMAC_RESET.[14]RXRST"                                                                   , "Memory", 0x400F0030,        4, base=16, writeOnly, bitRange=14
+sfr = "GMAC_RESET.[15]TXRST"                                                                   , "Memory", 0x400F0030,        4, base=16, writeOnly, bitRange=15
+sfr = "GMAC_RESET.[31]ALLRST"                                                                  , "Memory", 0x400F0030,        4, base=16, writeOnly, bitRange=31
+sfr = "GMAC_PAUSE1"                                                                            , "Memory", 0x400F0080,        4, base=16
+sfr = "GMAC_PAUSE1.[31:0]PPDATA1"                                                              , "Memory", 0x400F0080,        4, base=16, bitRange=0-31
+sfr = "GMAC_PAUSE2"                                                                            , "Memory", 0x400F0084,        4, base=16
+sfr = "GMAC_PAUSE2.[31:0]PPDATA2"                                                              , "Memory", 0x400F0084,        4, base=16, bitRange=0-31
+sfr = "GMAC_PAUSE3"                                                                            , "Memory", 0x400F0088,        4, base=16
+sfr = "GMAC_PAUSE3.[31:0]PPDATA3"                                                              , "Memory", 0x400F0088,        4, base=16, bitRange=0-31
+sfr = "GMAC_PAUSE4"                                                                            , "Memory", 0x400F008C,        4, base=16
+sfr = "GMAC_PAUSE4.[31:0]PPDATA4"                                                              , "Memory", 0x400F008C,        4, base=16, bitRange=0-31
+sfr = "GMAC_PAUSE5"                                                                            , "Memory", 0x400F0090,        4, base=16
+sfr = "GMAC_PAUSE5.[31:0]PPDATA5"                                                              , "Memory", 0x400F0090,        4, base=16, bitRange=0-31
+sfr = "GMAC_FLWCTL"                                                                            , "Memory", 0x400F0098,        4, base=16
+sfr = "GMAC_FLWCTL.[31]PPRXEN"                                                                 , "Memory", 0x400F0098,        4, base=16, bitRange=31
+sfr = "GMAC_PAUSPKT"                                                                           , "Memory", 0x400F009C,        4, base=16
+sfr = "GMAC_PAUSPKT.[31]PPR"                                                                   , "Memory", 0x400F009C,        4, base=16, bitRange=31
+sfr = "GMAC_MIIM"                                                                              , "Memory", 0x400F00A0,        4, base=16
+sfr = "GMAC_MIIM.[15:0]DATA"                                                                   , "Memory", 0x400F00A0,        4, base=16, bitRange=0-15
+sfr = "GMAC_MIIM.[20:16]REGADDR"                                                               , "Memory", 0x400F00A0,        4, base=16, writeOnly, bitRange=16-20
+sfr = "GMAC_MIIM.[25:21]PHYADDR"                                                               , "Memory", 0x400F00A0,        4, base=16, writeOnly, bitRange=21-25
+sfr = "GMAC_MIIM.[26]RWDV"                                                                     , "Memory", 0x400F00A0,        4, base=16, bitRange=26
+sfr = "GMAC_ADR1A"                                                                             , "Memory", 0x400F0100,        4, base=16
+sfr = "GMAC_ADR1A.[7:0]MADDR1B"                                                                , "Memory", 0x400F0100,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR1A.[15:8]MADDR2B"                                                               , "Memory", 0x400F0100,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR1A.[23:16]MADDR3B"                                                              , "Memory", 0x400F0100,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR1A.[31:24]MADDR4B"                                                              , "Memory", 0x400F0100,        4, base=16, bitRange=24-31
+sfr = "GMAC_ADR1B"                                                                             , "Memory", 0x400F0104,        4, base=16
+sfr = "GMAC_ADR1B.[7:0]MADDR5B"                                                                , "Memory", 0x400F0104,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR1B.[15:8]MADDR6B"                                                               , "Memory", 0x400F0104,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR1B.[23:16]BITMSK"                                                               , "Memory", 0x400F0104,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR2A"                                                                             , "Memory", 0x400F0108,        4, base=16
+sfr = "GMAC_ADR2A.[7:0]MADDR1B"                                                                , "Memory", 0x400F0108,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR2A.[15:8]MADDR2B"                                                               , "Memory", 0x400F0108,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR2A.[23:16]MADDR3B"                                                              , "Memory", 0x400F0108,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR2A.[31:24]MADDR4B"                                                              , "Memory", 0x400F0108,        4, base=16, bitRange=24-31
+sfr = "GMAC_ADR2B"                                                                             , "Memory", 0x400F010C,        4, base=16
+sfr = "GMAC_ADR2B.[7:0]MADDR5B"                                                                , "Memory", 0x400F010C,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR2B.[15:8]MADDR6B"                                                               , "Memory", 0x400F010C,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR2B.[23:16]BITMSK"                                                               , "Memory", 0x400F010C,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR3A"                                                                             , "Memory", 0x400F0110,        4, base=16
+sfr = "GMAC_ADR3A.[7:0]MADDR1B"                                                                , "Memory", 0x400F0110,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR3A.[15:8]MADDR2B"                                                               , "Memory", 0x400F0110,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR3A.[23:16]MADDR3B"                                                              , "Memory", 0x400F0110,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR3A.[31:24]MADDR4B"                                                              , "Memory", 0x400F0110,        4, base=16, bitRange=24-31
+sfr = "GMAC_ADR3B"                                                                             , "Memory", 0x400F0114,        4, base=16
+sfr = "GMAC_ADR3B.[7:0]MADDR5B"                                                                , "Memory", 0x400F0114,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR3B.[15:8]MADDR6B"                                                               , "Memory", 0x400F0114,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR3B.[23:16]BITMSK"                                                               , "Memory", 0x400F0114,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR4A"                                                                             , "Memory", 0x400F0118,        4, base=16
+sfr = "GMAC_ADR4A.[7:0]MADDR1B"                                                                , "Memory", 0x400F0118,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR4A.[15:8]MADDR2B"                                                               , "Memory", 0x400F0118,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR4A.[23:16]MADDR3B"                                                              , "Memory", 0x400F0118,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR4A.[31:24]MADDR4B"                                                              , "Memory", 0x400F0118,        4, base=16, bitRange=24-31
+sfr = "GMAC_ADR4B"                                                                             , "Memory", 0x400F011C,        4, base=16
+sfr = "GMAC_ADR4B.[7:0]MADDR5B"                                                                , "Memory", 0x400F011C,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR4B.[15:8]MADDR6B"                                                               , "Memory", 0x400F011C,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR4B.[23:16]BITMSK"                                                               , "Memory", 0x400F011C,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR5A"                                                                             , "Memory", 0x400F0120,        4, base=16
+sfr = "GMAC_ADR5A.[7:0]MADDR1B"                                                                , "Memory", 0x400F0120,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR5A.[15:8]MADDR2B"                                                               , "Memory", 0x400F0120,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR5A.[23:16]MADDR3B"                                                              , "Memory", 0x400F0120,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR5A.[31:24]MADDR4B"                                                              , "Memory", 0x400F0120,        4, base=16, bitRange=24-31
+sfr = "GMAC_ADR5B"                                                                             , "Memory", 0x400F0124,        4, base=16
+sfr = "GMAC_ADR5B.[7:0]MADDR5B"                                                                , "Memory", 0x400F0124,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR5B.[15:8]MADDR6B"                                                               , "Memory", 0x400F0124,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR5B.[23:16]BITMSK"                                                               , "Memory", 0x400F0124,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR6A"                                                                             , "Memory", 0x400F0128,        4, base=16
+sfr = "GMAC_ADR6A.[7:0]MADDR1B"                                                                , "Memory", 0x400F0128,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR6A.[15:8]MADDR2B"                                                               , "Memory", 0x400F0128,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR6A.[23:16]MADDR3B"                                                              , "Memory", 0x400F0128,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR6A.[31:24]MADDR4B"                                                              , "Memory", 0x400F0128,        4, base=16, bitRange=24-31
+sfr = "GMAC_ADR6B"                                                                             , "Memory", 0x400F012C,        4, base=16
+sfr = "GMAC_ADR6B.[7:0]MADDR5B"                                                                , "Memory", 0x400F012C,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR6B.[15:8]MADDR6B"                                                               , "Memory", 0x400F012C,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR6B.[23:16]BITMSK"                                                               , "Memory", 0x400F012C,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR7A"                                                                             , "Memory", 0x400F0130,        4, base=16
+sfr = "GMAC_ADR7A.[7:0]MADDR1B"                                                                , "Memory", 0x400F0130,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR7A.[15:8]MADDR2B"                                                               , "Memory", 0x400F0130,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR7A.[23:16]MADDR3B"                                                              , "Memory", 0x400F0130,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR7A.[31:24]MADDR4B"                                                              , "Memory", 0x400F0130,        4, base=16, bitRange=24-31
+sfr = "GMAC_ADR7B"                                                                             , "Memory", 0x400F0134,        4, base=16
+sfr = "GMAC_ADR7B.[7:0]MADDR5B"                                                                , "Memory", 0x400F0134,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR7B.[15:8]MADDR6B"                                                               , "Memory", 0x400F0134,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR7B.[23:16]BITMSK"                                                               , "Memory", 0x400F0134,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR8A"                                                                             , "Memory", 0x400F0138,        4, base=16
+sfr = "GMAC_ADR8A.[7:0]MADDR1B"                                                                , "Memory", 0x400F0138,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR8A.[15:8]MADDR2B"                                                               , "Memory", 0x400F0138,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR8A.[23:16]MADDR3B"                                                              , "Memory", 0x400F0138,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR8A.[31:24]MADDR4B"                                                              , "Memory", 0x400F0138,        4, base=16, bitRange=24-31
+sfr = "GMAC_ADR8B"                                                                             , "Memory", 0x400F013C,        4, base=16
+sfr = "GMAC_ADR8B.[7:0]MADDR5B"                                                                , "Memory", 0x400F013C,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR8B.[15:8]MADDR6B"                                                               , "Memory", 0x400F013C,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR8B.[23:16]BITMSK"                                                               , "Memory", 0x400F013C,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR9A"                                                                             , "Memory", 0x400F0140,        4, base=16
+sfr = "GMAC_ADR9A.[7:0]MADDR1B"                                                                , "Memory", 0x400F0140,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR9A.[15:8]MADDR2B"                                                               , "Memory", 0x400F0140,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR9A.[23:16]MADDR3B"                                                              , "Memory", 0x400F0140,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR9A.[31:24]MADDR4B"                                                              , "Memory", 0x400F0140,        4, base=16, bitRange=24-31
+sfr = "GMAC_ADR9B"                                                                             , "Memory", 0x400F0144,        4, base=16
+sfr = "GMAC_ADR9B.[7:0]MADDR5B"                                                                , "Memory", 0x400F0144,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR9B.[15:8]MADDR6B"                                                               , "Memory", 0x400F0144,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR9B.[23:16]BITMSK"                                                               , "Memory", 0x400F0144,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR10A"                                                                            , "Memory", 0x400F0148,        4, base=16
+sfr = "GMAC_ADR10A.[7:0]MADDR1B"                                                               , "Memory", 0x400F0148,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR10A.[15:8]MADDR2B"                                                              , "Memory", 0x400F0148,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR10A.[23:16]MADDR3B"                                                             , "Memory", 0x400F0148,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR10A.[31:24]MADDR4B"                                                             , "Memory", 0x400F0148,        4, base=16, bitRange=24-31
+sfr = "GMAC_ADR10B"                                                                            , "Memory", 0x400F014C,        4, base=16
+sfr = "GMAC_ADR10B.[7:0]MADDR5B"                                                               , "Memory", 0x400F014C,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR10B.[15:8]MADDR6B"                                                              , "Memory", 0x400F014C,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR10B.[23:16]BITMSK"                                                              , "Memory", 0x400F014C,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR11A"                                                                            , "Memory", 0x400F0150,        4, base=16
+sfr = "GMAC_ADR11A.[7:0]MADDR1B"                                                               , "Memory", 0x400F0150,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR11A.[15:8]MADDR2B"                                                              , "Memory", 0x400F0150,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR11A.[23:16]MADDR3B"                                                             , "Memory", 0x400F0150,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR11A.[31:24]MADDR4B"                                                             , "Memory", 0x400F0150,        4, base=16, bitRange=24-31
+sfr = "GMAC_ADR11B"                                                                            , "Memory", 0x400F0154,        4, base=16
+sfr = "GMAC_ADR11B.[7:0]MADDR5B"                                                               , "Memory", 0x400F0154,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR11B.[15:8]MADDR6B"                                                              , "Memory", 0x400F0154,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR11B.[23:16]BITMSK"                                                              , "Memory", 0x400F0154,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR12A"                                                                            , "Memory", 0x400F0158,        4, base=16
+sfr = "GMAC_ADR12A.[7:0]MADDR1B"                                                               , "Memory", 0x400F0158,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR12A.[15:8]MADDR2B"                                                              , "Memory", 0x400F0158,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR12A.[23:16]MADDR3B"                                                             , "Memory", 0x400F0158,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR12A.[31:24]MADDR4B"                                                             , "Memory", 0x400F0158,        4, base=16, bitRange=24-31
+sfr = "GMAC_ADR12B"                                                                            , "Memory", 0x400F015C,        4, base=16
+sfr = "GMAC_ADR12B.[7:0]MADDR5B"                                                               , "Memory", 0x400F015C,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR12B.[15:8]MADDR6B"                                                              , "Memory", 0x400F015C,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR12B.[23:16]BITMSK"                                                              , "Memory", 0x400F015C,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR13A"                                                                            , "Memory", 0x400F0160,        4, base=16
+sfr = "GMAC_ADR13A.[7:0]MADDR1B"                                                               , "Memory", 0x400F0160,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR13A.[15:8]MADDR2B"                                                              , "Memory", 0x400F0160,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR13A.[23:16]MADDR3B"                                                             , "Memory", 0x400F0160,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR13A.[31:24]MADDR4B"                                                             , "Memory", 0x400F0160,        4, base=16, bitRange=24-31
+sfr = "GMAC_ADR13B"                                                                            , "Memory", 0x400F0164,        4, base=16
+sfr = "GMAC_ADR13B.[7:0]MADDR5B"                                                               , "Memory", 0x400F0164,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR13B.[15:8]MADDR6B"                                                              , "Memory", 0x400F0164,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR13B.[23:16]BITMSK"                                                              , "Memory", 0x400F0164,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR14A"                                                                            , "Memory", 0x400F0168,        4, base=16
+sfr = "GMAC_ADR14A.[7:0]MADDR1B"                                                               , "Memory", 0x400F0168,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR14A.[15:8]MADDR2B"                                                              , "Memory", 0x400F0168,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR14A.[23:16]MADDR3B"                                                             , "Memory", 0x400F0168,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR14A.[31:24]MADDR4B"                                                             , "Memory", 0x400F0168,        4, base=16, bitRange=24-31
+sfr = "GMAC_ADR14B"                                                                            , "Memory", 0x400F016C,        4, base=16
+sfr = "GMAC_ADR14B.[7:0]MADDR5B"                                                               , "Memory", 0x400F016C,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR14B.[15:8]MADDR6B"                                                              , "Memory", 0x400F016C,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR14B.[23:16]BITMSK"                                                              , "Memory", 0x400F016C,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR15A"                                                                            , "Memory", 0x400F0170,        4, base=16
+sfr = "GMAC_ADR15A.[7:0]MADDR1B"                                                               , "Memory", 0x400F0170,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR15A.[15:8]MADDR2B"                                                              , "Memory", 0x400F0170,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR15A.[23:16]MADDR3B"                                                             , "Memory", 0x400F0170,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR15A.[31:24]MADDR4B"                                                             , "Memory", 0x400F0170,        4, base=16, bitRange=24-31
+sfr = "GMAC_ADR15B"                                                                            , "Memory", 0x400F0174,        4, base=16
+sfr = "GMAC_ADR15B.[7:0]MADDR5B"                                                               , "Memory", 0x400F0174,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR15B.[15:8]MADDR6B"                                                              , "Memory", 0x400F0174,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR15B.[23:16]BITMSK"                                                              , "Memory", 0x400F0174,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR16A"                                                                            , "Memory", 0x400F0178,        4, base=16
+sfr = "GMAC_ADR16A.[7:0]MADDR1B"                                                               , "Memory", 0x400F0178,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR16A.[15:8]MADDR2B"                                                              , "Memory", 0x400F0178,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR16A.[23:16]MADDR3B"                                                             , "Memory", 0x400F0178,        4, base=16, bitRange=16-23
+sfr = "GMAC_ADR16A.[31:24]MADDR4B"                                                             , "Memory", 0x400F0178,        4, base=16, bitRange=24-31
+sfr = "GMAC_ADR16B"                                                                            , "Memory", 0x400F017C,        4, base=16
+sfr = "GMAC_ADR16B.[7:0]MADDR5B"                                                               , "Memory", 0x400F017C,        4, base=16, bitRange=0-7
+sfr = "GMAC_ADR16B.[15:8]MADDR6B"                                                              , "Memory", 0x400F017C,        4, base=16, bitRange=8-15
+sfr = "GMAC_ADR16B.[23:16]BITMSK"                                                              , "Memory", 0x400F017C,        4, base=16, bitRange=16-23
+sfr = "GMAC_RXFIFO"                                                                            , "Memory", 0x400F0200,        4, base=16, readOnly
+sfr = "GMAC_RXFIFO.[28:17]RSW"                                                                 , "Memory", 0x400F0200,        4, base=16, readOnly, bitRange=17-28
+sfr = "GMAC_RXFIFO.[29]RRT"                                                                    , "Memory", 0x400F0200,        4, base=16, readOnly, bitRange=29
+sfr = "GMAC_RXFIFO.[30]REMP"                                                                   , "Memory", 0x400F0200,        4, base=16, readOnly, bitRange=30
+sfr = "GMAC_RXFIFO.[31]RFULL"                                                                  , "Memory", 0x400F0200,        4, base=16, readOnly, bitRange=31
+sfr = "GMAC_TXFIFO"                                                                            , "Memory", 0x400F0204,        4, base=16, readOnly
+sfr = "GMAC_TXFIFO.[26:24]TRBFR"                                                               , "Memory", 0x400F0204,        4, base=16, readOnly, bitRange=24-26
+sfr = "GMAC_TXFIFO.[29:27]TSTATUS"                                                             , "Memory", 0x400F0204,        4, base=16, readOnly, bitRange=27-29
+sfr = "GMAC_TXFIFO.[30]TEMP"                                                                   , "Memory", 0x400F0204,        4, base=16, readOnly, bitRange=30
+sfr = "GMAC_TXFIFO.[31]TFULL"                                                                  , "Memory", 0x400F0204,        4, base=16, readOnly, bitRange=31
+sfr = "GMAC_ACC"                                                                               , "Memory", 0x400F0208,        4, base=16
+sfr = "GMAC_ACC.[0]RTCPIPEN"                                                                   , "Memory", 0x400F0208,        4, base=16, bitRange=0
+sfr = "GMAC_ACC.[1]TTCPIPEN"                                                                   , "Memory", 0x400F0208,        4, base=16, bitRange=1
+sfr = "GMAC_ACC.[2]RTCPIPACC"                                                                  , "Memory", 0x400F0208,        4, base=16, bitRange=2
+sfr = "GMAC_RXMAC_ENA"                                                                         , "Memory", 0x400F0220,        4, base=16
+sfr = "GMAC_RXMAC_ENA.[0]RMACEN"                                                               , "Memory", 0x400F0220,        4, base=16, bitRange=0
+sfr = "BUFID"                                                                                  , "Memory", 0x400F1100,        4, base=16, readOnly
+sfr = "BUFID.[15:0]ADDR"                                                                       , "Memory", 0x400F1100,        4, base=16, readOnly, bitRange=0-15
+sfr = "BUFID.[27:16]WORD"                                                                      , "Memory", 0x400F1100,        4, base=16, readOnly, bitRange=16-27
+sfr = "BUFID.[28]VALID"                                                                        , "Memory", 0x400F1100,        4, base=16, readOnly, bitRange=28
+sfr = "BUFID.[31]NOEMP"                                                                        , "Memory", 0x400F1100,        4, base=16, readOnly, bitRange=31
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// HW_RTOS (GMAC) -----
+group = "HWRTOS_GMAC","GMAC_TXID","GMAC_TXRESULT","GMAC_MODE","GMAC_RXMODE","GMAC_TXMODE","GMAC_RESET","GMAC_PAUSE1","GMAC_PAUSE2","GMAC_PAUSE3","GMAC_PAUSE4","GMAC_PAUSE5","GMAC_FLWCTL","GMAC_PAUSPKT","GMAC_MIIM","GMAC_ADR1A","GMAC_ADR1B","GMAC_ADR2A","GMAC_ADR2B","GMAC_ADR3A","GMAC_ADR3B","GMAC_ADR4A","GMAC_ADR4B","GMAC_ADR5A","GMAC_ADR5B","GMAC_ADR6A","GMAC_ADR6B","GMAC_ADR7A","GMAC_ADR7B","GMAC_ADR8A","GMAC_ADR8B","GMAC_ADR9A","GMAC_ADR9B","GMAC_ADR10A","GMAC_ADR10B","GMAC_ADR11A","GMAC_ADR11B","GMAC_ADR12A","GMAC_ADR12B","GMAC_ADR13A","GMAC_ADR13B","GMAC_ADR14A","GMAC_ADR14B","GMAC_ADR15A","GMAC_ADR15B","GMAC_ADR16A","GMAC_ADR16B","GMAC_RXFIFO","GMAC_TXFIFO","GMAC_ACC","GMAC_RXMAC_ENA","BUFID"

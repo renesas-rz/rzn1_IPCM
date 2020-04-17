@@ -1,0 +1,80 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : WDTSAFE2
+;               Watchdog Safe-2
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "WDogSafe2/LoadMaxCount"                                                                 , "Memory", 0x51004000,        4, base=16
+sfr = "WDogSafe2/LoadMaxCount.[15:0]LoadMaxCount"                                              , "Memory", 0x51004000,        4, base=16, bitRange=0-15
+sfr = "WDogSafe2/CurrentMaxCount"                                                              , "Memory", 0x51004004,        4, base=16, readOnly
+sfr = "WDogSafe2/CurrentMaxCount.[15:0]CurrentMaxCount"                                        , "Memory", 0x51004004,        4, base=16, readOnly, bitRange=0-15
+sfr = "WDogSafe2/LoadMinCount"                                                                 , "Memory", 0x51004008,        4, base=16
+sfr = "WDogSafe2/LoadMinCount.[15:0]LoadMinCount"                                              , "Memory", 0x51004008,        4, base=16, bitRange=0-15
+sfr = "WDogSafe2/CurrentMinCount"                                                              , "Memory", 0x5100400C,        4, base=16, readOnly
+sfr = "WDogSafe2/CurrentMinCount.[15:0]CurrentMinCount"                                        , "Memory", 0x5100400C,        4, base=16, readOnly, bitRange=0-15
+sfr = "WDogSafe2/StatusInt0"                                                                   , "Memory", 0x51004010,        4, base=16, readOnly
+sfr = "WDogSafe2/StatusInt0.[0]StatusInt0"                                                     , "Memory", 0x51004010,        4, base=16, readOnly, bitRange=0
+sfr = "WDogSafe2/StatusInt1"                                                                   , "Memory", 0x51004014,        4, base=16, readOnly
+sfr = "WDogSafe2/StatusInt1.[0]StatusInt1"                                                     , "Memory", 0x51004014,        4, base=16, readOnly, bitRange=0
+sfr = "WDogSafe2/ClearInt"                                                                     , "Memory", 0x51004018,        4, base=16, readOnly
+sfr = "WDogSafe2/ClearInt.[0]ClearInt"                                                         , "Memory", 0x51004018,        4, base=16, readOnly, bitRange=0
+sfr = "WDogSafe2/Control"                                                                      , "Memory", 0x5100401C,        4, base=16
+sfr = "WDogSafe2/Control.[0]MaskInt"                                                           , "Memory", 0x5100401C,        4, base=16, bitRange=0
+sfr = "WDogSafe2/Status"                                                                       , "Memory", 0x51004020,        4, base=16, readOnly
+sfr = "WDogSafe2/Status.[0]EnWatchdog"                                                         , "Memory", 0x51004020,        4, base=16, readOnly, bitRange=0
+sfr = "WDogSafe2/Status.[1]Enable"                                                             , "Memory", 0x51004020,        4, base=16, readOnly, bitRange=1
+sfr = "WDogSafe2/Status.[2]PadTest"                                                            , "Memory", 0x51004020,        4, base=16, readOnly, bitRange=2
+sfr = "WDogSafe2/Status.[3]Trigger"                                                            , "Memory", 0x51004020,        4, base=16, readOnly, bitRange=3
+sfr = "WDogSafe2/Status.[4]TimeOut"                                                            , "Memory", 0x51004020,        4, base=16, readOnly, bitRange=4
+sfr = "WDogSafe2/Status.[5]EnableReset"                                                        , "Memory", 0x51004020,        4, base=16, readOnly, bitRange=5
+sfr = "WDogSafe2/Status.[6]EnableRefresh"                                                      , "Memory", 0x51004020,        4, base=16, readOnly, bitRange=6
+sfr = "WDogSafe2/Status.[7]BadSequence"                                                        , "Memory", 0x51004020,        4, base=16, readOnly, bitRange=7
+sfr = "WDogSafe2/Status.[8]StatusWatchdog"                                                     , "Memory", 0x51004020,        4, base=16, readOnly, bitRange=8
+sfr = "WDogSafe2/Status.[9]ResetWatchdog"                                                      , "Memory", 0x51004020,        4, base=16, readOnly, bitRange=9
+sfr = "WDogSafe2/Status.[10]ForceEnWatchdog"                                                   , "Memory", 0x51004020,        4, base=16, readOnly, bitRange=10
+sfr = "WDogSafe2/Status.[11]ForceStatusWatchdog"                                               , "Memory", 0x51004020,        4, base=16, readOnly, bitRange=11
+sfr = "WDogSafe2/Status.[12]TestMode"                                                          , "Memory", 0x51004020,        4, base=16, readOnly, bitRange=12
+sfr = "WDogSafe2/Refresh"                                                                      , "Memory", 0x51004024,        4, base=16, writeOnly
+sfr = "WDogSafe2/Refresh.[31:0]Refresh"                                                        , "Memory", 0x51004024,        4, base=16, writeOnly, bitRange=0-31
+sfr = "WDogSafe2/SetEnableRefresh"                                                             , "Memory", 0x51004028,        4, base=16, writeOnly
+sfr = "WDogSafe2/SetEnableRefresh.[31:0]SetEnableRefresh"                                      , "Memory", 0x51004028,        4, base=16, writeOnly, bitRange=0-31
+sfr = "WDogSafe2/ClearEnableRefresh"                                                           , "Memory", 0x5100402C,        4, base=16, writeOnly
+sfr = "WDogSafe2/ClearEnableRefresh.[31:0]ClearEnableRefresh"                                  , "Memory", 0x5100402C,        4, base=16, writeOnly, bitRange=0-31
+sfr = "WDogSafe2/SetEnableReset"                                                               , "Memory", 0x51004030,        4, base=16, writeOnly
+sfr = "WDogSafe2/SetEnableReset.[31:0]SetEnableReset"                                          , "Memory", 0x51004030,        4, base=16, writeOnly, bitRange=0-31
+sfr = "WDogSafe2/ClearEnableReset"                                                             , "Memory", 0x51004034,        4, base=16, writeOnly
+sfr = "WDogSafe2/ClearEnableReset.[31:0]ClearEnableReset"                                      , "Memory", 0x51004034,        4, base=16, writeOnly, bitRange=0-31
+sfr = "WDogSafe2/SetTrigger"                                                                   , "Memory", 0x51004038,        4, base=16, writeOnly
+sfr = "WDogSafe2/SetTrigger.[31:0]SetTrigger"                                                  , "Memory", 0x51004038,        4, base=16, writeOnly, bitRange=0-31
+sfr = "WDogSafe2/SetPadTest"                                                                   , "Memory", 0x5100403C,        4, base=16, writeOnly
+sfr = "WDogSafe2/SetPadTest.[31:0]SetPadTest"                                                  , "Memory", 0x5100403C,        4, base=16, writeOnly, bitRange=0-31
+sfr = "WDogSafe2/ClearPadTest"                                                                 , "Memory", 0x51004040,        4, base=16, writeOnly
+sfr = "WDogSafe2/ClearPadTest.[31:0]ClearPadTest"                                              , "Memory", 0x51004040,        4, base=16, writeOnly, bitRange=0-31
+sfr = "WDogSafe2/SetEnable"                                                                    , "Memory", 0x51004044,        4, base=16, writeOnly
+sfr = "WDogSafe2/SetEnable.[31:0]SetEnable"                                                    , "Memory", 0x51004044,        4, base=16, writeOnly, bitRange=0-31
+sfr = "WDogSafe2/ClearEnable"                                                                  , "Memory", 0x51004048,        4, base=16, writeOnly
+sfr = "WDogSafe2/ClearEnable.[31:0]ClearEnable"                                                , "Memory", 0x51004048,        4, base=16, writeOnly, bitRange=0-31
+sfr = "WDogSafe2/SetTestMode"                                                                  , "Memory", 0x5100404C,        4, base=16, writeOnly
+sfr = "WDogSafe2/SetTestMode.[31:0]SetTestMode"                                                , "Memory", 0x5100404C,        4, base=16, writeOnly, bitRange=0-31
+sfr = "WDogSafe2/ClearTestMode"                                                                , "Memory", 0x51004050,        4, base=16, writeOnly
+sfr = "WDogSafe2/ClearTestMode.[31:0]ClearTestMode"                                            , "Memory", 0x51004050,        4, base=16, writeOnly, bitRange=0-31
+sfr = "WDogSafe2/SetForceEnWatchdog"                                                           , "Memory", 0x51004054,        4, base=16, writeOnly
+sfr = "WDogSafe2/SetForceEnWatchdog.[31:0]SetForceEnWatchdog"                                  , "Memory", 0x51004054,        4, base=16, writeOnly, bitRange=0-31
+sfr = "WDogSafe2/ClearForceEnWatchdog"                                                         , "Memory", 0x51004058,        4, base=16, writeOnly
+sfr = "WDogSafe2/ClearForceEnWatchdog.[31:0]ClearForceEnWatchdog"                              , "Memory", 0x51004058,        4, base=16, writeOnly, bitRange=0-31
+sfr = "WDogSafe2/SetForceStatusWatchdog"                                                       , "Memory", 0x5100405C,        4, base=16, writeOnly
+sfr = "WDogSafe2/SetForceStatusWatchdog.[31:0]SetForceStatusWatchdog"                          , "Memory", 0x5100405C,        4, base=16, writeOnly, bitRange=0-31
+sfr = "WDogSafe2/ClearForceStatusWatchdog"                                                     , "Memory", 0x51004060,        4, base=16, writeOnly
+sfr = "WDogSafe2/ClearForceStatusWatchdog.[31:0]ClearForceStatusWatchdog"                      , "Memory", 0x51004060,        4, base=16, writeOnly, bitRange=0-31
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// Watchdog Safe-2 -----
+group = "WDTSAFE2","WDogSafe2/LoadMaxCount","WDogSafe2/CurrentMaxCount","WDogSafe2/LoadMinCount","WDogSafe2/CurrentMinCount","WDogSafe2/StatusInt0","WDogSafe2/StatusInt1","WDogSafe2/ClearInt","WDogSafe2/Control","WDogSafe2/Status","WDogSafe2/Refresh","WDogSafe2/SetEnableRefresh","WDogSafe2/ClearEnableRefresh","WDogSafe2/SetEnableReset","WDogSafe2/ClearEnableReset","WDogSafe2/SetTrigger","WDogSafe2/SetPadTest","WDogSafe2/ClearPadTest","WDogSafe2/SetEnable","WDogSafe2/ClearEnable","WDogSafe2/SetTestMode","WDogSafe2/ClearTestMode","WDogSafe2/SetForceEnWatchdog","WDogSafe2/ClearForceEnWatchdog","WDogSafe2/SetForceStatusWatchdog","WDogSafe2/ClearForceStatusWatchdog"

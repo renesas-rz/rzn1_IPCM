@@ -1,0 +1,120 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : LCDC
+;               LCD Controller
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "rLcd_CR1"                                                                               , "Memory", 0x53004000,        4, base=16
+sfr = "rLcd_CR1.[0]bLcd_LCE"                                                                   , "Memory", 0x53004000,        4, base=16, bitRange=0
+sfr = "rLcd_CR1.[1]bLcd_LPE"                                                                   , "Memory", 0x53004000,        4, base=16, bitRange=1
+sfr = "rLcd_CR1.[4:2]bLcd_BPP"                                                                 , "Memory", 0x53004000,        4, base=16, bitRange=2-4
+sfr = "rLcd_CR1.[5]bLcd_RGB"                                                                   , "Memory", 0x53004000,        4, base=16, bitRange=5
+sfr = "rLcd_CR1.[6]bLcd_EPO"                                                                   , "Memory", 0x53004000,        4, base=16, bitRange=6
+sfr = "rLcd_CR1.[7]bLcd_EBO"                                                                   , "Memory", 0x53004000,        4, base=16, bitRange=7
+sfr = "rLcd_CR1.[8]bLcd_DEP"                                                                   , "Memory", 0x53004000,        4, base=16, bitRange=8
+sfr = "rLcd_CR1.[9]bLcd_PCP"                                                                   , "Memory", 0x53004000,        4, base=16, bitRange=9
+sfr = "rLcd_CR1.[10]bLcd_HSP"                                                                  , "Memory", 0x53004000,        4, base=16, bitRange=10
+sfr = "rLcd_CR1.[11]bLcd_VSP"                                                                  , "Memory", 0x53004000,        4, base=16, bitRange=11
+sfr = "rLcd_CR1.[14:12]bLcd_OPS"                                                               , "Memory", 0x53004000,        4, base=16, bitRange=12-14
+sfr = "rLcd_CR1.[15]bLcd_PSS"                                                                  , "Memory", 0x53004000,        4, base=16, bitRange=15
+sfr = "rLcd_CR1.[17:16]bLcd_FDW"                                                               , "Memory", 0x53004000,        4, base=16, bitRange=16-17
+sfr = "rLcd_CR1.[18]bLcd_LPS"                                                                  , "Memory", 0x53004000,        4, base=16, bitRange=18
+sfr = "rLcd_CR1.[19]bLcd_FBP"                                                                  , "Memory", 0x53004000,        4, base=16, bitRange=19
+sfr = "rLcd_HTR"                                                                               , "Memory", 0x53004008,        4, base=16
+sfr = "rLcd_HTR.[7:0]bLcd_HFP"                                                                 , "Memory", 0x53004008,        4, base=16, bitRange=0-7
+sfr = "rLcd_HTR.[15:8]bLcd_PPL"                                                                , "Memory", 0x53004008,        4, base=16, bitRange=8-15
+sfr = "rLcd_HTR.[23:16]bLcd_HBP"                                                               , "Memory", 0x53004008,        4, base=16, bitRange=16-23
+sfr = "rLcd_HTR.[31:24]bLcd_HSW"                                                               , "Memory", 0x53004008,        4, base=16, bitRange=24-31
+sfr = "rLcd_VTR1"                                                                              , "Memory", 0x5300400C,        4, base=16
+sfr = "rLcd_VTR1.[7:0]bLcd_VSW"                                                                , "Memory", 0x5300400C,        4, base=16, bitRange=0-7
+sfr = "rLcd_VTR1.[15:8]bLcd_VFP"                                                               , "Memory", 0x5300400C,        4, base=16, bitRange=8-15
+sfr = "rLcd_VTR1.[23:16]bLcd_VBP"                                                              , "Memory", 0x5300400C,        4, base=16, bitRange=16-23
+sfr = "rLcd_VTR2"                                                                              , "Memory", 0x53004010,        4, base=16
+sfr = "rLcd_VTR2.[11:0]bLcd_LPP"                                                               , "Memory", 0x53004010,        4, base=16, bitRange=0-11
+sfr = "rLcd_PCTR"                                                                              , "Memory", 0x53004014,        4, base=16
+sfr = "rLcd_PCTR.[10]bLcd_PCR"                                                                 , "Memory", 0x53004014,        4, base=16, bitRange=10
+sfr = "rLcd_ISR"                                                                               , "Memory", 0x53004018,        4, base=16
+sfr = "rLcd_ISR.[0]bLcd_OFU"                                                                   , "Memory", 0x53004018,        4, base=16, bitRange=0
+sfr = "rLcd_ISR.[1]bLcd_OFO"                                                                   , "Memory", 0x53004018,        4, base=16, bitRange=1
+sfr = "rLcd_ISR.[2]bLcd_IFU"                                                                   , "Memory", 0x53004018,        4, base=16, bitRange=2
+sfr = "rLcd_ISR.[3]bLcd_IFO"                                                                   , "Memory", 0x53004018,        4, base=16, bitRange=3
+sfr = "rLcd_ISR.[4]bLcd_FER"                                                                   , "Memory", 0x53004018,        4, base=16, bitRange=4
+sfr = "rLcd_ISR.[5]bLcd_MBE"                                                                   , "Memory", 0x53004018,        4, base=16, bitRange=5
+sfr = "rLcd_ISR.[6]bLcd_VCT"                                                                   , "Memory", 0x53004018,        4, base=16, bitRange=6
+sfr = "rLcd_ISR.[7]bLcd_BAU"                                                                   , "Memory", 0x53004018,        4, base=16, bitRange=7
+sfr = "rLcd_ISR.[8]bLcd_LDD"                                                                   , "Memory", 0x53004018,        4, base=16, bitRange=8
+sfr = "rLcd_IMR"                                                                               , "Memory", 0x5300401C,        4, base=16
+sfr = "rLcd_IMR.[0]bLcd_OFUM"                                                                  , "Memory", 0x5300401C,        4, base=16, bitRange=0
+sfr = "rLcd_IMR.[1]bLcd_OFOM"                                                                  , "Memory", 0x5300401C,        4, base=16, bitRange=1
+sfr = "rLcd_IMR.[2]bLcd_IFUM"                                                                  , "Memory", 0x5300401C,        4, base=16, bitRange=2
+sfr = "rLcd_IMR.[3]bLcd_IFOM"                                                                  , "Memory", 0x5300401C,        4, base=16, bitRange=3
+sfr = "rLcd_IMR.[4]bLcd_FERM"                                                                  , "Memory", 0x5300401C,        4, base=16, bitRange=4
+sfr = "rLcd_IMR.[5]bLcd_MBEM"                                                                  , "Memory", 0x5300401C,        4, base=16, bitRange=5
+sfr = "rLcd_IMR.[6]bLcd_VCTM"                                                                  , "Memory", 0x5300401C,        4, base=16, bitRange=6
+sfr = "rLcd_IMR.[7]bLcd_BAUM"                                                                  , "Memory", 0x5300401C,        4, base=16, bitRange=7
+sfr = "rLcd_IMR.[8]bLcd_LDDM"                                                                  , "Memory", 0x5300401C,        4, base=16, bitRange=8
+sfr = "rLcd_IVR"                                                                               , "Memory", 0x53004020,        4, base=16, readOnly
+sfr = "rLcd_IVR.[0]bLcd_OFUV"                                                                  , "Memory", 0x53004020,        4, base=16, readOnly, bitRange=0
+sfr = "rLcd_IVR.[1]bLcd_OFOV"                                                                  , "Memory", 0x53004020,        4, base=16, readOnly, bitRange=1
+sfr = "rLcd_IVR.[2]bLcd_IFUV"                                                                  , "Memory", 0x53004020,        4, base=16, readOnly, bitRange=2
+sfr = "rLcd_IVR.[3]bLcd_IFOV"                                                                  , "Memory", 0x53004020,        4, base=16, readOnly, bitRange=3
+sfr = "rLcd_IVR.[4]bLcd_FERV"                                                                  , "Memory", 0x53004020,        4, base=16, readOnly, bitRange=4
+sfr = "rLcd_IVR.[5]bLcd_MBEV"                                                                  , "Memory", 0x53004020,        4, base=16, readOnly, bitRange=5
+sfr = "rLcd_IVR.[6]bLcd_VCTV"                                                                  , "Memory", 0x53004020,        4, base=16, readOnly, bitRange=6
+sfr = "rLcd_IVR.[7]bLcd_BAUV"                                                                  , "Memory", 0x53004020,        4, base=16, readOnly, bitRange=7
+sfr = "rLcd_IVR.[8]bLcd_LDDV"                                                                  , "Memory", 0x53004020,        4, base=16, readOnly, bitRange=8
+sfr = "rLcd_ISCR"                                                                              , "Memory", 0x53004024,        4, base=16
+sfr = "rLcd_ISCR.[2:0]bLcd_VSC"                                                                , "Memory", 0x53004024,        4, base=16, bitRange=0-2
+sfr = "rLcd_DBAR"                                                                              , "Memory", 0x53004028,        4, base=16
+sfr = "rLcd_DBAR.[31:3]bLcd_DBAR"                                                              , "Memory", 0x53004028,        4, base=16, bitRange=3-31
+sfr = "rLcd_DCAR"                                                                              , "Memory", 0x5300402C,        4, base=16, readOnly
+sfr = "rLcd_DCAR.[31:0]bLcd_DCAR"                                                              , "Memory", 0x5300402C,        4, base=16, readOnly, bitRange=0-31
+sfr = "rLcd_DEAR"                                                                              , "Memory", 0x53004030,        4, base=16
+sfr = "rLcd_DEAR.[31:0]bLcd_DEAR"                                                              , "Memory", 0x53004030,        4, base=16, bitRange=0-31
+sfr = "rLcd_PWMFR_0"                                                                           , "Memory", 0x53004034,        4, base=16
+sfr = "rLcd_PWMFR_0.[21:0]bLcd_PWMFCD_0"                                                       , "Memory", 0x53004034,        4, base=16, bitRange=0-21
+sfr = "rLcd_PWMFR_0.[22]bLcd_PWMFCE_0"                                                         , "Memory", 0x53004034,        4, base=16, bitRange=22
+sfr = "rLcd_PWMDCR_0"                                                                          , "Memory", 0x53004038,        4, base=16
+sfr = "rLcd_PWMDCR_0.[7:0]bLcd_PWMDC_0"                                                        , "Memory", 0x53004038,        4, base=16, bitRange=0-7
+sfr = "rLcd_HVTER"                                                                             , "Memory", 0x53004044,        4, base=16
+sfr = "rLcd_HVTER.[1:0]bLcd_HFPE"                                                              , "Memory", 0x53004044,        4, base=16, bitRange=0-1
+sfr = "rLcd_HVTER.[5:4]bLcd_HBPE"                                                              , "Memory", 0x53004044,        4, base=16, bitRange=4-5
+sfr = "rLcd_HVTER.[9:8]bLcd_VFPE"                                                              , "Memory", 0x53004044,        4, base=16, bitRange=8-9
+sfr = "rLcd_HVTER.[13:12]bLcd_VBPE"                                                            , "Memory", 0x53004044,        4, base=16, bitRange=12-13
+sfr = "rLcd_HVTER.[17:16]bLcd_HSWE"                                                            , "Memory", 0x53004044,        4, base=16, bitRange=16-17
+sfr = "rLcd_HVTER.[25:24]bLcd_VSWE"                                                            , "Memory", 0x53004044,        4, base=16, bitRange=24-25
+sfr = "rLcd_HPPLOR"                                                                            , "Memory", 0x53004048,        4, base=16
+sfr = "rLcd_HPPLOR.[11:0]bLcd_HPPLO"                                                           , "Memory", 0x53004048,        4, base=16, bitRange=0-11
+sfr = "rLcd_HPPLOR.[31]bLcd_HPOE"                                                              , "Memory", 0x53004048,        4, base=16, bitRange=31
+sfr = "rLcd_PWMFR_1"                                                                           , "Memory", 0x5300404C,        4, base=16
+sfr = "rLcd_PWMFR_1.[21:0]bLcd_PWMFCD_1"                                                       , "Memory", 0x5300404C,        4, base=16, bitRange=0-21
+sfr = "rLcd_PWMFR_1.[22]bLcd_PWMFCE_1"                                                         , "Memory", 0x5300404C,        4, base=16, bitRange=22
+sfr = "rLcd_PWMDCR_1"                                                                          , "Memory", 0x53004050,        4, base=16
+sfr = "rLcd_PWMDCR_1.[7:0]bLcd_PWMDC_1"                                                        , "Memory", 0x53004050,        4, base=16, bitRange=0-7
+sfr = "rLcd_GPIOR"                                                                             , "Memory", 0x530041F8,        4, base=16
+sfr = "rLcd_GPIOR.[0]bLcd_BlinkOn"                                                             , "Memory", 0x530041F8,        4, base=16, bitRange=0
+sfr = "rLcd_GPIOR.[1]bLcd_BlinkMode"                                                           , "Memory", 0x530041F8,        4, base=16, bitRange=1
+sfr = "rLcd_CIR"                                                                               , "Memory", 0x530041FC,        4, base=16, readOnly
+sfr = "rLcd_CIR.[7:0]bLcd_REV"                                                                 , "Memory", 0x530041FC,        4, base=16, readOnly, bitRange=0-7
+sfr = "rLcd_CIR.[11:8]bLcd_Bl"                                                                 , "Memory", 0x530041FC,        4, base=16, readOnly, bitRange=8-11
+sfr = "rLcd_CIR.[15:12]bLcd_BW"                                                                , "Memory", 0x530041FC,        4, base=16, readOnly, bitRange=12-15
+sfr = "rLcd_CIR.[23:16]bLcd_MN"                                                                , "Memory", 0x530041FC,        4, base=16, readOnly, bitRange=16-23
+sfr = "rLcd_PAL_RGB_565"                                                                       , "Memory", 0x53004200,        4, base=16
+sfr = "rLcd_PAL_RGB_565.[4:0]bLcd_BLUE0"                                                       , "Memory", 0x53004200,        4, base=16, bitRange=0-4
+sfr = "rLcd_PAL_RGB_565.[10:5]bLcd_GREEN0"                                                     , "Memory", 0x53004200,        4, base=16, bitRange=5-10
+sfr = "rLcd_PAL_RGB_565.[15:11]bLcd_RED0"                                                      , "Memory", 0x53004200,        4, base=16, bitRange=11-15
+sfr = "rLcd_PAL_RGB_565.[20:16]bLcd_BLUE1"                                                     , "Memory", 0x53004200,        4, base=16, bitRange=16-20
+sfr = "rLcd_PAL_RGB_565.[26:21]bLcd_GREEN1"                                                    , "Memory", 0x53004200,        4, base=16, bitRange=21-26
+sfr = "rLcd_PAL_RGB_565.[31:27]bLcd_RED1"                                                      , "Memory", 0x53004200,        4, base=16, bitRange=27-31
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// LCD Controller -----
+group = "LCDC","rLcd_CR1","rLcd_HTR","rLcd_VTR1","rLcd_VTR2","rLcd_PCTR","rLcd_ISR","rLcd_IMR","rLcd_IVR","rLcd_ISCR","rLcd_DBAR","rLcd_DCAR","rLcd_DEAR","rLcd_PWMFR_0","rLcd_PWMDCR_0","rLcd_HVTER","rLcd_HPPLOR","rLcd_PWMFR_1","rLcd_PWMDCR_1","rLcd_GPIOR","rLcd_CIR","rLcd_PAL_RGB_565"

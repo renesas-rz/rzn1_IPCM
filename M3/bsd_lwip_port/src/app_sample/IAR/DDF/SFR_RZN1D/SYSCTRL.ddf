@@ -1,0 +1,558 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : SYSCTRL
+;               System Controller
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "CFG_USB"                                                                                , "Memory", 0x4000C000,        4, base=16
+sfr = "CFG_USB.[0]DIRPD"                                                                       , "Memory", 0x4000C000,        4, base=16, bitRange=0
+sfr = "CFG_USB.[1]H2MODE"                                                                      , "Memory", 0x4000C000,        4, base=16, bitRange=1
+sfr = "CFG_USB.[2]FRCLK48MOD"                                                                  , "Memory", 0x4000C000,        4, base=16, bitRange=2
+sfr = "OPMODE"                                                                                 , "Memory", 0x4000C004,        4, base=16, readOnly
+sfr = "OPMODE.[0]DDRMOD"                                                                       , "Memory", 0x4000C004,        4, base=16, readOnly, bitRange=0
+sfr = "OPMODE.[3:2]CA7BOOTSRC"                                                                 , "Memory", 0x4000C004,        4, base=16, readOnly, bitRange=2-3
+sfr = "OPMODE.[4]CM3BOOTSEL"                                                                   , "Memory", 0x4000C004,        4, base=16, readOnly, bitRange=4
+sfr = "OPMODE.[5]LCD2PU"                                                                       , "Memory", 0x4000C004,        4, base=16, readOnly, bitRange=5
+sfr = "OPMODE.[6]LCD1PU"                                                                       , "Memory", 0x4000C004,        4, base=16, readOnly, bitRange=6
+sfr = "CFG_SDIO1"                                                                              , "Memory", 0x4000C008,        4, base=16
+sfr = "CFG_SDIO1.[7:0]BASECLKFREQ"                                                             , "Memory", 0x4000C008,        4, base=16, bitRange=0-7
+sfr = "CFG_SDIO1.[9:8]SLOTTYPE"                                                                , "Memory", 0x4000C008,        4, base=16, bitRange=8-9
+sfr = "PWRCTRL_SDIO1"                                                                          , "Memory", 0x4000C00C,        4, base=16
+sfr = "PWRCTRL_SDIO1.[0]CLKEN_A"                                                               , "Memory", 0x4000C00C,        4, base=16, bitRange=0
+sfr = "PWRCTRL_SDIO1.[1]RSTN_A"                                                                , "Memory", 0x4000C00C,        4, base=16, bitRange=1
+sfr = "PWRCTRL_SDIO1.[2]SLVRDY_A"                                                              , "Memory", 0x4000C00C,        4, base=16, bitRange=2
+sfr = "PWRCTRL_SDIO1.[3]MIREQ_A"                                                               , "Memory", 0x4000C00C,        4, base=16, bitRange=3
+sfr = "PWRCTRL_SDIO1.[4]CLKEN_B"                                                               , "Memory", 0x4000C00C,        4, base=16, bitRange=4
+sfr = "PWRSTAT_SDIO1"                                                                          , "Memory", 0x4000C010,        4, base=16, readOnly
+sfr = "PWRSTAT_SDIO1.[0]SCON_A"                                                                , "Memory", 0x4000C010,        4, base=16, readOnly, bitRange=0
+sfr = "PWRSTAT_SDIO1.[1]MIRACK_A"                                                              , "Memory", 0x4000C010,        4, base=16, readOnly, bitRange=1
+sfr = "PWRSTAT_SDIO1.[2]MISTAT_A"                                                              , "Memory", 0x4000C010,        4, base=16, readOnly, bitRange=2
+sfr = "DBGCON"                                                                                 , "Memory", 0x4000C014,        4, base=16
+sfr = "DBGCON.[0]PR_DBG_EN"                                                                    , "Memory", 0x4000C014,        4, base=16, bitRange=0
+sfr = "DBGCON.[1]CM3WD_DBG_EN"                                                                 , "Memory", 0x4000C014,        4, base=16, bitRange=1
+sfr = "DBGCON.[2]CA7WD0_DBG_EN"                                                                , "Memory", 0x4000C014,        4, base=16, bitRange=2
+sfr = "DBGCON.[3]CA7WD1_DBG_EN"                                                                , "Memory", 0x4000C014,        4, base=16, bitRange=3
+sfr = "SYSSTAT"                                                                                , "Memory", 0x4000C018,        4, base=16, readOnly
+sfr = "SYSSTAT.[1:0]CA7_STANDBYWFE"                                                            , "Memory", 0x4000C018,        4, base=16, readOnly, bitRange=0-1
+sfr = "SYSSTAT.[3:2]CA7_STANDBYWFI"                                                            , "Memory", 0x4000C018,        4, base=16, readOnly, bitRange=2-3
+sfr = "SYSSTAT.[4]CA7_STANDBYWFIL2"                                                            , "Memory", 0x4000C018,        4, base=16, readOnly, bitRange=4
+sfr = "SYSSTAT.[5]CA7_COREVDDON"                                                               , "Memory", 0x4000C018,        4, base=16, readOnly, bitRange=5
+sfr = "SYSSTAT.[6]PKGMODE"                                                                     , "Memory", 0x4000C018,        4, base=16, readOnly, bitRange=6
+sfr = "PWRCTRL_USB"                                                                            , "Memory", 0x4000C01C,        4, base=16
+sfr = "PWRCTRL_USB.[0]CLKEN_A"                                                                 , "Memory", 0x4000C01C,        4, base=16, bitRange=0
+sfr = "PWRCTRL_USB.[1]RSTN_A"                                                                  , "Memory", 0x4000C01C,        4, base=16, bitRange=1
+sfr = "PWRCTRL_USB.[2]MIREQ_A"                                                                 , "Memory", 0x4000C01C,        4, base=16, bitRange=2
+sfr = "PWRCTRL_USB.[3]CLKEN_B"                                                                 , "Memory", 0x4000C01C,        4, base=16, bitRange=3
+sfr = "PWRCTRL_USB.[4]MIREQ_B"                                                                 , "Memory", 0x4000C01C,        4, base=16, bitRange=4
+sfr = "PWRCTRL_USB.[5]CLKEN_C"                                                                 , "Memory", 0x4000C01C,        4, base=16, bitRange=5
+sfr = "PWRCTRL_USB.[6]CLKEN_E"                                                                 , "Memory", 0x4000C01C,        4, base=16, bitRange=6
+sfr = "PWRCTRL_USB.[7]RSTN_F"                                                                  , "Memory", 0x4000C01C,        4, base=16, bitRange=7
+sfr = "PWRSTAT_USB"                                                                            , "Memory", 0x4000C020,        4, base=16, readOnly
+sfr = "PWRSTAT_USB.[0]MIRACK_A"                                                                , "Memory", 0x4000C020,        4, base=16, readOnly, bitRange=0
+sfr = "PWRSTAT_USB.[1]MISTAT_A"                                                                , "Memory", 0x4000C020,        4, base=16, readOnly, bitRange=1
+sfr = "PWRSTAT_USB.[2]MIRACK_B"                                                                , "Memory", 0x4000C020,        4, base=16, readOnly, bitRange=2
+sfr = "PWRSTAT_USB.[3]MISTAT_B"                                                                , "Memory", 0x4000C020,        4, base=16, readOnly, bitRange=3
+sfr = "PWRCTRL_CRYPTO"                                                                         , "Memory", 0x4000C024,        4, base=16
+sfr = "PWRCTRL_CRYPTO.[0]CLKEN_A"                                                              , "Memory", 0x4000C024,        4, base=16, bitRange=0
+sfr = "PWRCTRL_CRYPTO.[1]RSTN_A"                                                               , "Memory", 0x4000C024,        4, base=16, bitRange=1
+sfr = "PWRCTRL_CRYPTO.[2]MIREQ_A"                                                              , "Memory", 0x4000C024,        4, base=16, bitRange=2
+sfr = "PWRCTRL_CRYPTO.[3]CLKEN_B"                                                              , "Memory", 0x4000C024,        4, base=16, bitRange=3
+sfr = "PWRCTRL_CRYPTO.[4]RSTN_B"                                                               , "Memory", 0x4000C024,        4, base=16, bitRange=4
+sfr = "PWRCTRL_CRYPTO.[5]SLVRDY_B"                                                             , "Memory", 0x4000C024,        4, base=16, bitRange=5
+sfr = "PWRCTRL_CRYPTO.[6]RSTN_A_ZERO"                                                          , "Memory", 0x4000C024,        4, base=16, bitRange=6
+sfr = "PWRSTAT_CRYPTO"                                                                         , "Memory", 0x4000C028,        4, base=16, readOnly
+sfr = "PWRSTAT_CRYPTO.[0]MIRACK_A"                                                             , "Memory", 0x4000C028,        4, base=16, readOnly, bitRange=0
+sfr = "PWRSTAT_CRYPTO.[1]MISTAT_A"                                                             , "Memory", 0x4000C028,        4, base=16, readOnly, bitRange=1
+sfr = "PWRSTAT_CRYPTO.[2]SCON_B"                                                               , "Memory", 0x4000C028,        4, base=16, readOnly, bitRange=2
+sfr = "PWRCTRL_MSEBI"                                                                          , "Memory", 0x4000C02C,        4, base=16
+sfr = "PWRCTRL_MSEBI.[0]CLKEN_A"                                                               , "Memory", 0x4000C02C,        4, base=16, bitRange=0
+sfr = "PWRCTRL_MSEBI.[1]RSTN_A"                                                                , "Memory", 0x4000C02C,        4, base=16, bitRange=1
+sfr = "PWRCTRL_MSEBI.[2]SLVRDY_A"                                                              , "Memory", 0x4000C02C,        4, base=16, bitRange=2
+sfr = "PWRCTRL_MSEBI.[3]MIREQ_A"                                                               , "Memory", 0x4000C02C,        4, base=16, bitRange=3
+sfr = "PWRCTRL_MSEBI.[4]CLKEN_B"                                                               , "Memory", 0x4000C02C,        4, base=16, bitRange=4
+sfr = "PWRCTRL_MSEBI.[5]RSTN_B"                                                                , "Memory", 0x4000C02C,        4, base=16, bitRange=5
+sfr = "PWRCTRL_MSEBI.[6]SLVRDY_B"                                                              , "Memory", 0x4000C02C,        4, base=16, bitRange=6
+sfr = "PWRSTAT_MSEBI"                                                                          , "Memory", 0x4000C030,        4, base=16, readOnly
+sfr = "PWRSTAT_MSEBI.[0]SCON_A"                                                                , "Memory", 0x4000C030,        4, base=16, readOnly, bitRange=0
+sfr = "PWRSTAT_MSEBI.[1]MIRACK_A"                                                              , "Memory", 0x4000C030,        4, base=16, readOnly, bitRange=1
+sfr = "PWRSTAT_MSEBI.[2]MISTAT_A"                                                              , "Memory", 0x4000C030,        4, base=16, readOnly, bitRange=2
+sfr = "PWRSTAT_MSEBI.[3]SCON_B"                                                                , "Memory", 0x4000C030,        4, base=16, readOnly, bitRange=3
+sfr = "PWRCTRL_PG0_0"                                                                          , "Memory", 0x4000C034,        4, base=16
+sfr = "PWRCTRL_PG0_0.[0]CLKEN_A"                                                               , "Memory", 0x4000C034,        4, base=16, bitRange=0
+sfr = "PWRCTRL_PG0_0.[1]RSTN_A"                                                                , "Memory", 0x4000C034,        4, base=16, bitRange=1
+sfr = "PWRCTRL_PG0_0.[2]SLVRDY_A"                                                              , "Memory", 0x4000C034,        4, base=16, bitRange=2
+sfr = "PWRCTRL_PG0_0.[3]CLKEN_B"                                                               , "Memory", 0x4000C034,        4, base=16, bitRange=3
+sfr = "PWRCTRL_PG0_0.[4]RSTN_B"                                                                , "Memory", 0x4000C034,        4, base=16, bitRange=4
+sfr = "PWRCTRL_PG0_0.[5]SLVRDY_B"                                                              , "Memory", 0x4000C034,        4, base=16, bitRange=5
+sfr = "PWRCTRL_PG0_0.[6]CLKEN_C"                                                               , "Memory", 0x4000C034,        4, base=16, bitRange=6
+sfr = "PWRCTRL_PG0_0.[7]RSTN_C"                                                                , "Memory", 0x4000C034,        4, base=16, bitRange=7
+sfr = "PWRCTRL_PG0_0.[8]SLVRDY_C"                                                              , "Memory", 0x4000C034,        4, base=16, bitRange=8
+sfr = "PWRCTRL_PG0_0.[9]CLKEN_D"                                                               , "Memory", 0x4000C034,        4, base=16, bitRange=9
+sfr = "PWRCTRL_PG0_0.[10]RSTN_D"                                                               , "Memory", 0x4000C034,        4, base=16, bitRange=10
+sfr = "PWRCTRL_PG0_0.[11]SLVRDY_D"                                                             , "Memory", 0x4000C034,        4, base=16, bitRange=11
+sfr = "PWRCTRL_PG0_0.[12]CLKEN_E"                                                              , "Memory", 0x4000C034,        4, base=16, bitRange=12
+sfr = "PWRCTRL_PG0_0.[13]RSTN_E"                                                               , "Memory", 0x4000C034,        4, base=16, bitRange=13
+sfr = "PWRCTRL_PG0_0.[14]SLVRDY_E"                                                             , "Memory", 0x4000C034,        4, base=16, bitRange=14
+sfr = "PWRCTRL_PG0_0.[15]CLKEN_F"                                                              , "Memory", 0x4000C034,        4, base=16, bitRange=15
+sfr = "PWRCTRL_PG0_0.[16]RSTN_F"                                                               , "Memory", 0x4000C034,        4, base=16, bitRange=16
+sfr = "PWRCTRL_PG0_0.[17]SLVRDY_F"                                                             , "Memory", 0x4000C034,        4, base=16, bitRange=17
+sfr = "PWRCTRL_PG0_0.[18]CLKEN_H1"                                                             , "Memory", 0x4000C034,        4, base=16, bitRange=18
+sfr = "PWRCTRL_PG0_0.[19]RSTN_H1"                                                              , "Memory", 0x4000C034,        4, base=16, bitRange=19
+sfr = "PWRCTRL_PG0_0.[20]CLKEN_H2"                                                             , "Memory", 0x4000C034,        4, base=16, bitRange=20
+sfr = "PWRCTRL_PG0_0.[21]RSTN_H2"                                                              , "Memory", 0x4000C034,        4, base=16, bitRange=21
+sfr = "PWRCTRL_PG0_0.[22]CLKEN_I1"                                                             , "Memory", 0x4000C034,        4, base=16, bitRange=22
+sfr = "PWRCTRL_PG0_0.[23]RSTN_I1"                                                              , "Memory", 0x4000C034,        4, base=16, bitRange=23
+sfr = "PWRCTRL_PG0_0.[24]CLKEN_I2"                                                             , "Memory", 0x4000C034,        4, base=16, bitRange=24
+sfr = "PWRCTRL_PG0_0.[25]RSTN_I2"                                                              , "Memory", 0x4000C034,        4, base=16, bitRange=25
+sfr = "PWRCTRL_PG0_0.[26]CLKEN_J1"                                                             , "Memory", 0x4000C034,        4, base=16, bitRange=26
+sfr = "PWRCTRL_PG0_0.[27]RSTN_J1"                                                              , "Memory", 0x4000C034,        4, base=16, bitRange=27
+sfr = "PWRCTRL_PG0_0.[28]CLKEN_J2"                                                             , "Memory", 0x4000C034,        4, base=16, bitRange=28
+sfr = "PWRCTRL_PG0_0.[29]RSTN_J2"                                                              , "Memory", 0x4000C034,        4, base=16, bitRange=29
+sfr = "PWRCTRL_PG0_0.[30]UARTCLKSEL"                                                           , "Memory", 0x4000C034,        4, base=16, bitRange=30
+sfr = "PWRSTAT_PG0"                                                                            , "Memory", 0x4000C038,        4, base=16, readOnly
+sfr = "PWRSTAT_PG0.[0]SCON_A"                                                                  , "Memory", 0x4000C038,        4, base=16, readOnly, bitRange=0
+sfr = "PWRSTAT_PG0.[1]SCON_B"                                                                  , "Memory", 0x4000C038,        4, base=16, readOnly, bitRange=1
+sfr = "PWRSTAT_PG0.[2]SCON_C"                                                                  , "Memory", 0x4000C038,        4, base=16, readOnly, bitRange=2
+sfr = "PWRSTAT_PG0.[3]SCON_D"                                                                  , "Memory", 0x4000C038,        4, base=16, readOnly, bitRange=3
+sfr = "PWRSTAT_PG0.[4]SCON_E"                                                                  , "Memory", 0x4000C038,        4, base=16, readOnly, bitRange=4
+sfr = "PWRSTAT_PG0.[5]SCON_F"                                                                  , "Memory", 0x4000C038,        4, base=16, readOnly, bitRange=5
+sfr = "PWRCTRL_PG0_1"                                                                          , "Memory", 0x4000C03C,        4, base=16
+sfr = "PWRCTRL_PG0_1.[6]CLKEN_K"                                                               , "Memory", 0x4000C03C,        4, base=16, bitRange=6
+sfr = "PWRCTRL_PG0_1.[7]RSTN_K"                                                                , "Memory", 0x4000C03C,        4, base=16, bitRange=7
+sfr = "PWRCTRL_PG0_1.[8]CLKEN_L"                                                               , "Memory", 0x4000C03C,        4, base=16, bitRange=8
+sfr = "PWRCTRL_PG0_1.[9]RSTN_L"                                                                , "Memory", 0x4000C03C,        4, base=16, bitRange=9
+sfr = "PWRCTRL_PG0_1.[10]CLKEN_M"                                                              , "Memory", 0x4000C03C,        4, base=16, bitRange=10
+sfr = "PWRCTRL_PG0_1.[11]RSTN_M"                                                               , "Memory", 0x4000C03C,        4, base=16, bitRange=11
+sfr = "PWRCTRL_PG1_1"                                                                          , "Memory", 0x4000C040,        4, base=16
+sfr = "PWRCTRL_PG1_1.[0]CLKEN_A"                                                               , "Memory", 0x4000C040,        4, base=16, bitRange=0
+sfr = "PWRCTRL_PG1_1.[1]RSTN_A"                                                                , "Memory", 0x4000C040,        4, base=16, bitRange=1
+sfr = "PWRCTRL_PG1_1.[2]SLVRDY_A"                                                              , "Memory", 0x4000C040,        4, base=16, bitRange=2
+sfr = "PWRCTRL_PG1_1.[3]CLKEN_B"                                                               , "Memory", 0x4000C040,        4, base=16, bitRange=3
+sfr = "PWRCTRL_PG1_1.[4]RSTN_B"                                                                , "Memory", 0x4000C040,        4, base=16, bitRange=4
+sfr = "PWRCTRL_PG1_1.[5]SLVRDY_B"                                                              , "Memory", 0x4000C040,        4, base=16, bitRange=5
+sfr = "PWRCTRL_PG1_1.[6]CLKEN_C"                                                               , "Memory", 0x4000C040,        4, base=16, bitRange=6
+sfr = "PWRCTRL_PG1_1.[7]RSTN_C"                                                                , "Memory", 0x4000C040,        4, base=16, bitRange=7
+sfr = "PWRCTRL_PG1_1.[8]SLVRDY_C"                                                              , "Memory", 0x4000C040,        4, base=16, bitRange=8
+sfr = "PWRCTRL_PG1_1.[9]CLKEN_D"                                                               , "Memory", 0x4000C040,        4, base=16, bitRange=9
+sfr = "PWRCTRL_PG1_1.[10]RSTN_D"                                                               , "Memory", 0x4000C040,        4, base=16, bitRange=10
+sfr = "PWRCTRL_PG1_1.[11]SLVRDY_D"                                                             , "Memory", 0x4000C040,        4, base=16, bitRange=11
+sfr = "PWRCTRL_PG1_1.[12]CLKEN_E"                                                              , "Memory", 0x4000C040,        4, base=16, bitRange=12
+sfr = "PWRCTRL_PG1_1.[13]RSTN_E"                                                               , "Memory", 0x4000C040,        4, base=16, bitRange=13
+sfr = "PWRCTRL_PG1_1.[14]SLVRDY_E"                                                             , "Memory", 0x4000C040,        4, base=16, bitRange=14
+sfr = "PWRCTRL_PG1_1.[15]CLKEN_F"                                                              , "Memory", 0x4000C040,        4, base=16, bitRange=15
+sfr = "PWRCTRL_PG1_1.[16]RSTN_F"                                                               , "Memory", 0x4000C040,        4, base=16, bitRange=16
+sfr = "PWRCTRL_PG1_1.[17]SLVRDY_F"                                                             , "Memory", 0x4000C040,        4, base=16, bitRange=17
+sfr = "PWRCTRL_PG1_1.[18]CLKEN_G"                                                              , "Memory", 0x4000C040,        4, base=16, bitRange=18
+sfr = "PWRCTRL_PG1_1.[19]RSTN_G"                                                               , "Memory", 0x4000C040,        4, base=16, bitRange=19
+sfr = "PWRCTRL_PG1_1.[20]SLVRDY_G"                                                             , "Memory", 0x4000C040,        4, base=16, bitRange=20
+sfr = "PWRCTRL_PG1_1.[21]CLKEN_H"                                                              , "Memory", 0x4000C040,        4, base=16, bitRange=21
+sfr = "PWRCTRL_PG1_1.[22]RSTN_H"                                                               , "Memory", 0x4000C040,        4, base=16, bitRange=22
+sfr = "PWRCTRL_PG1_1.[23]SLVRDY_H"                                                             , "Memory", 0x4000C040,        4, base=16, bitRange=23
+sfr = "PWRCTRL_PG1_1.[24]CLKEN_I"                                                              , "Memory", 0x4000C040,        4, base=16, bitRange=24
+sfr = "PWRCTRL_PG1_1.[25]RSTN_I"                                                               , "Memory", 0x4000C040,        4, base=16, bitRange=25
+sfr = "PWRCTRL_PG1_1.[26]SLVRDY_I"                                                             , "Memory", 0x4000C040,        4, base=16, bitRange=26
+sfr = "PWRCTRL_PG1_1.[27]CLKEN_J"                                                              , "Memory", 0x4000C040,        4, base=16, bitRange=27
+sfr = "PWRCTRL_PG1_1.[28]RSTN_J"                                                               , "Memory", 0x4000C040,        4, base=16, bitRange=28
+sfr = "PWRCTRL_PG1_1.[29]SLVRDY_J"                                                             , "Memory", 0x4000C040,        4, base=16, bitRange=29
+sfr = "PWRCTRL_PG1_2"                                                                          , "Memory", 0x4000C044,        4, base=16
+sfr = "PWRCTRL_PG1_2.[0]CLKEN_K"                                                               , "Memory", 0x4000C044,        4, base=16, bitRange=0
+sfr = "PWRCTRL_PG1_2.[1]RSTN_K"                                                                , "Memory", 0x4000C044,        4, base=16, bitRange=1
+sfr = "PWRCTRL_PG1_2.[2]SLVRDY_K"                                                              , "Memory", 0x4000C044,        4, base=16, bitRange=2
+sfr = "PWRCTRL_PG1_2.[3]CLKEN_L"                                                               , "Memory", 0x4000C044,        4, base=16, bitRange=3
+sfr = "PWRCTRL_PG1_2.[4]RSTN_L"                                                                , "Memory", 0x4000C044,        4, base=16, bitRange=4
+sfr = "PWRCTRL_PG1_2.[5]SLVRDY_L"                                                              , "Memory", 0x4000C044,        4, base=16, bitRange=5
+sfr = "PWRCTRL_PG1_2.[6]CLKEN_M"                                                               , "Memory", 0x4000C044,        4, base=16, bitRange=6
+sfr = "PWRCTRL_PG1_2.[7]RSTN_M"                                                                , "Memory", 0x4000C044,        4, base=16, bitRange=7
+sfr = "PWRCTRL_PG1_2.[8]SLVRDY_M"                                                              , "Memory", 0x4000C044,        4, base=16, bitRange=8
+sfr = "PWRCTRL_PG1_2.[9]CLKEN_N"                                                               , "Memory", 0x4000C044,        4, base=16, bitRange=9
+sfr = "PWRCTRL_PG1_2.[10]RSTN_N"                                                               , "Memory", 0x4000C044,        4, base=16, bitRange=10
+sfr = "PWRCTRL_PG1_2.[11]SLVRDY_N"                                                             , "Memory", 0x4000C044,        4, base=16, bitRange=11
+sfr = "PWRCTRL_DMA"                                                                            , "Memory", 0x4000C04C,        4, base=16
+sfr = "PWRCTRL_DMA.[0]CLKEN_A"                                                                 , "Memory", 0x4000C04C,        4, base=16, bitRange=0
+sfr = "PWRCTRL_DMA.[1]RSTN_A"                                                                  , "Memory", 0x4000C04C,        4, base=16, bitRange=1
+sfr = "PWRCTRL_DMA.[2]SLVRDY_A"                                                                , "Memory", 0x4000C04C,        4, base=16, bitRange=2
+sfr = "PWRCTRL_DMA.[3]MIREQ_A"                                                                 , "Memory", 0x4000C04C,        4, base=16, bitRange=3
+sfr = "PWRCTRL_DMA.[4]CLKEN_B"                                                                 , "Memory", 0x4000C04C,        4, base=16, bitRange=4
+sfr = "PWRCTRL_DMA.[5]RSTN_B"                                                                  , "Memory", 0x4000C04C,        4, base=16, bitRange=5
+sfr = "PWRCTRL_DMA.[6]SLVRDY_B"                                                                , "Memory", 0x4000C04C,        4, base=16, bitRange=6
+sfr = "PWRCTRL_DMA.[7]MIREQ_B"                                                                 , "Memory", 0x4000C04C,        4, base=16, bitRange=7
+sfr = "PWRCTRL_NFLASH"                                                                         , "Memory", 0x4000C050,        4, base=16
+sfr = "PWRCTRL_NFLASH.[0]CLKEN_A"                                                              , "Memory", 0x4000C050,        4, base=16, bitRange=0
+sfr = "PWRCTRL_NFLASH.[1]RSTN_A"                                                               , "Memory", 0x4000C050,        4, base=16, bitRange=1
+sfr = "PWRCTRL_NFLASH.[2]SLVRDY_A"                                                             , "Memory", 0x4000C050,        4, base=16, bitRange=2
+sfr = "PWRCTRL_NFLASH.[3]MIREQ_A"                                                              , "Memory", 0x4000C050,        4, base=16, bitRange=3
+sfr = "PWRCTRL_NFLASH.[4]CLKEN_B"                                                              , "Memory", 0x4000C050,        4, base=16, bitRange=4
+sfr = "PWRCTRL_NFLASH.[5]RSTN_B"                                                               , "Memory", 0x4000C050,        4, base=16, bitRange=5
+sfr = "PWRCTRL_QSPI1"                                                                          , "Memory", 0x4000C054,        4, base=16
+sfr = "PWRCTRL_QSPI1.[0]CLKEN_A"                                                               , "Memory", 0x4000C054,        4, base=16, bitRange=0
+sfr = "PWRCTRL_QSPI1.[1]RSTN_A"                                                                , "Memory", 0x4000C054,        4, base=16, bitRange=1
+sfr = "PWRCTRL_QSPI1.[2]SLVRDY_A"                                                              , "Memory", 0x4000C054,        4, base=16, bitRange=2
+sfr = "PWRCTRL_QSPI1.[3]MIREQ_A"                                                               , "Memory", 0x4000C054,        4, base=16, bitRange=3
+sfr = "PWRCTRL_QSPI1.[4]CLKEN_B"                                                               , "Memory", 0x4000C054,        4, base=16, bitRange=4
+sfr = "PWRCTRL_QSPI1.[5]RSTN_B"                                                                , "Memory", 0x4000C054,        4, base=16, bitRange=5
+sfr = "PWRSTAT_DMA"                                                                            , "Memory", 0x4000C058,        4, base=16, readOnly
+sfr = "PWRSTAT_DMA.[0]SCON_A"                                                                  , "Memory", 0x4000C058,        4, base=16, readOnly, bitRange=0
+sfr = "PWRSTAT_DMA.[1]MIRACK_A"                                                                , "Memory", 0x4000C058,        4, base=16, readOnly, bitRange=1
+sfr = "PWRSTAT_DMA.[2]MISTAT_A"                                                                , "Memory", 0x4000C058,        4, base=16, readOnly, bitRange=2
+sfr = "PWRSTAT_DMA.[3]SCON_B"                                                                  , "Memory", 0x4000C058,        4, base=16, readOnly, bitRange=3
+sfr = "PWRSTAT_DMA.[4]MIRACK_B"                                                                , "Memory", 0x4000C058,        4, base=16, readOnly, bitRange=4
+sfr = "PWRSTAT_DMA.[5]MISTAT_B"                                                                , "Memory", 0x4000C058,        4, base=16, readOnly, bitRange=5
+sfr = "PWRSTAT_NFLASH"                                                                         , "Memory", 0x4000C05C,        4, base=16, readOnly
+sfr = "PWRSTAT_NFLASH.[0]SCON_A"                                                               , "Memory", 0x4000C05C,        4, base=16, readOnly, bitRange=0
+sfr = "PWRSTAT_NFLASH.[1]MIRACK_A"                                                             , "Memory", 0x4000C05C,        4, base=16, readOnly, bitRange=1
+sfr = "PWRSTAT_NFLASH.[2]MISTAT_A"                                                             , "Memory", 0x4000C05C,        4, base=16, readOnly, bitRange=2
+sfr = "PWRSTAT_QSPI1"                                                                          , "Memory", 0x4000C060,        4, base=16, readOnly
+sfr = "PWRSTAT_QSPI1.[0]SCON_A"                                                                , "Memory", 0x4000C060,        4, base=16, readOnly, bitRange=0
+sfr = "PWRSTAT_QSPI1.[1]MIRACK_A"                                                              , "Memory", 0x4000C060,        4, base=16, readOnly, bitRange=1
+sfr = "PWRSTAT_QSPI1.[2]MISTAT_A"                                                              , "Memory", 0x4000C060,        4, base=16, readOnly, bitRange=2
+sfr = "PWRCTRL_DDRC"                                                                           , "Memory", 0x4000C064,        4, base=16
+sfr = "PWRCTRL_DDRC.[0]CLKEN_A"                                                                , "Memory", 0x4000C064,        4, base=16, bitRange=0
+sfr = "PWRCTRL_DDRC.[1]MIREQ_A"                                                                , "Memory", 0x4000C064,        4, base=16, bitRange=1
+sfr = "PWRCTRL_DDRC.[2]RSTN_A"                                                                 , "Memory", 0x4000C064,        4, base=16, bitRange=2
+sfr = "PWRCTRL_DDRC.[3]CLKEN_B"                                                                , "Memory", 0x4000C064,        4, base=16, bitRange=3
+sfr = "PWRCTRL_DDRC.[4]RSTN_B"                                                                 , "Memory", 0x4000C064,        4, base=16, bitRange=4
+sfr = "PWRCTRL_EETH"                                                                           , "Memory", 0x4000C068,        4, base=16
+sfr = "PWRCTRL_EETH.[0]CLKEN_A"                                                                , "Memory", 0x4000C068,        4, base=16, bitRange=0
+sfr = "PWRCTRL_EETH.[1]CLKEN_B"                                                                , "Memory", 0x4000C068,        4, base=16, bitRange=1
+sfr = "PWRCTRL_EETH.[2]CLKEN_C"                                                                , "Memory", 0x4000C068,        4, base=16, bitRange=2
+sfr = "PWRCTRL_MAC1"                                                                           , "Memory", 0x4000C06C,        4, base=16
+sfr = "PWRCTRL_MAC1.[0]CLKEN_A"                                                                , "Memory", 0x4000C06C,        4, base=16, bitRange=0
+sfr = "PWRCTRL_MAC1.[1]RSTN_A"                                                                 , "Memory", 0x4000C06C,        4, base=16, bitRange=1
+sfr = "PWRCTRL_MAC1.[2]SLVRDY_A"                                                               , "Memory", 0x4000C06C,        4, base=16, bitRange=2
+sfr = "PWRCTRL_MAC1.[3]MIREQ_A"                                                                , "Memory", 0x4000C06C,        4, base=16, bitRange=3
+sfr = "PWRCTRL_MAC2"                                                                           , "Memory", 0x4000C070,        4, base=16
+sfr = "PWRCTRL_MAC2.[0]CLKEN_A"                                                                , "Memory", 0x4000C070,        4, base=16, bitRange=0
+sfr = "PWRCTRL_MAC2.[1]RSTN_A"                                                                 , "Memory", 0x4000C070,        4, base=16, bitRange=1
+sfr = "PWRCTRL_MAC2.[2]SLVRDY_A"                                                               , "Memory", 0x4000C070,        4, base=16, bitRange=2
+sfr = "PWRCTRL_MAC2.[3]MIREQ_A"                                                                , "Memory", 0x4000C070,        4, base=16, bitRange=3
+sfr = "PWRSTAT_DDRC"                                                                           , "Memory", 0x4000C074,        4, base=16, readOnly
+sfr = "PWRSTAT_DDRC.[0]MIRACK_A"                                                               , "Memory", 0x4000C074,        4, base=16, readOnly, bitRange=0
+sfr = "PWRSTAT_DDRC.[1]MISTAT_A"                                                               , "Memory", 0x4000C074,        4, base=16, readOnly, bitRange=1
+sfr = "PWRSTAT_MAC1"                                                                           , "Memory", 0x4000C078,        4, base=16, readOnly
+sfr = "PWRSTAT_MAC1.[0]SCON_A"                                                                 , "Memory", 0x4000C078,        4, base=16, readOnly, bitRange=0
+sfr = "PWRSTAT_MAC1.[1]MIRACK_A"                                                               , "Memory", 0x4000C078,        4, base=16, readOnly, bitRange=1
+sfr = "PWRSTAT_MAC1.[2]MISTAT_A"                                                               , "Memory", 0x4000C078,        4, base=16, readOnly, bitRange=2
+sfr = "PWRSTAT_MAC2"                                                                           , "Memory", 0x4000C07C,        4, base=16, readOnly
+sfr = "PWRSTAT_MAC2.[0]SCON_A"                                                                 , "Memory", 0x4000C07C,        4, base=16, readOnly, bitRange=0
+sfr = "PWRSTAT_MAC2.[1]MIRACK_A"                                                               , "Memory", 0x4000C07C,        4, base=16, readOnly, bitRange=1
+sfr = "PWRSTAT_MAC2.[2]MISTAT_A"                                                               , "Memory", 0x4000C07C,        4, base=16, readOnly, bitRange=2
+sfr = "PWRCTRL_ECAT"                                                                           , "Memory", 0x4000C080,        4, base=16
+sfr = "PWRCTRL_ECAT.[0]CLKEN_A"                                                                , "Memory", 0x4000C080,        4, base=16, bitRange=0
+sfr = "PWRCTRL_ECAT.[1]RSTN_A"                                                                 , "Memory", 0x4000C080,        4, base=16, bitRange=1
+sfr = "PWRCTRL_ECAT.[2]MIREQ_A"                                                                , "Memory", 0x4000C080,        4, base=16, bitRange=2
+sfr = "PWRCTRL_ECAT.[3]CLKEN_B"                                                                , "Memory", 0x4000C080,        4, base=16, bitRange=3
+sfr = "PWRCTRL_ECAT.[4]RSTN_B"                                                                 , "Memory", 0x4000C080,        4, base=16, bitRange=4
+sfr = "PWRCTRL_ECAT.[5]CLKEN_C"                                                                , "Memory", 0x4000C080,        4, base=16, bitRange=5
+sfr = "PWRCTRL_SERCOS"                                                                         , "Memory", 0x4000C084,        4, base=16
+sfr = "PWRCTRL_SERCOS.[0]CLKEN_A"                                                              , "Memory", 0x4000C084,        4, base=16, bitRange=0
+sfr = "PWRCTRL_SERCOS.[1]MIREQ_A"                                                              , "Memory", 0x4000C084,        4, base=16, bitRange=1
+sfr = "PWRCTRL_SERCOS.[2]RSTN_A"                                                               , "Memory", 0x4000C084,        4, base=16, bitRange=2
+sfr = "PWRCTRL_SERCOS.[3]RSTN_B"                                                               , "Memory", 0x4000C084,        4, base=16, bitRange=3
+sfr = "PWRCTRL_SERCOS.[4]CLKEN_B"                                                              , "Memory", 0x4000C084,        4, base=16, bitRange=4
+sfr = "PWRCTRL_SERCOS.[5]CLKEN_C"                                                              , "Memory", 0x4000C084,        4, base=16, bitRange=5
+sfr = "PWRSTAT_ECAT"                                                                           , "Memory", 0x4000C088,        4, base=16, readOnly
+sfr = "PWRSTAT_ECAT.[0]MIRACK_A"                                                               , "Memory", 0x4000C088,        4, base=16, readOnly, bitRange=0
+sfr = "PWRSTAT_ECAT.[1]MISTAT_A"                                                               , "Memory", 0x4000C088,        4, base=16, readOnly, bitRange=1
+sfr = "PWRSTAT_SERCOS"                                                                         , "Memory", 0x4000C08C,        4, base=16, readOnly
+sfr = "PWRSTAT_SERCOS.[0]MIRACK_A"                                                             , "Memory", 0x4000C08C,        4, base=16, readOnly, bitRange=0
+sfr = "PWRSTAT_SERCOS.[1]MISTAT_A"                                                             , "Memory", 0x4000C08C,        4, base=16, readOnly, bitRange=1
+sfr = "PWRCTRL_HSR"                                                                            , "Memory", 0x4000C090,        4, base=16
+sfr = "PWRCTRL_HSR.[0]CLKEN_A"                                                                 , "Memory", 0x4000C090,        4, base=16, bitRange=0
+sfr = "PWRCTRL_HSR.[1]MIREQ_A"                                                                 , "Memory", 0x4000C090,        4, base=16, bitRange=1
+sfr = "PWRCTRL_HSR.[2]RSTN_A"                                                                  , "Memory", 0x4000C090,        4, base=16, bitRange=2
+sfr = "PWRCTRL_HSR.[3]CLKEN_B"                                                                 , "Memory", 0x4000C090,        4, base=16, bitRange=3
+sfr = "PWRCTRL_HSR.[4]CLKEN_C"                                                                 , "Memory", 0x4000C090,        4, base=16, bitRange=4
+sfr = "PWRCTRL_HSR.[5]RSTN_C"                                                                  , "Memory", 0x4000C090,        4, base=16, bitRange=5
+sfr = "PWRCTRL_SWITCHDIV"                                                                      , "Memory", 0x4000C094,        4, base=16
+sfr = "PWRCTRL_SWITCHDIV.[6:0]DIV"                                                             , "Memory", 0x4000C094,        4, base=16, bitRange=0-6
+sfr = "PWRCTRL_SWITCHDIV.[31]BUSY"                                                             , "Memory", 0x4000C094,        4, base=16, bitRange=31
+sfr = "PWRSTAT_HSR"                                                                            , "Memory", 0x4000C098,        4, base=16, readOnly
+sfr = "PWRSTAT_HSR.[0]MIRACK_A"                                                                , "Memory", 0x4000C098,        4, base=16, readOnly, bitRange=0
+sfr = "PWRSTAT_HSR.[1]MISTAT_A"                                                                , "Memory", 0x4000C098,        4, base=16, readOnly, bitRange=1
+sfr = "PWRSTAT_SWITCH"                                                                         , "Memory", 0x4000C09C,        4, base=16, readOnly
+sfr = "PWRSTAT_SWITCH.[0]SCON_A"                                                               , "Memory", 0x4000C09C,        4, base=16, readOnly, bitRange=0
+sfr = "CFG_DMAMUX"                                                                             , "Memory", 0x4000C0A0,        4, base=16
+sfr = "CFG_DMAMUX.[0]D1MX0"                                                                    , "Memory", 0x4000C0A0,        4, base=16, bitRange=0
+sfr = "CFG_DMAMUX.[1]D1MX1"                                                                    , "Memory", 0x4000C0A0,        4, base=16, bitRange=1
+sfr = "CFG_DMAMUX.[2]D1MX2"                                                                    , "Memory", 0x4000C0A0,        4, base=16, bitRange=2
+sfr = "CFG_DMAMUX.[3]D1MX3"                                                                    , "Memory", 0x4000C0A0,        4, base=16, bitRange=3
+sfr = "CFG_DMAMUX.[4]D1MX4"                                                                    , "Memory", 0x4000C0A0,        4, base=16, bitRange=4
+sfr = "CFG_DMAMUX.[5]D1MX5"                                                                    , "Memory", 0x4000C0A0,        4, base=16, bitRange=5
+sfr = "CFG_DMAMUX.[6]D1MX6"                                                                    , "Memory", 0x4000C0A0,        4, base=16, bitRange=6
+sfr = "CFG_DMAMUX.[7]D1MX7"                                                                    , "Memory", 0x4000C0A0,        4, base=16, bitRange=7
+sfr = "CFG_DMAMUX.[8]D1MX8"                                                                    , "Memory", 0x4000C0A0,        4, base=16, bitRange=8
+sfr = "CFG_DMAMUX.[9]D1MX9"                                                                    , "Memory", 0x4000C0A0,        4, base=16, bitRange=9
+sfr = "CFG_DMAMUX.[10]D1MX10"                                                                  , "Memory", 0x4000C0A0,        4, base=16, bitRange=10
+sfr = "CFG_DMAMUX.[11]D1MX11"                                                                  , "Memory", 0x4000C0A0,        4, base=16, bitRange=11
+sfr = "CFG_DMAMUX.[12]D1MX12"                                                                  , "Memory", 0x4000C0A0,        4, base=16, bitRange=12
+sfr = "CFG_DMAMUX.[13]D1MX13"                                                                  , "Memory", 0x4000C0A0,        4, base=16, bitRange=13
+sfr = "CFG_DMAMUX.[14]D1MX14"                                                                  , "Memory", 0x4000C0A0,        4, base=16, bitRange=14
+sfr = "CFG_DMAMUX.[15]D1MX15"                                                                  , "Memory", 0x4000C0A0,        4, base=16, bitRange=15
+sfr = "CFG_DMAMUX.[16]D2MX0"                                                                   , "Memory", 0x4000C0A0,        4, base=16, bitRange=16
+sfr = "CFG_DMAMUX.[17]D2MX1"                                                                   , "Memory", 0x4000C0A0,        4, base=16, bitRange=17
+sfr = "CFG_DMAMUX.[18]D2MX2"                                                                   , "Memory", 0x4000C0A0,        4, base=16, bitRange=18
+sfr = "CFG_DMAMUX.[19]D2MX3"                                                                   , "Memory", 0x4000C0A0,        4, base=16, bitRange=19
+sfr = "CFG_DMAMUX.[20]D2MX4"                                                                   , "Memory", 0x4000C0A0,        4, base=16, bitRange=20
+sfr = "CFG_DMAMUX.[21]D2MX5"                                                                   , "Memory", 0x4000C0A0,        4, base=16, bitRange=21
+sfr = "CFG_DMAMUX.[22]D2MX6"                                                                   , "Memory", 0x4000C0A0,        4, base=16, bitRange=22
+sfr = "CFG_DMAMUX.[23]D2MX7"                                                                   , "Memory", 0x4000C0A0,        4, base=16, bitRange=23
+sfr = "CFG_DMAMUX.[24]D2MX8"                                                                   , "Memory", 0x4000C0A0,        4, base=16, bitRange=24
+sfr = "CFG_DMAMUX.[25]D2MX9"                                                                   , "Memory", 0x4000C0A0,        4, base=16, bitRange=25
+sfr = "CFG_DMAMUX.[26]D2MX10"                                                                  , "Memory", 0x4000C0A0,        4, base=16, bitRange=26
+sfr = "CFG_DMAMUX.[27]D2MX11"                                                                  , "Memory", 0x4000C0A0,        4, base=16, bitRange=27
+sfr = "CFG_DMAMUX.[28]D2MX12"                                                                  , "Memory", 0x4000C0A0,        4, base=16, bitRange=28
+sfr = "CFG_DMAMUX.[29]D2MX13"                                                                  , "Memory", 0x4000C0A0,        4, base=16, bitRange=29
+sfr = "CFG_DMAMUX.[30]D2MX14"                                                                  , "Memory", 0x4000C0A0,        4, base=16, bitRange=30
+sfr = "CFG_DMAMUX.[31]D2MX15"                                                                  , "Memory", 0x4000C0A0,        4, base=16, bitRange=31
+sfr = "CFG_GPIOT_PTEN_1A"                                                                      , "Memory", 0x4000C0A4,        4, base=16
+sfr = "CFG_GPIOT_PTEN_1A.[31:0]PORTEN"                                                         , "Memory", 0x4000C0A4,        4, base=16, bitRange=0-31
+sfr = "RSTSTAT"                                                                                , "Memory", 0x4000C0A8,        4, base=16, readOnly
+sfr = "RSTSTAT.[2:1]WDA7RST_ST"                                                                , "Memory", 0x4000C0A8,        4, base=16, readOnly, bitRange=1-2
+sfr = "RSTSTAT.[3]WDM3RST_ST"                                                                  , "Memory", 0x4000C0A8,        4, base=16, readOnly, bitRange=3
+sfr = "RSTSTAT.[4]CM3LOCKUPRST_ST"                                                             , "Memory", 0x4000C0A8,        4, base=16, readOnly, bitRange=4
+sfr = "RSTSTAT.[5]CM3SYSRESET_ST"                                                              , "Memory", 0x4000C0A8,        4, base=16, readOnly, bitRange=5
+sfr = "RSTSTAT.[6]SWRST_ST"                                                                    , "Memory", 0x4000C0A8,        4, base=16, readOnly, bitRange=6
+sfr = "RSTSTAT.[31]PORRST_ST"                                                                  , "Memory", 0x4000C0A8,        4, base=16, readOnly, bitRange=31
+sfr = "CFG_GPIOT_PTEN_1B"                                                                      , "Memory", 0x4000C0B0,        4, base=16
+sfr = "CFG_GPIOT_PTEN_1B.[31:0]PORTEN"                                                         , "Memory", 0x4000C0B0,        4, base=16, bitRange=0-31
+sfr = "CFG_GPIOT_PTEN_2A"                                                                      , "Memory", 0x4000C0B4,        4, base=16
+sfr = "CFG_GPIOT_PTEN_2A.[31:0]PORTEN"                                                         , "Memory", 0x4000C0B4,        4, base=16, bitRange=0-31
+sfr = "CFG_GPIOT_PTEN_2B"                                                                      , "Memory", 0x4000C0B8,        4, base=16
+sfr = "CFG_GPIOT_PTEN_2B.[31:0]PORTEN"                                                         , "Memory", 0x4000C0B8,        4, base=16, bitRange=0-31
+sfr = "CFG_GPIOT_TSRC"                                                                         , "Memory", 0x4000C0BC,        4, base=16
+sfr = "CFG_GPIOT_TSRC.[4:0]TRIG0"                                                              , "Memory", 0x4000C0BC,        4, base=16, bitRange=0-4
+sfr = "CFG_GPIOT_TSRC.[12:8]TRIG1"                                                             , "Memory", 0x4000C0BC,        4, base=16, bitRange=8-12
+sfr = "CFG_GPIOT_TSRC.[20:16]TRIG2"                                                            , "Memory", 0x4000C0BC,        4, base=16, bitRange=16-20
+sfr = "CFG_GPIOT_TSRC.[28:24]TRIG3"                                                            , "Memory", 0x4000C0BC,        4, base=16, bitRange=24-28
+sfr = "USBSTAT"                                                                                , "Memory", 0x4000C0C0,        4, base=16, readOnly
+sfr = "USBSTAT.[0]PLL_LOCK"                                                                    , "Memory", 0x4000C0C0,        4, base=16, readOnly, bitRange=0
+sfr = "CFG_SDIO2"                                                                              , "Memory", 0x4000C0C4,        4, base=16
+sfr = "CFG_SDIO2.[7:0]BASECLKFREQ"                                                             , "Memory", 0x4000C0C4,        4, base=16, bitRange=0-7
+sfr = "CFG_SDIO2.[9:8]SLOTTYPE"                                                                , "Memory", 0x4000C0C4,        4, base=16, bitRange=8-9
+sfr = "PWRCTRL_SDIO2"                                                                          , "Memory", 0x4000C0C8,        4, base=16
+sfr = "PWRCTRL_SDIO2.[0]CLKEN_A"                                                               , "Memory", 0x4000C0C8,        4, base=16, bitRange=0
+sfr = "PWRCTRL_SDIO2.[1]RSTN_A"                                                                , "Memory", 0x4000C0C8,        4, base=16, bitRange=1
+sfr = "PWRCTRL_SDIO2.[2]SLVRDY_A"                                                              , "Memory", 0x4000C0C8,        4, base=16, bitRange=2
+sfr = "PWRCTRL_SDIO2.[3]MIREQ_A"                                                               , "Memory", 0x4000C0C8,        4, base=16, bitRange=3
+sfr = "PWRCTRL_SDIO2.[4]CLKEN_B"                                                               , "Memory", 0x4000C0C8,        4, base=16, bitRange=4
+sfr = "PWRSTAT_SDIO2"                                                                          , "Memory", 0x4000C0CC,        4, base=16, readOnly
+sfr = "PWRSTAT_SDIO2.[0]SCON_A"                                                                , "Memory", 0x4000C0CC,        4, base=16, readOnly, bitRange=0
+sfr = "PWRSTAT_SDIO2.[1]MIRACK_A"                                                              , "Memory", 0x4000C0CC,        4, base=16, readOnly, bitRange=1
+sfr = "PWRSTAT_SDIO2.[2]MISTAT_A"                                                              , "Memory", 0x4000C0CC,        4, base=16, readOnly, bitRange=2
+sfr = "CFG_GPIOT_PTEN_3A"                                                                      , "Memory", 0x4000C0D8,        4, base=16
+sfr = "CFG_GPIOT_PTEN_3A.[31:0]PORTEN"                                                         , "Memory", 0x4000C0D8,        4, base=16, bitRange=0-31
+sfr = "CFG_GPIOT_PTEN_3B"                                                                      , "Memory", 0x4000C0DC,        4, base=16
+sfr = "CFG_GPIOT_PTEN_3B.[9:0]PORTEN"                                                          , "Memory", 0x4000C0DC,        4, base=16, bitRange=0-9
+sfr = "PWRCTRL_OPPDIV"                                                                         , "Memory", 0x4000C0E0,        4, base=16
+sfr = "PWRCTRL_OPPDIV.[4:0]DIV"                                                                , "Memory", 0x4000C0E0,        4, base=16, bitRange=0-4
+sfr = "PWRCTRL_OPPDIV.[31]BUSY"                                                                , "Memory", 0x4000C0E0,        4, base=16, bitRange=31
+sfr = "PWRCTRL_CA7DIV"                                                                         , "Memory", 0x4000C0E4,        4, base=16
+sfr = "PWRCTRL_CA7DIV.[2:0]DIV"                                                                , "Memory", 0x4000C0E4,        4, base=16, bitRange=0-2
+sfr = "PWRCTRL_CA7DIV.[31]BUSY"                                                                , "Memory", 0x4000C0E4,        4, base=16, bitRange=31
+sfr = "PWRCTRL_PG2_25MHZ"                                                                      , "Memory", 0x4000C0E8,        4, base=16
+sfr = "PWRCTRL_PG2_25MHZ.[0]CLKEN_Q"                                                           , "Memory", 0x4000C0E8,        4, base=16, bitRange=0
+sfr = "PWRCTRL_PG2_25MHZ.[1]RSTN_Q"                                                            , "Memory", 0x4000C0E8,        4, base=16, bitRange=1
+sfr = "PWRCTRL_PG2_25MHZ.[2]SLVRDY_Q"                                                          , "Memory", 0x4000C0E8,        4, base=16, bitRange=2
+sfr = "PWRCTRL_PG2_25MHZ.[3]CLKEN_R"                                                           , "Memory", 0x4000C0E8,        4, base=16, bitRange=3
+sfr = "PWRCTRL_PG2_25MHZ.[4]RSTN_R"                                                            , "Memory", 0x4000C0E8,        4, base=16, bitRange=4
+sfr = "PWRCTRL_PG2_25MHZ.[5]SLVRDY_R"                                                          , "Memory", 0x4000C0E8,        4, base=16, bitRange=5
+sfr = "PWRCTRL_PG2_25MHZ.[6]CLKEN_S"                                                           , "Memory", 0x4000C0E8,        4, base=16, bitRange=6
+sfr = "PWRCTRL_PG2_25MHZ.[7]RSTN_S"                                                            , "Memory", 0x4000C0E8,        4, base=16, bitRange=7
+sfr = "PWRCTRL_PG2_25MHZ.[8]SLVRDY_S"                                                          , "Memory", 0x4000C0E8,        4, base=16, bitRange=8
+sfr = "PWRCTRL_PG1_PR2"                                                                        , "Memory", 0x4000C0EC,        4, base=16
+sfr = "PWRCTRL_PG1_PR2.[0]CLKEN_AG1"                                                           , "Memory", 0x4000C0EC,        4, base=16, bitRange=0
+sfr = "PWRCTRL_PG1_PR2.[1]RSTN_AG1"                                                            , "Memory", 0x4000C0EC,        4, base=16, bitRange=1
+sfr = "PWRCTRL_PG1_PR2.[2]CLKEN_AG2"                                                           , "Memory", 0x4000C0EC,        4, base=16, bitRange=2
+sfr = "PWRCTRL_PG1_PR2.[3]RSTN_AG2"                                                            , "Memory", 0x4000C0EC,        4, base=16, bitRange=3
+sfr = "PWRCTRL_PG1_PR2.[4]CLKEN_AH1"                                                           , "Memory", 0x4000C0EC,        4, base=16, bitRange=4
+sfr = "PWRCTRL_PG1_PR2.[5]RSTN_AH1"                                                            , "Memory", 0x4000C0EC,        4, base=16, bitRange=5
+sfr = "PWRCTRL_PG1_PR2.[6]CLKEN_AH2"                                                           , "Memory", 0x4000C0EC,        4, base=16, bitRange=6
+sfr = "PWRCTRL_PG1_PR2.[7]RSTN_AH2"                                                            , "Memory", 0x4000C0EC,        4, base=16, bitRange=7
+sfr = "PWRCTRL_PG1_PR2.[8]CLKEN_AI1"                                                           , "Memory", 0x4000C0EC,        4, base=16, bitRange=8
+sfr = "PWRCTRL_PG1_PR2.[9]RSTN_AI1"                                                            , "Memory", 0x4000C0EC,        4, base=16, bitRange=9
+sfr = "PWRCTRL_PG1_PR2.[10]CLKEN_AI2"                                                          , "Memory", 0x4000C0EC,        4, base=16, bitRange=10
+sfr = "PWRCTRL_PG1_PR2.[11]RSTN_AI2"                                                           , "Memory", 0x4000C0EC,        4, base=16, bitRange=11
+sfr = "PWRCTRL_PG1_PR2.[12]CLKEN_AJ1"                                                          , "Memory", 0x4000C0EC,        4, base=16, bitRange=12
+sfr = "PWRCTRL_PG1_PR2.[13]RSTN_AJ1"                                                           , "Memory", 0x4000C0EC,        4, base=16, bitRange=13
+sfr = "PWRCTRL_PG1_PR2.[14]CLKEN_AJ2"                                                          , "Memory", 0x4000C0EC,        4, base=16, bitRange=14
+sfr = "PWRCTRL_PG1_PR2.[15]RSTN_AJ2"                                                           , "Memory", 0x4000C0EC,        4, base=16, bitRange=15
+sfr = "PWRCTRL_PG1_PR2.[16]CLKEN_AK1"                                                          , "Memory", 0x4000C0EC,        4, base=16, bitRange=16
+sfr = "PWRCTRL_PG1_PR2.[17]RSTN_AK1"                                                           , "Memory", 0x4000C0EC,        4, base=16, bitRange=17
+sfr = "PWRCTRL_PG1_PR2.[18]CLKEN_AK2"                                                          , "Memory", 0x4000C0EC,        4, base=16, bitRange=18
+sfr = "PWRCTRL_PG1_PR2.[19]RSTN_AK2"                                                           , "Memory", 0x4000C0EC,        4, base=16, bitRange=19
+sfr = "PWRCTRL_PG1_PR2.[24]UARTCLKSEL"                                                         , "Memory", 0x4000C0EC,        4, base=16, bitRange=24
+sfr = "PWRCTRL_PG3_48MHZ"                                                                      , "Memory", 0x4000C0F0,        4, base=16
+sfr = "PWRCTRL_PG3_48MHZ.[3]CLKEN_Z"                                                           , "Memory", 0x4000C0F0,        4, base=16, bitRange=3
+sfr = "PWRCTRL_PG3_48MHZ.[4]RSTN_Z"                                                            , "Memory", 0x4000C0F0,        4, base=16, bitRange=4
+sfr = "PWRCTRL_PG3_48MHZ.[5]SLVRDY_Z"                                                          , "Memory", 0x4000C0F0,        4, base=16, bitRange=5
+sfr = "PWRCTRL_PG3_48MHZ.[6]CLKEN_AA"                                                          , "Memory", 0x4000C0F0,        4, base=16, bitRange=6
+sfr = "PWRCTRL_PG3_48MHZ.[7]RSTN_AA"                                                           , "Memory", 0x4000C0F0,        4, base=16, bitRange=7
+sfr = "PWRCTRL_PG3_48MHZ.[8]SLVRDY_AA"                                                         , "Memory", 0x4000C0F0,        4, base=16, bitRange=8
+sfr = "PWRCTRL_PG3_48MHZ.[12]CLKEN_UF"                                                         , "Memory", 0x4000C0F0,        4, base=16, bitRange=12
+sfr = "PWRCTRL_PG3_48MHZ.[13]RSTN_UF"                                                          , "Memory", 0x4000C0F0,        4, base=16, bitRange=13
+sfr = "PWRCTRL_PG3_48MHZ.[14]MIREQ_UF"                                                         , "Memory", 0x4000C0F0,        4, base=16, bitRange=14
+sfr = "PWRCTRL_PG4"                                                                            , "Memory", 0x4000C0F4,        4, base=16
+sfr = "PWRCTRL_PG4.[0]CLKEN_AC"                                                                , "Memory", 0x4000C0F4,        4, base=16, bitRange=0
+sfr = "PWRCTRL_PG4.[1]RSTN_AC"                                                                 , "Memory", 0x4000C0F4,        4, base=16, bitRange=1
+sfr = "PWRCTRL_PG4.[2]SLVRDY_AC"                                                               , "Memory", 0x4000C0F4,        4, base=16, bitRange=2
+sfr = "PWRCTRL_PG4.[3]CLKEN_AD"                                                                , "Memory", 0x4000C0F4,        4, base=16, bitRange=3
+sfr = "PWRCTRL_PG4.[4]RSTN_AD"                                                                 , "Memory", 0x4000C0F4,        4, base=16, bitRange=4
+sfr = "PWRCTRL_PG4.[5]SLVRDY_AD"                                                               , "Memory", 0x4000C0F4,        4, base=16, bitRange=5
+sfr = "PWRCTRL_PG4.[12]CLKEN_UI"                                                               , "Memory", 0x4000C0F4,        4, base=16, bitRange=12
+sfr = "PWRCTRL_PG4.[13]RSTN_UI"                                                                , "Memory", 0x4000C0F4,        4, base=16, bitRange=13
+sfr = "PWRCTRL_PG4.[14]MIREQ_UI"                                                               , "Memory", 0x4000C0F4,        4, base=16, bitRange=14
+sfr = "PWRCTRL_PG1_PR2DIV"                                                                     , "Memory", 0x4000C0F8,        4, base=16
+sfr = "PWRCTRL_PG1_PR2DIV.[7:0]DIV"                                                            , "Memory", 0x4000C0F8,        4, base=16, bitRange=0-7
+sfr = "PWRCTRL_PG1_PR2DIV.[31]BUSY"                                                            , "Memory", 0x4000C0F8,        4, base=16, bitRange=31
+sfr = "PWRCTRL_PG1_PR3"                                                                        , "Memory", 0x4000C0FC,        4, base=16
+sfr = "PWRCTRL_PG1_PR3.[0]CLKEN_AM"                                                            , "Memory", 0x4000C0FC,        4, base=16, bitRange=0
+sfr = "PWRCTRL_PG1_PR3.[1]RSTN_AM"                                                             , "Memory", 0x4000C0FC,        4, base=16, bitRange=1
+sfr = "PWRCTRL_PG1_PR3.[2]CLKEN_AN"                                                            , "Memory", 0x4000C0FC,        4, base=16, bitRange=2
+sfr = "PWRCTRL_PG1_PR3.[3]RSTN_AN"                                                             , "Memory", 0x4000C0FC,        4, base=16, bitRange=3
+sfr = "PWRCTRL_PG1_PR3.[4]CLKEN_AO"                                                            , "Memory", 0x4000C0FC,        4, base=16, bitRange=4
+sfr = "PWRCTRL_PG1_PR3.[5]RSTN_AO"                                                             , "Memory", 0x4000C0FC,        4, base=16, bitRange=5
+sfr = "PWRCTRL_PG1_PR3.[6]CLKEN_AP"                                                            , "Memory", 0x4000C0FC,        4, base=16, bitRange=6
+sfr = "PWRCTRL_PG1_PR3.[7]RSTN_AP"                                                             , "Memory", 0x4000C0FC,        4, base=16, bitRange=7
+sfr = "PWRCTRL_PG1_PR3DIV"                                                                     , "Memory", 0x4000C100,        4, base=16
+sfr = "PWRCTRL_PG1_PR3DIV.[7:0]DIV"                                                            , "Memory", 0x4000C100,        4, base=16, bitRange=0-7
+sfr = "PWRCTRL_PG1_PR3DIV.[31]BUSY"                                                            , "Memory", 0x4000C100,        4, base=16, bitRange=31
+sfr = "PWRCTRL_PG1_PR4"                                                                        , "Memory", 0x4000C104,        4, base=16
+sfr = "PWRCTRL_PG1_PR4.[0]CLKEN_AQ"                                                            , "Memory", 0x4000C104,        4, base=16, bitRange=0
+sfr = "PWRCTRL_PG1_PR4.[1]RSTN_AQ"                                                             , "Memory", 0x4000C104,        4, base=16, bitRange=1
+sfr = "PWRCTRL_PG1_PR4.[2]CLKEN_AR"                                                            , "Memory", 0x4000C104,        4, base=16, bitRange=2
+sfr = "PWRCTRL_PG1_PR4.[3]RSTN_AR"                                                             , "Memory", 0x4000C104,        4, base=16, bitRange=3
+sfr = "PWRCTRL_PG1_PR4DIV"                                                                     , "Memory", 0x4000C108,        4, base=16
+sfr = "PWRCTRL_PG1_PR4DIV.[7:0]DIV"                                                            , "Memory", 0x4000C108,        4, base=16, bitRange=0-7
+sfr = "PWRCTRL_PG1_PR4DIV.[31]BUSY"                                                            , "Memory", 0x4000C108,        4, base=16, bitRange=31
+sfr = "PWRCTRL_PG4_PR1"                                                                        , "Memory", 0x4000C10C,        4, base=16
+sfr = "PWRCTRL_PG4_PR1.[0]CLKEN_AU"                                                            , "Memory", 0x4000C10C,        4, base=16, bitRange=0
+sfr = "PWRCTRL_PG4_PR1.[1]RSTN_AU"                                                             , "Memory", 0x4000C10C,        4, base=16, bitRange=1
+sfr = "PWRCTRL_PG4_PR1DIV"                                                                     , "Memory", 0x4000C110,        4, base=16
+sfr = "PWRCTRL_PG4_PR1DIV.[7:0]DIV"                                                            , "Memory", 0x4000C110,        4, base=16, bitRange=0-7
+sfr = "PWRCTRL_PG4_PR1DIV.[31]BUSY"                                                            , "Memory", 0x4000C110,        4, base=16, bitRange=31
+sfr = "RSTEN"                                                                                  , "Memory", 0x4000C120,        4, base=16
+sfr = "RSTEN.[0]MRESET_EN"                                                                     , "Memory", 0x4000C120,        4, base=16, bitRange=0
+sfr = "RSTEN.[2:1]WDA7RST_EN"                                                                  , "Memory", 0x4000C120,        4, base=16, bitRange=1-2
+sfr = "RSTEN.[3]WDM3RST_EN"                                                                    , "Memory", 0x4000C120,        4, base=16, bitRange=3
+sfr = "RSTEN.[4]CM3LOCKUPRST_EN"                                                               , "Memory", 0x4000C120,        4, base=16, bitRange=4
+sfr = "RSTEN.[5]CM3SYSRESET_EN"                                                                , "Memory", 0x4000C120,        4, base=16, bitRange=5
+sfr = "RSTEN.[6]SWRST_EN"                                                                      , "Memory", 0x4000C120,        4, base=16, bitRange=6
+sfr = "PWRCTRL_QSPI1DIV"                                                                       , "Memory", 0x4000C124,        4, base=16
+sfr = "PWRCTRL_QSPI1DIV.[6:0]DIV"                                                              , "Memory", 0x4000C124,        4, base=16, bitRange=0-6
+sfr = "PWRCTRL_QSPI1DIV.[31]BUSY"                                                              , "Memory", 0x4000C124,        4, base=16, bitRange=31
+sfr = "PWRCTRL_SDIO1DIV"                                                                       , "Memory", 0x4000C128,        4, base=16
+sfr = "PWRCTRL_SDIO1DIV.[7:0]DIV"                                                              , "Memory", 0x4000C128,        4, base=16, bitRange=0-7
+sfr = "PWRCTRL_SDIO1DIV.[31]BUSY"                                                              , "Memory", 0x4000C128,        4, base=16, bitRange=31
+sfr = "PWRCTRL_SDIO2DIV"                                                                       , "Memory", 0x4000C12C,        4, base=16
+sfr = "PWRCTRL_SDIO2DIV.[7:0]DIV"                                                              , "Memory", 0x4000C12C,        4, base=16, bitRange=0-7
+sfr = "PWRCTRL_SDIO2DIV.[31]BUSY"                                                              , "Memory", 0x4000C12C,        4, base=16, bitRange=31
+sfr = "PWRCTRL_SWITCH"                                                                         , "Memory", 0x4000C130,        4, base=16
+sfr = "PWRCTRL_SWITCH.[0]CLKEN_A"                                                              , "Memory", 0x4000C130,        4, base=16, bitRange=0
+sfr = "PWRCTRL_SWITCH.[1]SLVRDY_A"                                                             , "Memory", 0x4000C130,        4, base=16, bitRange=1
+sfr = "PWRCTRL_SWITCH.[2]CLKEN_B"                                                              , "Memory", 0x4000C130,        4, base=16, bitRange=2
+sfr = "PWRCTRL_SWITCH.[3]RSTN_B"                                                               , "Memory", 0x4000C130,        4, base=16, bitRange=3
+sfr = "PWRCTRL_PG0_ADCDIV"                                                                     , "Memory", 0x4000C134,        4, base=16
+sfr = "PWRCTRL_PG0_ADCDIV.[9:0]DIV"                                                            , "Memory", 0x4000C134,        4, base=16, bitRange=0-9
+sfr = "PWRCTRL_PG0_ADCDIV.[31]BUSY"                                                            , "Memory", 0x4000C134,        4, base=16, bitRange=31
+sfr = "PWRCTRL_PG0_I2CDIV"                                                                     , "Memory", 0x4000C138,        4, base=16
+sfr = "PWRCTRL_PG0_I2CDIV.[6:0]DIV"                                                            , "Memory", 0x4000C138,        4, base=16, bitRange=0-6
+sfr = "PWRCTRL_PG0_I2CDIV.[31]BUSY"                                                            , "Memory", 0x4000C138,        4, base=16, bitRange=31
+sfr = "PWRCTRL_PG0_UARTDIV"                                                                    , "Memory", 0x4000C13C,        4, base=16
+sfr = "PWRCTRL_PG0_UARTDIV.[7:0]DIV"                                                           , "Memory", 0x4000C13C,        4, base=16, bitRange=0-7
+sfr = "PWRCTRL_PG0_UARTDIV.[31]BUSY"                                                           , "Memory", 0x4000C13C,        4, base=16, bitRange=31
+sfr = "PWRCTRL_RTC"                                                                            , "Memory", 0x4000C140,        4, base=16
+sfr = "PWRCTRL_RTC.[0]CLKEN_RTC"                                                               , "Memory", 0x4000C140,        4, base=16, bitRange=0
+sfr = "PWRCTRL_RTC.[1]RST_RTC"                                                                 , "Memory", 0x4000C140,        4, base=16, bitRange=1
+sfr = "PWRCTRL_RTC.[2]IDLE_REQ"                                                                , "Memory", 0x4000C140,        4, base=16, bitRange=2
+sfr = "PWRCTRL_RTC.[3]RSTN_FW_RTC"                                                             , "Memory", 0x4000C140,        4, base=16, bitRange=3
+sfr = "PWRSTAT_RTC"                                                                            , "Memory", 0x4000C144,        4, base=16, readOnly
+sfr = "PWRSTAT_RTC.[0]RTC_IACK"                                                                , "Memory", 0x4000C144,        4, base=16, readOnly, bitRange=0
+sfr = "PWRSTAT_RTC.[1]RTC_IDLE"                                                                , "Memory", 0x4000C144,        4, base=16, readOnly, bitRange=1
+sfr = "PWRSTAT_RTC.[2]PWR_GOOD"                                                                , "Memory", 0x4000C144,        4, base=16, readOnly, bitRange=2
+sfr = "PWRCTRL_NFLASHDIV"                                                                      , "Memory", 0x4000C148,        4, base=16
+sfr = "PWRCTRL_NFLASHDIV.[6:0]DIV"                                                             , "Memory", 0x4000C148,        4, base=16, bitRange=0-6
+sfr = "PWRCTRL_NFLASHDIV.[31]BUSY"                                                             , "Memory", 0x4000C148,        4, base=16, bitRange=31
+sfr = "PWRCTRL_ROM"                                                                            , "Memory", 0x4000C154,        4, base=16
+sfr = "PWRCTRL_ROM.[0]CLKEN_A"                                                                 , "Memory", 0x4000C154,        4, base=16, bitRange=0
+sfr = "PWRCTRL_ROM.[1]RSTN_A"                                                                  , "Memory", 0x4000C154,        4, base=16, bitRange=1
+sfr = "PWRCTRL_ROM.[2]SLVRDY_A"                                                                , "Memory", 0x4000C154,        4, base=16, bitRange=2
+sfr = "PWRSTAT_PG1"                                                                            , "Memory", 0x4000C158,        4, base=16, readOnly
+sfr = "PWRSTAT_PG1.[0]SCON_A"                                                                  , "Memory", 0x4000C158,        4, base=16, readOnly, bitRange=0
+sfr = "PWRSTAT_PG1.[1]SCON_B"                                                                  , "Memory", 0x4000C158,        4, base=16, readOnly, bitRange=1
+sfr = "PWRSTAT_PG1.[2]SCON_C"                                                                  , "Memory", 0x4000C158,        4, base=16, readOnly, bitRange=2
+sfr = "PWRSTAT_PG1.[3]SCON_D"                                                                  , "Memory", 0x4000C158,        4, base=16, readOnly, bitRange=3
+sfr = "PWRSTAT_PG1.[4]SCON_E"                                                                  , "Memory", 0x4000C158,        4, base=16, readOnly, bitRange=4
+sfr = "PWRSTAT_PG1.[5]SCON_F"                                                                  , "Memory", 0x4000C158,        4, base=16, readOnly, bitRange=5
+sfr = "PWRSTAT_PG1.[6]SCON_G"                                                                  , "Memory", 0x4000C158,        4, base=16, readOnly, bitRange=6
+sfr = "PWRSTAT_PG1.[7]SCON_H"                                                                  , "Memory", 0x4000C158,        4, base=16, readOnly, bitRange=7
+sfr = "PWRSTAT_PG1.[8]SCON_I"                                                                  , "Memory", 0x4000C158,        4, base=16, readOnly, bitRange=8
+sfr = "PWRSTAT_PG1.[9]SCON_J"                                                                  , "Memory", 0x4000C158,        4, base=16, readOnly, bitRange=9
+sfr = "PWRSTAT_PG1.[10]SCON_K"                                                                 , "Memory", 0x4000C158,        4, base=16, readOnly, bitRange=10
+sfr = "PWRSTAT_PG1.[11]SCON_L"                                                                 , "Memory", 0x4000C158,        4, base=16, readOnly, bitRange=11
+sfr = "PWRSTAT_PG1.[12]SCON_M"                                                                 , "Memory", 0x4000C158,        4, base=16, readOnly, bitRange=12
+sfr = "PWRSTAT_PG1.[13]SCON_N"                                                                 , "Memory", 0x4000C158,        4, base=16, readOnly, bitRange=13
+sfr = "PWRSTAT_PG2_25MHZ"                                                                      , "Memory", 0x4000C15C,        4, base=16, readOnly
+sfr = "PWRSTAT_PG2_25MHZ.[0]SCON_Q"                                                            , "Memory", 0x4000C15C,        4, base=16, readOnly, bitRange=0
+sfr = "PWRSTAT_PG2_25MHZ.[1]SCON_R"                                                            , "Memory", 0x4000C15C,        4, base=16, readOnly, bitRange=1
+sfr = "PWRSTAT_PG2_25MHZ.[2]SCON_S"                                                            , "Memory", 0x4000C15C,        4, base=16, readOnly, bitRange=2
+sfr = "PWRSTAT_PG3_48MHZ"                                                                      , "Memory", 0x4000C160,        4, base=16, readOnly
+sfr = "PWRSTAT_PG3_48MHZ.[1]SCON_Z"                                                            , "Memory", 0x4000C160,        4, base=16, readOnly, bitRange=1
+sfr = "PWRSTAT_PG3_48MHZ.[2]SCON_AA"                                                           , "Memory", 0x4000C160,        4, base=16, readOnly, bitRange=2
+sfr = "PWRSTAT_PG3_48MHZ.[4]MIRACK_UF"                                                         , "Memory", 0x4000C160,        4, base=16, readOnly, bitRange=4
+sfr = "PWRSTAT_PG3_48MHZ.[5]MISTAT_UF"                                                         , "Memory", 0x4000C160,        4, base=16, readOnly, bitRange=5
+sfr = "PWRSTAT_PG4"                                                                            , "Memory", 0x4000C164,        4, base=16, readOnly
+sfr = "PWRSTAT_PG4.[0]SCON_AC"                                                                 , "Memory", 0x4000C164,        4, base=16, readOnly, bitRange=0
+sfr = "PWRSTAT_PG4.[1]SCON_AD"                                                                 , "Memory", 0x4000C164,        4, base=16, readOnly, bitRange=1
+sfr = "PWRSTAT_PG4.[4]MIRACK_UI"                                                               , "Memory", 0x4000C164,        4, base=16, readOnly, bitRange=4
+sfr = "PWRSTAT_PG4.[5]MISTAT_UI"                                                               , "Memory", 0x4000C164,        4, base=16, readOnly, bitRange=5
+sfr = "PWRSTAT_ROM"                                                                            , "Memory", 0x4000C170,        4, base=16, readOnly
+sfr = "PWRSTAT_ROM.[0]SCON_A"                                                                  , "Memory", 0x4000C170,        4, base=16, readOnly, bitRange=0
+sfr = "PWRCTRL_CM3"                                                                            , "Memory", 0x4000C174,        4, base=16
+sfr = "PWRCTRL_CM3.[0]CLKEN_A"                                                                 , "Memory", 0x4000C174,        4, base=16, bitRange=0
+sfr = "PWRCTRL_CM3.[1]RSTN_A"                                                                  , "Memory", 0x4000C174,        4, base=16, bitRange=1
+sfr = "PWRCTRL_CM3.[2]MIREQ_A"                                                                 , "Memory", 0x4000C174,        4, base=16, bitRange=2
+sfr = "PWRSTAT_CM3"                                                                            , "Memory", 0x4000C178,        4, base=16, readOnly
+sfr = "PWRSTAT_CM3.[0]MIRACK_A"                                                                , "Memory", 0x4000C178,        4, base=16, readOnly, bitRange=0
+sfr = "PWRSTAT_CM3.[1]MISTAT_A"                                                                , "Memory", 0x4000C178,        4, base=16, readOnly, bitRange=1
+sfr = "PWRSTAT_RINCTRL"                                                                        , "Memory", 0x4000C17C,        4, base=16, readOnly
+sfr = "PWRSTAT_RINCTRL.[0]SCON_A"                                                              , "Memory", 0x4000C17C,        4, base=16, readOnly, bitRange=0
+sfr = "PWRSTAT_SWITCHCTRL"                                                                     , "Memory", 0x4000C180,        4, base=16, readOnly
+sfr = "PWRSTAT_SWITCHCTRL.[0]SCON_A"                                                           , "Memory", 0x4000C180,        4, base=16, readOnly, bitRange=0
+sfr = "PWRCTRL_RINCTRL"                                                                        , "Memory", 0x4000C184,        4, base=16
+sfr = "PWRCTRL_RINCTRL.[0]CLKEN_A"                                                             , "Memory", 0x4000C184,        4, base=16, bitRange=0
+sfr = "PWRCTRL_RINCTRL.[1]RSTN_A"                                                              , "Memory", 0x4000C184,        4, base=16, bitRange=1
+sfr = "PWRCTRL_RINCTRL.[2]SLVRDY_A"                                                            , "Memory", 0x4000C184,        4, base=16, bitRange=2
+sfr = "PWRCTRL_SWITCHCTRL"                                                                     , "Memory", 0x4000C188,        4, base=16
+sfr = "PWRCTRL_SWITCHCTRL.[0]CLKEN_A"                                                          , "Memory", 0x4000C188,        4, base=16, bitRange=0
+sfr = "PWRCTRL_SWITCHCTRL.[1]RSTN_A"                                                           , "Memory", 0x4000C188,        4, base=16, bitRange=1
+sfr = "PWRCTRL_SWITCHCTRL.[2]SLVRDY_A"                                                         , "Memory", 0x4000C188,        4, base=16, bitRange=2
+sfr = "PWRCTRL_SWITCHCTRL.[3]RSTN_CLK25"                                                       , "Memory", 0x4000C188,        4, base=16, bitRange=3
+sfr = "PWRCTRL_SWITCHCTRL.[4]RSTN_ETH"                                                         , "Memory", 0x4000C188,        4, base=16, bitRange=4
+sfr = "PWRCTRL_HWRTOS"                                                                         , "Memory", 0x4000C18C,        4, base=16
+sfr = "PWRCTRL_HWRTOS.[0]CLKEN_A"                                                              , "Memory", 0x4000C18C,        4, base=16, bitRange=0
+sfr = "PWRCTRL_HWRTOS.[1]RSTN_A"                                                               , "Memory", 0x4000C18C,        4, base=16, bitRange=1
+sfr = "PWRCTRL_HWRTOS.[2]CLKEN_B"                                                              , "Memory", 0x4000C18C,        4, base=16, bitRange=2
+sfr = "PWRCTRL_HWRTOS_MDCDIV"                                                                  , "Memory", 0x4000C190,        4, base=16
+sfr = "PWRCTRL_HWRTOS_MDCDIV.[9:0]DIV"                                                         , "Memory", 0x4000C190,        4, base=16, bitRange=0-9
+sfr = "PWRCTRL_HWRTOS_MDCDIV.[31]BUSY"                                                         , "Memory", 0x4000C190,        4, base=16, bitRange=31
+sfr = "RSTCTRL"                                                                                , "Memory", 0x4000C198,        4, base=16, writeOnly
+sfr = "RSTCTRL.[2:1]WDA7RST_REQ"                                                               , "Memory", 0x4000C198,        4, base=16, writeOnly, bitRange=1-2
+sfr = "RSTCTRL.[3]WDM3RST_REQ"                                                                 , "Memory", 0x4000C198,        4, base=16, writeOnly, bitRange=3
+sfr = "RSTCTRL.[4]CM3LOCKUPRST_REQ"                                                            , "Memory", 0x4000C198,        4, base=16, writeOnly, bitRange=4
+sfr = "RSTCTRL.[5]CM3SYSRESET_REQ"                                                             , "Memory", 0x4000C198,        4, base=16, writeOnly, bitRange=5
+sfr = "RSTCTRL.[6]SWRST_REQ"                                                                   , "Memory", 0x4000C198,        4, base=16, writeOnly, bitRange=6
+sfr = "VERSION"                                                                                , "Memory", 0x4000C19C,        4, base=16, readOnly
+sfr = "VERSION.[8]PROD"                                                                        , "Memory", 0x4000C19C,        4, base=16, readOnly, bitRange=8
+sfr = "BOOTADDR"                                                                               , "Memory", 0x4000C204,        4, base=16
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// System Controller -----
+group = "SYSCTRL","CFG_USB","OPMODE","CFG_SDIO1","PWRCTRL_SDIO1","PWRSTAT_SDIO1","DBGCON","SYSSTAT","PWRCTRL_USB","PWRSTAT_USB","PWRCTRL_CRYPTO","PWRSTAT_CRYPTO","PWRCTRL_MSEBI","PWRSTAT_MSEBI","PWRCTRL_PG0_0","PWRSTAT_PG0","PWRCTRL_PG0_1","PWRCTRL_PG1_1","PWRCTRL_PG1_2","PWRCTRL_DMA","PWRCTRL_NFLASH","PWRCTRL_QSPI1","PWRSTAT_DMA","PWRSTAT_NFLASH","PWRSTAT_QSPI1","PWRCTRL_DDRC","PWRCTRL_EETH","PWRCTRL_MAC1","PWRCTRL_MAC2","PWRSTAT_DDRC","PWRSTAT_MAC1","PWRSTAT_MAC2","PWRCTRL_ECAT","PWRCTRL_SERCOS","PWRSTAT_ECAT","PWRSTAT_SERCOS","PWRCTRL_HSR","PWRCTRL_SWITCHDIV","PWRSTAT_HSR","PWRSTAT_SWITCH","CFG_DMAMUX","CFG_GPIOT_PTEN_1A","RSTSTAT","CFG_GPIOT_PTEN_1B","CFG_GPIOT_PTEN_2A","CFG_GPIOT_PTEN_2B","CFG_GPIOT_TSRC","USBSTAT","CFG_SDIO2","PWRCTRL_SDIO2","PWRSTAT_SDIO2","CFG_GPIOT_PTEN_3A","CFG_GPIOT_PTEN_3B","PWRCTRL_OPPDIV","PWRCTRL_CA7DIV","PWRCTRL_PG2_25MHZ","PWRCTRL_PG1_PR2","PWRCTRL_PG3_48MHZ","PWRCTRL_PG4","PWRCTRL_PG1_PR2DIV","PWRCTRL_PG1_PR3","PWRCTRL_PG1_PR3DIV","PWRCTRL_PG1_PR4","PWRCTRL_PG1_PR4DIV","PWRCTRL_PG4_PR1","PWRCTRL_PG4_PR1DIV","RSTEN","PWRCTRL_QSPI1DIV","PWRCTRL_SDIO1DIV","PWRCTRL_SDIO2DIV","PWRCTRL_SWITCH","PWRCTRL_PG0_ADCDIV","PWRCTRL_PG0_I2CDIV","PWRCTRL_PG0_UARTDIV","PWRCTRL_RTC","PWRSTAT_RTC","PWRCTRL_NFLASHDIV","PWRCTRL_ROM","PWRSTAT_PG1","PWRSTAT_PG2_25MHZ","PWRSTAT_PG3_48MHZ","PWRSTAT_PG4","PWRSTAT_ROM","PWRCTRL_CM3","PWRSTAT_CM3","PWRSTAT_RINCTRL","PWRSTAT_SWITCHCTRL","PWRCTRL_RINCTRL","PWRCTRL_SWITCHCTRL","PWRCTRL_HWRTOS","PWRCTRL_HWRTOS_MDCDIV","RSTCTRL","VERSION","BOOTADDR"

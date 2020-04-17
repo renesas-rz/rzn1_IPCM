@@ -1,0 +1,111 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : SPI6
+;               SPI6
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "SPI6/CTRLR0"                                                                            , "Memory", 0x5000A000,        4, base=16
+sfr = "SPI6/CTRLR0.[3:0]DFS"                                                                   , "Memory", 0x5000A000,        4, base=16, bitRange=0-3
+sfr = "SPI6/CTRLR0.[5:4]FRF"                                                                   , "Memory", 0x5000A000,        4, base=16, bitRange=4-5
+sfr = "SPI6/CTRLR0.[6]SCPH"                                                                    , "Memory", 0x5000A000,        4, base=16, bitRange=6
+sfr = "SPI6/CTRLR0.[7]SCPOL"                                                                   , "Memory", 0x5000A000,        4, base=16, bitRange=7
+sfr = "SPI6/CTRLR0.[9:8]TMOD"                                                                  , "Memory", 0x5000A000,        4, base=16, bitRange=8-9
+sfr = "SPI6/CTRLR0.[10]SLV_OE"                                                                 , "Memory", 0x5000A000,        4, base=16, bitRange=10
+sfr = "SPI6/CTRLR0.[11]SRL"                                                                    , "Memory", 0x5000A000,        4, base=16, bitRange=11
+sfr = "SPI6/CTRLR0.[15:12]CFS"                                                                 , "Memory", 0x5000A000,        4, base=16, bitRange=12-15
+sfr = "SPI6/CTRLR1"                                                                            , "Memory", 0x5000A004,        4, base=16
+sfr = "SPI6/CTRLR1.[15:0]NDF"                                                                  , "Memory", 0x5000A004,        4, base=16, bitRange=0-15
+sfr = "SPI6/SSIENR"                                                                            , "Memory", 0x5000A008,        4, base=16
+sfr = "SPI6/SSIENR.[0]SSIENR"                                                                  , "Memory", 0x5000A008,        4, base=16, bitRange=0
+sfr = "SPI6/MWCR"                                                                              , "Memory", 0x5000A00C,        4, base=16
+sfr = "SPI6/MWCR.[0]MWMOD"                                                                     , "Memory", 0x5000A00C,        4, base=16, bitRange=0
+sfr = "SPI6/MWCR.[1]MDD"                                                                       , "Memory", 0x5000A00C,        4, base=16, bitRange=1
+sfr = "SPI6/MWCR.[2]MWHS"                                                                      , "Memory", 0x5000A00C,        4, base=16, bitRange=2
+sfr = "SPI6/SER"                                                                               , "Memory", 0x5000A010,        4, base=16
+sfr = "SPI6/SER.[3:0]HardwareSS"                                                               , "Memory", 0x5000A010,        4, base=16, bitRange=0-3
+sfr = "SPI6/SER.[7:4]SoftwareSS"                                                               , "Memory", 0x5000A010,        4, base=16, bitRange=4-7
+sfr = "SPI6/SER.[11:8]CtrlSS"                                                                  , "Memory", 0x5000A010,        4, base=16, bitRange=8-11
+sfr = "SPI6/BAUDR"                                                                             , "Memory", 0x5000A014,        4, base=16
+sfr = "SPI6/BAUDR.[15:0]SCKDV"                                                                 , "Memory", 0x5000A014,        4, base=16, bitRange=0-15
+sfr = "SPI6/TXFTLR"                                                                            , "Memory", 0x5000A018,        4, base=16
+sfr = "SPI6/TXFTLR.[3:0]TFT"                                                                   , "Memory", 0x5000A018,        4, base=16, bitRange=0-3
+sfr = "SPI6/RXFTLR"                                                                            , "Memory", 0x5000A01C,        4, base=16
+sfr = "SPI6/RXFTLR.[3:0]RFT"                                                                   , "Memory", 0x5000A01C,        4, base=16, bitRange=0-3
+sfr = "SPI6/TXFLR"                                                                             , "Memory", 0x5000A020,        4, base=16, readOnly
+sfr = "SPI6/TXFLR.[3:0]TXTFL"                                                                  , "Memory", 0x5000A020,        4, base=16, readOnly, bitRange=0-3
+sfr = "SPI6/RXFLR"                                                                             , "Memory", 0x5000A024,        4, base=16, readOnly
+sfr = "SPI6/RXFLR.[3:0]RXTFL"                                                                  , "Memory", 0x5000A024,        4, base=16, readOnly, bitRange=0-3
+sfr = "SPI6/SR"                                                                                , "Memory", 0x5000A028,        4, base=16, readOnly
+sfr = "SPI6/SR.[0]BUSY"                                                                        , "Memory", 0x5000A028,        4, base=16, readOnly, bitRange=0
+sfr = "SPI6/SR.[1]TFNF"                                                                        , "Memory", 0x5000A028,        4, base=16, readOnly, bitRange=1
+sfr = "SPI6/SR.[2]TFE"                                                                         , "Memory", 0x5000A028,        4, base=16, readOnly, bitRange=2
+sfr = "SPI6/SR.[3]RFNE"                                                                        , "Memory", 0x5000A028,        4, base=16, readOnly, bitRange=3
+sfr = "SPI6/SR.[4]RFF"                                                                         , "Memory", 0x5000A028,        4, base=16, readOnly, bitRange=4
+sfr = "SPI6/SR.[5]TXE"                                                                         , "Memory", 0x5000A028,        4, base=16, readOnly, bitRange=5
+sfr = "SPI6/SR.[6]DCOL"                                                                        , "Memory", 0x5000A028,        4, base=16, readOnly, bitRange=6
+sfr = "SPI6/IMR"                                                                               , "Memory", 0x5000A02C,        4, base=16
+sfr = "SPI6/IMR.[0]TXEIM"                                                                      , "Memory", 0x5000A02C,        4, base=16, bitRange=0
+sfr = "SPI6/IMR.[1]TXOIM"                                                                      , "Memory", 0x5000A02C,        4, base=16, bitRange=1
+sfr = "SPI6/IMR.[2]RXUIM"                                                                      , "Memory", 0x5000A02C,        4, base=16, bitRange=2
+sfr = "SPI6/IMR.[3]RXOIM"                                                                      , "Memory", 0x5000A02C,        4, base=16, bitRange=3
+sfr = "SPI6/IMR.[4]RXFIM"                                                                      , "Memory", 0x5000A02C,        4, base=16, bitRange=4
+sfr = "SPI6/IMR.[5]MSTIM"                                                                      , "Memory", 0x5000A02C,        4, base=16, bitRange=5
+sfr = "SPI6/ISR"                                                                               , "Memory", 0x5000A030,        4, base=16, readOnly
+sfr = "SPI6/ISR.[0]TXEIS"                                                                      , "Memory", 0x5000A030,        4, base=16, readOnly, bitRange=0
+sfr = "SPI6/ISR.[1]TXOIS"                                                                      , "Memory", 0x5000A030,        4, base=16, readOnly, bitRange=1
+sfr = "SPI6/ISR.[2]RXUIS"                                                                      , "Memory", 0x5000A030,        4, base=16, readOnly, bitRange=2
+sfr = "SPI6/ISR.[3]RXOIS"                                                                      , "Memory", 0x5000A030,        4, base=16, readOnly, bitRange=3
+sfr = "SPI6/ISR.[4]RXFIS"                                                                      , "Memory", 0x5000A030,        4, base=16, readOnly, bitRange=4
+sfr = "SPI6/ISR.[5]MSTIS"                                                                      , "Memory", 0x5000A030,        4, base=16, readOnly, bitRange=5
+sfr = "SPI6/RISR"                                                                              , "Memory", 0x5000A034,        4, base=16, readOnly
+sfr = "SPI6/RISR.[0]TXEIR"                                                                     , "Memory", 0x5000A034,        4, base=16, readOnly, bitRange=0
+sfr = "SPI6/RISR.[1]TXOIR"                                                                     , "Memory", 0x5000A034,        4, base=16, readOnly, bitRange=1
+sfr = "SPI6/RISR.[2]RXUIR"                                                                     , "Memory", 0x5000A034,        4, base=16, readOnly, bitRange=2
+sfr = "SPI6/RISR.[3]RXOIR"                                                                     , "Memory", 0x5000A034,        4, base=16, readOnly, bitRange=3
+sfr = "SPI6/RISR.[4]RXFIR"                                                                     , "Memory", 0x5000A034,        4, base=16, readOnly, bitRange=4
+sfr = "SPI6/RISR.[5]MSTIR"                                                                     , "Memory", 0x5000A034,        4, base=16, readOnly, bitRange=5
+sfr = "SPI6/TXOICR"                                                                            , "Memory", 0x5000A038,        4, base=16, readOnly
+sfr = "SPI6/TXOICR.[0]TXOICR"                                                                  , "Memory", 0x5000A038,        4, base=16, readOnly, bitRange=0
+sfr = "SPI6/RXOICR"                                                                            , "Memory", 0x5000A03C,        4, base=16, readOnly
+sfr = "SPI6/RXOICR.[0]RXOICR"                                                                  , "Memory", 0x5000A03C,        4, base=16, readOnly, bitRange=0
+sfr = "SPI6/RXUICR"                                                                            , "Memory", 0x5000A040,        4, base=16, readOnly
+sfr = "SPI6/RXUICR.[0]RXUICR"                                                                  , "Memory", 0x5000A040,        4, base=16, readOnly, bitRange=0
+sfr = "SPI6/MSTICR"                                                                            , "Memory", 0x5000A044,        4, base=16, readOnly
+sfr = "SPI6/MSTICR.[0]MSTICR"                                                                  , "Memory", 0x5000A044,        4, base=16, readOnly, bitRange=0
+sfr = "SPI6/ICR"                                                                               , "Memory", 0x5000A048,        4, base=16, readOnly
+sfr = "SPI6/ICR.[0]ICR"                                                                        , "Memory", 0x5000A048,        4, base=16, readOnly, bitRange=0
+sfr = "SPI6/DMACR"                                                                             , "Memory", 0x5000A04C,        4, base=16
+sfr = "SPI6/DMACR.[0]RDMAE"                                                                    , "Memory", 0x5000A04C,        4, base=16, bitRange=0
+sfr = "SPI6/DMACR.[1]TDMAE"                                                                    , "Memory", 0x5000A04C,        4, base=16, bitRange=1
+sfr = "SPI6/DMATDLR"                                                                           , "Memory", 0x5000A050,        4, base=16
+sfr = "SPI6/DMATDLR.[3:0]DMATDLR"                                                              , "Memory", 0x5000A050,        4, base=16, bitRange=0-3
+sfr = "SPI6/DMARDLR"                                                                           , "Memory", 0x5000A054,        4, base=16
+sfr = "SPI6/DMARDLR.[3:0]DMARDLR"                                                              , "Memory", 0x5000A054,        4, base=16, bitRange=0-3
+sfr = "SPI6/IDR"                                                                               , "Memory", 0x5000A058,        4, base=16, readOnly
+sfr = "SPI6/IDR.[31:0]ICR"                                                                     , "Memory", 0x5000A058,        4, base=16, readOnly, bitRange=0-31
+sfr = "SPI6/SSI_COMP_VERSION"                                                                  , "Memory", 0x5000A05C,        4, base=16, readOnly
+sfr = "SPI6/SSI_COMP_VERSION.[31:0]Version"                                                    , "Memory", 0x5000A05C,        4, base=16, readOnly, bitRange=0-31
+sfr = "SPI6/DR"                                                                                , "Memory", 0x5000A060,        4, base=16
+sfr = "SPI6/DR.[15:0]DR"                                                                       , "Memory", 0x5000A060,        4, base=16, bitRange=0-15
+sfr = "SPI6/TDMACR"                                                                            , "Memory", 0x5000A100,        4, base=16
+sfr = "SPI6/TDMACR.[0]TDMAE1"                                                                  , "Memory", 0x5000A100,        4, base=16, bitRange=0
+sfr = "SPI6/TDMACR.[2:1]DEST_BURST_SIZE"                                                       , "Memory", 0x5000A100,        4, base=16, bitRange=1-2
+sfr = "SPI6/TDMACR.[15:3]DEST_BLOCK_SIZE"                                                      , "Memory", 0x5000A100,        4, base=16, bitRange=3-15
+sfr = "SPI6/TDMACR.[28:16]CURRENT_DEST_BLOCK_SIZE"                                             , "Memory", 0x5000A100,        4, base=16, bitRange=16-28
+sfr = "SPI6/RDMACR"                                                                            , "Memory", 0x5000A104,        4, base=16
+sfr = "SPI6/RDMACR.[0]RDMAE1"                                                                  , "Memory", 0x5000A104,        4, base=16, bitRange=0
+sfr = "SPI6/RDMACR.[2:1]SRC_BURST_SIZE"                                                        , "Memory", 0x5000A104,        4, base=16, bitRange=1-2
+sfr = "SPI6/RDMACR.[15:3]SRC_BLOCK_SIZE"                                                       , "Memory", 0x5000A104,        4, base=16, bitRange=3-15
+sfr = "SPI6/RDMACR.[28:16]CURRENT_SRC_BLOCK_SIZE"                                              , "Memory", 0x5000A104,        4, base=16, bitRange=16-28
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// SPI6 -----
+group = "SPI6","SPI6/CTRLR0","SPI6/CTRLR1","SPI6/SSIENR","SPI6/MWCR","SPI6/SER","SPI6/BAUDR","SPI6/TXFTLR","SPI6/RXFTLR","SPI6/TXFLR","SPI6/RXFLR","SPI6/SR","SPI6/IMR","SPI6/ISR","SPI6/RISR","SPI6/TXOICR","SPI6/RXOICR","SPI6/RXUICR","SPI6/MSTICR","SPI6/ICR","SPI6/DMACR","SPI6/DMATDLR","SPI6/DMARDLR","SPI6/IDR","SPI6/SSI_COMP_VERSION","SPI6/DR","SPI6/TDMACR","SPI6/RDMACR"

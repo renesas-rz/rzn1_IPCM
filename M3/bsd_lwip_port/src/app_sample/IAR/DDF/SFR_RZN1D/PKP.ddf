@@ -1,0 +1,298 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : PKP
+;               EIP150 (PKP)
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "TRNG_STATUS_INTACK"                                                                     , "Memory", 0x40040010,        4, base=16
+sfr = "TRNG_STATUS_INTACK.[0]READY"                                                            , "Memory", 0x40040010,        4, base=16, bitRange=0
+sfr = "TRNG_STATUS_INTACK.[1]SHUTDOWN_OFLO"                                                    , "Memory", 0x40040010,        4, base=16, bitRange=1
+sfr = "TRNG_STATUS_INTACK.[2]STUCK_OUT"                                                        , "Memory", 0x40040010,        4, base=16, bitRange=2
+sfr = "TRNG_STATUS_INTACK.[3]NOISE_FAIL"                                                       , "Memory", 0x40040010,        4, base=16, bitRange=3
+sfr = "TRNG_STATUS_INTACK.[4]RUN_FAIL"                                                         , "Memory", 0x40040010,        4, base=16, bitRange=4
+sfr = "TRNG_STATUS_INTACK.[5]LONG_RUN_FAIL"                                                    , "Memory", 0x40040010,        4, base=16, bitRange=5
+sfr = "TRNG_STATUS_INTACK.[6]POKER_FAIL"                                                       , "Memory", 0x40040010,        4, base=16, bitRange=6
+sfr = "TRNG_STATUS_INTACK.[7]MONOBIT_FAIL"                                                     , "Memory", 0x40040010,        4, base=16, bitRange=7
+sfr = "TRNG_STATUS_INTACK.[8]TEST_READY"                                                       , "Memory", 0x40040010,        4, base=16, bitRange=8
+sfr = "TRNG_STATUS_INTACK.[9]STUCK_NRBG"                                                       , "Memory", 0x40040010,        4, base=16, bitRange=9
+sfr = "TRNG_STATUS_INTACK.[13]REPCNT_FAIL"                                                     , "Memory", 0x40040010,        4, base=16, bitRange=13
+sfr = "TRNG_STATUS_INTACK.[14]APROP_FAIL"                                                      , "Memory", 0x40040010,        4, base=16, bitRange=14
+sfr = "TRNG_STATUS_INTACK.[15]TEST_STUCK_OUT"                                                  , "Memory", 0x40040010,        4, base=16, bitRange=15
+sfr = "TRNG_STATUS_INTACK.[23:16]BLOCKS_AVAILABLE"                                             , "Memory", 0x40040010,        4, base=16, bitRange=16-23
+sfr = "TRNG_STATUS_INTACK.[31]NEED_CLOCK"                                                      , "Memory", 0x40040010,        4, base=16, bitRange=31
+sfr = "TRNG_CONTROL"                                                                           , "Memory", 0x40040014,        4, base=16
+sfr = "TRNG_CONTROL.[0]READY_MASK"                                                             , "Memory", 0x40040014,        4, base=16, bitRange=0
+sfr = "TRNG_CONTROL.[1]SHUTDOWN_OFLO_MASK"                                                     , "Memory", 0x40040014,        4, base=16, bitRange=1
+sfr = "TRNG_CONTROL.[2]STUCK_OUT_MASK"                                                         , "Memory", 0x40040014,        4, base=16, bitRange=2
+sfr = "TRNG_CONTROL.[3]NOISE_OUT_MASK"                                                         , "Memory", 0x40040014,        4, base=16, bitRange=3
+sfr = "TRNG_CONTROL.[4]RUN_FAIL_MASK"                                                          , "Memory", 0x40040014,        4, base=16, bitRange=4
+sfr = "TRNG_CONTROL.[5]LONG_RUN_FAIL_MASK"                                                     , "Memory", 0x40040014,        4, base=16, bitRange=5
+sfr = "TRNG_CONTROL.[6]POKER_FAIL_MASK"                                                        , "Memory", 0x40040014,        4, base=16, bitRange=6
+sfr = "TRNG_CONTROL.[7]MONOBIT_FAIL_MASK"                                                      , "Memory", 0x40040014,        4, base=16, bitRange=7
+sfr = "TRNG_CONTROL.[8]TEST_MODE"                                                              , "Memory", 0x40040014,        4, base=16, bitRange=8
+sfr = "TRNG_CONTROL.[9]STUCK_NRBG_MASK"                                                        , "Memory", 0x40040014,        4, base=16, bitRange=9
+sfr = "TRNG_CONTROL.[10]ENABLE_TRNG"                                                           , "Memory", 0x40040014,        4, base=16, bitRange=10
+sfr = "TRNG_CONTROL.[12]DRBG_EN"                                                               , "Memory", 0x40040014,        4, base=16, bitRange=12
+sfr = "TRNG_CONTROL.[13]REPCNT_FAIL_MASK"                                                      , "Memory", 0x40040014,        4, base=16, bitRange=13
+sfr = "TRNG_CONTROL.[14]APROP_FAIL_MASK"                                                       , "Memory", 0x40040014,        4, base=16, bitRange=14
+sfr = "TRNG_CONTROL.[15]RE_SEED"                                                               , "Memory", 0x40040014,        4, base=16, bitRange=15
+sfr = "TRNG_CONTROL.[16]REQUEST_DATA"                                                          , "Memory", 0x40040014,        4, base=16, bitRange=16
+sfr = "TRNG_CONTROL.[31:20]DATA_BLOCKS"                                                        , "Memory", 0x40040014,        4, base=16, bitRange=20-31
+sfr = "TRNG_CONFIG"                                                                            , "Memory", 0x40040018,        4, base=16
+sfr = "TRNG_CONFIG.[7:0]NOISE_BLOCKS"                                                          , "Memory", 0x40040018,        4, base=16, bitRange=0-7
+sfr = "TRNG_CONFIG.[11:8]SAMPLE_DIV"                                                           , "Memory", 0x40040018,        4, base=16, bitRange=8-11
+sfr = "TRNG_CONFIG.[15:12]READ_TIMEOUT"                                                        , "Memory", 0x40040018,        4, base=16, bitRange=12-15
+sfr = "TRNG_CONFIG.[31:16]SAMPLE_CYCLES"                                                       , "Memory", 0x40040018,        4, base=16, bitRange=16-31
+sfr = "TRNG_ALARMCNT"                                                                          , "Memory", 0x4004001C,        4, base=16
+sfr = "TRNG_ALARMCNT.[7:0]ALARM_THRESHOLD"                                                     , "Memory", 0x4004001C,        4, base=16, bitRange=0-7
+sfr = "TRNG_ALARMCNT.[15]STALL_RUN_POKER"                                                      , "Memory", 0x4004001C,        4, base=16, bitRange=15
+sfr = "TRNG_ALARMCNT.[20:16]SHUTDOWN_THRESHOLD"                                                , "Memory", 0x4004001C,        4, base=16, bitRange=16-20
+sfr = "TRNG_ALARMCNT.[23]SHUTDOWN_FATAL"                                                       , "Memory", 0x4004001C,        4, base=16, bitRange=23
+sfr = "TRNG_ALARMCNT.[29:24]SHUTDOWN_COUNT"                                                    , "Memory", 0x4004001C,        4, base=16, bitRange=24-29
+sfr = "TRNG_FROENABLE"                                                                         , "Memory", 0x40040020,        4, base=16
+sfr = "TRNG_FROENABLE.[23:0]FRO_ENABLES"                                                       , "Memory", 0x40040020,        4, base=16, bitRange=0-23
+sfr = "TRNG_FRODETUNE"                                                                         , "Memory", 0x40040024,        4, base=16
+sfr = "TRNG_FRODETUNE.[23:0]FRO_DETUNES"                                                       , "Memory", 0x40040024,        4, base=16, bitRange=0-23
+sfr = "TRNG_ALARMMASK"                                                                         , "Memory", 0x40040028,        4, base=16
+sfr = "TRNG_ALARMMASK.[23:0]FRO_ALARMMASK"                                                     , "Memory", 0x40040028,        4, base=16, bitRange=0-23
+sfr = "TRNG_ALARMSTOP"                                                                         , "Memory", 0x4004002C,        4, base=16
+sfr = "TRNG_ALARMSTOP.[23:0]FRO_ALARMSTOP"                                                     , "Memory", 0x4004002C,        4, base=16, bitRange=0-23
+sfr = "TRNG_RAW_L"                                                                             , "Memory", 0x40040030,        4, base=16
+sfr = "TRNG_RAW_L.[31:0]SHIFT_REG_0"                                                           , "Memory", 0x40040030,        4, base=16, bitRange=0-31
+sfr = "TRNG_RAW_H"                                                                             , "Memory", 0x40040034,        4, base=16
+sfr = "TRNG_RAW_H.[31:0]SHIFT_REG_1"                                                           , "Memory", 0x40040034,        4, base=16, bitRange=0-31
+sfr = "TRNG_SPB_TESTS"                                                                         , "Memory", 0x40040038,        4, base=16
+sfr = "TRNG_SPB_TESTS.[5:0]REPCNT_VALUE"                                                       , "Memory", 0x40040038,        4, base=16, bitRange=0-5
+sfr = "TRNG_SPB_TESTS.[13:6]REPCNT"                                                            , "Memory", 0x40040038,        4, base=16, bitRange=6-13
+sfr = "TRNG_SPB_TESTS.[19:14]APROP_64_CUTOFF"                                                  , "Memory", 0x40040038,        4, base=16, bitRange=14-19
+sfr = "TRNG_SPB_TESTS.[31:20]APROP_4K"                                                         , "Memory", 0x40040038,        4, base=16, bitRange=20-31
+sfr = "TRNG_COUNT"                                                                             , "Memory", 0x4004003C,        4, base=16
+sfr = "TRNG_COUNT.[15:0]SAMPLE_CYC_CNT"                                                        , "Memory", 0x4004003C,        4, base=16, bitRange=0-15
+sfr = "TRNG_COUNT.[23:16]NOISE_BLK_CNT"                                                        , "Memory", 0x4004003C,        4, base=16, bitRange=16-23
+sfr = "TRNG_RUNCNT_COND0"                                                                      , "Memory", 0x40040040,        4, base=16
+sfr = "TRNG_RUNCNT_COND0.[14:0]RUN_TEST_CNT"                                                   , "Memory", 0x40040040,        4, base=16, bitRange=0-14
+sfr = "TRNG_RUNCNT_COND0.[15]RUN_STATE"                                                        , "Memory", 0x40040040,        4, base=16, bitRange=15
+sfr = "TRNG_RUNCNT_COND0.[21:16]RUN_LENGTH_COUNT"                                              , "Memory", 0x40040040,        4, base=16, bitRange=16-21
+sfr = "TRNG_RUNCNT_COND0.[29:24]RUN_LENGTH_MAX"                                                , "Memory", 0x40040040,        4, base=16, bitRange=24-29
+sfr = "TRNG_RUN1_COND1"                                                                        , "Memory", 0x40040044,        4, base=16
+sfr = "TRNG_RUN1_COND1.[11:0]RUN_1_COUNT_ZEROES"                                               , "Memory", 0x40040044,        4, base=16, bitRange=0-11
+sfr = "TRNG_RUN1_COND1.[27:16]RUN_1_COUNT_ONES"                                                , "Memory", 0x40040044,        4, base=16, bitRange=16-27
+sfr = "TRNG_RUN2_COND2"                                                                        , "Memory", 0x40040048,        4, base=16
+sfr = "TRNG_RUN2_COND2.[10:0]RUN_2_COUNT_ZEROES"                                               , "Memory", 0x40040048,        4, base=16, bitRange=0-10
+sfr = "TRNG_RUN2_COND2.[26:16]RUN_2_COUNT_ONES"                                                , "Memory", 0x40040048,        4, base=16, bitRange=16-26
+sfr = "TRNG_RUN3_COND3"                                                                        , "Memory", 0x4004004C,        4, base=16
+sfr = "TRNG_RUN3_COND3.[9:0]RUN_3_COUNT_ZEROES"                                                , "Memory", 0x4004004C,        4, base=16, bitRange=0-9
+sfr = "TRNG_RUN3_COND3.[25:16]RUN_3_COUNT_ONES"                                                , "Memory", 0x4004004C,        4, base=16, bitRange=16-25
+sfr = "TRNG_RUN4_COND4"                                                                        , "Memory", 0x40040050,        4, base=16
+sfr = "TRNG_RUN4_COND4.[8:0]RUN_4_COUNT_ZEROES"                                                , "Memory", 0x40040050,        4, base=16, bitRange=0-8
+sfr = "TRNG_RUN4_COND4.[24:16]RUN_4_COUNT_ONES"                                                , "Memory", 0x40040050,        4, base=16, bitRange=16-24
+sfr = "TRNG_RUN5"                                                                              , "Memory", 0x40040054,        4, base=16, readOnly
+sfr = "TRNG_RUN5.[7:0]RUN_5_COUNT_ZEROES"                                                      , "Memory", 0x40040054,        4, base=16, readOnly, bitRange=0-7
+sfr = "TRNG_RUN5.[23:16]RUN_5_COUNT_ONES"                                                      , "Memory", 0x40040054,        4, base=16, readOnly, bitRange=16-23
+sfr = "TRNG_RUN6_UP"                                                                           , "Memory", 0x40040058,        4, base=16, readOnly
+sfr = "TRNG_RUN6_UP.[7:0]RUN_6_UP_COUNT_ZEROES"                                                , "Memory", 0x40040058,        4, base=16, readOnly, bitRange=0-7
+sfr = "TRNG_RUN6_UP.[23:16]RUN_6_UP_COUNT_ONES"                                                , "Memory", 0x40040058,        4, base=16, readOnly, bitRange=16-23
+sfr = "TRNG_MONOBITCNT"                                                                        , "Memory", 0x4004005C,        4, base=16, readOnly
+sfr = "TRNG_MONOBITCNT.[16:0]MONOBIT_COUNT"                                                    , "Memory", 0x4004005C,        4, base=16, readOnly, bitRange=0-16
+sfr = "TRNG_POKER_3_0"                                                                         , "Memory", 0x40040060,        4, base=16, readOnly
+sfr = "TRNG_POKER_3_0.[7:0]POKER_COUNT_0"                                                      , "Memory", 0x40040060,        4, base=16, readOnly, bitRange=0-7
+sfr = "TRNG_POKER_3_0.[15:8]POKER_COUNT_1"                                                     , "Memory", 0x40040060,        4, base=16, readOnly, bitRange=8-15
+sfr = "TRNG_POKER_3_0.[23:16]POKER_COUNT_2"                                                    , "Memory", 0x40040060,        4, base=16, readOnly, bitRange=16-23
+sfr = "TRNG_POKER_3_0.[31:24]POKER_COUNT_3"                                                    , "Memory", 0x40040060,        4, base=16, readOnly, bitRange=24-31
+sfr = "TRNG_POKER_7_4"                                                                         , "Memory", 0x40040064,        4, base=16, readOnly
+sfr = "TRNG_POKER_7_4.[7:0]POKER_COUNT_4"                                                      , "Memory", 0x40040064,        4, base=16, readOnly, bitRange=0-7
+sfr = "TRNG_POKER_7_4.[15:8]POKER_COUNT_5"                                                     , "Memory", 0x40040064,        4, base=16, readOnly, bitRange=8-15
+sfr = "TRNG_POKER_7_4.[23:16]POKER_COUNT_6"                                                    , "Memory", 0x40040064,        4, base=16, readOnly, bitRange=16-23
+sfr = "TRNG_POKER_7_4.[31:24]POKER_COUNT_7"                                                    , "Memory", 0x40040064,        4, base=16, readOnly, bitRange=24-31
+sfr = "TRNG_POKER_B_8"                                                                         , "Memory", 0x40040068,        4, base=16, readOnly
+sfr = "TRNG_POKER_B_8.[7:0]POKER_COUNT_8"                                                      , "Memory", 0x40040068,        4, base=16, readOnly, bitRange=0-7
+sfr = "TRNG_POKER_B_8.[15:8]POKER_COUNT_9"                                                     , "Memory", 0x40040068,        4, base=16, readOnly, bitRange=8-15
+sfr = "TRNG_POKER_B_8.[23:16]POKER_COUNT_A"                                                    , "Memory", 0x40040068,        4, base=16, readOnly, bitRange=16-23
+sfr = "TRNG_POKER_B_8.[31:24]POKER_COUNT_B"                                                    , "Memory", 0x40040068,        4, base=16, readOnly, bitRange=24-31
+sfr = "TRNG_POKER_F_C"                                                                         , "Memory", 0x4004006C,        4, base=16, readOnly
+sfr = "TRNG_POKER_F_C.[7:0]POKER_COUNT_C"                                                      , "Memory", 0x4004006C,        4, base=16, readOnly, bitRange=0-7
+sfr = "TRNG_POKER_F_C.[15:8]POKER_COUNT_D"                                                     , "Memory", 0x4004006C,        4, base=16, readOnly, bitRange=8-15
+sfr = "TRNG_POKER_F_C.[23:16]POKER_COUNT_E"                                                    , "Memory", 0x4004006C,        4, base=16, readOnly, bitRange=16-23
+sfr = "TRNG_POKER_F_C.[31:24]POKER_COUNT_F"                                                    , "Memory", 0x4004006C,        4, base=16, readOnly, bitRange=24-31
+sfr = "TRNG_TEST"                                                                              , "Memory", 0x40040070,        4, base=16
+sfr = "TRNG_TEST.[0]TEST_EN_OUT"                                                               , "Memory", 0x40040070,        4, base=16, bitRange=0
+sfr = "TRNG_TEST.[1]TEST_PATT_FRO"                                                             , "Memory", 0x40040070,        4, base=16, bitRange=1
+sfr = "TRNG_TEST.[2]TEST_PATT_DET"                                                             , "Memory", 0x40040070,        4, base=16, bitRange=2
+sfr = "TRNG_TEST.[3]TEST_SHIFTREG"                                                             , "Memory", 0x40040070,        4, base=16, bitRange=3
+sfr = "TRNG_TEST.[4]CONT_POKER"                                                                , "Memory", 0x40040070,        4, base=16, bitRange=4
+sfr = "TRNG_TEST.[5]TEST_KNOWN_NOISE"                                                          , "Memory", 0x40040070,        4, base=16, bitRange=5
+sfr = "TRNG_TEST.[6]TEST_ASE_256"                                                              , "Memory", 0x40040070,        4, base=16, bitRange=6
+sfr = "TRNG_TEST.[7]TEST_SP_800_90"                                                            , "Memory", 0x40040070,        4, base=16, bitRange=7
+sfr = "TRNG_TEST.[12:8]TEST_SELECT"                                                            , "Memory", 0x40040070,        4, base=16, bitRange=8-12
+sfr = "TRNG_TEST.[13]TEST_NOISE"                                                               , "Memory", 0x40040070,        4, base=16, bitRange=13
+sfr = "TRNG_TEST.[14]TEST_SPB"                                                                 , "Memory", 0x40040070,        4, base=16, bitRange=14
+sfr = "TRNG_TEST.[15]TEST_COND_FUNC"                                                           , "Memory", 0x40040070,        4, base=16, bitRange=15
+sfr = "TRNG_TEST.[27:16]TEST_PATTERN"                                                          , "Memory", 0x40040070,        4, base=16, bitRange=16-27
+sfr = "TRNG_TEST.[28]FRO_TESTIN2_NOT"                                                          , "Memory", 0x40040070,        4, base=16, bitRange=28
+sfr = "TRNG_TEST.[29]FRO_TESTIN3"                                                              , "Memory", 0x40040070,        4, base=16, bitRange=29
+sfr = "TRNG_TEST.[30]FRO_TESTIN4"                                                              , "Memory", 0x40040070,        4, base=16, bitRange=30
+sfr = "TRNG_TEST.[31]TEST_IRQ"                                                                 , "Memory", 0x40040070,        4, base=16, bitRange=31
+sfr = "TRNG_OPTIONS"                                                                           , "Memory", 0x40040078,        4, base=16, readOnly
+sfr = "TRNG_OPTIONS.[2:0]POST_PROCESSOR_OPTION"                                                , "Memory", 0x40040078,        4, base=16, readOnly, bitRange=0-2
+sfr = "TRNG_OPTIONS.[11:6]NR_OF_FROS"                                                          , "Memory", 0x40040078,        4, base=16, readOnly, bitRange=6-11
+sfr = "TRNG_OPTIONS.[14:12]BUFFER_SIZE"                                                        , "Memory", 0x40040078,        4, base=16, readOnly, bitRange=12-14
+sfr = "TRNG_OPTIONS.[16]PR_TEST"                                                               , "Memory", 0x40040078,        4, base=16, readOnly, bitRange=16
+sfr = "TRNG_OPTIONS.[18:17]CONDITIONER_OPTION"                                                 , "Memory", 0x40040078,        4, base=16, readOnly, bitRange=17-18
+sfr = "TRNG_EIP_REV"                                                                           , "Memory", 0x4004007C,        4, base=16, readOnly
+sfr = "TRNG_EIP_REV.[7:0]BASIC_EIP_NUMBER"                                                     , "Memory", 0x4004007C,        4, base=16, readOnly, bitRange=0-7
+sfr = "TRNG_EIP_REV.[15:8]COMPL_OF_BASIC_EIP_NB"                                               , "Memory", 0x4004007C,        4, base=16, readOnly, bitRange=8-15
+sfr = "TRNG_EIP_REV.[19:16]HW_PATCH_LEVEL"                                                     , "Memory", 0x4004007C,        4, base=16, readOnly, bitRange=16-19
+sfr = "TRNG_EIP_REV.[23:20]MINOR_HW_REVISION"                                                  , "Memory", 0x4004007C,        4, base=16, readOnly, bitRange=20-23
+sfr = "TRNG_EIP_REV.[27:24]MAJOR_HW_REVISION"                                                  , "Memory", 0x4004007C,        4, base=16, readOnly, bitRange=24-27
+sfr = "PKA_APTR"                                                                               , "Memory", 0x40044000,        4, base=16
+sfr = "PKA_APTR.[10:0]APTR"                                                                    , "Memory", 0x40044000,        4, base=16, bitRange=0-10
+sfr = "PKA_BPTR"                                                                               , "Memory", 0x40044004,        4, base=16
+sfr = "PKA_BPTR.[10:0]BPTR"                                                                    , "Memory", 0x40044004,        4, base=16, bitRange=0-10
+sfr = "PKA_CPTR"                                                                               , "Memory", 0x40044008,        4, base=16
+sfr = "PKA_CPTR.[10:0]CPTR"                                                                    , "Memory", 0x40044008,        4, base=16, bitRange=0-10
+sfr = "PKA_DPTR"                                                                               , "Memory", 0x4004400C,        4, base=16
+sfr = "PKA_DPTR.[10:0]DPTR"                                                                    , "Memory", 0x4004400C,        4, base=16, bitRange=0-10
+sfr = "PKA_ALENGTH"                                                                            , "Memory", 0x40044010,        4, base=16
+sfr = "PKA_ALENGTH.[9:0]ALENGTH"                                                               , "Memory", 0x40044010,        4, base=16, bitRange=0-9
+sfr = "PKA_BLENGTH"                                                                            , "Memory", 0x40044014,        4, base=16
+sfr = "PKA_BLENGTH.[9:0]BLENGTH"                                                               , "Memory", 0x40044014,        4, base=16, bitRange=0-9
+sfr = "PKA_SHIFT"                                                                              , "Memory", 0x40044018,        4, base=16
+sfr = "PKA_SHIFT.[4:0]BITS_TO_SHIFT"                                                           , "Memory", 0x40044018,        4, base=16, bitRange=0-4
+sfr = "PKA_FUNCTION"                                                                           , "Memory", 0x4004401C,        4, base=16
+sfr = "PKA_FUNCTION.[0]MULTIPLY"                                                               , "Memory", 0x4004401C,        4, base=16, bitRange=0
+sfr = "PKA_FUNCTION.[1]ADDSUB"                                                                 , "Memory", 0x4004401C,        4, base=16, bitRange=1
+sfr = "PKA_FUNCTION.[3]MS_ONE"                                                                 , "Memory", 0x4004401C,        4, base=16, bitRange=3
+sfr = "PKA_FUNCTION.[4]ADD"                                                                    , "Memory", 0x4004401C,        4, base=16, bitRange=4
+sfr = "PKA_FUNCTION.[5]SUBTRACT"                                                               , "Memory", 0x4004401C,        4, base=16, bitRange=5
+sfr = "PKA_FUNCTION.[6]RSHIFT"                                                                 , "Memory", 0x4004401C,        4, base=16, bitRange=6
+sfr = "PKA_FUNCTION.[7]LSHIFT"                                                                 , "Memory", 0x4004401C,        4, base=16, bitRange=7
+sfr = "PKA_FUNCTION.[8]DIVIDE"                                                                 , "Memory", 0x4004401C,        4, base=16, bitRange=8
+sfr = "PKA_FUNCTION.[9]MODULO"                                                                 , "Memory", 0x4004401C,        4, base=16, bitRange=9
+sfr = "PKA_FUNCTION.[10]COMPARE"                                                               , "Memory", 0x4004401C,        4, base=16, bitRange=10
+sfr = "PKA_FUNCTION.[11]COPY"                                                                  , "Memory", 0x4004401C,        4, base=16, bitRange=11
+sfr = "PKA_FUNCTION.[14:12]SEQ_OP"                                                             , "Memory", 0x4004401C,        4, base=16, bitRange=12-14
+sfr = "PKA_FUNCTION.[15]RUN"                                                                   , "Memory", 0x4004401C,        4, base=16, bitRange=15
+sfr = "PKA_FUNCTION.[18:16]EXT_SEQ_OP"                                                         , "Memory", 0x4004401C,        4, base=16, bitRange=16-18
+sfr = "PKA_FUNCTION.[24]STALL_RESULT"                                                          , "Memory", 0x4004401C,        4, base=16, bitRange=24
+sfr = "PKA_COMPARE"                                                                            , "Memory", 0x40044020,        4, base=16, readOnly
+sfr = "PKA_COMPARE.[0]A_EQUAL_B"                                                               , "Memory", 0x40044020,        4, base=16, readOnly, bitRange=0
+sfr = "PKA_COMPARE.[1]A_SMALLER_B"                                                             , "Memory", 0x40044020,        4, base=16, readOnly, bitRange=1
+sfr = "PKA_COMPARE.[2]A_GRATER_B"                                                              , "Memory", 0x40044020,        4, base=16, readOnly, bitRange=2
+sfr = "PKA_MSW"                                                                                , "Memory", 0x40044024,        4, base=16, readOnly
+sfr = "PKA_MSW.[10:0]MSW_ADDR"                                                                 , "Memory", 0x40044024,        4, base=16, readOnly, bitRange=0-10
+sfr = "PKA_MSW.[15]RESULT_IS_ZERO"                                                             , "Memory", 0x40044024,        4, base=16, readOnly, bitRange=15
+sfr = "PKA_DIVMSW"                                                                             , "Memory", 0x40044028,        4, base=16, readOnly
+sfr = "PKA_DIVMSW.[10:0]MSW_ADDR"                                                              , "Memory", 0x40044028,        4, base=16, readOnly, bitRange=0-10
+sfr = "PKA_DIVMSW.[15]RESULT_IS_ZERO"                                                          , "Memory", 0x40044028,        4, base=16, readOnly, bitRange=15
+sfr = "PKA_SCAP_CTRL"                                                                          , "Memory", 0x40044030,        4, base=16
+sfr = "PKA_SCAP_CTRL.[0]DUMMY_CORR"                                                            , "Memory", 0x40044030,        4, base=16, bitRange=0
+sfr = "PKA_SCAP_CTRL.[1]FORCE_ERROR"                                                           , "Memory", 0x40044030,        4, base=16, bitRange=1
+sfr = "PKA_SCAP_CTRL.[30]PARAM_ERROR"                                                          , "Memory", 0x40044030,        4, base=16, bitRange=30
+sfr = "PKA_SCAP_CTRL.[31]FSM_ERROR"                                                            , "Memory", 0x40044030,        4, base=16, bitRange=31
+sfr = "PKA_SEQ_CTRL"                                                                           , "Memory", 0x400440C8,        4, base=16
+sfr = "PKA_SEQ_CTRL.[7:0]SW_TRIG"                                                              , "Memory", 0x400440C8,        4, base=16, bitRange=0-7
+sfr = "PKA_SEQ_CTRL.[15:8]SEQ_STAT"                                                            , "Memory", 0x400440C8,        4, base=16, bitRange=8-15
+sfr = "PKA_SEQ_CTRL.[16]HAMMING_ERR"                                                           , "Memory", 0x400440C8,        4, base=16, bitRange=16
+sfr = "PKA_SEQ_CTRL.[17]PARITY_ERR"                                                            , "Memory", 0x400440C8,        4, base=16, bitRange=17
+sfr = "PKA_SEQ_CTRL.[18]ZERO_BUSY"                                                             , "Memory", 0x400440C8,        4, base=16, bitRange=18
+sfr = "PKA_SEQ_CTRL.[31]RESET"                                                                 , "Memory", 0x400440C8,        4, base=16, bitRange=31
+sfr = "PKA_OPTIONS"                                                                            , "Memory", 0x400440F4,        4, base=16, readOnly
+sfr = "PKA_OPTIONS.[1:0]PKCP_CONFIG"                                                           , "Memory", 0x400440F4,        4, base=16, readOnly, bitRange=0-1
+sfr = "PKA_OPTIONS.[4:2]LNME_CONFIG"                                                           , "Memory", 0x400440F4,        4, base=16, readOnly, bitRange=2-4
+sfr = "PKA_OPTIONS.[6:5]SEQ_CONFIG"                                                            , "Memory", 0x400440F4,        4, base=16, readOnly, bitRange=5-6
+sfr = "PKA_OPTIONS.[7]PROG_RAM"                                                                , "Memory", 0x400440F4,        4, base=16, readOnly, bitRange=7
+sfr = "PKA_OPTIONS.[10:8]PROT_OPT"                                                             , "Memory", 0x400440F4,        4, base=16, readOnly, bitRange=8-10
+sfr = "PKA_OPTIONS.[11]INT_MASK"                                                               , "Memory", 0x400440F4,        4, base=16, readOnly, bitRange=11
+sfr = "PKA_OPTIONS.[12]MMM3A"                                                                  , "Memory", 0x400440F4,        4, base=16, readOnly, bitRange=12
+sfr = "PKA_OPTIONS.[13]ZEROIZATION"                                                            , "Memory", 0x400440F4,        4, base=16, readOnly, bitRange=13
+sfr = "PKA_OPTIONS.[14]LMNE_BYPASS"                                                            , "Memory", 0x400440F4,        4, base=16, readOnly, bitRange=14
+sfr = "PKA_OPTIONS.[21:16]FIRST_NUM_OF_PES"                                                    , "Memory", 0x400440F4,        4, base=16, readOnly, bitRange=16-21
+sfr = "PKA_OPTIONS.[31:24]FIRST_LNME_FIFO_DEPTH"                                               , "Memory", 0x400440F4,        4, base=16, readOnly, bitRange=24-31
+sfr = "PKA_SW_REV"                                                                             , "Memory", 0x400440F8,        4, base=16, readOnly
+sfr = "PKA_SW_REV.[19:16]FW_PATCH_LEVEL"                                                       , "Memory", 0x400440F8,        4, base=16, readOnly, bitRange=16-19
+sfr = "PKA_SW_REV.[23:20]MINOR_FW_REV"                                                         , "Memory", 0x400440F8,        4, base=16, readOnly, bitRange=20-23
+sfr = "PKA_SW_REV.[27:24]MAJOR_FW_REV"                                                         , "Memory", 0x400440F8,        4, base=16, readOnly, bitRange=24-27
+sfr = "PKA_SW_REV.[31:28]FW_CAP"                                                               , "Memory", 0x400440F8,        4, base=16, readOnly, bitRange=28-31
+sfr = "PKA_REVISION"                                                                           , "Memory", 0x400440FC,        4, base=16, readOnly
+sfr = "PKA_REVISION.[7:0]BASIC_EIP_NUM"                                                        , "Memory", 0x400440FC,        4, base=16, readOnly, bitRange=0-7
+sfr = "PKA_REVISION.[15:8]COMPL_OF_BASIC_EIP_NUM"                                              , "Memory", 0x400440FC,        4, base=16, readOnly, bitRange=8-15
+sfr = "PKA_REVISION.[19:16]HW_PATCH_LEVEL"                                                     , "Memory", 0x400440FC,        4, base=16, readOnly, bitRange=16-19
+sfr = "PKA_REVISION.[23:20]MINOR_HW_REV"                                                       , "Memory", 0x400440FC,        4, base=16, readOnly, bitRange=20-23
+sfr = "PKA_REVISION.[27:24]MAJOR_HW_REV"                                                       , "Memory", 0x400440FC,        4, base=16, readOnly, bitRange=24-27
+sfr = "AIC_POL_CTRL"                                                                           , "Memory", 0x40048000,        4, base=16, readOnly
+sfr = "AIC_POL_CTRL.[0]PKA_INT_0"                                                              , "Memory", 0x40048000,        4, base=16, readOnly, bitRange=0
+sfr = "AIC_POL_CTRL.[1]PKA_INT_1"                                                              , "Memory", 0x40048000,        4, base=16, readOnly, bitRange=1
+sfr = "AIC_POL_CTRL.[2]PKA_INT_2"                                                              , "Memory", 0x40048000,        4, base=16, readOnly, bitRange=2
+sfr = "AIC_POL_CTRL.[3]TRNG_IRQ"                                                               , "Memory", 0x40048000,        4, base=16, readOnly, bitRange=3
+sfr = "AIC_POL_CTRL.[5]SL_ERR_INT"                                                             , "Memory", 0x40048000,        4, base=16, readOnly, bitRange=5
+sfr = "AIC_POL_CTRL.[6]PROTECTION_INT"                                                         , "Memory", 0x40048000,        4, base=16, readOnly, bitRange=6
+sfr = "AIC_TYPE_CTRL"                                                                          , "Memory", 0x40048004,        4, base=16, readOnly
+sfr = "AIC_TYPE_CTRL.[0]PKA_INT_0"                                                             , "Memory", 0x40048004,        4, base=16, readOnly, bitRange=0
+sfr = "AIC_TYPE_CTRL.[1]PKA_INT_1"                                                             , "Memory", 0x40048004,        4, base=16, readOnly, bitRange=1
+sfr = "AIC_TYPE_CTRL.[2]PKA_INT_2"                                                             , "Memory", 0x40048004,        4, base=16, readOnly, bitRange=2
+sfr = "AIC_TYPE_CTRL.[3]TRNG_IRQ"                                                              , "Memory", 0x40048004,        4, base=16, readOnly, bitRange=3
+sfr = "AIC_TYPE_CTRL.[5]SL_ERR_INT"                                                            , "Memory", 0x40048004,        4, base=16, readOnly, bitRange=5
+sfr = "AIC_TYPE_CTRL.[6]PROTECTION_INT"                                                        , "Memory", 0x40048004,        4, base=16, readOnly, bitRange=6
+sfr = "AIC_ENABLE_CTRL"                                                                        , "Memory", 0x40048008,        4, base=16
+sfr = "AIC_ENABLE_CTRL.[0]PKA_INT_0"                                                           , "Memory", 0x40048008,        4, base=16, bitRange=0
+sfr = "AIC_ENABLE_CTRL.[1]PKA_INT_1"                                                           , "Memory", 0x40048008,        4, base=16, bitRange=1
+sfr = "AIC_ENABLE_CTRL.[2]PKA_INT_2"                                                           , "Memory", 0x40048008,        4, base=16, bitRange=2
+sfr = "AIC_ENABLE_CTRL.[3]TRNG_IRQ"                                                            , "Memory", 0x40048008,        4, base=16, bitRange=3
+sfr = "AIC_ENABLE_CTRL.[5]SL_ERR_INT"                                                          , "Memory", 0x40048008,        4, base=16, bitRange=5
+sfr = "AIC_ENABLE_CTRL.[6]PROTECTION_INT"                                                      , "Memory", 0x40048008,        4, base=16, bitRange=6
+sfr = "AIC_RAW_STAT_AIC_ENABLE_SET"                                                            , "Memory", 0x4004800C,        4, base=16
+sfr = "AIC_RAW_STAT_AIC_ENABLE_SET.[0]PKA_INT_0"                                               , "Memory", 0x4004800C,        4, base=16, bitRange=0
+sfr = "AIC_RAW_STAT_AIC_ENABLE_SET.[1]PKA_INT_1"                                               , "Memory", 0x4004800C,        4, base=16, bitRange=1
+sfr = "AIC_RAW_STAT_AIC_ENABLE_SET.[2]PKA_INT_2"                                               , "Memory", 0x4004800C,        4, base=16, bitRange=2
+sfr = "AIC_RAW_STAT_AIC_ENABLE_SET.[3]TRNG_IRQ"                                                , "Memory", 0x4004800C,        4, base=16, bitRange=3
+sfr = "AIC_RAW_STAT_AIC_ENABLE_SET.[5]SL_ERR_INT"                                              , "Memory", 0x4004800C,        4, base=16, bitRange=5
+sfr = "AIC_RAW_STAT_AIC_ENABLE_SET.[6]PROTECTION_INT"                                          , "Memory", 0x4004800C,        4, base=16, bitRange=6
+sfr = "AIC_ENABLED_STAT_AIC_ACK"                                                               , "Memory", 0x40048010,        4, base=16
+sfr = "AIC_ENABLED_STAT_AIC_ACK.[0]PKA_INT_0"                                                  , "Memory", 0x40048010,        4, base=16, bitRange=0
+sfr = "AIC_ENABLED_STAT_AIC_ACK.[1]PKA_INT_1"                                                  , "Memory", 0x40048010,        4, base=16, bitRange=1
+sfr = "AIC_ENABLED_STAT_AIC_ACK.[2]PKA_INT_2"                                                  , "Memory", 0x40048010,        4, base=16, bitRange=2
+sfr = "AIC_ENABLED_STAT_AIC_ACK.[3]TRNG_IRQ"                                                   , "Memory", 0x40048010,        4, base=16, bitRange=3
+sfr = "AIC_ENABLED_STAT_AIC_ACK.[5]SL_ERR_INT"                                                 , "Memory", 0x40048010,        4, base=16, bitRange=5
+sfr = "AIC_ENABLED_STAT_AIC_ACK.[6]PROTECTION_INT"                                             , "Memory", 0x40048010,        4, base=16, bitRange=6
+sfr = "AIC_ENABLE_CLR"                                                                         , "Memory", 0x40048014,        4, base=16, writeOnly
+sfr = "AIC_ENABLE_CLR.[0]PKA_INT_0"                                                            , "Memory", 0x40048014,        4, base=16, writeOnly, bitRange=0
+sfr = "AIC_ENABLE_CLR.[1]PKA_INT_1"                                                            , "Memory", 0x40048014,        4, base=16, writeOnly, bitRange=1
+sfr = "AIC_ENABLE_CLR.[2]PKA_INT_2"                                                            , "Memory", 0x40048014,        4, base=16, writeOnly, bitRange=2
+sfr = "AIC_ENABLE_CLR.[3]TRNG_IRQ"                                                             , "Memory", 0x40048014,        4, base=16, writeOnly, bitRange=3
+sfr = "AIC_ENABLE_CLR.[5]SL_ERR_INT"                                                           , "Memory", 0x40048014,        4, base=16, writeOnly, bitRange=5
+sfr = "AIC_ENABLE_CLR.[6]PROTECTION_INT"                                                       , "Memory", 0x40048014,        4, base=16, writeOnly, bitRange=6
+sfr = "AIC_OPTIONS"                                                                            , "Memory", 0x40048018,        4, base=16, readOnly
+sfr = "AIC_OPTIONS.[6:0]NUM_OF_INPUTS"                                                         , "Memory", 0x40048018,        4, base=16, readOnly, bitRange=0-6
+sfr = "AIC_VERSION"                                                                            , "Memory", 0x4004801C,        4, base=16, readOnly
+sfr = "AIC_VERSION.[7:0]EIP_NUM"                                                               , "Memory", 0x4004801C,        4, base=16, readOnly, bitRange=0-7
+sfr = "AIC_VERSION.[15:8]BIT_BY_BIT_COMPL"                                                     , "Memory", 0x4004801C,        4, base=16, readOnly, bitRange=8-15
+sfr = "AIC_VERSION.[19:16]PATCH_LEVEL"                                                         , "Memory", 0x4004801C,        4, base=16, readOnly, bitRange=16-19
+sfr = "AIC_VERSION.[23:20]MINOR_VERSION_NUM"                                                   , "Memory", 0x4004801C,        4, base=16, readOnly, bitRange=20-23
+sfr = "AIC_VERSION.[27:24]MAJOR_VERSION_NUM"                                                   , "Memory", 0x4004801C,        4, base=16, readOnly, bitRange=24-27
+sfr = "EIP150_OPTIONS"                                                                         , "Memory", 0x4004BFF8,        4, base=16, readOnly
+sfr = "EIP150_OPTIONS.[0]PLB_INTERFACE"                                                        , "Memory", 0x4004BFF8,        4, base=16, readOnly, bitRange=0
+sfr = "EIP150_OPTIONS.[1]AHB_INTERFACE"                                                        , "Memory", 0x4004BFF8,        4, base=16, readOnly, bitRange=1
+sfr = "EIP150_OPTIONS.[2]AHB_IS_ASYNC"                                                         , "Memory", 0x4004BFF8,        4, base=16, readOnly, bitRange=2
+sfr = "EIP150_OPTIONS.[3]AXI_INTERFACE"                                                        , "Memory", 0x4004BFF8,        4, base=16, readOnly, bitRange=3
+sfr = "EIP150_OPTIONS.[8]EIP28_PRESENT"                                                        , "Memory", 0x4004BFF8,        4, base=16, readOnly, bitRange=8
+sfr = "EIP150_OPTIONS.[9]EIP76_PRESENT"                                                        , "Memory", 0x4004BFF8,        4, base=16, readOnly, bitRange=9
+sfr = "EIP150_OPTIONS.[10]AIC_PRESENT"                                                         , "Memory", 0x4004BFF8,        4, base=16, readOnly, bitRange=10
+sfr = "EIP150_OPTIONS.[11]ZEROIZE_PRESENT"                                                     , "Memory", 0x4004BFF8,        4, base=16, readOnly, bitRange=11
+sfr = "EIP150_VERSION"                                                                         , "Memory", 0x4004BFFC,        4, base=16, readOnly
+sfr = "EIP150_VERSION.[7:0]EIP_NUM"                                                            , "Memory", 0x4004BFFC,        4, base=16, readOnly, bitRange=0-7
+sfr = "EIP150_VERSION.[15:8]BIT_BY_BIT_COMPL"                                                  , "Memory", 0x4004BFFC,        4, base=16, readOnly, bitRange=8-15
+sfr = "EIP150_VERSION.[19:16]PATCH_LEVEL"                                                      , "Memory", 0x4004BFFC,        4, base=16, readOnly, bitRange=16-19
+sfr = "EIP150_VERSION.[23:20]MINOR_VERSION_NUM"                                                , "Memory", 0x4004BFFC,        4, base=16, readOnly, bitRange=20-23
+sfr = "EIP150_VERSION.[27:24]MAJOR_VERSION_NUM"                                                , "Memory", 0x4004BFFC,        4, base=16, readOnly, bitRange=24-27
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// EIP150 (PKP) -----
+group = "PKP","TRNG_STATUS_INTACK","TRNG_CONTROL","TRNG_CONFIG","TRNG_ALARMCNT","TRNG_FROENABLE","TRNG_FRODETUNE","TRNG_ALARMMASK","TRNG_ALARMSTOP","TRNG_RAW_L","TRNG_RAW_H","TRNG_SPB_TESTS","TRNG_COUNT","TRNG_RUNCNT_COND0","TRNG_RUN1_COND1","TRNG_RUN2_COND2","TRNG_RUN3_COND3","TRNG_RUN4_COND4","TRNG_RUN5","TRNG_RUN6_UP","TRNG_MONOBITCNT","TRNG_POKER_3_0","TRNG_POKER_7_4","TRNG_POKER_B_8","TRNG_POKER_F_C","TRNG_TEST","TRNG_OPTIONS","TRNG_EIP_REV","PKA_APTR","PKA_BPTR","PKA_CPTR","PKA_DPTR","PKA_ALENGTH","PKA_BLENGTH","PKA_SHIFT","PKA_FUNCTION","PKA_COMPARE","PKA_MSW","PKA_DIVMSW","PKA_SCAP_CTRL","PKA_SEQ_CTRL","PKA_OPTIONS","PKA_SW_REV","PKA_REVISION","AIC_POL_CTRL","AIC_TYPE_CTRL","AIC_ENABLE_CTRL","AIC_RAW_STAT_AIC_ENABLE_SET","AIC_ENABLED_STAT_AIC_ACK","AIC_ENABLE_CLR","AIC_OPTIONS","AIC_VERSION","EIP150_OPTIONS","EIP150_VERSION"

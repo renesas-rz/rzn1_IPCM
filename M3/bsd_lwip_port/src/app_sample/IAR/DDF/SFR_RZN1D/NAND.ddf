@@ -1,0 +1,264 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : NAND
+;               NAND Flash Controller
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "command"                                                                                , "Memory", 0x40102000,        4, base=16
+sfr = "command.[5:0]CMD_SEQ"                                                                   , "Memory", 0x40102000,        4, base=16, bitRange=0-5
+sfr = "command.[6]input_sel"                                                                   , "Memory", 0x40102000,        4, base=16, bitRange=6
+sfr = "command.[7]data_sel"                                                                    , "Memory", 0x40102000,        4, base=16, bitRange=7
+sfr = "command.[15:8]cmd_0"                                                                    , "Memory", 0x40102000,        4, base=16, bitRange=8-15
+sfr = "command.[23:16]cmd_1_cmd_3"                                                             , "Memory", 0x40102000,        4, base=16, bitRange=16-23
+sfr = "command.[31:24]cmd_2"                                                                   , "Memory", 0x40102000,        4, base=16, bitRange=24-31
+sfr = "control"                                                                                , "Memory", 0x40102004,        4, base=16
+sfr = "control.[0]read_status_en"                                                              , "Memory", 0x40102004,        4, base=16, bitRange=0
+sfr = "control.[2:1]ecc_block_size"                                                            , "Memory", 0x40102004,        4, base=16, bitRange=1-2
+sfr = "control.[4]int_en"                                                                      , "Memory", 0x40102004,        4, base=16, bitRange=4
+sfr = "control.[5]ecc_en"                                                                      , "Memory", 0x40102004,        4, base=16, bitRange=5
+sfr = "control.[7:6]block_size"                                                                , "Memory", 0x40102004,        4, base=16, bitRange=6-7
+sfr = "control.[12]io_width"                                                                   , "Memory", 0x40102004,        4, base=16, bitRange=12
+sfr = "control.[13]bbm_en"                                                                     , "Memory", 0x40102004,        4, base=16, bitRange=13
+sfr = "control.[14]prot_en"                                                                    , "Memory", 0x40102004,        4, base=16, bitRange=14
+sfr = "control.[16]addr0_auto_incr"                                                            , "Memory", 0x40102004,        4, base=16, bitRange=16
+sfr = "control.[17]addr1_auto_incr"                                                            , "Memory", 0x40102004,        4, base=16, bitRange=17
+sfr = "control.[21]small_block_en"                                                             , "Memory", 0x40102004,        4, base=16, bitRange=21
+sfr = "control.[22]mlun_en"                                                                    , "Memory", 0x40102004,        4, base=16, bitRange=22
+sfr = "control.[23]auto_read_stat_en"                                                          , "Memory", 0x40102004,        4, base=16, bitRange=23
+sfr = "Status"                                                                                 , "Memory", 0x40102008,        4, base=16, readOnly
+sfr = "Status.[0]mem0_st"                                                                      , "Memory", 0x40102008,        4, base=16, readOnly, bitRange=0
+sfr = "Status.[1]mem1_st"                                                                      , "Memory", 0x40102008,        4, base=16, readOnly, bitRange=1
+sfr = "Status.[2]mem2_st"                                                                      , "Memory", 0x40102008,        4, base=16, readOnly, bitRange=2
+sfr = "Status.[3]mem3_st"                                                                      , "Memory", 0x40102008,        4, base=16, readOnly, bitRange=3
+sfr = "Status.[4]mem4_st"                                                                      , "Memory", 0x40102008,        4, base=16, readOnly, bitRange=4
+sfr = "Status.[5]mem5_st"                                                                      , "Memory", 0x40102008,        4, base=16, readOnly, bitRange=5
+sfr = "Status.[6]mem6_st"                                                                      , "Memory", 0x40102008,        4, base=16, readOnly, bitRange=6
+sfr = "Status.[7]mem7_st"                                                                      , "Memory", 0x40102008,        4, base=16, readOnly, bitRange=7
+sfr = "Status.[8]ctrl_stat"                                                                    , "Memory", 0x40102008,        4, base=16, readOnly, bitRange=8
+sfr = "Status.[9]datasize_error_st"                                                            , "Memory", 0x40102008,        4, base=16, readOnly, bitRange=9
+sfr = "Status.[10]data_reg_st"                                                                 , "Memory", 0x40102008,        4, base=16, readOnly, bitRange=10
+sfr = "Status.[23:16]cmd_id"                                                                   , "Memory", 0x40102008,        4, base=16, readOnly, bitRange=16-23
+sfr = "status_mask"                                                                            , "Memory", 0x4010200C,        4, base=16
+sfr = "status_mask.[7:0]state_mask"                                                            , "Memory", 0x4010200C,        4, base=16, bitRange=0-7
+sfr = "status_mask.[15:8]error_mask"                                                           , "Memory", 0x4010200C,        4, base=16, bitRange=8-15
+sfr = "int_mask"                                                                               , "Memory", 0x40102010,        4, base=16
+sfr = "int_mask.[0]prot_int_en"                                                                , "Memory", 0x40102010,        4, base=16, bitRange=0
+sfr = "int_mask.[1]cmd_end_int_en"                                                             , "Memory", 0x40102010,        4, base=16, bitRange=1
+sfr = "int_mask.[2]data_reg_int_en"                                                            , "Memory", 0x40102010,        4, base=16, bitRange=2
+sfr = "int_mask.[3]dma_int_en"                                                                 , "Memory", 0x40102010,        4, base=16, bitRange=3
+sfr = "int_mask.[6]pg_sz_err_int_en"                                                           , "Memory", 0x40102010,        4, base=16, bitRange=6
+sfr = "int_mask.[8]mem0_rdy_int_en"                                                            , "Memory", 0x40102010,        4, base=16, bitRange=8
+sfr = "int_mask.[9]mem1_rdy_int_en"                                                            , "Memory", 0x40102010,        4, base=16, bitRange=9
+sfr = "int_mask.[10]mem2_rdy_int_en"                                                           , "Memory", 0x40102010,        4, base=16, bitRange=10
+sfr = "int_mask.[11]mem3_rdy_int_en"                                                           , "Memory", 0x40102010,        4, base=16, bitRange=11
+sfr = "int_mask.[16]stat_err_int0_en"                                                          , "Memory", 0x40102010,        4, base=16, bitRange=16
+sfr = "int_mask.[17]stat_err_int1_en"                                                          , "Memory", 0x40102010,        4, base=16, bitRange=17
+sfr = "int_mask.[18]stat_err_int2_en"                                                          , "Memory", 0x40102010,        4, base=16, bitRange=18
+sfr = "int_mask.[19]stat_err_int3_en"                                                          , "Memory", 0x40102010,        4, base=16, bitRange=19
+sfr = "int_mask.[24]ecc_int0_en"                                                               , "Memory", 0x40102010,        4, base=16, bitRange=24
+sfr = "int_mask.[25]ecc_int1_en"                                                               , "Memory", 0x40102010,        4, base=16, bitRange=25
+sfr = "int_mask.[26]ecc_int2_en"                                                               , "Memory", 0x40102010,        4, base=16, bitRange=26
+sfr = "int_mask.[27]ecc_int3_en"                                                               , "Memory", 0x40102010,        4, base=16, bitRange=27
+sfr = "int_status"                                                                             , "Memory", 0x40102014,        4, base=16
+sfr = "int_status.[0]prot_int_fl"                                                              , "Memory", 0x40102014,        4, base=16, bitRange=0
+sfr = "int_status.[1]cmd_end_int_fl"                                                           , "Memory", 0x40102014,        4, base=16, bitRange=1
+sfr = "int_status.[2]data_reg_int_fl"                                                          , "Memory", 0x40102014,        4, base=16, bitRange=2
+sfr = "int_status.[3]dma_int_fl"                                                               , "Memory", 0x40102014,        4, base=16, bitRange=3
+sfr = "int_status.[6]pg_sz_err_int_fl"                                                         , "Memory", 0x40102014,        4, base=16, bitRange=6
+sfr = "int_status.[8]mem0_rdy_int_fl"                                                          , "Memory", 0x40102014,        4, base=16, bitRange=8
+sfr = "int_status.[9]mem1_rdy_int_fl"                                                          , "Memory", 0x40102014,        4, base=16, bitRange=9
+sfr = "int_status.[10]mem2_rdy_int_fl"                                                         , "Memory", 0x40102014,        4, base=16, bitRange=10
+sfr = "int_status.[11]mem3_rdy_int_fl"                                                         , "Memory", 0x40102014,        4, base=16, bitRange=11
+sfr = "int_status.[16]stat_err_int0_en"                                                        , "Memory", 0x40102014,        4, base=16, bitRange=16
+sfr = "int_status.[17]stat_err_int1_en"                                                        , "Memory", 0x40102014,        4, base=16, bitRange=17
+sfr = "int_status.[18]stat_err_int2_en"                                                        , "Memory", 0x40102014,        4, base=16, bitRange=18
+sfr = "int_status.[19]stat_err_int3_en"                                                        , "Memory", 0x40102014,        4, base=16, bitRange=19
+sfr = "int_status.[24]ecc_int0_en"                                                             , "Memory", 0x40102014,        4, base=16, bitRange=24
+sfr = "int_status.[25]ecc_int1_en"                                                             , "Memory", 0x40102014,        4, base=16, bitRange=25
+sfr = "int_status.[26]ecc_int2_en"                                                             , "Memory", 0x40102014,        4, base=16, bitRange=26
+sfr = "int_status.[27]ecc_int3_en"                                                             , "Memory", 0x40102014,        4, base=16, bitRange=27
+sfr = "ecc_ctrl"                                                                               , "Memory", 0x40102018,        4, base=16
+sfr = "ecc_ctrl.[2:0]ecc_cap"                                                                  , "Memory", 0x40102018,        4, base=16, bitRange=0-2
+sfr = "ecc_ctrl.[13:8]err_threshold"                                                           , "Memory", 0x40102018,        4, base=16, bitRange=8-13
+sfr = "ecc_ctrl.[17:16]ecc_sel"                                                                , "Memory", 0x40102018,        4, base=16, bitRange=16-17
+sfr = "ecc_offset"                                                                             , "Memory", 0x4010201C,        4, base=16
+sfr = "ecc_offset.[15:0]ecc_offset"                                                            , "Memory", 0x4010201C,        4, base=16, bitRange=0-15
+sfr = "ecc_stat"                                                                               , "Memory", 0x40102020,        4, base=16
+sfr = "ecc_stat.[0]ecc_error_0"                                                                , "Memory", 0x40102020,        4, base=16, bitRange=0
+sfr = "ecc_stat.[1]ecc_error_1"                                                                , "Memory", 0x40102020,        4, base=16, bitRange=1
+sfr = "ecc_stat.[2]ecc_error_2"                                                                , "Memory", 0x40102020,        4, base=16, bitRange=2
+sfr = "ecc_stat.[3]ecc_error_3"                                                                , "Memory", 0x40102020,        4, base=16, bitRange=3
+sfr = "ecc_stat.[8]ecc_unc_0"                                                                  , "Memory", 0x40102020,        4, base=16, bitRange=8
+sfr = "ecc_stat.[9]ecc_unc_1"                                                                  , "Memory", 0x40102020,        4, base=16, bitRange=9
+sfr = "ecc_stat.[10]ecc_unc_2"                                                                 , "Memory", 0x40102020,        4, base=16, bitRange=10
+sfr = "ecc_stat.[11]ecc_unc_3"                                                                 , "Memory", 0x40102020,        4, base=16, bitRange=11
+sfr = "ecc_stat.[16]ecc_over_0"                                                                , "Memory", 0x40102020,        4, base=16, bitRange=16
+sfr = "ecc_stat.[17]ecc_over_1"                                                                , "Memory", 0x40102020,        4, base=16, bitRange=17
+sfr = "ecc_stat.[18]ecc_over_2"                                                                , "Memory", 0x40102020,        4, base=16, bitRange=18
+sfr = "ecc_stat.[19]ecc_over_3"                                                                , "Memory", 0x40102020,        4, base=16, bitRange=19
+sfr = "addr0_col"                                                                              , "Memory", 0x40102024,        4, base=16
+sfr = "addr0_col.[15:0]addr0_col"                                                              , "Memory", 0x40102024,        4, base=16, bitRange=0-15
+sfr = "addr0_row"                                                                              , "Memory", 0x40102028,        4, base=16
+sfr = "addr0_row.[23:0]addr0_row"                                                              , "Memory", 0x40102028,        4, base=16, bitRange=0-23
+sfr = "addr1_col"                                                                              , "Memory", 0x4010202C,        4, base=16
+sfr = "addr1_col.[15:0]addr1_col"                                                              , "Memory", 0x4010202C,        4, base=16, bitRange=0-15
+sfr = "addr1_row"                                                                              , "Memory", 0x40102030,        4, base=16
+sfr = "addr1_row.[23:0]addr1_row"                                                              , "Memory", 0x40102030,        4, base=16, bitRange=0-23
+sfr = "protect"                                                                                , "Memory", 0x40102034,        4, base=16
+sfr = "protect.[15:0]prot_down"                                                                , "Memory", 0x40102034,        4, base=16, bitRange=0-15
+sfr = "protect.[31:16]prot_up"                                                                 , "Memory", 0x40102034,        4, base=16, bitRange=16-31
+sfr = "fifo_data"                                                                              , "Memory", 0x40102038,        4, base=16
+sfr = "data_reg"                                                                               , "Memory", 0x4010203C,        4, base=16
+sfr = "data_reg_size"                                                                          , "Memory", 0x40102040,        4, base=16
+sfr = "data_reg_size.[1:0]data_reg_size"                                                       , "Memory", 0x40102040,        4, base=16, bitRange=0-1
+sfr = "dev0_ptr"                                                                               , "Memory", 0x40102044,        4, base=16
+sfr = "dev0_ptr.[31:0]ptr_addr"                                                                , "Memory", 0x40102044,        4, base=16, bitRange=0-31
+sfr = "dev1_ptr"                                                                               , "Memory", 0x40102048,        4, base=16
+sfr = "dev1_ptr.[31:0]ptr_addr"                                                                , "Memory", 0x40102048,        4, base=16, bitRange=0-31
+sfr = "dev2_ptr"                                                                               , "Memory", 0x4010204C,        4, base=16
+sfr = "dev2_ptr.[31:0]ptr_addr"                                                                , "Memory", 0x4010204C,        4, base=16, bitRange=0-31
+sfr = "dev3_ptr"                                                                               , "Memory", 0x40102050,        4, base=16
+sfr = "dev3_ptr.[31:0]ptr_addr"                                                                , "Memory", 0x40102050,        4, base=16, bitRange=0-31
+sfr = "dma_addr"                                                                               , "Memory", 0x40102064,        4, base=16
+sfr = "dma_addr.[31:0]dma_addr_l"                                                              , "Memory", 0x40102064,        4, base=16, bitRange=0-31
+sfr = "dma_cnt"                                                                                , "Memory", 0x4010206C,        4, base=16
+sfr = "dma_cnt.[31:0]cnt_init"                                                                 , "Memory", 0x4010206C,        4, base=16, bitRange=0-31
+sfr = "dma_ctrl"                                                                               , "Memory", 0x40102070,        4, base=16
+sfr = "dma_ctrl.[0]dma_ready"                                                                  , "Memory", 0x40102070,        4, base=16, bitRange=0
+sfr = "dma_ctrl.[1]err_flag"                                                                   , "Memory", 0x40102070,        4, base=16, bitRange=1
+sfr = "dma_ctrl.[4:2]dma_burst"                                                                , "Memory", 0x40102070,        4, base=16, bitRange=2-4
+sfr = "dma_ctrl.[5]dma_mode"                                                                   , "Memory", 0x40102070,        4, base=16, bitRange=5
+sfr = "dma_ctrl.[7]dma_start"                                                                  , "Memory", 0x40102070,        4, base=16, bitRange=7
+sfr = "bbm_ctrl"                                                                               , "Memory", 0x40102074,        4, base=16
+sfr = "bbm_ctrl.[0]rmp_init"                                                                   , "Memory", 0x40102074,        4, base=16, bitRange=0
+sfr = "mem_ctrl"                                                                               , "Memory", 0x40102080,        4, base=16
+sfr = "mem_ctrl.[2:0]mem_ce"                                                                   , "Memory", 0x40102080,        4, base=16, bitRange=0-2
+sfr = "mem_ctrl.[8]mem0_wp"                                                                    , "Memory", 0x40102080,        4, base=16, bitRange=8
+sfr = "mem_ctrl.[9]mem1_wp"                                                                    , "Memory", 0x40102080,        4, base=16, bitRange=9
+sfr = "mem_ctrl.[10]mem2_wp"                                                                   , "Memory", 0x40102080,        4, base=16, bitRange=10
+sfr = "mem_ctrl.[11]mem3_wp"                                                                   , "Memory", 0x40102080,        4, base=16, bitRange=11
+sfr = "mem_ctrl.[18:16]bank_sel"                                                               , "Memory", 0x40102080,        4, base=16, bitRange=16-18
+sfr = "data_size"                                                                              , "Memory", 0x40102084,        4, base=16
+sfr = "data_size.[14:0]data_size"                                                              , "Memory", 0x40102084,        4, base=16, bitRange=0-14
+sfr = "timings_asyn"                                                                           , "Memory", 0x40102088,        4, base=16
+sfr = "timings_asyn.[3:0]trwp"                                                                 , "Memory", 0x40102088,        4, base=16, bitRange=0-3
+sfr = "timings_asyn.[7:4]trwh"                                                                 , "Memory", 0x40102088,        4, base=16, bitRange=4-7
+sfr = "time_seq_0"                                                                             , "Memory", 0x40102090,        4, base=16
+sfr = "time_seq_0.[5:0]tccs"                                                                   , "Memory", 0x40102090,        4, base=16, bitRange=0-5
+sfr = "time_seq_0.[13:8]tadl"                                                                  , "Memory", 0x40102090,        4, base=16, bitRange=8-13
+sfr = "time_seq_0.[21:16]trhw"                                                                 , "Memory", 0x40102090,        4, base=16, bitRange=16-21
+sfr = "time_seq_0.[29:24]twhr"                                                                 , "Memory", 0x40102090,        4, base=16, bitRange=24-29
+sfr = "time_seq_1"                                                                             , "Memory", 0x40102094,        4, base=16
+sfr = "time_seq_1.[5:0]twb"                                                                    , "Memory", 0x40102094,        4, base=16, bitRange=0-5
+sfr = "time_seq_1.[13:8]trr"                                                                   , "Memory", 0x40102094,        4, base=16, bitRange=8-13
+sfr = "time_seq_1.[21:16]tww"                                                                  , "Memory", 0x40102094,        4, base=16, bitRange=16-21
+sfr = "time_gen_seq_0"                                                                         , "Memory", 0x40102098,        4, base=16
+sfr = "time_gen_seq_0.[5:0]t0_d0"                                                              , "Memory", 0x40102098,        4, base=16, bitRange=0-5
+sfr = "time_gen_seq_0.[13:8]t0_d1"                                                             , "Memory", 0x40102098,        4, base=16, bitRange=8-13
+sfr = "time_gen_seq_0.[21:16]t0_d2"                                                            , "Memory", 0x40102098,        4, base=16, bitRange=16-21
+sfr = "time_gen_seq_0.[29:24]t0_d3"                                                            , "Memory", 0x40102098,        4, base=16, bitRange=24-29
+sfr = "time_gen_seq_1"                                                                         , "Memory", 0x4010209C,        4, base=16
+sfr = "time_gen_seq_1.[5:0]t0_d4"                                                              , "Memory", 0x4010209C,        4, base=16, bitRange=0-5
+sfr = "time_gen_seq_1.[13:8]t0_d5"                                                             , "Memory", 0x4010209C,        4, base=16, bitRange=8-13
+sfr = "time_gen_seq_1.[21:16]t0_d6"                                                            , "Memory", 0x4010209C,        4, base=16, bitRange=16-21
+sfr = "time_gen_seq_1.[29:24]t0_d7"                                                            , "Memory", 0x4010209C,        4, base=16, bitRange=24-29
+sfr = "time_gen_seq_2"                                                                         , "Memory", 0x401020A0,        4, base=16
+sfr = "time_gen_seq_2.[5:0]t0_d8"                                                              , "Memory", 0x401020A0,        4, base=16, bitRange=0-5
+sfr = "time_gen_seq_2.[13:8]t0_d9"                                                             , "Memory", 0x401020A0,        4, base=16, bitRange=8-13
+sfr = "time_gen_seq_2.[21:16]t0_d10"                                                           , "Memory", 0x401020A0,        4, base=16, bitRange=16-21
+sfr = "time_gen_seq_2.[29:24]t0_d11"                                                           , "Memory", 0x401020A0,        4, base=16, bitRange=24-29
+sfr = "fifo_init"                                                                              , "Memory", 0x401020B0,        4, base=16
+sfr = "fifo_init.[0]fifo_init"                                                                 , "Memory", 0x401020B0,        4, base=16, bitRange=0
+sfr = "fifo_state"                                                                             , "Memory", 0x401020B4,        4, base=16, readOnly
+sfr = "fifo_state.[0]df_r_empty"                                                               , "Memory", 0x401020B4,        4, base=16, readOnly, bitRange=0
+sfr = "fifo_state.[1]df_w_full"                                                                , "Memory", 0x401020B4,        4, base=16, readOnly, bitRange=1
+sfr = "fifo_state.[2]cf_empty"                                                                 , "Memory", 0x401020B4,        4, base=16, readOnly, bitRange=2
+sfr = "fifo_state.[3]cf_full"                                                                  , "Memory", 0x401020B4,        4, base=16, readOnly, bitRange=3
+sfr = "fifo_state.[4]cf_accept_r"                                                              , "Memory", 0x401020B4,        4, base=16, readOnly, bitRange=4
+sfr = "fifo_state.[5]cf_accept_w"                                                              , "Memory", 0x401020B4,        4, base=16, readOnly, bitRange=5
+sfr = "fifo_state.[6]df_r_full"                                                                , "Memory", 0x401020B4,        4, base=16, readOnly, bitRange=6
+sfr = "fifo_state.[7]df_w_empty"                                                               , "Memory", 0x401020B4,        4, base=16, readOnly, bitRange=7
+sfr = "gen_seq_ctrl"                                                                           , "Memory", 0x401020B8,        4, base=16
+sfr = "gen_seq_ctrl.[0]cmd0_en"                                                                , "Memory", 0x401020B8,        4, base=16, bitRange=0
+sfr = "gen_seq_ctrl.[1]cmd1_en"                                                                , "Memory", 0x401020B8,        4, base=16, bitRange=1
+sfr = "gen_seq_ctrl.[2]cmd2_en"                                                                , "Memory", 0x401020B8,        4, base=16, bitRange=2
+sfr = "gen_seq_ctrl.[3]cmd3_en"                                                                , "Memory", 0x401020B8,        4, base=16, bitRange=3
+sfr = "gen_seq_ctrl.[5:4]col_a0"                                                               , "Memory", 0x401020B8,        4, base=16, bitRange=4-5
+sfr = "gen_seq_ctrl.[7:6]col_a1"                                                               , "Memory", 0x401020B8,        4, base=16, bitRange=6-7
+sfr = "gen_seq_ctrl.[9:8]row_a0"                                                               , "Memory", 0x401020B8,        4, base=16, bitRange=8-9
+sfr = "gen_seq_ctrl.[11:10]row_a1"                                                             , "Memory", 0x401020B8,        4, base=16, bitRange=10-11
+sfr = "gen_seq_ctrl.[12]data_en"                                                               , "Memory", 0x401020B8,        4, base=16, bitRange=12
+sfr = "gen_seq_ctrl.[14:13]delay_en"                                                           , "Memory", 0x401020B8,        4, base=16, bitRange=13-14
+sfr = "gen_seq_ctrl.[15]imd_seq"                                                               , "Memory", 0x401020B8,        4, base=16, bitRange=15
+sfr = "gen_seq_ctrl.[23:16]cmd3"                                                               , "Memory", 0x401020B8,        4, base=16, bitRange=16-23
+sfr = "mlun"                                                                                   , "Memory", 0x401020BC,        4, base=16
+sfr = "mlun.[2:0]mlun_idx"                                                                     , "Memory", 0x401020BC,        4, base=16, bitRange=0-2
+sfr = "mlun.[9:8]mlun_sel"                                                                     , "Memory", 0x401020BC,        4, base=16, bitRange=8-9
+sfr = "dev0_size"                                                                              , "Memory", 0x401020C0,        4, base=16
+sfr = "dev0_size.[11:0]dev_size"                                                               , "Memory", 0x401020C0,        4, base=16, bitRange=0-11
+sfr = "dev1_size"                                                                              , "Memory", 0x401020C4,        4, base=16
+sfr = "dev1_size.[11:0]dev_size"                                                               , "Memory", 0x401020C4,        4, base=16, bitRange=0-11
+sfr = "dev2_size"                                                                              , "Memory", 0x401020C8,        4, base=16
+sfr = "dev2_size.[11:0]dev_size"                                                               , "Memory", 0x401020C8,        4, base=16, bitRange=0-11
+sfr = "dev3_size"                                                                              , "Memory", 0x401020CC,        4, base=16
+sfr = "dev3_size.[11:0]dev_size"                                                               , "Memory", 0x401020CC,        4, base=16, bitRange=0-11
+sfr = "dma_tlvl"                                                                               , "Memory", 0x40102114,        4, base=16
+sfr = "dma_tlvl.[7:0]dma_tlvl"                                                                 , "Memory", 0x40102114,        4, base=16, bitRange=0-7
+sfr = "cmd_mark"                                                                               , "Memory", 0x40102124,        4, base=16, writeOnly
+sfr = "cmd_mark.[7:0]cmd_id"                                                                   , "Memory", 0x40102124,        4, base=16, writeOnly, bitRange=0-7
+sfr = "lun_status_0"                                                                           , "Memory", 0x40102128,        4, base=16, readOnly
+sfr = "lun_status_0.[7:0]mem0_lun"                                                             , "Memory", 0x40102128,        4, base=16, readOnly, bitRange=0-7
+sfr = "lun_status_0.[15:8]mem1_lun"                                                            , "Memory", 0x40102128,        4, base=16, readOnly, bitRange=8-15
+sfr = "lun_status_0.[23:16]mem2_lun"                                                           , "Memory", 0x40102128,        4, base=16, readOnly, bitRange=16-23
+sfr = "lun_status_0.[31:24]mem3_lun"                                                           , "Memory", 0x40102128,        4, base=16, readOnly, bitRange=24-31
+sfr = "time_gen_seq_3"                                                                         , "Memory", 0x40102134,        4, base=16
+sfr = "time_gen_seq_3.[5:0]t0_d12"                                                             , "Memory", 0x40102134,        4, base=16, bitRange=0-5
+sfr = "int_stat"                                                                               , "Memory", 0x40102148,        4, base=16
+sfr = "int_stat.[7:0]stat_value"                                                               , "Memory", 0x40102148,        4, base=16, bitRange=0-7
+sfr = "int_stat.[9:8]seq_id"                                                                   , "Memory", 0x40102148,        4, base=16, bitRange=8-9
+sfr = "ecc_cnt"                                                                                , "Memory", 0x4010214C,        4, base=16
+sfr = "ecc_cnt.[4:0]err_lvl0"                                                                  , "Memory", 0x4010214C,        4, base=16, bitRange=0-4
+sfr = "ecc_cnt.[12:8]err_lvl1"                                                                 , "Memory", 0x4010214C,        4, base=16, bitRange=8-12
+sfr = "ecc_cnt.[20:16]err_lvl2"                                                                , "Memory", 0x4010214C,        4, base=16, bitRange=16-20
+sfr = "ecc_cnt.[28:24]err_lvl3"                                                                , "Memory", 0x4010214C,        4, base=16, bitRange=24-28
+sfr = "param_reg"                                                                              , "Memory", 0x40102150,        4, base=16, readOnly
+sfr = "param_reg.[1:0]bank_num"                                                                , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=0-1
+sfr = "param_reg.[3:2]device_per_bank"                                                         , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=2-3
+sfr = "param_reg.[4]boot_implement"                                                            , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=4
+sfr = "param_reg.[5]bbm_implement"                                                             , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=5
+sfr = "param_reg.[6]bbm_int_implement"                                                         , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=6
+sfr = "param_reg.[7]protect_implement"                                                         , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=7
+sfr = "param_reg.[8]syn_mode_implement"                                                        , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=8
+sfr = "param_reg.[9]toggle_mode_implement"                                                     , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=9
+sfr = "param_reg.[10]clearnand_implement"                                                      , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=10
+sfr = "param_reg.[11]big_endian_implement"                                                     , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=11
+sfr = "param_reg.[12]bch32_conf_implement"                                                     , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=12
+sfr = "param_reg.[13]bch32_implement"                                                          , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=13
+sfr = "param_reg.[14]bch24_implement"                                                          , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=14
+sfr = "param_reg.[15]bch16_implement"                                                          , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=15
+sfr = "param_reg.[16]bch8_implement"                                                           , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=16
+sfr = "param_reg.[17]bch4_implement"                                                           , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=17
+sfr = "param_reg.[18]bch2_implement"                                                           , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=18
+sfr = "param_reg.[19]noecc_implement"                                                          , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=19
+sfr = "param_reg.[20]ss_implement"                                                             , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=20
+sfr = "param_reg.[21]dpram_2r2w_implement"                                                     , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=21
+sfr = "param_reg.[22]gen_seq_implement"                                                        , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=22
+sfr = "param_reg.[23]small_block_implement"                                                    , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=23
+sfr = "param_reg.[24]dma_implement"                                                            , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=24
+sfr = "param_reg.[25]dma_slave_implement"                                                      , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=25
+sfr = "param_reg.[26]dma_sretry_implement"                                                     , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=26
+sfr = "param_reg.[27]dma64bit_implement"                                                       , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=27
+sfr = "param_reg.[28]aes_implement"                                                            , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=28
+sfr = "param_reg.[29]asyn_reset_implement"                                                     , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=29
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// NAND Flash Controller -----
+group = "NAND","command","control","Status","status_mask","int_mask","int_status","ecc_ctrl","ecc_offset","ecc_stat","addr0_col","addr0_row","addr1_col","addr1_row","protect","fifo_data","data_reg","data_reg_size","dev0_ptr","dev1_ptr","dev2_ptr","dev3_ptr","dma_addr","dma_cnt","dma_ctrl","bbm_ctrl","mem_ctrl","data_size","timings_asyn","time_seq_0","time_seq_1","time_gen_seq_0","time_gen_seq_1","time_gen_seq_2","fifo_init","fifo_state","gen_seq_ctrl","mlun","dev0_size","dev1_size","dev2_size","dev3_size","dma_tlvl","cmd_mark","lun_status_0","time_gen_seq_3","int_stat","ecc_cnt","param_reg"

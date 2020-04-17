@@ -1,0 +1,1043 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : SEMAP
+;               Semaphore
+;    revision : 0.13 (15.September.2017)
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "LockCPU1_0"                                                                             , "Memory", 0x53000000,        4, base=16
+sfr = "LockCPU1_0.[2:0]LockCPU"                                                                , "Memory", 0x53000000,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_0"                                                                           , "Memory", 0x53000004,        4, base=16, readOnly
+sfr = "StatusCPU1_0.[2:0]StatusCPU"                                                            , "Memory", 0x53000004,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_1"                                                                             , "Memory", 0x53000010,        4, base=16
+sfr = "LockCPU1_1.[2:0]LockCPU"                                                                , "Memory", 0x53000010,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_1"                                                                           , "Memory", 0x53000014,        4, base=16, readOnly
+sfr = "StatusCPU1_1.[2:0]StatusCPU"                                                            , "Memory", 0x53000014,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_2"                                                                             , "Memory", 0x53000020,        4, base=16
+sfr = "LockCPU1_2.[2:0]LockCPU"                                                                , "Memory", 0x53000020,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_2"                                                                           , "Memory", 0x53000024,        4, base=16, readOnly
+sfr = "StatusCPU1_2.[2:0]StatusCPU"                                                            , "Memory", 0x53000024,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_3"                                                                             , "Memory", 0x53000030,        4, base=16
+sfr = "LockCPU1_3.[2:0]LockCPU"                                                                , "Memory", 0x53000030,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_3"                                                                           , "Memory", 0x53000034,        4, base=16, readOnly
+sfr = "StatusCPU1_3.[2:0]StatusCPU"                                                            , "Memory", 0x53000034,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_4"                                                                             , "Memory", 0x53000040,        4, base=16
+sfr = "LockCPU1_4.[2:0]LockCPU"                                                                , "Memory", 0x53000040,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_4"                                                                           , "Memory", 0x53000044,        4, base=16, readOnly
+sfr = "StatusCPU1_4.[2:0]StatusCPU"                                                            , "Memory", 0x53000044,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_5"                                                                             , "Memory", 0x53000050,        4, base=16
+sfr = "LockCPU1_5.[2:0]LockCPU"                                                                , "Memory", 0x53000050,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_5"                                                                           , "Memory", 0x53000054,        4, base=16, readOnly
+sfr = "StatusCPU1_5.[2:0]StatusCPU"                                                            , "Memory", 0x53000054,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_6"                                                                             , "Memory", 0x53000060,        4, base=16
+sfr = "LockCPU1_6.[2:0]LockCPU"                                                                , "Memory", 0x53000060,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_6"                                                                           , "Memory", 0x53000064,        4, base=16, readOnly
+sfr = "StatusCPU1_6.[2:0]StatusCPU"                                                            , "Memory", 0x53000064,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_7"                                                                             , "Memory", 0x53000070,        4, base=16
+sfr = "LockCPU1_7.[2:0]LockCPU"                                                                , "Memory", 0x53000070,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_7"                                                                           , "Memory", 0x53000074,        4, base=16, readOnly
+sfr = "StatusCPU1_7.[2:0]StatusCPU"                                                            , "Memory", 0x53000074,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_8"                                                                             , "Memory", 0x53000080,        4, base=16
+sfr = "LockCPU1_8.[2:0]LockCPU"                                                                , "Memory", 0x53000080,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_8"                                                                           , "Memory", 0x53000084,        4, base=16, readOnly
+sfr = "StatusCPU1_8.[2:0]StatusCPU"                                                            , "Memory", 0x53000084,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_9"                                                                             , "Memory", 0x53000090,        4, base=16
+sfr = "LockCPU1_9.[2:0]LockCPU"                                                                , "Memory", 0x53000090,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_9"                                                                           , "Memory", 0x53000094,        4, base=16, readOnly
+sfr = "StatusCPU1_9.[2:0]StatusCPU"                                                            , "Memory", 0x53000094,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_10"                                                                            , "Memory", 0x530000A0,        4, base=16
+sfr = "LockCPU1_10.[2:0]LockCPU"                                                               , "Memory", 0x530000A0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_10"                                                                          , "Memory", 0x530000A4,        4, base=16, readOnly
+sfr = "StatusCPU1_10.[2:0]StatusCPU"                                                           , "Memory", 0x530000A4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_11"                                                                            , "Memory", 0x530000B0,        4, base=16
+sfr = "LockCPU1_11.[2:0]LockCPU"                                                               , "Memory", 0x530000B0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_11"                                                                          , "Memory", 0x530000B4,        4, base=16, readOnly
+sfr = "StatusCPU1_11.[2:0]StatusCPU"                                                           , "Memory", 0x530000B4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_12"                                                                            , "Memory", 0x530000C0,        4, base=16
+sfr = "LockCPU1_12.[2:0]LockCPU"                                                               , "Memory", 0x530000C0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_12"                                                                          , "Memory", 0x530000C4,        4, base=16, readOnly
+sfr = "StatusCPU1_12.[2:0]StatusCPU"                                                           , "Memory", 0x530000C4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_13"                                                                            , "Memory", 0x530000D0,        4, base=16
+sfr = "LockCPU1_13.[2:0]LockCPU"                                                               , "Memory", 0x530000D0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_13"                                                                          , "Memory", 0x530000D4,        4, base=16, readOnly
+sfr = "StatusCPU1_13.[2:0]StatusCPU"                                                           , "Memory", 0x530000D4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_14"                                                                            , "Memory", 0x530000E0,        4, base=16
+sfr = "LockCPU1_14.[2:0]LockCPU"                                                               , "Memory", 0x530000E0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_14"                                                                          , "Memory", 0x530000E4,        4, base=16, readOnly
+sfr = "StatusCPU1_14.[2:0]StatusCPU"                                                           , "Memory", 0x530000E4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_15"                                                                            , "Memory", 0x530000F0,        4, base=16
+sfr = "LockCPU1_15.[2:0]LockCPU"                                                               , "Memory", 0x530000F0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_15"                                                                          , "Memory", 0x530000F4,        4, base=16, readOnly
+sfr = "StatusCPU1_15.[2:0]StatusCPU"                                                           , "Memory", 0x530000F4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_16"                                                                            , "Memory", 0x53000100,        4, base=16
+sfr = "LockCPU1_16.[2:0]LockCPU"                                                               , "Memory", 0x53000100,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_16"                                                                          , "Memory", 0x53000104,        4, base=16, readOnly
+sfr = "StatusCPU1_16.[2:0]StatusCPU"                                                           , "Memory", 0x53000104,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_17"                                                                            , "Memory", 0x53000110,        4, base=16
+sfr = "LockCPU1_17.[2:0]LockCPU"                                                               , "Memory", 0x53000110,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_17"                                                                          , "Memory", 0x53000114,        4, base=16, readOnly
+sfr = "StatusCPU1_17.[2:0]StatusCPU"                                                           , "Memory", 0x53000114,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_18"                                                                            , "Memory", 0x53000120,        4, base=16
+sfr = "LockCPU1_18.[2:0]LockCPU"                                                               , "Memory", 0x53000120,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_18"                                                                          , "Memory", 0x53000124,        4, base=16, readOnly
+sfr = "StatusCPU1_18.[2:0]StatusCPU"                                                           , "Memory", 0x53000124,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_19"                                                                            , "Memory", 0x53000130,        4, base=16
+sfr = "LockCPU1_19.[2:0]LockCPU"                                                               , "Memory", 0x53000130,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_19"                                                                          , "Memory", 0x53000134,        4, base=16, readOnly
+sfr = "StatusCPU1_19.[2:0]StatusCPU"                                                           , "Memory", 0x53000134,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_20"                                                                            , "Memory", 0x53000140,        4, base=16
+sfr = "LockCPU1_20.[2:0]LockCPU"                                                               , "Memory", 0x53000140,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_20"                                                                          , "Memory", 0x53000144,        4, base=16, readOnly
+sfr = "StatusCPU1_20.[2:0]StatusCPU"                                                           , "Memory", 0x53000144,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_21"                                                                            , "Memory", 0x53000150,        4, base=16
+sfr = "LockCPU1_21.[2:0]LockCPU"                                                               , "Memory", 0x53000150,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_21"                                                                          , "Memory", 0x53000154,        4, base=16, readOnly
+sfr = "StatusCPU1_21.[2:0]StatusCPU"                                                           , "Memory", 0x53000154,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_22"                                                                            , "Memory", 0x53000160,        4, base=16
+sfr = "LockCPU1_22.[2:0]LockCPU"                                                               , "Memory", 0x53000160,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_22"                                                                          , "Memory", 0x53000164,        4, base=16, readOnly
+sfr = "StatusCPU1_22.[2:0]StatusCPU"                                                           , "Memory", 0x53000164,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_23"                                                                            , "Memory", 0x53000170,        4, base=16
+sfr = "LockCPU1_23.[2:0]LockCPU"                                                               , "Memory", 0x53000170,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_23"                                                                          , "Memory", 0x53000174,        4, base=16, readOnly
+sfr = "StatusCPU1_23.[2:0]StatusCPU"                                                           , "Memory", 0x53000174,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_24"                                                                            , "Memory", 0x53000180,        4, base=16
+sfr = "LockCPU1_24.[2:0]LockCPU"                                                               , "Memory", 0x53000180,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_24"                                                                          , "Memory", 0x53000184,        4, base=16, readOnly
+sfr = "StatusCPU1_24.[2:0]StatusCPU"                                                           , "Memory", 0x53000184,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_25"                                                                            , "Memory", 0x53000190,        4, base=16
+sfr = "LockCPU1_25.[2:0]LockCPU"                                                               , "Memory", 0x53000190,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_25"                                                                          , "Memory", 0x53000194,        4, base=16, readOnly
+sfr = "StatusCPU1_25.[2:0]StatusCPU"                                                           , "Memory", 0x53000194,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_26"                                                                            , "Memory", 0x530001A0,        4, base=16
+sfr = "LockCPU1_26.[2:0]LockCPU"                                                               , "Memory", 0x530001A0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_26"                                                                          , "Memory", 0x530001A4,        4, base=16, readOnly
+sfr = "StatusCPU1_26.[2:0]StatusCPU"                                                           , "Memory", 0x530001A4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_27"                                                                            , "Memory", 0x530001B0,        4, base=16
+sfr = "LockCPU1_27.[2:0]LockCPU"                                                               , "Memory", 0x530001B0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_27"                                                                          , "Memory", 0x530001B4,        4, base=16, readOnly
+sfr = "StatusCPU1_27.[2:0]StatusCPU"                                                           , "Memory", 0x530001B4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_28"                                                                            , "Memory", 0x530001C0,        4, base=16
+sfr = "LockCPU1_28.[2:0]LockCPU"                                                               , "Memory", 0x530001C0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_28"                                                                          , "Memory", 0x530001C4,        4, base=16, readOnly
+sfr = "StatusCPU1_28.[2:0]StatusCPU"                                                           , "Memory", 0x530001C4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_29"                                                                            , "Memory", 0x530001D0,        4, base=16
+sfr = "LockCPU1_29.[2:0]LockCPU"                                                               , "Memory", 0x530001D0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_29"                                                                          , "Memory", 0x530001D4,        4, base=16, readOnly
+sfr = "StatusCPU1_29.[2:0]StatusCPU"                                                           , "Memory", 0x530001D4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_30"                                                                            , "Memory", 0x530001E0,        4, base=16
+sfr = "LockCPU1_30.[2:0]LockCPU"                                                               , "Memory", 0x530001E0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_30"                                                                          , "Memory", 0x530001E4,        4, base=16, readOnly
+sfr = "StatusCPU1_30.[2:0]StatusCPU"                                                           , "Memory", 0x530001E4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_31"                                                                            , "Memory", 0x530001F0,        4, base=16
+sfr = "LockCPU1_31.[2:0]LockCPU"                                                               , "Memory", 0x530001F0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_31"                                                                          , "Memory", 0x530001F4,        4, base=16, readOnly
+sfr = "StatusCPU1_31.[2:0]StatusCPU"                                                           , "Memory", 0x530001F4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_32"                                                                            , "Memory", 0x53000200,        4, base=16
+sfr = "LockCPU1_32.[2:0]LockCPU"                                                               , "Memory", 0x53000200,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_32"                                                                          , "Memory", 0x53000204,        4, base=16, readOnly
+sfr = "StatusCPU1_32.[2:0]StatusCPU"                                                           , "Memory", 0x53000204,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_33"                                                                            , "Memory", 0x53000210,        4, base=16
+sfr = "LockCPU1_33.[2:0]LockCPU"                                                               , "Memory", 0x53000210,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_33"                                                                          , "Memory", 0x53000214,        4, base=16, readOnly
+sfr = "StatusCPU1_33.[2:0]StatusCPU"                                                           , "Memory", 0x53000214,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_34"                                                                            , "Memory", 0x53000220,        4, base=16
+sfr = "LockCPU1_34.[2:0]LockCPU"                                                               , "Memory", 0x53000220,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_34"                                                                          , "Memory", 0x53000224,        4, base=16, readOnly
+sfr = "StatusCPU1_34.[2:0]StatusCPU"                                                           , "Memory", 0x53000224,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_35"                                                                            , "Memory", 0x53000230,        4, base=16
+sfr = "LockCPU1_35.[2:0]LockCPU"                                                               , "Memory", 0x53000230,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_35"                                                                          , "Memory", 0x53000234,        4, base=16, readOnly
+sfr = "StatusCPU1_35.[2:0]StatusCPU"                                                           , "Memory", 0x53000234,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_36"                                                                            , "Memory", 0x53000240,        4, base=16
+sfr = "LockCPU1_36.[2:0]LockCPU"                                                               , "Memory", 0x53000240,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_36"                                                                          , "Memory", 0x53000244,        4, base=16, readOnly
+sfr = "StatusCPU1_36.[2:0]StatusCPU"                                                           , "Memory", 0x53000244,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_37"                                                                            , "Memory", 0x53000250,        4, base=16
+sfr = "LockCPU1_37.[2:0]LockCPU"                                                               , "Memory", 0x53000250,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_37"                                                                          , "Memory", 0x53000254,        4, base=16, readOnly
+sfr = "StatusCPU1_37.[2:0]StatusCPU"                                                           , "Memory", 0x53000254,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_38"                                                                            , "Memory", 0x53000260,        4, base=16
+sfr = "LockCPU1_38.[2:0]LockCPU"                                                               , "Memory", 0x53000260,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_38"                                                                          , "Memory", 0x53000264,        4, base=16, readOnly
+sfr = "StatusCPU1_38.[2:0]StatusCPU"                                                           , "Memory", 0x53000264,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_39"                                                                            , "Memory", 0x53000270,        4, base=16
+sfr = "LockCPU1_39.[2:0]LockCPU"                                                               , "Memory", 0x53000270,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_39"                                                                          , "Memory", 0x53000274,        4, base=16, readOnly
+sfr = "StatusCPU1_39.[2:0]StatusCPU"                                                           , "Memory", 0x53000274,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_40"                                                                            , "Memory", 0x53000280,        4, base=16
+sfr = "LockCPU1_40.[2:0]LockCPU"                                                               , "Memory", 0x53000280,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_40"                                                                          , "Memory", 0x53000284,        4, base=16, readOnly
+sfr = "StatusCPU1_40.[2:0]StatusCPU"                                                           , "Memory", 0x53000284,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_41"                                                                            , "Memory", 0x53000290,        4, base=16
+sfr = "LockCPU1_41.[2:0]LockCPU"                                                               , "Memory", 0x53000290,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_41"                                                                          , "Memory", 0x53000294,        4, base=16, readOnly
+sfr = "StatusCPU1_41.[2:0]StatusCPU"                                                           , "Memory", 0x53000294,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_42"                                                                            , "Memory", 0x530002A0,        4, base=16
+sfr = "LockCPU1_42.[2:0]LockCPU"                                                               , "Memory", 0x530002A0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_42"                                                                          , "Memory", 0x530002A4,        4, base=16, readOnly
+sfr = "StatusCPU1_42.[2:0]StatusCPU"                                                           , "Memory", 0x530002A4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_43"                                                                            , "Memory", 0x530002B0,        4, base=16
+sfr = "LockCPU1_43.[2:0]LockCPU"                                                               , "Memory", 0x530002B0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_43"                                                                          , "Memory", 0x530002B4,        4, base=16, readOnly
+sfr = "StatusCPU1_43.[2:0]StatusCPU"                                                           , "Memory", 0x530002B4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_44"                                                                            , "Memory", 0x530002C0,        4, base=16
+sfr = "LockCPU1_44.[2:0]LockCPU"                                                               , "Memory", 0x530002C0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_44"                                                                          , "Memory", 0x530002C4,        4, base=16, readOnly
+sfr = "StatusCPU1_44.[2:0]StatusCPU"                                                           , "Memory", 0x530002C4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_45"                                                                            , "Memory", 0x530002D0,        4, base=16
+sfr = "LockCPU1_45.[2:0]LockCPU"                                                               , "Memory", 0x530002D0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_45"                                                                          , "Memory", 0x530002D4,        4, base=16, readOnly
+sfr = "StatusCPU1_45.[2:0]StatusCPU"                                                           , "Memory", 0x530002D4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_46"                                                                            , "Memory", 0x530002E0,        4, base=16
+sfr = "LockCPU1_46.[2:0]LockCPU"                                                               , "Memory", 0x530002E0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_46"                                                                          , "Memory", 0x530002E4,        4, base=16, readOnly
+sfr = "StatusCPU1_46.[2:0]StatusCPU"                                                           , "Memory", 0x530002E4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_47"                                                                            , "Memory", 0x530002F0,        4, base=16
+sfr = "LockCPU1_47.[2:0]LockCPU"                                                               , "Memory", 0x530002F0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_47"                                                                          , "Memory", 0x530002F4,        4, base=16, readOnly
+sfr = "StatusCPU1_47.[2:0]StatusCPU"                                                           , "Memory", 0x530002F4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_48"                                                                            , "Memory", 0x53000300,        4, base=16
+sfr = "LockCPU1_48.[2:0]LockCPU"                                                               , "Memory", 0x53000300,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_48"                                                                          , "Memory", 0x53000304,        4, base=16, readOnly
+sfr = "StatusCPU1_48.[2:0]StatusCPU"                                                           , "Memory", 0x53000304,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_49"                                                                            , "Memory", 0x53000310,        4, base=16
+sfr = "LockCPU1_49.[2:0]LockCPU"                                                               , "Memory", 0x53000310,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_49"                                                                          , "Memory", 0x53000314,        4, base=16, readOnly
+sfr = "StatusCPU1_49.[2:0]StatusCPU"                                                           , "Memory", 0x53000314,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_50"                                                                            , "Memory", 0x53000320,        4, base=16
+sfr = "LockCPU1_50.[2:0]LockCPU"                                                               , "Memory", 0x53000320,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_50"                                                                          , "Memory", 0x53000324,        4, base=16, readOnly
+sfr = "StatusCPU1_50.[2:0]StatusCPU"                                                           , "Memory", 0x53000324,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_51"                                                                            , "Memory", 0x53000330,        4, base=16
+sfr = "LockCPU1_51.[2:0]LockCPU"                                                               , "Memory", 0x53000330,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_51"                                                                          , "Memory", 0x53000334,        4, base=16, readOnly
+sfr = "StatusCPU1_51.[2:0]StatusCPU"                                                           , "Memory", 0x53000334,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_52"                                                                            , "Memory", 0x53000340,        4, base=16
+sfr = "LockCPU1_52.[2:0]LockCPU"                                                               , "Memory", 0x53000340,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_52"                                                                          , "Memory", 0x53000344,        4, base=16, readOnly
+sfr = "StatusCPU1_52.[2:0]StatusCPU"                                                           , "Memory", 0x53000344,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_53"                                                                            , "Memory", 0x53000350,        4, base=16
+sfr = "LockCPU1_53.[2:0]LockCPU"                                                               , "Memory", 0x53000350,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_53"                                                                          , "Memory", 0x53000354,        4, base=16, readOnly
+sfr = "StatusCPU1_53.[2:0]StatusCPU"                                                           , "Memory", 0x53000354,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_54"                                                                            , "Memory", 0x53000360,        4, base=16
+sfr = "LockCPU1_54.[2:0]LockCPU"                                                               , "Memory", 0x53000360,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_54"                                                                          , "Memory", 0x53000364,        4, base=16, readOnly
+sfr = "StatusCPU1_54.[2:0]StatusCPU"                                                           , "Memory", 0x53000364,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_55"                                                                            , "Memory", 0x53000370,        4, base=16
+sfr = "LockCPU1_55.[2:0]LockCPU"                                                               , "Memory", 0x53000370,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_55"                                                                          , "Memory", 0x53000374,        4, base=16, readOnly
+sfr = "StatusCPU1_55.[2:0]StatusCPU"                                                           , "Memory", 0x53000374,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_56"                                                                            , "Memory", 0x53000380,        4, base=16
+sfr = "LockCPU1_56.[2:0]LockCPU"                                                               , "Memory", 0x53000380,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_56"                                                                          , "Memory", 0x53000384,        4, base=16, readOnly
+sfr = "StatusCPU1_56.[2:0]StatusCPU"                                                           , "Memory", 0x53000384,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_57"                                                                            , "Memory", 0x53000390,        4, base=16
+sfr = "LockCPU1_57.[2:0]LockCPU"                                                               , "Memory", 0x53000390,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_57"                                                                          , "Memory", 0x53000394,        4, base=16, readOnly
+sfr = "StatusCPU1_57.[2:0]StatusCPU"                                                           , "Memory", 0x53000394,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_58"                                                                            , "Memory", 0x530003A0,        4, base=16
+sfr = "LockCPU1_58.[2:0]LockCPU"                                                               , "Memory", 0x530003A0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_58"                                                                          , "Memory", 0x530003A4,        4, base=16, readOnly
+sfr = "StatusCPU1_58.[2:0]StatusCPU"                                                           , "Memory", 0x530003A4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_59"                                                                            , "Memory", 0x530003B0,        4, base=16
+sfr = "LockCPU1_59.[2:0]LockCPU"                                                               , "Memory", 0x530003B0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_59"                                                                          , "Memory", 0x530003B4,        4, base=16, readOnly
+sfr = "StatusCPU1_59.[2:0]StatusCPU"                                                           , "Memory", 0x530003B4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_60"                                                                            , "Memory", 0x530003C0,        4, base=16
+sfr = "LockCPU1_60.[2:0]LockCPU"                                                               , "Memory", 0x530003C0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_60"                                                                          , "Memory", 0x530003C4,        4, base=16, readOnly
+sfr = "StatusCPU1_60.[2:0]StatusCPU"                                                           , "Memory", 0x530003C4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_61"                                                                            , "Memory", 0x530003D0,        4, base=16
+sfr = "LockCPU1_61.[2:0]LockCPU"                                                               , "Memory", 0x530003D0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_61"                                                                          , "Memory", 0x530003D4,        4, base=16, readOnly
+sfr = "StatusCPU1_61.[2:0]StatusCPU"                                                           , "Memory", 0x530003D4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_62"                                                                            , "Memory", 0x530003E0,        4, base=16
+sfr = "LockCPU1_62.[2:0]LockCPU"                                                               , "Memory", 0x530003E0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_62"                                                                          , "Memory", 0x530003E4,        4, base=16, readOnly
+sfr = "StatusCPU1_62.[2:0]StatusCPU"                                                           , "Memory", 0x530003E4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU1_63"                                                                            , "Memory", 0x530003F0,        4, base=16
+sfr = "LockCPU1_63.[2:0]LockCPU"                                                               , "Memory", 0x530003F0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU1_63"                                                                          , "Memory", 0x530003F4,        4, base=16, readOnly
+sfr = "StatusCPU1_63.[2:0]StatusCPU"                                                           , "Memory", 0x530003F4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_0"                                                                             , "Memory", 0x53001000,        4, base=16
+sfr = "LockCPU2_0.[2:0]LockCPU"                                                                , "Memory", 0x53001000,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_0"                                                                           , "Memory", 0x53001004,        4, base=16, readOnly
+sfr = "StatusCPU2_0.[2:0]StatusCPU"                                                            , "Memory", 0x53001004,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_1"                                                                             , "Memory", 0x53001010,        4, base=16
+sfr = "LockCPU2_1.[2:0]LockCPU"                                                                , "Memory", 0x53001010,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_1"                                                                           , "Memory", 0x53001014,        4, base=16, readOnly
+sfr = "StatusCPU2_1.[2:0]StatusCPU"                                                            , "Memory", 0x53001014,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_2"                                                                             , "Memory", 0x53001020,        4, base=16
+sfr = "LockCPU2_2.[2:0]LockCPU"                                                                , "Memory", 0x53001020,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_2"                                                                           , "Memory", 0x53001024,        4, base=16, readOnly
+sfr = "StatusCPU2_2.[2:0]StatusCPU"                                                            , "Memory", 0x53001024,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_3"                                                                             , "Memory", 0x53001030,        4, base=16
+sfr = "LockCPU2_3.[2:0]LockCPU"                                                                , "Memory", 0x53001030,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_3"                                                                           , "Memory", 0x53001034,        4, base=16, readOnly
+sfr = "StatusCPU2_3.[2:0]StatusCPU"                                                            , "Memory", 0x53001034,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_4"                                                                             , "Memory", 0x53001040,        4, base=16
+sfr = "LockCPU2_4.[2:0]LockCPU"                                                                , "Memory", 0x53001040,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_4"                                                                           , "Memory", 0x53001044,        4, base=16, readOnly
+sfr = "StatusCPU2_4.[2:0]StatusCPU"                                                            , "Memory", 0x53001044,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_5"                                                                             , "Memory", 0x53001050,        4, base=16
+sfr = "LockCPU2_5.[2:0]LockCPU"                                                                , "Memory", 0x53001050,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_5"                                                                           , "Memory", 0x53001054,        4, base=16, readOnly
+sfr = "StatusCPU2_5.[2:0]StatusCPU"                                                            , "Memory", 0x53001054,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_6"                                                                             , "Memory", 0x53001060,        4, base=16
+sfr = "LockCPU2_6.[2:0]LockCPU"                                                                , "Memory", 0x53001060,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_6"                                                                           , "Memory", 0x53001064,        4, base=16, readOnly
+sfr = "StatusCPU2_6.[2:0]StatusCPU"                                                            , "Memory", 0x53001064,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_7"                                                                             , "Memory", 0x53001070,        4, base=16
+sfr = "LockCPU2_7.[2:0]LockCPU"                                                                , "Memory", 0x53001070,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_7"                                                                           , "Memory", 0x53001074,        4, base=16, readOnly
+sfr = "StatusCPU2_7.[2:0]StatusCPU"                                                            , "Memory", 0x53001074,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_8"                                                                             , "Memory", 0x53001080,        4, base=16
+sfr = "LockCPU2_8.[2:0]LockCPU"                                                                , "Memory", 0x53001080,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_8"                                                                           , "Memory", 0x53001084,        4, base=16, readOnly
+sfr = "StatusCPU2_8.[2:0]StatusCPU"                                                            , "Memory", 0x53001084,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_9"                                                                             , "Memory", 0x53001090,        4, base=16
+sfr = "LockCPU2_9.[2:0]LockCPU"                                                                , "Memory", 0x53001090,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_9"                                                                           , "Memory", 0x53001094,        4, base=16, readOnly
+sfr = "StatusCPU2_9.[2:0]StatusCPU"                                                            , "Memory", 0x53001094,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_10"                                                                            , "Memory", 0x530010A0,        4, base=16
+sfr = "LockCPU2_10.[2:0]LockCPU"                                                               , "Memory", 0x530010A0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_10"                                                                          , "Memory", 0x530010A4,        4, base=16, readOnly
+sfr = "StatusCPU2_10.[2:0]StatusCPU"                                                           , "Memory", 0x530010A4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_11"                                                                            , "Memory", 0x530010B0,        4, base=16
+sfr = "LockCPU2_11.[2:0]LockCPU"                                                               , "Memory", 0x530010B0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_11"                                                                          , "Memory", 0x530010B4,        4, base=16, readOnly
+sfr = "StatusCPU2_11.[2:0]StatusCPU"                                                           , "Memory", 0x530010B4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_12"                                                                            , "Memory", 0x530010C0,        4, base=16
+sfr = "LockCPU2_12.[2:0]LockCPU"                                                               , "Memory", 0x530010C0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_12"                                                                          , "Memory", 0x530010C4,        4, base=16, readOnly
+sfr = "StatusCPU2_12.[2:0]StatusCPU"                                                           , "Memory", 0x530010C4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_13"                                                                            , "Memory", 0x530010D0,        4, base=16
+sfr = "LockCPU2_13.[2:0]LockCPU"                                                               , "Memory", 0x530010D0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_13"                                                                          , "Memory", 0x530010D4,        4, base=16, readOnly
+sfr = "StatusCPU2_13.[2:0]StatusCPU"                                                           , "Memory", 0x530010D4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_14"                                                                            , "Memory", 0x530010E0,        4, base=16
+sfr = "LockCPU2_14.[2:0]LockCPU"                                                               , "Memory", 0x530010E0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_14"                                                                          , "Memory", 0x530010E4,        4, base=16, readOnly
+sfr = "StatusCPU2_14.[2:0]StatusCPU"                                                           , "Memory", 0x530010E4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_15"                                                                            , "Memory", 0x530010F0,        4, base=16
+sfr = "LockCPU2_15.[2:0]LockCPU"                                                               , "Memory", 0x530010F0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_15"                                                                          , "Memory", 0x530010F4,        4, base=16, readOnly
+sfr = "StatusCPU2_15.[2:0]StatusCPU"                                                           , "Memory", 0x530010F4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_16"                                                                            , "Memory", 0x53001100,        4, base=16
+sfr = "LockCPU2_16.[2:0]LockCPU"                                                               , "Memory", 0x53001100,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_16"                                                                          , "Memory", 0x53001104,        4, base=16, readOnly
+sfr = "StatusCPU2_16.[2:0]StatusCPU"                                                           , "Memory", 0x53001104,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_17"                                                                            , "Memory", 0x53001110,        4, base=16
+sfr = "LockCPU2_17.[2:0]LockCPU"                                                               , "Memory", 0x53001110,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_17"                                                                          , "Memory", 0x53001114,        4, base=16, readOnly
+sfr = "StatusCPU2_17.[2:0]StatusCPU"                                                           , "Memory", 0x53001114,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_18"                                                                            , "Memory", 0x53001120,        4, base=16
+sfr = "LockCPU2_18.[2:0]LockCPU"                                                               , "Memory", 0x53001120,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_18"                                                                          , "Memory", 0x53001124,        4, base=16, readOnly
+sfr = "StatusCPU2_18.[2:0]StatusCPU"                                                           , "Memory", 0x53001124,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_19"                                                                            , "Memory", 0x53001130,        4, base=16
+sfr = "LockCPU2_19.[2:0]LockCPU"                                                               , "Memory", 0x53001130,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_19"                                                                          , "Memory", 0x53001134,        4, base=16, readOnly
+sfr = "StatusCPU2_19.[2:0]StatusCPU"                                                           , "Memory", 0x53001134,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_20"                                                                            , "Memory", 0x53001140,        4, base=16
+sfr = "LockCPU2_20.[2:0]LockCPU"                                                               , "Memory", 0x53001140,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_20"                                                                          , "Memory", 0x53001144,        4, base=16, readOnly
+sfr = "StatusCPU2_20.[2:0]StatusCPU"                                                           , "Memory", 0x53001144,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_21"                                                                            , "Memory", 0x53001150,        4, base=16
+sfr = "LockCPU2_21.[2:0]LockCPU"                                                               , "Memory", 0x53001150,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_21"                                                                          , "Memory", 0x53001154,        4, base=16, readOnly
+sfr = "StatusCPU2_21.[2:0]StatusCPU"                                                           , "Memory", 0x53001154,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_22"                                                                            , "Memory", 0x53001160,        4, base=16
+sfr = "LockCPU2_22.[2:0]LockCPU"                                                               , "Memory", 0x53001160,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_22"                                                                          , "Memory", 0x53001164,        4, base=16, readOnly
+sfr = "StatusCPU2_22.[2:0]StatusCPU"                                                           , "Memory", 0x53001164,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_23"                                                                            , "Memory", 0x53001170,        4, base=16
+sfr = "LockCPU2_23.[2:0]LockCPU"                                                               , "Memory", 0x53001170,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_23"                                                                          , "Memory", 0x53001174,        4, base=16, readOnly
+sfr = "StatusCPU2_23.[2:0]StatusCPU"                                                           , "Memory", 0x53001174,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_24"                                                                            , "Memory", 0x53001180,        4, base=16
+sfr = "LockCPU2_24.[2:0]LockCPU"                                                               , "Memory", 0x53001180,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_24"                                                                          , "Memory", 0x53001184,        4, base=16, readOnly
+sfr = "StatusCPU2_24.[2:0]StatusCPU"                                                           , "Memory", 0x53001184,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_25"                                                                            , "Memory", 0x53001190,        4, base=16
+sfr = "LockCPU2_25.[2:0]LockCPU"                                                               , "Memory", 0x53001190,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_25"                                                                          , "Memory", 0x53001194,        4, base=16, readOnly
+sfr = "StatusCPU2_25.[2:0]StatusCPU"                                                           , "Memory", 0x53001194,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_26"                                                                            , "Memory", 0x530011A0,        4, base=16
+sfr = "LockCPU2_26.[2:0]LockCPU"                                                               , "Memory", 0x530011A0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_26"                                                                          , "Memory", 0x530011A4,        4, base=16, readOnly
+sfr = "StatusCPU2_26.[2:0]StatusCPU"                                                           , "Memory", 0x530011A4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_27"                                                                            , "Memory", 0x530011B0,        4, base=16
+sfr = "LockCPU2_27.[2:0]LockCPU"                                                               , "Memory", 0x530011B0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_27"                                                                          , "Memory", 0x530011B4,        4, base=16, readOnly
+sfr = "StatusCPU2_27.[2:0]StatusCPU"                                                           , "Memory", 0x530011B4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_28"                                                                            , "Memory", 0x530011C0,        4, base=16
+sfr = "LockCPU2_28.[2:0]LockCPU"                                                               , "Memory", 0x530011C0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_28"                                                                          , "Memory", 0x530011C4,        4, base=16, readOnly
+sfr = "StatusCPU2_28.[2:0]StatusCPU"                                                           , "Memory", 0x530011C4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_29"                                                                            , "Memory", 0x530011D0,        4, base=16
+sfr = "LockCPU2_29.[2:0]LockCPU"                                                               , "Memory", 0x530011D0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_29"                                                                          , "Memory", 0x530011D4,        4, base=16, readOnly
+sfr = "StatusCPU2_29.[2:0]StatusCPU"                                                           , "Memory", 0x530011D4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_30"                                                                            , "Memory", 0x530011E0,        4, base=16
+sfr = "LockCPU2_30.[2:0]LockCPU"                                                               , "Memory", 0x530011E0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_30"                                                                          , "Memory", 0x530011E4,        4, base=16, readOnly
+sfr = "StatusCPU2_30.[2:0]StatusCPU"                                                           , "Memory", 0x530011E4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_31"                                                                            , "Memory", 0x530011F0,        4, base=16
+sfr = "LockCPU2_31.[2:0]LockCPU"                                                               , "Memory", 0x530011F0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_31"                                                                          , "Memory", 0x530011F4,        4, base=16, readOnly
+sfr = "StatusCPU2_31.[2:0]StatusCPU"                                                           , "Memory", 0x530011F4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_32"                                                                            , "Memory", 0x53001200,        4, base=16
+sfr = "LockCPU2_32.[2:0]LockCPU"                                                               , "Memory", 0x53001200,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_32"                                                                          , "Memory", 0x53001204,        4, base=16, readOnly
+sfr = "StatusCPU2_32.[2:0]StatusCPU"                                                           , "Memory", 0x53001204,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_33"                                                                            , "Memory", 0x53001210,        4, base=16
+sfr = "LockCPU2_33.[2:0]LockCPU"                                                               , "Memory", 0x53001210,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_33"                                                                          , "Memory", 0x53001214,        4, base=16, readOnly
+sfr = "StatusCPU2_33.[2:0]StatusCPU"                                                           , "Memory", 0x53001214,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_34"                                                                            , "Memory", 0x53001220,        4, base=16
+sfr = "LockCPU2_34.[2:0]LockCPU"                                                               , "Memory", 0x53001220,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_34"                                                                          , "Memory", 0x53001224,        4, base=16, readOnly
+sfr = "StatusCPU2_34.[2:0]StatusCPU"                                                           , "Memory", 0x53001224,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_35"                                                                            , "Memory", 0x53001230,        4, base=16
+sfr = "LockCPU2_35.[2:0]LockCPU"                                                               , "Memory", 0x53001230,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_35"                                                                          , "Memory", 0x53001234,        4, base=16, readOnly
+sfr = "StatusCPU2_35.[2:0]StatusCPU"                                                           , "Memory", 0x53001234,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_36"                                                                            , "Memory", 0x53001240,        4, base=16
+sfr = "LockCPU2_36.[2:0]LockCPU"                                                               , "Memory", 0x53001240,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_36"                                                                          , "Memory", 0x53001244,        4, base=16, readOnly
+sfr = "StatusCPU2_36.[2:0]StatusCPU"                                                           , "Memory", 0x53001244,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_37"                                                                            , "Memory", 0x53001250,        4, base=16
+sfr = "LockCPU2_37.[2:0]LockCPU"                                                               , "Memory", 0x53001250,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_37"                                                                          , "Memory", 0x53001254,        4, base=16, readOnly
+sfr = "StatusCPU2_37.[2:0]StatusCPU"                                                           , "Memory", 0x53001254,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_38"                                                                            , "Memory", 0x53001260,        4, base=16
+sfr = "LockCPU2_38.[2:0]LockCPU"                                                               , "Memory", 0x53001260,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_38"                                                                          , "Memory", 0x53001264,        4, base=16, readOnly
+sfr = "StatusCPU2_38.[2:0]StatusCPU"                                                           , "Memory", 0x53001264,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_39"                                                                            , "Memory", 0x53001270,        4, base=16
+sfr = "LockCPU2_39.[2:0]LockCPU"                                                               , "Memory", 0x53001270,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_39"                                                                          , "Memory", 0x53001274,        4, base=16, readOnly
+sfr = "StatusCPU2_39.[2:0]StatusCPU"                                                           , "Memory", 0x53001274,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_40"                                                                            , "Memory", 0x53001280,        4, base=16
+sfr = "LockCPU2_40.[2:0]LockCPU"                                                               , "Memory", 0x53001280,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_40"                                                                          , "Memory", 0x53001284,        4, base=16, readOnly
+sfr = "StatusCPU2_40.[2:0]StatusCPU"                                                           , "Memory", 0x53001284,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_41"                                                                            , "Memory", 0x53001290,        4, base=16
+sfr = "LockCPU2_41.[2:0]LockCPU"                                                               , "Memory", 0x53001290,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_41"                                                                          , "Memory", 0x53001294,        4, base=16, readOnly
+sfr = "StatusCPU2_41.[2:0]StatusCPU"                                                           , "Memory", 0x53001294,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_42"                                                                            , "Memory", 0x530012A0,        4, base=16
+sfr = "LockCPU2_42.[2:0]LockCPU"                                                               , "Memory", 0x530012A0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_42"                                                                          , "Memory", 0x530012A4,        4, base=16, readOnly
+sfr = "StatusCPU2_42.[2:0]StatusCPU"                                                           , "Memory", 0x530012A4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_43"                                                                            , "Memory", 0x530012B0,        4, base=16
+sfr = "LockCPU2_43.[2:0]LockCPU"                                                               , "Memory", 0x530012B0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_43"                                                                          , "Memory", 0x530012B4,        4, base=16, readOnly
+sfr = "StatusCPU2_43.[2:0]StatusCPU"                                                           , "Memory", 0x530012B4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_44"                                                                            , "Memory", 0x530012C0,        4, base=16
+sfr = "LockCPU2_44.[2:0]LockCPU"                                                               , "Memory", 0x530012C0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_44"                                                                          , "Memory", 0x530012C4,        4, base=16, readOnly
+sfr = "StatusCPU2_44.[2:0]StatusCPU"                                                           , "Memory", 0x530012C4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_45"                                                                            , "Memory", 0x530012D0,        4, base=16
+sfr = "LockCPU2_45.[2:0]LockCPU"                                                               , "Memory", 0x530012D0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_45"                                                                          , "Memory", 0x530012D4,        4, base=16, readOnly
+sfr = "StatusCPU2_45.[2:0]StatusCPU"                                                           , "Memory", 0x530012D4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_46"                                                                            , "Memory", 0x530012E0,        4, base=16
+sfr = "LockCPU2_46.[2:0]LockCPU"                                                               , "Memory", 0x530012E0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_46"                                                                          , "Memory", 0x530012E4,        4, base=16, readOnly
+sfr = "StatusCPU2_46.[2:0]StatusCPU"                                                           , "Memory", 0x530012E4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_47"                                                                            , "Memory", 0x530012F0,        4, base=16
+sfr = "LockCPU2_47.[2:0]LockCPU"                                                               , "Memory", 0x530012F0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_47"                                                                          , "Memory", 0x530012F4,        4, base=16, readOnly
+sfr = "StatusCPU2_47.[2:0]StatusCPU"                                                           , "Memory", 0x530012F4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_48"                                                                            , "Memory", 0x53001300,        4, base=16
+sfr = "LockCPU2_48.[2:0]LockCPU"                                                               , "Memory", 0x53001300,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_48"                                                                          , "Memory", 0x53001304,        4, base=16, readOnly
+sfr = "StatusCPU2_48.[2:0]StatusCPU"                                                           , "Memory", 0x53001304,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_49"                                                                            , "Memory", 0x53001310,        4, base=16
+sfr = "LockCPU2_49.[2:0]LockCPU"                                                               , "Memory", 0x53001310,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_49"                                                                          , "Memory", 0x53001314,        4, base=16, readOnly
+sfr = "StatusCPU2_49.[2:0]StatusCPU"                                                           , "Memory", 0x53001314,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_50"                                                                            , "Memory", 0x53001320,        4, base=16
+sfr = "LockCPU2_50.[2:0]LockCPU"                                                               , "Memory", 0x53001320,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_50"                                                                          , "Memory", 0x53001324,        4, base=16, readOnly
+sfr = "StatusCPU2_50.[2:0]StatusCPU"                                                           , "Memory", 0x53001324,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_51"                                                                            , "Memory", 0x53001330,        4, base=16
+sfr = "LockCPU2_51.[2:0]LockCPU"                                                               , "Memory", 0x53001330,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_51"                                                                          , "Memory", 0x53001334,        4, base=16, readOnly
+sfr = "StatusCPU2_51.[2:0]StatusCPU"                                                           , "Memory", 0x53001334,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_52"                                                                            , "Memory", 0x53001340,        4, base=16
+sfr = "LockCPU2_52.[2:0]LockCPU"                                                               , "Memory", 0x53001340,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_52"                                                                          , "Memory", 0x53001344,        4, base=16, readOnly
+sfr = "StatusCPU2_52.[2:0]StatusCPU"                                                           , "Memory", 0x53001344,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_53"                                                                            , "Memory", 0x53001350,        4, base=16
+sfr = "LockCPU2_53.[2:0]LockCPU"                                                               , "Memory", 0x53001350,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_53"                                                                          , "Memory", 0x53001354,        4, base=16, readOnly
+sfr = "StatusCPU2_53.[2:0]StatusCPU"                                                           , "Memory", 0x53001354,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_54"                                                                            , "Memory", 0x53001360,        4, base=16
+sfr = "LockCPU2_54.[2:0]LockCPU"                                                               , "Memory", 0x53001360,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_54"                                                                          , "Memory", 0x53001364,        4, base=16, readOnly
+sfr = "StatusCPU2_54.[2:0]StatusCPU"                                                           , "Memory", 0x53001364,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_55"                                                                            , "Memory", 0x53001370,        4, base=16
+sfr = "LockCPU2_55.[2:0]LockCPU"                                                               , "Memory", 0x53001370,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_55"                                                                          , "Memory", 0x53001374,        4, base=16, readOnly
+sfr = "StatusCPU2_55.[2:0]StatusCPU"                                                           , "Memory", 0x53001374,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_56"                                                                            , "Memory", 0x53001380,        4, base=16
+sfr = "LockCPU2_56.[2:0]LockCPU"                                                               , "Memory", 0x53001380,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_56"                                                                          , "Memory", 0x53001384,        4, base=16, readOnly
+sfr = "StatusCPU2_56.[2:0]StatusCPU"                                                           , "Memory", 0x53001384,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_57"                                                                            , "Memory", 0x53001390,        4, base=16
+sfr = "LockCPU2_57.[2:0]LockCPU"                                                               , "Memory", 0x53001390,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_57"                                                                          , "Memory", 0x53001394,        4, base=16, readOnly
+sfr = "StatusCPU2_57.[2:0]StatusCPU"                                                           , "Memory", 0x53001394,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_58"                                                                            , "Memory", 0x530013A0,        4, base=16
+sfr = "LockCPU2_58.[2:0]LockCPU"                                                               , "Memory", 0x530013A0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_58"                                                                          , "Memory", 0x530013A4,        4, base=16, readOnly
+sfr = "StatusCPU2_58.[2:0]StatusCPU"                                                           , "Memory", 0x530013A4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_59"                                                                            , "Memory", 0x530013B0,        4, base=16
+sfr = "LockCPU2_59.[2:0]LockCPU"                                                               , "Memory", 0x530013B0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_59"                                                                          , "Memory", 0x530013B4,        4, base=16, readOnly
+sfr = "StatusCPU2_59.[2:0]StatusCPU"                                                           , "Memory", 0x530013B4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_60"                                                                            , "Memory", 0x530013C0,        4, base=16
+sfr = "LockCPU2_60.[2:0]LockCPU"                                                               , "Memory", 0x530013C0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_60"                                                                          , "Memory", 0x530013C4,        4, base=16, readOnly
+sfr = "StatusCPU2_60.[2:0]StatusCPU"                                                           , "Memory", 0x530013C4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_61"                                                                            , "Memory", 0x530013D0,        4, base=16
+sfr = "LockCPU2_61.[2:0]LockCPU"                                                               , "Memory", 0x530013D0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_61"                                                                          , "Memory", 0x530013D4,        4, base=16, readOnly
+sfr = "StatusCPU2_61.[2:0]StatusCPU"                                                           , "Memory", 0x530013D4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_62"                                                                            , "Memory", 0x530013E0,        4, base=16
+sfr = "LockCPU2_62.[2:0]LockCPU"                                                               , "Memory", 0x530013E0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_62"                                                                          , "Memory", 0x530013E4,        4, base=16, readOnly
+sfr = "StatusCPU2_62.[2:0]StatusCPU"                                                           , "Memory", 0x530013E4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU2_63"                                                                            , "Memory", 0x530013F0,        4, base=16
+sfr = "LockCPU2_63.[2:0]LockCPU"                                                               , "Memory", 0x530013F0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU2_63"                                                                          , "Memory", 0x530013F4,        4, base=16, readOnly
+sfr = "StatusCPU2_63.[2:0]StatusCPU"                                                           , "Memory", 0x530013F4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_0"                                                                             , "Memory", 0x53002000,        4, base=16
+sfr = "LockCPU3_0.[2:0]LockCPU"                                                                , "Memory", 0x53002000,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_0"                                                                           , "Memory", 0x53002004,        4, base=16, readOnly
+sfr = "StatusCPU3_0.[2:0]StatusCPU"                                                            , "Memory", 0x53002004,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_1"                                                                             , "Memory", 0x53002010,        4, base=16
+sfr = "LockCPU3_1.[2:0]LockCPU"                                                                , "Memory", 0x53002010,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_1"                                                                           , "Memory", 0x53002014,        4, base=16, readOnly
+sfr = "StatusCPU3_1.[2:0]StatusCPU"                                                            , "Memory", 0x53002014,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_2"                                                                             , "Memory", 0x53002020,        4, base=16
+sfr = "LockCPU3_2.[2:0]LockCPU"                                                                , "Memory", 0x53002020,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_2"                                                                           , "Memory", 0x53002024,        4, base=16, readOnly
+sfr = "StatusCPU3_2.[2:0]StatusCPU"                                                            , "Memory", 0x53002024,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_3"                                                                             , "Memory", 0x53002030,        4, base=16
+sfr = "LockCPU3_3.[2:0]LockCPU"                                                                , "Memory", 0x53002030,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_3"                                                                           , "Memory", 0x53002034,        4, base=16, readOnly
+sfr = "StatusCPU3_3.[2:0]StatusCPU"                                                            , "Memory", 0x53002034,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_4"                                                                             , "Memory", 0x53002040,        4, base=16
+sfr = "LockCPU3_4.[2:0]LockCPU"                                                                , "Memory", 0x53002040,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_4"                                                                           , "Memory", 0x53002044,        4, base=16, readOnly
+sfr = "StatusCPU3_4.[2:0]StatusCPU"                                                            , "Memory", 0x53002044,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_5"                                                                             , "Memory", 0x53002050,        4, base=16
+sfr = "LockCPU3_5.[2:0]LockCPU"                                                                , "Memory", 0x53002050,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_5"                                                                           , "Memory", 0x53002054,        4, base=16, readOnly
+sfr = "StatusCPU3_5.[2:0]StatusCPU"                                                            , "Memory", 0x53002054,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_6"                                                                             , "Memory", 0x53002060,        4, base=16
+sfr = "LockCPU3_6.[2:0]LockCPU"                                                                , "Memory", 0x53002060,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_6"                                                                           , "Memory", 0x53002064,        4, base=16, readOnly
+sfr = "StatusCPU3_6.[2:0]StatusCPU"                                                            , "Memory", 0x53002064,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_7"                                                                             , "Memory", 0x53002070,        4, base=16
+sfr = "LockCPU3_7.[2:0]LockCPU"                                                                , "Memory", 0x53002070,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_7"                                                                           , "Memory", 0x53002074,        4, base=16, readOnly
+sfr = "StatusCPU3_7.[2:0]StatusCPU"                                                            , "Memory", 0x53002074,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_8"                                                                             , "Memory", 0x53002080,        4, base=16
+sfr = "LockCPU3_8.[2:0]LockCPU"                                                                , "Memory", 0x53002080,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_8"                                                                           , "Memory", 0x53002084,        4, base=16, readOnly
+sfr = "StatusCPU3_8.[2:0]StatusCPU"                                                            , "Memory", 0x53002084,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_9"                                                                             , "Memory", 0x53002090,        4, base=16
+sfr = "LockCPU3_9.[2:0]LockCPU"                                                                , "Memory", 0x53002090,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_9"                                                                           , "Memory", 0x53002094,        4, base=16, readOnly
+sfr = "StatusCPU3_9.[2:0]StatusCPU"                                                            , "Memory", 0x53002094,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_10"                                                                            , "Memory", 0x530020A0,        4, base=16
+sfr = "LockCPU3_10.[2:0]LockCPU"                                                               , "Memory", 0x530020A0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_10"                                                                          , "Memory", 0x530020A4,        4, base=16, readOnly
+sfr = "StatusCPU3_10.[2:0]StatusCPU"                                                           , "Memory", 0x530020A4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_11"                                                                            , "Memory", 0x530020B0,        4, base=16
+sfr = "LockCPU3_11.[2:0]LockCPU"                                                               , "Memory", 0x530020B0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_11"                                                                          , "Memory", 0x530020B4,        4, base=16, readOnly
+sfr = "StatusCPU3_11.[2:0]StatusCPU"                                                           , "Memory", 0x530020B4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_12"                                                                            , "Memory", 0x530020C0,        4, base=16
+sfr = "LockCPU3_12.[2:0]LockCPU"                                                               , "Memory", 0x530020C0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_12"                                                                          , "Memory", 0x530020C4,        4, base=16, readOnly
+sfr = "StatusCPU3_12.[2:0]StatusCPU"                                                           , "Memory", 0x530020C4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_13"                                                                            , "Memory", 0x530020D0,        4, base=16
+sfr = "LockCPU3_13.[2:0]LockCPU"                                                               , "Memory", 0x530020D0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_13"                                                                          , "Memory", 0x530020D4,        4, base=16, readOnly
+sfr = "StatusCPU3_13.[2:0]StatusCPU"                                                           , "Memory", 0x530020D4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_14"                                                                            , "Memory", 0x530020E0,        4, base=16
+sfr = "LockCPU3_14.[2:0]LockCPU"                                                               , "Memory", 0x530020E0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_14"                                                                          , "Memory", 0x530020E4,        4, base=16, readOnly
+sfr = "StatusCPU3_14.[2:0]StatusCPU"                                                           , "Memory", 0x530020E4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_15"                                                                            , "Memory", 0x530020F0,        4, base=16
+sfr = "LockCPU3_15.[2:0]LockCPU"                                                               , "Memory", 0x530020F0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_15"                                                                          , "Memory", 0x530020F4,        4, base=16, readOnly
+sfr = "StatusCPU3_15.[2:0]StatusCPU"                                                           , "Memory", 0x530020F4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_16"                                                                            , "Memory", 0x53002100,        4, base=16
+sfr = "LockCPU3_16.[2:0]LockCPU"                                                               , "Memory", 0x53002100,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_16"                                                                          , "Memory", 0x53002104,        4, base=16, readOnly
+sfr = "StatusCPU3_16.[2:0]StatusCPU"                                                           , "Memory", 0x53002104,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_17"                                                                            , "Memory", 0x53002110,        4, base=16
+sfr = "LockCPU3_17.[2:0]LockCPU"                                                               , "Memory", 0x53002110,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_17"                                                                          , "Memory", 0x53002114,        4, base=16, readOnly
+sfr = "StatusCPU3_17.[2:0]StatusCPU"                                                           , "Memory", 0x53002114,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_18"                                                                            , "Memory", 0x53002120,        4, base=16
+sfr = "LockCPU3_18.[2:0]LockCPU"                                                               , "Memory", 0x53002120,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_18"                                                                          , "Memory", 0x53002124,        4, base=16, readOnly
+sfr = "StatusCPU3_18.[2:0]StatusCPU"                                                           , "Memory", 0x53002124,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_19"                                                                            , "Memory", 0x53002130,        4, base=16
+sfr = "LockCPU3_19.[2:0]LockCPU"                                                               , "Memory", 0x53002130,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_19"                                                                          , "Memory", 0x53002134,        4, base=16, readOnly
+sfr = "StatusCPU3_19.[2:0]StatusCPU"                                                           , "Memory", 0x53002134,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_20"                                                                            , "Memory", 0x53002140,        4, base=16
+sfr = "LockCPU3_20.[2:0]LockCPU"                                                               , "Memory", 0x53002140,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_20"                                                                          , "Memory", 0x53002144,        4, base=16, readOnly
+sfr = "StatusCPU3_20.[2:0]StatusCPU"                                                           , "Memory", 0x53002144,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_21"                                                                            , "Memory", 0x53002150,        4, base=16
+sfr = "LockCPU3_21.[2:0]LockCPU"                                                               , "Memory", 0x53002150,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_21"                                                                          , "Memory", 0x53002154,        4, base=16, readOnly
+sfr = "StatusCPU3_21.[2:0]StatusCPU"                                                           , "Memory", 0x53002154,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_22"                                                                            , "Memory", 0x53002160,        4, base=16
+sfr = "LockCPU3_22.[2:0]LockCPU"                                                               , "Memory", 0x53002160,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_22"                                                                          , "Memory", 0x53002164,        4, base=16, readOnly
+sfr = "StatusCPU3_22.[2:0]StatusCPU"                                                           , "Memory", 0x53002164,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_23"                                                                            , "Memory", 0x53002170,        4, base=16
+sfr = "LockCPU3_23.[2:0]LockCPU"                                                               , "Memory", 0x53002170,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_23"                                                                          , "Memory", 0x53002174,        4, base=16, readOnly
+sfr = "StatusCPU3_23.[2:0]StatusCPU"                                                           , "Memory", 0x53002174,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_24"                                                                            , "Memory", 0x53002180,        4, base=16
+sfr = "LockCPU3_24.[2:0]LockCPU"                                                               , "Memory", 0x53002180,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_24"                                                                          , "Memory", 0x53002184,        4, base=16, readOnly
+sfr = "StatusCPU3_24.[2:0]StatusCPU"                                                           , "Memory", 0x53002184,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_25"                                                                            , "Memory", 0x53002190,        4, base=16
+sfr = "LockCPU3_25.[2:0]LockCPU"                                                               , "Memory", 0x53002190,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_25"                                                                          , "Memory", 0x53002194,        4, base=16, readOnly
+sfr = "StatusCPU3_25.[2:0]StatusCPU"                                                           , "Memory", 0x53002194,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_26"                                                                            , "Memory", 0x530021A0,        4, base=16
+sfr = "LockCPU3_26.[2:0]LockCPU"                                                               , "Memory", 0x530021A0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_26"                                                                          , "Memory", 0x530021A4,        4, base=16, readOnly
+sfr = "StatusCPU3_26.[2:0]StatusCPU"                                                           , "Memory", 0x530021A4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_27"                                                                            , "Memory", 0x530021B0,        4, base=16
+sfr = "LockCPU3_27.[2:0]LockCPU"                                                               , "Memory", 0x530021B0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_27"                                                                          , "Memory", 0x530021B4,        4, base=16, readOnly
+sfr = "StatusCPU3_27.[2:0]StatusCPU"                                                           , "Memory", 0x530021B4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_28"                                                                            , "Memory", 0x530021C0,        4, base=16
+sfr = "LockCPU3_28.[2:0]LockCPU"                                                               , "Memory", 0x530021C0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_28"                                                                          , "Memory", 0x530021C4,        4, base=16, readOnly
+sfr = "StatusCPU3_28.[2:0]StatusCPU"                                                           , "Memory", 0x530021C4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_29"                                                                            , "Memory", 0x530021D0,        4, base=16
+sfr = "LockCPU3_29.[2:0]LockCPU"                                                               , "Memory", 0x530021D0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_29"                                                                          , "Memory", 0x530021D4,        4, base=16, readOnly
+sfr = "StatusCPU3_29.[2:0]StatusCPU"                                                           , "Memory", 0x530021D4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_30"                                                                            , "Memory", 0x530021E0,        4, base=16
+sfr = "LockCPU3_30.[2:0]LockCPU"                                                               , "Memory", 0x530021E0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_30"                                                                          , "Memory", 0x530021E4,        4, base=16, readOnly
+sfr = "StatusCPU3_30.[2:0]StatusCPU"                                                           , "Memory", 0x530021E4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_31"                                                                            , "Memory", 0x530021F0,        4, base=16
+sfr = "LockCPU3_31.[2:0]LockCPU"                                                               , "Memory", 0x530021F0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_31"                                                                          , "Memory", 0x530021F4,        4, base=16, readOnly
+sfr = "StatusCPU3_31.[2:0]StatusCPU"                                                           , "Memory", 0x530021F4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_32"                                                                            , "Memory", 0x53002200,        4, base=16
+sfr = "LockCPU3_32.[2:0]LockCPU"                                                               , "Memory", 0x53002200,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_32"                                                                          , "Memory", 0x53002204,        4, base=16, readOnly
+sfr = "StatusCPU3_32.[2:0]StatusCPU"                                                           , "Memory", 0x53002204,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_33"                                                                            , "Memory", 0x53002210,        4, base=16
+sfr = "LockCPU3_33.[2:0]LockCPU"                                                               , "Memory", 0x53002210,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_33"                                                                          , "Memory", 0x53002214,        4, base=16, readOnly
+sfr = "StatusCPU3_33.[2:0]StatusCPU"                                                           , "Memory", 0x53002214,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_34"                                                                            , "Memory", 0x53002220,        4, base=16
+sfr = "LockCPU3_34.[2:0]LockCPU"                                                               , "Memory", 0x53002220,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_34"                                                                          , "Memory", 0x53002224,        4, base=16, readOnly
+sfr = "StatusCPU3_34.[2:0]StatusCPU"                                                           , "Memory", 0x53002224,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_35"                                                                            , "Memory", 0x53002230,        4, base=16
+sfr = "LockCPU3_35.[2:0]LockCPU"                                                               , "Memory", 0x53002230,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_35"                                                                          , "Memory", 0x53002234,        4, base=16, readOnly
+sfr = "StatusCPU3_35.[2:0]StatusCPU"                                                           , "Memory", 0x53002234,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_36"                                                                            , "Memory", 0x53002240,        4, base=16
+sfr = "LockCPU3_36.[2:0]LockCPU"                                                               , "Memory", 0x53002240,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_36"                                                                          , "Memory", 0x53002244,        4, base=16, readOnly
+sfr = "StatusCPU3_36.[2:0]StatusCPU"                                                           , "Memory", 0x53002244,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_37"                                                                            , "Memory", 0x53002250,        4, base=16
+sfr = "LockCPU3_37.[2:0]LockCPU"                                                               , "Memory", 0x53002250,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_37"                                                                          , "Memory", 0x53002254,        4, base=16, readOnly
+sfr = "StatusCPU3_37.[2:0]StatusCPU"                                                           , "Memory", 0x53002254,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_38"                                                                            , "Memory", 0x53002260,        4, base=16
+sfr = "LockCPU3_38.[2:0]LockCPU"                                                               , "Memory", 0x53002260,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_38"                                                                          , "Memory", 0x53002264,        4, base=16, readOnly
+sfr = "StatusCPU3_38.[2:0]StatusCPU"                                                           , "Memory", 0x53002264,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_39"                                                                            , "Memory", 0x53002270,        4, base=16
+sfr = "LockCPU3_39.[2:0]LockCPU"                                                               , "Memory", 0x53002270,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_39"                                                                          , "Memory", 0x53002274,        4, base=16, readOnly
+sfr = "StatusCPU3_39.[2:0]StatusCPU"                                                           , "Memory", 0x53002274,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_40"                                                                            , "Memory", 0x53002280,        4, base=16
+sfr = "LockCPU3_40.[2:0]LockCPU"                                                               , "Memory", 0x53002280,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_40"                                                                          , "Memory", 0x53002284,        4, base=16, readOnly
+sfr = "StatusCPU3_40.[2:0]StatusCPU"                                                           , "Memory", 0x53002284,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_41"                                                                            , "Memory", 0x53002290,        4, base=16
+sfr = "LockCPU3_41.[2:0]LockCPU"                                                               , "Memory", 0x53002290,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_41"                                                                          , "Memory", 0x53002294,        4, base=16, readOnly
+sfr = "StatusCPU3_41.[2:0]StatusCPU"                                                           , "Memory", 0x53002294,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_42"                                                                            , "Memory", 0x530022A0,        4, base=16
+sfr = "LockCPU3_42.[2:0]LockCPU"                                                               , "Memory", 0x530022A0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_42"                                                                          , "Memory", 0x530022A4,        4, base=16, readOnly
+sfr = "StatusCPU3_42.[2:0]StatusCPU"                                                           , "Memory", 0x530022A4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_43"                                                                            , "Memory", 0x530022B0,        4, base=16
+sfr = "LockCPU3_43.[2:0]LockCPU"                                                               , "Memory", 0x530022B0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_43"                                                                          , "Memory", 0x530022B4,        4, base=16, readOnly
+sfr = "StatusCPU3_43.[2:0]StatusCPU"                                                           , "Memory", 0x530022B4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_44"                                                                            , "Memory", 0x530022C0,        4, base=16
+sfr = "LockCPU3_44.[2:0]LockCPU"                                                               , "Memory", 0x530022C0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_44"                                                                          , "Memory", 0x530022C4,        4, base=16, readOnly
+sfr = "StatusCPU3_44.[2:0]StatusCPU"                                                           , "Memory", 0x530022C4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_45"                                                                            , "Memory", 0x530022D0,        4, base=16
+sfr = "LockCPU3_45.[2:0]LockCPU"                                                               , "Memory", 0x530022D0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_45"                                                                          , "Memory", 0x530022D4,        4, base=16, readOnly
+sfr = "StatusCPU3_45.[2:0]StatusCPU"                                                           , "Memory", 0x530022D4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_46"                                                                            , "Memory", 0x530022E0,        4, base=16
+sfr = "LockCPU3_46.[2:0]LockCPU"                                                               , "Memory", 0x530022E0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_46"                                                                          , "Memory", 0x530022E4,        4, base=16, readOnly
+sfr = "StatusCPU3_46.[2:0]StatusCPU"                                                           , "Memory", 0x530022E4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_47"                                                                            , "Memory", 0x530022F0,        4, base=16
+sfr = "LockCPU3_47.[2:0]LockCPU"                                                               , "Memory", 0x530022F0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_47"                                                                          , "Memory", 0x530022F4,        4, base=16, readOnly
+sfr = "StatusCPU3_47.[2:0]StatusCPU"                                                           , "Memory", 0x530022F4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_48"                                                                            , "Memory", 0x53002300,        4, base=16
+sfr = "LockCPU3_48.[2:0]LockCPU"                                                               , "Memory", 0x53002300,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_48"                                                                          , "Memory", 0x53002304,        4, base=16, readOnly
+sfr = "StatusCPU3_48.[2:0]StatusCPU"                                                           , "Memory", 0x53002304,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_49"                                                                            , "Memory", 0x53002310,        4, base=16
+sfr = "LockCPU3_49.[2:0]LockCPU"                                                               , "Memory", 0x53002310,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_49"                                                                          , "Memory", 0x53002314,        4, base=16, readOnly
+sfr = "StatusCPU3_49.[2:0]StatusCPU"                                                           , "Memory", 0x53002314,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_50"                                                                            , "Memory", 0x53002320,        4, base=16
+sfr = "LockCPU3_50.[2:0]LockCPU"                                                               , "Memory", 0x53002320,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_50"                                                                          , "Memory", 0x53002324,        4, base=16, readOnly
+sfr = "StatusCPU3_50.[2:0]StatusCPU"                                                           , "Memory", 0x53002324,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_51"                                                                            , "Memory", 0x53002330,        4, base=16
+sfr = "LockCPU3_51.[2:0]LockCPU"                                                               , "Memory", 0x53002330,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_51"                                                                          , "Memory", 0x53002334,        4, base=16, readOnly
+sfr = "StatusCPU3_51.[2:0]StatusCPU"                                                           , "Memory", 0x53002334,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_52"                                                                            , "Memory", 0x53002340,        4, base=16
+sfr = "LockCPU3_52.[2:0]LockCPU"                                                               , "Memory", 0x53002340,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_52"                                                                          , "Memory", 0x53002344,        4, base=16, readOnly
+sfr = "StatusCPU3_52.[2:0]StatusCPU"                                                           , "Memory", 0x53002344,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_53"                                                                            , "Memory", 0x53002350,        4, base=16
+sfr = "LockCPU3_53.[2:0]LockCPU"                                                               , "Memory", 0x53002350,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_53"                                                                          , "Memory", 0x53002354,        4, base=16, readOnly
+sfr = "StatusCPU3_53.[2:0]StatusCPU"                                                           , "Memory", 0x53002354,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_54"                                                                            , "Memory", 0x53002360,        4, base=16
+sfr = "LockCPU3_54.[2:0]LockCPU"                                                               , "Memory", 0x53002360,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_54"                                                                          , "Memory", 0x53002364,        4, base=16, readOnly
+sfr = "StatusCPU3_54.[2:0]StatusCPU"                                                           , "Memory", 0x53002364,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_55"                                                                            , "Memory", 0x53002370,        4, base=16
+sfr = "LockCPU3_55.[2:0]LockCPU"                                                               , "Memory", 0x53002370,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_55"                                                                          , "Memory", 0x53002374,        4, base=16, readOnly
+sfr = "StatusCPU3_55.[2:0]StatusCPU"                                                           , "Memory", 0x53002374,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_56"                                                                            , "Memory", 0x53002380,        4, base=16
+sfr = "LockCPU3_56.[2:0]LockCPU"                                                               , "Memory", 0x53002380,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_56"                                                                          , "Memory", 0x53002384,        4, base=16, readOnly
+sfr = "StatusCPU3_56.[2:0]StatusCPU"                                                           , "Memory", 0x53002384,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_57"                                                                            , "Memory", 0x53002390,        4, base=16
+sfr = "LockCPU3_57.[2:0]LockCPU"                                                               , "Memory", 0x53002390,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_57"                                                                          , "Memory", 0x53002394,        4, base=16, readOnly
+sfr = "StatusCPU3_57.[2:0]StatusCPU"                                                           , "Memory", 0x53002394,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_58"                                                                            , "Memory", 0x530023A0,        4, base=16
+sfr = "LockCPU3_58.[2:0]LockCPU"                                                               , "Memory", 0x530023A0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_58"                                                                          , "Memory", 0x530023A4,        4, base=16, readOnly
+sfr = "StatusCPU3_58.[2:0]StatusCPU"                                                           , "Memory", 0x530023A4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_59"                                                                            , "Memory", 0x530023B0,        4, base=16
+sfr = "LockCPU3_59.[2:0]LockCPU"                                                               , "Memory", 0x530023B0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_59"                                                                          , "Memory", 0x530023B4,        4, base=16, readOnly
+sfr = "StatusCPU3_59.[2:0]StatusCPU"                                                           , "Memory", 0x530023B4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_60"                                                                            , "Memory", 0x530023C0,        4, base=16
+sfr = "LockCPU3_60.[2:0]LockCPU"                                                               , "Memory", 0x530023C0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_60"                                                                          , "Memory", 0x530023C4,        4, base=16, readOnly
+sfr = "StatusCPU3_60.[2:0]StatusCPU"                                                           , "Memory", 0x530023C4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_61"                                                                            , "Memory", 0x530023D0,        4, base=16
+sfr = "LockCPU3_61.[2:0]LockCPU"                                                               , "Memory", 0x530023D0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_61"                                                                          , "Memory", 0x530023D4,        4, base=16, readOnly
+sfr = "StatusCPU3_61.[2:0]StatusCPU"                                                           , "Memory", 0x530023D4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_62"                                                                            , "Memory", 0x530023E0,        4, base=16
+sfr = "LockCPU3_62.[2:0]LockCPU"                                                               , "Memory", 0x530023E0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_62"                                                                          , "Memory", 0x530023E4,        4, base=16, readOnly
+sfr = "StatusCPU3_62.[2:0]StatusCPU"                                                           , "Memory", 0x530023E4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU3_63"                                                                            , "Memory", 0x530023F0,        4, base=16
+sfr = "LockCPU3_63.[2:0]LockCPU"                                                               , "Memory", 0x530023F0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU3_63"                                                                          , "Memory", 0x530023F4,        4, base=16, readOnly
+sfr = "StatusCPU3_63.[2:0]StatusCPU"                                                           , "Memory", 0x530023F4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_0"                                                                             , "Memory", 0x53003000,        4, base=16
+sfr = "LockCPU4_0.[2:0]LockCPU"                                                                , "Memory", 0x53003000,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_0"                                                                           , "Memory", 0x53003004,        4, base=16, readOnly
+sfr = "StatusCPU4_0.[2:0]StatusCPU"                                                            , "Memory", 0x53003004,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_1"                                                                             , "Memory", 0x53003010,        4, base=16
+sfr = "LockCPU4_1.[2:0]LockCPU"                                                                , "Memory", 0x53003010,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_1"                                                                           , "Memory", 0x53003014,        4, base=16, readOnly
+sfr = "StatusCPU4_1.[2:0]StatusCPU"                                                            , "Memory", 0x53003014,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_2"                                                                             , "Memory", 0x53003020,        4, base=16
+sfr = "LockCPU4_2.[2:0]LockCPU"                                                                , "Memory", 0x53003020,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_2"                                                                           , "Memory", 0x53003024,        4, base=16, readOnly
+sfr = "StatusCPU4_2.[2:0]StatusCPU"                                                            , "Memory", 0x53003024,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_3"                                                                             , "Memory", 0x53003030,        4, base=16
+sfr = "LockCPU4_3.[2:0]LockCPU"                                                                , "Memory", 0x53003030,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_3"                                                                           , "Memory", 0x53003034,        4, base=16, readOnly
+sfr = "StatusCPU4_3.[2:0]StatusCPU"                                                            , "Memory", 0x53003034,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_4"                                                                             , "Memory", 0x53003040,        4, base=16
+sfr = "LockCPU4_4.[2:0]LockCPU"                                                                , "Memory", 0x53003040,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_4"                                                                           , "Memory", 0x53003044,        4, base=16, readOnly
+sfr = "StatusCPU4_4.[2:0]StatusCPU"                                                            , "Memory", 0x53003044,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_5"                                                                             , "Memory", 0x53003050,        4, base=16
+sfr = "LockCPU4_5.[2:0]LockCPU"                                                                , "Memory", 0x53003050,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_5"                                                                           , "Memory", 0x53003054,        4, base=16, readOnly
+sfr = "StatusCPU4_5.[2:0]StatusCPU"                                                            , "Memory", 0x53003054,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_6"                                                                             , "Memory", 0x53003060,        4, base=16
+sfr = "LockCPU4_6.[2:0]LockCPU"                                                                , "Memory", 0x53003060,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_6"                                                                           , "Memory", 0x53003064,        4, base=16, readOnly
+sfr = "StatusCPU4_6.[2:0]StatusCPU"                                                            , "Memory", 0x53003064,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_7"                                                                             , "Memory", 0x53003070,        4, base=16
+sfr = "LockCPU4_7.[2:0]LockCPU"                                                                , "Memory", 0x53003070,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_7"                                                                           , "Memory", 0x53003074,        4, base=16, readOnly
+sfr = "StatusCPU4_7.[2:0]StatusCPU"                                                            , "Memory", 0x53003074,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_8"                                                                             , "Memory", 0x53003080,        4, base=16
+sfr = "LockCPU4_8.[2:0]LockCPU"                                                                , "Memory", 0x53003080,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_8"                                                                           , "Memory", 0x53003084,        4, base=16, readOnly
+sfr = "StatusCPU4_8.[2:0]StatusCPU"                                                            , "Memory", 0x53003084,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_9"                                                                             , "Memory", 0x53003090,        4, base=16
+sfr = "LockCPU4_9.[2:0]LockCPU"                                                                , "Memory", 0x53003090,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_9"                                                                           , "Memory", 0x53003094,        4, base=16, readOnly
+sfr = "StatusCPU4_9.[2:0]StatusCPU"                                                            , "Memory", 0x53003094,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_10"                                                                            , "Memory", 0x530030A0,        4, base=16
+sfr = "LockCPU4_10.[2:0]LockCPU"                                                               , "Memory", 0x530030A0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_10"                                                                          , "Memory", 0x530030A4,        4, base=16, readOnly
+sfr = "StatusCPU4_10.[2:0]StatusCPU"                                                           , "Memory", 0x530030A4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_11"                                                                            , "Memory", 0x530030B0,        4, base=16
+sfr = "LockCPU4_11.[2:0]LockCPU"                                                               , "Memory", 0x530030B0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_11"                                                                          , "Memory", 0x530030B4,        4, base=16, readOnly
+sfr = "StatusCPU4_11.[2:0]StatusCPU"                                                           , "Memory", 0x530030B4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_12"                                                                            , "Memory", 0x530030C0,        4, base=16
+sfr = "LockCPU4_12.[2:0]LockCPU"                                                               , "Memory", 0x530030C0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_12"                                                                          , "Memory", 0x530030C4,        4, base=16, readOnly
+sfr = "StatusCPU4_12.[2:0]StatusCPU"                                                           , "Memory", 0x530030C4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_13"                                                                            , "Memory", 0x530030D0,        4, base=16
+sfr = "LockCPU4_13.[2:0]LockCPU"                                                               , "Memory", 0x530030D0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_13"                                                                          , "Memory", 0x530030D4,        4, base=16, readOnly
+sfr = "StatusCPU4_13.[2:0]StatusCPU"                                                           , "Memory", 0x530030D4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_14"                                                                            , "Memory", 0x530030E0,        4, base=16
+sfr = "LockCPU4_14.[2:0]LockCPU"                                                               , "Memory", 0x530030E0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_14"                                                                          , "Memory", 0x530030E4,        4, base=16, readOnly
+sfr = "StatusCPU4_14.[2:0]StatusCPU"                                                           , "Memory", 0x530030E4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_15"                                                                            , "Memory", 0x530030F0,        4, base=16
+sfr = "LockCPU4_15.[2:0]LockCPU"                                                               , "Memory", 0x530030F0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_15"                                                                          , "Memory", 0x530030F4,        4, base=16, readOnly
+sfr = "StatusCPU4_15.[2:0]StatusCPU"                                                           , "Memory", 0x530030F4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_16"                                                                            , "Memory", 0x53003100,        4, base=16
+sfr = "LockCPU4_16.[2:0]LockCPU"                                                               , "Memory", 0x53003100,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_16"                                                                          , "Memory", 0x53003104,        4, base=16, readOnly
+sfr = "StatusCPU4_16.[2:0]StatusCPU"                                                           , "Memory", 0x53003104,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_17"                                                                            , "Memory", 0x53003110,        4, base=16
+sfr = "LockCPU4_17.[2:0]LockCPU"                                                               , "Memory", 0x53003110,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_17"                                                                          , "Memory", 0x53003114,        4, base=16, readOnly
+sfr = "StatusCPU4_17.[2:0]StatusCPU"                                                           , "Memory", 0x53003114,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_18"                                                                            , "Memory", 0x53003120,        4, base=16
+sfr = "LockCPU4_18.[2:0]LockCPU"                                                               , "Memory", 0x53003120,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_18"                                                                          , "Memory", 0x53003124,        4, base=16, readOnly
+sfr = "StatusCPU4_18.[2:0]StatusCPU"                                                           , "Memory", 0x53003124,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_19"                                                                            , "Memory", 0x53003130,        4, base=16
+sfr = "LockCPU4_19.[2:0]LockCPU"                                                               , "Memory", 0x53003130,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_19"                                                                          , "Memory", 0x53003134,        4, base=16, readOnly
+sfr = "StatusCPU4_19.[2:0]StatusCPU"                                                           , "Memory", 0x53003134,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_20"                                                                            , "Memory", 0x53003140,        4, base=16
+sfr = "LockCPU4_20.[2:0]LockCPU"                                                               , "Memory", 0x53003140,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_20"                                                                          , "Memory", 0x53003144,        4, base=16, readOnly
+sfr = "StatusCPU4_20.[2:0]StatusCPU"                                                           , "Memory", 0x53003144,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_21"                                                                            , "Memory", 0x53003150,        4, base=16
+sfr = "LockCPU4_21.[2:0]LockCPU"                                                               , "Memory", 0x53003150,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_21"                                                                          , "Memory", 0x53003154,        4, base=16, readOnly
+sfr = "StatusCPU4_21.[2:0]StatusCPU"                                                           , "Memory", 0x53003154,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_22"                                                                            , "Memory", 0x53003160,        4, base=16
+sfr = "LockCPU4_22.[2:0]LockCPU"                                                               , "Memory", 0x53003160,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_22"                                                                          , "Memory", 0x53003164,        4, base=16, readOnly
+sfr = "StatusCPU4_22.[2:0]StatusCPU"                                                           , "Memory", 0x53003164,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_23"                                                                            , "Memory", 0x53003170,        4, base=16
+sfr = "LockCPU4_23.[2:0]LockCPU"                                                               , "Memory", 0x53003170,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_23"                                                                          , "Memory", 0x53003174,        4, base=16, readOnly
+sfr = "StatusCPU4_23.[2:0]StatusCPU"                                                           , "Memory", 0x53003174,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_24"                                                                            , "Memory", 0x53003180,        4, base=16
+sfr = "LockCPU4_24.[2:0]LockCPU"                                                               , "Memory", 0x53003180,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_24"                                                                          , "Memory", 0x53003184,        4, base=16, readOnly
+sfr = "StatusCPU4_24.[2:0]StatusCPU"                                                           , "Memory", 0x53003184,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_25"                                                                            , "Memory", 0x53003190,        4, base=16
+sfr = "LockCPU4_25.[2:0]LockCPU"                                                               , "Memory", 0x53003190,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_25"                                                                          , "Memory", 0x53003194,        4, base=16, readOnly
+sfr = "StatusCPU4_25.[2:0]StatusCPU"                                                           , "Memory", 0x53003194,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_26"                                                                            , "Memory", 0x530031A0,        4, base=16
+sfr = "LockCPU4_26.[2:0]LockCPU"                                                               , "Memory", 0x530031A0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_26"                                                                          , "Memory", 0x530031A4,        4, base=16, readOnly
+sfr = "StatusCPU4_26.[2:0]StatusCPU"                                                           , "Memory", 0x530031A4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_27"                                                                            , "Memory", 0x530031B0,        4, base=16
+sfr = "LockCPU4_27.[2:0]LockCPU"                                                               , "Memory", 0x530031B0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_27"                                                                          , "Memory", 0x530031B4,        4, base=16, readOnly
+sfr = "StatusCPU4_27.[2:0]StatusCPU"                                                           , "Memory", 0x530031B4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_28"                                                                            , "Memory", 0x530031C0,        4, base=16
+sfr = "LockCPU4_28.[2:0]LockCPU"                                                               , "Memory", 0x530031C0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_28"                                                                          , "Memory", 0x530031C4,        4, base=16, readOnly
+sfr = "StatusCPU4_28.[2:0]StatusCPU"                                                           , "Memory", 0x530031C4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_29"                                                                            , "Memory", 0x530031D0,        4, base=16
+sfr = "LockCPU4_29.[2:0]LockCPU"                                                               , "Memory", 0x530031D0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_29"                                                                          , "Memory", 0x530031D4,        4, base=16, readOnly
+sfr = "StatusCPU4_29.[2:0]StatusCPU"                                                           , "Memory", 0x530031D4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_30"                                                                            , "Memory", 0x530031E0,        4, base=16
+sfr = "LockCPU4_30.[2:0]LockCPU"                                                               , "Memory", 0x530031E0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_30"                                                                          , "Memory", 0x530031E4,        4, base=16, readOnly
+sfr = "StatusCPU4_30.[2:0]StatusCPU"                                                           , "Memory", 0x530031E4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_31"                                                                            , "Memory", 0x530031F0,        4, base=16
+sfr = "LockCPU4_31.[2:0]LockCPU"                                                               , "Memory", 0x530031F0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_31"                                                                          , "Memory", 0x530031F4,        4, base=16, readOnly
+sfr = "StatusCPU4_31.[2:0]StatusCPU"                                                           , "Memory", 0x530031F4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_32"                                                                            , "Memory", 0x53003200,        4, base=16
+sfr = "LockCPU4_32.[2:0]LockCPU"                                                               , "Memory", 0x53003200,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_32"                                                                          , "Memory", 0x53003204,        4, base=16, readOnly
+sfr = "StatusCPU4_32.[2:0]StatusCPU"                                                           , "Memory", 0x53003204,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_33"                                                                            , "Memory", 0x53003210,        4, base=16
+sfr = "LockCPU4_33.[2:0]LockCPU"                                                               , "Memory", 0x53003210,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_33"                                                                          , "Memory", 0x53003214,        4, base=16, readOnly
+sfr = "StatusCPU4_33.[2:0]StatusCPU"                                                           , "Memory", 0x53003214,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_34"                                                                            , "Memory", 0x53003220,        4, base=16
+sfr = "LockCPU4_34.[2:0]LockCPU"                                                               , "Memory", 0x53003220,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_34"                                                                          , "Memory", 0x53003224,        4, base=16, readOnly
+sfr = "StatusCPU4_34.[2:0]StatusCPU"                                                           , "Memory", 0x53003224,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_35"                                                                            , "Memory", 0x53003230,        4, base=16
+sfr = "LockCPU4_35.[2:0]LockCPU"                                                               , "Memory", 0x53003230,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_35"                                                                          , "Memory", 0x53003234,        4, base=16, readOnly
+sfr = "StatusCPU4_35.[2:0]StatusCPU"                                                           , "Memory", 0x53003234,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_36"                                                                            , "Memory", 0x53003240,        4, base=16
+sfr = "LockCPU4_36.[2:0]LockCPU"                                                               , "Memory", 0x53003240,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_36"                                                                          , "Memory", 0x53003244,        4, base=16, readOnly
+sfr = "StatusCPU4_36.[2:0]StatusCPU"                                                           , "Memory", 0x53003244,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_37"                                                                            , "Memory", 0x53003250,        4, base=16
+sfr = "LockCPU4_37.[2:0]LockCPU"                                                               , "Memory", 0x53003250,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_37"                                                                          , "Memory", 0x53003254,        4, base=16, readOnly
+sfr = "StatusCPU4_37.[2:0]StatusCPU"                                                           , "Memory", 0x53003254,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_38"                                                                            , "Memory", 0x53003260,        4, base=16
+sfr = "LockCPU4_38.[2:0]LockCPU"                                                               , "Memory", 0x53003260,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_38"                                                                          , "Memory", 0x53003264,        4, base=16, readOnly
+sfr = "StatusCPU4_38.[2:0]StatusCPU"                                                           , "Memory", 0x53003264,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_39"                                                                            , "Memory", 0x53003270,        4, base=16
+sfr = "LockCPU4_39.[2:0]LockCPU"                                                               , "Memory", 0x53003270,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_39"                                                                          , "Memory", 0x53003274,        4, base=16, readOnly
+sfr = "StatusCPU4_39.[2:0]StatusCPU"                                                           , "Memory", 0x53003274,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_40"                                                                            , "Memory", 0x53003280,        4, base=16
+sfr = "LockCPU4_40.[2:0]LockCPU"                                                               , "Memory", 0x53003280,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_40"                                                                          , "Memory", 0x53003284,        4, base=16, readOnly
+sfr = "StatusCPU4_40.[2:0]StatusCPU"                                                           , "Memory", 0x53003284,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_41"                                                                            , "Memory", 0x53003290,        4, base=16
+sfr = "LockCPU4_41.[2:0]LockCPU"                                                               , "Memory", 0x53003290,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_41"                                                                          , "Memory", 0x53003294,        4, base=16, readOnly
+sfr = "StatusCPU4_41.[2:0]StatusCPU"                                                           , "Memory", 0x53003294,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_42"                                                                            , "Memory", 0x530032A0,        4, base=16
+sfr = "LockCPU4_42.[2:0]LockCPU"                                                               , "Memory", 0x530032A0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_42"                                                                          , "Memory", 0x530032A4,        4, base=16, readOnly
+sfr = "StatusCPU4_42.[2:0]StatusCPU"                                                           , "Memory", 0x530032A4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_43"                                                                            , "Memory", 0x530032B0,        4, base=16
+sfr = "LockCPU4_43.[2:0]LockCPU"                                                               , "Memory", 0x530032B0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_43"                                                                          , "Memory", 0x530032B4,        4, base=16, readOnly
+sfr = "StatusCPU4_43.[2:0]StatusCPU"                                                           , "Memory", 0x530032B4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_44"                                                                            , "Memory", 0x530032C0,        4, base=16
+sfr = "LockCPU4_44.[2:0]LockCPU"                                                               , "Memory", 0x530032C0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_44"                                                                          , "Memory", 0x530032C4,        4, base=16, readOnly
+sfr = "StatusCPU4_44.[2:0]StatusCPU"                                                           , "Memory", 0x530032C4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_45"                                                                            , "Memory", 0x530032D0,        4, base=16
+sfr = "LockCPU4_45.[2:0]LockCPU"                                                               , "Memory", 0x530032D0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_45"                                                                          , "Memory", 0x530032D4,        4, base=16, readOnly
+sfr = "StatusCPU4_45.[2:0]StatusCPU"                                                           , "Memory", 0x530032D4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_46"                                                                            , "Memory", 0x530032E0,        4, base=16
+sfr = "LockCPU4_46.[2:0]LockCPU"                                                               , "Memory", 0x530032E0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_46"                                                                          , "Memory", 0x530032E4,        4, base=16, readOnly
+sfr = "StatusCPU4_46.[2:0]StatusCPU"                                                           , "Memory", 0x530032E4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_47"                                                                            , "Memory", 0x530032F0,        4, base=16
+sfr = "LockCPU4_47.[2:0]LockCPU"                                                               , "Memory", 0x530032F0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_47"                                                                          , "Memory", 0x530032F4,        4, base=16, readOnly
+sfr = "StatusCPU4_47.[2:0]StatusCPU"                                                           , "Memory", 0x530032F4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_48"                                                                            , "Memory", 0x53003300,        4, base=16
+sfr = "LockCPU4_48.[2:0]LockCPU"                                                               , "Memory", 0x53003300,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_48"                                                                          , "Memory", 0x53003304,        4, base=16, readOnly
+sfr = "StatusCPU4_48.[2:0]StatusCPU"                                                           , "Memory", 0x53003304,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_49"                                                                            , "Memory", 0x53003310,        4, base=16
+sfr = "LockCPU4_49.[2:0]LockCPU"                                                               , "Memory", 0x53003310,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_49"                                                                          , "Memory", 0x53003314,        4, base=16, readOnly
+sfr = "StatusCPU4_49.[2:0]StatusCPU"                                                           , "Memory", 0x53003314,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_50"                                                                            , "Memory", 0x53003320,        4, base=16
+sfr = "LockCPU4_50.[2:0]LockCPU"                                                               , "Memory", 0x53003320,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_50"                                                                          , "Memory", 0x53003324,        4, base=16, readOnly
+sfr = "StatusCPU4_50.[2:0]StatusCPU"                                                           , "Memory", 0x53003324,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_51"                                                                            , "Memory", 0x53003330,        4, base=16
+sfr = "LockCPU4_51.[2:0]LockCPU"                                                               , "Memory", 0x53003330,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_51"                                                                          , "Memory", 0x53003334,        4, base=16, readOnly
+sfr = "StatusCPU4_51.[2:0]StatusCPU"                                                           , "Memory", 0x53003334,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_52"                                                                            , "Memory", 0x53003340,        4, base=16
+sfr = "LockCPU4_52.[2:0]LockCPU"                                                               , "Memory", 0x53003340,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_52"                                                                          , "Memory", 0x53003344,        4, base=16, readOnly
+sfr = "StatusCPU4_52.[2:0]StatusCPU"                                                           , "Memory", 0x53003344,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_53"                                                                            , "Memory", 0x53003350,        4, base=16
+sfr = "LockCPU4_53.[2:0]LockCPU"                                                               , "Memory", 0x53003350,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_53"                                                                          , "Memory", 0x53003354,        4, base=16, readOnly
+sfr = "StatusCPU4_53.[2:0]StatusCPU"                                                           , "Memory", 0x53003354,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_54"                                                                            , "Memory", 0x53003360,        4, base=16
+sfr = "LockCPU4_54.[2:0]LockCPU"                                                               , "Memory", 0x53003360,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_54"                                                                          , "Memory", 0x53003364,        4, base=16, readOnly
+sfr = "StatusCPU4_54.[2:0]StatusCPU"                                                           , "Memory", 0x53003364,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_55"                                                                            , "Memory", 0x53003370,        4, base=16
+sfr = "LockCPU4_55.[2:0]LockCPU"                                                               , "Memory", 0x53003370,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_55"                                                                          , "Memory", 0x53003374,        4, base=16, readOnly
+sfr = "StatusCPU4_55.[2:0]StatusCPU"                                                           , "Memory", 0x53003374,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_56"                                                                            , "Memory", 0x53003380,        4, base=16
+sfr = "LockCPU4_56.[2:0]LockCPU"                                                               , "Memory", 0x53003380,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_56"                                                                          , "Memory", 0x53003384,        4, base=16, readOnly
+sfr = "StatusCPU4_56.[2:0]StatusCPU"                                                           , "Memory", 0x53003384,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_57"                                                                            , "Memory", 0x53003390,        4, base=16
+sfr = "LockCPU4_57.[2:0]LockCPU"                                                               , "Memory", 0x53003390,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_57"                                                                          , "Memory", 0x53003394,        4, base=16, readOnly
+sfr = "StatusCPU4_57.[2:0]StatusCPU"                                                           , "Memory", 0x53003394,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_58"                                                                            , "Memory", 0x530033A0,        4, base=16
+sfr = "LockCPU4_58.[2:0]LockCPU"                                                               , "Memory", 0x530033A0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_58"                                                                          , "Memory", 0x530033A4,        4, base=16, readOnly
+sfr = "StatusCPU4_58.[2:0]StatusCPU"                                                           , "Memory", 0x530033A4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_59"                                                                            , "Memory", 0x530033B0,        4, base=16
+sfr = "LockCPU4_59.[2:0]LockCPU"                                                               , "Memory", 0x530033B0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_59"                                                                          , "Memory", 0x530033B4,        4, base=16, readOnly
+sfr = "StatusCPU4_59.[2:0]StatusCPU"                                                           , "Memory", 0x530033B4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_60"                                                                            , "Memory", 0x530033C0,        4, base=16
+sfr = "LockCPU4_60.[2:0]LockCPU"                                                               , "Memory", 0x530033C0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_60"                                                                          , "Memory", 0x530033C4,        4, base=16, readOnly
+sfr = "StatusCPU4_60.[2:0]StatusCPU"                                                           , "Memory", 0x530033C4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_61"                                                                            , "Memory", 0x530033D0,        4, base=16
+sfr = "LockCPU4_61.[2:0]LockCPU"                                                               , "Memory", 0x530033D0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_61"                                                                          , "Memory", 0x530033D4,        4, base=16, readOnly
+sfr = "StatusCPU4_61.[2:0]StatusCPU"                                                           , "Memory", 0x530033D4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_62"                                                                            , "Memory", 0x530033E0,        4, base=16
+sfr = "LockCPU4_62.[2:0]LockCPU"                                                               , "Memory", 0x530033E0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_62"                                                                          , "Memory", 0x530033E4,        4, base=16, readOnly
+sfr = "StatusCPU4_62.[2:0]StatusCPU"                                                           , "Memory", 0x530033E4,        4, base=16, readOnly, bitRange=0-2
+sfr = "LockCPU4_63"                                                                            , "Memory", 0x530033F0,        4, base=16
+sfr = "LockCPU4_63.[2:0]LockCPU"                                                               , "Memory", 0x530033F0,        4, base=16, bitRange=0-2
+sfr = "StatusCPU4_63"                                                                          , "Memory", 0x530033F4,        4, base=16, readOnly
+sfr = "StatusCPU4_63.[2:0]StatusCPU"                                                           , "Memory", 0x530033F4,        4, base=16, readOnly, bitRange=0-2
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// Semaphore -----
+group = "SEMAP","LockCPU1_0","StatusCPU1_0","LockCPU1_1","StatusCPU1_1","LockCPU1_2","StatusCPU1_2","LockCPU1_3","StatusCPU1_3","LockCPU1_4","StatusCPU1_4","LockCPU1_5","StatusCPU1_5","LockCPU1_6","StatusCPU1_6","LockCPU1_7","StatusCPU1_7","LockCPU1_8","StatusCPU1_8","LockCPU1_9","StatusCPU1_9","LockCPU1_10","StatusCPU1_10","LockCPU1_11","StatusCPU1_11","LockCPU1_12","StatusCPU1_12","LockCPU1_13","StatusCPU1_13","LockCPU1_14","StatusCPU1_14","LockCPU1_15","StatusCPU1_15","LockCPU1_16","StatusCPU1_16","LockCPU1_17","StatusCPU1_17","LockCPU1_18","StatusCPU1_18","LockCPU1_19","StatusCPU1_19","LockCPU1_20","StatusCPU1_20","LockCPU1_21","StatusCPU1_21","LockCPU1_22","StatusCPU1_22","LockCPU1_23","StatusCPU1_23","LockCPU1_24","StatusCPU1_24","LockCPU1_25","StatusCPU1_25","LockCPU1_26","StatusCPU1_26","LockCPU1_27","StatusCPU1_27","LockCPU1_28","StatusCPU1_28","LockCPU1_29","StatusCPU1_29","LockCPU1_30","StatusCPU1_30","LockCPU1_31","StatusCPU1_31","LockCPU1_32","StatusCPU1_32","LockCPU1_33","StatusCPU1_33","LockCPU1_34","StatusCPU1_34","LockCPU1_35","StatusCPU1_35","LockCPU1_36","StatusCPU1_36","LockCPU1_37","StatusCPU1_37","LockCPU1_38","StatusCPU1_38","LockCPU1_39","StatusCPU1_39","LockCPU1_40","StatusCPU1_40","LockCPU1_41","StatusCPU1_41","LockCPU1_42","StatusCPU1_42","LockCPU1_43","StatusCPU1_43","LockCPU1_44","StatusCPU1_44","LockCPU1_45","StatusCPU1_45","LockCPU1_46","StatusCPU1_46","LockCPU1_47","StatusCPU1_47","LockCPU1_48","StatusCPU1_48","LockCPU1_49","StatusCPU1_49","LockCPU1_50","StatusCPU1_50","LockCPU1_51","StatusCPU1_51","LockCPU1_52","StatusCPU1_52","LockCPU1_53","StatusCPU1_53","LockCPU1_54","StatusCPU1_54","LockCPU1_55","StatusCPU1_55","LockCPU1_56","StatusCPU1_56","LockCPU1_57","StatusCPU1_57","LockCPU1_58","StatusCPU1_58","LockCPU1_59","StatusCPU1_59","LockCPU1_60","StatusCPU1_60","LockCPU1_61","StatusCPU1_61","LockCPU1_62","StatusCPU1_62","LockCPU1_63","StatusCPU1_63","LockCPU2_0","StatusCPU2_0","LockCPU2_1","StatusCPU2_1","LockCPU2_2","StatusCPU2_2","LockCPU2_3","StatusCPU2_3","LockCPU2_4","StatusCPU2_4","LockCPU2_5","StatusCPU2_5","LockCPU2_6","StatusCPU2_6","LockCPU2_7","StatusCPU2_7","LockCPU2_8","StatusCPU2_8","LockCPU2_9","StatusCPU2_9","LockCPU2_10","StatusCPU2_10","LockCPU2_11","StatusCPU2_11","LockCPU2_12","StatusCPU2_12","LockCPU2_13","StatusCPU2_13","LockCPU2_14","StatusCPU2_14","LockCPU2_15","StatusCPU2_15","LockCPU2_16","StatusCPU2_16","LockCPU2_17","StatusCPU2_17","LockCPU2_18","StatusCPU2_18","LockCPU2_19","StatusCPU2_19","LockCPU2_20","StatusCPU2_20","LockCPU2_21","StatusCPU2_21","LockCPU2_22","StatusCPU2_22","LockCPU2_23","StatusCPU2_23","LockCPU2_24","StatusCPU2_24","LockCPU2_25","StatusCPU2_25","LockCPU2_26","StatusCPU2_26","LockCPU2_27","StatusCPU2_27","LockCPU2_28","StatusCPU2_28","LockCPU2_29","StatusCPU2_29","LockCPU2_30","StatusCPU2_30","LockCPU2_31","StatusCPU2_31","LockCPU2_32","StatusCPU2_32","LockCPU2_33","StatusCPU2_33","LockCPU2_34","StatusCPU2_34","LockCPU2_35","StatusCPU2_35","LockCPU2_36","StatusCPU2_36","LockCPU2_37","StatusCPU2_37","LockCPU2_38","StatusCPU2_38","LockCPU2_39","StatusCPU2_39","LockCPU2_40","StatusCPU2_40","LockCPU2_41","StatusCPU2_41","LockCPU2_42","StatusCPU2_42","LockCPU2_43","StatusCPU2_43","LockCPU2_44","StatusCPU2_44","LockCPU2_45","StatusCPU2_45","LockCPU2_46","StatusCPU2_46","LockCPU2_47","StatusCPU2_47","LockCPU2_48","StatusCPU2_48","LockCPU2_49","StatusCPU2_49","LockCPU2_50","StatusCPU2_50","LockCPU2_51","StatusCPU2_51","LockCPU2_52","StatusCPU2_52","LockCPU2_53","StatusCPU2_53","LockCPU2_54","StatusCPU2_54","LockCPU2_55","StatusCPU2_55","LockCPU2_56","StatusCPU2_56","LockCPU2_57","StatusCPU2_57","LockCPU2_58","StatusCPU2_58","LockCPU2_59","StatusCPU2_59","LockCPU2_60","StatusCPU2_60","LockCPU2_61","StatusCPU2_61","LockCPU2_62","StatusCPU2_62","LockCPU2_63","StatusCPU2_63","LockCPU3_0","StatusCPU3_0","LockCPU3_1","StatusCPU3_1","LockCPU3_2","StatusCPU3_2","LockCPU3_3","StatusCPU3_3","LockCPU3_4","StatusCPU3_4","LockCPU3_5","StatusCPU3_5","LockCPU3_6","StatusCPU3_6","LockCPU3_7","StatusCPU3_7","LockCPU3_8","StatusCPU3_8","LockCPU3_9","StatusCPU3_9","LockCPU3_10","StatusCPU3_10","LockCPU3_11","StatusCPU3_11","LockCPU3_12","StatusCPU3_12","LockCPU3_13","StatusCPU3_13","LockCPU3_14","StatusCPU3_14","LockCPU3_15","StatusCPU3_15","LockCPU3_16","StatusCPU3_16","LockCPU3_17","StatusCPU3_17","LockCPU3_18","StatusCPU3_18","LockCPU3_19","StatusCPU3_19","LockCPU3_20","StatusCPU3_20","LockCPU3_21","StatusCPU3_21","LockCPU3_22","StatusCPU3_22","LockCPU3_23","StatusCPU3_23","LockCPU3_24","StatusCPU3_24","LockCPU3_25","StatusCPU3_25","LockCPU3_26","StatusCPU3_26","LockCPU3_27","StatusCPU3_27","LockCPU3_28","StatusCPU3_28","LockCPU3_29","StatusCPU3_29","LockCPU3_30","StatusCPU3_30","LockCPU3_31","StatusCPU3_31","LockCPU3_32","StatusCPU3_32","LockCPU3_33","StatusCPU3_33","LockCPU3_34","StatusCPU3_34","LockCPU3_35","StatusCPU3_35","LockCPU3_36","StatusCPU3_36","LockCPU3_37","StatusCPU3_37","LockCPU3_38","StatusCPU3_38","LockCPU3_39","StatusCPU3_39","LockCPU3_40","StatusCPU3_40","LockCPU3_41","StatusCPU3_41","LockCPU3_42","StatusCPU3_42","LockCPU3_43","StatusCPU3_43","LockCPU3_44","StatusCPU3_44","LockCPU3_45","StatusCPU3_45","LockCPU3_46","StatusCPU3_46","LockCPU3_47","StatusCPU3_47","LockCPU3_48","StatusCPU3_48","LockCPU3_49","StatusCPU3_49","LockCPU3_50","StatusCPU3_50","LockCPU3_51","StatusCPU3_51","LockCPU3_52","StatusCPU3_52","LockCPU3_53","StatusCPU3_53","LockCPU3_54","StatusCPU3_54","LockCPU3_55","StatusCPU3_55","LockCPU3_56","StatusCPU3_56","LockCPU3_57","StatusCPU3_57","LockCPU3_58","StatusCPU3_58","LockCPU3_59","StatusCPU3_59","LockCPU3_60","StatusCPU3_60","LockCPU3_61","StatusCPU3_61","LockCPU3_62","StatusCPU3_62","LockCPU3_63","StatusCPU3_63","LockCPU4_0","StatusCPU4_0","LockCPU4_1","StatusCPU4_1","LockCPU4_2","StatusCPU4_2","LockCPU4_3","StatusCPU4_3","LockCPU4_4","StatusCPU4_4","LockCPU4_5","StatusCPU4_5","LockCPU4_6","StatusCPU4_6","LockCPU4_7","StatusCPU4_7","LockCPU4_8","StatusCPU4_8","LockCPU4_9","StatusCPU4_9","LockCPU4_10","StatusCPU4_10","LockCPU4_11","StatusCPU4_11","LockCPU4_12","StatusCPU4_12","LockCPU4_13","StatusCPU4_13","LockCPU4_14","StatusCPU4_14","LockCPU4_15","StatusCPU4_15","LockCPU4_16","StatusCPU4_16","LockCPU4_17","StatusCPU4_17","LockCPU4_18","StatusCPU4_18","LockCPU4_19","StatusCPU4_19","LockCPU4_20","StatusCPU4_20","LockCPU4_21","StatusCPU4_21","LockCPU4_22","StatusCPU4_22","LockCPU4_23","StatusCPU4_23","LockCPU4_24","StatusCPU4_24","LockCPU4_25","StatusCPU4_25","LockCPU4_26","StatusCPU4_26","LockCPU4_27","StatusCPU4_27","LockCPU4_28","StatusCPU4_28","LockCPU4_29","StatusCPU4_29","LockCPU4_30","StatusCPU4_30","LockCPU4_31","StatusCPU4_31","LockCPU4_32","StatusCPU4_32","LockCPU4_33","StatusCPU4_33","LockCPU4_34","StatusCPU4_34","LockCPU4_35","StatusCPU4_35","LockCPU4_36","StatusCPU4_36","LockCPU4_37","StatusCPU4_37","LockCPU4_38","StatusCPU4_38","LockCPU4_39","StatusCPU4_39","LockCPU4_40","StatusCPU4_40","LockCPU4_41","StatusCPU4_41","LockCPU4_42","StatusCPU4_42","LockCPU4_43","StatusCPU4_43","LockCPU4_44","StatusCPU4_44","LockCPU4_45","StatusCPU4_45","LockCPU4_46","StatusCPU4_46","LockCPU4_47","StatusCPU4_47","LockCPU4_48","StatusCPU4_48","LockCPU4_49","StatusCPU4_49","LockCPU4_50","StatusCPU4_50","LockCPU4_51","StatusCPU4_51","LockCPU4_52","StatusCPU4_52","LockCPU4_53","StatusCPU4_53","LockCPU4_54","StatusCPU4_54","LockCPU4_55","StatusCPU4_55","LockCPU4_56","StatusCPU4_56","LockCPU4_57","StatusCPU4_57","LockCPU4_58","StatusCPU4_58","LockCPU4_59","StatusCPU4_59","LockCPU4_60","StatusCPU4_60","LockCPU4_61","StatusCPU4_61","LockCPU4_62","StatusCPU4_62","LockCPU4_63","StatusCPU4_63"

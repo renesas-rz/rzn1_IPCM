@@ -1,0 +1,5 @@
+;RZN1D
+
+ "CA7_0" "Cortex-A7:0@0x80110000"
++"CA7_1" "Cortex-A7:0@0x80112000"
++"CM3"   "Cortex-M3:2@0xE000E000"

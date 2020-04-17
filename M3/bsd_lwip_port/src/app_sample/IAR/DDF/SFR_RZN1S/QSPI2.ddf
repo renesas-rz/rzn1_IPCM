@@ -1,0 +1,218 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : QSPI2
+;               QSPI2
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "QSPI2/config_reg"                                                                       , "Memory", 0x4000E000,        4, base=16
+sfr = "QSPI2/config_reg.[0]enb_qspi_fld"                                                       , "Memory", 0x4000E000,        4, base=16, bitRange=0
+sfr = "QSPI2/config_reg.[1]sel_clk_pol_fld"                                                    , "Memory", 0x4000E000,        4, base=16, bitRange=1
+sfr = "QSPI2/config_reg.[2]sel_clk_phase_fld"                                                  , "Memory", 0x4000E000,        4, base=16, bitRange=2
+sfr = "QSPI2/config_reg.[6:3]config_resv1_fld"                                                 , "Memory", 0x4000E000,        4, base=16, bitRange=3-6
+sfr = "QSPI2/config_reg.[7]enb_dir_acc_ctlr_fld"                                               , "Memory", 0x4000E000,        4, base=16, bitRange=7
+sfr = "QSPI2/config_reg.[8]enb_legacy_ip_mode_fld"                                             , "Memory", 0x4000E000,        4, base=16, bitRange=8
+sfr = "QSPI2/config_reg.[9]periph_sel_dec_fld"                                                 , "Memory", 0x4000E000,        4, base=16, bitRange=9
+sfr = "QSPI2/config_reg.[13:10]periph_cs_lines_fld"                                            , "Memory", 0x4000E000,        4, base=16, bitRange=10-13
+sfr = "QSPI2/config_reg.[14]wr_prot_flash_fld"                                                 , "Memory", 0x4000E000,        4, base=16, bitRange=14
+sfr = "QSPI2/config_reg.[15]enb_dma_if_fld"                                                    , "Memory", 0x4000E000,        4, base=16, bitRange=15
+sfr = "QSPI2/config_reg.[16]enb_ahb_addr_remap_fld"                                            , "Memory", 0x4000E000,        4, base=16, bitRange=16
+sfr = "QSPI2/config_reg.[17]enter_xip_mode_fld"                                                , "Memory", 0x4000E000,        4, base=16, bitRange=17
+sfr = "QSPI2/config_reg.[18]enter_xip_mode_imm_fld"                                            , "Memory", 0x4000E000,        4, base=16, bitRange=18
+sfr = "QSPI2/config_reg.[22:19]mstr_baud_div_fld"                                              , "Memory", 0x4000E000,        4, base=16, bitRange=19-22
+sfr = "QSPI2/config_reg.[23]enable_ahb_decoder_fld"                                            , "Memory", 0x4000E000,        4, base=16, bitRange=23
+sfr = "QSPI2/config_reg.[30:24]config_resv2_fld"                                               , "Memory", 0x4000E000,        4, base=16, bitRange=24-30
+sfr = "QSPI2/config_reg.[31]qspi_idle_fld"                                                     , "Memory", 0x4000E000,        4, base=16, bitRange=31
+sfr = "QSPI2/dev_instr_rd_config_reg"                                                          , "Memory", 0x4000E004,        4, base=16
+sfr = "QSPI2/dev_instr_rd_config_reg.[7:0]rd_opcode_non_xip_fld"                               , "Memory", 0x4000E004,        4, base=16, bitRange=0-7
+sfr = "QSPI2/dev_instr_rd_config_reg.[9:8]instr_type_fld"                                      , "Memory", 0x4000E004,        4, base=16, bitRange=8-9
+sfr = "QSPI2/dev_instr_rd_config_reg.[10]ddr_en_fld"                                           , "Memory", 0x4000E004,        4, base=16, bitRange=10
+sfr = "QSPI2/dev_instr_rd_config_reg.[11]rd_instr_resv1_fld"                                   , "Memory", 0x4000E004,        4, base=16, bitRange=11
+sfr = "QSPI2/dev_instr_rd_config_reg.[13:12]addr_xfer_type_std_mode_fld"                       , "Memory", 0x4000E004,        4, base=16, bitRange=12-13
+sfr = "QSPI2/dev_instr_rd_config_reg.[15:14]rd_instr_resv2_fld"                                , "Memory", 0x4000E004,        4, base=16, bitRange=14-15
+sfr = "QSPI2/dev_instr_rd_config_reg.[17:16]data_xfer_type_ext_mode_fld"                       , "Memory", 0x4000E004,        4, base=16, bitRange=16-17
+sfr = "QSPI2/dev_instr_rd_config_reg.[19:18]rd_instr_resv3_fld"                                , "Memory", 0x4000E004,        4, base=16, bitRange=18-19
+sfr = "QSPI2/dev_instr_rd_config_reg.[20]mode_bit_enable_fld"                                  , "Memory", 0x4000E004,        4, base=16, bitRange=20
+sfr = "QSPI2/dev_instr_rd_config_reg.[23:21]rd_instr_resv4_fld"                                , "Memory", 0x4000E004,        4, base=16, bitRange=21-23
+sfr = "QSPI2/dev_instr_rd_config_reg.[28:24]dummy_rd_clk_cycles_fld"                           , "Memory", 0x4000E004,        4, base=16, bitRange=24-28
+sfr = "QSPI2/dev_instr_rd_config_reg.[31:29]rd_instr_resv5_fld"                                , "Memory", 0x4000E004,        4, base=16, bitRange=29-31
+sfr = "QSPI2/dev_instr_wr_config_reg"                                                          , "Memory", 0x4000E008,        4, base=16
+sfr = "QSPI2/dev_instr_wr_config_reg.[7:0]wr_opcode_fld"                                       , "Memory", 0x4000E008,        4, base=16, bitRange=0-7
+sfr = "QSPI2/dev_instr_wr_config_reg.[8]wel_dis_fld"                                           , "Memory", 0x4000E008,        4, base=16, bitRange=8
+sfr = "QSPI2/dev_instr_wr_config_reg.[11:9]wr_instr_resv1_fld"                                 , "Memory", 0x4000E008,        4, base=16, bitRange=9-11
+sfr = "QSPI2/dev_instr_wr_config_reg.[13:12]addr_xfer_type_std_mode_fld"                       , "Memory", 0x4000E008,        4, base=16, bitRange=12-13
+sfr = "QSPI2/dev_instr_wr_config_reg.[15:14]wr_instr_resv2_fld"                                , "Memory", 0x4000E008,        4, base=16, bitRange=14-15
+sfr = "QSPI2/dev_instr_wr_config_reg.[17:16]data_xfer_type_ext_mode_fld"                       , "Memory", 0x4000E008,        4, base=16, bitRange=16-17
+sfr = "QSPI2/dev_instr_wr_config_reg.[23:18]wr_instr_resv3_fld"                                , "Memory", 0x4000E008,        4, base=16, bitRange=18-23
+sfr = "QSPI2/dev_instr_wr_config_reg.[28:24]dummy_wr_clk_cycles_fld"                           , "Memory", 0x4000E008,        4, base=16, bitRange=24-28
+sfr = "QSPI2/dev_instr_wr_config_reg.[31:29]wr_instr_resv4_fld"                                , "Memory", 0x4000E008,        4, base=16, bitRange=29-31
+sfr = "QSPI2/dev_delay_reg"                                                                    , "Memory", 0x4000E00C,        4, base=16
+sfr = "QSPI2/dev_delay_reg.[7:0]d_init_fld"                                                    , "Memory", 0x4000E00C,        4, base=16, bitRange=0-7
+sfr = "QSPI2/dev_delay_reg.[15:8]d_after_fld"                                                  , "Memory", 0x4000E00C,        4, base=16, bitRange=8-15
+sfr = "QSPI2/dev_delay_reg.[23:16]d_btwn_fld"                                                  , "Memory", 0x4000E00C,        4, base=16, bitRange=16-23
+sfr = "QSPI2/dev_delay_reg.[31:24]d_nss_fld"                                                   , "Memory", 0x4000E00C,        4, base=16, bitRange=24-31
+sfr = "QSPI2/rd_data_capture_reg"                                                              , "Memory", 0x4000E010,        4, base=16
+sfr = "QSPI2/rd_data_capture_reg.[0]bypass_fld"                                                , "Memory", 0x4000E010,        4, base=16, bitRange=0
+sfr = "QSPI2/rd_data_capture_reg.[4:1]delay_fld"                                               , "Memory", 0x4000E010,        4, base=16, bitRange=1-4
+sfr = "QSPI2/rd_data_capture_reg.[5]sample_edge_sel_fld"                                       , "Memory", 0x4000E010,        4, base=16, bitRange=5
+sfr = "QSPI2/rd_data_capture_reg.[15:6]rd_data_resv1_fld"                                      , "Memory", 0x4000E010,        4, base=16, bitRange=6-15
+sfr = "QSPI2/rd_data_capture_reg.[19:16]DDR_read_delay_fld"                                    , "Memory", 0x4000E010,        4, base=16, bitRange=16-19
+sfr = "QSPI2/rd_data_capture_reg.[31:20]rd_data_resv2_fld"                                     , "Memory", 0x4000E010,        4, base=16, bitRange=20-31
+sfr = "QSPI2/dev_size_config_reg"                                                              , "Memory", 0x4000E014,        4, base=16
+sfr = "QSPI2/dev_size_config_reg.[3:0]num_addr_bytes_fld"                                      , "Memory", 0x4000E014,        4, base=16, bitRange=0-3
+sfr = "QSPI2/dev_size_config_reg.[15:4]bytes_per_device_page_fld"                              , "Memory", 0x4000E014,        4, base=16, bitRange=4-15
+sfr = "QSPI2/dev_size_config_reg.[20:16]bytes_per_subsector_fld"                               , "Memory", 0x4000E014,        4, base=16, bitRange=16-20
+sfr = "QSPI2/dev_size_config_reg.[22:21]mem_size_on_cs0_fld"                                   , "Memory", 0x4000E014,        4, base=16, bitRange=21-22
+sfr = "QSPI2/dev_size_config_reg.[24:23]mem_size_on_cs1_fld"                                   , "Memory", 0x4000E014,        4, base=16, bitRange=23-24
+sfr = "QSPI2/dev_size_config_reg.[26:25]mem_size_on_cs2_fld"                                   , "Memory", 0x4000E014,        4, base=16, bitRange=25-26
+sfr = "QSPI2/dev_size_config_reg.[28:27]mem_size_on_cs3_fld"                                   , "Memory", 0x4000E014,        4, base=16, bitRange=27-28
+sfr = "QSPI2/dev_size_config_reg.[31:29]dev_size_resv_fld"                                     , "Memory", 0x4000E014,        4, base=16, bitRange=29-31
+sfr = "QSPI2/sram_partition_cfg_reg"                                                           , "Memory", 0x4000E018,        4, base=16
+sfr = "QSPI2/sram_partition_cfg_reg.[7:0]addr_fld"                                             , "Memory", 0x4000E018,        4, base=16, bitRange=0-7
+sfr = "QSPI2/sram_partition_cfg_reg.[31:8]sram_partition_resv_fld"                             , "Memory", 0x4000E018,        4, base=16, bitRange=8-31
+sfr = "QSPI2/ind_AHB_addr_trigger_reg"                                                         , "Memory", 0x4000E01C,        4, base=16
+sfr = "QSPI2/ind_AHB_addr_trigger_reg.[31:0]addr_fld"                                          , "Memory", 0x4000E01C,        4, base=16, bitRange=0-31
+sfr = "QSPI2/dma_periph_config_reg"                                                            , "Memory", 0x4000E020,        4, base=16
+sfr = "QSPI2/dma_periph_config_reg.[3:0]num_single_req_bytes_fld"                              , "Memory", 0x4000E020,        4, base=16, bitRange=0-3
+sfr = "QSPI2/dma_periph_config_reg.[7:4]dma_periph_resv1_fld"                                  , "Memory", 0x4000E020,        4, base=16, bitRange=4-7
+sfr = "QSPI2/dma_periph_config_reg.[11:8]num_burst_req_bytes_fld"                              , "Memory", 0x4000E020,        4, base=16, bitRange=8-11
+sfr = "QSPI2/dma_periph_config_reg.[31:12]dma_periph_resv2_fld"                                , "Memory", 0x4000E020,        4, base=16, bitRange=12-31
+sfr = "QSPI2/remap_addr_reg"                                                                   , "Memory", 0x4000E024,        4, base=16
+sfr = "QSPI2/remap_addr_reg.[31:0]value_fld"                                                   , "Memory", 0x4000E024,        4, base=16, bitRange=0-31
+sfr = "QSPI2/mode_bit_config_reg"                                                              , "Memory", 0x4000E028,        4, base=16
+sfr = "QSPI2/mode_bit_config_reg.[7:0]mode_fld"                                                , "Memory", 0x4000E028,        4, base=16, bitRange=0-7
+sfr = "QSPI2/mode_bit_config_reg.[31:8]mode_resv_fld"                                          , "Memory", 0x4000E028,        4, base=16, bitRange=8-31
+sfr = "QSPI2/sram_fill_reg"                                                                    , "Memory", 0x4000E02C,        4, base=16
+sfr = "QSPI2/sram_fill_reg.[15:0]sram_fill_indac_read_fld"                                     , "Memory", 0x4000E02C,        4, base=16, bitRange=0-15
+sfr = "QSPI2/sram_fill_reg.[31:16]sram_fill_indac_write_fld"                                   , "Memory", 0x4000E02C,        4, base=16, bitRange=16-31
+sfr = "QSPI2/tx_thresh_reg"                                                                    , "Memory", 0x4000E030,        4, base=16
+sfr = "QSPI2/tx_thresh_reg.[3:0]level_fld"                                                     , "Memory", 0x4000E030,        4, base=16, bitRange=0-3
+sfr = "QSPI2/tx_thresh_reg.[31:4]tx_thresh_resv_fld"                                           , "Memory", 0x4000E030,        4, base=16, bitRange=4-31
+sfr = "QSPI2/rx_thresh_reg"                                                                    , "Memory", 0x4000E034,        4, base=16
+sfr = "QSPI2/rx_thresh_reg.[3:0]level_fld"                                                     , "Memory", 0x4000E034,        4, base=16, bitRange=0-3
+sfr = "QSPI2/rx_thresh_reg.[31:4]rx_thresh_resv_fld"                                           , "Memory", 0x4000E034,        4, base=16, bitRange=4-31
+sfr = "QSPI2/write_completion_ctrl_reg"                                                        , "Memory", 0x4000E038,        4, base=16
+sfr = "QSPI2/write_completion_ctrl_reg.[7:0]opcode_fld"                                        , "Memory", 0x4000E038,        4, base=16, bitRange=0-7
+sfr = "QSPI2/write_completion_ctrl_reg.[10:8]polling_bit_index_fld"                            , "Memory", 0x4000E038,        4, base=16, bitRange=8-10
+sfr = "QSPI2/write_completion_ctrl_reg.[12:11]wr_comp_ctrl_resv2_fld"                          , "Memory", 0x4000E038,        4, base=16, bitRange=11-12
+sfr = "QSPI2/write_completion_ctrl_reg.[13]polling_polarity_fld"                               , "Memory", 0x4000E038,        4, base=16, bitRange=13
+sfr = "QSPI2/write_completion_ctrl_reg.[14]disable_polling_fld"                                , "Memory", 0x4000E038,        4, base=16, bitRange=14
+sfr = "QSPI2/write_completion_ctrl_reg.[15]wr_comp_ctrl_resv1_fld"                             , "Memory", 0x4000E038,        4, base=16, bitRange=15
+sfr = "QSPI2/write_completion_ctrl_reg.[23:16]poll_count_fld"                                  , "Memory", 0x4000E038,        4, base=16, bitRange=16-23
+sfr = "QSPI2/write_completion_ctrl_reg.[31:24]poll_rep_delay_fld"                              , "Memory", 0x4000E038,        4, base=16, bitRange=24-31
+sfr = "QSPI2/no_of_polls_bef_exp_reg"                                                          , "Memory", 0x4000E03C,        4, base=16
+sfr = "QSPI2/no_of_polls_bef_exp_reg.[31:0]no_of_polls_bef_exp_fld"                            , "Memory", 0x4000E03C,        4, base=16, bitRange=0-31
+sfr = "QSPI2/irq_status_reg"                                                                   , "Memory", 0x4000E040,        4, base=16
+sfr = "QSPI2/irq_status_reg.[0]mode_m_fail_fld"                                                , "Memory", 0x4000E040,        4, base=16, bitRange=0
+sfr = "QSPI2/irq_status_reg.[1]underflow_det_fld"                                              , "Memory", 0x4000E040,        4, base=16, bitRange=1
+sfr = "QSPI2/irq_status_reg.[2]indirect_op_done_fld"                                           , "Memory", 0x4000E040,        4, base=16, bitRange=2
+sfr = "QSPI2/irq_status_reg.[3]indirect_read_reject_fld"                                       , "Memory", 0x4000E040,        4, base=16, bitRange=3
+sfr = "QSPI2/irq_status_reg.[4]prot_wr_attempt_fld"                                            , "Memory", 0x4000E040,        4, base=16, bitRange=4
+sfr = "QSPI2/irq_status_reg.[5]illegal_access_det_fld"                                         , "Memory", 0x4000E040,        4, base=16, bitRange=5
+sfr = "QSPI2/irq_status_reg.[6]indirect_xfer_level_breach_fld"                                 , "Memory", 0x4000E040,        4, base=16, bitRange=6
+sfr = "QSPI2/irq_status_reg.[7]recv_overflow_fld"                                              , "Memory", 0x4000E040,        4, base=16, bitRange=7
+sfr = "QSPI2/irq_status_reg.[8]tx_fifo_not_full_fld"                                           , "Memory", 0x4000E040,        4, base=16, bitRange=8
+sfr = "QSPI2/irq_status_reg.[9]tx_fifo_full_fld"                                               , "Memory", 0x4000E040,        4, base=16, bitRange=9
+sfr = "QSPI2/irq_status_reg.[10]rx_fifo_not_empty_fld"                                         , "Memory", 0x4000E040,        4, base=16, bitRange=10
+sfr = "QSPI2/irq_status_reg.[11]rx_fifo_full_fld"                                              , "Memory", 0x4000E040,        4, base=16, bitRange=11
+sfr = "QSPI2/irq_status_reg.[12]indrd_sram_full_fld"                                           , "Memory", 0x4000E040,        4, base=16, bitRange=12
+sfr = "QSPI2/irq_status_reg.[13]poll_exp_int_fld"                                              , "Memory", 0x4000E040,        4, base=16, bitRange=13
+sfr = "QSPI2/irq_status_reg.[31:14]irq_stat_resv_fld"                                          , "Memory", 0x4000E040,        4, base=16, bitRange=14-31
+sfr = "QSPI2/irq_mask_reg"                                                                     , "Memory", 0x4000E044,        4, base=16
+sfr = "QSPI2/irq_mask_reg.[0]mode_m_fail_mask_fld"                                             , "Memory", 0x4000E044,        4, base=16, bitRange=0
+sfr = "QSPI2/irq_mask_reg.[1]underflow_det_mask_fld"                                           , "Memory", 0x4000E044,        4, base=16, bitRange=1
+sfr = "QSPI2/irq_mask_reg.[2]indirect_op_done_mask_fld"                                        , "Memory", 0x4000E044,        4, base=16, bitRange=2
+sfr = "QSPI2/irq_mask_reg.[3]indirect_read_reject_mask_fld"                                    , "Memory", 0x4000E044,        4, base=16, bitRange=3
+sfr = "QSPI2/irq_mask_reg.[4]prot_wr_attempt_mask_fld"                                         , "Memory", 0x4000E044,        4, base=16, bitRange=4
+sfr = "QSPI2/irq_mask_reg.[5]illegal_access_det_mask_fld"                                      , "Memory", 0x4000E044,        4, base=16, bitRange=5
+sfr = "QSPI2/irq_mask_reg.[6]indirect_xfer_level_breach_mask_fld"                              , "Memory", 0x4000E044,        4, base=16, bitRange=6
+sfr = "QSPI2/irq_mask_reg.[7]recv_overflow_mask_fld"                                           , "Memory", 0x4000E044,        4, base=16, bitRange=7
+sfr = "QSPI2/irq_mask_reg.[8]tx_fifo_not_full_mask_fld"                                        , "Memory", 0x4000E044,        4, base=16, bitRange=8
+sfr = "QSPI2/irq_mask_reg.[9]tx_fifo_full_mask_fld"                                            , "Memory", 0x4000E044,        4, base=16, bitRange=9
+sfr = "QSPI2/irq_mask_reg.[10]rx_fifo_not_empty_mask_fld"                                      , "Memory", 0x4000E044,        4, base=16, bitRange=10
+sfr = "QSPI2/irq_mask_reg.[11]rx_fifo_full_mask_fld"                                           , "Memory", 0x4000E044,        4, base=16, bitRange=11
+sfr = "QSPI2/irq_mask_reg.[12]indrd_sram_full_mask_fld"                                        , "Memory", 0x4000E044,        4, base=16, bitRange=12
+sfr = "QSPI2/irq_mask_reg.[13]poll_exp_int_mask_fld"                                           , "Memory", 0x4000E044,        4, base=16, bitRange=13
+sfr = "QSPI2/irq_mask_reg.[31:14]irq_mask_resv_fld"                                            , "Memory", 0x4000E044,        4, base=16, bitRange=14-31
+sfr = "QSPI2/lower_wr_prot_reg"                                                                , "Memory", 0x4000E050,        4, base=16
+sfr = "QSPI2/lower_wr_prot_reg.[31:0]subsector_fld"                                            , "Memory", 0x4000E050,        4, base=16, bitRange=0-31
+sfr = "QSPI2/upper_wr_prot_reg"                                                                , "Memory", 0x4000E054,        4, base=16
+sfr = "QSPI2/upper_wr_prot_reg.[31:0]subsector_fld"                                            , "Memory", 0x4000E054,        4, base=16, bitRange=0-31
+sfr = "QSPI2/wr_prot_ctrl_reg"                                                                 , "Memory", 0x4000E058,        4, base=16
+sfr = "QSPI2/wr_prot_ctrl_reg.[0]inv_fld"                                                      , "Memory", 0x4000E058,        4, base=16, bitRange=0
+sfr = "QSPI2/wr_prot_ctrl_reg.[1]enb_fld"                                                      , "Memory", 0x4000E058,        4, base=16, bitRange=1
+sfr = "QSPI2/wr_prot_ctrl_reg.[31:2]wr_prot_ctrl_resv_fld"                                     , "Memory", 0x4000E058,        4, base=16, bitRange=2-31
+sfr = "QSPI2/indirect_read_xfer_ctrl_reg"                                                      , "Memory", 0x4000E060,        4, base=16
+sfr = "QSPI2/indirect_read_xfer_ctrl_reg.[0]start_fld"                                         , "Memory", 0x4000E060,        4, base=16, bitRange=0
+sfr = "QSPI2/indirect_read_xfer_ctrl_reg.[1]cancel_fld"                                        , "Memory", 0x4000E060,        4, base=16, bitRange=1
+sfr = "QSPI2/indirect_read_xfer_ctrl_reg.[2]rd_status_fld"                                     , "Memory", 0x4000E060,        4, base=16, bitRange=2
+sfr = "QSPI2/indirect_read_xfer_ctrl_reg.[3]sram_full_fld"                                     , "Memory", 0x4000E060,        4, base=16, bitRange=3
+sfr = "QSPI2/indirect_read_xfer_ctrl_reg.[4]rd_queued_fld"                                     , "Memory", 0x4000E060,        4, base=16, bitRange=4
+sfr = "QSPI2/indirect_read_xfer_ctrl_reg.[5]ind_ops_done_status_fld"                           , "Memory", 0x4000E060,        4, base=16, bitRange=5
+sfr = "QSPI2/indirect_read_xfer_ctrl_reg.[7:6]num_ind_ops_done_fld"                            , "Memory", 0x4000E060,        4, base=16, bitRange=6-7
+sfr = "QSPI2/indirect_read_xfer_ctrl_reg.[31:8]indir_rd_xfer_resv_fld"                         , "Memory", 0x4000E060,        4, base=16, bitRange=8-31
+sfr = "QSPI2/indirect_read_xfer_watermark_reg"                                                 , "Memory", 0x4000E064,        4, base=16
+sfr = "QSPI2/indirect_read_xfer_watermark_reg.[31:0]level_fld"                                 , "Memory", 0x4000E064,        4, base=16, bitRange=0-31
+sfr = "QSPI2/indirect_read_xfer_start_reg"                                                     , "Memory", 0x4000E068,        4, base=16
+sfr = "QSPI2/indirect_read_xfer_start_reg.[31:0]addr_fld"                                      , "Memory", 0x4000E068,        4, base=16, bitRange=0-31
+sfr = "QSPI2/indirect_read_xfer_num_bytes_reg"                                                 , "Memory", 0x4000E06C,        4, base=16
+sfr = "QSPI2/indirect_read_xfer_num_bytes_reg.[31:0]value_fld"                                 , "Memory", 0x4000E06C,        4, base=16, bitRange=0-31
+sfr = "QSPI2/indirect_write_xfer_ctrl_reg"                                                     , "Memory", 0x4000E070,        4, base=16
+sfr = "QSPI2/indirect_write_xfer_ctrl_reg.[0]start_fld"                                        , "Memory", 0x4000E070,        4, base=16, bitRange=0
+sfr = "QSPI2/indirect_write_xfer_ctrl_reg.[1]cancel_fld"                                       , "Memory", 0x4000E070,        4, base=16, bitRange=1
+sfr = "QSPI2/indirect_write_xfer_ctrl_reg.[2]wr_status_fld"                                    , "Memory", 0x4000E070,        4, base=16, bitRange=2
+sfr = "QSPI2/indirect_write_xfer_ctrl_reg.[3]indir_wr_xfer_resv1_fld"                          , "Memory", 0x4000E070,        4, base=16, bitRange=3
+sfr = "QSPI2/indirect_write_xfer_ctrl_reg.[4]wr_queued_fld"                                    , "Memory", 0x4000E070,        4, base=16, bitRange=4
+sfr = "QSPI2/indirect_write_xfer_ctrl_reg.[5]ind_ops_done_status_fld"                          , "Memory", 0x4000E070,        4, base=16, bitRange=5
+sfr = "QSPI2/indirect_write_xfer_ctrl_reg.[7:6]num_ind_ops_done_fld"                           , "Memory", 0x4000E070,        4, base=16, bitRange=6-7
+sfr = "QSPI2/indirect_write_xfer_ctrl_reg.[31:8]indir_wr_xfer_resv2_fld"                       , "Memory", 0x4000E070,        4, base=16, bitRange=8-31
+sfr = "QSPI2/indirect_write_xfer_watermark_reg"                                                , "Memory", 0x4000E074,        4, base=16
+sfr = "QSPI2/indirect_write_xfer_watermark_reg.[31:0]level_fld"                                , "Memory", 0x4000E074,        4, base=16, bitRange=0-31
+sfr = "QSPI2/indirect_write_xfer_start_reg"                                                    , "Memory", 0x4000E078,        4, base=16
+sfr = "QSPI2/indirect_write_xfer_start_reg.[31:0]addr_fld"                                     , "Memory", 0x4000E078,        4, base=16, bitRange=0-31
+sfr = "QSPI2/indirect_write_xfer_num_bytes_reg"                                                , "Memory", 0x4000E07C,        4, base=16
+sfr = "QSPI2/indirect_write_xfer_num_bytes_reg.[31:0]value_fld"                                , "Memory", 0x4000E07C,        4, base=16, bitRange=0-31
+sfr = "QSPI2/indirect_trigger_addr_range_reg"                                                  , "Memory", 0x4000E080,        4, base=16
+sfr = "QSPI2/indirect_trigger_addr_range_reg.[3:0]ind_range_width_fld"                         , "Memory", 0x4000E080,        4, base=16, bitRange=0-3
+sfr = "QSPI2/indirect_trigger_addr_range_reg.[31:4]ind_range_resv1_fld"                        , "Memory", 0x4000E080,        4, base=16, bitRange=4-31
+sfr = "QSPI2/flash_cmd_ctrl_reg"                                                               , "Memory", 0x4000E090,        4, base=16
+sfr = "QSPI2/flash_cmd_ctrl_reg.[0]cmd_exec_fld"                                               , "Memory", 0x4000E090,        4, base=16, bitRange=0
+sfr = "QSPI2/flash_cmd_ctrl_reg.[1]cmd_exec_status_fld"                                        , "Memory", 0x4000E090,        4, base=16, bitRange=1
+sfr = "QSPI2/flash_cmd_ctrl_reg.[6:2]flash_cmd_ctrl_resv1_fld"                                 , "Memory", 0x4000E090,        4, base=16, bitRange=2-6
+sfr = "QSPI2/flash_cmd_ctrl_reg.[11:7]num_dummy_bytes_fld"                                     , "Memory", 0x4000E090,        4, base=16, bitRange=7-11
+sfr = "QSPI2/flash_cmd_ctrl_reg.[14:12]num_wr_data_bytes_fld"                                  , "Memory", 0x4000E090,        4, base=16, bitRange=12-14
+sfr = "QSPI2/flash_cmd_ctrl_reg.[15]enb_write_data_fld"                                        , "Memory", 0x4000E090,        4, base=16, bitRange=15
+sfr = "QSPI2/flash_cmd_ctrl_reg.[17:16]num_addr_bytes_fld"                                     , "Memory", 0x4000E090,        4, base=16, bitRange=16-17
+sfr = "QSPI2/flash_cmd_ctrl_reg.[18]enb_mode_bit_fld"                                          , "Memory", 0x4000E090,        4, base=16, bitRange=18
+sfr = "QSPI2/flash_cmd_ctrl_reg.[19]enb_comd_addr_fld"                                         , "Memory", 0x4000E090,        4, base=16, bitRange=19
+sfr = "QSPI2/flash_cmd_ctrl_reg.[22:20]num_rd_data_bytes_fld"                                  , "Memory", 0x4000E090,        4, base=16, bitRange=20-22
+sfr = "QSPI2/flash_cmd_ctrl_reg.[23]enb_read_data_fld"                                         , "Memory", 0x4000E090,        4, base=16, bitRange=23
+sfr = "QSPI2/flash_cmd_ctrl_reg.[31:24]cmd_opcode_fld"                                         , "Memory", 0x4000E090,        4, base=16, bitRange=24-31
+sfr = "QSPI2/flash_cmd_addr_reg"                                                               , "Memory", 0x4000E094,        4, base=16
+sfr = "QSPI2/flash_cmd_addr_reg.[31:0]addr_fld"                                                , "Memory", 0x4000E094,        4, base=16, bitRange=0-31
+sfr = "QSPI2/flash_rd_data_lower_reg"                                                          , "Memory", 0x4000E0A0,        4, base=16
+sfr = "QSPI2/flash_rd_data_lower_reg.[31:0]data_fld"                                           , "Memory", 0x4000E0A0,        4, base=16, bitRange=0-31
+sfr = "QSPI2/flash_rd_data_upper_reg"                                                          , "Memory", 0x4000E0A4,        4, base=16
+sfr = "QSPI2/flash_rd_data_upper_reg.[31:0]data_fld"                                           , "Memory", 0x4000E0A4,        4, base=16, bitRange=0-31
+sfr = "QSPI2/flash_wr_data_lower_reg"                                                          , "Memory", 0x4000E0A8,        4, base=16
+sfr = "QSPI2/flash_wr_data_lower_reg.[31:0]data_fld"                                           , "Memory", 0x4000E0A8,        4, base=16, bitRange=0-31
+sfr = "QSPI2/flash_wr_data_upper_reg"                                                          , "Memory", 0x4000E0AC,        4, base=16
+sfr = "QSPI2/flash_wr_data_upper_reg.[31:0]data_fld"                                           , "Memory", 0x4000E0AC,        4, base=16, bitRange=0-31
+sfr = "QSPI2/polling_flash_status_reg"                                                         , "Memory", 0x4000E0B0,        4, base=16
+sfr = "QSPI2/polling_flash_status_reg.[7:0]device_status_fld"                                  , "Memory", 0x4000E0B0,        4, base=16, bitRange=0-7
+sfr = "QSPI2/polling_flash_status_reg.[8]device_status_valid_fld"                              , "Memory", 0x4000E0B0,        4, base=16, bitRange=8
+sfr = "QSPI2/polling_flash_status_reg.[31:9]device_status_rsvd_fld"                            , "Memory", 0x4000E0B0,        4, base=16, bitRange=9-31
+sfr = "QSPI2/module_id_reg"                                                                    , "Memory", 0x4000E0FC,        4, base=16
+sfr = "QSPI2/module_id_reg.[23:0]value_fld"                                                    , "Memory", 0x4000E0FC,        4, base=16, bitRange=0-23
+sfr = "QSPI2/module_id_reg.[31:24]mod_id_resv_fld"                                             , "Memory", 0x4000E0FC,        4, base=16, bitRange=24-31
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// QSPI2 -----
+group = "QSPI2","QSPI2/config_reg","QSPI2/dev_instr_rd_config_reg","QSPI2/dev_instr_wr_config_reg","QSPI2/dev_delay_reg","QSPI2/rd_data_capture_reg","QSPI2/dev_size_config_reg","QSPI2/sram_partition_cfg_reg","QSPI2/ind_AHB_addr_trigger_reg","QSPI2/dma_periph_config_reg","QSPI2/remap_addr_reg","QSPI2/mode_bit_config_reg","QSPI2/sram_fill_reg","QSPI2/tx_thresh_reg","QSPI2/rx_thresh_reg","QSPI2/write_completion_ctrl_reg","QSPI2/no_of_polls_bef_exp_reg","QSPI2/irq_status_reg","QSPI2/irq_mask_reg","QSPI2/lower_wr_prot_reg","QSPI2/upper_wr_prot_reg","QSPI2/wr_prot_ctrl_reg","QSPI2/indirect_read_xfer_ctrl_reg","QSPI2/indirect_read_xfer_watermark_reg","QSPI2/indirect_read_xfer_start_reg","QSPI2/indirect_read_xfer_num_bytes_reg","QSPI2/indirect_write_xfer_ctrl_reg","QSPI2/indirect_write_xfer_watermark_reg","QSPI2/indirect_write_xfer_start_reg","QSPI2/indirect_write_xfer_num_bytes_reg","QSPI2/indirect_trigger_addr_range_reg","QSPI2/flash_cmd_ctrl_reg","QSPI2/flash_cmd_addr_reg","QSPI2/flash_rd_data_lower_reg","QSPI2/flash_rd_data_upper_reg","QSPI2/flash_wr_data_lower_reg","QSPI2/flash_wr_data_upper_reg","QSPI2/polling_flash_status_reg","QSPI2/module_id_reg"

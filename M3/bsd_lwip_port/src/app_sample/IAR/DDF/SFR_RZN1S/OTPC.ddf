@@ -1,0 +1,39 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : OTPC
+;               OTP Controller
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "OTPWCTRL"                                                                               , "Memory", 0x40007000,        4, base=16
+sfr = "OTPWCTRL.[0]ProdModeDis"                                                                , "Memory", 0x40007000,        4, base=16, bitRange=0
+sfr = "OTPWCTRL.[1]ProdModeDisLock"                                                            , "Memory", 0x40007000,        4, base=16, bitRange=1
+sfr = "OTPWSTAT"                                                                               , "Memory", 0x40007004,        4, base=16, readOnly
+sfr = "OTPWSTAT.[0]SecureMode"                                                                 , "Memory", 0x40007004,        4, base=16, readOnly, bitRange=0
+sfr = "OTPWSTAT.[1]CA7x_en"                                                                    , "Memory", 0x40007004,        4, base=16, readOnly, bitRange=1
+sfr = "OTPWCHIPID0"                                                                            , "Memory", 0x40007008,        4, base=16, readOnly
+sfr = "OTPWCHIPID1"                                                                            , "Memory", 0x4000700C,        4, base=16, readOnly
+sfr = "OTPWDAT0"                                                                               , "Memory", 0x40007010,        4, base=16, readOnly
+sfr = "OTPWDAT0.[0]SecureMode"                                                                 , "Memory", 0x40007010,        4, base=16, readOnly, bitRange=0
+sfr = "OTPWDAT0.[1]CM3Boot"                                                                    , "Memory", 0x40007010,        4, base=16, readOnly, bitRange=1
+sfr = "OTPWDAT0.[2]CryptoDis"                                                                  , "Memory", 0x40007010,        4, base=16, readOnly, bitRange=2
+sfr = "OTPWDAT0.[3]SecureBoot"                                                                 , "Memory", 0x40007010,        4, base=16, readOnly, bitRange=3
+sfr = "OTPWDAT1"                                                                               , "Memory", 0x40007014,        4, base=16, readOnly
+sfr = "OTPWDAT2"                                                                               , "Memory", 0x40007018,        4, base=16, readOnly
+sfr = "OTPWDAT3"                                                                               , "Memory", 0x4000701C,        4, base=16, readOnly
+sfr = "OTPWDAT4"                                                                               , "Memory", 0x40007020,        4, base=16, readOnly
+sfr = "OTPWDAT5"                                                                               , "Memory", 0x40007024,        4, base=16, readOnly
+sfr = "OTPWDAT6"                                                                               , "Memory", 0x40007028,        4, base=16, readOnly
+sfr = "OTPWDAT7"                                                                               , "Memory", 0x4000702C,        4, base=16, readOnly
+sfr = "OTPWDAT8"                                                                               , "Memory", 0x40007030,        4, base=16, readOnly
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// OTP Controller -----
+group = "OTPC","OTPWCTRL","OTPWSTAT","OTPWCHIPID0","OTPWCHIPID1","OTPWDAT0","OTPWDAT1","OTPWDAT2","OTPWDAT3","OTPWDAT4","OTPWDAT5","OTPWDAT6","OTPWDAT7","OTPWDAT8"

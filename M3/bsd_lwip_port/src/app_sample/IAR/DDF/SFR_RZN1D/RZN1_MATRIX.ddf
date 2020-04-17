@@ -1,0 +1,65 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : RZN1_MATRIX
+;               Service (RZN1_MATRIX)
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "Id_CoreId"                                                                              , "Memory", 0x00010000,        4, base=16
+sfr = "Id_CoreId.[7:0]CORETYPEID"                                                              , "Memory", 0x00010000,        4, base=16, bitRange=0-7
+sfr = "Id_CoreId.[31:8]CORECHECKSUM"                                                           , "Memory", 0x00010000,        4, base=16, bitRange=8-31
+sfr = "Id_RevisionId"                                                                          , "Memory", 0x00010004,        4, base=16
+sfr = "Id_RevisionId.[7:0]USERID"                                                              , "Memory", 0x00010004,        4, base=16, bitRange=0-7
+sfr = "Id_RevisionId.[31:8]FLEXNOCID"                                                          , "Memory", 0x00010004,        4, base=16, bitRange=8-31
+sfr = "FaultEn"                                                                                , "Memory", 0x00010008,        4, base=16
+sfr = "FaultEn.[0]FAULTEN"                                                                     , "Memory", 0x00010008,        4, base=16, bitRange=0
+sfr = "ErrVld"                                                                                 , "Memory", 0x0001000C,        4, base=16
+sfr = "ErrVld.[0]ERRVLD"                                                                       , "Memory", 0x0001000C,        4, base=16, bitRange=0
+sfr = "ErrClr"                                                                                 , "Memory", 0x00010010,        4, base=16
+sfr = "ErrClr.[0]ERRCLR"                                                                       , "Memory", 0x00010010,        4, base=16, bitRange=0
+sfr = "ErrLog0"                                                                                , "Memory", 0x00010014,        4, base=16
+sfr = "ErrLog0.[0]LOCK"                                                                        , "Memory", 0x00010014,        4, base=16, bitRange=0
+sfr = "ErrLog0.[4:1]OPC"                                                                       , "Memory", 0x00010014,        4, base=16, bitRange=1-4
+sfr = "ErrLog0.[10:8]ERRCODE"                                                                  , "Memory", 0x00010014,        4, base=16, bitRange=8-10
+sfr = "ErrLog0.[23:16]LEN1"                                                                    , "Memory", 0x00010014,        4, base=16, bitRange=16-23
+sfr = "ErrLog0.[31]FORMAT"                                                                     , "Memory", 0x00010014,        4, base=16, bitRange=31
+sfr = "ErrLog1"                                                                                , "Memory", 0x00010018,        4, base=16
+sfr = "ErrLog1.[19:0]ERRLOG1"                                                                  , "Memory", 0x00010018,        4, base=16, bitRange=0-19
+sfr = "Reserved_00"                                                                            , "Memory", 0x0001001C,        4, base=16
+sfr = "ErrLog3"                                                                                , "Memory", 0x00010020,        4, base=16
+sfr = "ErrLog3.[30:0]ERRLOG3"                                                                  , "Memory", 0x00010020,        4, base=16, bitRange=0-30
+sfr = "Reserved_01"                                                                            , "Memory", 0x00010024,        4, base=16
+sfr = "ErrLog5"                                                                                , "Memory", 0x00010028,        4, base=16
+sfr = "ErrLog5.[8:0]ERRLOG5"                                                                   , "Memory", 0x00010028,        4, base=16, bitRange=0-8
+sfr = "Reserved_02"                                                                            , "Memory", 0x0001002C,        4, base=16
+sfr = "Reserved_03"                                                                            , "Memory", 0x00010030,        4, base=16
+sfr = "Reserved_04"                                                                            , "Memory", 0x00010034,        4, base=16
+sfr = "Reserved_05"                                                                            , "Memory", 0x00010038,        4, base=16
+sfr = "Reserved_06"                                                                            , "Memory", 0x0001003C,        4, base=16
+sfr = "Reserved_07"                                                                            , "Memory", 0x00010040,        4, base=16
+sfr = "Reserved_08"                                                                            , "Memory", 0x00010044,        4, base=16
+sfr = "Reserved_09"                                                                            , "Memory", 0x00010048,        4, base=16
+sfr = "Reserved_10"                                                                            , "Memory", 0x0001004C,        4, base=16
+sfr = "Reserved_11"                                                                            , "Memory", 0x00010050,        4, base=16
+sfr = "Reserved_12"                                                                            , "Memory", 0x00010054,        4, base=16
+sfr = "Reserved_13"                                                                            , "Memory", 0x00010058,        4, base=16
+sfr = "Reserved_14"                                                                            , "Memory", 0x0001005C,        4, base=16
+sfr = "Reserved_15"                                                                            , "Memory", 0x00010060,        4, base=16
+sfr = "Reserved_16"                                                                            , "Memory", 0x00010064,        4, base=16
+sfr = "Reserved_17"                                                                            , "Memory", 0x00010068,        4, base=16
+sfr = "Reserved_18"                                                                            , "Memory", 0x0001006C,        4, base=16
+sfr = "Reserved_19"                                                                            , "Memory", 0x00010070,        4, base=16
+sfr = "Reserved_20"                                                                            , "Memory", 0x00010074,        4, base=16
+sfr = "Reserved_21"                                                                            , "Memory", 0x00010078,        4, base=16
+sfr = "Reserved_22"                                                                            , "Memory", 0x0001007C,        4, base=16
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// Service (RZN1_MATRIX) -----
+group = "RZN1_MATRIX","Id_CoreId","Id_RevisionId","FaultEn","ErrVld","ErrClr","ErrLog0","ErrLog1","Reserved_00","ErrLog3","Reserved_01","ErrLog5","Reserved_02","Reserved_03","Reserved_04","Reserved_05","Reserved_06","Reserved_07","Reserved_08","Reserved_09","Reserved_10","Reserved_11","Reserved_12","Reserved_13","Reserved_14","Reserved_15","Reserved_16","Reserved_17","Reserved_18","Reserved_19","Reserved_20","Reserved_21","Reserved_22"

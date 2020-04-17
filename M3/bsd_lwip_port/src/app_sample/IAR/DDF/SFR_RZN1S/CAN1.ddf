@@ -1,0 +1,349 @@
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : CAN1
+;               CAN-1
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "CAN1/MOD"                                                                               , "Memory", 0x52104000,        4, base=16
+sfr = "CAN1/MOD.[0]RM"                                                                         , "Memory", 0x52104000,        4, base=16, bitRange=0
+sfr = "CAN1/MOD.[1]LOM"                                                                        , "Memory", 0x52104000,        4, base=16, bitRange=1
+sfr = "CAN1/MOD.[2]STM"                                                                        , "Memory", 0x52104000,        4, base=16, bitRange=2
+sfr = "CAN1/MOD.[3]AFM"                                                                        , "Memory", 0x52104000,        4, base=16, bitRange=3
+sfr = "CAN1/MOD.[4]SM"                                                                         , "Memory", 0x52104000,        4, base=16, bitRange=4
+sfr = "CAN1/CMR"                                                                               , "Memory", 0x52104004,        4, base=16, writeOnly
+sfr = "CAN1/CMR.[0]TR"                                                                         , "Memory", 0x52104004,        4, base=16, writeOnly, bitRange=0
+sfr = "CAN1/CMR.[1]AT"                                                                         , "Memory", 0x52104004,        4, base=16, writeOnly, bitRange=1
+sfr = "CAN1/CMR.[2]RRB"                                                                        , "Memory", 0x52104004,        4, base=16, writeOnly, bitRange=2
+sfr = "CAN1/CMR.[3]CDO"                                                                        , "Memory", 0x52104004,        4, base=16, writeOnly, bitRange=3
+sfr = "CAN1/CMR.[4]SRR"                                                                        , "Memory", 0x52104004,        4, base=16, writeOnly, bitRange=4
+sfr = "CAN1/SR"                                                                                , "Memory", 0x52104008,        4, base=16, readOnly
+sfr = "CAN1/SR.[0]RBS"                                                                         , "Memory", 0x52104008,        4, base=16, readOnly, bitRange=0
+sfr = "CAN1/SR.[1]DOS"                                                                         , "Memory", 0x52104008,        4, base=16, readOnly, bitRange=1
+sfr = "CAN1/SR.[2]TBS"                                                                         , "Memory", 0x52104008,        4, base=16, readOnly, bitRange=2
+sfr = "CAN1/SR.[3]TCS"                                                                         , "Memory", 0x52104008,        4, base=16, readOnly, bitRange=3
+sfr = "CAN1/SR.[4]RS"                                                                          , "Memory", 0x52104008,        4, base=16, readOnly, bitRange=4
+sfr = "CAN1/SR.[5]TS"                                                                          , "Memory", 0x52104008,        4, base=16, readOnly, bitRange=5
+sfr = "CAN1/SR.[6]ES"                                                                          , "Memory", 0x52104008,        4, base=16, readOnly, bitRange=6
+sfr = "CAN1/SR.[7]BS"                                                                          , "Memory", 0x52104008,        4, base=16, readOnly, bitRange=7
+sfr = "CAN1/IR"                                                                                , "Memory", 0x5210400C,        4, base=16, readOnly
+sfr = "CAN1/IR.[0]RI"                                                                          , "Memory", 0x5210400C,        4, base=16, readOnly, bitRange=0
+sfr = "CAN1/IR.[1]TI"                                                                          , "Memory", 0x5210400C,        4, base=16, readOnly, bitRange=1
+sfr = "CAN1/IR.[2]EI"                                                                          , "Memory", 0x5210400C,        4, base=16, readOnly, bitRange=2
+sfr = "CAN1/IR.[3]DOI"                                                                         , "Memory", 0x5210400C,        4, base=16, readOnly, bitRange=3
+sfr = "CAN1/IR.[4]WUI"                                                                         , "Memory", 0x5210400C,        4, base=16, readOnly, bitRange=4
+sfr = "CAN1/IR.[5]EPI"                                                                         , "Memory", 0x5210400C,        4, base=16, readOnly, bitRange=5
+sfr = "CAN1/IR.[6]ALI"                                                                         , "Memory", 0x5210400C,        4, base=16, readOnly, bitRange=6
+sfr = "CAN1/IR.[7]BEI"                                                                         , "Memory", 0x5210400C,        4, base=16, readOnly, bitRange=7
+sfr = "CAN1/IER"                                                                               , "Memory", 0x52104010,        4, base=16
+sfr = "CAN1/IER.[0]RIE"                                                                        , "Memory", 0x52104010,        4, base=16, bitRange=0
+sfr = "CAN1/IER.[1]TIE"                                                                        , "Memory", 0x52104010,        4, base=16, bitRange=1
+sfr = "CAN1/IER.[2]EIE"                                                                        , "Memory", 0x52104010,        4, base=16, bitRange=2
+sfr = "CAN1/IER.[3]DOIE"                                                                       , "Memory", 0x52104010,        4, base=16, bitRange=3
+sfr = "CAN1/IER.[4]WUIE"                                                                       , "Memory", 0x52104010,        4, base=16, bitRange=4
+sfr = "CAN1/IER.[5]EPIE"                                                                       , "Memory", 0x52104010,        4, base=16, bitRange=5
+sfr = "CAN1/IER.[6]ALIE"                                                                       , "Memory", 0x52104010,        4, base=16, bitRange=6
+sfr = "CAN1/IER.[7]BEIE"                                                                       , "Memory", 0x52104010,        4, base=16, bitRange=7
+sfr = "CAN1/BTR0"                                                                              , "Memory", 0x52104018,        4, base=16,
+sfr = "CAN1/BTR0.[5:0]BRP"                                                                     , "Memory", 0x52104018,        4, base=16, bitRange=0-5
+sfr = "CAN1/BTR0.[7:6]SJW"                                                                     , "Memory", 0x52104018,        4, base=16, bitRange=6-7
+sfr = "CAN1/BTR1"                                                                              , "Memory", 0x5210401C,        4, base=16
+sfr = "CAN1/BTR1.[3:0]TSEG1"                                                                   , "Memory", 0x5210401C,        4, base=16, bitRange=0-3
+sfr = "CAN1/BTR1.[6:4]TSEG2"                                                                   , "Memory", 0x5210401C,        4, base=16, bitRange=4-6
+sfr = "CAN1/BTR1.[7]SAM"                                                                       , "Memory", 0x5210401C,        4, base=16, bitRange=7
+sfr = "CAN1/OCR"                                                                               , "Memory", 0x52104020,        4, base=16
+sfr = "CAN1/OCR.[1:0]OCMODE"                                                                   , "Memory", 0x52104020,        4, base=16, bitRange=0-1
+sfr = "CAN1/ALC"                                                                               , "Memory", 0x5210402C,        4, base=16, readOnly
+sfr = "CAN1/ALC.[4:0]ALC"                                                                      , "Memory", 0x5210402C,        4, base=16, readOnly, bitRange=0-4
+sfr = "CAN1/ECC"                                                                               , "Memory", 0x52104030,        4, base=16, readOnly
+sfr = "CAN1/ECC.[4:0]ECC_Segment"                                                              , "Memory", 0x52104030,        4, base=16, readOnly, bitRange=0-4
+sfr = "CAN1/ECC.[5]ECC_Direction"                                                              , "Memory", 0x52104030,        4, base=16, readOnly, bitRange=5
+sfr = "CAN1/ECC.[7:6]ECC_Code"                                                                 , "Memory", 0x52104030,        4, base=16, readOnly, bitRange=6-7
+sfr = "CAN1/EWLR"                                                                              , "Memory", 0x52104034,        4, base=16
+sfr = "CAN1/EWLR.[7:0]EWLR"                                                                    , "Memory", 0x52104034,        4, base=16, bitRange=0-7
+sfr = "CAN1/RXERR"                                                                             , "Memory", 0x52104038,        4, base=16
+sfr = "CAN1/RXERR.[7:0]RXERR"                                                                  , "Memory", 0x52104038,        4, base=16, bitRange=0-7
+sfr = "CAN1/TXERR"                                                                             , "Memory", 0x5210403C,        4, base=16
+sfr = "CAN1/TXERR.[7:0]TXERR"                                                                  , "Memory", 0x5210403C,        4, base=16, bitRange=0-7
+sfr = "CAN1/WrTransmitBuffer_0"                                                                , "Memory", 0x52104040,        4, base=16, writeOnly
+sfr = "CAN1/WrTransmitBuffer_0.[7:0]WrTransmitBuffer"                                          , "Memory", 0x52104040,        4, base=16, writeOnly, bitRange=0-7
+sfr = "CAN1/RdReceiveBuffer_0"                                                                 , "Memory", 0x52104040,        4, base=16, readOnly
+sfr = "CAN1/RdReceiveBuffer_0.[7:0]RdReceiveBuffer"                                            , "Memory", 0x52104040,        4, base=16, readOnly, bitRange=0-7
+sfr = "CAN1/ACR0"                                                                              , "Memory", 0x52104040,        4, base=16
+sfr = "CAN1/ACR0.[7:0]ACR"                                                                     , "Memory", 0x52104040,        4, base=16, bitRange=0-7
+sfr = "CAN1/WrTransmitBuffer_1"                                                                , "Memory", 0x52104044,        4, base=16, writeOnly
+sfr = "CAN1/WrTransmitBuffer_1.[7:0]WrTransmitBuffer"                                          , "Memory", 0x52104044,        4, base=16, writeOnly, bitRange=0-7
+sfr = "CAN1/RdReceiveBuffer_1"                                                                 , "Memory", 0x52104044,        4, base=16, readOnly
+sfr = "CAN1/RdReceiveBuffer_1.[7:0]RdReceiveBuffer"                                            , "Memory", 0x52104044,        4, base=16, readOnly, bitRange=0-7
+sfr = "CAN1/ACR1"                                                                              , "Memory", 0x52104044,        4, base=16
+sfr = "CAN1/ACR1.[7:0]ACR"                                                                     , "Memory", 0x52104044,        4, base=16, bitRange=0-7
+sfr = "CAN1/WrTransmitBuffer_2"                                                                , "Memory", 0x52104048,        4, base=16, writeOnly
+sfr = "CAN1/WrTransmitBuffer_2.[7:0]WrTransmitBuffer"                                          , "Memory", 0x52104048,        4, base=16, writeOnly, bitRange=0-7
+sfr = "CAN1/RdReceiveBuffer_2"                                                                 , "Memory", 0x52104048,        4, base=16, readOnly
+sfr = "CAN1/RdReceiveBuffer_2.[7:0]RdReceiveBuffer"                                            , "Memory", 0x52104048,        4, base=16, readOnly, bitRange=0-7
+sfr = "CAN1/ACR2"                                                                              , "Memory", 0x52104048,        4, base=16
+sfr = "CAN1/ACR2.[7:0]ACR"                                                                     , "Memory", 0x52104048,        4, base=16, bitRange=0-7
+sfr = "CAN1/WrTransmitBuffer_3"                                                                , "Memory", 0x5210404C,        4, base=16, writeOnly
+sfr = "CAN1/WrTransmitBuffer_3.[7:0]WrTransmitBuffer"                                          , "Memory", 0x5210404C,        4, base=16, writeOnly, bitRange=0-7
+sfr = "CAN1/RdReceiveBuffer_3"                                                                 , "Memory", 0x5210404C,        4, base=16, readOnly
+sfr = "CAN1/RdReceiveBuffer_3.[7:0]RdReceiveBuffer"                                            , "Memory", 0x5210404C,        4, base=16, readOnly, bitRange=0-7
+sfr = "CAN1/ACR3"                                                                              , "Memory", 0x5210404C,        4, base=16
+sfr = "CAN1/ACR3.[7:0]ACR"                                                                     , "Memory", 0x5210404C,        4, base=16, bitRange=0-7
+sfr = "CAN1/WrTransmitBuffer_4"                                                                , "Memory", 0x52104050,        4, base=16, writeOnly
+sfr = "CAN1/WrTransmitBuffer_4.[7:0]WrTransmitBuffer"                                          , "Memory", 0x52104050,        4, base=16, writeOnly, bitRange=0-7
+sfr = "CAN1/RdReceiveBuffer_4"                                                                 , "Memory", 0x52104050,        4, base=16, readOnly
+sfr = "CAN1/RdReceiveBuffer_4.[7:0]RdReceiveBuffer"                                            , "Memory", 0x52104050,        4, base=16, readOnly, bitRange=0-7
+sfr = "CAN1/AMR0"                                                                              , "Memory", 0x52104050,        4, base=16
+sfr = "CAN1/AMR0.[7:0]AMR"                                                                     , "Memory", 0x52104050,        4, base=16, bitRange=0-7
+sfr = "CAN1/WrTransmitBuffer_5"                                                                , "Memory", 0x52104054,        4, base=16, writeOnly
+sfr = "CAN1/WrTransmitBuffer_5.[7:0]WrTransmitBuffer"                                          , "Memory", 0x52104054,        4, base=16, writeOnly, bitRange=0-7
+sfr = "CAN1/RdReceiveBuffer_5"                                                                 , "Memory", 0x52104054,        4, base=16, readOnly
+sfr = "CAN1/RdReceiveBuffer_5.[7:0]RdReceiveBuffer"                                            , "Memory", 0x52104054,        4, base=16, readOnly, bitRange=0-7
+sfr = "CAN1/AMR1"                                                                              , "Memory", 0x52104054,        4, base=16
+sfr = "CAN1/AMR1.[7:0]AMR"                                                                     , "Memory", 0x52104054,        4, base=16, bitRange=0-7
+sfr = "CAN1/WrTransmitBuffer_6"                                                                , "Memory", 0x52104058,        4, base=16, writeOnly
+sfr = "CAN1/WrTransmitBuffer_6.[7:0]WrTransmitBuffer"                                          , "Memory", 0x52104058,        4, base=16, writeOnly, bitRange=0-7
+sfr = "CAN1/RdReceiveBuffer_6"                                                                 , "Memory", 0x52104058,        4, base=16, readOnly
+sfr = "CAN1/RdReceiveBuffer_6.[7:0]RdReceiveBuffer"                                            , "Memory", 0x52104058,        4, base=16, readOnly, bitRange=0-7
+sfr = "CAN1/AMR2"                                                                              , "Memory", 0x52104058,        4, base=16
+sfr = "CAN1/AMR2.[7:0]AMR"                                                                     , "Memory", 0x52104058,        4, base=16, bitRange=0-7
+sfr = "CAN1/WrTransmitBuffer_7"                                                                , "Memory", 0x5210405C,        4, base=16, writeOnly
+sfr = "CAN1/WrTransmitBuffer_7.[7:0]WrTransmitBuffer"                                          , "Memory", 0x5210405C,        4, base=16, writeOnly, bitRange=0-7
+sfr = "CAN1/RdReceiveBuffer_7"                                                                 , "Memory", 0x5210405C,        4, base=16, readOnly
+sfr = "CAN1/RdReceiveBuffer_7.[7:0]RdReceiveBuffer"                                            , "Memory", 0x5210405C,        4, base=16, readOnly, bitRange=0-7
+sfr = "CAN1/AMR3"                                                                              , "Memory", 0x5210405C,        4, base=16
+sfr = "CAN1/AMR3.[7:0]AMR"                                                                     , "Memory", 0x5210405C,        4, base=16, bitRange=0-7
+sfr = "CAN1/WrTransmitBuffer_8"                                                                , "Memory", 0x52104060,        4, base=16, writeOnly
+sfr = "CAN1/WrTransmitBuffer_8.[7:0]WrTransmitBuffer"                                          , "Memory", 0x52104060,        4, base=16, writeOnly, bitRange=0-7
+sfr = "CAN1/RdReceiveBuffer_8"                                                                 , "Memory", 0x52104060,        4, base=16, readOnly
+sfr = "CAN1/RdReceiveBuffer_8.[7:0]RdReceiveBuffer"                                            , "Memory", 0x52104060,        4, base=16, readOnly, bitRange=0-7
+sfr = "CAN1/WrTransmitBuffer_9"                                                                , "Memory", 0x52104064,        4, base=16, writeOnly
+sfr = "CAN1/WrTransmitBuffer_9.[7:0]WrTransmitBuffer"                                          , "Memory", 0x52104064,        4, base=16, writeOnly, bitRange=0-7
+sfr = "CAN1/RdReceiveBuffer_9"                                                                 , "Memory", 0x52104064,        4, base=16, readOnly
+sfr = "CAN1/RdReceiveBuffer_9.[7:0]RdReceiveBuffer"                                            , "Memory", 0x52104064,        4, base=16, readOnly, bitRange=0-7
+sfr = "CAN1/WrTransmitBuffer_10"                                                               , "Memory", 0x52104068,        4, base=16, writeOnly
+sfr = "CAN1/WrTransmitBuffer_10.[7:0]WrTransmitBuffer"                                         , "Memory", 0x52104068,        4, base=16, writeOnly, bitRange=0-7
+sfr = "CAN1/RdReceiveBuffer_10"                                                                , "Memory", 0x52104068,        4, base=16, readOnly
+sfr = "CAN1/RdReceiveBuffer_10.[7:0]RdReceiveBuffer"                                           , "Memory", 0x52104068,        4, base=16, readOnly, bitRange=0-7
+sfr = "CAN1/WrTransmitBuffer_11"                                                               , "Memory", 0x5210406C,        4, base=16, writeOnly
+sfr = "CAN1/WrTransmitBuffer_11.[7:0]WrTransmitBuffer"                                         , "Memory", 0x5210406C,        4, base=16, writeOnly, bitRange=0-7
+sfr = "CAN1/RdReceiveBuffer_11"                                                                , "Memory", 0x5210406C,        4, base=16, readOnly
+sfr = "CAN1/RdReceiveBuffer_11.[7:0]RdReceiveBuffer"                                           , "Memory", 0x5210406C,        4, base=16, readOnly, bitRange=0-7
+sfr = "CAN1/WrTransmitBuffer_12"                                                               , "Memory", 0x52104070,        4, base=16, writeOnly
+sfr = "CAN1/WrTransmitBuffer_12.[7:0]WrTransmitBuffer"                                         , "Memory", 0x52104070,        4, base=16, writeOnly, bitRange=0-7
+sfr = "CAN1/RdReceiveBuffer_12"                                                                , "Memory", 0x52104070,        4, base=16, readOnly
+sfr = "CAN1/RdReceiveBuffer_12.[7:0]RdReceiveBuffer"                                           , "Memory", 0x52104070,        4, base=16, readOnly, bitRange=0-7
+sfr = "CAN1/RMC"                                                                               , "Memory", 0x52104074,        4, base=16, readOnly
+sfr = "CAN1/RMC.[4:0]RMC"                                                                      , "Memory", 0x52104074,        4, base=16, readOnly, bitRange=0-4
+sfr = "CAN1/RBSA"                                                                              , "Memory", 0x52104078,        4, base=16
+sfr = "CAN1/RBSA.[5:0]RBSA"                                                                    , "Memory", 0x52104078,        4, base=16, bitRange=0-5
+sfr = "CAN1/ReceiveFifo_0"                                                                     , "Memory", 0x52104080,        4, base=16
+sfr = "CAN1/ReceiveFifo_0.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104080,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_1"                                                                     , "Memory", 0x52104084,        4, base=16
+sfr = "CAN1/ReceiveFifo_1.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104084,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_2"                                                                     , "Memory", 0x52104088,        4, base=16
+sfr = "CAN1/ReceiveFifo_2.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104088,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_3"                                                                     , "Memory", 0x5210408C,        4, base=16
+sfr = "CAN1/ReceiveFifo_3.[7:0]ReceiveFifo"                                                    , "Memory", 0x5210408C,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_4"                                                                     , "Memory", 0x52104090,        4, base=16
+sfr = "CAN1/ReceiveFifo_4.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104090,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_5"                                                                     , "Memory", 0x52104094,        4, base=16
+sfr = "CAN1/ReceiveFifo_5.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104094,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_6"                                                                     , "Memory", 0x52104098,        4, base=16
+sfr = "CAN1/ReceiveFifo_6.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104098,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_7"                                                                     , "Memory", 0x5210409C,        4, base=16
+sfr = "CAN1/ReceiveFifo_7.[7:0]ReceiveFifo"                                                    , "Memory", 0x5210409C,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_8"                                                                     , "Memory", 0x521040A0,        4, base=16
+sfr = "CAN1/ReceiveFifo_8.[7:0]ReceiveFifo"                                                    , "Memory", 0x521040A0,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_9"                                                                     , "Memory", 0x521040A4,        4, base=16
+sfr = "CAN1/ReceiveFifo_9.[7:0]ReceiveFifo"                                                    , "Memory", 0x521040A4,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_10"                                                                     , "Memory", 0x521040A8,        4, base=16
+sfr = "CAN1/ReceiveFifo_10.[7:0]ReceiveFifo"                                                    , "Memory", 0x521040A8,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_11"                                                                     , "Memory", 0x521040AC,        4, base=16
+sfr = "CAN1/ReceiveFifo_11.[7:0]ReceiveFifo"                                                    , "Memory", 0x521040AC,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_12"                                                                     , "Memory", 0x521040B0,        4, base=16
+sfr = "CAN1/ReceiveFifo_12.[7:0]ReceiveFifo"                                                    , "Memory", 0x521040B0,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_13"                                                                     , "Memory", 0x521040B4,        4, base=16
+sfr = "CAN1/ReceiveFifo_13.[7:0]ReceiveFifo"                                                    , "Memory", 0x521040B4,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_14"                                                                     , "Memory", 0x521040B8,        4, base=16
+sfr = "CAN1/ReceiveFifo_14.[7:0]ReceiveFifo"                                                    , "Memory", 0x521040B8,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_15"                                                                     , "Memory", 0x521040BC,        4, base=16
+sfr = "CAN1/ReceiveFifo_15.[7:0]ReceiveFifo"                                                    , "Memory", 0x521040BC,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_16"                                                                     , "Memory", 0x521040C0,        4, base=16
+sfr = "CAN1/ReceiveFifo_16.[7:0]ReceiveFifo"                                                    , "Memory", 0x521040C0,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_17"                                                                     , "Memory", 0x521040C4,        4, base=16
+sfr = "CAN1/ReceiveFifo_17.[7:0]ReceiveFifo"                                                    , "Memory", 0x521040C4,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_18"                                                                     , "Memory", 0x521040C8,        4, base=16
+sfr = "CAN1/ReceiveFifo_18.[7:0]ReceiveFifo"                                                    , "Memory", 0x521040C8,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_19"                                                                     , "Memory", 0x521040CC,        4, base=16
+sfr = "CAN1/ReceiveFifo_19.[7:0]ReceiveFifo"                                                    , "Memory", 0x521040CC,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_20"                                                                     , "Memory", 0x521040D0,        4, base=16
+sfr = "CAN1/ReceiveFifo_20.[7:0]ReceiveFifo"                                                    , "Memory", 0x521040D0,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_21"                                                                     , "Memory", 0x521040D4,        4, base=16
+sfr = "CAN1/ReceiveFifo_21.[7:0]ReceiveFifo"                                                    , "Memory", 0x521040D4,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_22"                                                                     , "Memory", 0x521040D8,        4, base=16
+sfr = "CAN1/ReceiveFifo_22.[7:0]ReceiveFifo"                                                    , "Memory", 0x521040D8,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_23"                                                                     , "Memory", 0x521040DC,        4, base=16
+sfr = "CAN1/ReceiveFifo_23.[7:0]ReceiveFifo"                                                    , "Memory", 0x521040DC,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_24"                                                                     , "Memory", 0x521040E0,        4, base=16
+sfr = "CAN1/ReceiveFifo_24.[7:0]ReceiveFifo"                                                    , "Memory", 0x521040E0,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_25"                                                                     , "Memory", 0x521040E4,        4, base=16
+sfr = "CAN1/ReceiveFifo_25.[7:0]ReceiveFifo"                                                    , "Memory", 0x521040E4,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_26"                                                                     , "Memory", 0x521040E8,        4, base=16
+sfr = "CAN1/ReceiveFifo_26.[7:0]ReceiveFifo"                                                    , "Memory", 0x521040E8,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_27"                                                                     , "Memory", 0x521040EC,        4, base=16
+sfr = "CAN1/ReceiveFifo_27.[7:0]ReceiveFifo"                                                    , "Memory", 0x521040EC,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_28"                                                                     , "Memory", 0x521040F0,        4, base=16
+sfr = "CAN1/ReceiveFifo_28.[7:0]ReceiveFifo"                                                    , "Memory", 0x521040F0,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_29"                                                                     , "Memory", 0x521040F4,        4, base=16
+sfr = "CAN1/ReceiveFifo_29.[7:0]ReceiveFifo"                                                    , "Memory", 0x521040F4,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_30"                                                                     , "Memory", 0x521040F8,        4, base=16
+sfr = "CAN1/ReceiveFifo_30.[7:0]ReceiveFifo"                                                    , "Memory", 0x521040F8,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_31"                                                                     , "Memory", 0x521040FC,        4, base=16
+sfr = "CAN1/ReceiveFifo_31.[7:0]ReceiveFifo"                                                    , "Memory", 0x521040FC,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_32"                                                                     , "Memory", 0x52104100,        4, base=16
+sfr = "CAN1/ReceiveFifo_32.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104100,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_33"                                                                     , "Memory", 0x52104104,        4, base=16
+sfr = "CAN1/ReceiveFifo_33.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104104,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_34"                                                                     , "Memory", 0x52104108,        4, base=16
+sfr = "CAN1/ReceiveFifo_34.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104108,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_35"                                                                     , "Memory", 0x5210410C,        4, base=16
+sfr = "CAN1/ReceiveFifo_35.[7:0]ReceiveFifo"                                                    , "Memory", 0x5210410C,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_36"                                                                     , "Memory", 0x52104110,        4, base=16
+sfr = "CAN1/ReceiveFifo_36.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104110,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_37"                                                                     , "Memory", 0x52104114,        4, base=16
+sfr = "CAN1/ReceiveFifo_37.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104114,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_38"                                                                     , "Memory", 0x52104118,        4, base=16
+sfr = "CAN1/ReceiveFifo_38.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104118,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_39"                                                                     , "Memory", 0x5210411C,        4, base=16
+sfr = "CAN1/ReceiveFifo_39.[7:0]ReceiveFifo"                                                    , "Memory", 0x5210411C,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_40"                                                                     , "Memory", 0x52104120,        4, base=16
+sfr = "CAN1/ReceiveFifo_40.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104120,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_41"                                                                     , "Memory", 0x52104124,        4, base=16
+sfr = "CAN1/ReceiveFifo_41.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104124,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_42"                                                                     , "Memory", 0x52104128,        4, base=16
+sfr = "CAN1/ReceiveFifo_42.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104128,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_43"                                                                     , "Memory", 0x5210412C,        4, base=16
+sfr = "CAN1/ReceiveFifo_43.[7:0]ReceiveFifo"                                                    , "Memory", 0x5210412C,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_44"                                                                     , "Memory", 0x52104130,        4, base=16
+sfr = "CAN1/ReceiveFifo_44.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104130,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_45"                                                                     , "Memory", 0x52104134,        4, base=16
+sfr = "CAN1/ReceiveFifo_45.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104134,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_46"                                                                     , "Memory", 0x52104138,        4, base=16
+sfr = "CAN1/ReceiveFifo_46.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104138,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_47"                                                                     , "Memory", 0x5210413C,        4, base=16
+sfr = "CAN1/ReceiveFifo_47.[7:0]ReceiveFifo"                                                    , "Memory", 0x5210413C,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_48"                                                                     , "Memory", 0x52104140,        4, base=16
+sfr = "CAN1/ReceiveFifo_48.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104140,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_49"                                                                     , "Memory", 0x52104144,        4, base=16
+sfr = "CAN1/ReceiveFifo_49.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104144,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_50"                                                                     , "Memory", 0x52104148,        4, base=16
+sfr = "CAN1/ReceiveFifo_50.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104148,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_51"                                                                     , "Memory", 0x5210414C,        4, base=16
+sfr = "CAN1/ReceiveFifo_51.[7:0]ReceiveFifo"                                                    , "Memory", 0x5210414C,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_52"                                                                     , "Memory", 0x52104150,        4, base=16
+sfr = "CAN1/ReceiveFifo_52.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104150,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_53"                                                                     , "Memory", 0x52104154,        4, base=16
+sfr = "CAN1/ReceiveFifo_53.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104154,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_54"                                                                     , "Memory", 0x52104158,        4, base=16
+sfr = "CAN1/ReceiveFifo_54.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104158,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_55"                                                                     , "Memory", 0x5210415C,        4, base=16
+sfr = "CAN1/ReceiveFifo_55.[7:0]ReceiveFifo"                                                    , "Memory", 0x5210415C,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_56"                                                                     , "Memory", 0x52104160,        4, base=16
+sfr = "CAN1/ReceiveFifo_56.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104160,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_57"                                                                     , "Memory", 0x52104164,        4, base=16
+sfr = "CAN1/ReceiveFifo_57.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104164,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_58"                                                                     , "Memory", 0x52104168,        4, base=16
+sfr = "CAN1/ReceiveFifo_58.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104168,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_59"                                                                     , "Memory", 0x5210416C,        4, base=16
+sfr = "CAN1/ReceiveFifo_59.[7:0]ReceiveFifo"                                                    , "Memory", 0x5210416C,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_60"                                                                     , "Memory", 0x52104170,        4, base=16
+sfr = "CAN1/ReceiveFifo_60.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104170,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_61"                                                                     , "Memory", 0x52104174,        4, base=16
+sfr = "CAN1/ReceiveFifo_61.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104174,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_62"                                                                     , "Memory", 0x52104178,        4, base=16
+sfr = "CAN1/ReceiveFifo_62.[7:0]ReceiveFifo"                                                    , "Memory", 0x52104178,        4, base=16, bitRange=0-7
+sfr = "CAN1/ReceiveFifo_63"                                                                     , "Memory", 0x5210417C,        4, base=16
+sfr = "CAN1/ReceiveFifo_63.[7:0]ReceiveFifo"                                                    , "Memory", 0x5210417C,        4, base=16, bitRange=0-7
+sfr = "CAN1/RdTransmitBuffer_0"                                                                , "Memory", 0x52104180,        4, base=16, readOnly
+sfr = "CAN1/RdTransmitBuffer_0.[7:0]RdTransmitBuffer"                                          , "Memory", 0x52104180,        4, base=16, readOnly, bitRange=0-7
+sfr = "CAN1/RdTransmitBuffer_1"                                                                , "Memory", 0x52104184,        4, base=16, readOnly
+sfr = "CAN1/RdTransmitBuffer_1.[7:0]RdTransmitBuffer"                                          , "Memory", 0x52104184,        4, base=16, readOnly, bitRange=0-7
+sfr = "CAN1/RdTransmitBuffer_2"                                                                , "Memory", 0x52104188,        4, base=16, readOnly
+sfr = "CAN1/RdTransmitBuffer_2.[7:0]RdTransmitBuffer"                                          , "Memory", 0x52104188,        4, base=16, readOnly, bitRange=0-7
+sfr = "CAN1/RdTransmitBuffer_3"                                                                , "Memory", 0x5210418C,        4, base=16, readOnly
+sfr = "CAN1/RdTransmitBuffer_3.[7:0]RdTransmitBuffer"                                          , "Memory", 0x5210418C,        4, base=16, readOnly, bitRange=0-7
+sfr = "CAN1/RdTransmitBuffer_4"                                                                , "Memory", 0x52104190,        4, base=16, readOnly
+sfr = "CAN1/RdTransmitBuffer_4.[7:0]RdTransmitBuffer"                                          , "Memory", 0x52104190,        4, base=16, readOnly, bitRange=0-7
+sfr = "CAN1/RdTransmitBuffer_5"                                                                , "Memory", 0x52104194,        4, base=16, readOnly
+sfr = "CAN1/RdTransmitBuffer_5.[7:0]RdTransmitBuffer"                                          , "Memory", 0x52104194,        4, base=16, readOnly, bitRange=0-7
+sfr = "CAN1/RdTransmitBuffer_6"                                                                , "Memory", 0x52104198,        4, base=16, readOnly
+sfr = "CAN1/RdTransmitBuffer_6.[7:0]RdTransmitBuffer"                                          , "Memory", 0x52104198,        4, base=16, readOnly, bitRange=0-7
+sfr = "CAN1/RdTransmitBuffer_7"                                                                , "Memory", 0x5210419C,        4, base=16, readOnly
+sfr = "CAN1/RdTransmitBuffer_7.[7:0]RdTransmitBuffer"                                          , "Memory", 0x5210419C,        4, base=16, readOnly, bitRange=0-7
+sfr = "CAN1/RdTransmitBuffer_8"                                                                , "Memory", 0x521041A0,        4, base=16, readOnly
+sfr = "CAN1/RdTransmitBuffer_8.[7:0]RdTransmitBuffer"                                          , "Memory", 0x521041A0,        4, base=16, readOnly, bitRange=0-7
+sfr = "CAN1/RdTransmitBuffer_9"                                                                , "Memory", 0x521041A4,        4, base=16, readOnly
+sfr = "CAN1/RdTransmitBuffer_9.[7:0]RdTransmitBuffer"                                          , "Memory", 0x521041A4,        4, base=16, readOnly, bitRange=0-7
+sfr = "CAN1/RdTransmitBuffer_10"                                                                , "Memory", 0x521041A8,        4, base=16, readOnly
+sfr = "CAN1/RdTransmitBuffer_10.[7:0]RdTransmitBuffer"                                          , "Memory", 0x521041A8,        4, base=16, readOnly, bitRange=0-7
+sfr = "CAN1/RdTransmitBuffer_11"                                                                , "Memory", 0x521041AC,        4, base=16, readOnly
+sfr = "CAN1/RdTransmitBuffer_11.[7:0]RdTransmitBuffer"                                          , "Memory", 0x521041AC,        4, base=16, readOnly, bitRange=0-7
+sfr = "CAN1/RdTransmitBuffer_12"                                                                , "Memory", 0x521041B0,        4, base=16, readOnly
+sfr = "CAN1/RdTransmitBuffer_12.[7:0]RdTransmitBuffer"                                          , "Memory", 0x521041B0,        4, base=16, readOnly, bitRange=0-7
+sfr = "CAN1/SyncTransmitBuffer_0"                                                              , "Memory", 0x52104440,        4, base=16
+sfr = "CAN1/SyncTransmitBuffer_0.[7:0]SyncTransmitBuffer"                                      , "Memory", 0x52104440,        4, base=16, bitRange=0-7
+sfr = "CAN1/SyncTransmitBuffer_1"                                                              , "Memory", 0x52104444,        4, base=16
+sfr = "CAN1/SyncTransmitBuffer_1.[7:0]SyncTransmitBuffer"                                      , "Memory", 0x52104444,        4, base=16, bitRange=0-7
+sfr = "CAN1/SyncTransmitBuffer_2"                                                              , "Memory", 0x52104448,        4, base=16
+sfr = "CAN1/SyncTransmitBuffer_2.[7:0]SyncTransmitBuffer"                                      , "Memory", 0x52104448,        4, base=16, bitRange=0-7
+sfr = "CAN1/SyncTransmitBuffer_3"                                                              , "Memory", 0x5210444C,        4, base=16
+sfr = "CAN1/SyncTransmitBuffer_3.[7:0]SyncTransmitBuffer"                                      , "Memory", 0x5210444C,        4, base=16, bitRange=0-7
+sfr = "CAN1/SyncTransmitBuffer_4"                                                              , "Memory", 0x52104450,        4, base=16
+sfr = "CAN1/SyncTransmitBuffer_4.[7:0]SyncTransmitBuffer"                                      , "Memory", 0x52104450,        4, base=16, bitRange=0-7
+sfr = "CAN1/SyncTransmitBuffer_5"                                                              , "Memory", 0x52104454,        4, base=16
+sfr = "CAN1/SyncTransmitBuffer_5.[7:0]SyncTransmitBuffer"                                      , "Memory", 0x52104454,        4, base=16, bitRange=0-7
+sfr = "CAN1/SyncTransmitBuffer_6"                                                              , "Memory", 0x52104458,        4, base=16
+sfr = "CAN1/SyncTransmitBuffer_6.[7:0]SyncTransmitBuffer"                                      , "Memory", 0x52104458,        4, base=16, bitRange=0-7
+sfr = "CAN1/SyncTransmitBuffer_7"                                                              , "Memory", 0x5210445C,        4, base=16
+sfr = "CAN1/SyncTransmitBuffer_7.[7:0]SyncTransmitBuffer"                                      , "Memory", 0x5210445C,        4, base=16, bitRange=0-7
+sfr = "CAN1/SyncTransmitBuffer_8"                                                              , "Memory", 0x52104460,        4, base=16
+sfr = "CAN1/SyncTransmitBuffer_8.[7:0]SyncTransmitBuffer"                                      , "Memory", 0x52104460,        4, base=16, bitRange=0-7
+sfr = "CAN1/SyncTransmitBuffer_9"                                                              , "Memory", 0x52104464,        4, base=16
+sfr = "CAN1/SyncTransmitBuffer_9.[7:0]SyncTransmitBuffer"                                      , "Memory", 0x52104464,        4, base=16, bitRange=0-7
+sfr = "CAN1/SyncTransmitBuffer_10"                                                              , "Memory", 0x52104468,        4, base=16
+sfr = "CAN1/SyncTransmitBuffer_10.[7:0]SyncTransmitBuffer"                                      , "Memory", 0x52104468,        4, base=16, bitRange=0-7
+sfr = "CAN1/SyncTransmitBuffer_11"                                                              , "Memory", 0x5210446C,        4, base=16
+sfr = "CAN1/SyncTransmitBuffer_11.[7:0]SyncTransmitBuffer"                                      , "Memory", 0x5210446C,        4, base=16, bitRange=0-7
+sfr = "CAN1/SyncTransmitBuffer_12"                                                              , "Memory", 0x52104470,        4, base=16
+sfr = "CAN1/SyncTransmitBuffer_12.[7:0]SyncTransmitBuffer"                                      , "Memory", 0x52104470,        4, base=16, bitRange=0-7
+sfr = "CAN1/SyncPeriod"                                                                        , "Memory", 0x52104480,        4, base=16
+sfr = "CAN1/SyncPeriod.[15:0]SyncPeriod"                                                       , "Memory", 0x52104480,        4, base=16, bitRange=0-15
+sfr = "CAN1/SyncPeriod.[29:20]SyncMaskFrameTime"                                               , "Memory", 0x52104480,        4, base=16, bitRange=20-29
+sfr = "CAN1/SyncTriggerTime"                                                                   , "Memory", 0x52104484,        4, base=16
+sfr = "CAN1/SyncTriggerTime.[11:0]SyncTrigger1Time"                                            , "Memory", 0x52104484,        4, base=16, bitRange=0-11
+sfr = "CAN1/SyncTriggerTime.[27:16]SyncTrigger2Time"                                           , "Memory", 0x52104484,        4, base=16, bitRange=16-27
+sfr = "CAN1/SyncStatusInt"                                                                     , "Memory", 0x52104488,        4, base=16, readOnly
+sfr = "CAN1/SyncStatusInt.[0]SendSyncFrameInt"                                                 , "Memory", 0x52104488,        4, base=16, readOnly, bitRange=0
+sfr = "CAN1/SyncStatusInt.[1]OverrunSyncFrameInt"                                              , "Memory", 0x52104488,        4, base=16, readOnly, bitRange=1
+sfr = "CAN1/SyncMaskInt"                                                                       , "Memory", 0x5210448C,        4, base=16
+sfr = "CAN1/SyncMaskInt.[0]SendSyncFrameMaskInt"                                               , "Memory", 0x5210448C,        4, base=16, bitRange=0
+sfr = "CAN1/SyncMaskInt.[1]OverrunSyncFrameMaskInt"                                            , "Memory", 0x5210448C,        4, base=16, bitRange=1
+sfr = "CAN1/SyncClearInt"                                                                      , "Memory", 0x52104490,        4, base=16
+sfr = "CAN1/SyncClearInt.[0]SendSyncFrameClearInt"                                             , "Memory", 0x52104490,        4, base=16, bitRange=0
+sfr = "CAN1/SyncClearInt.[1]OverrunSyncFrameClearInt"                                          , "Memory", 0x52104490,        4, base=16, bitRange=1
+sfr = "CAN1/SyncStatus"                                                                        , "Memory", 0x52104494,        4, base=16
+sfr = "CAN1/SyncStatus.[0]SyncRunStop"                                                         , "Memory", 0x52104494,        4, base=16, readOnly, bitRange=0
+sfr = "CAN1/SyncStatus.[1]SyncTrigger1"                                                        , "Memory", 0x52104494,        4, base=16, readOnly, bitRange=1
+sfr = "CAN1/SyncStatus.[2]SyncTrigger2"                                                        , "Memory", 0x52104494,        4, base=16, readOnly, bitRange=2
+sfr = "CAN1/SyncStatus.[3]SyncMaskFrame"                                                       , "Memory", 0x52104494,        4, base=16, readOnly, bitRange=3
+sfr = "CAN1/SyncStatus.[4]SyncMode"                                                            , "Memory", 0x52104494,        4, base=16, bitRange=4
+sfr = "CAN1/SyncStatus.[5]TimeOnlyIfBusOff"                                                    , "Memory", 0x52104494,        4, base=16, bitRange=5
+sfr = "CAN1/SyncStatus.[6]TimerOnlyMode"                                                       , "Memory", 0x52104494,        4, base=16, bitRange=6
+sfr = "CAN1/SyncClearSetRunStop"                                                               , "Memory", 0x52104498,        4, base=16, writeOnly
+sfr = "CAN1/SyncClearSetRunStop.[31:0]SyncClearSetRunStop"                                     , "Memory", 0x52104498,        4, base=16, writeOnly, bitRange=0-31
+sfr = "CAN1/SyncClearSetTrigger"                                                               , "Memory", 0x5210449C,        4, base=16, writeOnly
+sfr = "CAN1/SyncClearSetTrigger.[31:0]SyncClearSetTrigger"                                     , "Memory", 0x5210449C,        4, base=16, writeOnly, bitRange=0-31
+sfr = "CAN1/SyncPassiveError"                                                                  , "Memory", 0x521044A0,        4, base=16
+sfr = "CAN1/SyncPassiveError.[15:0]SyncPassiveError"                                           , "Memory", 0x521044A0,        4, base=16, bitRange=0-15
+
+// CAN-1 -----
+group = "CAN1","CAN1/MOD","CAN1/CMR","CAN1/SR","CAN1/IR","CAN1/IER","CAN1/BTR0","CAN1/BTR1","CAN1/OCR","CAN1/ALC","CAN1/ECC","CAN1/EWLR","CAN1/RXERR","CAN1/TXERR","CAN1/WrTransmitBuffer_0","CAN1/RdReceiveBuffer_0","CAN1/ACR0","CAN1/WrTransmitBuffer_1","CAN1/RdReceiveBuffer_1","CAN1/ACR1","CAN1/WrTransmitBuffer_2","CAN1/RdReceiveBuffer_2","CAN1/ACR2","CAN1/WrTransmitBuffer_3","CAN1/RdReceiveBuffer_3","CAN1/ACR3","CAN1/WrTransmitBuffer_4","CAN1/RdReceiveBuffer_4","CAN1/AMR0","CAN1/WrTransmitBuffer_5","CAN1/RdReceiveBuffer_5","CAN1/AMR1","CAN1/WrTransmitBuffer_6","CAN1/RdReceiveBuffer_6","CAN1/AMR2","CAN1/WrTransmitBuffer_7","CAN1/RdReceiveBuffer_7","CAN1/AMR3","CAN1/WrTransmitBuffer_8","CAN1/RdReceiveBuffer_8","CAN1/WrTransmitBuffer_9","CAN1/RdReceiveBuffer_9","CAN1/WrTransmitBuffer_10","CAN1/RdReceiveBuffer_10","CAN1/WrTransmitBuffer_11","CAN1/RdReceiveBuffer_11","CAN1/WrTransmitBuffer_12","CAN1/RdReceiveBuffer_12","CAN1/RMC","CAN1/RBSA","CAN1/ReceiveFifo_0","CAN1/ReceiveFifo_1","CAN1/ReceiveFifo_2","CAN1/ReceiveFifo_3","CAN1/ReceiveFifo_4","CAN1/ReceiveFifo_5","CAN1/ReceiveFifo_6","CAN1/ReceiveFifo_7","CAN1/ReceiveFifo_8","CAN1/ReceiveFifo_9","CAN1/ReceiveFifo_10","CAN1/ReceiveFifo_11","CAN1/ReceiveFifo_12","CAN1/ReceiveFifo_13","CAN1/ReceiveFifo_14","CAN1/ReceiveFifo_15","CAN1/ReceiveFifo_16","CAN1/ReceiveFifo_17","CAN1/ReceiveFifo_18","CAN1/ReceiveFifo_19","CAN1/ReceiveFifo_20","CAN1/ReceiveFifo_21","CAN1/ReceiveFifo_22","CAN1/ReceiveFifo_23","CAN1/ReceiveFifo_24","CAN1/ReceiveFifo_25","CAN1/ReceiveFifo_26","CAN1/ReceiveFifo_27","CAN1/ReceiveFifo_28","CAN1/ReceiveFifo_29","CAN1/ReceiveFifo_30","CAN1/ReceiveFifo_31","CAN1/ReceiveFifo_32","CAN1/ReceiveFifo_33","CAN1/ReceiveFifo_34","CAN1/ReceiveFifo_35","CAN1/ReceiveFifo_36","CAN1/ReceiveFifo_37","CAN1/ReceiveFifo_38","CAN1/ReceiveFifo_39","CAN1/ReceiveFifo_40","CAN1/ReceiveFifo_41","CAN1/ReceiveFifo_42","CAN1/ReceiveFifo_43","CAN1/ReceiveFifo_44","CAN1/ReceiveFifo_45","CAN1/ReceiveFifo_46","CAN1/ReceiveFifo_47","CAN1/ReceiveFifo_48","CAN1/ReceiveFifo_49","CAN1/ReceiveFifo_50","CAN1/ReceiveFifo_51","CAN1/ReceiveFifo_52","CAN1/ReceiveFifo_53","CAN1/ReceiveFifo_54","CAN1/ReceiveFifo_55","CAN1/ReceiveFifo_56","CAN1/ReceiveFifo_57","CAN1/ReceiveFifo_58","CAN1/ReceiveFifo_59","CAN1/ReceiveFifo_60","CAN1/ReceiveFifo_61","CAN1/ReceiveFifo_62","CAN1/ReceiveFifo_63","CAN1/RdTransmitBuffer_0","CAN1/RdTransmitBuffer_1","CAN1/RdTransmitBuffer_2","CAN1/RdTransmitBuffer_3","CAN1/RdTransmitBuffer_4","CAN1/RdTransmitBuffer_5","CAN1/RdTransmitBuffer_6","CAN1/RdTransmitBuffer_7","CAN1/RdTransmitBuffer_8","CAN1/RdTransmitBuffer_9","CAN1/RdTransmitBuffer_10","CAN1/RdTransmitBuffer_11","CAN1/RdTransmitBuffer_12","CAN1/SyncTransmitBuffer_0","CAN1/SyncTransmitBuffer_1","CAN1/SyncTransmitBuffer_2","CAN1/SyncTransmitBuffer_3","CAN1/SyncTransmitBuffer_4","CAN1/SyncTransmitBuffer_5","CAN1/SyncTransmitBuffer_6","CAN1/SyncTransmitBuffer_7","CAN1/SyncTransmitBuffer_8","CAN1/SyncTransmitBuffer_9","CAN1/SyncTransmitBuffer_10","CAN1/SyncTransmitBuffer_11","CAN1/SyncTransmitBuffer_12","CAN1/SyncPeriod","CAN1/SyncTriggerTime","CAN1/SyncStatusInt","CAN1/SyncMaskInt","CAN1/SyncClearInt","CAN1/SyncStatus","CAN1/SyncClearSetRunStop","CAN1/SyncClearSetTrigger","CAN1/SyncPassiveError"

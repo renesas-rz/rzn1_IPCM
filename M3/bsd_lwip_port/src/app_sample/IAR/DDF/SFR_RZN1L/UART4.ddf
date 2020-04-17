@@ -1,0 +1,154 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : UART4
+;               UART4 Full
+;    revision : 0.13 (15.September.2017)
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "UART4/RBR_THR"                                                                          , "Memory", 0x50000000,        4, base=16
+sfr = "UART4/RBR_THR.[7:0]RBR_THR"                                                             , "Memory", 0x50000000,        4, base=16, bitRange=0-7
+sfr = "UART4/DLL"                                                                              , "Memory", 0x50000000,        4, base=16
+sfr = "UART4/DLL.[7:0]DLL"                                                                     , "Memory", 0x50000000,        4, base=16, bitRange=0-7
+sfr = "UART4/IER"                                                                              , "Memory", 0x50000004,        4, base=16
+sfr = "UART4/IER.[0]ERBFI"                                                                     , "Memory", 0x50000004,        4, base=16, bitRange=0
+sfr = "UART4/IER.[1]ETBEI"                                                                     , "Memory", 0x50000004,        4, base=16, bitRange=1
+sfr = "UART4/IER.[2]ELSI"                                                                      , "Memory", 0x50000004,        4, base=16, bitRange=2
+sfr = "UART4/IER.[3]EDSSI"                                                                     , "Memory", 0x50000004,        4, base=16, bitRange=3
+sfr = "UART4/IER.[7]PTIME"                                                                     , "Memory", 0x50000004,        4, base=16, bitRange=7
+sfr = "UART4/IER.[8]ETIMEOUT0"                                                                 , "Memory", 0x50000004,        4, base=16, bitRange=8
+sfr = "UART4/IER.[9]ETIMEOUT1"                                                                 , "Memory", 0x50000004,        4, base=16, bitRange=9
+sfr = "UART4/IER.[10]ETIMEOUT2"                                                                , "Memory", 0x50000004,        4, base=16, bitRange=10
+sfr = "UART4/IER.[11]ETIMEOUT3"                                                                , "Memory", 0x50000004,        4, base=16, bitRange=11
+sfr = "UART4/DLH"                                                                              , "Memory", 0x50000004,        4, base=16
+sfr = "UART4/DLH.[7:0]DLH"                                                                     , "Memory", 0x50000004,        4, base=16, bitRange=0-7
+sfr = "UART4/FCR"                                                                              , "Memory", 0x50000008,        4, base=16, writeOnly
+sfr = "UART4/FCR.[0]FIFOE"                                                                     , "Memory", 0x50000008,        4, base=16, writeOnly, bitRange=0
+sfr = "UART4/FCR.[1]RFIFOR"                                                                    , "Memory", 0x50000008,        4, base=16, writeOnly, bitRange=1
+sfr = "UART4/FCR.[2]XFIFOR"                                                                    , "Memory", 0x50000008,        4, base=16, writeOnly, bitRange=2
+sfr = "UART4/FCR.[5:4]TET"                                                                     , "Memory", 0x50000008,        4, base=16, writeOnly, bitRange=4-5
+sfr = "UART4/FCR.[7:6]RCVR"                                                                    , "Memory", 0x50000008,        4, base=16, writeOnly, bitRange=6-7
+sfr = "UART4/IIR"                                                                              , "Memory", 0x50000008,        4, base=16, readOnly
+sfr = "UART4/IIR.[3:0]IID"                                                                     , "Memory", 0x50000008,        4, base=16, readOnly, bitRange=0-3
+sfr = "UART4/IIR.[7:6]FIFOSE"                                                                  , "Memory", 0x50000008,        4, base=16, readOnly, bitRange=6-7
+sfr = "UART4/LCR"                                                                              , "Memory", 0x5000000C,        4, base=16
+sfr = "UART4/LCR.[1:0]DLS"                                                                     , "Memory", 0x5000000C,        4, base=16, bitRange=0-1
+sfr = "UART4/LCR.[2]STOP"                                                                      , "Memory", 0x5000000C,        4, base=16, bitRange=2
+sfr = "UART4/LCR.[3]PEN"                                                                       , "Memory", 0x5000000C,        4, base=16, bitRange=3
+sfr = "UART4/LCR.[4]EPS"                                                                       , "Memory", 0x5000000C,        4, base=16, bitRange=4
+sfr = "UART4/LCR.[5]StickParity"                                                               , "Memory", 0x5000000C,        4, base=16, bitRange=5
+sfr = "UART4/LCR.[6]BC"                                                                        , "Memory", 0x5000000C,        4, base=16, bitRange=6
+sfr = "UART4/LCR.[7]DLAB"                                                                      , "Memory", 0x5000000C,        4, base=16, bitRange=7
+sfr = "UART4/MCR"                                                                              , "Memory", 0x50000010,        4, base=16
+sfr = "UART4/MCR.[0]DTR"                                                                       , "Memory", 0x50000010,        4, base=16, bitRange=0
+sfr = "UART4/MCR.[1]RTS"                                                                       , "Memory", 0x50000010,        4, base=16, bitRange=1
+sfr = "UART4/MCR.[2]OUT1"                                                                      , "Memory", 0x50000010,        4, base=16, bitRange=2
+sfr = "UART4/MCR.[3]OUT2"                                                                      , "Memory", 0x50000010,        4, base=16, bitRange=3
+sfr = "UART4/MCR.[4]LB"                                                                        , "Memory", 0x50000010,        4, base=16, bitRange=4
+sfr = "UART4/MCR.[5]AFCE"                                                                      , "Memory", 0x50000010,        4, base=16, bitRange=5
+sfr = "UART4/LSR"                                                                              , "Memory", 0x50000014,        4, base=16, readOnly
+sfr = "UART4/LSR.[0]DR"                                                                        , "Memory", 0x50000014,        4, base=16, readOnly, bitRange=0
+sfr = "UART4/LSR.[1]OE"                                                                        , "Memory", 0x50000014,        4, base=16, readOnly, bitRange=1
+sfr = "UART4/LSR.[2]PE"                                                                        , "Memory", 0x50000014,        4, base=16, readOnly, bitRange=2
+sfr = "UART4/LSR.[3]FE"                                                                        , "Memory", 0x50000014,        4, base=16, readOnly, bitRange=3
+sfr = "UART4/LSR.[4]BI"                                                                        , "Memory", 0x50000014,        4, base=16, readOnly, bitRange=4
+sfr = "UART4/LSR.[5]THRE"                                                                      , "Memory", 0x50000014,        4, base=16, readOnly, bitRange=5
+sfr = "UART4/LSR.[6]TEMT"                                                                      , "Memory", 0x50000014,        4, base=16, readOnly, bitRange=6
+sfr = "UART4/LSR.[7]RFE"                                                                       , "Memory", 0x50000014,        4, base=16, readOnly, bitRange=7
+sfr = "UART4/MSR"                                                                              , "Memory", 0x50000018,        4, base=16, readOnly
+sfr = "UART4/MSR.[0]DCTS"                                                                      , "Memory", 0x50000018,        4, base=16, readOnly, bitRange=0
+sfr = "UART4/MSR.[1]DDSR"                                                                      , "Memory", 0x50000018,        4, base=16, readOnly, bitRange=1
+sfr = "UART4/MSR.[2]TERI"                                                                      , "Memory", 0x50000018,        4, base=16, readOnly, bitRange=2
+sfr = "UART4/MSR.[3]DDCD"                                                                      , "Memory", 0x50000018,        4, base=16, readOnly, bitRange=3
+sfr = "UART4/MSR.[4]CTS"                                                                       , "Memory", 0x50000018,        4, base=16, readOnly, bitRange=4
+sfr = "UART4/MSR.[5]DSR"                                                                       , "Memory", 0x50000018,        4, base=16, readOnly, bitRange=5
+sfr = "UART4/MSR.[6]RI"                                                                        , "Memory", 0x50000018,        4, base=16, readOnly, bitRange=6
+sfr = "UART4/MSR.[7]DCD"                                                                       , "Memory", 0x50000018,        4, base=16, readOnly, bitRange=7
+sfr = "UART4/SCR"                                                                              , "Memory", 0x5000001C,        4, base=16
+sfr = "UART4/SCR.[7:0]SCR"                                                                     , "Memory", 0x5000001C,        4, base=16, bitRange=0-7
+sfr = "UART4/SRBR_STHR"                                                                        , "Memory", 0x50000030,        4, base=16
+sfr = "UART4/SRBR_STHR.[7:0]SRBR_STHR"                                                         , "Memory", 0x50000030,        4, base=16, bitRange=0-7
+sfr = "UART4/FAR"                                                                              , "Memory", 0x50000070,        4, base=16
+sfr = "UART4/FAR.[0]FAR"                                                                       , "Memory", 0x50000070,        4, base=16, bitRange=0
+sfr = "UART4/TFR"                                                                              , "Memory", 0x50000074,        4, base=16, readOnly
+sfr = "UART4/TFR.[7:0]TFR"                                                                     , "Memory", 0x50000074,        4, base=16, readOnly, bitRange=0-7
+sfr = "UART4/RFW"                                                                              , "Memory", 0x50000078,        4, base=16, writeOnly
+sfr = "UART4/RFW.[7:0]RFWD"                                                                    , "Memory", 0x50000078,        4, base=16, writeOnly, bitRange=0-7
+sfr = "UART4/RFW.[8]RFPE"                                                                      , "Memory", 0x50000078,        4, base=16, writeOnly, bitRange=8
+sfr = "UART4/RFW.[9]RFFE"                                                                      , "Memory", 0x50000078,        4, base=16, writeOnly, bitRange=9
+sfr = "UART4/USR"                                                                              , "Memory", 0x5000007C,        4, base=16, readOnly
+sfr = "UART4/USR.[0]BUSY"                                                                      , "Memory", 0x5000007C,        4, base=16, readOnly, bitRange=0
+sfr = "UART4/USR.[1]TFNF"                                                                      , "Memory", 0x5000007C,        4, base=16, readOnly, bitRange=1
+sfr = "UART4/USR.[2]TFE"                                                                       , "Memory", 0x5000007C,        4, base=16, readOnly, bitRange=2
+sfr = "UART4/USR.[3]RFNE"                                                                      , "Memory", 0x5000007C,        4, base=16, readOnly, bitRange=3
+sfr = "UART4/USR.[4]RFF"                                                                       , "Memory", 0x5000007C,        4, base=16, readOnly, bitRange=4
+sfr = "UART4/TFL"                                                                              , "Memory", 0x50000080,        4, base=16, readOnly
+sfr = "UART4/TFL.[4:0]TFL"                                                                     , "Memory", 0x50000080,        4, base=16, readOnly, bitRange=0-4
+sfr = "UART4/RFL"                                                                              , "Memory", 0x50000084,        4, base=16, readOnly
+sfr = "UART4/RFL.[4:0]RFL"                                                                     , "Memory", 0x50000084,        4, base=16, readOnly, bitRange=0-4
+sfr = "UART4/SRR"                                                                              , "Memory", 0x50000088,        4, base=16, writeOnly
+sfr = "UART4/SRR.[0]UR"                                                                        , "Memory", 0x50000088,        4, base=16, writeOnly, bitRange=0
+sfr = "UART4/SRR.[1]RFR"                                                                       , "Memory", 0x50000088,        4, base=16, writeOnly, bitRange=1
+sfr = "UART4/SRR.[2]XFR"                                                                       , "Memory", 0x50000088,        4, base=16, writeOnly, bitRange=2
+sfr = "UART4/SRTS"                                                                             , "Memory", 0x5000008C,        4, base=16
+sfr = "UART4/SRTS.[0]SRTS"                                                                     , "Memory", 0x5000008C,        4, base=16, bitRange=0
+sfr = "UART4/SBCR"                                                                             , "Memory", 0x50000090,        4, base=16
+sfr = "UART4/SBCR.[0]SBCR"                                                                     , "Memory", 0x50000090,        4, base=16, bitRange=0
+sfr = "UART4/SFE"                                                                              , "Memory", 0x50000098,        4, base=16
+sfr = "UART4/SFE.[0]SFE"                                                                       , "Memory", 0x50000098,        4, base=16, bitRange=0
+sfr = "UART4/SRT"                                                                              , "Memory", 0x5000009C,        4, base=16
+sfr = "UART4/SRT.[1:0]SRCVR"                                                                   , "Memory", 0x5000009C,        4, base=16, bitRange=0-1
+sfr = "UART4/STET"                                                                             , "Memory", 0x500000A0,        4, base=16
+sfr = "UART4/STET.[1:0]STET"                                                                   , "Memory", 0x500000A0,        4, base=16, bitRange=0-1
+sfr = "UART4/HTX"                                                                              , "Memory", 0x500000A4,        4, base=16
+sfr = "UART4/HTX.[0]HTX"                                                                       , "Memory", 0x500000A4,        4, base=16, bitRange=0
+sfr = "UART4/DMASA"                                                                            , "Memory", 0x500000A8,        4, base=16, writeOnly
+sfr = "UART4/DMASA.[0]DMASA"                                                                   , "Memory", 0x500000A8,        4, base=16, writeOnly, bitRange=0
+sfr = "UART4/TO"                                                                               , "Memory", 0x50000100,        4, base=16
+sfr = "UART4/TO.[7:0]TO0"                                                                      , "Memory", 0x50000100,        4, base=16, bitRange=0-7
+sfr = "UART4/TO.[15:8]TO1"                                                                     , "Memory", 0x50000100,        4, base=16, bitRange=8-15
+sfr = "UART4/TO.[23:16]TO2"                                                                    , "Memory", 0x50000100,        4, base=16, bitRange=16-23
+sfr = "UART4/TO.[31:24]TO3"                                                                    , "Memory", 0x50000100,        4, base=16, bitRange=24-31
+sfr = "UART4/CTRLTO"                                                                           , "Memory", 0x50000104,        4, base=16
+sfr = "UART4/CTRLTO.[0]STARTTO0"                                                               , "Memory", 0x50000104,        4, base=16, bitRange=0
+sfr = "UART4/CTRLTO.[1]STARTTO1"                                                               , "Memory", 0x50000104,        4, base=16, bitRange=1
+sfr = "UART4/CTRLTO.[2]STARTTO2"                                                               , "Memory", 0x50000104,        4, base=16, bitRange=2
+sfr = "UART4/CTRLTO.[3]STARTTO3"                                                               , "Memory", 0x50000104,        4, base=16, bitRange=3
+sfr = "UART4/CTRLTO.[4]REARMTO0"                                                               , "Memory", 0x50000104,        4, base=16, bitRange=4
+sfr = "UART4/CTRLTO.[5]REARMTO1"                                                               , "Memory", 0x50000104,        4, base=16, bitRange=5
+sfr = "UART4/CTRLTO.[6]REARMTO2"                                                               , "Memory", 0x50000104,        4, base=16, bitRange=6
+sfr = "UART4/CTRLTO.[7]REARMTO3"                                                               , "Memory", 0x50000104,        4, base=16, bitRange=7
+sfr = "UART4/CTRLTO.[8]EnableDE"                                                               , "Memory", 0x50000104,        4, base=16, bitRange=8
+sfr = "UART4/CTRLTO.[9]EnableFilteringRXD"                                                     , "Memory", 0x50000104,        4, base=16, bitRange=9
+sfr = "UART4/CTRLTO.[23:16]TG"                                                                 , "Memory", 0x50000104,        4, base=16, bitRange=16-23
+sfr = "UART4/STATUSTO"                                                                         , "Memory", 0x50000108,        4, base=16
+sfr = "UART4/STATUSTO.[0]TIMEOUTInt0"                                                          , "Memory", 0x50000108,        4, base=16, bitRange=0
+sfr = "UART4/STATUSTO.[1]TIMEOUTInt1"                                                          , "Memory", 0x50000108,        4, base=16, bitRange=1
+sfr = "UART4/STATUSTO.[2]TIMEOUTInt2"                                                          , "Memory", 0x50000108,        4, base=16, bitRange=2
+sfr = "UART4/STATUSTO.[3]TIMEOUTInt3"                                                          , "Memory", 0x50000108,        4, base=16, bitRange=3
+sfr = "UART4/STATUSTO.[4]TIMEOUTStatus0"                                                       , "Memory", 0x50000108,        4, base=16, readOnly, bitRange=4
+sfr = "UART4/STATUSTO.[5]TIMEOUTStatus1"                                                       , "Memory", 0x50000108,        4, base=16, readOnly, bitRange=5
+sfr = "UART4/STATUSTO.[6]TIMEOUTStatus2"                                                       , "Memory", 0x50000108,        4, base=16, readOnly, bitRange=6
+sfr = "UART4/STATUSTO.[7]TIMEOUTStatus3"                                                       , "Memory", 0x50000108,        4, base=16, readOnly, bitRange=7
+sfr = "UART4/STATUSTO.[8]DE"                                                                   , "Memory", 0x50000108,        4, base=16, readOnly, bitRange=8
+sfr = "UART4/TDMACR"                                                                           , "Memory", 0x5000010C,        4, base=16
+sfr = "UART4/TDMACR.[0]TDMAE"                                                                  , "Memory", 0x5000010C,        4, base=16, bitRange=0
+sfr = "UART4/TDMACR.[2:1]DEST_BURST_SIZE"                                                      , "Memory", 0x5000010C,        4, base=16, bitRange=1-2
+sfr = "UART4/TDMACR.[15:3]DEST_BLOCK_SIZE"                                                     , "Memory", 0x5000010C,        4, base=16, bitRange=3-15
+sfr = "UART4/TDMACR.[28:16]CURRENT_DEST_BLOCK_SIZE"                                            , "Memory", 0x5000010C,        4, base=16, readOnly, bitRange=16-28
+sfr = "UART4/RDMACR"                                                                           , "Memory", 0x50000110,        4, base=16
+sfr = "UART4/RDMACR.[0]RDMAE"                                                                  , "Memory", 0x50000110,        4, base=16, bitRange=0
+sfr = "UART4/RDMACR.[2:1]SRC_BURST_SIZE"                                                       , "Memory", 0x50000110,        4, base=16, bitRange=1-2
+sfr = "UART4/RDMACR.[15:3]SRC_BLOCK_SIZE"                                                      , "Memory", 0x50000110,        4, base=16, bitRange=3-15
+sfr = "UART4/RDMACR.[28:16]CURRENT_SRC_BLOCK_SIZE"                                             , "Memory", 0x50000110,        4, base=16, readOnly, bitRange=16-28
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// UART4 Full -----
+group = "UART4","UART4/RBR_THR","UART4/DLL","UART4/IER","UART4/DLH","UART4/FCR","UART4/IIR","UART4/LCR","UART4/MCR","UART4/LSR","UART4/MSR","UART4/SCR","UART4/SRBR_STHR","UART4/FAR","UART4/TFR","UART4/RFW","UART4/USR","UART4/TFL","UART4/RFL","UART4/SRR","UART4/SRTS","UART4/SBCR","UART4/SFE","UART4/SRT","UART4/STET","UART4/HTX","UART4/DMASA","UART4/TO","UART4/CTRLTO","UART4/STATUSTO","UART4/TDMACR","UART4/RDMACR"

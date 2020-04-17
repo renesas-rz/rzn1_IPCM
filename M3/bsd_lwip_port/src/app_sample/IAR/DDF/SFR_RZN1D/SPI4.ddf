@@ -1,0 +1,113 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : SPI4
+;               SPI4
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "SPI4/CTRLR0"                                                                            , "Memory", 0x50008000,        4, base=16
+sfr = "SPI4/CTRLR0.[3:0]DFS"                                                                   , "Memory", 0x50008000,        4, base=16, bitRange=0-3
+sfr = "SPI4/CTRLR0.[5:4]FRF"                                                                   , "Memory", 0x50008000,        4, base=16, bitRange=4-5
+sfr = "SPI4/CTRLR0.[6]SCPH"                                                                    , "Memory", 0x50008000,        4, base=16, bitRange=6
+sfr = "SPI4/CTRLR0.[7]SCPOL"                                                                   , "Memory", 0x50008000,        4, base=16, bitRange=7
+sfr = "SPI4/CTRLR0.[9:8]TMOD"                                                                  , "Memory", 0x50008000,        4, base=16, bitRange=8-9
+sfr = "SPI4/CTRLR0.[10]SLV_OE"                                                                 , "Memory", 0x50008000,        4, base=16, bitRange=10
+sfr = "SPI4/CTRLR0.[11]SRL"                                                                    , "Memory", 0x50008000,        4, base=16, bitRange=11
+sfr = "SPI4/CTRLR0.[15:12]CFS"                                                                 , "Memory", 0x50008000,        4, base=16, bitRange=12-15
+sfr = "SPI4/CTRLR1"                                                                            , "Memory", 0x50008004,        4, base=16
+sfr = "SPI4/CTRLR1.[15:0]NDF"                                                                  , "Memory", 0x50008004,        4, base=16, bitRange=0-15
+sfr = "SPI4/SSIENR"                                                                            , "Memory", 0x50008008,        4, base=16
+sfr = "SPI4/SSIENR.[0]SSIENR"                                                                  , "Memory", 0x50008008,        4, base=16, bitRange=0
+sfr = "SPI4/MWCR"                                                                              , "Memory", 0x5000800C,        4, base=16
+sfr = "SPI4/MWCR.[0]MWMOD"                                                                     , "Memory", 0x5000800C,        4, base=16, bitRange=0
+sfr = "SPI4/MWCR.[1]MDD"                                                                       , "Memory", 0x5000800C,        4, base=16, bitRange=1
+sfr = "SPI4/MWCR.[2]MWHS"                                                                      , "Memory", 0x5000800C,        4, base=16, bitRange=2
+sfr = "SPI4/SER"                                                                               , "Memory", 0x50008010,        4, base=16
+sfr = "SPI4/SER.[3:0]HardwareSS"                                                               , "Memory", 0x50008010,        4, base=16, bitRange=0-3
+sfr = "SPI4/SER.[7:4]SoftwareSS"                                                               , "Memory", 0x50008010,        4, base=16, bitRange=4-7
+sfr = "SPI4/SER.[11:8]CtrlSS"                                                                  , "Memory", 0x50008010,        4, base=16, bitRange=8-11
+sfr = "SPI4/BAUDR"                                                                             , "Memory", 0x50008014,        4, base=16
+sfr = "SPI4/BAUDR.[15:0]SCKDV"                                                                 , "Memory", 0x50008014,        4, base=16, bitRange=0-15
+sfr = "SPI4/TXFTLR"                                                                            , "Memory", 0x50008018,        4, base=16
+sfr = "SPI4/TXFTLR.[3:0]TFT"                                                                   , "Memory", 0x50008018,        4, base=16, bitRange=0-3
+sfr = "SPI4/RXFTLR"                                                                            , "Memory", 0x5000801C,        4, base=16
+sfr = "SPI4/RXFTLR.[3:0]RFT"                                                                   , "Memory", 0x5000801C,        4, base=16, bitRange=0-3
+sfr = "SPI4/TXFLR"                                                                             , "Memory", 0x50008020,        4, base=16, readOnly
+sfr = "SPI4/TXFLR.[3:0]TXTFL"                                                                  , "Memory", 0x50008020,        4, base=16, readOnly, bitRange=0-3
+sfr = "SPI4/RXFLR"                                                                             , "Memory", 0x50008024,        4, base=16, readOnly
+sfr = "SPI4/RXFLR.[3:0]RXTFL"                                                                  , "Memory", 0x50008024,        4, base=16, readOnly, bitRange=0-3
+sfr = "SPI4/SR"                                                                                , "Memory", 0x50008028,        4, base=16, readOnly
+sfr = "SPI4/SR.[0]BUSY"                                                                        , "Memory", 0x50008028,        4, base=16, readOnly, bitRange=0
+sfr = "SPI4/SR.[1]TFNF"                                                                        , "Memory", 0x50008028,        4, base=16, readOnly, bitRange=1
+sfr = "SPI4/SR.[2]TFE"                                                                         , "Memory", 0x50008028,        4, base=16, readOnly, bitRange=2
+sfr = "SPI4/SR.[3]RFNE"                                                                        , "Memory", 0x50008028,        4, base=16, readOnly, bitRange=3
+sfr = "SPI4/SR.[4]RFF"                                                                         , "Memory", 0x50008028,        4, base=16, readOnly, bitRange=4
+sfr = "SPI4/SR.[5]TXE"                                                                         , "Memory", 0x50008028,        4, base=16, readOnly, bitRange=5
+sfr = "SPI4/SR.[6]DCOL"                                                                        , "Memory", 0x50008028,        4, base=16, readOnly, bitRange=6
+sfr = "SPI4/IMR"                                                                               , "Memory", 0x5000802C,        4, base=16
+sfr = "SPI4/IMR.[0]TXEIM"                                                                      , "Memory", 0x5000802C,        4, base=16, bitRange=0
+sfr = "SPI4/IMR.[1]TXOIM"                                                                      , "Memory", 0x5000802C,        4, base=16, bitRange=1
+sfr = "SPI4/IMR.[2]RXUIM"                                                                      , "Memory", 0x5000802C,        4, base=16, bitRange=2
+sfr = "SPI4/IMR.[3]RXOIM"                                                                      , "Memory", 0x5000802C,        4, base=16, bitRange=3
+sfr = "SPI4/IMR.[4]RXFIM"                                                                      , "Memory", 0x5000802C,        4, base=16, bitRange=4
+sfr = "SPI4/IMR.[5]MSTIM"                                                                      , "Memory", 0x5000802C,        4, base=16, bitRange=5
+sfr = "SPI4/ISR"                                                                               , "Memory", 0x50008030,        4, base=16, readOnly
+sfr = "SPI4/ISR.[0]TXEIS"                                                                      , "Memory", 0x50008030,        4, base=16, readOnly, bitRange=0
+sfr = "SPI4/ISR.[1]TXOIS"                                                                      , "Memory", 0x50008030,        4, base=16, readOnly, bitRange=1
+sfr = "SPI4/ISR.[2]RXUIS"                                                                      , "Memory", 0x50008030,        4, base=16, readOnly, bitRange=2
+sfr = "SPI4/ISR.[3]RXOIS"                                                                      , "Memory", 0x50008030,        4, base=16, readOnly, bitRange=3
+sfr = "SPI4/ISR.[4]RXFIS"                                                                      , "Memory", 0x50008030,        4, base=16, readOnly, bitRange=4
+sfr = "SPI4/ISR.[5]MSTIS"                                                                      , "Memory", 0x50008030,        4, base=16, readOnly, bitRange=5
+sfr = "SPI4/RISR"                                                                              , "Memory", 0x50008034,        4, base=16, readOnly
+sfr = "SPI4/RISR.[0]TXEIR"                                                                     , "Memory", 0x50008034,        4, base=16, readOnly, bitRange=0
+sfr = "SPI4/RISR.[1]TXOIR"                                                                     , "Memory", 0x50008034,        4, base=16, readOnly, bitRange=1
+sfr = "SPI4/RISR.[2]RXUIR"                                                                     , "Memory", 0x50008034,        4, base=16, readOnly, bitRange=2
+sfr = "SPI4/RISR.[3]RXOIR"                                                                     , "Memory", 0x50008034,        4, base=16, readOnly, bitRange=3
+sfr = "SPI4/RISR.[4]RXFIR"                                                                     , "Memory", 0x50008034,        4, base=16, readOnly, bitRange=4
+sfr = "SPI4/RISR.[5]MSTIR"                                                                     , "Memory", 0x50008034,        4, base=16, readOnly, bitRange=5
+sfr = "SPI4/TXOICR"                                                                            , "Memory", 0x50008038,        4, base=16, readOnly
+sfr = "SPI4/TXOICR.[0]TXOICR"                                                                  , "Memory", 0x50008038,        4, base=16, readOnly, bitRange=0
+sfr = "SPI4/RXOICR"                                                                            , "Memory", 0x5000803C,        4, base=16, readOnly
+sfr = "SPI4/RXOICR.[0]RXOICR"                                                                  , "Memory", 0x5000803C,        4, base=16, readOnly, bitRange=0
+sfr = "SPI4/RXUICR"                                                                            , "Memory", 0x50008040,        4, base=16, readOnly
+sfr = "SPI4/RXUICR.[0]RXUICR"                                                                  , "Memory", 0x50008040,        4, base=16, readOnly, bitRange=0
+sfr = "SPI4/MSTICR"                                                                            , "Memory", 0x50008044,        4, base=16, readOnly
+sfr = "SPI4/MSTICR.[0]MSTICR"                                                                  , "Memory", 0x50008044,        4, base=16, readOnly, bitRange=0
+sfr = "SPI4/ICR"                                                                               , "Memory", 0x50008048,        4, base=16, readOnly
+sfr = "SPI4/ICR.[0]ICR"                                                                        , "Memory", 0x50008048,        4, base=16, readOnly, bitRange=0
+sfr = "SPI4/DMACR"                                                                             , "Memory", 0x5000804C,        4, base=16
+sfr = "SPI4/DMACR.[0]RDMAE"                                                                    , "Memory", 0x5000804C,        4, base=16, bitRange=0
+sfr = "SPI4/DMACR.[1]TDMAE"                                                                    , "Memory", 0x5000804C,        4, base=16, bitRange=1
+sfr = "SPI4/DMATDLR"                                                                           , "Memory", 0x50008050,        4, base=16
+sfr = "SPI4/DMATDLR.[3:0]DMATDLR"                                                              , "Memory", 0x50008050,        4, base=16, bitRange=0-3
+sfr = "SPI4/DMARDLR"                                                                           , "Memory", 0x50008054,        4, base=16
+sfr = "SPI4/DMARDLR.[3:0]DMARDLR"                                                              , "Memory", 0x50008054,        4, base=16, bitRange=0-3
+sfr = "SPI4/IDR"                                                                               , "Memory", 0x50008058,        4, base=16, readOnly
+sfr = "SPI4/IDR.[31:0]ICR"                                                                     , "Memory", 0x50008058,        4, base=16, readOnly, bitRange=0-31
+sfr = "SPI4/SSI_COMP_VERSION"                                                                  , "Memory", 0x5000805C,        4, base=16, readOnly
+sfr = "SPI4/SSI_COMP_VERSION.[31:0]Version"                                                    , "Memory", 0x5000805C,        4, base=16, readOnly, bitRange=0-31
+sfr = "SPI4/DR"                                                                                , "Memory", 0x50008060,        4, base=16
+sfr = "SPI4/DR.[15:0]DR"                                                                       , "Memory", 0x50008060,        4, base=16, bitRange=0-15
+sfr = "SPI4/RX_SAMPLE_DLY"                                                                     , "Memory", 0x500080F0,        4, base=16
+sfr = "SPI4/RX_SAMPLE_DLY.[7:0]RX_Sample_Delay"                                                , "Memory", 0x500080F0,        4, base=16, bitRange=0-7
+sfr = "SPI4/TDMACR"                                                                            , "Memory", 0x50008100,        4, base=16
+sfr = "SPI4/TDMACR.[0]TDMAE1"                                                                  , "Memory", 0x50008100,        4, base=16, bitRange=0
+sfr = "SPI4/TDMACR.[2:1]DEST_BURST_SIZE"                                                       , "Memory", 0x50008100,        4, base=16, bitRange=1-2
+sfr = "SPI4/TDMACR.[15:3]DEST_BLOCK_SIZE"                                                      , "Memory", 0x50008100,        4, base=16, bitRange=3-15
+sfr = "SPI4/TDMACR.[28:16]CURRENT_DEST_BLOCK_SIZE"                                             , "Memory", 0x50008100,        4, base=16, bitRange=16-28
+sfr = "SPI4/RDMACR"                                                                            , "Memory", 0x50008104,        4, base=16
+sfr = "SPI4/RDMACR.[0]RDMAE1"                                                                  , "Memory", 0x50008104,        4, base=16, bitRange=0
+sfr = "SPI4/RDMACR.[2:1]SRC_BURST_SIZE"                                                        , "Memory", 0x50008104,        4, base=16, bitRange=1-2
+sfr = "SPI4/RDMACR.[15:3]SRC_BLOCK_SIZE"                                                       , "Memory", 0x50008104,        4, base=16, bitRange=3-15
+sfr = "SPI4/RDMACR.[28:16]CURRENT_SRC_BLOCK_SIZE"                                              , "Memory", 0x50008104,        4, base=16, bitRange=16-28
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// SPI4 -----
+group = "SPI4","SPI4/CTRLR0","SPI4/CTRLR1","SPI4/SSIENR","SPI4/MWCR","SPI4/SER","SPI4/BAUDR","SPI4/TXFTLR","SPI4/RXFTLR","SPI4/TXFLR","SPI4/RXFLR","SPI4/SR","SPI4/IMR","SPI4/ISR","SPI4/RISR","SPI4/TXOICR","SPI4/RXOICR","SPI4/RXUICR","SPI4/MSTICR","SPI4/ICR","SPI4/DMACR","SPI4/DMATDLR","SPI4/DMARDLR","SPI4/IDR","SPI4/SSI_COMP_VERSION","SPI4/DR","SPI4/RX_SAMPLE_DLY","SPI4/TDMACR","SPI4/RDMACR"

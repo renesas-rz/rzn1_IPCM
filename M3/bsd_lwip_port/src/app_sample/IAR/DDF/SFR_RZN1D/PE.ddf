@@ -1,0 +1,286 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : PE
+;               EIP93 (PE)
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "PE_CTRL_STAT"                                                                           , "Memory", 0x40010000,        4, base=16
+sfr = "PE_CTRL_STAT.[0]HOST_READY"                                                             , "Memory", 0x40010000,        4, base=16, bitRange=0
+sfr = "PE_CTRL_STAT.[1]PE_READY"                                                               , "Memory", 0x40010000,        4, base=16, bitRange=1
+sfr = "PE_CTRL_STAT.[3]INIT_ARC4"                                                              , "Memory", 0x40010000,        4, base=16, bitRange=3
+sfr = "PE_CTRL_STAT.[4]HASH_FINAL"                                                             , "Memory", 0x40010000,        4, base=16, bitRange=4
+sfr = "PE_CTRL_STAT.[7:6]PRNG_MODE"                                                            , "Memory", 0x40010000,        4, base=16, bitRange=6-7
+sfr = "PE_CTRL_STAT.[15:8]PAD_VALUE"                                                           , "Memory", 0x40010000,        4, base=16, bitRange=8-15
+sfr = "PE_CTRL_STAT.[23:16]STATUS"                                                             , "Memory", 0x40010000,        4, base=16, bitRange=16-23
+sfr = "PE_CTRL_STAT.[31:24]PAD_CTRL_PAD_STAT"                                                  , "Memory", 0x40010000,        4, base=16, bitRange=24-31
+sfr = "PE_SOURCE_ADDR"                                                                         , "Memory", 0x40010004,        4, base=16
+sfr = "PE_SOURCE_ADDR.[31:0]PACKET_SRC_ADDR"                                                   , "Memory", 0x40010004,        4, base=16, bitRange=0-31
+sfr = "PE_DEST_ADDR"                                                                           , "Memory", 0x40010008,        4, base=16
+sfr = "PE_DEST_ADDR.[31:0]PACKET_DEST_ADDR"                                                    , "Memory", 0x40010008,        4, base=16, bitRange=0-31
+sfr = "PE_SA_ADDR"                                                                             , "Memory", 0x4001000C,        4, base=16
+sfr = "PE_SA_ADDR.[31:0]SA_ADDR"                                                               , "Memory", 0x4001000C,        4, base=16, bitRange=0-31
+sfr = "PE_STATE_ADDR"                                                                          , "Memory", 0x40010010,        4, base=16
+sfr = "PE_STATE_ADDR.[31:0]STATE_ADDR"                                                         , "Memory", 0x40010010,        4, base=16, bitRange=0-31
+sfr = "PE_ARC4_STATE_ADDR"                                                                     , "Memory", 0x40010014,        4, base=16
+sfr = "PE_ARC4_STATE_ADDR.[31:0]ARC4_STATE_ADDR"                                               , "Memory", 0x40010014,        4, base=16, bitRange=0-31
+sfr = "PE_USER_ID"                                                                             , "Memory", 0x40010018,        4, base=16
+sfr = "PE_LENGTH"                                                                              , "Memory", 0x4001001C,        4, base=16
+sfr = "PE_LENGTH.[19:0]LENGTH"                                                                 , "Memory", 0x4001001C,        4, base=16, bitRange=0-19
+sfr = "PE_LENGTH.[22]HOST_READY"                                                               , "Memory", 0x4001001C,        4, base=16, bitRange=22
+sfr = "PE_LENGTH.[23]PE_READY"                                                                 , "Memory", 0x4001001C,        4, base=16, bitRange=23
+sfr = "PE_LENGTH.[31:24]BYPASS"                                                                , "Memory", 0x4001001C,        4, base=16, bitRange=24-31
+sfr = "PE_CDR_BASE"                                                                            , "Memory", 0x40010080,        4, base=16
+sfr = "PE_CDR_BASE.[31:0]CDR_BASE_ADDR"                                                        , "Memory", 0x40010080,        4, base=16, bitRange=0-31
+sfr = "PE_RDR_BASE"                                                                            , "Memory", 0x40010084,        4, base=16
+sfr = "PE_RDR_BASE.[31:0]RDR_BASE_ADDR"                                                        , "Memory", 0x40010084,        4, base=16, bitRange=0-31
+sfr = "PE_RING_CFG"                                                                            , "Memory", 0x40010088,        4, base=16
+sfr = "PE_RING_CFG.[9:0]RING_SIZE"                                                             , "Memory", 0x40010088,        4, base=16, bitRange=0-9
+sfr = "PE_RING_CFG.[31]EN_EXT_TRIG"                                                            , "Memory", 0x40010088,        4, base=16, bitRange=31
+sfr = "PE_RING_THRESH"                                                                         , "Memory", 0x4001008C,        4, base=16
+sfr = "PE_RING_THRESH.[9:0]CDR_THRESH"                                                         , "Memory", 0x4001008C,        4, base=16, bitRange=0-9
+sfr = "PE_RING_THRESH.[25:16]RDR_THRESH"                                                       , "Memory", 0x4001008C,        4, base=16, bitRange=16-25
+sfr = "PE_RING_THRESH.[29:26]RD_TIMEOUT"                                                       , "Memory", 0x4001008C,        4, base=16, bitRange=26-29
+sfr = "PE_RING_THRESH.[31]TIMEOUT_EN"                                                          , "Memory", 0x4001008C,        4, base=16, bitRange=31
+sfr = "PE_CD_COUNT"                                                                            , "Memory", 0x40010090,        4, base=16
+sfr = "PE_CD_COUNT.[10:0]CD_COUNT"                                                             , "Memory", 0x40010090,        4, base=16, bitRange=0-10
+sfr = "PE_RD_COUNT"                                                                            , "Memory", 0x40010094,        4, base=16
+sfr = "PE_RD_COUNT.[10:0]RD_COUNT"                                                             , "Memory", 0x40010094,        4, base=16, bitRange=0-10
+sfr = "PE_RING_PNTR"                                                                           , "Memory", 0x40010098,        4, base=16, readOnly
+sfr = "PE_RING_PNTR.[9:0]CDR_PNTR"                                                             , "Memory", 0x40010098,        4, base=16, readOnly, bitRange=0-9
+sfr = "PE_RING_PNTR.[25:16]RDR_PNTR"                                                           , "Memory", 0x40010098,        4, base=16, readOnly, bitRange=16-25
+sfr = "PE_RING_STAT"                                                                           , "Memory", 0x4001009C,        4, base=16
+sfr = "PE_RING_STAT.[0]CDR_OVERFLOW"                                                           , "Memory", 0x4001009C,        4, base=16, bitRange=0
+sfr = "PE_RING_STAT.[1]RDR_UNDERFLOW"                                                          , "Memory", 0x4001009C,        4, base=16, bitRange=1
+sfr = "PE_CONFIG"                                                                              , "Memory", 0x40010100,        4, base=16
+sfr = "PE_CONFIG.[0]RST_PE"                                                                    , "Memory", 0x40010100,        4, base=16, bitRange=0
+sfr = "PE_CONFIG.[1]RST_RING"                                                                  , "Memory", 0x40010100,        4, base=16, bitRange=1
+sfr = "PE_CONFIG.[9:8]PE_MODE"                                                                 , "Memory", 0x40010100,        4, base=16, bitRange=8-9
+sfr = "PE_CONFIG.[10]EN_CDR_UPDATE"                                                            , "Memory", 0x40010100,        4, base=16, bitRange=10
+sfr = "PE_CONFIG.[16]SWAP_CD_RD"                                                               , "Memory", 0x40010100,        4, base=16, bitRange=16
+sfr = "PE_CONFIG.[17]SWAP_SA"                                                                  , "Memory", 0x40010100,        4, base=16, bitRange=17
+sfr = "PE_CONFIG.[18]SWAP_DATA"                                                                , "Memory", 0x40010100,        4, base=16, bitRange=18
+sfr = "PE_STATUS"                                                                              , "Memory", 0x40010104,        4, base=16, readOnly
+sfr = "PE_STATUS.[0]PE_INPUT_DONE"                                                             , "Memory", 0x40010104,        4, base=16, readOnly, bitRange=0
+sfr = "PE_STATUS.[1]PE_OUTPUT_DONE"                                                            , "Memory", 0x40010104,        4, base=16, readOnly, bitRange=1
+sfr = "PE_STATUS.[2]ENCRYPT_DONE"                                                              , "Memory", 0x40010104,        4, base=16, readOnly, bitRange=2
+sfr = "PE_STATUS.[3]INNER_HASH_DONE"                                                           , "Memory", 0x40010104,        4, base=16, readOnly, bitRange=3
+sfr = "PE_STATUS.[4]OUTER_HASH_DONE"                                                           , "Memory", 0x40010104,        4, base=16, readOnly, bitRange=4
+sfr = "PE_STATUS.[5]AUTH_ERR"                                                                  , "Memory", 0x40010104,        4, base=16, readOnly, bitRange=5
+sfr = "PE_STATUS.[6]PAD_ERR"                                                                   , "Memory", 0x40010104,        4, base=16, readOnly, bitRange=6
+sfr = "PE_STATUS.[7]SEQNUM_ERR"                                                                , "Memory", 0x40010104,        4, base=16, readOnly, bitRange=7
+sfr = "PE_STATUS.[8]EXT_ERR"                                                                   , "Memory", 0x40010104,        4, base=16, readOnly, bitRange=8
+sfr = "PE_STATUS.[9]OPERATION_DONE"                                                            , "Memory", 0x40010104,        4, base=16, readOnly, bitRange=9
+sfr = "PE_STATUS.[10]INBUF_REQ"                                                                , "Memory", 0x40010104,        4, base=16, readOnly, bitRange=10
+sfr = "PE_STATUS.[11]OUTBUF_REQ"                                                               , "Memory", 0x40010104,        4, base=16, readOnly, bitRange=11
+sfr = "PE_STATUS.[21:12]INBUF_EMPTY_CNT"                                                       , "Memory", 0x40010104,        4, base=16, readOnly, bitRange=12-21
+sfr = "PE_STATUS.[31:22]OUTBUF_FULL_CNT"                                                       , "Memory", 0x40010104,        4, base=16, readOnly, bitRange=22-31
+sfr = "PE_BUF_THRESH"                                                                          , "Memory", 0x4001010C,        4, base=16
+sfr = "PE_BUF_THRESH.[7:0]INBUF_THRESH"                                                        , "Memory", 0x4001010C,        4, base=16, bitRange=0-7
+sfr = "PE_BUF_THRESH.[23:16]OUTBUF_THRESH"                                                     , "Memory", 0x4001010C,        4, base=16, bitRange=16-23
+sfr = "PE_INBUF_COUNT"                                                                         , "Memory", 0x40010110,        4, base=16
+sfr = "PE_INBUF_COUNT.[8:0]INBUF_COUNT"                                                        , "Memory", 0x40010110,        4, base=16, bitRange=0-8
+sfr = "PE_OUTBUF_COUNT"                                                                        , "Memory", 0x40010114,        4, base=16
+sfr = "PE_OUTBUF_COUNT.[8:0]OUTBUF_COUNT"                                                      , "Memory", 0x40010114,        4, base=16, bitRange=0-8
+sfr = "PE_BUF_PNTR"                                                                            , "Memory", 0x40010118,        4, base=16, readOnly
+sfr = "PE_BUF_PNTR.[7:0]INBUF_PNTR"                                                            , "Memory", 0x40010118,        4, base=16, readOnly, bitRange=0-7
+sfr = "PE_BUF_PNTR.[23:16]OUTBUF_PNTR"                                                         , "Memory", 0x40010118,        4, base=16, readOnly, bitRange=16-23
+sfr = "PE_DMA_CONFIG"                                                                          , "Memory", 0x40010120,        4, base=16
+sfr = "PE_DMA_CONFIG.[2:0]MAX_BURST_SIZE"                                                      , "Memory", 0x40010120,        4, base=16, bitRange=0-2
+sfr = "PE_DMA_CONFIG.[15]POSTED_TRF_EN"                                                        , "Memory", 0x40010120,        4, base=16, bitRange=15
+sfr = "PE_DMA_CONFIG.[16]MASTER_BIGEND"                                                        , "Memory", 0x40010120,        4, base=16, bitRange=16
+sfr = "PE_ENDIAN_CONFIG"                                                                       , "Memory", 0x400101D0,        4, base=16
+sfr = "PE_ENDIAN_CONFIG.[0]MASTER_BYTE_SWAP"                                                   , "Memory", 0x400101D0,        4, base=16, bitRange=0
+sfr = "PE_ENDIAN_CONFIG.[16]TARGET_BYTE_SWAP"                                                  , "Memory", 0x400101D0,        4, base=16, bitRange=16
+sfr = "PE_HALT_CTRL"                                                                           , "Memory", 0x400101E0,        4, base=16
+sfr = "PE_HALT_CTRL.[0]EN_HALT_MODE"                                                           , "Memory", 0x400101E0,        4, base=16, bitRange=0
+sfr = "PE_HALT_CTRL.[1]HALT_ON_RD_CD"                                                          , "Memory", 0x400101E0,        4, base=16, bitRange=1
+sfr = "PE_HALT_CTRL.[2]HALT_ON_READ_SA"                                                        , "Memory", 0x400101E0,        4, base=16, bitRange=2
+sfr = "PE_HALT_CTRL.[3]HALT_ON_WR_DATA"                                                        , "Memory", 0x400101E0,        4, base=16, bitRange=3
+sfr = "PE_HALT_CTRL.[4]HALT_ON_WR_SA"                                                          , "Memory", 0x400101E0,        4, base=16, bitRange=4
+sfr = "PE_HALT_CTRL.[5]HALT_ON_WR_RD"                                                          , "Memory", 0x400101E0,        4, base=16, bitRange=5
+sfr = "PE_HALT_CTRL.[15]HALTED"                                                                , "Memory", 0x400101E0,        4, base=16, bitRange=15
+sfr = "PE_HALT_CTRL.[19:16]MAIN_STATE"                                                         , "Memory", 0x400101E0,        4, base=16, bitRange=16-19
+sfr = "PE_HALT_CTRL.[23:20]READ_SA_STATE"                                                      , "Memory", 0x400101E0,        4, base=16, bitRange=20-23
+sfr = "PE_HALT_CTRL.[26:24]DATA_STATE"                                                         , "Memory", 0x400101E0,        4, base=16, bitRange=24-26
+sfr = "PE_CONTINUE"                                                                            , "Memory", 0x400101E4,        4, base=16, writeOnly
+sfr = "PE_CONTINUE.[31:0]CONTINUE"                                                             , "Memory", 0x400101E4,        4, base=16, writeOnly, bitRange=0-31
+sfr = "PE_CLOCK_CTRL"                                                                          , "Memory", 0x400101E8,        4, base=16
+sfr = "PE_CLOCK_CTRL.[0]EN_PE_CLK"                                                             , "Memory", 0x400101E8,        4, base=16, bitRange=0
+sfr = "PE_CLOCK_CTRL.[1]EN_DES_CLK"                                                            , "Memory", 0x400101E8,        4, base=16, bitRange=1
+sfr = "PE_CLOCK_CTRL.[2]EN_AES_CLK"                                                            , "Memory", 0x400101E8,        4, base=16, bitRange=2
+sfr = "PE_CLOCK_CTRL.[3]EN_ARC4_CLK1"                                                          , "Memory", 0x400101E8,        4, base=16, bitRange=3
+sfr = "PE_CLOCK_CTRL.[4]EN_HASH_CLK"                                                           , "Memory", 0x400101E8,        4, base=16, bitRange=4
+sfr = "PE_OPTIONS_1"                                                                           , "Memory", 0x400101F4,        4, base=16, readOnly
+sfr = "PE_OPTIONS_1.[0]TDES"                                                                   , "Memory", 0x400101F4,        4, base=16, readOnly, bitRange=0
+sfr = "PE_OPTIONS_1.[1]ARC4"                                                                   , "Memory", 0x400101F4,        4, base=16, readOnly, bitRange=1
+sfr = "PE_OPTIONS_1.[2]AES"                                                                    , "Memory", 0x400101F4,        4, base=16, readOnly, bitRange=2
+sfr = "PE_OPTIONS_1.[13]AES_KEY128"                                                            , "Memory", 0x400101F4,        4, base=16, readOnly, bitRange=13
+sfr = "PE_OPTIONS_1.[14]AES_KEY192"                                                            , "Memory", 0x400101F4,        4, base=16, readOnly, bitRange=14
+sfr = "PE_OPTIONS_1.[15]AES_KEY256"                                                            , "Memory", 0x400101F4,        4, base=16, readOnly, bitRange=15
+sfr = "PE_OPTIONS_1.[16]MD5"                                                                   , "Memory", 0x400101F4,        4, base=16, readOnly, bitRange=16
+sfr = "PE_OPTIONS_1.[17]SHA_1"                                                                 , "Memory", 0x400101F4,        4, base=16, readOnly, bitRange=17
+sfr = "PE_OPTIONS_1.[18]SHA_224"                                                               , "Memory", 0x400101F4,        4, base=16, readOnly, bitRange=18
+sfr = "PE_OPTIONS_1.[19]SHA_256"                                                               , "Memory", 0x400101F4,        4, base=16, readOnly, bitRange=19
+sfr = "PE_OPTIONS_1.[23]AES_XCBC"                                                              , "Memory", 0x400101F4,        4, base=16, readOnly, bitRange=23
+sfr = "PE_OPTIONS_1.[28]AES_CBC_MAC"                                                           , "Memory", 0x400101F4,        4, base=16, readOnly, bitRange=28
+sfr = "PE_OPTIONS_1.[29]MAC_KEY128"                                                            , "Memory", 0x400101F4,        4, base=16, readOnly, bitRange=29
+sfr = "PE_OPTIONS_1.[30]MAC_KEY192"                                                            , "Memory", 0x400101F4,        4, base=16, readOnly, bitRange=30
+sfr = "PE_OPTIONS_1.[31]MAC_KEY256"                                                            , "Memory", 0x400101F4,        4, base=16, readOnly, bitRange=31
+sfr = "PE_OPTIONS_0"                                                                           , "Memory", 0x400101F8,        4, base=16, readOnly
+sfr = "PE_OPTIONS_0.[2:0]InterfaceType"                                                        , "Memory", 0x400101F8,        4, base=16, readOnly, bitRange=0-2
+sfr = "PE_OPTIONS_0.[6]PRNG"                                                                   , "Memory", 0x400101F8,        4, base=16, readOnly, bitRange=6
+sfr = "PE_OPTIONS_0.[9:8]INBUF_SIZE"                                                           , "Memory", 0x400101F8,        4, base=16, readOnly, bitRange=8-9
+sfr = "PE_OPTIONS_0.[11:10]OUTBUF_SIZE"                                                        , "Memory", 0x400101F8,        4, base=16, readOnly, bitRange=10-11
+sfr = "PE_OPTIONS_0.[15]ESN"                                                                   , "Memory", 0x400101F8,        4, base=16, readOnly, bitRange=15
+sfr = "PE_OPTIONS_0.[16]ESP"                                                                   , "Memory", 0x400101F8,        4, base=16, readOnly, bitRange=16
+sfr = "PE_OPTIONS_0.[17]AH"                                                                    , "Memory", 0x400101F8,        4, base=16, readOnly, bitRange=17
+sfr = "PE_OPTIONS_0.[20]SSL"                                                                   , "Memory", 0x400101F8,        4, base=16, readOnly, bitRange=20
+sfr = "PE_OPTIONS_0.[21]TLS"                                                                   , "Memory", 0x400101F8,        4, base=16, readOnly, bitRange=21
+sfr = "PE_OPTIONS_0.[22]DTLS"                                                                  , "Memory", 0x400101F8,        4, base=16, readOnly, bitRange=22
+sfr = "PE_OPTIONS_0.[24]SRTP"                                                                  , "Memory", 0x400101F8,        4, base=16, readOnly, bitRange=24
+sfr = "PE_OPTIONS_0.[30]DMA"                                                                   , "Memory", 0x400101F8,        4, base=16, readOnly, bitRange=30
+sfr = "PE_OPTIONS_0.[31]DMA_SG"                                                                , "Memory", 0x400101F8,        4, base=16, readOnly, bitRange=31
+sfr = "PE_REVISION"                                                                            , "Memory", 0x400101FC,        4, base=16, readOnly
+sfr = "PE_REVISION.[7:0]EIP_NO"                                                                , "Memory", 0x400101FC,        4, base=16, readOnly, bitRange=0-7
+sfr = "PE_REVISION.[15:8]CMPLT_EIP_NO"                                                         , "Memory", 0x400101FC,        4, base=16, readOnly, bitRange=8-15
+sfr = "PE_REVISION.[19:16]HW_PATCH"                                                            , "Memory", 0x400101FC,        4, base=16, readOnly, bitRange=16-19
+sfr = "PE_REVISION.[23:20]MIN_HW_REV"                                                          , "Memory", 0x400101FC,        4, base=16, readOnly, bitRange=20-23
+sfr = "PE_REVISION.[27:24]MAJ_HW_REV"                                                          , "Memory", 0x400101FC,        4, base=16, readOnly, bitRange=24-27
+sfr = "INT_UNMASK_STAT"                                                                        , "Memory", 0x40010200,        4, base=16, readOnly
+sfr = "INT_UNMASK_STAT.[0]CDR_THRESH"                                                          , "Memory", 0x40010200,        4, base=16, readOnly, bitRange=0
+sfr = "INT_UNMASK_STAT.[1]RDR_THRESH"                                                          , "Memory", 0x40010200,        4, base=16, readOnly, bitRange=1
+sfr = "INT_UNMASK_STAT.[9]OPERATION_DONE"                                                      , "Memory", 0x40010200,        4, base=16, readOnly, bitRange=9
+sfr = "INT_UNMASK_STAT.[10]INBUF_THRESH"                                                       , "Memory", 0x40010200,        4, base=16, readOnly, bitRange=10
+sfr = "INT_UNMASK_STAT.[11]OUTBUF_THRESH"                                                      , "Memory", 0x40010200,        4, base=16, readOnly, bitRange=11
+sfr = "INT_UNMASK_STAT.[15]HALT"                                                               , "Memory", 0x40010200,        4, base=16, readOnly, bitRange=15
+sfr = "INT_UNMASK_STAT.[16]PE_RING_ERR"                                                        , "Memory", 0x40010200,        4, base=16, readOnly, bitRange=16
+sfr = "INT_UNMASK_STAT.[17]PE_RPOC_ERR"                                                        , "Memory", 0x40010200,        4, base=16, readOnly, bitRange=17
+sfr = "INT_UNMASK_STAT.[18]INTERFACE_ERR"                                                      , "Memory", 0x40010200,        4, base=16, readOnly, bitRange=18
+sfr = "INT_MASK_STAT_CLR"                                                                      , "Memory", 0x40010204,        4, base=16
+sfr = "INT_MASK_STAT_CLR.[0]CDR_THRESH"                                                        , "Memory", 0x40010204,        4, base=16, bitRange=0
+sfr = "INT_MASK_STAT_CLR.[1]RDR_THRESH"                                                        , "Memory", 0x40010204,        4, base=16, bitRange=1
+sfr = "INT_MASK_STAT_CLR.[9]OPERATION_DONE"                                                    , "Memory", 0x40010204,        4, base=16, bitRange=9
+sfr = "INT_MASK_STAT_CLR.[10]INBUF_THRESH"                                                     , "Memory", 0x40010204,        4, base=16, bitRange=10
+sfr = "INT_MASK_STAT_CLR.[11]OUTBUF_THRESH"                                                    , "Memory", 0x40010204,        4, base=16, bitRange=11
+sfr = "INT_MASK_STAT_CLR.[15]HALT"                                                             , "Memory", 0x40010204,        4, base=16, bitRange=15
+sfr = "INT_MASK_STAT_CLR.[16]PE_RING_ERR"                                                      , "Memory", 0x40010204,        4, base=16, bitRange=16
+sfr = "INT_MASK_STAT_CLR.[17]PE_RPOC_ERR"                                                      , "Memory", 0x40010204,        4, base=16, bitRange=17
+sfr = "INT_MASK_STAT_CLR.[18]INTERFACE_ERR"                                                    , "Memory", 0x40010204,        4, base=16, bitRange=18
+sfr = "INT_EN"                                                                                 , "Memory", 0x40010208,        4, base=16
+sfr = "INT_EN.[0]CDR_THRESH"                                                                   , "Memory", 0x40010208,        4, base=16, bitRange=0
+sfr = "INT_EN.[1]RDR_THRESH"                                                                   , "Memory", 0x40010208,        4, base=16, bitRange=1
+sfr = "INT_EN.[9]OPERATION_DONE"                                                               , "Memory", 0x40010208,        4, base=16, bitRange=9
+sfr = "INT_EN.[10]INBUF_THRESH"                                                                , "Memory", 0x40010208,        4, base=16, bitRange=10
+sfr = "INT_EN.[11]OUTBUF_THRESH"                                                               , "Memory", 0x40010208,        4, base=16, bitRange=11
+sfr = "INT_EN.[15]HALT"                                                                        , "Memory", 0x40010208,        4, base=16, bitRange=15
+sfr = "INT_EN.[16]PE_RING_ERR"                                                                 , "Memory", 0x40010208,        4, base=16, bitRange=16
+sfr = "INT_EN.[17]PE_RPOC_ERR"                                                                 , "Memory", 0x40010208,        4, base=16, bitRange=17
+sfr = "INT_EN.[18]INTERFACE_ERR"                                                               , "Memory", 0x40010208,        4, base=16, bitRange=18
+sfr = "INT_CFG"                                                                                , "Memory", 0x4001020C,        4, base=16
+sfr = "INT_CFG.[0]INT_TYPE"                                                                    , "Memory", 0x4001020C,        4, base=16, bitRange=0
+sfr = "INT_CFG.[1]INT_PULSE_CLR"                                                               , "Memory", 0x4001020C,        4, base=16, bitRange=1
+sfr = "INT_MASK_ENABLE"                                                                        , "Memory", 0x40010210,        4, base=16
+sfr = "INT_MASK_ENABLE.[0]CDR_THRESH"                                                          , "Memory", 0x40010210,        4, base=16, bitRange=0
+sfr = "INT_MASK_ENABLE.[1]RDR_THRESH"                                                          , "Memory", 0x40010210,        4, base=16, bitRange=1
+sfr = "INT_MASK_ENABLE.[9]OPERATION_DONE"                                                      , "Memory", 0x40010210,        4, base=16, bitRange=9
+sfr = "INT_MASK_ENABLE.[10]INBUF_THRESH"                                                       , "Memory", 0x40010210,        4, base=16, bitRange=10
+sfr = "INT_MASK_ENABLE.[11]OUTBUF_THRESH"                                                      , "Memory", 0x40010210,        4, base=16, bitRange=11
+sfr = "INT_MASK_ENABLE.[15]HALT"                                                               , "Memory", 0x40010210,        4, base=16, bitRange=15
+sfr = "INT_MASK_ENABLE.[16]PE_RING_ERR"                                                        , "Memory", 0x40010210,        4, base=16, bitRange=16
+sfr = "INT_MASK_ENABLE.[17]PE_RPOC_ERR"                                                        , "Memory", 0x40010210,        4, base=16, bitRange=17
+sfr = "INT_MASK_ENABLE.[18]INTERFACE_ERR"                                                      , "Memory", 0x40010210,        4, base=16, bitRange=18
+sfr = "INT_MASK_DISABLE"                                                                       , "Memory", 0x40010214,        4, base=16
+sfr = "INT_MASK_DISABLE.[0]CDR_THRESH"                                                         , "Memory", 0x40010214,        4, base=16, bitRange=0
+sfr = "INT_MASK_DISABLE.[1]RDR_THRESH"                                                         , "Memory", 0x40010214,        4, base=16, bitRange=1
+sfr = "INT_MASK_DISABLE.[9]OPERATION_DONE"                                                     , "Memory", 0x40010214,        4, base=16, bitRange=9
+sfr = "INT_MASK_DISABLE.[10]INBUF_THRESH"                                                      , "Memory", 0x40010214,        4, base=16, bitRange=10
+sfr = "INT_MASK_DISABLE.[11]OUTBUF_THRESH"                                                     , "Memory", 0x40010214,        4, base=16, bitRange=11
+sfr = "INT_MASK_DISABLE.[15]HALT"                                                              , "Memory", 0x40010214,        4, base=16, bitRange=15
+sfr = "INT_MASK_DISABLE.[16]PE_RING_ERR"                                                       , "Memory", 0x40010214,        4, base=16, bitRange=16
+sfr = "INT_MASK_DISABLE.[17]PE_RPOC_ERR"                                                       , "Memory", 0x40010214,        4, base=16, bitRange=17
+sfr = "INT_MASK_DISABLE.[18]INTERFACE_ERR"                                                     , "Memory", 0x40010214,        4, base=16, bitRange=18
+sfr = "SA_CMD_0"                                                                               , "Memory", 0x40010400,        4, base=16
+sfr = "SA_CMD_0.[2:0]OPCODE"                                                                   , "Memory", 0x40010400,        4, base=16, bitRange=0-2
+sfr = "SA_CMD_0.[3]DIRECTION"                                                                  , "Memory", 0x40010400,        4, base=16, bitRange=3
+sfr = "SA_CMD_0.[5:4]OPGROUP"                                                                  , "Memory", 0x40010400,        4, base=16, bitRange=4-5
+sfr = "SA_CMD_0.[7:6]PAD_TYPE"                                                                 , "Memory", 0x40010400,        4, base=16, bitRange=6-7
+sfr = "SA_CMD_0.[11:8]CIPHER"                                                                  , "Memory", 0x40010400,        4, base=16, bitRange=8-11
+sfr = "SA_CMD_0.[15:12]HASH"                                                                   , "Memory", 0x40010400,        4, base=16, bitRange=12-15
+sfr = "SA_CMD_0.[17]SCPAD"                                                                     , "Memory", 0x40010400,        4, base=16, bitRange=17
+sfr = "SA_CMD_0.[18]EXT_PAD"                                                                   , "Memory", 0x40010400,        4, base=16, bitRange=18
+sfr = "SA_CMD_0.[19]HDR_PROC"                                                                  , "Memory", 0x40010400,        4, base=16, bitRange=19
+sfr = "SA_CMD_0.[23:20]DIGEST_LENGHT"                                                          , "Memory", 0x40010400,        4, base=16, bitRange=20-23
+sfr = "SA_CMD_0.[25:24]IV_SOURCE"                                                              , "Memory", 0x40010400,        4, base=16, bitRange=24-25
+sfr = "SA_CMD_0.[27:26]HASH_SOURCE"                                                            , "Memory", 0x40010400,        4, base=16, bitRange=26-27
+sfr = "SA_CMD_0.[28]SAVE_IV"                                                                   , "Memory", 0x40010400,        4, base=16, bitRange=28
+sfr = "SA_CMD_0.[29]SAVE_HASH"                                                                 , "Memory", 0x40010400,        4, base=16, bitRange=29
+sfr = "SA_CMD_0.[30]GATHER"                                                                    , "Memory", 0x40010400,        4, base=16, bitRange=30
+sfr = "SA_CMD_0.[31]SCATTERR"                                                                  , "Memory", 0x40010400,        4, base=16, bitRange=31
+sfr = "SA_CMD_1"                                                                               , "Memory", 0x40010404,        4, base=16
+sfr = "SA_CMD_1.[0]COPY_DIGEST"                                                                , "Memory", 0x40010404,        4, base=16, bitRange=0
+sfr = "SA_CMD_1.[1]COPY_HEADER"                                                                , "Memory", 0x40010404,        4, base=16, bitRange=1
+sfr = "SA_CMD_1.[2]COPY_PAYLOAD"                                                               , "Memory", 0x40010404,        4, base=16, bitRange=2
+sfr = "SA_CMD_1.[3]COPY_PAD"                                                                   , "Memory", 0x40010404,        4, base=16, bitRange=3
+sfr = "SA_CMD_1.[9:8]CIPHER_MODE"                                                              , "Memory", 0x40010404,        4, base=16, bitRange=8-9
+sfr = "SA_CMD_1.[11]SSL_MAC"                                                                   , "Memory", 0x40010404,        4, base=16, bitRange=11
+sfr = "SA_CMD_1.[12]HMAC"                                                                      , "Memory", 0x40010404,        4, base=16, bitRange=12
+sfr = "SA_CMD_1.[13]BYTE_OFFSET"                                                               , "Memory", 0x40010404,        4, base=16, bitRange=13
+sfr = "SA_CMD_1.[23:16]HASH_CRYPT_OFFSET"                                                      , "Memory", 0x40010404,        4, base=16, bitRange=16-23
+sfr = "SA_CMD_1.[28:24]ARC4_KEY_LENGHT"                                                        , "Memory", 0x40010404,        4, base=16, bitRange=24-28
+sfr = "SA_CMD_1.[29]EN_SEQNUM_CHK"                                                             , "Memory", 0x40010404,        4, base=16, bitRange=29
+sfr = "SA_KEY_0"                                                                               , "Memory", 0x40010408,        4, base=16, writeOnly
+sfr = "SA_KEY_1"                                                                               , "Memory", 0x4001040C,        4, base=16, writeOnly
+sfr = "SA_KEY_2"                                                                               , "Memory", 0x40010410,        4, base=16, writeOnly
+sfr = "SA_KEY_3"                                                                               , "Memory", 0x40010414,        4, base=16, writeOnly
+sfr = "SA_KEY_4"                                                                               , "Memory", 0x40010418,        4, base=16, writeOnly
+sfr = "SA_KEY_5"                                                                               , "Memory", 0x4001041C,        4, base=16, writeOnly
+sfr = "SA_KEY_6"                                                                               , "Memory", 0x40010420,        4, base=16, writeOnly
+sfr = "SA_KEY_7"                                                                               , "Memory", 0x40010424,        4, base=16, writeOnly
+sfr = "SA_IDIGEST_0"                                                                           , "Memory", 0x40010428,        4, base=16
+sfr = "SA_IDIGEST_1"                                                                           , "Memory", 0x4001042C,        4, base=16
+sfr = "SA_IDIGEST_2"                                                                           , "Memory", 0x40010430,        4, base=16
+sfr = "SA_IDIGEST_3"                                                                           , "Memory", 0x40010434,        4, base=16
+sfr = "SA_IDIGEST_4"                                                                           , "Memory", 0x40010438,        4, base=16
+sfr = "SA_IDIGEST_5"                                                                           , "Memory", 0x4001043C,        4, base=16
+sfr = "SA_IDIGEST_6"                                                                           , "Memory", 0x40010440,        4, base=16
+sfr = "SA_IDIGEST_7"                                                                           , "Memory", 0x40010444,        4, base=16
+sfr = "SA_ODIGEST_0"                                                                           , "Memory", 0x40010448,        4, base=16, writeOnly
+sfr = "SA_ODIGEST_1"                                                                           , "Memory", 0x4001044C,        4, base=16, writeOnly
+sfr = "SA_ODIGEST_2"                                                                           , "Memory", 0x40010450,        4, base=16, writeOnly
+sfr = "SA_ODIGEST_3"                                                                           , "Memory", 0x40010454,        4, base=16, writeOnly
+sfr = "SA_ODIGEST_4"                                                                           , "Memory", 0x40010458,        4, base=16, writeOnly
+sfr = "SA_ODIGEST_5"                                                                           , "Memory", 0x4001045C,        4, base=16, writeOnly
+sfr = "SA_ODIGEST_6"                                                                           , "Memory", 0x40010460,        4, base=16, writeOnly
+sfr = "SA_ODIGEST_7"                                                                           , "Memory", 0x40010464,        4, base=16, writeOnly
+sfr = "SA_SPI"                                                                                 , "Memory", 0x40010468,        4, base=16
+sfr = "SA_SEQNUM_0"                                                                            , "Memory", 0x4001046C,        4, base=16
+sfr = "SA_SEQNUM_1"                                                                            , "Memory", 0x40010470,        4, base=16
+sfr = "SA_SEQNUMMASK_0"                                                                        , "Memory", 0x40010474,        4, base=16
+sfr = "SA_SEQNUMMASK_1"                                                                        , "Memory", 0x40010478,        4, base=16
+sfr = "SA_NONCE_READY_ARC4_IJ_PNTR"                                                            , "Memory", 0x4001047C,        4, base=16
+sfr = "STATE_IV_0"                                                                             , "Memory", 0x40010500,        4, base=16
+sfr = "STATE_IV_1"                                                                             , "Memory", 0x40010504,        4, base=16
+sfr = "STATE_IV_2"                                                                             , "Memory", 0x40010508,        4, base=16
+sfr = "STATE_IV_3"                                                                             , "Memory", 0x4001050C,        4, base=16
+sfr = "STATE_BYTE_CNT_0"                                                                       , "Memory", 0x40010510,        4, base=16
+sfr = "STATE_BYTE_CNT_1"                                                                       , "Memory", 0x40010514,        4, base=16
+sfr = "STATE_IDIGEST_0"                                                                        , "Memory", 0x40010518,        4, base=16
+sfr = "STATE_IDIGEST_1"                                                                        , "Memory", 0x4001051C,        4, base=16
+sfr = "STATE_IDIGEST_2"                                                                        , "Memory", 0x40010520,        4, base=16
+sfr = "STATE_IDIGEST_3"                                                                        , "Memory", 0x40010524,        4, base=16
+sfr = "STATE_IDIGEST_4"                                                                        , "Memory", 0x40010528,        4, base=16
+sfr = "STATE_IDIGEST_5"                                                                        , "Memory", 0x4001052C,        4, base=16
+sfr = "STATE_IDIGEST_6"                                                                        , "Memory", 0x40010530,        4, base=16
+sfr = "STATE_IDIGEST_7"                                                                        , "Memory", 0x40010534,        4, base=16
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// EIP93 (PE) -----
+group = "PE","PE_CTRL_STAT","PE_SOURCE_ADDR","PE_DEST_ADDR","PE_SA_ADDR","PE_STATE_ADDR","PE_ARC4_STATE_ADDR","PE_USER_ID","PE_LENGTH","PE_CDR_BASE","PE_RDR_BASE","PE_RING_CFG","PE_RING_THRESH","PE_CD_COUNT","PE_RD_COUNT","PE_RING_PNTR","PE_RING_STAT","PE_CONFIG","PE_STATUS","PE_BUF_THRESH","PE_INBUF_COUNT","PE_OUTBUF_COUNT","PE_BUF_PNTR","PE_DMA_CONFIG","PE_ENDIAN_CONFIG","PE_HALT_CTRL","PE_CONTINUE","PE_CLOCK_CTRL","PE_OPTIONS_1","PE_OPTIONS_0","PE_REVISION","INT_UNMASK_STAT","INT_MASK_STAT_CLR","INT_EN","INT_CFG","INT_MASK_ENABLE","INT_MASK_DISABLE","SA_CMD_0","SA_CMD_1","SA_KEY_0","SA_KEY_1","SA_KEY_2","SA_KEY_3","SA_KEY_4","SA_KEY_5","SA_KEY_6","SA_KEY_7","SA_IDIGEST_0","SA_IDIGEST_1","SA_IDIGEST_2","SA_IDIGEST_3","SA_IDIGEST_4","SA_IDIGEST_5","SA_IDIGEST_6","SA_IDIGEST_7","SA_ODIGEST_0","SA_ODIGEST_1","SA_ODIGEST_2","SA_ODIGEST_3","SA_ODIGEST_4","SA_ODIGEST_5","SA_ODIGEST_6","SA_ODIGEST_7","SA_SPI","SA_SEQNUM_0","SA_SEQNUM_1","SA_SEQNUMMASK_0","SA_SEQNUMMASK_1","SA_NONCE_READY_ARC4_IJ_PNTR","STATE_IV_0","STATE_IV_1","STATE_IV_2","STATE_IV_3","STATE_BYTE_CNT_0","STATE_BYTE_CNT_1","STATE_IDIGEST_0","STATE_IDIGEST_1","STATE_IDIGEST_2","STATE_IDIGEST_3","STATE_IDIGEST_4","STATE_IDIGEST_5","STATE_IDIGEST_6","STATE_IDIGEST_7"

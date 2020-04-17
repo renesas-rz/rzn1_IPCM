@@ -1,0 +1,30 @@
+
+;; Architecture extensions
+
+;; Memory information ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;; Used to define address zones within the ARM address space (Memory). 
+;;
+;;   Name      may be almost anything
+;;   AdrSpace  must be Memory
+;;   StartAdr  start of memory block
+;;   EndAdr    end of memory block
+;;   AccType   type of access, read-only (R), read-write (RW) or SFR (W)
+
+[Memory]
+;;         Name             AdrSpace    StartAdr    EndAdr      AccType   Width
+Memory =   BOOT_Code        Memory      0x00000000  0x0000FFFF  R
+Memory =   IRAM             Memory      0x04000000  0x040FFFFF  RW
+Memory =   QSPI1            Memory      0x10000000  0x1FFFFFFF  RW
+Memory =   DRAM             Memory      0x20000000  0x200FFFFF  RW
+Memory =   Peripheral       Memory      0x40000000  0x4405FFFF  W
+Memory =   PG               Memory      0x50000000  0x5FFFFFFF  W
+Memory =   RAM4M            Memory      0x80000000  0x803FFFFF  RW
+Memory =   RAM4MECC         Memory      0x80400000  0x80400FFF  W
+Memory =   QSPI2            Memory      0xA0000000  0xAFFFFFFF  RW
+
+TrustedRanges = true
+UseSfrFilter = true
+
+[SfrInclude]
+File = SFR_RZN1S\RZN1S_SFR.ddf

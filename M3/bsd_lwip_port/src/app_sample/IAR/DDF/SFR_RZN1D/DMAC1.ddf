@@ -1,0 +1,523 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : DMAC1
+;               DMA Controller1
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "DMAC1/SAR0"                                                                             , "Memory", 0x40104000,        8, base=16
+sfr = "DMAC1/SAR0.[31:0]SAR"                                                                   , "Memory", 0x40104000,        8, base=16, bitRange=0-31
+sfr = "DMAC1/DAR0"                                                                             , "Memory", 0x40104008,        8, base=16
+sfr = "DMAC1/DAR0.[31:0]DAR"                                                                   , "Memory", 0x40104008,        8, base=16, bitRange=0-31
+sfr = "DMAC1/LLP0"                                                                             , "Memory", 0x40104010,        8, base=16
+sfr = "DMAC1/LLP0.[31:2]LOC"                                                                   , "Memory", 0x40104010,        8, base=16, bitRange=2-31
+sfr = "DMAC1/CTL0"                                                                             , "Memory", 0x40104018,        8, base=16
+sfr = "DMAC1/CTL0.[0]INT_EN"                                                                   , "Memory", 0x40104018,        8, base=16, bitRange=0
+sfr = "DMAC1/CTL0.[3:1]DST_TR_WIDTH"                                                           , "Memory", 0x40104018,        8, base=16, bitRange=1-3
+sfr = "DMAC1/CTL0.[6:4]SRC_TR_WIDTH"                                                           , "Memory", 0x40104018,        8, base=16, bitRange=4-6
+sfr = "DMAC1/CTL0.[8:7]DINC"                                                                   , "Memory", 0x40104018,        8, base=16, bitRange=7-8
+sfr = "DMAC1/CTL0.[10:9]SINC"                                                                  , "Memory", 0x40104018,        8, base=16, bitRange=9-10
+sfr = "DMAC1/CTL0.[13:11]DEST_MSIZE"                                                           , "Memory", 0x40104018,        8, base=16, bitRange=11-13
+sfr = "DMAC1/CTL0.[16:14]SRC_MSIZE"                                                            , "Memory", 0x40104018,        8, base=16, bitRange=14-16
+sfr = "DMAC1/CTL0.[17]SRC_GATHER_EN"                                                           , "Memory", 0x40104018,        8, base=16, bitRange=17
+sfr = "DMAC1/CTL0.[18]DST_SCATTER_EN"                                                          , "Memory", 0x40104018,        8, base=16, bitRange=18
+sfr = "DMAC1/CTL0.[22:20]TT_FC"                                                                , "Memory", 0x40104018,        8, base=16, bitRange=20-22
+sfr = "DMAC1/CTL0.[27]LLP_DST_EN"                                                              , "Memory", 0x40104018,        8, base=16, bitRange=27
+sfr = "DMAC1/CTL0.[28]LLP_SRC_EN"                                                              , "Memory", 0x40104018,        8, base=16, bitRange=28
+sfr = "DMAC1/CTL0.[43:32]BLOCK_TS"                                                             , "Memory", 0x40104018,        8, base=16, bitRange=32-43
+sfr = "DMAC1/CTL0.[44]DONE"                                                                    , "Memory", 0x40104018,        8, base=16, bitRange=44
+sfr = "DMAC1/SSTAT0"                                                                           , "Memory", 0x40104020,        8, base=16
+sfr = "DMAC1/SSTAT0.[31:0]SSTAT"                                                               , "Memory", 0x40104020,        8, base=16, bitRange=0-31
+sfr = "DMAC1/DSTAT0"                                                                           , "Memory", 0x40104028,        8, base=16
+sfr = "DMAC1/DSTAT0.[31:0]DSTAT"                                                               , "Memory", 0x40104028,        8, base=16, bitRange=0-31
+sfr = "DMAC1/SSTATAR0"                                                                         , "Memory", 0x40104030,        8, base=16
+sfr = "DMAC1/SSTATAR0.[31:0]SSTATAR"                                                           , "Memory", 0x40104030,        8, base=16, bitRange=0-31
+sfr = "DMAC1/DSTATAR0"                                                                         , "Memory", 0x40104038,        8, base=16
+sfr = "DMAC1/DSTATAR0.[31:0]DSTATAR"                                                           , "Memory", 0x40104038,        8, base=16, bitRange=0-31
+sfr = "DMAC1/CFG0"                                                                             , "Memory", 0x40104040,        8, base=16
+sfr = "DMAC1/CFG0.[7:5]CH_PRIOR"                                                               , "Memory", 0x40104040,        8, base=16, bitRange=5-7
+sfr = "DMAC1/CFG0.[8]CH_SUSP"                                                                  , "Memory", 0x40104040,        8, base=16, bitRange=8
+sfr = "DMAC1/CFG0.[9]FIFO_EMPTY"                                                               , "Memory", 0x40104040,        8, base=16, bitRange=9
+sfr = "DMAC1/CFG0.[10]HS_SEL_DST"                                                              , "Memory", 0x40104040,        8, base=16, bitRange=10
+sfr = "DMAC1/CFG0.[11]HS_SEL_SRC"                                                              , "Memory", 0x40104040,        8, base=16, bitRange=11
+sfr = "DMAC1/CFG0.[18]DST_HS_POL"                                                              , "Memory", 0x40104040,        8, base=16, bitRange=18
+sfr = "DMAC1/CFG0.[19]SRC_HS_POL"                                                              , "Memory", 0x40104040,        8, base=16, bitRange=19
+sfr = "DMAC1/CFG0.[29:20]MAX_ABRST"                                                            , "Memory", 0x40104040,        8, base=16, bitRange=20-29
+sfr = "DMAC1/CFG0.[30]RELOAD_SRC"                                                              , "Memory", 0x40104040,        8, base=16, bitRange=30
+sfr = "DMAC1/CFG0.[31]RELOAD_DST"                                                              , "Memory", 0x40104040,        8, base=16, bitRange=31
+sfr = "DMAC1/CFG0.[32]FCMODE"                                                                  , "Memory", 0x40104040,        8, base=16, bitRange=32
+sfr = "DMAC1/CFG0.[33]FIFO_MODE"                                                               , "Memory", 0x40104040,        8, base=16, bitRange=33
+sfr = "DMAC1/CFG0.[36:34]PROTCTL"                                                              , "Memory", 0x40104040,        8, base=16, bitRange=34-36
+sfr = "DMAC1/CFG0.[37]DS_UPD_EN"                                                               , "Memory", 0x40104040,        8, base=16, bitRange=37
+sfr = "DMAC1/CFG0.[38]SS_UPD_EN"                                                               , "Memory", 0x40104040,        8, base=16, bitRange=38
+sfr = "DMAC1/CFG0.[42:39]SRC_PER"                                                              , "Memory", 0x40104040,        8, base=16, bitRange=39-42
+sfr = "DMAC1/CFG0.[46:43]DEST_PER"                                                             , "Memory", 0x40104040,        8, base=16, bitRange=43-46
+sfr = "DMAC1/SGR0"                                                                             , "Memory", 0x40104048,        8, base=16
+sfr = "DMAC1/SGR0.[19:0]SGI"                                                                   , "Memory", 0x40104048,        8, base=16, bitRange=0-19
+sfr = "DMAC1/SGR0.[31:20]SGC"                                                                  , "Memory", 0x40104048,        8, base=16, bitRange=20-31
+sfr = "DMAC1/DSR0"                                                                             , "Memory", 0x40104050,        8, base=16
+sfr = "DMAC1/DSR0.[19:0]DSI"                                                                   , "Memory", 0x40104050,        8, base=16, bitRange=0-19
+sfr = "DMAC1/DSR0.[31:20]DSC"                                                                  , "Memory", 0x40104050,        8, base=16, bitRange=20-31
+sfr = "DMAC1/SAR1"                                                                             , "Memory", 0x40104058,        8, base=16
+sfr = "DMAC1/SAR1.[31:0]SAR"                                                                   , "Memory", 0x40104058,        8, base=16, bitRange=0-31
+sfr = "DMAC1/DAR1"                                                                             , "Memory", 0x40104060,        8, base=16
+sfr = "DMAC1/DAR1.[31:0]DAR"                                                                   , "Memory", 0x40104060,        8, base=16, bitRange=0-31
+sfr = "DMAC1/LLP1"                                                                             , "Memory", 0x40104068,        8, base=16
+sfr = "DMAC1/LLP1.[31:2]LOC"                                                                   , "Memory", 0x40104068,        8, base=16, bitRange=2-31
+sfr = "DMAC1/CTL1"                                                                             , "Memory", 0x40104070,        8, base=16
+sfr = "DMAC1/CTL1.[0]INT_EN"                                                                   , "Memory", 0x40104070,        8, base=16, bitRange=0
+sfr = "DMAC1/CTL1.[3:1]DST_TR_WIDTH"                                                           , "Memory", 0x40104070,        8, base=16, bitRange=1-3
+sfr = "DMAC1/CTL1.[6:4]SRC_TR_WIDTH"                                                           , "Memory", 0x40104070,        8, base=16, bitRange=4-6
+sfr = "DMAC1/CTL1.[8:7]DINC"                                                                   , "Memory", 0x40104070,        8, base=16, bitRange=7-8
+sfr = "DMAC1/CTL1.[10:9]SINC"                                                                  , "Memory", 0x40104070,        8, base=16, bitRange=9-10
+sfr = "DMAC1/CTL1.[13:11]DEST_MSIZE"                                                           , "Memory", 0x40104070,        8, base=16, bitRange=11-13
+sfr = "DMAC1/CTL1.[16:14]SRC_MSIZE"                                                            , "Memory", 0x40104070,        8, base=16, bitRange=14-16
+sfr = "DMAC1/CTL1.[17]SRC_GATHER_EN"                                                           , "Memory", 0x40104070,        8, base=16, bitRange=17
+sfr = "DMAC1/CTL1.[18]DST_SCATTER_EN"                                                          , "Memory", 0x40104070,        8, base=16, bitRange=18
+sfr = "DMAC1/CTL1.[22:20]TT_FC"                                                                , "Memory", 0x40104070,        8, base=16, bitRange=20-22
+sfr = "DMAC1/CTL1.[27]LLP_DST_EN"                                                              , "Memory", 0x40104070,        8, base=16, bitRange=27
+sfr = "DMAC1/CTL1.[28]LLP_SRC_EN"                                                              , "Memory", 0x40104070,        8, base=16, bitRange=28
+sfr = "DMAC1/CTL1.[43:32]BLOCK_TS"                                                             , "Memory", 0x40104070,        8, base=16, bitRange=32-43
+sfr = "DMAC1/CTL1.[44]DONE"                                                                    , "Memory", 0x40104070,        8, base=16, bitRange=44
+sfr = "DMAC1/SSTAT1"                                                                           , "Memory", 0x40104078,        8, base=16
+sfr = "DMAC1/SSTAT1.[31:0]SSTAT"                                                               , "Memory", 0x40104078,        8, base=16, bitRange=0-31
+sfr = "DMAC1/DSTAT1"                                                                           , "Memory", 0x40104080,        8, base=16
+sfr = "DMAC1/DSTAT1.[31:0]DSTAT"                                                               , "Memory", 0x40104080,        8, base=16, bitRange=0-31
+sfr = "DMAC1/SSTATAR1"                                                                         , "Memory", 0x40104088,        8, base=16
+sfr = "DMAC1/SSTATAR1.[31:0]SSTATAR"                                                           , "Memory", 0x40104088,        8, base=16, bitRange=0-31
+sfr = "DMAC1/DSTATAR1"                                                                         , "Memory", 0x40104090,        8, base=16
+sfr = "DMAC1/DSTATAR1.[31:0]DSTATAR"                                                           , "Memory", 0x40104090,        8, base=16, bitRange=0-31
+sfr = "DMAC1/CFG1"                                                                             , "Memory", 0x40104098,        8, base=16
+sfr = "DMAC1/CFG1.[7:5]CH_PRIOR"                                                               , "Memory", 0x40104098,        8, base=16, bitRange=5-7
+sfr = "DMAC1/CFG1.[8]CH_SUSP"                                                                  , "Memory", 0x40104098,        8, base=16, bitRange=8
+sfr = "DMAC1/CFG1.[9]FIFO_EMPTY"                                                               , "Memory", 0x40104098,        8, base=16, bitRange=9
+sfr = "DMAC1/CFG1.[10]HS_SEL_DST"                                                              , "Memory", 0x40104098,        8, base=16, bitRange=10
+sfr = "DMAC1/CFG1.[11]HS_SEL_SRC"                                                              , "Memory", 0x40104098,        8, base=16, bitRange=11
+sfr = "DMAC1/CFG1.[18]DST_HS_POL"                                                              , "Memory", 0x40104098,        8, base=16, bitRange=18
+sfr = "DMAC1/CFG1.[19]SRC_HS_POL"                                                              , "Memory", 0x40104098,        8, base=16, bitRange=19
+sfr = "DMAC1/CFG1.[29:20]MAX_ABRST"                                                            , "Memory", 0x40104098,        8, base=16, bitRange=20-29
+sfr = "DMAC1/CFG1.[30]RELOAD_SRC"                                                              , "Memory", 0x40104098,        8, base=16, bitRange=30
+sfr = "DMAC1/CFG1.[31]RELOAD_DST"                                                              , "Memory", 0x40104098,        8, base=16, bitRange=31
+sfr = "DMAC1/CFG1.[32]FCMODE"                                                                  , "Memory", 0x40104098,        8, base=16, bitRange=32
+sfr = "DMAC1/CFG1.[33]FIFO_MODE"                                                               , "Memory", 0x40104098,        8, base=16, bitRange=33
+sfr = "DMAC1/CFG1.[36:34]PROTCTL"                                                              , "Memory", 0x40104098,        8, base=16, bitRange=34-36
+sfr = "DMAC1/CFG1.[37]DS_UPD_EN"                                                               , "Memory", 0x40104098,        8, base=16, bitRange=37
+sfr = "DMAC1/CFG1.[38]SS_UPD_EN"                                                               , "Memory", 0x40104098,        8, base=16, bitRange=38
+sfr = "DMAC1/CFG1.[42:39]SRC_PER"                                                              , "Memory", 0x40104098,        8, base=16, bitRange=39-42
+sfr = "DMAC1/CFG1.[46:43]DEST_PER"                                                             , "Memory", 0x40104098,        8, base=16, bitRange=43-46
+sfr = "DMAC1/SGR1"                                                                             , "Memory", 0x401040A0,        8, base=16
+sfr = "DMAC1/SGR1.[19:0]SGI"                                                                   , "Memory", 0x401040A0,        8, base=16, bitRange=0-19
+sfr = "DMAC1/SGR1.[31:20]SGC"                                                                  , "Memory", 0x401040A0,        8, base=16, bitRange=20-31
+sfr = "DMAC1/DSR1"                                                                             , "Memory", 0x401040A8,        8, base=16
+sfr = "DMAC1/DSR1.[19:0]DSI"                                                                   , "Memory", 0x401040A8,        8, base=16, bitRange=0-19
+sfr = "DMAC1/DSR1.[31:20]DSC"                                                                  , "Memory", 0x401040A8,        8, base=16, bitRange=20-31
+sfr = "DMAC1/SAR2"                                                                             , "Memory", 0x401040B0,        8, base=16
+sfr = "DMAC1/SAR2.[31:0]SAR"                                                                   , "Memory", 0x401040B0,        8, base=16, bitRange=0-31
+sfr = "DMAC1/DAR2"                                                                             , "Memory", 0x401040B8,        8, base=16
+sfr = "DMAC1/DAR2.[31:0]DAR"                                                                   , "Memory", 0x401040B8,        8, base=16, bitRange=0-31
+sfr = "DMAC1/LLP2"                                                                             , "Memory", 0x401040C0,        8, base=16
+sfr = "DMAC1/LLP2.[31:2]LOC"                                                                   , "Memory", 0x401040C0,        8, base=16, bitRange=2-31
+sfr = "DMAC1/CTL2"                                                                             , "Memory", 0x401040C8,        8, base=16
+sfr = "DMAC1/CTL2.[0]INT_EN"                                                                   , "Memory", 0x401040C8,        8, base=16, bitRange=0
+sfr = "DMAC1/CTL2.[3:1]DST_TR_WIDTH"                                                           , "Memory", 0x401040C8,        8, base=16, bitRange=1-3
+sfr = "DMAC1/CTL2.[6:4]SRC_TR_WIDTH"                                                           , "Memory", 0x401040C8,        8, base=16, bitRange=4-6
+sfr = "DMAC1/CTL2.[8:7]DINC"                                                                   , "Memory", 0x401040C8,        8, base=16, bitRange=7-8
+sfr = "DMAC1/CTL2.[10:9]SINC"                                                                  , "Memory", 0x401040C8,        8, base=16, bitRange=9-10
+sfr = "DMAC1/CTL2.[13:11]DEST_MSIZE"                                                           , "Memory", 0x401040C8,        8, base=16, bitRange=11-13
+sfr = "DMAC1/CTL2.[16:14]SRC_MSIZE"                                                            , "Memory", 0x401040C8,        8, base=16, bitRange=14-16
+sfr = "DMAC1/CTL2.[17]SRC_GATHER_EN"                                                           , "Memory", 0x401040C8,        8, base=16, bitRange=17
+sfr = "DMAC1/CTL2.[18]DST_SCATTER_EN"                                                          , "Memory", 0x401040C8,        8, base=16, bitRange=18
+sfr = "DMAC1/CTL2.[22:20]TT_FC"                                                                , "Memory", 0x401040C8,        8, base=16, bitRange=20-22
+sfr = "DMAC1/CTL2.[27]LLP_DST_EN"                                                              , "Memory", 0x401040C8,        8, base=16, bitRange=27
+sfr = "DMAC1/CTL2.[28]LLP_SRC_EN"                                                              , "Memory", 0x401040C8,        8, base=16, bitRange=28
+sfr = "DMAC1/CTL2.[43:32]BLOCK_TS"                                                             , "Memory", 0x401040C8,        8, base=16, bitRange=32-43
+sfr = "DMAC1/CTL2.[44]DONE"                                                                    , "Memory", 0x401040C8,        8, base=16, bitRange=44
+sfr = "DMAC1/SSTAT2"                                                                           , "Memory", 0x401040D0,        8, base=16
+sfr = "DMAC1/SSTAT2.[31:0]SSTAT"                                                               , "Memory", 0x401040D0,        8, base=16, bitRange=0-31
+sfr = "DMAC1/DSTAT2"                                                                           , "Memory", 0x401040D8,        8, base=16
+sfr = "DMAC1/DSTAT2.[31:0]DSTAT"                                                               , "Memory", 0x401040D8,        8, base=16, bitRange=0-31
+sfr = "DMAC1/SSTATAR2"                                                                         , "Memory", 0x401040E0,        8, base=16
+sfr = "DMAC1/SSTATAR2.[31:0]SSTATAR"                                                           , "Memory", 0x401040E0,        8, base=16, bitRange=0-31
+sfr = "DMAC1/DSTATAR2"                                                                         , "Memory", 0x401040E8,        8, base=16
+sfr = "DMAC1/DSTATAR2.[31:0]DSTATAR"                                                           , "Memory", 0x401040E8,        8, base=16, bitRange=0-31
+sfr = "DMAC1/CFG2"                                                                             , "Memory", 0x401040F0,        8, base=16
+sfr = "DMAC1/CFG2.[7:5]CH_PRIOR"                                                               , "Memory", 0x401040F0,        8, base=16, bitRange=5-7
+sfr = "DMAC1/CFG2.[8]CH_SUSP"                                                                  , "Memory", 0x401040F0,        8, base=16, bitRange=8
+sfr = "DMAC1/CFG2.[9]FIFO_EMPTY"                                                               , "Memory", 0x401040F0,        8, base=16, bitRange=9
+sfr = "DMAC1/CFG2.[10]HS_SEL_DST"                                                              , "Memory", 0x401040F0,        8, base=16, bitRange=10
+sfr = "DMAC1/CFG2.[11]HS_SEL_SRC"                                                              , "Memory", 0x401040F0,        8, base=16, bitRange=11
+sfr = "DMAC1/CFG2.[18]DST_HS_POL"                                                              , "Memory", 0x401040F0,        8, base=16, bitRange=18
+sfr = "DMAC1/CFG2.[19]SRC_HS_POL"                                                              , "Memory", 0x401040F0,        8, base=16, bitRange=19
+sfr = "DMAC1/CFG2.[29:20]MAX_ABRST"                                                            , "Memory", 0x401040F0,        8, base=16, bitRange=20-29
+sfr = "DMAC1/CFG2.[30]RELOAD_SRC"                                                              , "Memory", 0x401040F0,        8, base=16, bitRange=30
+sfr = "DMAC1/CFG2.[31]RELOAD_DST"                                                              , "Memory", 0x401040F0,        8, base=16, bitRange=31
+sfr = "DMAC1/CFG2.[32]FCMODE"                                                                  , "Memory", 0x401040F0,        8, base=16, bitRange=32
+sfr = "DMAC1/CFG2.[33]FIFO_MODE"                                                               , "Memory", 0x401040F0,        8, base=16, bitRange=33
+sfr = "DMAC1/CFG2.[36:34]PROTCTL"                                                              , "Memory", 0x401040F0,        8, base=16, bitRange=34-36
+sfr = "DMAC1/CFG2.[37]DS_UPD_EN"                                                               , "Memory", 0x401040F0,        8, base=16, bitRange=37
+sfr = "DMAC1/CFG2.[38]SS_UPD_EN"                                                               , "Memory", 0x401040F0,        8, base=16, bitRange=38
+sfr = "DMAC1/CFG2.[42:39]SRC_PER"                                                              , "Memory", 0x401040F0,        8, base=16, bitRange=39-42
+sfr = "DMAC1/CFG2.[46:43]DEST_PER"                                                             , "Memory", 0x401040F0,        8, base=16, bitRange=43-46
+sfr = "DMAC1/SGR2"                                                                             , "Memory", 0x401040F8,        8, base=16
+sfr = "DMAC1/SGR2.[19:0]SGI"                                                                   , "Memory", 0x401040F8,        8, base=16, bitRange=0-19
+sfr = "DMAC1/SGR2.[31:20]SGC"                                                                  , "Memory", 0x401040F8,        8, base=16, bitRange=20-31
+sfr = "DMAC1/DSR2"                                                                             , "Memory", 0x40104100,        8, base=16
+sfr = "DMAC1/DSR2.[19:0]DSI"                                                                   , "Memory", 0x40104100,        8, base=16, bitRange=0-19
+sfr = "DMAC1/DSR2.[31:20]DSC"                                                                  , "Memory", 0x40104100,        8, base=16, bitRange=20-31
+sfr = "DMAC1/SAR3"                                                                             , "Memory", 0x40104108,        8, base=16
+sfr = "DMAC1/SAR3.[31:0]SAR"                                                                   , "Memory", 0x40104108,        8, base=16, bitRange=0-31
+sfr = "DMAC1/DAR3"                                                                             , "Memory", 0x40104110,        8, base=16
+sfr = "DMAC1/DAR3.[31:0]DAR"                                                                   , "Memory", 0x40104110,        8, base=16, bitRange=0-31
+sfr = "DMAC1/LLP3"                                                                             , "Memory", 0x40104118,        8, base=16
+sfr = "DMAC1/LLP3.[31:2]LOC"                                                                   , "Memory", 0x40104118,        8, base=16, bitRange=2-31
+sfr = "DMAC1/CTL3"                                                                             , "Memory", 0x40104120,        8, base=16
+sfr = "DMAC1/CTL3.[0]INT_EN"                                                                   , "Memory", 0x40104120,        8, base=16, bitRange=0
+sfr = "DMAC1/CTL3.[3:1]DST_TR_WIDTH"                                                           , "Memory", 0x40104120,        8, base=16, bitRange=1-3
+sfr = "DMAC1/CTL3.[6:4]SRC_TR_WIDTH"                                                           , "Memory", 0x40104120,        8, base=16, bitRange=4-6
+sfr = "DMAC1/CTL3.[8:7]DINC"                                                                   , "Memory", 0x40104120,        8, base=16, bitRange=7-8
+sfr = "DMAC1/CTL3.[10:9]SINC"                                                                  , "Memory", 0x40104120,        8, base=16, bitRange=9-10
+sfr = "DMAC1/CTL3.[13:11]DEST_MSIZE"                                                           , "Memory", 0x40104120,        8, base=16, bitRange=11-13
+sfr = "DMAC1/CTL3.[16:14]SRC_MSIZE"                                                            , "Memory", 0x40104120,        8, base=16, bitRange=14-16
+sfr = "DMAC1/CTL3.[17]SRC_GATHER_EN"                                                           , "Memory", 0x40104120,        8, base=16, bitRange=17
+sfr = "DMAC1/CTL3.[18]DST_SCATTER_EN"                                                          , "Memory", 0x40104120,        8, base=16, bitRange=18
+sfr = "DMAC1/CTL3.[22:20]TT_FC"                                                                , "Memory", 0x40104120,        8, base=16, bitRange=20-22
+sfr = "DMAC1/CTL3.[27]LLP_DST_EN"                                                              , "Memory", 0x40104120,        8, base=16, bitRange=27
+sfr = "DMAC1/CTL3.[28]LLP_SRC_EN"                                                              , "Memory", 0x40104120,        8, base=16, bitRange=28
+sfr = "DMAC1/CTL3.[43:32]BLOCK_TS"                                                             , "Memory", 0x40104120,        8, base=16, bitRange=32-43
+sfr = "DMAC1/CTL3.[44]DONE"                                                                    , "Memory", 0x40104120,        8, base=16, bitRange=44
+sfr = "DMAC1/SSTAT3"                                                                           , "Memory", 0x40104128,        8, base=16
+sfr = "DMAC1/SSTAT3.[31:0]SSTAT"                                                               , "Memory", 0x40104128,        8, base=16, bitRange=0-31
+sfr = "DMAC1/DSTAT3"                                                                           , "Memory", 0x40104130,        8, base=16
+sfr = "DMAC1/DSTAT3.[31:0]DSTAT"                                                               , "Memory", 0x40104130,        8, base=16, bitRange=0-31
+sfr = "DMAC1/SSTATAR3"                                                                         , "Memory", 0x40104138,        8, base=16
+sfr = "DMAC1/SSTATAR3.[31:0]SSTATAR"                                                           , "Memory", 0x40104138,        8, base=16, bitRange=0-31
+sfr = "DMAC1/DSTATAR3"                                                                         , "Memory", 0x40104140,        8, base=16
+sfr = "DMAC1/DSTATAR3.[31:0]DSTATAR"                                                           , "Memory", 0x40104140,        8, base=16, bitRange=0-31
+sfr = "DMAC1/CFG3"                                                                             , "Memory", 0x40104148,        8, base=16
+sfr = "DMAC1/CFG3.[7:5]CH_PRIOR"                                                               , "Memory", 0x40104148,        8, base=16, bitRange=5-7
+sfr = "DMAC1/CFG3.[8]CH_SUSP"                                                                  , "Memory", 0x40104148,        8, base=16, bitRange=8
+sfr = "DMAC1/CFG3.[9]FIFO_EMPTY"                                                               , "Memory", 0x40104148,        8, base=16, bitRange=9
+sfr = "DMAC1/CFG3.[10]HS_SEL_DST"                                                              , "Memory", 0x40104148,        8, base=16, bitRange=10
+sfr = "DMAC1/CFG3.[11]HS_SEL_SRC"                                                              , "Memory", 0x40104148,        8, base=16, bitRange=11
+sfr = "DMAC1/CFG3.[18]DST_HS_POL"                                                              , "Memory", 0x40104148,        8, base=16, bitRange=18
+sfr = "DMAC1/CFG3.[19]SRC_HS_POL"                                                              , "Memory", 0x40104148,        8, base=16, bitRange=19
+sfr = "DMAC1/CFG3.[29:20]MAX_ABRST"                                                            , "Memory", 0x40104148,        8, base=16, bitRange=20-29
+sfr = "DMAC1/CFG3.[30]RELOAD_SRC"                                                              , "Memory", 0x40104148,        8, base=16, bitRange=30
+sfr = "DMAC1/CFG3.[31]RELOAD_DST"                                                              , "Memory", 0x40104148,        8, base=16, bitRange=31
+sfr = "DMAC1/CFG3.[32]FCMODE"                                                                  , "Memory", 0x40104148,        8, base=16, bitRange=32
+sfr = "DMAC1/CFG3.[33]FIFO_MODE"                                                               , "Memory", 0x40104148,        8, base=16, bitRange=33
+sfr = "DMAC1/CFG3.[36:34]PROTCTL"                                                              , "Memory", 0x40104148,        8, base=16, bitRange=34-36
+sfr = "DMAC1/CFG3.[37]DS_UPD_EN"                                                               , "Memory", 0x40104148,        8, base=16, bitRange=37
+sfr = "DMAC1/CFG3.[38]SS_UPD_EN"                                                               , "Memory", 0x40104148,        8, base=16, bitRange=38
+sfr = "DMAC1/CFG3.[42:39]SRC_PER"                                                              , "Memory", 0x40104148,        8, base=16, bitRange=39-42
+sfr = "DMAC1/CFG3.[46:43]DEST_PER"                                                             , "Memory", 0x40104148,        8, base=16, bitRange=43-46
+sfr = "DMAC1/SGR3"                                                                             , "Memory", 0x40104150,        8, base=16
+sfr = "DMAC1/SGR3.[19:0]SGI"                                                                   , "Memory", 0x40104150,        8, base=16, bitRange=0-19
+sfr = "DMAC1/SGR3.[31:20]SGC"                                                                  , "Memory", 0x40104150,        8, base=16, bitRange=20-31
+sfr = "DMAC1/DSR3"                                                                             , "Memory", 0x40104158,        8, base=16
+sfr = "DMAC1/DSR3.[19:0]DSI"                                                                   , "Memory", 0x40104158,        8, base=16, bitRange=0-19
+sfr = "DMAC1/DSR3.[31:20]DSC"                                                                  , "Memory", 0x40104158,        8, base=16, bitRange=20-31
+sfr = "DMAC1/SAR4"                                                                             , "Memory", 0x40104160,        8, base=16
+sfr = "DMAC1/SAR4.[31:0]SAR"                                                                   , "Memory", 0x40104160,        8, base=16, bitRange=0-31
+sfr = "DMAC1/DAR4"                                                                             , "Memory", 0x40104168,        8, base=16
+sfr = "DMAC1/DAR4.[31:0]DAR"                                                                   , "Memory", 0x40104168,        8, base=16, bitRange=0-31
+sfr = "DMAC1/LLP4"                                                                             , "Memory", 0x40104170,        8, base=16
+sfr = "DMAC1/LLP4.[31:2]LOC"                                                                   , "Memory", 0x40104170,        8, base=16, bitRange=2-31
+sfr = "DMAC1/CTL4"                                                                             , "Memory", 0x40104178,        8, base=16
+sfr = "DMAC1/CTL4.[0]INT_EN"                                                                   , "Memory", 0x40104178,        8, base=16, bitRange=0
+sfr = "DMAC1/CTL4.[3:1]DST_TR_WIDTH"                                                           , "Memory", 0x40104178,        8, base=16, bitRange=1-3
+sfr = "DMAC1/CTL4.[6:4]SRC_TR_WIDTH"                                                           , "Memory", 0x40104178,        8, base=16, bitRange=4-6
+sfr = "DMAC1/CTL4.[8:7]DINC"                                                                   , "Memory", 0x40104178,        8, base=16, bitRange=7-8
+sfr = "DMAC1/CTL4.[10:9]SINC"                                                                  , "Memory", 0x40104178,        8, base=16, bitRange=9-10
+sfr = "DMAC1/CTL4.[13:11]DEST_MSIZE"                                                           , "Memory", 0x40104178,        8, base=16, bitRange=11-13
+sfr = "DMAC1/CTL4.[16:14]SRC_MSIZE"                                                            , "Memory", 0x40104178,        8, base=16, bitRange=14-16
+sfr = "DMAC1/CTL4.[17]SRC_GATHER_EN"                                                           , "Memory", 0x40104178,        8, base=16, bitRange=17
+sfr = "DMAC1/CTL4.[18]DST_SCATTER_EN"                                                          , "Memory", 0x40104178,        8, base=16, bitRange=18
+sfr = "DMAC1/CTL4.[22:20]TT_FC"                                                                , "Memory", 0x40104178,        8, base=16, bitRange=20-22
+sfr = "DMAC1/CTL4.[27]LLP_DST_EN"                                                              , "Memory", 0x40104178,        8, base=16, bitRange=27
+sfr = "DMAC1/CTL4.[28]LLP_SRC_EN"                                                              , "Memory", 0x40104178,        8, base=16, bitRange=28
+sfr = "DMAC1/CTL4.[43:32]BLOCK_TS"                                                             , "Memory", 0x40104178,        8, base=16, bitRange=32-43
+sfr = "DMAC1/CTL4.[44]DONE"                                                                    , "Memory", 0x40104178,        8, base=16, bitRange=44
+sfr = "DMAC1/SSTAT4"                                                                           , "Memory", 0x40104180,        8, base=16
+sfr = "DMAC1/SSTAT4.[31:0]SSTAT"                                                               , "Memory", 0x40104180,        8, base=16, bitRange=0-31
+sfr = "DMAC1/DSTAT4"                                                                           , "Memory", 0x40104188,        8, base=16
+sfr = "DMAC1/DSTAT4.[31:0]DSTAT"                                                               , "Memory", 0x40104188,        8, base=16, bitRange=0-31
+sfr = "DMAC1/SSTATAR4"                                                                         , "Memory", 0x40104190,        8, base=16
+sfr = "DMAC1/SSTATAR4.[31:0]SSTATAR"                                                           , "Memory", 0x40104190,        8, base=16, bitRange=0-31
+sfr = "DMAC1/DSTATAR4"                                                                         , "Memory", 0x40104198,        8, base=16
+sfr = "DMAC1/DSTATAR4.[31:0]DSTATAR"                                                           , "Memory", 0x40104198,        8, base=16, bitRange=0-31
+sfr = "DMAC1/CFG4"                                                                             , "Memory", 0x401041A0,        8, base=16
+sfr = "DMAC1/CFG4.[7:5]CH_PRIOR"                                                               , "Memory", 0x401041A0,        8, base=16, bitRange=5-7
+sfr = "DMAC1/CFG4.[8]CH_SUSP"                                                                  , "Memory", 0x401041A0,        8, base=16, bitRange=8
+sfr = "DMAC1/CFG4.[9]FIFO_EMPTY"                                                               , "Memory", 0x401041A0,        8, base=16, bitRange=9
+sfr = "DMAC1/CFG4.[10]HS_SEL_DST"                                                              , "Memory", 0x401041A0,        8, base=16, bitRange=10
+sfr = "DMAC1/CFG4.[11]HS_SEL_SRC"                                                              , "Memory", 0x401041A0,        8, base=16, bitRange=11
+sfr = "DMAC1/CFG4.[18]DST_HS_POL"                                                              , "Memory", 0x401041A0,        8, base=16, bitRange=18
+sfr = "DMAC1/CFG4.[19]SRC_HS_POL"                                                              , "Memory", 0x401041A0,        8, base=16, bitRange=19
+sfr = "DMAC1/CFG4.[29:20]MAX_ABRST"                                                            , "Memory", 0x401041A0,        8, base=16, bitRange=20-29
+sfr = "DMAC1/CFG4.[30]RELOAD_SRC"                                                              , "Memory", 0x401041A0,        8, base=16, bitRange=30
+sfr = "DMAC1/CFG4.[31]RELOAD_DST"                                                              , "Memory", 0x401041A0,        8, base=16, bitRange=31
+sfr = "DMAC1/CFG4.[32]FCMODE"                                                                  , "Memory", 0x401041A0,        8, base=16, bitRange=32
+sfr = "DMAC1/CFG4.[33]FIFO_MODE"                                                               , "Memory", 0x401041A0,        8, base=16, bitRange=33
+sfr = "DMAC1/CFG4.[36:34]PROTCTL"                                                              , "Memory", 0x401041A0,        8, base=16, bitRange=34-36
+sfr = "DMAC1/CFG4.[37]DS_UPD_EN"                                                               , "Memory", 0x401041A0,        8, base=16, bitRange=37
+sfr = "DMAC1/CFG4.[38]SS_UPD_EN"                                                               , "Memory", 0x401041A0,        8, base=16, bitRange=38
+sfr = "DMAC1/CFG4.[42:39]SRC_PER"                                                              , "Memory", 0x401041A0,        8, base=16, bitRange=39-42
+sfr = "DMAC1/CFG4.[46:43]DEST_PER"                                                             , "Memory", 0x401041A0,        8, base=16, bitRange=43-46
+sfr = "DMAC1/SGR4"                                                                             , "Memory", 0x401041A8,        8, base=16
+sfr = "DMAC1/SGR4.[19:0]SGI"                                                                   , "Memory", 0x401041A8,        8, base=16, bitRange=0-19
+sfr = "DMAC1/SGR4.[31:20]SGC"                                                                  , "Memory", 0x401041A8,        8, base=16, bitRange=20-31
+sfr = "DMAC1/DSR4"                                                                             , "Memory", 0x401041B0,        8, base=16
+sfr = "DMAC1/DSR4.[19:0]DSI"                                                                   , "Memory", 0x401041B0,        8, base=16, bitRange=0-19
+sfr = "DMAC1/DSR4.[31:20]DSC"                                                                  , "Memory", 0x401041B0,        8, base=16, bitRange=20-31
+sfr = "DMAC1/SAR5"                                                                             , "Memory", 0x401041B8,        8, base=16
+sfr = "DMAC1/SAR5.[31:0]SAR"                                                                   , "Memory", 0x401041B8,        8, base=16, bitRange=0-31
+sfr = "DMAC1/DAR5"                                                                             , "Memory", 0x401041C0,        8, base=16
+sfr = "DMAC1/DAR5.[31:0]DAR"                                                                   , "Memory", 0x401041C0,        8, base=16, bitRange=0-31
+sfr = "DMAC1/LLP5"                                                                             , "Memory", 0x401041C8,        8, base=16
+sfr = "DMAC1/LLP5.[31:2]LOC"                                                                   , "Memory", 0x401041C8,        8, base=16, bitRange=2-31
+sfr = "DMAC1/CTL5"                                                                             , "Memory", 0x401041D0,        8, base=16
+sfr = "DMAC1/CTL5.[0]INT_EN"                                                                   , "Memory", 0x401041D0,        8, base=16, bitRange=0
+sfr = "DMAC1/CTL5.[3:1]DST_TR_WIDTH"                                                           , "Memory", 0x401041D0,        8, base=16, bitRange=1-3
+sfr = "DMAC1/CTL5.[6:4]SRC_TR_WIDTH"                                                           , "Memory", 0x401041D0,        8, base=16, bitRange=4-6
+sfr = "DMAC1/CTL5.[8:7]DINC"                                                                   , "Memory", 0x401041D0,        8, base=16, bitRange=7-8
+sfr = "DMAC1/CTL5.[10:9]SINC"                                                                  , "Memory", 0x401041D0,        8, base=16, bitRange=9-10
+sfr = "DMAC1/CTL5.[13:11]DEST_MSIZE"                                                           , "Memory", 0x401041D0,        8, base=16, bitRange=11-13
+sfr = "DMAC1/CTL5.[16:14]SRC_MSIZE"                                                            , "Memory", 0x401041D0,        8, base=16, bitRange=14-16
+sfr = "DMAC1/CTL5.[17]SRC_GATHER_EN"                                                           , "Memory", 0x401041D0,        8, base=16, bitRange=17
+sfr = "DMAC1/CTL5.[18]DST_SCATTER_EN"                                                          , "Memory", 0x401041D0,        8, base=16, bitRange=18
+sfr = "DMAC1/CTL5.[22:20]TT_FC"                                                                , "Memory", 0x401041D0,        8, base=16, bitRange=20-22
+sfr = "DMAC1/CTL5.[27]LLP_DST_EN"                                                              , "Memory", 0x401041D0,        8, base=16, bitRange=27
+sfr = "DMAC1/CTL5.[28]LLP_SRC_EN"                                                              , "Memory", 0x401041D0,        8, base=16, bitRange=28
+sfr = "DMAC1/CTL5.[43:32]BLOCK_TS"                                                             , "Memory", 0x401041D0,        8, base=16, bitRange=32-43
+sfr = "DMAC1/CTL5.[44]DONE"                                                                    , "Memory", 0x401041D0,        8, base=16, bitRange=44
+sfr = "DMAC1/SSTAT5"                                                                           , "Memory", 0x401041D8,        8, base=16
+sfr = "DMAC1/SSTAT5.[31:0]SSTAT"                                                               , "Memory", 0x401041D8,        8, base=16, bitRange=0-31
+sfr = "DMAC1/DSTAT5"                                                                           , "Memory", 0x401041E0,        8, base=16
+sfr = "DMAC1/DSTAT5.[31:0]DSTAT"                                                               , "Memory", 0x401041E0,        8, base=16, bitRange=0-31
+sfr = "DMAC1/SSTATAR5"                                                                         , "Memory", 0x401041E8,        8, base=16
+sfr = "DMAC1/SSTATAR5.[31:0]SSTATAR"                                                           , "Memory", 0x401041E8,        8, base=16, bitRange=0-31
+sfr = "DMAC1/DSTATAR5"                                                                         , "Memory", 0x401041F0,        8, base=16
+sfr = "DMAC1/DSTATAR5.[31:0]DSTATAR"                                                           , "Memory", 0x401041F0,        8, base=16, bitRange=0-31
+sfr = "DMAC1/CFG5"                                                                             , "Memory", 0x401041F8,        8, base=16
+sfr = "DMAC1/CFG5.[7:5]CH_PRIOR"                                                               , "Memory", 0x401041F8,        8, base=16, bitRange=5-7
+sfr = "DMAC1/CFG5.[8]CH_SUSP"                                                                  , "Memory", 0x401041F8,        8, base=16, bitRange=8
+sfr = "DMAC1/CFG5.[9]FIFO_EMPTY"                                                               , "Memory", 0x401041F8,        8, base=16, bitRange=9
+sfr = "DMAC1/CFG5.[10]HS_SEL_DST"                                                              , "Memory", 0x401041F8,        8, base=16, bitRange=10
+sfr = "DMAC1/CFG5.[11]HS_SEL_SRC"                                                              , "Memory", 0x401041F8,        8, base=16, bitRange=11
+sfr = "DMAC1/CFG5.[18]DST_HS_POL"                                                              , "Memory", 0x401041F8,        8, base=16, bitRange=18
+sfr = "DMAC1/CFG5.[19]SRC_HS_POL"                                                              , "Memory", 0x401041F8,        8, base=16, bitRange=19
+sfr = "DMAC1/CFG5.[29:20]MAX_ABRST"                                                            , "Memory", 0x401041F8,        8, base=16, bitRange=20-29
+sfr = "DMAC1/CFG5.[30]RELOAD_SRC"                                                              , "Memory", 0x401041F8,        8, base=16, bitRange=30
+sfr = "DMAC1/CFG5.[31]RELOAD_DST"                                                              , "Memory", 0x401041F8,        8, base=16, bitRange=31
+sfr = "DMAC1/CFG5.[32]FCMODE"                                                                  , "Memory", 0x401041F8,        8, base=16, bitRange=32
+sfr = "DMAC1/CFG5.[33]FIFO_MODE"                                                               , "Memory", 0x401041F8,        8, base=16, bitRange=33
+sfr = "DMAC1/CFG5.[36:34]PROTCTL"                                                              , "Memory", 0x401041F8,        8, base=16, bitRange=34-36
+sfr = "DMAC1/CFG5.[37]DS_UPD_EN"                                                               , "Memory", 0x401041F8,        8, base=16, bitRange=37
+sfr = "DMAC1/CFG5.[38]SS_UPD_EN"                                                               , "Memory", 0x401041F8,        8, base=16, bitRange=38
+sfr = "DMAC1/CFG5.[42:39]SRC_PER"                                                              , "Memory", 0x401041F8,        8, base=16, bitRange=39-42
+sfr = "DMAC1/CFG5.[46:43]DEST_PER"                                                             , "Memory", 0x401041F8,        8, base=16, bitRange=43-46
+sfr = "DMAC1/SGR5"                                                                             , "Memory", 0x40104200,        8, base=16
+sfr = "DMAC1/SGR5.[19:0]SGI"                                                                   , "Memory", 0x40104200,        8, base=16, bitRange=0-19
+sfr = "DMAC1/SGR5.[31:20]SGC"                                                                  , "Memory", 0x40104200,        8, base=16, bitRange=20-31
+sfr = "DMAC1/DSR5"                                                                             , "Memory", 0x40104208,        8, base=16
+sfr = "DMAC1/DSR5.[19:0]DSI"                                                                   , "Memory", 0x40104208,        8, base=16, bitRange=0-19
+sfr = "DMAC1/DSR5.[31:20]DSC"                                                                  , "Memory", 0x40104208,        8, base=16, bitRange=20-31
+sfr = "DMAC1/SAR6"                                                                             , "Memory", 0x40104210,        8, base=16
+sfr = "DMAC1/SAR6.[31:0]SAR"                                                                   , "Memory", 0x40104210,        8, base=16, bitRange=0-31
+sfr = "DMAC1/DAR6"                                                                             , "Memory", 0x40104218,        8, base=16
+sfr = "DMAC1/DAR6.[31:0]DAR"                                                                   , "Memory", 0x40104218,        8, base=16, bitRange=0-31
+sfr = "DMAC1/LLP6"                                                                             , "Memory", 0x40104220,        8, base=16
+sfr = "DMAC1/LLP6.[31:2]LOC"                                                                   , "Memory", 0x40104220,        8, base=16, bitRange=2-31
+sfr = "DMAC1/CTL6"                                                                             , "Memory", 0x40104228,        8, base=16
+sfr = "DMAC1/CTL6.[0]INT_EN"                                                                   , "Memory", 0x40104228,        8, base=16, bitRange=0
+sfr = "DMAC1/CTL6.[3:1]DST_TR_WIDTH"                                                           , "Memory", 0x40104228,        8, base=16, bitRange=1-3
+sfr = "DMAC1/CTL6.[6:4]SRC_TR_WIDTH"                                                           , "Memory", 0x40104228,        8, base=16, bitRange=4-6
+sfr = "DMAC1/CTL6.[8:7]DINC"                                                                   , "Memory", 0x40104228,        8, base=16, bitRange=7-8
+sfr = "DMAC1/CTL6.[10:9]SINC"                                                                  , "Memory", 0x40104228,        8, base=16, bitRange=9-10
+sfr = "DMAC1/CTL6.[13:11]DEST_MSIZE"                                                           , "Memory", 0x40104228,        8, base=16, bitRange=11-13
+sfr = "DMAC1/CTL6.[16:14]SRC_MSIZE"                                                            , "Memory", 0x40104228,        8, base=16, bitRange=14-16
+sfr = "DMAC1/CTL6.[17]SRC_GATHER_EN"                                                           , "Memory", 0x40104228,        8, base=16, bitRange=17
+sfr = "DMAC1/CTL6.[18]DST_SCATTER_EN"                                                          , "Memory", 0x40104228,        8, base=16, bitRange=18
+sfr = "DMAC1/CTL6.[22:20]TT_FC"                                                                , "Memory", 0x40104228,        8, base=16, bitRange=20-22
+sfr = "DMAC1/CTL6.[27]LLP_DST_EN"                                                              , "Memory", 0x40104228,        8, base=16, bitRange=27
+sfr = "DMAC1/CTL6.[28]LLP_SRC_EN"                                                              , "Memory", 0x40104228,        8, base=16, bitRange=28
+sfr = "DMAC1/CTL6.[43:32]BLOCK_TS"                                                             , "Memory", 0x40104228,        8, base=16, bitRange=32-43
+sfr = "DMAC1/CTL6.[44]DONE"                                                                    , "Memory", 0x40104228,        8, base=16, bitRange=44
+sfr = "DMAC1/SSTAT6"                                                                           , "Memory", 0x40104230,        8, base=16
+sfr = "DMAC1/SSTAT6.[31:0]SSTAT"                                                               , "Memory", 0x40104230,        8, base=16, bitRange=0-31
+sfr = "DMAC1/DSTAT6"                                                                           , "Memory", 0x40104238,        8, base=16
+sfr = "DMAC1/DSTAT6.[31:0]DSTAT"                                                               , "Memory", 0x40104238,        8, base=16, bitRange=0-31
+sfr = "DMAC1/SSTATAR6"                                                                         , "Memory", 0x40104240,        8, base=16
+sfr = "DMAC1/SSTATAR6.[31:0]SSTATAR"                                                           , "Memory", 0x40104240,        8, base=16, bitRange=0-31
+sfr = "DMAC1/DSTATAR6"                                                                         , "Memory", 0x40104248,        8, base=16
+sfr = "DMAC1/DSTATAR6.[31:0]DSTATAR"                                                           , "Memory", 0x40104248,        8, base=16, bitRange=0-31
+sfr = "DMAC1/CFG6"                                                                             , "Memory", 0x40104250,        8, base=16
+sfr = "DMAC1/CFG6.[7:5]CH_PRIOR"                                                               , "Memory", 0x40104250,        8, base=16, bitRange=5-7
+sfr = "DMAC1/CFG6.[8]CH_SUSP"                                                                  , "Memory", 0x40104250,        8, base=16, bitRange=8
+sfr = "DMAC1/CFG6.[9]FIFO_EMPTY"                                                               , "Memory", 0x40104250,        8, base=16, bitRange=9
+sfr = "DMAC1/CFG6.[10]HS_SEL_DST"                                                              , "Memory", 0x40104250,        8, base=16, bitRange=10
+sfr = "DMAC1/CFG6.[11]HS_SEL_SRC"                                                              , "Memory", 0x40104250,        8, base=16, bitRange=11
+sfr = "DMAC1/CFG6.[18]DST_HS_POL"                                                              , "Memory", 0x40104250,        8, base=16, bitRange=18
+sfr = "DMAC1/CFG6.[19]SRC_HS_POL"                                                              , "Memory", 0x40104250,        8, base=16, bitRange=19
+sfr = "DMAC1/CFG6.[29:20]MAX_ABRST"                                                            , "Memory", 0x40104250,        8, base=16, bitRange=20-29
+sfr = "DMAC1/CFG6.[30]RELOAD_SRC"                                                              , "Memory", 0x40104250,        8, base=16, bitRange=30
+sfr = "DMAC1/CFG6.[31]RELOAD_DST"                                                              , "Memory", 0x40104250,        8, base=16, bitRange=31
+sfr = "DMAC1/CFG6.[32]FCMODE"                                                                  , "Memory", 0x40104250,        8, base=16, bitRange=32
+sfr = "DMAC1/CFG6.[33]FIFO_MODE"                                                               , "Memory", 0x40104250,        8, base=16, bitRange=33
+sfr = "DMAC1/CFG6.[36:34]PROTCTL"                                                              , "Memory", 0x40104250,        8, base=16, bitRange=34-36
+sfr = "DMAC1/CFG6.[37]DS_UPD_EN"                                                               , "Memory", 0x40104250,        8, base=16, bitRange=37
+sfr = "DMAC1/CFG6.[38]SS_UPD_EN"                                                               , "Memory", 0x40104250,        8, base=16, bitRange=38
+sfr = "DMAC1/CFG6.[42:39]SRC_PER"                                                              , "Memory", 0x40104250,        8, base=16, bitRange=39-42
+sfr = "DMAC1/CFG6.[46:43]DEST_PER"                                                             , "Memory", 0x40104250,        8, base=16, bitRange=43-46
+sfr = "DMAC1/SGR6"                                                                             , "Memory", 0x40104258,        8, base=16
+sfr = "DMAC1/SGR6.[19:0]SGI"                                                                   , "Memory", 0x40104258,        8, base=16, bitRange=0-19
+sfr = "DMAC1/SGR6.[31:20]SGC"                                                                  , "Memory", 0x40104258,        8, base=16, bitRange=20-31
+sfr = "DMAC1/DSR6"                                                                             , "Memory", 0x40104260,        8, base=16
+sfr = "DMAC1/DSR6.[19:0]DSI"                                                                   , "Memory", 0x40104260,        8, base=16, bitRange=0-19
+sfr = "DMAC1/DSR6.[31:20]DSC"                                                                  , "Memory", 0x40104260,        8, base=16, bitRange=20-31
+sfr = "DMAC1/SAR7"                                                                             , "Memory", 0x40104268,        8, base=16
+sfr = "DMAC1/SAR7.[31:0]SAR"                                                                   , "Memory", 0x40104268,        8, base=16, bitRange=0-31
+sfr = "DMAC1/DAR7"                                                                             , "Memory", 0x40104270,        8, base=16
+sfr = "DMAC1/DAR7.[31:0]DAR"                                                                   , "Memory", 0x40104270,        8, base=16, bitRange=0-31
+sfr = "DMAC1/LLP7"                                                                             , "Memory", 0x40104278,        8, base=16
+sfr = "DMAC1/LLP7.[31:2]LOC"                                                                   , "Memory", 0x40104278,        8, base=16, bitRange=2-31
+sfr = "DMAC1/CTL7"                                                                             , "Memory", 0x40104280,        8, base=16
+sfr = "DMAC1/CTL7.[0]INT_EN"                                                                   , "Memory", 0x40104280,        8, base=16, bitRange=0
+sfr = "DMAC1/CTL7.[3:1]DST_TR_WIDTH"                                                           , "Memory", 0x40104280,        8, base=16, bitRange=1-3
+sfr = "DMAC1/CTL7.[6:4]SRC_TR_WIDTH"                                                           , "Memory", 0x40104280,        8, base=16, bitRange=4-6
+sfr = "DMAC1/CTL7.[8:7]DINC"                                                                   , "Memory", 0x40104280,        8, base=16, bitRange=7-8
+sfr = "DMAC1/CTL7.[10:9]SINC"                                                                  , "Memory", 0x40104280,        8, base=16, bitRange=9-10
+sfr = "DMAC1/CTL7.[13:11]DEST_MSIZE"                                                           , "Memory", 0x40104280,        8, base=16, bitRange=11-13
+sfr = "DMAC1/CTL7.[16:14]SRC_MSIZE"                                                            , "Memory", 0x40104280,        8, base=16, bitRange=14-16
+sfr = "DMAC1/CTL7.[17]SRC_GATHER_EN"                                                           , "Memory", 0x40104280,        8, base=16, bitRange=17
+sfr = "DMAC1/CTL7.[18]DST_SCATTER_EN"                                                          , "Memory", 0x40104280,        8, base=16, bitRange=18
+sfr = "DMAC1/CTL7.[22:20]TT_FC"                                                                , "Memory", 0x40104280,        8, base=16, bitRange=20-22
+sfr = "DMAC1/CTL7.[27]LLP_DST_EN"                                                              , "Memory", 0x40104280,        8, base=16, bitRange=27
+sfr = "DMAC1/CTL7.[28]LLP_SRC_EN"                                                              , "Memory", 0x40104280,        8, base=16, bitRange=28
+sfr = "DMAC1/CTL7.[43:32]BLOCK_TS"                                                             , "Memory", 0x40104280,        8, base=16, bitRange=32-43
+sfr = "DMAC1/CTL7.[44]DONE"                                                                    , "Memory", 0x40104280,        8, base=16, bitRange=44
+sfr = "DMAC1/SSTAT7"                                                                           , "Memory", 0x40104288,        8, base=16
+sfr = "DMAC1/SSTAT7.[31:0]SSTAT"                                                               , "Memory", 0x40104288,        8, base=16, bitRange=0-31
+sfr = "DMAC1/DSTAT7"                                                                           , "Memory", 0x40104290,        8, base=16
+sfr = "DMAC1/DSTAT7.[31:0]DSTAT"                                                               , "Memory", 0x40104290,        8, base=16, bitRange=0-31
+sfr = "DMAC1/SSTATAR7"                                                                         , "Memory", 0x40104298,        8, base=16
+sfr = "DMAC1/SSTATAR7.[31:0]SSTATAR"                                                           , "Memory", 0x40104298,        8, base=16, bitRange=0-31
+sfr = "DMAC1/DSTATAR7"                                                                         , "Memory", 0x401042A0,        8, base=16
+sfr = "DMAC1/DSTATAR7.[31:0]DSTATAR"                                                           , "Memory", 0x401042A0,        8, base=16, bitRange=0-31
+sfr = "DMAC1/CFG7"                                                                             , "Memory", 0x401042A8,        8, base=16
+sfr = "DMAC1/CFG7.[7:5]CH_PRIOR"                                                               , "Memory", 0x401042A8,        8, base=16, bitRange=5-7
+sfr = "DMAC1/CFG7.[8]CH_SUSP"                                                                  , "Memory", 0x401042A8,        8, base=16, bitRange=8
+sfr = "DMAC1/CFG7.[9]FIFO_EMPTY"                                                               , "Memory", 0x401042A8,        8, base=16, bitRange=9
+sfr = "DMAC1/CFG7.[10]HS_SEL_DST"                                                              , "Memory", 0x401042A8,        8, base=16, bitRange=10
+sfr = "DMAC1/CFG7.[11]HS_SEL_SRC"                                                              , "Memory", 0x401042A8,        8, base=16, bitRange=11
+sfr = "DMAC1/CFG7.[18]DST_HS_POL"                                                              , "Memory", 0x401042A8,        8, base=16, bitRange=18
+sfr = "DMAC1/CFG7.[19]SRC_HS_POL"                                                              , "Memory", 0x401042A8,        8, base=16, bitRange=19
+sfr = "DMAC1/CFG7.[29:20]MAX_ABRST"                                                            , "Memory", 0x401042A8,        8, base=16, bitRange=20-29
+sfr = "DMAC1/CFG7.[30]RELOAD_SRC"                                                              , "Memory", 0x401042A8,        8, base=16, bitRange=30
+sfr = "DMAC1/CFG7.[31]RELOAD_DST"                                                              , "Memory", 0x401042A8,        8, base=16, bitRange=31
+sfr = "DMAC1/CFG7.[32]FCMODE"                                                                  , "Memory", 0x401042A8,        8, base=16, bitRange=32
+sfr = "DMAC1/CFG7.[33]FIFO_MODE"                                                               , "Memory", 0x401042A8,        8, base=16, bitRange=33
+sfr = "DMAC1/CFG7.[36:34]PROTCTL"                                                              , "Memory", 0x401042A8,        8, base=16, bitRange=34-36
+sfr = "DMAC1/CFG7.[37]DS_UPD_EN"                                                               , "Memory", 0x401042A8,        8, base=16, bitRange=37
+sfr = "DMAC1/CFG7.[38]SS_UPD_EN"                                                               , "Memory", 0x401042A8,        8, base=16, bitRange=38
+sfr = "DMAC1/CFG7.[42:39]SRC_PER"                                                              , "Memory", 0x401042A8,        8, base=16, bitRange=39-42
+sfr = "DMAC1/CFG7.[46:43]DEST_PER"                                                             , "Memory", 0x401042A8,        8, base=16, bitRange=43-46
+sfr = "DMAC1/SGR7"                                                                             , "Memory", 0x401042B0,        8, base=16
+sfr = "DMAC1/SGR7.[19:0]SGI"                                                                   , "Memory", 0x401042B0,        8, base=16, bitRange=0-19
+sfr = "DMAC1/SGR7.[31:20]SGC"                                                                  , "Memory", 0x401042B0,        8, base=16, bitRange=20-31
+sfr = "DMAC1/DSR7"                                                                             , "Memory", 0x401042B8,        8, base=16
+sfr = "DMAC1/DSR7.[19:0]DSI"                                                                   , "Memory", 0x401042B8,        8, base=16, bitRange=0-19
+sfr = "DMAC1/DSR7.[31:20]DSC"                                                                  , "Memory", 0x401042B8,        8, base=16, bitRange=20-31
+sfr = "DMAC1/RawTfr"                                                                           , "Memory", 0x401042C0,        8, base=16
+sfr = "DMAC1/RawTfr.[7:0]RAW"                                                                  , "Memory", 0x401042C0,        8, base=16, bitRange=0-7
+sfr = "DMAC1/RawBlock"                                                                         , "Memory", 0x401042C8,        8, base=16
+sfr = "DMAC1/RawBlock.[7:0]RAW"                                                                , "Memory", 0x401042C8,        8, base=16, bitRange=0-7
+sfr = "DMAC1/RawSrcTran"                                                                       , "Memory", 0x401042D0,        8, base=16
+sfr = "DMAC1/RawSrcTran.[7:0]RAW"                                                              , "Memory", 0x401042D0,        8, base=16, bitRange=0-7
+sfr = "DMAC1/RawDstTran"                                                                       , "Memory", 0x401042D8,        8, base=16
+sfr = "DMAC1/RawDstTran.[7:0]RAW"                                                              , "Memory", 0x401042D8,        8, base=16, bitRange=0-7
+sfr = "DMAC1/RawErr"                                                                           , "Memory", 0x401042E0,        8, base=16
+sfr = "DMAC1/RawErr.[7:0]RAW"                                                                  , "Memory", 0x401042E0,        8, base=16, bitRange=0-7
+sfr = "DMAC1/StatusTfr"                                                                        , "Memory", 0x401042E8,        8, base=16, readOnly
+sfr = "DMAC1/StatusTfr.[7:0]STATUS"                                                            , "Memory", 0x401042E8,        8, base=16, readOnly, bitRange=0-7
+sfr = "DMAC1/StatusBlock"                                                                      , "Memory", 0x401042F0,        8, base=16, readOnly
+sfr = "DMAC1/StatusBlock.[7:0]STATUS"                                                          , "Memory", 0x401042F0,        8, base=16, readOnly, bitRange=0-7
+sfr = "DMAC1/StatusSrcTran"                                                                    , "Memory", 0x401042F8,        8, base=16, readOnly
+sfr = "DMAC1/StatusSrcTran.[7:0]STATUS"                                                        , "Memory", 0x401042F8,        8, base=16, readOnly, bitRange=0-7
+sfr = "DMAC1/StatusDstTran"                                                                    , "Memory", 0x40104300,        8, base=16, readOnly
+sfr = "DMAC1/StatusDstTran.[7:0]STATUS"                                                        , "Memory", 0x40104300,        8, base=16, readOnly, bitRange=0-7
+sfr = "DMAC1/StatusErr"                                                                        , "Memory", 0x40104308,        8, base=16, readOnly
+sfr = "DMAC1/StatusErr.[7:0]STATUS"                                                            , "Memory", 0x40104308,        8, base=16, readOnly, bitRange=0-7
+sfr = "DMAC1/MaskTfr"                                                                          , "Memory", 0x40104310,        8, base=16
+sfr = "DMAC1/MaskTfr.[7:0]INT_MASK"                                                            , "Memory", 0x40104310,        8, base=16, bitRange=0-7
+sfr = "DMAC1/MaskTfr.[15:8]INT_MASK_WE"                                                        , "Memory", 0x40104310,        8, base=16, bitRange=8-15
+sfr = "DMAC1/MaskBlock"                                                                        , "Memory", 0x40104318,        8, base=16
+sfr = "DMAC1/MaskBlock.[7:0]INT_MASK"                                                          , "Memory", 0x40104318,        8, base=16, bitRange=0-7
+sfr = "DMAC1/MaskBlock.[15:8]INT_MASK_WE"                                                      , "Memory", 0x40104318,        8, base=16, bitRange=8-15
+sfr = "DMAC1/MaskSrcTran"                                                                      , "Memory", 0x40104320,        8, base=16
+sfr = "DMAC1/MaskSrcTran.[7:0]INT_MASK"                                                        , "Memory", 0x40104320,        8, base=16, bitRange=0-7
+sfr = "DMAC1/MaskSrcTran.[15:8]INT_MASK_WE"                                                    , "Memory", 0x40104320,        8, base=16, bitRange=8-15
+sfr = "DMAC1/MaskDstTran"                                                                      , "Memory", 0x40104328,        8, base=16
+sfr = "DMAC1/MaskDstTran.[7:0]INT_MASK"                                                        , "Memory", 0x40104328,        8, base=16, bitRange=0-7
+sfr = "DMAC1/MaskDstTran.[15:8]INT_MASK_WE"                                                    , "Memory", 0x40104328,        8, base=16, bitRange=8-15
+sfr = "DMAC1/MaskErr"                                                                          , "Memory", 0x40104330,        8, base=16
+sfr = "DMAC1/MaskErr.[7:0]INT_MASK"                                                            , "Memory", 0x40104330,        8, base=16, bitRange=0-7
+sfr = "DMAC1/MaskErr.[15:8]INT_MASK_WE"                                                        , "Memory", 0x40104330,        8, base=16, bitRange=8-15
+sfr = "DMAC1/ClearTfr"                                                                         , "Memory", 0x40104338,        8, base=16, writeOnly
+sfr = "DMAC1/ClearTfr.[7:0]CLEAR"                                                              , "Memory", 0x40104338,        8, base=16, writeOnly, bitRange=0-7
+sfr = "DMAC1/ClearBlock"                                                                       , "Memory", 0x40104340,        8, base=16, writeOnly
+sfr = "DMAC1/ClearBlock.[7:0]CLEAR"                                                            , "Memory", 0x40104340,        8, base=16, writeOnly, bitRange=0-7
+sfr = "DMAC1/ClearSrcTran"                                                                     , "Memory", 0x40104348,        8, base=16, writeOnly
+sfr = "DMAC1/ClearSrcTran.[7:0]CLEAR"                                                          , "Memory", 0x40104348,        8, base=16, writeOnly, bitRange=0-7
+sfr = "DMAC1/ClearDstTran"                                                                     , "Memory", 0x40104350,        8, base=16, writeOnly
+sfr = "DMAC1/ClearDstTran.[7:0]CLEAR"                                                          , "Memory", 0x40104350,        8, base=16, writeOnly, bitRange=0-7
+sfr = "DMAC1/ClearErr"                                                                         , "Memory", 0x40104358,        8, base=16, writeOnly
+sfr = "DMAC1/ClearErr.[7:0]CLEAR"                                                              , "Memory", 0x40104358,        8, base=16, writeOnly, bitRange=0-7
+sfr = "DMAC1/StatusInt"                                                                        , "Memory", 0x40104360,        8, base=16, readOnly
+sfr = "DMAC1/StatusInt.[0]TFR"                                                                 , "Memory", 0x40104360,        8, base=16, readOnly, bitRange=0
+sfr = "DMAC1/StatusInt.[1]BLOCK"                                                               , "Memory", 0x40104360,        8, base=16, readOnly, bitRange=1
+sfr = "DMAC1/StatusInt.[2]SRCT"                                                                , "Memory", 0x40104360,        8, base=16, readOnly, bitRange=2
+sfr = "DMAC1/StatusInt.[3]DSTT"                                                                , "Memory", 0x40104360,        8, base=16, readOnly, bitRange=3
+sfr = "DMAC1/StatusInt.[4]ERR"                                                                 , "Memory", 0x40104360,        8, base=16, readOnly, bitRange=4
+sfr = "DMAC1/ReqSrcReg"                                                                        , "Memory", 0x40104368,        8, base=16
+sfr = "DMAC1/ReqSrcReg.[7:0]SRC_REQ"                                                           , "Memory", 0x40104368,        8, base=16, bitRange=0-7
+sfr = "DMAC1/ReqSrcReg.[15:8]SRC_REQ_WE"                                                       , "Memory", 0x40104368,        8, base=16, bitRange=8-15
+sfr = "DMAC1/ReqDstReg"                                                                        , "Memory", 0x40104370,        8, base=16
+sfr = "DMAC1/ReqDstReg.[7:0]DST_REQ"                                                           , "Memory", 0x40104370,        8, base=16, bitRange=0-7
+sfr = "DMAC1/ReqDstReg.[15:8]DST_REQ_WE"                                                       , "Memory", 0x40104370,        8, base=16, bitRange=8-15
+sfr = "DMAC1/SglRqSrcReg"                                                                      , "Memory", 0x40104378,        8, base=16
+sfr = "DMAC1/SglRqSrcReg.[7:0]SRC_SGLREQ"                                                      , "Memory", 0x40104378,        8, base=16, bitRange=0-7
+sfr = "DMAC1/SglRqSrcReg.[15:8]SRC_SGLREQ_WE"                                                  , "Memory", 0x40104378,        8, base=16, bitRange=8-15
+sfr = "DMAC1/SglRqDstReg"                                                                      , "Memory", 0x40104380,        8, base=16
+sfr = "DMAC1/SglRqDstReg.[7:0]DST_SGLREQ"                                                      , "Memory", 0x40104380,        8, base=16, bitRange=0-7
+sfr = "DMAC1/SglRqDstReg.[15:8]DST_SGLREQ_WE"                                                  , "Memory", 0x40104380,        8, base=16, bitRange=8-15
+sfr = "DMAC1/LstSrcReg"                                                                        , "Memory", 0x40104388,        8, base=16
+sfr = "DMAC1/LstSrcReg.[7:0]LSTSRC"                                                            , "Memory", 0x40104388,        8, base=16, bitRange=0-7
+sfr = "DMAC1/LstSrcReg.[15:8]LSTSRC_WE"                                                        , "Memory", 0x40104388,        8, base=16, bitRange=8-15
+sfr = "DMAC1/LstDstReg"                                                                        , "Memory", 0x40104390,        8, base=16
+sfr = "DMAC1/LstDstReg.[7:0]LSTDST"                                                            , "Memory", 0x40104390,        8, base=16, bitRange=0-7
+sfr = "DMAC1/LstDstReg.[15:8]LSTDST_WE"                                                        , "Memory", 0x40104390,        8, base=16, bitRange=8-15
+sfr = "DMAC1/DmaCfgReg"                                                                        , "Memory", 0x40104398,        8, base=16
+sfr = "DMAC1/DmaCfgReg.[0]DMA_EN"                                                              , "Memory", 0x40104398,        8, base=16, bitRange=0
+sfr = "DMAC1/ChEnReg"                                                                          , "Memory", 0x401043A0,        8, base=16
+sfr = "DMAC1/ChEnReg.[7:0]CH_EN"                                                               , "Memory", 0x401043A0,        8, base=16, bitRange=0-7
+sfr = "DMAC1/ChEnReg.[15:8]CH_EN_WE"                                                           , "Memory", 0x401043A0,        8, base=16, bitRange=8-15
+sfr = "DMAC1/DmaIdReg"                                                                         , "Memory", 0x401043A8,        8, base=16, readOnly
+sfr = "DMAC1/DmaIdReg.[31:0]DMA_ID"                                                            , "Memory", 0x401043A8,        8, base=16, readOnly, bitRange=0-31
+sfr = "DMAC1/DmaTestReg"                                                                       , "Memory", 0x401043B0,        8, base=16
+sfr = "DMAC1/DmaTestReg.[0]TEST_SLV_IF"                                                        , "Memory", 0x401043B0,        8, base=16, bitRange=0
+sfr = "DMAC1/DmaCompsID"                                                                       , "Memory", 0x401043F8,        8, base=16, readOnly
+sfr = "DMAC1/DmaCompsID.[31:0]DMA_COMP_TYPE"                                                   , "Memory", 0x401043F8,        8, base=16, readOnly, bitRange=0-31
+sfr = "DMAC1/DmaCompsID.[63:32]DMA_COMP_VERSION"                                               , "Memory", 0x401043F8,        8, base=16, readOnly, bitRange=32-63
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// DMA Controller1 -----
+group = "DMAC1","DMAC1/SAR0","DMAC1/DAR0","DMAC1/LLP0","DMAC1/CTL0","DMAC1/SSTAT0","DMAC1/DSTAT0","DMAC1/SSTATAR0","DMAC1/DSTATAR0","DMAC1/CFG0","DMAC1/SGR0","DMAC1/DSR0","DMAC1/SAR1","DMAC1/DAR1","DMAC1/LLP1","DMAC1/CTL1","DMAC1/SSTAT1","DMAC1/DSTAT1","DMAC1/SSTATAR1","DMAC1/DSTATAR1","DMAC1/CFG1","DMAC1/SGR1","DMAC1/DSR1","DMAC1/SAR2","DMAC1/DAR2","DMAC1/LLP2","DMAC1/CTL2","DMAC1/SSTAT2","DMAC1/DSTAT2","DMAC1/SSTATAR2","DMAC1/DSTATAR2","DMAC1/CFG2","DMAC1/SGR2","DMAC1/DSR2","DMAC1/SAR3","DMAC1/DAR3","DMAC1/LLP3","DMAC1/CTL3","DMAC1/SSTAT3","DMAC1/DSTAT3","DMAC1/SSTATAR3","DMAC1/DSTATAR3","DMAC1/CFG3","DMAC1/SGR3","DMAC1/DSR3","DMAC1/SAR4","DMAC1/DAR4","DMAC1/LLP4","DMAC1/CTL4","DMAC1/SSTAT4","DMAC1/DSTAT4","DMAC1/SSTATAR4","DMAC1/DSTATAR4","DMAC1/CFG4","DMAC1/SGR4","DMAC1/DSR4","DMAC1/SAR5","DMAC1/DAR5","DMAC1/LLP5","DMAC1/CTL5","DMAC1/SSTAT5","DMAC1/DSTAT5","DMAC1/SSTATAR5","DMAC1/DSTATAR5","DMAC1/CFG5","DMAC1/SGR5","DMAC1/DSR5","DMAC1/SAR6","DMAC1/DAR6","DMAC1/LLP6","DMAC1/CTL6","DMAC1/SSTAT6","DMAC1/DSTAT6","DMAC1/SSTATAR6","DMAC1/DSTATAR6","DMAC1/CFG6","DMAC1/SGR6","DMAC1/DSR6","DMAC1/SAR7","DMAC1/DAR7","DMAC1/LLP7","DMAC1/CTL7","DMAC1/SSTAT7","DMAC1/DSTAT7","DMAC1/SSTATAR7","DMAC1/DSTATAR7","DMAC1/CFG7","DMAC1/SGR7","DMAC1/DSR7","DMAC1/RawTfr","DMAC1/RawBlock","DMAC1/RawSrcTran","DMAC1/RawDstTran","DMAC1/RawErr","DMAC1/StatusTfr","DMAC1/StatusBlock","DMAC1/StatusSrcTran","DMAC1/StatusDstTran","DMAC1/StatusErr","DMAC1/MaskTfr","DMAC1/MaskBlock","DMAC1/MaskSrcTran","DMAC1/MaskDstTran","DMAC1/MaskErr","DMAC1/ClearTfr","DMAC1/ClearBlock","DMAC1/ClearSrcTran","DMAC1/ClearDstTran","DMAC1/ClearErr","DMAC1/StatusInt","DMAC1/ReqSrcReg","DMAC1/ReqDstReg","DMAC1/SglRqSrcReg","DMAC1/SglRqDstReg","DMAC1/LstSrcReg","DMAC1/LstDstReg","DMAC1/DmaCfgReg","DMAC1/ChEnReg","DMAC1/DmaIdReg","DMAC1/DmaTestReg","DMAC1/DmaCompsID"

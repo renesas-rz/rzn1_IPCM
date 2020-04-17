@@ -1,0 +1,138 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : SFT
+;               Safety Filtering Cells
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "AddressFilterEnable_PortA_s1"                                                           , "Memory", 0x40066000,        4, base=16
+sfr = "AddressFilterEnable_PortA_s1.[11:0]AddressFilterEnable_Portx"                           , "Memory", 0x40066000,        4, base=16, bitRange=0-11
+sfr = "AddressFilterEnable_PortA_s1.[12]Mode_Portx"                                            , "Memory", 0x40066000,        4, base=16, bitRange=12
+sfr = "AddressFilterEnable_PortBA_s1"                                                          , "Memory", 0x40066004,        4, base=16
+sfr = "AddressFilterEnable_PortBA_s1.[11:0]AddressFilterEnable_Portx"                          , "Memory", 0x40066004,        4, base=16, bitRange=0-11
+sfr = "AddressFilterEnable_PortBA_s1.[12]Mode_Portx"                                           , "Memory", 0x40066004,        4, base=16, bitRange=12
+sfr = "AddressFilterEnable_PortBB_s1"                                                          , "Memory", 0x40066008,        4, base=16
+sfr = "AddressFilterEnable_PortBB_s1.[11:0]AddressFilterEnable_Portx"                          , "Memory", 0x40066008,        4, base=16, bitRange=0-11
+sfr = "AddressFilterEnable_PortBB_s1.[12]Mode_Portx"                                           , "Memory", 0x40066008,        4, base=16, bitRange=12
+sfr = "AddressFilterEnable_PortBC_s1"                                                          , "Memory", 0x4006600C,        4, base=16
+sfr = "AddressFilterEnable_PortBC_s1.[11:0]AddressFilterEnable_Portx"                          , "Memory", 0x4006600C,        4, base=16, bitRange=0-11
+sfr = "AddressFilterEnable_PortBC_s1.[12]Mode_Portx"                                           , "Memory", 0x4006600C,        4, base=16, bitRange=12
+sfr = "AddressFilterEnable_PortCA_s1"                                                          , "Memory", 0x40066010,        4, base=16
+sfr = "AddressFilterEnable_PortCA_s1.[11:0]AddressFilterEnable_Portx"                          , "Memory", 0x40066010,        4, base=16, bitRange=0-11
+sfr = "AddressFilterEnable_PortCA_s1.[12]Mode_Portx"                                           , "Memory", 0x40066010,        4, base=16, bitRange=12
+sfr = "AddressFilterEnable_PortCB_s1"                                                          , "Memory", 0x40066014,        4, base=16
+sfr = "AddressFilterEnable_PortCB_s1.[11:0]AddressFilterEnable_Portx"                          , "Memory", 0x40066014,        4, base=16, bitRange=0-11
+sfr = "AddressFilterEnable_PortCB_s1.[12]Mode_Portx"                                           , "Memory", 0x40066014,        4, base=16, bitRange=12
+sfr = "AddressFilterEnable_PortDA_s1"                                                          , "Memory", 0x40066018,        4, base=16
+sfr = "AddressFilterEnable_PortDA_s1.[11:0]AddressFilterEnable_Portx"                          , "Memory", 0x40066018,        4, base=16, bitRange=0-11
+sfr = "AddressFilterEnable_PortDA_s1.[12]Mode_Portx"                                           , "Memory", 0x40066018,        4, base=16, bitRange=12
+sfr = "AddressFilterEnable_PortDB_s1"                                                          , "Memory", 0x4006601C,        4, base=16
+sfr = "AddressFilterEnable_PortDB_s1.[11:0]AddressFilterEnable_Portx"                          , "Memory", 0x4006601C,        4, base=16, bitRange=0-11
+sfr = "AddressFilterEnable_PortDB_s1.[12]Mode_Portx"                                           , "Memory", 0x4006601C,        4, base=16, bitRange=12
+sfr = "AddressFilterEnable_PortEA_s1"                                                          , "Memory", 0x40066020,        4, base=16
+sfr = "AddressFilterEnable_PortEA_s1.[11:0]AddressFilterEnable_Portx"                          , "Memory", 0x40066020,        4, base=16, bitRange=0-11
+sfr = "AddressFilterEnable_PortEA_s1.[12]Mode_Portx"                                           , "Memory", 0x40066020,        4, base=16, bitRange=12
+sfr = "AddressFilterEnable_PortEB_s1"                                                          , "Memory", 0x40066024,        4, base=16
+sfr = "AddressFilterEnable_PortEB_s1.[11:0]AddressFilterEnable_Portx"                          , "Memory", 0x40066024,        4, base=16, bitRange=0-11
+sfr = "AddressFilterEnable_PortEB_s1.[12]Mode_Portx"                                           , "Memory", 0x40066024,        4, base=16, bitRange=12
+sfr = "AddressFilterEnable_PortF_s1"                                                           , "Memory", 0x40066028,        4, base=16
+sfr = "AddressFilterEnable_PortF_s1.[11:0]AddressFilterEnable_Portx"                           , "Memory", 0x40066028,        4, base=16, bitRange=0-11
+sfr = "AddressFilterEnable_PortF_s1.[12]Mode_Portx"                                            , "Memory", 0x40066028,        4, base=16, bitRange=12
+sfr = "AddressFilterEnable_PortI_s1"                                                           , "Memory", 0x4006602C,        4, base=16
+sfr = "AddressFilterEnable_PortI_s1.[11:0]AddressFilterEnable_Portx"                           , "Memory", 0x4006602C,        4, base=16, bitRange=0-11
+sfr = "AddressFilterEnable_PortI_s1.[12]Mode_Portx"                                            , "Memory", 0x4006602C,        4, base=16, bitRange=12
+sfr = "AddressFilterEnable_PortZ_s1"                                                           , "Memory", 0x40066030,        4, base=16
+sfr = "AddressFilterEnable_PortZ_s1.[11:0]AddressFilterEnable_Portx"                           , "Memory", 0x40066030,        4, base=16, bitRange=0-11
+sfr = "AddressFilterEnable_PortZ_s1.[12]Mode_Portx"                                            , "Memory", 0x40066030,        4, base=16, bitRange=12
+sfr = "AddressFilter_PortA_s1"                                                                 , "Memory", 0x40066100,        4, base=16
+sfr = "AddressFilter_PortA_s1.[11:0]AddressFilter_Portx"                                       , "Memory", 0x40066100,        4, base=16, bitRange=0-11
+sfr = "AddressFilter_PortBA_s1"                                                                , "Memory", 0x40066104,        4, base=16
+sfr = "AddressFilter_PortBA_s1.[11:0]AddressFilter_Portx"                                      , "Memory", 0x40066104,        4, base=16, bitRange=0-11
+sfr = "AddressFilter_PortBB_s1"                                                                , "Memory", 0x40066108,        4, base=16
+sfr = "AddressFilter_PortBB_s1.[11:0]AddressFilter_Portx"                                      , "Memory", 0x40066108,        4, base=16, bitRange=0-11
+sfr = "AddressFilter_PortBC_s1"                                                                , "Memory", 0x4006610C,        4, base=16
+sfr = "AddressFilter_PortBC_s1.[11:0]AddressFilter_Portx"                                      , "Memory", 0x4006610C,        4, base=16, bitRange=0-11
+sfr = "AddressFilter_PortCA_s1"                                                                , "Memory", 0x40066110,        4, base=16
+sfr = "AddressFilter_PortCA_s1.[11:0]AddressFilter_Portx"                                      , "Memory", 0x40066110,        4, base=16, bitRange=0-11
+sfr = "AddressFilter_PortCB_s1"                                                                , "Memory", 0x40066114,        4, base=16
+sfr = "AddressFilter_PortCB_s1.[11:0]AddressFilter_Portx"                                      , "Memory", 0x40066114,        4, base=16, bitRange=0-11
+sfr = "AddressFilter_PortDA_s1"                                                                , "Memory", 0x40066118,        4, base=16
+sfr = "AddressFilter_PortDA_s1.[11:0]AddressFilter_Portx"                                      , "Memory", 0x40066118,        4, base=16, bitRange=0-11
+sfr = "AddressFilter_PortDB_s1"                                                                , "Memory", 0x4006611C,        4, base=16
+sfr = "AddressFilter_PortDB_s1.[11:0]AddressFilter_Portx"                                      , "Memory", 0x4006611C,        4, base=16, bitRange=0-11
+sfr = "AddressFilter_PortEA_s1"                                                                , "Memory", 0x40066120,        4, base=16
+sfr = "AddressFilter_PortEA_s1.[11:0]AddressFilter_Portx"                                      , "Memory", 0x40066120,        4, base=16, bitRange=0-11
+sfr = "AddressFilter_PortEB_s1"                                                                , "Memory", 0x40066124,        4, base=16
+sfr = "AddressFilter_PortEB_s1.[11:0]AddressFilter_Portx"                                      , "Memory", 0x40066124,        4, base=16, bitRange=0-11
+sfr = "AddressFilter_PortF_s1"                                                                 , "Memory", 0x40066128,        4, base=16
+sfr = "AddressFilter_PortF_s1.[11:0]AddressFilter_Portx"                                       , "Memory", 0x40066128,        4, base=16, bitRange=0-11
+sfr = "AddressFilter_PortI_s1"                                                                 , "Memory", 0x4006612C,        4, base=16
+sfr = "AddressFilter_PortI_s1.[11:0]AddressFilter_Portx"                                       , "Memory", 0x4006612C,        4, base=16, bitRange=0-11
+sfr = "AddressFilter_PortZ_s1"                                                                 , "Memory", 0x40066130,        4, base=16
+sfr = "AddressFilter_PortZ_s1.[11:0]AddressFilter_Portx"                                       , "Memory", 0x40066130,        4, base=16, bitRange=0-11
+sfr = "VerifiedAddress_PortA_s1"                                                               , "Memory", 0x40066200,        4, base=16
+sfr = "VerifiedAddress_PortA_s1.[11:0]VerifiedAddress_Portx"                                   , "Memory", 0x40066200,        4, base=16, bitRange=0-11
+sfr = "VerifiedAddress_PortBA_s1"                                                              , "Memory", 0x40066204,        4, base=16
+sfr = "VerifiedAddress_PortBA_s1.[11:0]VerifiedAddress_Portx"                                  , "Memory", 0x40066204,        4, base=16, bitRange=0-11
+sfr = "VerifiedAddress_PortBB_s1"                                                              , "Memory", 0x40066208,        4, base=16
+sfr = "VerifiedAddress_PortBB_s1.[11:0]VerifiedAddress_Portx"                                  , "Memory", 0x40066208,        4, base=16, bitRange=0-11
+sfr = "VerifiedAddress_PortBC_s1"                                                              , "Memory", 0x4006620C,        4, base=16
+sfr = "VerifiedAddress_PortBC_s1.[11:0]VerifiedAddress_Portx"                                  , "Memory", 0x4006620C,        4, base=16, bitRange=0-11
+sfr = "VerifiedAddress_PortCA_s1"                                                              , "Memory", 0x40066210,        4, base=16
+sfr = "VerifiedAddress_PortCA_s1.[11:0]VerifiedAddress_Portx"                                  , "Memory", 0x40066210,        4, base=16, bitRange=0-11
+sfr = "VerifiedAddress_PortCB_s1"                                                              , "Memory", 0x40066214,        4, base=16
+sfr = "VerifiedAddress_PortCB_s1.[11:0]VerifiedAddress_Portx"                                  , "Memory", 0x40066214,        4, base=16, bitRange=0-11
+sfr = "VerifiedAddress_PortDA_s1"                                                              , "Memory", 0x40066218,        4, base=16
+sfr = "VerifiedAddress_PortDA_s1.[11:0]VerifiedAddress_Portx"                                  , "Memory", 0x40066218,        4, base=16, bitRange=0-11
+sfr = "VerifiedAddress_PortDB_s1"                                                              , "Memory", 0x4006621C,        4, base=16
+sfr = "VerifiedAddress_PortDB_s1.[11:0]VerifiedAddress_Portx"                                  , "Memory", 0x4006621C,        4, base=16, bitRange=0-11
+sfr = "VerifiedAddress_PortEA_s1"                                                              , "Memory", 0x40066220,        4, base=16
+sfr = "VerifiedAddress_PortEA_s1.[11:0]VerifiedAddress_Portx"                                  , "Memory", 0x40066220,        4, base=16, bitRange=0-11
+sfr = "VerifiedAddress_PortEB_s1"                                                              , "Memory", 0x40066224,        4, base=16
+sfr = "VerifiedAddress_PortEB_s1.[11:0]VerifiedAddress_Portx"                                  , "Memory", 0x40066224,        4, base=16, bitRange=0-11
+sfr = "VerifiedAddress_PortF_s1"                                                               , "Memory", 0x40066228,        4, base=16
+sfr = "VerifiedAddress_PortF_s1.[11:0]VerifiedAddress_Portx"                                   , "Memory", 0x40066228,        4, base=16, bitRange=0-11
+sfr = "VerifiedAddress_PortI_s1"                                                               , "Memory", 0x4006622C,        4, base=16
+sfr = "VerifiedAddress_PortI_s1.[11:0]VerifiedAddress_Portx"                                   , "Memory", 0x4006622C,        4, base=16, bitRange=0-11
+sfr = "VerifiedAddress_PortZ_s1"                                                               , "Memory", 0x40066230,        4, base=16
+sfr = "VerifiedAddress_PortZ_s1.[11:0]VerifiedAddress_Portx"                                   , "Memory", 0x40066230,        4, base=16, bitRange=0-11
+sfr = "StatusAddress_PortA_s1"                                                                 , "Memory", 0x40066300,        4, base=16
+sfr = "StatusAddress_PortA_s1.[1:0]StatusAddress_Portx"                                        , "Memory", 0x40066300,        4, base=16, bitRange=0-1
+sfr = "StatusAddress_PortBA_s1"                                                                , "Memory", 0x40066304,        4, base=16
+sfr = "StatusAddress_PortBA_s1.[1:0]StatusAddress_Portx"                                       , "Memory", 0x40066304,        4, base=16, bitRange=0-1
+sfr = "StatusAddress_PortBB_s1"                                                                , "Memory", 0x40066308,        4, base=16
+sfr = "StatusAddress_PortBB_s1.[1:0]StatusAddress_Portx"                                       , "Memory", 0x40066308,        4, base=16, bitRange=0-1
+sfr = "StatusAddress_PortBC_s1"                                                                , "Memory", 0x4006630C,        4, base=16
+sfr = "StatusAddress_PortBC_s1.[1:0]StatusAddress_Portx"                                       , "Memory", 0x4006630C,        4, base=16, bitRange=0-1
+sfr = "StatusAddress_PortCA_s1"                                                                , "Memory", 0x40066310,        4, base=16
+sfr = "StatusAddress_PortCA_s1.[1:0]StatusAddress_Portx"                                       , "Memory", 0x40066310,        4, base=16, bitRange=0-1
+sfr = "StatusAddress_PortCB_s1"                                                                , "Memory", 0x40066314,        4, base=16
+sfr = "StatusAddress_PortCB_s1.[1:0]StatusAddress_Portx"                                       , "Memory", 0x40066314,        4, base=16, bitRange=0-1
+sfr = "StatusAddress_PortDA_s1"                                                                , "Memory", 0x40066318,        4, base=16
+sfr = "StatusAddress_PortDA_s1.[1:0]StatusAddress_Portx"                                       , "Memory", 0x40066318,        4, base=16, bitRange=0-1
+sfr = "StatusAddress_PortDB_s1"                                                                , "Memory", 0x4006631C,        4, base=16
+sfr = "StatusAddress_PortDB_s1.[1:0]StatusAddress_Portx"                                       , "Memory", 0x4006631C,        4, base=16, bitRange=0-1
+sfr = "StatusAddress_PortEA_s1"                                                                , "Memory", 0x40066320,        4, base=16
+sfr = "StatusAddress_PortEA_s1.[1:0]StatusAddress_Portx"                                       , "Memory", 0x40066320,        4, base=16, bitRange=0-1
+sfr = "StatusAddress_PortEB_s1"                                                                , "Memory", 0x40066324,        4, base=16
+sfr = "StatusAddress_PortEB_s1.[1:0]StatusAddress_Portx"                                       , "Memory", 0x40066324,        4, base=16, bitRange=0-1
+sfr = "StatusAddress_PortF_s1"                                                                 , "Memory", 0x40066328,        4, base=16
+sfr = "StatusAddress_PortF_s1.[1:0]StatusAddress_Portx"                                        , "Memory", 0x40066328,        4, base=16, bitRange=0-1
+sfr = "StatusAddress_PortI_s1"                                                                 , "Memory", 0x4006632C,        4, base=16
+sfr = "StatusAddress_PortI_s1.[1:0]StatusAddress_Portx"                                        , "Memory", 0x4006632C,        4, base=16, bitRange=0-1
+sfr = "StatusAddress_PortZ_s1"                                                                 , "Memory", 0x40066330,        4, base=16
+sfr = "StatusAddress_PortZ_s1.[1:0]StatusAddress_Portx"                                        , "Memory", 0x40066330,        4, base=16, bitRange=0-1
+sfr = "StatusProtect"                                                                          , "Memory", 0x40066400,        4, base=16
+sfr = "StatusProtect.[12:0]StatusProtect_Portx"                                                , "Memory", 0x40066400,        4, base=16, bitRange=0-12
+sfr = "StatusProtect.[16]BadSequence"                                                          , "Memory", 0x40066400,        4, base=16, bitRange=16
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// Safety Filtering Cells -----
+group = "SFT","AddressFilterEnable_PortA_s1","AddressFilterEnable_PortBA_s1","AddressFilterEnable_PortBB_s1","AddressFilterEnable_PortBC_s1","AddressFilterEnable_PortCA_s1","AddressFilterEnable_PortCB_s1","AddressFilterEnable_PortDA_s1","AddressFilterEnable_PortDB_s1","AddressFilterEnable_PortEA_s1","AddressFilterEnable_PortEB_s1","AddressFilterEnable_PortF_s1","AddressFilterEnable_PortI_s1","AddressFilterEnable_PortZ_s1","AddressFilter_PortA_s1","AddressFilter_PortBA_s1","AddressFilter_PortBB_s1","AddressFilter_PortBC_s1","AddressFilter_PortCA_s1","AddressFilter_PortCB_s1","AddressFilter_PortDA_s1","AddressFilter_PortDB_s1","AddressFilter_PortEA_s1","AddressFilter_PortEB_s1","AddressFilter_PortF_s1","AddressFilter_PortI_s1","AddressFilter_PortZ_s1","VerifiedAddress_PortA_s1","VerifiedAddress_PortBA_s1","VerifiedAddress_PortBB_s1","VerifiedAddress_PortBC_s1","VerifiedAddress_PortCA_s1","VerifiedAddress_PortCB_s1","VerifiedAddress_PortDA_s1","VerifiedAddress_PortDB_s1","VerifiedAddress_PortEA_s1","VerifiedAddress_PortEB_s1","VerifiedAddress_PortF_s1","VerifiedAddress_PortI_s1","VerifiedAddress_PortZ_s1","StatusAddress_PortA_s1","StatusAddress_PortBA_s1","StatusAddress_PortBB_s1","StatusAddress_PortBC_s1","StatusAddress_PortCA_s1","StatusAddress_PortCB_s1","StatusAddress_PortDA_s1","StatusAddress_PortDB_s1","StatusAddress_PortEA_s1","StatusAddress_PortEB_s1","StatusAddress_PortF_s1","StatusAddress_PortI_s1","StatusAddress_PortZ_s1","StatusProtect"

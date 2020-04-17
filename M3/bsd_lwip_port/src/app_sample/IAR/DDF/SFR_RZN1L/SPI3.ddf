@@ -1,0 +1,104 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : SPI3
+;               SPI3
+;    revision : 0.13 (15.September.2017)
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "SPI3/CTRLR0"                                                                            , "Memory", 0x50007000,        4, base=16
+sfr = "SPI3/CTRLR0.[3:0]DFS"                                                                   , "Memory", 0x50007000,        4, base=16, bitRange=0-3
+sfr = "SPI3/CTRLR0.[5:4]FRF"                                                                   , "Memory", 0x50007000,        4, base=16, bitRange=4-5
+sfr = "SPI3/CTRLR0.[6]SCPH"                                                                    , "Memory", 0x50007000,        4, base=16, bitRange=6
+sfr = "SPI3/CTRLR0.[7]SCPOL"                                                                   , "Memory", 0x50007000,        4, base=16, bitRange=7
+sfr = "SPI3/CTRLR0.[9:8]TMOD"                                                                  , "Memory", 0x50007000,        4, base=16, bitRange=8-9
+sfr = "SPI3/CTRLR0.[10]SLV_OE"                                                                 , "Memory", 0x50007000,        4, base=16, bitRange=10
+sfr = "SPI3/CTRLR0.[11]SRL"                                                                    , "Memory", 0x50007000,        4, base=16, bitRange=11
+sfr = "SPI3/CTRLR0.[15:12]CFS"                                                                 , "Memory", 0x50007000,        4, base=16, bitRange=12-15
+sfr = "SPI3/CTRLR1"                                                                            , "Memory", 0x50007004,        4, base=16
+sfr = "SPI3/CTRLR1.[15:0]NDF"                                                                  , "Memory", 0x50007004,        4, base=16, bitRange=0-15
+sfr = "SPI3/SSIENR"                                                                            , "Memory", 0x50007008,        4, base=16
+sfr = "SPI3/SSIENR.[0]SSIENR"                                                                  , "Memory", 0x50007008,        4, base=16, bitRange=0
+sfr = "SPI3/MWCR"                                                                              , "Memory", 0x5000700C,        4, base=16
+sfr = "SPI3/MWCR.[0]MWMOD"                                                                     , "Memory", 0x5000700C,        4, base=16, bitRange=0
+sfr = "SPI3/MWCR.[1]MDD"                                                                       , "Memory", 0x5000700C,        4, base=16, bitRange=1
+sfr = "SPI3/MWCR.[2]MWHS"                                                                      , "Memory", 0x5000700C,        4, base=16, bitRange=2
+sfr = "SPI3/SER"                                                                               , "Memory", 0x50007010,        4, base=16
+sfr = "SPI3/SER.[3:0]HardwareSS"                                                               , "Memory", 0x50007010,        4, base=16, bitRange=0-3
+sfr = "SPI3/SER.[7:4]SoftwareSS"                                                               , "Memory", 0x50007010,        4, base=16, bitRange=4-7
+sfr = "SPI3/SER.[11:8]CtrlSS"                                                                  , "Memory", 0x50007010,        4, base=16, bitRange=8-11
+sfr = "SPI3/BAUDR"                                                                             , "Memory", 0x50007014,        4, base=16
+sfr = "SPI3/BAUDR.[15:0]SCKDV"                                                                 , "Memory", 0x50007014,        4, base=16, bitRange=0-15
+sfr = "SPI3/TXFTLR"                                                                            , "Memory", 0x50007018,        4, base=16
+sfr = "SPI3/TXFTLR.[3:0]TFT"                                                                   , "Memory", 0x50007018,        4, base=16, bitRange=0-3
+sfr = "SPI3/RXFTLR"                                                                            , "Memory", 0x5000701C,        4, base=16
+sfr = "SPI3/RXFTLR.[3:0]RFT"                                                                   , "Memory", 0x5000701C,        4, base=16, bitRange=0-3
+sfr = "SPI3/TXFLR"                                                                             , "Memory", 0x50007020,        4, base=16, readOnly
+sfr = "SPI3/TXFLR.[3:0]TXTFL"                                                                  , "Memory", 0x50007020,        4, base=16, readOnly, bitRange=0-3
+sfr = "SPI3/RXFLR"                                                                             , "Memory", 0x50007024,        4, base=16, readOnly
+sfr = "SPI3/RXFLR.[3:0]RXTFL"                                                                  , "Memory", 0x50007024,        4, base=16, readOnly, bitRange=0-3
+sfr = "SPI3/SR"                                                                                , "Memory", 0x50007028,        4, base=16, readOnly
+sfr = "SPI3/SR.[0]BUSY"                                                                        , "Memory", 0x50007028,        4, base=16, readOnly, bitRange=0
+sfr = "SPI3/SR.[1]TFNF"                                                                        , "Memory", 0x50007028,        4, base=16, readOnly, bitRange=1
+sfr = "SPI3/SR.[2]TFE"                                                                         , "Memory", 0x50007028,        4, base=16, readOnly, bitRange=2
+sfr = "SPI3/SR.[3]RFNE"                                                                        , "Memory", 0x50007028,        4, base=16, readOnly, bitRange=3
+sfr = "SPI3/SR.[4]RFF"                                                                         , "Memory", 0x50007028,        4, base=16, readOnly, bitRange=4
+sfr = "SPI3/SR.[5]TXE"                                                                         , "Memory", 0x50007028,        4, base=16, readOnly, bitRange=5
+sfr = "SPI3/IMR"                                                                               , "Memory", 0x5000702C,        4, base=16
+sfr = "SPI3/IMR.[0]TXEIM"                                                                      , "Memory", 0x5000702C,        4, base=16, bitRange=0
+sfr = "SPI3/IMR.[1]TXOIM"                                                                      , "Memory", 0x5000702C,        4, base=16, bitRange=1
+sfr = "SPI3/IMR.[2]RXUIM"                                                                      , "Memory", 0x5000702C,        4, base=16, bitRange=2
+sfr = "SPI3/IMR.[3]RXOIM"                                                                      , "Memory", 0x5000702C,        4, base=16, bitRange=3
+sfr = "SPI3/IMR.[4]RXFIM"                                                                      , "Memory", 0x5000702C,        4, base=16, bitRange=4
+sfr = "SPI3/ISR"                                                                               , "Memory", 0x50007030,        4, base=16, readOnly
+sfr = "SPI3/ISR.[0]TXEIS"                                                                      , "Memory", 0x50007030,        4, base=16, readOnly, bitRange=0
+sfr = "SPI3/ISR.[1]TXOIS"                                                                      , "Memory", 0x50007030,        4, base=16, readOnly, bitRange=1
+sfr = "SPI3/ISR.[2]RXUIS"                                                                      , "Memory", 0x50007030,        4, base=16, readOnly, bitRange=2
+sfr = "SPI3/ISR.[3]RXOIS"                                                                      , "Memory", 0x50007030,        4, base=16, readOnly, bitRange=3
+sfr = "SPI3/ISR.[4]RXFIS"                                                                      , "Memory", 0x50007030,        4, base=16, readOnly, bitRange=4
+sfr = "SPI3/RISR"                                                                              , "Memory", 0x50007034,        4, base=16, readOnly
+sfr = "SPI3/RISR.[0]TXEIR"                                                                     , "Memory", 0x50007034,        4, base=16, readOnly, bitRange=0
+sfr = "SPI3/RISR.[1]TXOIR"                                                                     , "Memory", 0x50007034,        4, base=16, readOnly, bitRange=1
+sfr = "SPI3/RISR.[2]RXUIR"                                                                     , "Memory", 0x50007034,        4, base=16, readOnly, bitRange=2
+sfr = "SPI3/RISR.[3]RXOIR"                                                                     , "Memory", 0x50007034,        4, base=16, readOnly, bitRange=3
+sfr = "SPI3/RISR.[4]RXFIR"                                                                     , "Memory", 0x50007034,        4, base=16, readOnly, bitRange=4
+sfr = "SPI3/TXOICR"                                                                            , "Memory", 0x50007038,        4, base=16, readOnly
+sfr = "SPI3/TXOICR.[0]TXOICR"                                                                  , "Memory", 0x50007038,        4, base=16, readOnly, bitRange=0
+sfr = "SPI3/RXOICR"                                                                            , "Memory", 0x5000703C,        4, base=16, readOnly
+sfr = "SPI3/RXOICR.[0]RXOICR"                                                                  , "Memory", 0x5000703C,        4, base=16, readOnly, bitRange=0
+sfr = "SPI3/RXUICR"                                                                            , "Memory", 0x50007040,        4, base=16, readOnly
+sfr = "SPI3/RXUICR.[0]RXUICR"                                                                  , "Memory", 0x50007040,        4, base=16, readOnly, bitRange=0
+sfr = "SPI3/ICR"                                                                               , "Memory", 0x50007048,        4, base=16, readOnly
+sfr = "SPI3/ICR.[0]ICR"                                                                        , "Memory", 0x50007048,        4, base=16, readOnly, bitRange=0
+sfr = "SPI3/DMACR"                                                                             , "Memory", 0x5000704C,        4, base=16
+sfr = "SPI3/DMACR.[0]RDMAE"                                                                    , "Memory", 0x5000704C,        4, base=16, bitRange=0
+sfr = "SPI3/DMACR.[1]TDMAE"                                                                    , "Memory", 0x5000704C,        4, base=16, bitRange=1
+sfr = "SPI3/DMATDLR"                                                                           , "Memory", 0x50007050,        4, base=16
+sfr = "SPI3/DMATDLR.[3:0]DMATDLR"                                                              , "Memory", 0x50007050,        4, base=16, bitRange=0-3
+sfr = "SPI3/DMARDLR"                                                                           , "Memory", 0x50007054,        4, base=16
+sfr = "SPI3/DMARDLR.[3:0]DMARDLR"                                                              , "Memory", 0x50007054,        4, base=16, bitRange=0-3
+sfr = "SPI3/DR"                                                                                , "Memory", 0x50007060,        4, base=16
+sfr = "SPI3/DR.[15:0]DR"                                                                       , "Memory", 0x50007060,        4, base=16, bitRange=0-15
+sfr = "SPI3/RX_SAMPLE_DLY"                                                                     , "Memory", 0x500070F0,        4, base=16
+sfr = "SPI3/RX_SAMPLE_DLY.[7:0]RX_Sample_Delay"                                                , "Memory", 0x500070F0,        4, base=16, bitRange=0-7
+sfr = "SPI3/TDMACR"                                                                            , "Memory", 0x50007100,        4, base=16
+sfr = "SPI3/TDMACR.[0]TDMAE1"                                                                  , "Memory", 0x50007100,        4, base=16, bitRange=0
+sfr = "SPI3/TDMACR.[2:1]DEST_BURST_SIZE"                                                       , "Memory", 0x50007100,        4, base=16, bitRange=1-2
+sfr = "SPI3/TDMACR.[15:3]DEST_BLOCK_SIZE"                                                      , "Memory", 0x50007100,        4, base=16, bitRange=3-15
+sfr = "SPI3/TDMACR.[28:16]CURRENT_DEST_BLOCK_SIZE"                                             , "Memory", 0x50007100,        4, base=16, readOnly, bitRange=16-28
+sfr = "SPI3/RDMACR"                                                                            , "Memory", 0x50007104,        4, base=16
+sfr = "SPI3/RDMACR.[0]RDMAE1"                                                                  , "Memory", 0x50007104,        4, base=16, bitRange=0
+sfr = "SPI3/RDMACR.[2:1]SRC_BURST_SIZE"                                                        , "Memory", 0x50007104,        4, base=16, bitRange=1-2
+sfr = "SPI3/RDMACR.[15:3]SRC_BLOCK_SIZE"                                                       , "Memory", 0x50007104,        4, base=16, bitRange=3-15
+sfr = "SPI3/RDMACR.[28:16]CURRENT_SRC_BLOCK_SIZE"                                              , "Memory", 0x50007104,        4, base=16, readOnly, bitRange=16-28
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// SPI3 -----
+group = "SPI3","SPI3/CTRLR0","SPI3/CTRLR1","SPI3/SSIENR","SPI3/MWCR","SPI3/SER","SPI3/BAUDR","SPI3/TXFTLR","SPI3/RXFTLR","SPI3/TXFLR","SPI3/RXFLR","SPI3/SR","SPI3/IMR","SPI3/ISR","SPI3/RISR","SPI3/TXOICR","SPI3/RXOICR","SPI3/RXUICR","SPI3/ICR","SPI3/DMACR","SPI3/DMATDLR","SPI3/DMARDLR","SPI3/DR","SPI3/RX_SAMPLE_DLY","SPI3/TDMACR","SPI3/RDMACR"

@@ -1,0 +1,679 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : ETHCAT
+;               EtherCAT Slave Controller
+;    revision : 0.30 (16.January.2018)
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "TYPE"                                                                                   , "Memory", 0x44010000,        1, base=16, readOnly
+sfr = "REVISION"                                                                               , "Memory", 0x44010001,        1, base=16, readOnly
+sfr = "REVISION.[7:0]REV"                                                                      , "Memory", 0x44010001,        1, base=16, readOnly, bitRange=0-7
+sfr = "BUILD"                                                                                  , "Memory", 0x44010002,        2, base=16, readOnly
+sfr = "FMMU_NUM"                                                                               , "Memory", 0x44010004,        1, base=16, readOnly
+sfr = "FMMU_NUM.[7:0]NUMFMMU"                                                                  , "Memory", 0x44010004,        1, base=16, readOnly, bitRange=0-7
+sfr = "SYNC_MANAGER"                                                                           , "Memory", 0x44010005,        1, base=16, readOnly
+sfr = "SYNC_MANAGER.[7:0]NUMSYNC"                                                              , "Memory", 0x44010005,        1, base=16, readOnly, bitRange=0-7
+sfr = "RAM_SIZE"                                                                               , "Memory", 0x44010006,        1, base=16, readOnly
+sfr = "RAM_SIZE.[7:0]RAMSIZE"                                                                  , "Memory", 0x44010006,        1, base=16, readOnly, bitRange=0-7
+sfr = "PORT_DESC"                                                                              , "Memory", 0x44010007,        1, base=16, readOnly
+sfr = "PORT_DESC.[1:0]P0"                                                                      , "Memory", 0x44010007,        1, base=16, readOnly, bitRange=0-1
+sfr = "PORT_DESC.[3:2]P1"                                                                      , "Memory", 0x44010007,        1, base=16, readOnly, bitRange=2-3
+sfr = "PORT_DESC.[5:4]P2"                                                                      , "Memory", 0x44010007,        1, base=16, readOnly, bitRange=4-5
+sfr = "PORT_DESC.[7:6]P3"                                                                      , "Memory", 0x44010007,        1, base=16, readOnly, bitRange=6-7
+sfr = "FEATURE"                                                                                , "Memory", 0x44010008,        2, base=16, readOnly
+sfr = "FEATURE.[0]FMMU"                                                                        , "Memory", 0x44010008,        2, base=16, readOnly, bitRange=0
+sfr = "FEATURE.[2]DC"                                                                          , "Memory", 0x44010008,        2, base=16, readOnly, bitRange=2
+sfr = "FEATURE.[3]DCWID"                                                                       , "Memory", 0x44010008,        2, base=16, readOnly, bitRange=3
+sfr = "FEATURE.[6]LINKDECMII"                                                                  , "Memory", 0x44010008,        2, base=16, readOnly, bitRange=6
+sfr = "FEATURE.[7]FCS"                                                                         , "Memory", 0x44010008,        2, base=16, readOnly, bitRange=7
+sfr = "FEATURE.[8]DCSYNC"                                                                      , "Memory", 0x44010008,        2, base=16, readOnly, bitRange=8
+sfr = "FEATURE.[9]LRW"                                                                         , "Memory", 0x44010008,        2, base=16, readOnly, bitRange=9
+sfr = "FEATURE.[10]RWSUPP"                                                                     , "Memory", 0x44010008,        2, base=16, readOnly, bitRange=10
+sfr = "FEATURE.[11]FSCONFIG"                                                                   , "Memory", 0x44010008,        2, base=16, readOnly, bitRange=11
+sfr = "STATION_ADR"                                                                            , "Memory", 0x44010010,        2, base=16
+sfr = "STATION_ADR.[15:0]NODADDR"                                                              , "Memory", 0x44010010,        2, base=16, bitRange=0-15
+sfr = "STATION_ALIAS"                                                                          , "Memory", 0x44010012,        2, base=16, readOnly
+sfr = "STATION_ALIAS.[15:0]NODALIADDR"                                                         , "Memory", 0x44010012,        2, base=16, readOnly, bitRange=0-15
+sfr = "WR_REG_ENABLE"                                                                          , "Memory", 0x44010020,        1, base=16, readOnly
+sfr = "WR_REG_ENABLE.[0]ENABLE"                                                                , "Memory", 0x44010020,        1, base=16, readOnly, bitRange=0
+sfr = "WR_REG_PROTECT"                                                                         , "Memory", 0x44010021,        1, base=16, readOnly
+sfr = "WR_REG_PROTECT.[0]PROTECT"                                                              , "Memory", 0x44010021,        1, base=16, readOnly, bitRange=0
+sfr = "ESC_WR_ENABLE"                                                                          , "Memory", 0x44010030,        1, base=16, readOnly
+sfr = "ESC_WR_ENABLE.[0]ENABLE"                                                                , "Memory", 0x44010030,        1, base=16, readOnly, bitRange=0
+sfr = "ESC_WR_PROTECT"                                                                         , "Memory", 0x44010031,        1, base=16, readOnly
+sfr = "ESC_WR_PROTECT.[0]PROTECT"                                                              , "Memory", 0x44010031,        1, base=16, readOnly, bitRange=0
+sfr = "ESC_RESET_ECAT"                                                                         , "Memory", 0x44010040,        1, base=16, readOnly
+sfr = "ESC_RESET_ECAT.[7:0]RESET_ECAT"                                                         , "Memory", 0x44010040,        1, base=16, readOnly, bitRange=0-7
+sfr = "ESC_RESET_PDI"                                                                          , "Memory", 0x44010041,        1, base=16
+sfr = "ESC_RESET_PDI.[7:0]RESET_PDI"                                                           , "Memory", 0x44010041,        1, base=16, bitRange=0-7
+sfr = "ESC_DL_CONTROL"                                                                         , "Memory", 0x44010100,        4, base=16, readOnly
+sfr = "ESC_DL_CONTROL.[0]FWDRULE"                                                              , "Memory", 0x44010100,        4, base=16, readOnly, bitRange=0
+sfr = "ESC_DL_CONTROL.[1]TEMPUSE"                                                              , "Memory", 0x44010100,        4, base=16, readOnly, bitRange=1
+sfr = "ESC_DL_CONTROL.[9:8]LP0"                                                                , "Memory", 0x44010100,        4, base=16, readOnly, bitRange=8-9
+sfr = "ESC_DL_CONTROL.[11:10]LP1"                                                              , "Memory", 0x44010100,        4, base=16, readOnly, bitRange=10-11
+sfr = "ESC_DL_CONTROL.[13:12]LP2"                                                              , "Memory", 0x44010100,        4, base=16, readOnly, bitRange=12-13
+sfr = "ESC_DL_CONTROL.[15:14]LP3"                                                              , "Memory", 0x44010100,        4, base=16, readOnly, bitRange=14-15
+sfr = "ESC_DL_CONTROL.[18:16]RXFIFO"                                                           , "Memory", 0x44010100,        4, base=16, readOnly, bitRange=16-18
+sfr = "ESC_DL_CONTROL.[24]STAALIAS"                                                            , "Memory", 0x44010100,        4, base=16, readOnly, bitRange=24
+sfr = "PHYSICAL_RW_OFFSET"                                                                     , "Memory", 0x44010108,        2, base=16, readOnly
+sfr = "PHYSICAL_RW_OFFSET.[15:0]RWOFFSET"                                                      , "Memory", 0x44010108,        2, base=16, readOnly, bitRange=0-15
+sfr = "ESC_DL_STATUS"                                                                          , "Memory", 0x44010110,        2, base=16, readOnly
+sfr = "ESC_DL_STATUS.[0]PDIOPE"                                                                , "Memory", 0x44010110,        2, base=16, readOnly, bitRange=0
+sfr = "ESC_DL_STATUS.[1]PDIWDST"                                                               , "Memory", 0x44010110,        2, base=16, readOnly, bitRange=1
+sfr = "ESC_DL_STATUS.[2]ENHLINKD"                                                              , "Memory", 0x44010110,        2, base=16, readOnly, bitRange=2
+sfr = "ESC_DL_STATUS.[4]PHYP0"                                                                 , "Memory", 0x44010110,        2, base=16, readOnly, bitRange=4
+sfr = "ESC_DL_STATUS.[5]PHYP1"                                                                 , "Memory", 0x44010110,        2, base=16, readOnly, bitRange=5
+sfr = "ESC_DL_STATUS.[6]PHYP2"                                                                 , "Memory", 0x44010110,        2, base=16, readOnly, bitRange=6
+sfr = "ESC_DL_STATUS.[7]PHYP3"                                                                 , "Memory", 0x44010110,        2, base=16, readOnly, bitRange=7
+sfr = "ESC_DL_STATUS.[8]LP0"                                                                   , "Memory", 0x44010110,        2, base=16, readOnly, bitRange=8
+sfr = "ESC_DL_STATUS.[9]COMP0"                                                                 , "Memory", 0x44010110,        2, base=16, readOnly, bitRange=9
+sfr = "ESC_DL_STATUS.[10]LP1"                                                                  , "Memory", 0x44010110,        2, base=16, readOnly, bitRange=10
+sfr = "ESC_DL_STATUS.[11]COMP1"                                                                , "Memory", 0x44010110,        2, base=16, readOnly, bitRange=11
+sfr = "ESC_DL_STATUS.[12]LP2"                                                                  , "Memory", 0x44010110,        2, base=16, readOnly, bitRange=12
+sfr = "ESC_DL_STATUS.[13]COMP2"                                                                , "Memory", 0x44010110,        2, base=16, readOnly, bitRange=13
+sfr = "ESC_DL_STATUS.[14]LP3"                                                                  , "Memory", 0x44010110,        2, base=16, readOnly, bitRange=14
+sfr = "ESC_DL_STATUS.[15]COMP3"                                                                , "Memory", 0x44010110,        2, base=16, readOnly, bitRange=15
+sfr = "AL_CONTROL"                                                                             , "Memory", 0x44010120,        2, base=16, readOnly
+sfr = "AL_CONTROL.[3:0]INISTATE"                                                               , "Memory", 0x44010120,        2, base=16, readOnly, bitRange=0-3
+sfr = "AL_CONTROL.[4]ERRINDACK"                                                                , "Memory", 0x44010120,        2, base=16, readOnly, bitRange=4
+sfr = "AL_CONTROL.[5]DEVICEID"                                                                 , "Memory", 0x44010120,        2, base=16, readOnly, bitRange=5
+sfr = "AL_STATUS"                                                                              , "Memory", 0x44010130,        2, base=16
+sfr = "AL_STATUS.[3:0]ACTSTATE"                                                                , "Memory", 0x44010130,        2, base=16, bitRange=0-3
+sfr = "AL_STATUS.[4]ERR"                                                                       , "Memory", 0x44010130,        2, base=16, bitRange=4
+sfr = "AL_STATUS.[5]DEVICEID"                                                                  , "Memory", 0x44010130,        2, base=16, bitRange=5
+sfr = "AL_STATUS_CODE"                                                                         , "Memory", 0x44010134,        2, base=16
+sfr = "AL_STATUS_CODE.[15:0]STATUSCODE"                                                        , "Memory", 0x44010134,        2, base=16, bitRange=0-15
+sfr = "RUN_LED_OVERRIDE"                                                                       , "Memory", 0x44010138,        1, base=16
+sfr = "RUN_LED_OVERRIDE.[3:0]LEDCODE"                                                          , "Memory", 0x44010138,        1, base=16, bitRange=0-3
+sfr = "RUN_LED_OVERRIDE.[4]OVERRIDEEN"                                                         , "Memory", 0x44010138,        1, base=16, bitRange=4
+sfr = "ERR_LED_OVERRIDE"                                                                       , "Memory", 0x44010139,        1, base=16
+sfr = "ERR_LED_OVERRIDE.[3:0]LEDCODE"                                                          , "Memory", 0x44010139,        1, base=16, bitRange=0-3
+sfr = "ERR_LED_OVERRIDE.[4]OVERRIDEEN"                                                         , "Memory", 0x44010139,        1, base=16, bitRange=4
+sfr = "PDI_CONTROL"                                                                            , "Memory", 0x44010140,        1, base=16, readOnly
+sfr = "PDI_CONTROL.[7:0]PDI"                                                                   , "Memory", 0x44010140,        1, base=16, readOnly, bitRange=0-7
+sfr = "ESC_CONFIG"                                                                             , "Memory", 0x44010141,        1, base=16, readOnly
+sfr = "ESC_CONFIG.[0]DEVEMU"                                                                   , "Memory", 0x44010141,        1, base=16, readOnly, bitRange=0
+sfr = "ESC_CONFIG.[1]ENLALLP"                                                                  , "Memory", 0x44010141,        1, base=16, readOnly, bitRange=1
+sfr = "ESC_CONFIG.[2]DCSYNC"                                                                   , "Memory", 0x44010141,        1, base=16, readOnly, bitRange=2
+sfr = "ESC_CONFIG.[3]DCLATCH"                                                                  , "Memory", 0x44010141,        1, base=16, readOnly, bitRange=3
+sfr = "ESC_CONFIG.[4]ENLP0"                                                                    , "Memory", 0x44010141,        1, base=16, readOnly, bitRange=4
+sfr = "ESC_CONFIG.[5]ENLP1"                                                                    , "Memory", 0x44010141,        1, base=16, readOnly, bitRange=5
+sfr = "ESC_CONFIG.[6]ENLP2"                                                                    , "Memory", 0x44010141,        1, base=16, readOnly, bitRange=6
+sfr = "ESC_CONFIG.[7]ENLP3"                                                                    , "Memory", 0x44010141,        1, base=16, readOnly, bitRange=7
+sfr = "PDI_CONFIG"                                                                             , "Memory", 0x44010150,        1, base=16, readOnly
+sfr = "PDI_CONFIG.[4:0]ONCHIPBUSCLK"                                                           , "Memory", 0x44010150,        1, base=16, readOnly, bitRange=0-4
+sfr = "PDI_CONFIG.[7:5]ONCHIPBUS"                                                              , "Memory", 0x44010150,        1, base=16, readOnly, bitRange=5-7
+sfr = "SYNC_LATCH_CONFIG"                                                                      , "Memory", 0x44010151,        1, base=16, readOnly
+sfr = "SYNC_LATCH_CONFIG.[1:0]SYNC0OUT"                                                        , "Memory", 0x44010151,        1, base=16, readOnly, bitRange=0-1
+sfr = "SYNC_LATCH_CONFIG.[2]SYNCLAT0"                                                          , "Memory", 0x44010151,        1, base=16, readOnly, bitRange=2
+sfr = "SYNC_LATCH_CONFIG.[3]SYNC0MAP"                                                          , "Memory", 0x44010151,        1, base=16, readOnly, bitRange=3
+sfr = "SYNC_LATCH_CONFIG.[5:4]SYNC1OUT"                                                        , "Memory", 0x44010151,        1, base=16, readOnly, bitRange=4-5
+sfr = "SYNC_LATCH_CONFIG.[6]SYNCLAT1"                                                          , "Memory", 0x44010151,        1, base=16, readOnly, bitRange=6
+sfr = "SYNC_LATCH_CONFIG.[7]SYNC1MAP"                                                          , "Memory", 0x44010151,        1, base=16, readOnly, bitRange=7
+sfr = "EXT_PDI_CONFIG"                                                                         , "Memory", 0x44010152,        2, base=16, readOnly
+sfr = "EXT_PDI_CONFIG.[1:0]DATABUSWID"                                                         , "Memory", 0x44010152,        2, base=16, readOnly, bitRange=0-1
+sfr = "ECAT_EVENT_MASK"                                                                        , "Memory", 0x44010200,        2, base=16, readOnly
+sfr = "ECAT_EVENT_MASK.[15:0]ECATEVMASK"                                                       , "Memory", 0x44010200,        2, base=16, readOnly, bitRange=0-15
+sfr = "AL_EVENT_MASK"                                                                          , "Memory", 0x44010204,        4, base=16
+sfr = "AL_EVENT_MASK.[31:0]ALEVMASK"                                                           , "Memory", 0x44010204,        4, base=16, bitRange=0-31
+sfr = "ECAT_EVENT_REQ"                                                                         , "Memory", 0x44010210,        2, base=16, readOnly
+sfr = "ECAT_EVENT_REQ.[0]DCLATCH"                                                              , "Memory", 0x44010210,        2, base=16, readOnly, bitRange=0
+sfr = "ECAT_EVENT_REQ.[2]DLSTA"                                                                , "Memory", 0x44010210,        2, base=16, readOnly, bitRange=2
+sfr = "ECAT_EVENT_REQ.[3]ALSTA"                                                                , "Memory", 0x44010210,        2, base=16, readOnly, bitRange=3
+sfr = "ECAT_EVENT_REQ.[4]SMSTA0"                                                               , "Memory", 0x44010210,        2, base=16, readOnly, bitRange=4
+sfr = "ECAT_EVENT_REQ.[5]SMSTA1"                                                               , "Memory", 0x44010210,        2, base=16, readOnly, bitRange=5
+sfr = "ECAT_EVENT_REQ.[6]SMSTA2"                                                               , "Memory", 0x44010210,        2, base=16, readOnly, bitRange=6
+sfr = "ECAT_EVENT_REQ.[7]SMSTA3"                                                               , "Memory", 0x44010210,        2, base=16, readOnly, bitRange=7
+sfr = "ECAT_EVENT_REQ.[8]SMSTA4"                                                               , "Memory", 0x44010210,        2, base=16, readOnly, bitRange=8
+sfr = "ECAT_EVENT_REQ.[9]SMSTA5"                                                               , "Memory", 0x44010210,        2, base=16, readOnly, bitRange=9
+sfr = "ECAT_EVENT_REQ.[10]SMSTA6"                                                              , "Memory", 0x44010210,        2, base=16, readOnly, bitRange=10
+sfr = "ECAT_EVENT_REQ.[11]SMSTA7"                                                              , "Memory", 0x44010210,        2, base=16, readOnly, bitRange=11
+sfr = "AL_EVENT_REQ"                                                                           , "Memory", 0x44010220,        4, base=16, readOnly
+sfr = "AL_EVENT_REQ.[0]ALCTRL"                                                                 , "Memory", 0x44010220,        4, base=16, readOnly, bitRange=0
+sfr = "AL_EVENT_REQ.[1]DCLATCH"                                                                , "Memory", 0x44010220,        4, base=16, readOnly, bitRange=1
+sfr = "AL_EVENT_REQ.[2]DCSYNC0STA"                                                             , "Memory", 0x44010220,        4, base=16, readOnly, bitRange=2
+sfr = "AL_EVENT_REQ.[3]DCSYNC1STA"                                                             , "Memory", 0x44010220,        4, base=16, readOnly, bitRange=3
+sfr = "AL_EVENT_REQ.[4]SYNCACT"                                                                , "Memory", 0x44010220,        4, base=16, readOnly, bitRange=4
+sfr = "AL_EVENT_REQ.[6]WDPD"                                                                   , "Memory", 0x44010220,        4, base=16, readOnly, bitRange=6
+sfr = "AL_EVENT_REQ.[8]SMINT0"                                                                 , "Memory", 0x44010220,        4, base=16, readOnly, bitRange=8
+sfr = "AL_EVENT_REQ.[9]SMINT1"                                                                 , "Memory", 0x44010220,        4, base=16, readOnly, bitRange=9
+sfr = "AL_EVENT_REQ.[10]SMINT2"                                                                , "Memory", 0x44010220,        4, base=16, readOnly, bitRange=10
+sfr = "AL_EVENT_REQ.[11]SMINT3"                                                                , "Memory", 0x44010220,        4, base=16, readOnly, bitRange=11
+sfr = "AL_EVENT_REQ.[12]SMINT4"                                                                , "Memory", 0x44010220,        4, base=16, readOnly, bitRange=12
+sfr = "AL_EVENT_REQ.[13]SMINT5"                                                                , "Memory", 0x44010220,        4, base=16, readOnly, bitRange=13
+sfr = "AL_EVENT_REQ.[14]SMINT6"                                                                , "Memory", 0x44010220,        4, base=16, readOnly, bitRange=14
+sfr = "AL_EVENT_REQ.[15]SMINT7"                                                                , "Memory", 0x44010220,        4, base=16, readOnly, bitRange=15
+sfr = "RX_ERR_COUNT0"                                                                          , "Memory", 0x44010300,        2, base=16, readOnly
+sfr = "RX_ERR_COUNT0.[7:0]INVFRMCNT"                                                           , "Memory", 0x44010300,        2, base=16, readOnly, bitRange=0-7
+sfr = "RX_ERR_COUNT0.[15:8]RXERRCNT"                                                           , "Memory", 0x44010300,        2, base=16, readOnly, bitRange=8-15
+sfr = "RX_ERR_COUNT1"                                                                          , "Memory", 0x44010302,        2, base=16, readOnly
+sfr = "RX_ERR_COUNT1.[7:0]INVFRMCNT"                                                           , "Memory", 0x44010302,        2, base=16, readOnly, bitRange=0-7
+sfr = "RX_ERR_COUNT1.[15:8]RXERRCNT"                                                           , "Memory", 0x44010302,        2, base=16, readOnly, bitRange=8-15
+sfr = "RX_ERR_COUNT2"                                                                          , "Memory", 0x44010304,        2, base=16, readOnly
+sfr = "RX_ERR_COUNT2.[7:0]INVFRMCNT"                                                           , "Memory", 0x44010304,        2, base=16, readOnly, bitRange=0-7
+sfr = "RX_ERR_COUNT2.[15:8]RXERRCNT"                                                           , "Memory", 0x44010304,        2, base=16, readOnly, bitRange=8-15
+sfr = "FWD_RX_ERR_COUNT0"                                                                      , "Memory", 0x44010308,        1, base=16, readOnly
+sfr = "FWD_RX_ERR_COUNT0.[7:0]FWDERRCNT"                                                       , "Memory", 0x44010308,        1, base=16, readOnly, bitRange=0-7
+sfr = "FWD_RX_ERR_COUNT1"                                                                      , "Memory", 0x44010309,        1, base=16, readOnly
+sfr = "FWD_RX_ERR_COUNT1.[7:0]FWDERRCNT"                                                       , "Memory", 0x44010309,        1, base=16, readOnly, bitRange=0-7
+sfr = "FWD_RX_ERR_COUNT2"                                                                      , "Memory", 0x4401030A,        1, base=16, readOnly
+sfr = "FWD_RX_ERR_COUNT2.[7:0]FWDERRCNT"                                                       , "Memory", 0x4401030A,        1, base=16, readOnly, bitRange=0-7
+sfr = "ECAT_PROC_ERR_COUNT"                                                                    , "Memory", 0x4401030C,        1, base=16, readOnly
+sfr = "ECAT_PROC_ERR_COUNT.[7:0]EPUERRCNT"                                                     , "Memory", 0x4401030C,        1, base=16, readOnly, bitRange=0-7
+sfr = "PDI_ERR_COUNT"                                                                          , "Memory", 0x4401030D,        1, base=16, readOnly
+sfr = "PDI_ERR_COUNT.[7:0]PDIERRCNT"                                                           , "Memory", 0x4401030D,        1, base=16, readOnly, bitRange=0-7
+sfr = "LOST_LINK_COUNT0"                                                                       , "Memory", 0x44010310,        1, base=16, readOnly
+sfr = "LOST_LINK_COUNT0.[7:0]LOSTLINKCNT"                                                      , "Memory", 0x44010310,        1, base=16, readOnly, bitRange=0-7
+sfr = "LOST_LINK_COUNT1"                                                                       , "Memory", 0x44010311,        1, base=16, readOnly
+sfr = "LOST_LINK_COUNT1.[7:0]LOSTLINKCNT"                                                      , "Memory", 0x44010311,        1, base=16, readOnly, bitRange=0-7
+sfr = "LOST_LINK_COUNT2"                                                                       , "Memory", 0x44010312,        1, base=16, readOnly
+sfr = "LOST_LINK_COUNT2.[7:0]LOSTLINKCNT"                                                      , "Memory", 0x44010312,        1, base=16, readOnly, bitRange=0-7
+sfr = "WD_DIVIDE"                                                                              , "Memory", 0x44010400,        2, base=16, readOnly
+sfr = "WD_DIVIDE.[15:0]WDDIV"                                                                  , "Memory", 0x44010400,        2, base=16, readOnly, bitRange=0-15
+sfr = "WDT_PDI"                                                                                , "Memory", 0x44010410,        2, base=16, readOnly
+sfr = "WDT_PDI.[15:0]WDTIMPDI"                                                                 , "Memory", 0x44010410,        2, base=16, readOnly, bitRange=0-15
+sfr = "WDT_DATA"                                                                               , "Memory", 0x44010420,        2, base=16, readOnly
+sfr = "WDT_DATA.[15:0]WDTIMPD"                                                                 , "Memory", 0x44010420,        2, base=16, readOnly, bitRange=0-15
+sfr = "WDS_DATA"                                                                               , "Memory", 0x44010440,        2, base=16, readOnly
+sfr = "WDS_DATA.[0]WDSTAPD"                                                                    , "Memory", 0x44010440,        2, base=16, readOnly, bitRange=0
+sfr = "WDC_DATA"                                                                               , "Memory", 0x44010442,        1, base=16, readOnly
+sfr = "WDC_DATA.[7:0]WDCNTPD"                                                                  , "Memory", 0x44010442,        1, base=16, readOnly, bitRange=0-7
+sfr = "WDC_PDI"                                                                                , "Memory", 0x44010443,        1, base=16, readOnly
+sfr = "WDC_PDI.[7:0]WDCNTPDI"                                                                  , "Memory", 0x44010443,        1, base=16, readOnly, bitRange=0-7
+sfr = "EEP_CONF"                                                                               , "Memory", 0x44010500,        1, base=16, readOnly
+sfr = "EEP_CONF.[0]CTRLPDI"                                                                    , "Memory", 0x44010500,        1, base=16, readOnly, bitRange=0
+sfr = "EEP_CONF.[1]FORCEECAT"                                                                  , "Memory", 0x44010500,        1, base=16, readOnly, bitRange=1
+sfr = "EEP_STATE"                                                                              , "Memory", 0x44010501,        1, base=16
+sfr = "EEP_STATE.[0]PDIACCEES"                                                                 , "Memory", 0x44010501,        1, base=16, bitRange=0
+sfr = "EEP_CONT_STAT"                                                                          , "Memory", 0x44010502,        2, base=16
+sfr = "EEP_CONT_STAT.[0]ECATWREN"                                                              , "Memory", 0x44010502,        2, base=16, readOnly, bitRange=0
+sfr = "EEP_CONT_STAT.[6]READBYTE"                                                              , "Memory", 0x44010502,        2, base=16, readOnly, bitRange=6
+sfr = "EEP_CONT_STAT.[7]PROMSIZE"                                                              , "Memory", 0x44010502,        2, base=16, readOnly, bitRange=7
+sfr = "EEP_CONT_STAT.[10:8]COMMAND"                                                            , "Memory", 0x44010502,        2, base=16, bitRange=8-10
+sfr = "EEP_CONT_STAT.[11]CKSUMERR"                                                             , "Memory", 0x44010502,        2, base=16, readOnly, bitRange=11
+sfr = "EEP_CONT_STAT.[12]LOADSTA"                                                              , "Memory", 0x44010502,        2, base=16, readOnly, bitRange=12
+sfr = "EEP_CONT_STAT.[13]ACKCMDERR"                                                            , "Memory", 0x44010502,        2, base=16, readOnly, bitRange=13
+sfr = "EEP_CONT_STAT.[14]WRENERR"                                                              , "Memory", 0x44010502,        2, base=16, readOnly, bitRange=14
+sfr = "EEP_CONT_STAT.[15]BUSY"                                                                 , "Memory", 0x44010502,        2, base=16, readOnly, bitRange=15
+sfr = "EEP_ADR"                                                                                , "Memory", 0x44010504,        4, base=16
+sfr = "EEP_ADR.[31:0]ADDRESS"                                                                  , "Memory", 0x44010504,        4, base=16, bitRange=0-31
+sfr = "EEP_DATA"                                                                               , "Memory", 0x44010508,        4, base=16
+sfr = "EEP_DATA.[15:0]LODATA"                                                                  , "Memory", 0x44010508,        4, base=16, bitRange=0-15
+sfr = "EEP_DATA.[31:16]HIDATA"                                                                 , "Memory", 0x44010508,        4, base=16, readOnly, bitRange=16-31
+sfr = "MII_CONT_STAT"                                                                          , "Memory", 0x44010510,        2, base=16
+sfr = "MII_CONT_STAT.[0]WREN"                                                                  , "Memory", 0x44010510,        2, base=16, readOnly, bitRange=0
+sfr = "MII_CONT_STAT.[1]PDICTRL"                                                               , "Memory", 0x44010510,        2, base=16, readOnly, bitRange=1
+sfr = "MII_CONT_STAT.[2]MILINK"                                                                , "Memory", 0x44010510,        2, base=16, readOnly, bitRange=2
+sfr = "MII_CONT_STAT.[7:3]PHYOFFSET"                                                           , "Memory", 0x44010510,        2, base=16, readOnly, bitRange=3-7
+sfr = "MII_CONT_STAT.[9:8]COMMAND"                                                             , "Memory", 0x44010510,        2, base=16, bitRange=8-9
+sfr = "MII_CONT_STAT.[13]READERR"                                                              , "Memory", 0x44010510,        2, base=16, bitRange=13
+sfr = "MII_CONT_STAT.[14]CMDERR"                                                               , "Memory", 0x44010510,        2, base=16, readOnly, bitRange=14
+sfr = "MII_CONT_STAT.[15]BUSY"                                                                 , "Memory", 0x44010510,        2, base=16, readOnly, bitRange=15
+sfr = "PHY_ADR"                                                                                , "Memory", 0x44010512,        1, base=16
+sfr = "PHY_ADR.[4:0]PHYADDR"                                                                   , "Memory", 0x44010512,        1, base=16, bitRange=0-4
+sfr = "PHY_REG_ADR"                                                                            , "Memory", 0x44010513,        1, base=16
+sfr = "PHY_REG_ADR.[4:0]PHYREGADDR"                                                            , "Memory", 0x44010513,        1, base=16, bitRange=0-4
+sfr = "PHY_DATA"                                                                               , "Memory", 0x44010514,        2, base=16
+sfr = "PHY_DATA.[15:0]PHYREGDATA"                                                              , "Memory", 0x44010514,        2, base=16, bitRange=0-15
+sfr = "MII_ECAT_ACS_STAT"                                                                      , "Memory", 0x44010516,        1, base=16, readOnly
+sfr = "MII_ECAT_ACS_STAT.[0]ACSMII"                                                            , "Memory", 0x44010516,        1, base=16, readOnly, bitRange=0
+sfr = "MII_PDI_ACS_STAT"                                                                       , "Memory", 0x44010517,        1, base=16
+sfr = "MII_PDI_ACS_STAT.[0]ACSMII"                                                             , "Memory", 0x44010517,        1, base=16, bitRange=0
+sfr = "MII_PDI_ACS_STAT.[1]FORPDI"                                                             , "Memory", 0x44010517,        1, base=16, readOnly, bitRange=1
+sfr = "PHY_STATUS0"                                                                            , "Memory", 0x44010518,        1, base=16
+sfr = "PHY_STATUS0.[0]PHYLINKSTA"                                                              , "Memory", 0x44010518,        1, base=16, readOnly, bitRange=0
+sfr = "PHY_STATUS0.[1]LINKSTA"                                                                 , "Memory", 0x44010518,        1, base=16, readOnly, bitRange=1
+sfr = "PHY_STATUS0.[2]LINKSTAERR"                                                              , "Memory", 0x44010518,        1, base=16, readOnly, bitRange=2
+sfr = "PHY_STATUS0.[3]READERR"                                                                 , "Memory", 0x44010518,        1, base=16, bitRange=3
+sfr = "PHY_STATUS0.[4]LINKPARTERR"                                                             , "Memory", 0x44010518,        1, base=16, readOnly, bitRange=4
+sfr = "PHY_STATUS0.[5]PHYCONFIG"                                                               , "Memory", 0x44010518,        1, base=16, bitRange=5
+sfr = "PHY_STATUS1"                                                                            , "Memory", 0x44010519,        1, base=16
+sfr = "PHY_STATUS1.[0]PHYLINKSTA"                                                              , "Memory", 0x44010519,        1, base=16, readOnly, bitRange=0
+sfr = "PHY_STATUS1.[1]LINKSTA"                                                                 , "Memory", 0x44010519,        1, base=16, readOnly, bitRange=1
+sfr = "PHY_STATUS1.[2]LINKSTAERR"                                                              , "Memory", 0x44010519,        1, base=16, readOnly, bitRange=2
+sfr = "PHY_STATUS1.[3]READERR"                                                                 , "Memory", 0x44010519,        1, base=16, bitRange=3
+sfr = "PHY_STATUS1.[4]LINKPARTERR"                                                             , "Memory", 0x44010519,        1, base=16, readOnly, bitRange=4
+sfr = "PHY_STATUS1.[5]PHYCONFIG"                                                               , "Memory", 0x44010519,        1, base=16, bitRange=5
+sfr = "PHY_STATUS2"                                                                            , "Memory", 0x4401051A,        1, base=16
+sfr = "PHY_STATUS2.[0]PHYLINKSTA"                                                              , "Memory", 0x4401051A,        1, base=16, readOnly, bitRange=0
+sfr = "PHY_STATUS2.[1]LINKSTA"                                                                 , "Memory", 0x4401051A,        1, base=16, readOnly, bitRange=1
+sfr = "PHY_STATUS2.[2]LINKSTAERR"                                                              , "Memory", 0x4401051A,        1, base=16, readOnly, bitRange=2
+sfr = "PHY_STATUS2.[3]READERR"                                                                 , "Memory", 0x4401051A,        1, base=16, bitRange=3
+sfr = "PHY_STATUS2.[4]LINKPARTERR"                                                             , "Memory", 0x4401051A,        1, base=16, readOnly, bitRange=4
+sfr = "PHY_STATUS2.[5]PHYCONFIG"                                                               , "Memory", 0x4401051A,        1, base=16, bitRange=5
+sfr = "FMMU0_L_START_ADR"                                                                      , "Memory", 0x44010600,        4, base=16, readOnly
+sfr = "FMMU0_L_START_ADR.[31:0]LSTAADR"                                                        , "Memory", 0x44010600,        4, base=16, readOnly, bitRange=0-31
+sfr = "FMMU0_LEN"                                                                              , "Memory", 0x44010604,        2, base=16, readOnly
+sfr = "FMMU0_LEN.[15:0]FMMULEN"                                                                , "Memory", 0x44010604,        2, base=16, readOnly, bitRange=0-15
+sfr = "FMMU0_L_START_BIT"                                                                      , "Memory", 0x44010606,        1, base=16, readOnly
+sfr = "FMMU0_L_START_BIT.[2:0]LSTABIT"                                                         , "Memory", 0x44010606,        1, base=16, readOnly, bitRange=0-2
+sfr = "FMMU0_L_STOP_BIT"                                                                       , "Memory", 0x44010607,        1, base=16, readOnly
+sfr = "FMMU0_L_STOP_BIT.[2:0]LSTPBIT"                                                          , "Memory", 0x44010607,        1, base=16, readOnly, bitRange=0-2
+sfr = "FMMU0_P_START_ADR"                                                                      , "Memory", 0x44010608,        2, base=16, readOnly
+sfr = "FMMU0_P_START_ADR.[15:0]PHYSTAADR"                                                      , "Memory", 0x44010608,        2, base=16, readOnly, bitRange=0-15
+sfr = "FMMU0_P_START_BIT"                                                                      , "Memory", 0x4401060A,        1, base=16, readOnly
+sfr = "FMMU0_P_START_BIT.[2:0]PHYSTABIT"                                                       , "Memory", 0x4401060A,        1, base=16, readOnly, bitRange=0-2
+sfr = "FMMU0_TYPE"                                                                             , "Memory", 0x4401060B,        1, base=16, readOnly
+sfr = "FMMU0_TYPE.[0]READ"                                                                     , "Memory", 0x4401060B,        1, base=16, readOnly, bitRange=0
+sfr = "FMMU0_TYPE.[1]WRITE"                                                                    , "Memory", 0x4401060B,        1, base=16, readOnly, bitRange=1
+sfr = "FMMU0_ACT"                                                                              , "Memory", 0x4401060C,        1, base=16, readOnly
+sfr = "FMMU0_ACT.[0]ACTIVATE"                                                                  , "Memory", 0x4401060C,        1, base=16, readOnly, bitRange=0
+sfr = "FMMU1_L_START_ADR"                                                                      , "Memory", 0x44010610,        4, base=16, readOnly
+sfr = "FMMU1_L_START_ADR.[31:0]LSTAADR"                                                        , "Memory", 0x44010610,        4, base=16, readOnly, bitRange=0-31
+sfr = "FMMU1_LEN"                                                                              , "Memory", 0x44010614,        2, base=16, readOnly
+sfr = "FMMU1_LEN.[15:0]FMMULEN"                                                                , "Memory", 0x44010614,        2, base=16, readOnly, bitRange=0-15
+sfr = "FMMU1_L_START_BIT"                                                                      , "Memory", 0x44010616,        1, base=16, readOnly
+sfr = "FMMU1_L_START_BIT.[2:0]LSTABIT"                                                         , "Memory", 0x44010616,        1, base=16, readOnly, bitRange=0-2
+sfr = "FMMU1_L_STOP_BIT"                                                                       , "Memory", 0x44010617,        1, base=16, readOnly
+sfr = "FMMU1_L_STOP_BIT.[2:0]LSTPBIT"                                                          , "Memory", 0x44010617,        1, base=16, readOnly, bitRange=0-2
+sfr = "FMMU1_P_START_ADR"                                                                      , "Memory", 0x44010618,        2, base=16, readOnly
+sfr = "FMMU1_P_START_ADR.[15:0]PHYSTAADR"                                                      , "Memory", 0x44010618,        2, base=16, readOnly, bitRange=0-15
+sfr = "FMMU1_P_START_BIT"                                                                      , "Memory", 0x4401061A,        1, base=16, readOnly
+sfr = "FMMU1_P_START_BIT.[2:0]PHYSTABIT"                                                       , "Memory", 0x4401061A,        1, base=16, readOnly, bitRange=0-2
+sfr = "FMMU1_TYPE"                                                                             , "Memory", 0x4401061B,        1, base=16, readOnly
+sfr = "FMMU1_TYPE.[0]READ"                                                                     , "Memory", 0x4401061B,        1, base=16, readOnly, bitRange=0
+sfr = "FMMU1_TYPE.[1]WRITE"                                                                    , "Memory", 0x4401061B,        1, base=16, readOnly, bitRange=1
+sfr = "FMMU1_ACT"                                                                              , "Memory", 0x4401061C,        1, base=16, readOnly
+sfr = "FMMU1_ACT.[0]ACTIVATE"                                                                  , "Memory", 0x4401061C,        1, base=16, readOnly, bitRange=0
+sfr = "FMMU2_L_START_ADR"                                                                      , "Memory", 0x44010620,        4, base=16, readOnly
+sfr = "FMMU2_L_START_ADR.[31:0]LSTAADR"                                                        , "Memory", 0x44010620,        4, base=16, readOnly, bitRange=0-31
+sfr = "FMMU2_LEN"                                                                              , "Memory", 0x44010624,        2, base=16, readOnly
+sfr = "FMMU2_LEN.[15:0]FMMULEN"                                                                , "Memory", 0x44010624,        2, base=16, readOnly, bitRange=0-15
+sfr = "FMMU2_L_START_BIT"                                                                      , "Memory", 0x44010626,        1, base=16, readOnly
+sfr = "FMMU2_L_START_BIT.[2:0]LSTABIT"                                                         , "Memory", 0x44010626,        1, base=16, readOnly, bitRange=0-2
+sfr = "FMMU2_L_STOP_BIT"                                                                       , "Memory", 0x44010627,        1, base=16, readOnly
+sfr = "FMMU2_L_STOP_BIT.[2:0]LSTPBIT"                                                          , "Memory", 0x44010627,        1, base=16, readOnly, bitRange=0-2
+sfr = "FMMU2_P_START_ADR"                                                                      , "Memory", 0x44010628,        2, base=16, readOnly
+sfr = "FMMU2_P_START_ADR.[15:0]PHYSTAADR"                                                      , "Memory", 0x44010628,        2, base=16, readOnly, bitRange=0-15
+sfr = "FMMU2_P_START_BIT"                                                                      , "Memory", 0x4401062A,        1, base=16, readOnly
+sfr = "FMMU2_P_START_BIT.[2:0]PHYSTABIT"                                                       , "Memory", 0x4401062A,        1, base=16, readOnly, bitRange=0-2
+sfr = "FMMU2_TYPE"                                                                             , "Memory", 0x4401062B,        1, base=16, readOnly
+sfr = "FMMU2_TYPE.[0]READ"                                                                     , "Memory", 0x4401062B,        1, base=16, readOnly, bitRange=0
+sfr = "FMMU2_TYPE.[1]WRITE"                                                                    , "Memory", 0x4401062B,        1, base=16, readOnly, bitRange=1
+sfr = "FMMU2_ACT"                                                                              , "Memory", 0x4401062C,        1, base=16, readOnly
+sfr = "FMMU2_ACT.[0]ACTIVATE"                                                                  , "Memory", 0x4401062C,        1, base=16, readOnly, bitRange=0
+sfr = "FMMU3_L_START_ADR"                                                                      , "Memory", 0x44010630,        4, base=16, readOnly
+sfr = "FMMU3_L_START_ADR.[31:0]LSTAADR"                                                        , "Memory", 0x44010630,        4, base=16, readOnly, bitRange=0-31
+sfr = "FMMU3_LEN"                                                                              , "Memory", 0x44010634,        2, base=16, readOnly
+sfr = "FMMU3_LEN.[15:0]FMMULEN"                                                                , "Memory", 0x44010634,        2, base=16, readOnly, bitRange=0-15
+sfr = "FMMU3_L_START_BIT"                                                                      , "Memory", 0x44010636,        1, base=16, readOnly
+sfr = "FMMU3_L_START_BIT.[2:0]LSTABIT"                                                         , "Memory", 0x44010636,        1, base=16, readOnly, bitRange=0-2
+sfr = "FMMU3_L_STOP_BIT"                                                                       , "Memory", 0x44010637,        1, base=16, readOnly
+sfr = "FMMU3_L_STOP_BIT.[2:0]LSTPBIT"                                                          , "Memory", 0x44010637,        1, base=16, readOnly, bitRange=0-2
+sfr = "FMMU3_P_START_ADR"                                                                      , "Memory", 0x44010638,        2, base=16, readOnly
+sfr = "FMMU3_P_START_ADR.[15:0]PHYSTAADR"                                                      , "Memory", 0x44010638,        2, base=16, readOnly, bitRange=0-15
+sfr = "FMMU3_P_START_BIT"                                                                      , "Memory", 0x4401063A,        1, base=16, readOnly
+sfr = "FMMU3_P_START_BIT.[2:0]PHYSTABIT"                                                       , "Memory", 0x4401063A,        1, base=16, readOnly, bitRange=0-2
+sfr = "FMMU3_TYPE"                                                                             , "Memory", 0x4401063B,        1, base=16, readOnly
+sfr = "FMMU3_TYPE.[0]READ"                                                                     , "Memory", 0x4401063B,        1, base=16, readOnly, bitRange=0
+sfr = "FMMU3_TYPE.[1]WRITE"                                                                    , "Memory", 0x4401063B,        1, base=16, readOnly, bitRange=1
+sfr = "FMMU3_ACT"                                                                              , "Memory", 0x4401063C,        1, base=16, readOnly
+sfr = "FMMU3_ACT.[0]ACTIVATE"                                                                  , "Memory", 0x4401063C,        1, base=16, readOnly, bitRange=0
+sfr = "FMMU4_L_START_ADR"                                                                      , "Memory", 0x44010640,        4, base=16, readOnly
+sfr = "FMMU4_L_START_ADR.[31:0]LSTAADR"                                                        , "Memory", 0x44010640,        4, base=16, readOnly, bitRange=0-31
+sfr = "FMMU4_LEN"                                                                              , "Memory", 0x44010644,        2, base=16, readOnly
+sfr = "FMMU4_LEN.[15:0]FMMULEN"                                                                , "Memory", 0x44010644,        2, base=16, readOnly, bitRange=0-15
+sfr = "FMMU4_L_START_BIT"                                                                      , "Memory", 0x44010646,        1, base=16, readOnly
+sfr = "FMMU4_L_START_BIT.[2:0]LSTABIT"                                                         , "Memory", 0x44010646,        1, base=16, readOnly, bitRange=0-2
+sfr = "FMMU4_L_STOP_BIT"                                                                       , "Memory", 0x44010647,        1, base=16, readOnly
+sfr = "FMMU4_L_STOP_BIT.[2:0]LSTPBIT"                                                          , "Memory", 0x44010647,        1, base=16, readOnly, bitRange=0-2
+sfr = "FMMU4_P_START_ADR"                                                                      , "Memory", 0x44010648,        2, base=16, readOnly
+sfr = "FMMU4_P_START_ADR.[15:0]PHYSTAADR"                                                      , "Memory", 0x44010648,        2, base=16, readOnly, bitRange=0-15
+sfr = "FMMU4_P_START_BIT"                                                                      , "Memory", 0x4401064A,        1, base=16, readOnly
+sfr = "FMMU4_P_START_BIT.[2:0]PHYSTABIT"                                                       , "Memory", 0x4401064A,        1, base=16, readOnly, bitRange=0-2
+sfr = "FMMU4_TYPE"                                                                             , "Memory", 0x4401064B,        1, base=16, readOnly
+sfr = "FMMU4_TYPE.[0]READ"                                                                     , "Memory", 0x4401064B,        1, base=16, readOnly, bitRange=0
+sfr = "FMMU4_TYPE.[1]WRITE"                                                                    , "Memory", 0x4401064B,        1, base=16, readOnly, bitRange=1
+sfr = "FMMU4_ACT"                                                                              , "Memory", 0x4401064C,        1, base=16, readOnly
+sfr = "FMMU4_ACT.[0]ACTIVATE"                                                                  , "Memory", 0x4401064C,        1, base=16, readOnly, bitRange=0
+sfr = "FMMU5_L_START_ADR"                                                                      , "Memory", 0x44010650,        4, base=16, readOnly
+sfr = "FMMU5_L_START_ADR.[31:0]LSTAADR"                                                        , "Memory", 0x44010650,        4, base=16, readOnly, bitRange=0-31
+sfr = "FMMU5_LEN"                                                                              , "Memory", 0x44010654,        2, base=16, readOnly
+sfr = "FMMU5_LEN.[15:0]FMMULEN"                                                                , "Memory", 0x44010654,        2, base=16, readOnly, bitRange=0-15
+sfr = "FMMU5_L_START_BIT"                                                                      , "Memory", 0x44010656,        1, base=16, readOnly
+sfr = "FMMU5_L_START_BIT.[2:0]LSTABIT"                                                         , "Memory", 0x44010656,        1, base=16, readOnly, bitRange=0-2
+sfr = "FMMU5_L_STOP_BIT"                                                                       , "Memory", 0x44010657,        1, base=16, readOnly
+sfr = "FMMU5_L_STOP_BIT.[2:0]LSTPBIT"                                                          , "Memory", 0x44010657,        1, base=16, readOnly, bitRange=0-2
+sfr = "FMMU5_P_START_ADR"                                                                      , "Memory", 0x44010658,        2, base=16, readOnly
+sfr = "FMMU5_P_START_ADR.[15:0]PHYSTAADR"                                                      , "Memory", 0x44010658,        2, base=16, readOnly, bitRange=0-15
+sfr = "FMMU5_P_START_BIT"                                                                      , "Memory", 0x4401065A,        1, base=16, readOnly
+sfr = "FMMU5_P_START_BIT.[2:0]PHYSTABIT"                                                       , "Memory", 0x4401065A,        1, base=16, readOnly, bitRange=0-2
+sfr = "FMMU5_TYPE"                                                                             , "Memory", 0x4401065B,        1, base=16, readOnly
+sfr = "FMMU5_TYPE.[0]READ"                                                                     , "Memory", 0x4401065B,        1, base=16, readOnly, bitRange=0
+sfr = "FMMU5_TYPE.[1]WRITE"                                                                    , "Memory", 0x4401065B,        1, base=16, readOnly, bitRange=1
+sfr = "FMMU5_ACT"                                                                              , "Memory", 0x4401065C,        1, base=16, readOnly
+sfr = "FMMU5_ACT.[0]ACTIVATE"                                                                  , "Memory", 0x4401065C,        1, base=16, readOnly, bitRange=0
+sfr = "FMMU6_L_START_ADR"                                                                      , "Memory", 0x44010660,        4, base=16, readOnly
+sfr = "FMMU6_L_START_ADR.[31:0]LSTAADR"                                                        , "Memory", 0x44010660,        4, base=16, readOnly, bitRange=0-31
+sfr = "FMMU6_LEN"                                                                              , "Memory", 0x44010664,        2, base=16, readOnly
+sfr = "FMMU6_LEN.[15:0]FMMULEN"                                                                , "Memory", 0x44010664,        2, base=16, readOnly, bitRange=0-15
+sfr = "FMMU6_L_START_BIT"                                                                      , "Memory", 0x44010666,        1, base=16, readOnly
+sfr = "FMMU6_L_START_BIT.[2:0]LSTABIT"                                                         , "Memory", 0x44010666,        1, base=16, readOnly, bitRange=0-2
+sfr = "FMMU6_L_STOP_BIT"                                                                       , "Memory", 0x44010667,        1, base=16, readOnly
+sfr = "FMMU6_L_STOP_BIT.[2:0]LSTPBIT"                                                          , "Memory", 0x44010667,        1, base=16, readOnly, bitRange=0-2
+sfr = "FMMU6_P_START_ADR"                                                                      , "Memory", 0x44010668,        2, base=16, readOnly
+sfr = "FMMU6_P_START_ADR.[15:0]PHYSTAADR"                                                      , "Memory", 0x44010668,        2, base=16, readOnly, bitRange=0-15
+sfr = "FMMU6_P_START_BIT"                                                                      , "Memory", 0x4401066A,        1, base=16, readOnly
+sfr = "FMMU6_P_START_BIT.[2:0]PHYSTABIT"                                                       , "Memory", 0x4401066A,        1, base=16, readOnly, bitRange=0-2
+sfr = "FMMU6_TYPE"                                                                             , "Memory", 0x4401066B,        1, base=16, readOnly
+sfr = "FMMU6_TYPE.[0]READ"                                                                     , "Memory", 0x4401066B,        1, base=16, readOnly, bitRange=0
+sfr = "FMMU6_TYPE.[1]WRITE"                                                                    , "Memory", 0x4401066B,        1, base=16, readOnly, bitRange=1
+sfr = "FMMU6_ACT"                                                                              , "Memory", 0x4401066C,        1, base=16, readOnly
+sfr = "FMMU6_ACT.[0]ACTIVATE"                                                                  , "Memory", 0x4401066C,        1, base=16, readOnly, bitRange=0
+sfr = "FMMU7_L_START_ADR"                                                                      , "Memory", 0x44010670,        4, base=16, readOnly
+sfr = "FMMU7_L_START_ADR.[31:0]LSTAADR"                                                        , "Memory", 0x44010670,        4, base=16, readOnly, bitRange=0-31
+sfr = "FMMU7_LEN"                                                                              , "Memory", 0x44010674,        2, base=16, readOnly
+sfr = "FMMU7_LEN.[15:0]FMMULEN"                                                                , "Memory", 0x44010674,        2, base=16, readOnly, bitRange=0-15
+sfr = "FMMU7_L_START_BIT"                                                                      , "Memory", 0x44010676,        1, base=16, readOnly
+sfr = "FMMU7_L_START_BIT.[2:0]LSTABIT"                                                         , "Memory", 0x44010676,        1, base=16, readOnly, bitRange=0-2
+sfr = "FMMU7_L_STOP_BIT"                                                                       , "Memory", 0x44010677,        1, base=16, readOnly
+sfr = "FMMU7_L_STOP_BIT.[2:0]LSTPBIT"                                                          , "Memory", 0x44010677,        1, base=16, readOnly, bitRange=0-2
+sfr = "FMMU7_P_START_ADR"                                                                      , "Memory", 0x44010678,        2, base=16, readOnly
+sfr = "FMMU7_P_START_ADR.[15:0]PHYSTAADR"                                                      , "Memory", 0x44010678,        2, base=16, readOnly, bitRange=0-15
+sfr = "FMMU7_P_START_BIT"                                                                      , "Memory", 0x4401067A,        1, base=16, readOnly
+sfr = "FMMU7_P_START_BIT.[2:0]PHYSTABIT"                                                       , "Memory", 0x4401067A,        1, base=16, readOnly, bitRange=0-2
+sfr = "FMMU7_TYPE"                                                                             , "Memory", 0x4401067B,        1, base=16, readOnly
+sfr = "FMMU7_TYPE.[0]READ"                                                                     , "Memory", 0x4401067B,        1, base=16, readOnly, bitRange=0
+sfr = "FMMU7_TYPE.[1]WRITE"                                                                    , "Memory", 0x4401067B,        1, base=16, readOnly, bitRange=1
+sfr = "FMMU7_ACT"                                                                              , "Memory", 0x4401067C,        1, base=16, readOnly
+sfr = "FMMU7_ACT.[0]ACTIVATE"                                                                  , "Memory", 0x4401067C,        1, base=16, readOnly, bitRange=0
+sfr = "SM0_P_START_ADR"                                                                        , "Memory", 0x44010800,        2, base=16, readOnly
+sfr = "SM0_P_START_ADR.[15:0]SMSTAADDR"                                                        , "Memory", 0x44010800,        2, base=16, readOnly, bitRange=0-15
+sfr = "SM0_LEN"                                                                                , "Memory", 0x44010802,        2, base=16, readOnly
+sfr = "SM0_LEN.[15:0]SMLEN"                                                                    , "Memory", 0x44010802,        2, base=16, readOnly, bitRange=0-15
+sfr = "SM0_CONTROL"                                                                            , "Memory", 0x44010804,        1, base=16, readOnly
+sfr = "SM0_CONTROL.[1:0]OPEMODE"                                                               , "Memory", 0x44010804,        1, base=16, readOnly, bitRange=0-1
+sfr = "SM0_CONTROL.[3:2]DIR"                                                                   , "Memory", 0x44010804,        1, base=16, readOnly, bitRange=2-3
+sfr = "SM0_CONTROL.[4]IRQECAT"                                                                 , "Memory", 0x44010804,        1, base=16, readOnly, bitRange=4
+sfr = "SM0_CONTROL.[5]IRQPDI"                                                                  , "Memory", 0x44010804,        1, base=16, readOnly, bitRange=5
+sfr = "SM0_CONTROL.[6]WDTRGEN"                                                                 , "Memory", 0x44010804,        1, base=16, readOnly, bitRange=6
+sfr = "SM0_STATUS"                                                                             , "Memory", 0x44010805,        1, base=16, readOnly
+sfr = "SM0_STATUS.[0]INTWR"                                                                    , "Memory", 0x44010805,        1, base=16, readOnly, bitRange=0
+sfr = "SM0_STATUS.[1]INTRD"                                                                    , "Memory", 0x44010805,        1, base=16, readOnly, bitRange=1
+sfr = "SM0_STATUS.[3]MAILBOX"                                                                  , "Memory", 0x44010805,        1, base=16, readOnly, bitRange=3
+sfr = "SM0_STATUS.[5:4]BUFFERED"                                                               , "Memory", 0x44010805,        1, base=16, readOnly, bitRange=4-5
+sfr = "SM0_STATUS.[6]RDBUF"                                                                    , "Memory", 0x44010805,        1, base=16, readOnly, bitRange=6
+sfr = "SM0_STATUS.[7]WRBUF"                                                                    , "Memory", 0x44010805,        1, base=16, readOnly, bitRange=7
+sfr = "SM0_ACT"                                                                                , "Memory", 0x44010806,        1, base=16, readOnly
+sfr = "SM0_ACT.[0]SMEN"                                                                        , "Memory", 0x44010806,        1, base=16, readOnly, bitRange=0
+sfr = "SM0_ACT.[1]REPEATREQ"                                                                   , "Memory", 0x44010806,        1, base=16, readOnly, bitRange=1
+sfr = "SM0_ACT.[6]LATCHECAT"                                                                   , "Memory", 0x44010806,        1, base=16, readOnly, bitRange=6
+sfr = "SM0_ACT.[7]LATCHPDI"                                                                    , "Memory", 0x44010806,        1, base=16, readOnly, bitRange=7
+sfr = "SM0_PDI_CONT"                                                                           , "Memory", 0x44010807,        1, base=16
+sfr = "SM0_PDI_CONT.[0]DEACTIVE"                                                               , "Memory", 0x44010807,        1, base=16, bitRange=0
+sfr = "SM0_PDI_CONT.[1]REPEATACK"                                                              , "Memory", 0x44010807,        1, base=16, bitRange=1
+sfr = "SM1_P_START_ADR"                                                                        , "Memory", 0x44010808,        2, base=16, readOnly
+sfr = "SM1_P_START_ADR.[15:0]SMSTAADDR"                                                        , "Memory", 0x44010808,        2, base=16, readOnly, bitRange=0-15
+sfr = "SM1_LEN"                                                                                , "Memory", 0x4401080A,        2, base=16, readOnly
+sfr = "SM1_LEN.[15:0]SMLEN"                                                                    , "Memory", 0x4401080A,        2, base=16, readOnly, bitRange=0-15
+sfr = "SM1_CONTROL"                                                                            , "Memory", 0x4401080C,        1, base=16, readOnly
+sfr = "SM1_CONTROL.[1:0]OPEMODE"                                                               , "Memory", 0x4401080C,        1, base=16, readOnly, bitRange=0-1
+sfr = "SM1_CONTROL.[3:2]DIR"                                                                   , "Memory", 0x4401080C,        1, base=16, readOnly, bitRange=2-3
+sfr = "SM1_CONTROL.[4]IRQECAT"                                                                 , "Memory", 0x4401080C,        1, base=16, readOnly, bitRange=4
+sfr = "SM1_CONTROL.[5]IRQPDI"                                                                  , "Memory", 0x4401080C,        1, base=16, readOnly, bitRange=5
+sfr = "SM1_CONTROL.[6]WDTRGEN"                                                                 , "Memory", 0x4401080C,        1, base=16, readOnly, bitRange=6
+sfr = "SM1_STATUS"                                                                             , "Memory", 0x4401080D,        1, base=16, readOnly
+sfr = "SM1_STATUS.[0]INTWR"                                                                    , "Memory", 0x4401080D,        1, base=16, readOnly, bitRange=0
+sfr = "SM1_STATUS.[1]INTRD"                                                                    , "Memory", 0x4401080D,        1, base=16, readOnly, bitRange=1
+sfr = "SM1_STATUS.[3]MAILBOX"                                                                  , "Memory", 0x4401080D,        1, base=16, readOnly, bitRange=3
+sfr = "SM1_STATUS.[5:4]BUFFERED"                                                               , "Memory", 0x4401080D,        1, base=16, readOnly, bitRange=4-5
+sfr = "SM1_STATUS.[6]RDBUF"                                                                    , "Memory", 0x4401080D,        1, base=16, readOnly, bitRange=6
+sfr = "SM1_STATUS.[7]WRBUF"                                                                    , "Memory", 0x4401080D,        1, base=16, readOnly, bitRange=7
+sfr = "SM1_ACT"                                                                                , "Memory", 0x4401080E,        1, base=16, readOnly
+sfr = "SM1_ACT.[0]SMEN"                                                                        , "Memory", 0x4401080E,        1, base=16, readOnly, bitRange=0
+sfr = "SM1_ACT.[1]REPEATREQ"                                                                   , "Memory", 0x4401080E,        1, base=16, readOnly, bitRange=1
+sfr = "SM1_ACT.[6]LATCHECAT"                                                                   , "Memory", 0x4401080E,        1, base=16, readOnly, bitRange=6
+sfr = "SM1_ACT.[7]LATCHPDI"                                                                    , "Memory", 0x4401080E,        1, base=16, readOnly, bitRange=7
+sfr = "SM1_PDI_CONT"                                                                           , "Memory", 0x4401080F,        1, base=16
+sfr = "SM1_PDI_CONT.[0]DEACTIVE"                                                               , "Memory", 0x4401080F,        1, base=16, bitRange=0
+sfr = "SM1_PDI_CONT.[1]REPEATACK"                                                              , "Memory", 0x4401080F,        1, base=16, bitRange=1
+sfr = "SM2_P_START_ADR"                                                                        , "Memory", 0x44010810,        2, base=16, readOnly
+sfr = "SM2_P_START_ADR.[15:0]SMSTAADDR"                                                        , "Memory", 0x44010810,        2, base=16, readOnly, bitRange=0-15
+sfr = "SM2_LEN"                                                                                , "Memory", 0x44010812,        2, base=16, readOnly
+sfr = "SM2_LEN.[15:0]SMLEN"                                                                    , "Memory", 0x44010812,        2, base=16, readOnly, bitRange=0-15
+sfr = "SM2_CONTROL"                                                                            , "Memory", 0x44010814,        1, base=16, readOnly
+sfr = "SM2_CONTROL.[1:0]OPEMODE"                                                               , "Memory", 0x44010814,        1, base=16, readOnly, bitRange=0-1
+sfr = "SM2_CONTROL.[3:2]DIR"                                                                   , "Memory", 0x44010814,        1, base=16, readOnly, bitRange=2-3
+sfr = "SM2_CONTROL.[4]IRQECAT"                                                                 , "Memory", 0x44010814,        1, base=16, readOnly, bitRange=4
+sfr = "SM2_CONTROL.[5]IRQPDI"                                                                  , "Memory", 0x44010814,        1, base=16, readOnly, bitRange=5
+sfr = "SM2_CONTROL.[6]WDTRGEN"                                                                 , "Memory", 0x44010814,        1, base=16, readOnly, bitRange=6
+sfr = "SM2_STATUS"                                                                             , "Memory", 0x44010815,        1, base=16, readOnly
+sfr = "SM2_STATUS.[0]INTWR"                                                                    , "Memory", 0x44010815,        1, base=16, readOnly, bitRange=0
+sfr = "SM2_STATUS.[1]INTRD"                                                                    , "Memory", 0x44010815,        1, base=16, readOnly, bitRange=1
+sfr = "SM2_STATUS.[3]MAILBOX"                                                                  , "Memory", 0x44010815,        1, base=16, readOnly, bitRange=3
+sfr = "SM2_STATUS.[5:4]BUFFERED"                                                               , "Memory", 0x44010815,        1, base=16, readOnly, bitRange=4-5
+sfr = "SM2_STATUS.[6]RDBUF"                                                                    , "Memory", 0x44010815,        1, base=16, readOnly, bitRange=6
+sfr = "SM2_STATUS.[7]WRBUF"                                                                    , "Memory", 0x44010815,        1, base=16, readOnly, bitRange=7
+sfr = "SM2_ACT"                                                                                , "Memory", 0x44010816,        1, base=16, readOnly
+sfr = "SM2_ACT.[0]SMEN"                                                                        , "Memory", 0x44010816,        1, base=16, readOnly, bitRange=0
+sfr = "SM2_ACT.[1]REPEATREQ"                                                                   , "Memory", 0x44010816,        1, base=16, readOnly, bitRange=1
+sfr = "SM2_ACT.[6]LATCHECAT"                                                                   , "Memory", 0x44010816,        1, base=16, readOnly, bitRange=6
+sfr = "SM2_ACT.[7]LATCHPDI"                                                                    , "Memory", 0x44010816,        1, base=16, readOnly, bitRange=7
+sfr = "SM2_PDI_CONT"                                                                           , "Memory", 0x44010817,        1, base=16
+sfr = "SM2_PDI_CONT.[0]DEACTIVE"                                                               , "Memory", 0x44010817,        1, base=16, bitRange=0
+sfr = "SM2_PDI_CONT.[1]REPEATACK"                                                              , "Memory", 0x44010817,        1, base=16, bitRange=1
+sfr = "SM3_P_START_ADR"                                                                        , "Memory", 0x44010818,        2, base=16, readOnly
+sfr = "SM3_P_START_ADR.[15:0]SMSTAADDR"                                                        , "Memory", 0x44010818,        2, base=16, readOnly, bitRange=0-15
+sfr = "SM3_LEN"                                                                                , "Memory", 0x4401081A,        2, base=16, readOnly
+sfr = "SM3_LEN.[15:0]SMLEN"                                                                    , "Memory", 0x4401081A,        2, base=16, readOnly, bitRange=0-15
+sfr = "SM3_CONTROL"                                                                            , "Memory", 0x4401081C,        1, base=16, readOnly
+sfr = "SM3_CONTROL.[1:0]OPEMODE"                                                               , "Memory", 0x4401081C,        1, base=16, readOnly, bitRange=0-1
+sfr = "SM3_CONTROL.[3:2]DIR"                                                                   , "Memory", 0x4401081C,        1, base=16, readOnly, bitRange=2-3
+sfr = "SM3_CONTROL.[4]IRQECAT"                                                                 , "Memory", 0x4401081C,        1, base=16, readOnly, bitRange=4
+sfr = "SM3_CONTROL.[5]IRQPDI"                                                                  , "Memory", 0x4401081C,        1, base=16, readOnly, bitRange=5
+sfr = "SM3_CONTROL.[6]WDTRGEN"                                                                 , "Memory", 0x4401081C,        1, base=16, readOnly, bitRange=6
+sfr = "SM3_STATUS"                                                                             , "Memory", 0x4401081D,        1, base=16, readOnly
+sfr = "SM3_STATUS.[0]INTWR"                                                                    , "Memory", 0x4401081D,        1, base=16, readOnly, bitRange=0
+sfr = "SM3_STATUS.[1]INTRD"                                                                    , "Memory", 0x4401081D,        1, base=16, readOnly, bitRange=1
+sfr = "SM3_STATUS.[3]MAILBOX"                                                                  , "Memory", 0x4401081D,        1, base=16, readOnly, bitRange=3
+sfr = "SM3_STATUS.[5:4]BUFFERED"                                                               , "Memory", 0x4401081D,        1, base=16, readOnly, bitRange=4-5
+sfr = "SM3_STATUS.[6]RDBUF"                                                                    , "Memory", 0x4401081D,        1, base=16, readOnly, bitRange=6
+sfr = "SM3_STATUS.[7]WRBUF"                                                                    , "Memory", 0x4401081D,        1, base=16, readOnly, bitRange=7
+sfr = "SM3_ACT"                                                                                , "Memory", 0x4401081E,        1, base=16, readOnly
+sfr = "SM3_ACT.[0]SMEN"                                                                        , "Memory", 0x4401081E,        1, base=16, readOnly, bitRange=0
+sfr = "SM3_ACT.[1]REPEATREQ"                                                                   , "Memory", 0x4401081E,        1, base=16, readOnly, bitRange=1
+sfr = "SM3_ACT.[6]LATCHECAT"                                                                   , "Memory", 0x4401081E,        1, base=16, readOnly, bitRange=6
+sfr = "SM3_ACT.[7]LATCHPDI"                                                                    , "Memory", 0x4401081E,        1, base=16, readOnly, bitRange=7
+sfr = "SM3_PDI_CONT"                                                                           , "Memory", 0x4401081F,        1, base=16
+sfr = "SM3_PDI_CONT.[0]DEACTIVE"                                                               , "Memory", 0x4401081F,        1, base=16, bitRange=0
+sfr = "SM3_PDI_CONT.[1]REPEATACK"                                                              , "Memory", 0x4401081F,        1, base=16, bitRange=1
+sfr = "SM4_P_START_ADR"                                                                        , "Memory", 0x44010820,        2, base=16, readOnly
+sfr = "SM4_P_START_ADR.[15:0]SMSTAADDR"                                                        , "Memory", 0x44010820,        2, base=16, readOnly, bitRange=0-15
+sfr = "SM4_LEN"                                                                                , "Memory", 0x44010822,        2, base=16, readOnly
+sfr = "SM4_LEN.[15:0]SMLEN"                                                                    , "Memory", 0x44010822,        2, base=16, readOnly, bitRange=0-15
+sfr = "SM4_CONTROL"                                                                            , "Memory", 0x44010824,        1, base=16, readOnly
+sfr = "SM4_CONTROL.[1:0]OPEMODE"                                                               , "Memory", 0x44010824,        1, base=16, readOnly, bitRange=0-1
+sfr = "SM4_CONTROL.[3:2]DIR"                                                                   , "Memory", 0x44010824,        1, base=16, readOnly, bitRange=2-3
+sfr = "SM4_CONTROL.[4]IRQECAT"                                                                 , "Memory", 0x44010824,        1, base=16, readOnly, bitRange=4
+sfr = "SM4_CONTROL.[5]IRQPDI"                                                                  , "Memory", 0x44010824,        1, base=16, readOnly, bitRange=5
+sfr = "SM4_CONTROL.[6]WDTRGEN"                                                                 , "Memory", 0x44010824,        1, base=16, readOnly, bitRange=6
+sfr = "SM4_STATUS"                                                                             , "Memory", 0x44010825,        1, base=16, readOnly
+sfr = "SM4_STATUS.[0]INTWR"                                                                    , "Memory", 0x44010825,        1, base=16, readOnly, bitRange=0
+sfr = "SM4_STATUS.[1]INTRD"                                                                    , "Memory", 0x44010825,        1, base=16, readOnly, bitRange=1
+sfr = "SM4_STATUS.[3]MAILBOX"                                                                  , "Memory", 0x44010825,        1, base=16, readOnly, bitRange=3
+sfr = "SM4_STATUS.[5:4]BUFFERED"                                                               , "Memory", 0x44010825,        1, base=16, readOnly, bitRange=4-5
+sfr = "SM4_STATUS.[6]RDBUF"                                                                    , "Memory", 0x44010825,        1, base=16, readOnly, bitRange=6
+sfr = "SM4_STATUS.[7]WRBUF"                                                                    , "Memory", 0x44010825,        1, base=16, readOnly, bitRange=7
+sfr = "SM4_ACT"                                                                                , "Memory", 0x44010826,        1, base=16, readOnly
+sfr = "SM4_ACT.[0]SMEN"                                                                        , "Memory", 0x44010826,        1, base=16, readOnly, bitRange=0
+sfr = "SM4_ACT.[1]REPEATREQ"                                                                   , "Memory", 0x44010826,        1, base=16, readOnly, bitRange=1
+sfr = "SM4_ACT.[6]LATCHECAT"                                                                   , "Memory", 0x44010826,        1, base=16, readOnly, bitRange=6
+sfr = "SM4_ACT.[7]LATCHPDI"                                                                    , "Memory", 0x44010826,        1, base=16, readOnly, bitRange=7
+sfr = "SM4_PDI_CONT"                                                                           , "Memory", 0x44010827,        1, base=16
+sfr = "SM4_PDI_CONT.[0]DEACTIVE"                                                               , "Memory", 0x44010827,        1, base=16, bitRange=0
+sfr = "SM4_PDI_CONT.[1]REPEATACK"                                                              , "Memory", 0x44010827,        1, base=16, bitRange=1
+sfr = "SM5_P_START_ADR"                                                                        , "Memory", 0x44010828,        2, base=16, readOnly
+sfr = "SM5_P_START_ADR.[15:0]SMSTAADDR"                                                        , "Memory", 0x44010828,        2, base=16, readOnly, bitRange=0-15
+sfr = "SM5_LEN"                                                                                , "Memory", 0x4401082A,        2, base=16, readOnly
+sfr = "SM5_LEN.[15:0]SMLEN"                                                                    , "Memory", 0x4401082A,        2, base=16, readOnly, bitRange=0-15
+sfr = "SM5_CONTROL"                                                                            , "Memory", 0x4401082C,        1, base=16, readOnly
+sfr = "SM5_CONTROL.[1:0]OPEMODE"                                                               , "Memory", 0x4401082C,        1, base=16, readOnly, bitRange=0-1
+sfr = "SM5_CONTROL.[3:2]DIR"                                                                   , "Memory", 0x4401082C,        1, base=16, readOnly, bitRange=2-3
+sfr = "SM5_CONTROL.[4]IRQECAT"                                                                 , "Memory", 0x4401082C,        1, base=16, readOnly, bitRange=4
+sfr = "SM5_CONTROL.[5]IRQPDI"                                                                  , "Memory", 0x4401082C,        1, base=16, readOnly, bitRange=5
+sfr = "SM5_CONTROL.[6]WDTRGEN"                                                                 , "Memory", 0x4401082C,        1, base=16, readOnly, bitRange=6
+sfr = "SM5_STATUS"                                                                             , "Memory", 0x4401082D,        1, base=16, readOnly
+sfr = "SM5_STATUS.[0]INTWR"                                                                    , "Memory", 0x4401082D,        1, base=16, readOnly, bitRange=0
+sfr = "SM5_STATUS.[1]INTRD"                                                                    , "Memory", 0x4401082D,        1, base=16, readOnly, bitRange=1
+sfr = "SM5_STATUS.[3]MAILBOX"                                                                  , "Memory", 0x4401082D,        1, base=16, readOnly, bitRange=3
+sfr = "SM5_STATUS.[5:4]BUFFERED"                                                               , "Memory", 0x4401082D,        1, base=16, readOnly, bitRange=4-5
+sfr = "SM5_STATUS.[6]RDBUF"                                                                    , "Memory", 0x4401082D,        1, base=16, readOnly, bitRange=6
+sfr = "SM5_STATUS.[7]WRBUF"                                                                    , "Memory", 0x4401082D,        1, base=16, readOnly, bitRange=7
+sfr = "SM5_ACT"                                                                                , "Memory", 0x4401082E,        1, base=16, readOnly
+sfr = "SM5_ACT.[0]SMEN"                                                                        , "Memory", 0x4401082E,        1, base=16, readOnly, bitRange=0
+sfr = "SM5_ACT.[1]REPEATREQ"                                                                   , "Memory", 0x4401082E,        1, base=16, readOnly, bitRange=1
+sfr = "SM5_ACT.[6]LATCHECAT"                                                                   , "Memory", 0x4401082E,        1, base=16, readOnly, bitRange=6
+sfr = "SM5_ACT.[7]LATCHPDI"                                                                    , "Memory", 0x4401082E,        1, base=16, readOnly, bitRange=7
+sfr = "SM5_PDI_CONT"                                                                           , "Memory", 0x4401082F,        1, base=16
+sfr = "SM5_PDI_CONT.[0]DEACTIVE"                                                               , "Memory", 0x4401082F,        1, base=16, bitRange=0
+sfr = "SM5_PDI_CONT.[1]REPEATACK"                                                              , "Memory", 0x4401082F,        1, base=16, bitRange=1
+sfr = "SM6_P_START_ADR"                                                                        , "Memory", 0x44010830,        2, base=16, readOnly
+sfr = "SM6_P_START_ADR.[15:0]SMSTAADDR"                                                        , "Memory", 0x44010830,        2, base=16, readOnly, bitRange=0-15
+sfr = "SM6_LEN"                                                                                , "Memory", 0x44010832,        2, base=16, readOnly
+sfr = "SM6_LEN.[15:0]SMLEN"                                                                    , "Memory", 0x44010832,        2, base=16, readOnly, bitRange=0-15
+sfr = "SM6_CONTROL"                                                                            , "Memory", 0x44010834,        1, base=16, readOnly
+sfr = "SM6_CONTROL.[1:0]OPEMODE"                                                               , "Memory", 0x44010834,        1, base=16, readOnly, bitRange=0-1
+sfr = "SM6_CONTROL.[3:2]DIR"                                                                   , "Memory", 0x44010834,        1, base=16, readOnly, bitRange=2-3
+sfr = "SM6_CONTROL.[4]IRQECAT"                                                                 , "Memory", 0x44010834,        1, base=16, readOnly, bitRange=4
+sfr = "SM6_CONTROL.[5]IRQPDI"                                                                  , "Memory", 0x44010834,        1, base=16, readOnly, bitRange=5
+sfr = "SM6_CONTROL.[6]WDTRGEN"                                                                 , "Memory", 0x44010834,        1, base=16, readOnly, bitRange=6
+sfr = "SM6_STATUS"                                                                             , "Memory", 0x44010835,        1, base=16, readOnly
+sfr = "SM6_STATUS.[0]INTWR"                                                                    , "Memory", 0x44010835,        1, base=16, readOnly, bitRange=0
+sfr = "SM6_STATUS.[1]INTRD"                                                                    , "Memory", 0x44010835,        1, base=16, readOnly, bitRange=1
+sfr = "SM6_STATUS.[3]MAILBOX"                                                                  , "Memory", 0x44010835,        1, base=16, readOnly, bitRange=3
+sfr = "SM6_STATUS.[5:4]BUFFERED"                                                               , "Memory", 0x44010835,        1, base=16, readOnly, bitRange=4-5
+sfr = "SM6_STATUS.[6]RDBUF"                                                                    , "Memory", 0x44010835,        1, base=16, readOnly, bitRange=6
+sfr = "SM6_STATUS.[7]WRBUF"                                                                    , "Memory", 0x44010835,        1, base=16, readOnly, bitRange=7
+sfr = "SM6_ACT"                                                                                , "Memory", 0x44010836,        1, base=16, readOnly
+sfr = "SM6_ACT.[0]SMEN"                                                                        , "Memory", 0x44010836,        1, base=16, readOnly, bitRange=0
+sfr = "SM6_ACT.[1]REPEATREQ"                                                                   , "Memory", 0x44010836,        1, base=16, readOnly, bitRange=1
+sfr = "SM6_ACT.[6]LATCHECAT"                                                                   , "Memory", 0x44010836,        1, base=16, readOnly, bitRange=6
+sfr = "SM6_ACT.[7]LATCHPDI"                                                                    , "Memory", 0x44010836,        1, base=16, readOnly, bitRange=7
+sfr = "SM6_PDI_CONT"                                                                           , "Memory", 0x44010837,        1, base=16
+sfr = "SM6_PDI_CONT.[0]DEACTIVE"                                                               , "Memory", 0x44010837,        1, base=16, bitRange=0
+sfr = "SM6_PDI_CONT.[1]REPEATACK"                                                              , "Memory", 0x44010837,        1, base=16, bitRange=1
+sfr = "SM7_P_START_ADR"                                                                        , "Memory", 0x44010838,        2, base=16, readOnly
+sfr = "SM7_P_START_ADR.[15:0]SMSTAADDR"                                                        , "Memory", 0x44010838,        2, base=16, readOnly, bitRange=0-15
+sfr = "SM7_LEN"                                                                                , "Memory", 0x4401083A,        2, base=16, readOnly
+sfr = "SM7_LEN.[15:0]SMLEN"                                                                    , "Memory", 0x4401083A,        2, base=16, readOnly, bitRange=0-15
+sfr = "SM7_CONTROL"                                                                            , "Memory", 0x4401083C,        1, base=16, readOnly
+sfr = "SM7_CONTROL.[1:0]OPEMODE"                                                               , "Memory", 0x4401083C,        1, base=16, readOnly, bitRange=0-1
+sfr = "SM7_CONTROL.[3:2]DIR"                                                                   , "Memory", 0x4401083C,        1, base=16, readOnly, bitRange=2-3
+sfr = "SM7_CONTROL.[4]IRQECAT"                                                                 , "Memory", 0x4401083C,        1, base=16, readOnly, bitRange=4
+sfr = "SM7_CONTROL.[5]IRQPDI"                                                                  , "Memory", 0x4401083C,        1, base=16, readOnly, bitRange=5
+sfr = "SM7_CONTROL.[6]WDTRGEN"                                                                 , "Memory", 0x4401083C,        1, base=16, readOnly, bitRange=6
+sfr = "SM7_STATUS"                                                                             , "Memory", 0x4401083D,        1, base=16, readOnly
+sfr = "SM7_STATUS.[0]INTWR"                                                                    , "Memory", 0x4401083D,        1, base=16, readOnly, bitRange=0
+sfr = "SM7_STATUS.[1]INTRD"                                                                    , "Memory", 0x4401083D,        1, base=16, readOnly, bitRange=1
+sfr = "SM7_STATUS.[3]MAILBOX"                                                                  , "Memory", 0x4401083D,        1, base=16, readOnly, bitRange=3
+sfr = "SM7_STATUS.[5:4]BUFFERED"                                                               , "Memory", 0x4401083D,        1, base=16, readOnly, bitRange=4-5
+sfr = "SM7_STATUS.[6]RDBUF"                                                                    , "Memory", 0x4401083D,        1, base=16, readOnly, bitRange=6
+sfr = "SM7_STATUS.[7]WRBUF"                                                                    , "Memory", 0x4401083D,        1, base=16, readOnly, bitRange=7
+sfr = "SM7_ACT"                                                                                , "Memory", 0x4401083E,        1, base=16, readOnly
+sfr = "SM7_ACT.[0]SMEN"                                                                        , "Memory", 0x4401083E,        1, base=16, readOnly, bitRange=0
+sfr = "SM7_ACT.[1]REPEATREQ"                                                                   , "Memory", 0x4401083E,        1, base=16, readOnly, bitRange=1
+sfr = "SM7_ACT.[6]LATCHECAT"                                                                   , "Memory", 0x4401083E,        1, base=16, readOnly, bitRange=6
+sfr = "SM7_ACT.[7]LATCHPDI"                                                                    , "Memory", 0x4401083E,        1, base=16, readOnly, bitRange=7
+sfr = "SM7_PDI_CONT"                                                                           , "Memory", 0x4401083F,        1, base=16
+sfr = "SM7_PDI_CONT.[0]DEACTIVE"                                                               , "Memory", 0x4401083F,        1, base=16, bitRange=0
+sfr = "SM7_PDI_CONT.[1]REPEATACK"                                                              , "Memory", 0x4401083F,        1, base=16, bitRange=1
+sfr = "DC_RCV_TIME_PORT0"                                                                      , "Memory", 0x44010900,        4, base=16, readOnly
+sfr = "DC_RCV_TIME_PORT0.[31:0]RCVTIME0"                                                       , "Memory", 0x44010900,        4, base=16, readOnly, bitRange=0-31
+sfr = "DC_RCV_TIME_PORT1"                                                                      , "Memory", 0x44010904,        4, base=16, readOnly
+sfr = "DC_RCV_TIME_PORT1.[31:0]RCVTIME1"                                                       , "Memory", 0x44010904,        4, base=16, readOnly, bitRange=0-31
+sfr = "DC_RCV_TIME_PORT2"                                                                      , "Memory", 0x44010908,        4, base=16, readOnly
+sfr = "DC_RCV_TIME_PORT2.[31:0]RCVTIME2"                                                       , "Memory", 0x44010908,        4, base=16, readOnly, bitRange=0-31
+sfr = "DC_SYS_TIME"                                                                            , "Memory", 0x44010910,        8, base=16, readOnly
+sfr = "DC_SYS_TIME.[63:0]SYSTIME"                                                              , "Memory", 0x44010910,        8, base=16, readOnly, bitRange=0-63
+sfr = "DC_RCV_TIME_UNIT"                                                                       , "Memory", 0x44010918,        8, base=16, readOnly
+sfr = "DC_RCV_TIME_UNIT.[63:0]RCVTIMEEPU"                                                      , "Memory", 0x44010918,        8, base=16, readOnly, bitRange=0-63
+sfr = "DC_SYS_TIME_OFFSET"                                                                     , "Memory", 0x44010920,        8, base=16, readOnly
+sfr = "DC_SYS_TIME_OFFSET.[63:0]SYSTIMOFST"                                                    , "Memory", 0x44010920,        8, base=16, readOnly, bitRange=0-63
+sfr = "DC_SYS_TIME_DELAY"                                                                      , "Memory", 0x44010928,        4, base=16, readOnly
+sfr = "DC_SYS_TIME_DELAY.[31:0]SYSTIMDLY"                                                      , "Memory", 0x44010928,        4, base=16, readOnly, bitRange=0-31
+sfr = "DC_SYS_TIME_DIFF"                                                                       , "Memory", 0x4401092C,        4, base=16, readOnly
+sfr = "DC_SYS_TIME_DIFF.[30:0]DIFF"                                                            , "Memory", 0x4401092C,        4, base=16, readOnly, bitRange=0-30
+sfr = "DC_SYS_TIME_DIFF.[31]LOCALCOPY"                                                         , "Memory", 0x4401092C,        4, base=16, readOnly, bitRange=31
+sfr = "DC_SPEED_COUNT_START"                                                                   , "Memory", 0x44010930,        2, base=16, readOnly
+sfr = "DC_SPEED_COUNT_START.[14:0]SPDCNTSTRT"                                                  , "Memory", 0x44010930,        2, base=16, readOnly, bitRange=0-14
+sfr = "DC_SPEED_COUNT_DIFF"                                                                    , "Memory", 0x44010932,        2, base=16, readOnly
+sfr = "DC_SPEED_COUNT_DIFF.[15:0]SPDCNTDIFF"                                                   , "Memory", 0x44010932,        2, base=16, readOnly, bitRange=0-15
+sfr = "DC_SYS_TIME_DIFF_FIL_DEPTH"                                                             , "Memory", 0x44010934,        1, base=16, readOnly
+sfr = "DC_SYS_TIME_DIFF_FIL_DEPTH.[3:0]SYSTIMDEP"                                              , "Memory", 0x44010934,        1, base=16, readOnly, bitRange=0-3
+sfr = "DC_SPEED_COUNT_FIL_DEPTH"                                                               , "Memory", 0x44010935,        1, base=16, readOnly
+sfr = "DC_SPEED_COUNT_FIL_DEPTH.[3:0]CLKPERDEP"                                                , "Memory", 0x44010935,        1, base=16, readOnly, bitRange=0-3
+sfr = "DC_CYC_CONT"                                                                            , "Memory", 0x44010980,        1, base=16, readOnly
+sfr = "DC_CYC_CONT.[0]SYNCOUT"                                                                 , "Memory", 0x44010980,        1, base=16, readOnly, bitRange=0
+sfr = "DC_CYC_CONT.[4]LATCH0"                                                                  , "Memory", 0x44010980,        1, base=16, readOnly, bitRange=4
+sfr = "DC_CYC_CONT.[5]LATCH1"                                                                  , "Memory", 0x44010980,        1, base=16, readOnly, bitRange=5
+sfr = "DC_ACT"                                                                                 , "Memory", 0x44010981,        1, base=16
+sfr = "DC_ACT.[0]SYNCACT"                                                                      , "Memory", 0x44010981,        1, base=16, bitRange=0
+sfr = "DC_ACT.[1]SYNC0"                                                                        , "Memory", 0x44010981,        1, base=16, bitRange=1
+sfr = "DC_ACT.[2]SYNC1"                                                                        , "Memory", 0x44010981,        1, base=16, bitRange=2
+sfr = "DC_ACT.[3]AUTOACT"                                                                      , "Memory", 0x44010981,        1, base=16, bitRange=3
+sfr = "DC_ACT.[4]EXTSTARTTIME"                                                                 , "Memory", 0x44010981,        1, base=16, bitRange=4
+sfr = "DC_ACT.[5]STARTTIME"                                                                    , "Memory", 0x44010981,        1, base=16, bitRange=5
+sfr = "DC_ACT.[6]NEARFUTURE"                                                                   , "Memory", 0x44010981,        1, base=16, bitRange=6
+sfr = "DC_ACT.[7]DBGPULSE"                                                                     , "Memory", 0x44010981,        1, base=16, bitRange=7
+sfr = "DC_PULSE_LEN"                                                                           , "Memory", 0x44010982,        2, base=16, readOnly
+sfr = "DC_PULSE_LEN.[15:0]PULSELEN"                                                            , "Memory", 0x44010982,        2, base=16, readOnly, bitRange=0-15
+sfr = "DC_ACT_STAT"                                                                            , "Memory", 0x44010984,        1, base=16, readOnly
+sfr = "DC_ACT_STAT.[0]SYNC0ACT"                                                                , "Memory", 0x44010984,        1, base=16, readOnly, bitRange=0
+sfr = "DC_ACT_STAT.[1]SYNC1ACT"                                                                , "Memory", 0x44010984,        1, base=16, readOnly, bitRange=1
+sfr = "DC_ACT_STAT.[2]STARTTIME"                                                               , "Memory", 0x44010984,        1, base=16, readOnly, bitRange=2
+sfr = "DC_SYNC0_STAT"                                                                          , "Memory", 0x4401098E,        1, base=16, readOnly
+sfr = "DC_SYNC0_STAT.[0]SYNC0STA"                                                              , "Memory", 0x4401098E,        1, base=16, readOnly, bitRange=0
+sfr = "DC_SYNC1_STAT"                                                                          , "Memory", 0x4401098F,        1, base=16, readOnly
+sfr = "DC_SYNC1_STAT.[0]SYNC1STA"                                                              , "Memory", 0x4401098F,        1, base=16, readOnly, bitRange=0
+sfr = "DC_CYC_START_TIME"                                                                      , "Memory", 0x44010990,        8, base=16
+sfr = "DC_CYC_START_TIME.[63:0]STATIM"                                                         , "Memory", 0x44010990,        8, base=16, bitRange=0-63
+sfr = "DC_NEXT_SYNC1_PULSE"                                                                    , "Memory", 0x44010998,        8, base=16, readOnly
+sfr = "DC_NEXT_SYNC1_PULSE.[63:0]SYNC1PULSE"                                                   , "Memory", 0x44010998,        8, base=16, readOnly, bitRange=0-63
+sfr = "DC_SYNC0_CYC_TIME"                                                                      , "Memory", 0x440109A0,        4, base=16
+sfr = "DC_SYNC0_CYC_TIME.[31:0]SYNC0CYC"                                                       , "Memory", 0x440109A0,        4, base=16, bitRange=0-31
+sfr = "DC_SYNC1_CYC_TIME"                                                                      , "Memory", 0x440109A4,        4, base=16
+sfr = "DC_SYNC1_CYC_TIME.[31:0]SYNC1CYC"                                                       , "Memory", 0x440109A4,        4, base=16, bitRange=0-31
+sfr = "DC_LATCH0_CONT"                                                                         , "Memory", 0x440109A8,        1, base=16
+sfr = "DC_LATCH0_CONT.[0]POSEDGE"                                                              , "Memory", 0x440109A8,        1, base=16, bitRange=0
+sfr = "DC_LATCH0_CONT.[1]NEGEDGE"                                                              , "Memory", 0x440109A8,        1, base=16, bitRange=1
+sfr = "DC_LATCH1_CONT"                                                                         , "Memory", 0x440109A9,        1, base=16
+sfr = "DC_LATCH1_CONT.[0]POSEDGE"                                                              , "Memory", 0x440109A9,        1, base=16, bitRange=0
+sfr = "DC_LATCH1_CONT.[1]NEGEDGE"                                                              , "Memory", 0x440109A9,        1, base=16, bitRange=1
+sfr = "DC_LATCH0_STAT"                                                                         , "Memory", 0x440109AE,        1, base=16, readOnly
+sfr = "DC_LATCH0_STAT.[0]EVENTPOS"                                                             , "Memory", 0x440109AE,        1, base=16, readOnly, bitRange=0
+sfr = "DC_LATCH0_STAT.[1]EVENTNEG"                                                             , "Memory", 0x440109AE,        1, base=16, readOnly, bitRange=1
+sfr = "DC_LATCH0_STAT.[2]PINSTATE"                                                             , "Memory", 0x440109AE,        1, base=16, readOnly, bitRange=2
+sfr = "DC_LATCH1_STAT"                                                                         , "Memory", 0x440109AF,        1, base=16, readOnly
+sfr = "DC_LATCH1_STAT.[0]EVENTPOS"                                                             , "Memory", 0x440109AF,        1, base=16, readOnly, bitRange=0
+sfr = "DC_LATCH1_STAT.[1]EVENTNEG"                                                             , "Memory", 0x440109AF,        1, base=16, readOnly, bitRange=1
+sfr = "DC_LATCH1_STAT.[2]PINSTATE"                                                             , "Memory", 0x440109AF,        1, base=16, readOnly, bitRange=2
+sfr = "DC_LATCH0_TIME_POS"                                                                     , "Memory", 0x440109B0,        8, base=16, readOnly
+sfr = "DC_LATCH0_TIME_POS.[63:0]SYSTIME"                                                       , "Memory", 0x440109B0,        8, base=16, readOnly, bitRange=0-63
+sfr = "DC_LATCH0_TIME_NEG"                                                                     , "Memory", 0x440109B8,        8, base=16, readOnly
+sfr = "DC_LATCH0_TIME_NEG.[63:0]SYSTIME"                                                       , "Memory", 0x440109B8,        8, base=16, readOnly, bitRange=0-63
+sfr = "DC_LATCH1_TIME_POS"                                                                     , "Memory", 0x440109C0,        8, base=16, readOnly
+sfr = "DC_LATCH1_TIME_POS.[63:0]SYSTIME"                                                       , "Memory", 0x440109C0,        8, base=16, readOnly, bitRange=0-63
+sfr = "DC_LATCH1_TIME_NEG"                                                                     , "Memory", 0x440109C8,        8, base=16, readOnly
+sfr = "DC_LATCH1_TIME_NEG.[63:0]SYSTIME"                                                       , "Memory", 0x440109C8,        8, base=16, readOnly, bitRange=0-63
+sfr = "DC_ECAT_CNG_EV_TIME"                                                                    , "Memory", 0x440109F0,        4, base=16, readOnly
+sfr = "DC_ECAT_CNG_EV_TIME.[31:0]ECATCHANGE"                                                   , "Memory", 0x440109F0,        4, base=16, readOnly, bitRange=0-31
+sfr = "DC_PDI_START_EV_TIME"                                                                   , "Memory", 0x440109F8,        4, base=16, readOnly
+sfr = "DC_PDI_START_EV_TIME.[31:0]PDISTART"                                                    , "Memory", 0x440109F8,        4, base=16, readOnly, bitRange=0-31
+sfr = "DC_PDI_CNG_EV_TIME"                                                                     , "Memory", 0x440109FC,        4, base=16, readOnly
+sfr = "DC_PDI_CNG_EV_TIME.[31:0]PDICHANGE"                                                     , "Memory", 0x440109FC,        4, base=16, readOnly, bitRange=0-31
+sfr = "PRODUCT_ID"                                                                             , "Memory", 0x44010E00,        8, base=16, readOnly
+sfr = "PRODUCT_ID.[63:0]PROID"                                                                 , "Memory", 0x44010E00,        8, base=16, readOnly, bitRange=0-63
+sfr = "VENDOR_ID"                                                                              , "Memory", 0x44010E08,        8, base=16, readOnly
+sfr = "VENDOR_ID.[31:0]VENDORID"                                                               , "Memory", 0x44010E08,        8, base=16, readOnly, bitRange=0-31
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// EtherCAT Slave Controller -----
+group = "ETHCAT","TYPE","REVISION","BUILD","FMMU_NUM","SYNC_MANAGER","RAM_SIZE","PORT_DESC","FEATURE","STATION_ADR","STATION_ALIAS","WR_REG_ENABLE","WR_REG_PROTECT","ESC_WR_ENABLE","ESC_WR_PROTECT","ESC_RESET_ECAT","ESC_RESET_PDI","ESC_DL_CONTROL","PHYSICAL_RW_OFFSET","ESC_DL_STATUS","AL_CONTROL","AL_STATUS","AL_STATUS_CODE","RUN_LED_OVERRIDE","ERR_LED_OVERRIDE","PDI_CONTROL","ESC_CONFIG","PDI_CONFIG","SYNC_LATCH_CONFIG","EXT_PDI_CONFIG","ECAT_EVENT_MASK","AL_EVENT_MASK","ECAT_EVENT_REQ","AL_EVENT_REQ","RX_ERR_COUNT0","RX_ERR_COUNT1","RX_ERR_COUNT2","FWD_RX_ERR_COUNT0","FWD_RX_ERR_COUNT1","FWD_RX_ERR_COUNT2","ECAT_PROC_ERR_COUNT","PDI_ERR_COUNT","LOST_LINK_COUNT0","LOST_LINK_COUNT1","LOST_LINK_COUNT2","WD_DIVIDE","WDT_PDI","WDT_DATA","WDS_DATA","WDC_DATA","WDC_PDI","EEP_CONF","EEP_STATE","EEP_CONT_STAT","EEP_ADR","EEP_DATA","MII_CONT_STAT","PHY_ADR","PHY_REG_ADR","PHY_DATA","MII_ECAT_ACS_STAT","MII_PDI_ACS_STAT","PHY_STATUS0","PHY_STATUS1","PHY_STATUS2","FMMU0_L_START_ADR","FMMU0_LEN","FMMU0_L_START_BIT","FMMU0_L_STOP_BIT","FMMU0_P_START_ADR","FMMU0_P_START_BIT","FMMU0_TYPE","FMMU0_ACT","FMMU1_L_START_ADR","FMMU1_LEN","FMMU1_L_START_BIT","FMMU1_L_STOP_BIT","FMMU1_P_START_ADR","FMMU1_P_START_BIT","FMMU1_TYPE","FMMU1_ACT","FMMU2_L_START_ADR","FMMU2_LEN","FMMU2_L_START_BIT","FMMU2_L_STOP_BIT","FMMU2_P_START_ADR","FMMU2_P_START_BIT","FMMU2_TYPE","FMMU2_ACT","FMMU3_L_START_ADR","FMMU3_LEN","FMMU3_L_START_BIT","FMMU3_L_STOP_BIT","FMMU3_P_START_ADR","FMMU3_P_START_BIT","FMMU3_TYPE","FMMU3_ACT","FMMU4_L_START_ADR","FMMU4_LEN","FMMU4_L_START_BIT","FMMU4_L_STOP_BIT","FMMU4_P_START_ADR","FMMU4_P_START_BIT","FMMU4_TYPE","FMMU4_ACT","FMMU5_L_START_ADR","FMMU5_LEN","FMMU5_L_START_BIT","FMMU5_L_STOP_BIT","FMMU5_P_START_ADR","FMMU5_P_START_BIT","FMMU5_TYPE","FMMU5_ACT","FMMU6_L_START_ADR","FMMU6_LEN","FMMU6_L_START_BIT","FMMU6_L_STOP_BIT","FMMU6_P_START_ADR","FMMU6_P_START_BIT","FMMU6_TYPE","FMMU6_ACT","FMMU7_L_START_ADR","FMMU7_LEN","FMMU7_L_START_BIT","FMMU7_L_STOP_BIT","FMMU7_P_START_ADR","FMMU7_P_START_BIT","FMMU7_TYPE","FMMU7_ACT","SM0_P_START_ADR","SM0_LEN","SM0_CONTROL","SM0_STATUS","SM0_ACT","SM0_PDI_CONT","SM1_P_START_ADR","SM1_LEN","SM1_CONTROL","SM1_STATUS","SM1_ACT","SM1_PDI_CONT","SM2_P_START_ADR","SM2_LEN","SM2_CONTROL","SM2_STATUS","SM2_ACT","SM2_PDI_CONT","SM3_P_START_ADR","SM3_LEN","SM3_CONTROL","SM3_STATUS","SM3_ACT","SM3_PDI_CONT","SM4_P_START_ADR","SM4_LEN","SM4_CONTROL","SM4_STATUS","SM4_ACT","SM4_PDI_CONT","SM5_P_START_ADR","SM5_LEN","SM5_CONTROL","SM5_STATUS","SM5_ACT","SM5_PDI_CONT","SM6_P_START_ADR","SM6_LEN","SM6_CONTROL","SM6_STATUS","SM6_ACT","SM6_PDI_CONT","SM7_P_START_ADR","SM7_LEN","SM7_CONTROL","SM7_STATUS","SM7_ACT","SM7_PDI_CONT","DC_RCV_TIME_PORT0","DC_RCV_TIME_PORT1","DC_RCV_TIME_PORT2","DC_SYS_TIME","DC_RCV_TIME_UNIT","DC_SYS_TIME_OFFSET","DC_SYS_TIME_DELAY","DC_SYS_TIME_DIFF","DC_SPEED_COUNT_START","DC_SPEED_COUNT_DIFF","DC_SYS_TIME_DIFF_FIL_DEPTH","DC_SPEED_COUNT_FIL_DEPTH","DC_CYC_CONT","DC_ACT","DC_PULSE_LEN","DC_ACT_STAT","DC_SYNC0_STAT","DC_SYNC1_STAT","DC_CYC_START_TIME","DC_NEXT_SYNC1_PULSE","DC_SYNC0_CYC_TIME","DC_SYNC1_CYC_TIME","DC_LATCH0_CONT","DC_LATCH1_CONT","DC_LATCH0_STAT","DC_LATCH1_STAT","DC_LATCH0_TIME_POS","DC_LATCH0_TIME_NEG","DC_LATCH1_TIME_POS","DC_LATCH1_TIME_NEG","DC_ECAT_CNG_EV_TIME","DC_PDI_START_EV_TIME","DC_PDI_CNG_EV_TIME","PRODUCT_ID","VENDOR_ID"

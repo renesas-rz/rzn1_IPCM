@@ -1,0 +1,36 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : RESETSAFE
+;               Safety Reset
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "rResetLoadCount"                                                                        , "Memory", 0x51006000,        4, base=16
+sfr = "rResetLoadCount.[15:0]LoadCount"                                                        , "Memory", 0x51006000,        4, base=16, bitRange=0-15
+sfr = "rResetCurrentCount"                                                                     , "Memory", 0x51006004,        4, base=16, readOnly
+sfr = "rResetCurrentCount.[15:0]CurrentCount"                                                  , "Memory", 0x51006004,        4, base=16, readOnly, bitRange=0-15
+sfr = "rResetStatusInt0"                                                                       , "Memory", 0x51006008,        4, base=16, readOnly
+sfr = "rResetStatusInt0.[0]StatusInt0"                                                         , "Memory", 0x51006008,        4, base=16, readOnly, bitRange=0
+sfr = "rResetStatusInt1"                                                                       , "Memory", 0x5100600C,        4, base=16, readOnly
+sfr = "rResetStatusInt1.[0]StatusInt1"                                                         , "Memory", 0x5100600C,        4, base=16, readOnly, bitRange=0
+sfr = "rResetClearInt"                                                                         , "Memory", 0x51006010,        4, base=16, readOnly
+sfr = "rResetClearInt.[0]ClearInt"                                                             , "Memory", 0x51006010,        4, base=16, readOnly, bitRange=0
+sfr = "rResetStatus"                                                                           , "Memory", 0x51006014,        4, base=16
+sfr = "rResetStatus.[0]EnableResetBp"                                                          , "Memory", 0x51006014,        4, base=16, bitRange=0
+sfr = "rResetStatus.[1]MaskInt"                                                                , "Memory", 0x51006014,        4, base=16, bitRange=1
+sfr = "rResetStatus.[2]SetResetSoft"                                                           , "Memory", 0x51006014,        4, base=16, bitRange=2
+sfr = "rResetStatus.[3]StatusResetSoft"                                                        , "Memory", 0x51006014,        4, base=16, bitRange=3
+sfr = "rResetTestMode"                                                                         , "Memory", 0x51006018,        4, base=16
+sfr = "rResetTestMode.[0]TestMode"                                                             , "Memory", 0x51006018,        4, base=16, bitRange=0
+sfr = "rResetTestMode.[1]TestResetBp"                                                          , "Memory", 0x51006018,        4, base=16, bitRange=1
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// Safety Reset -----
+group = "RESETSAFE","rResetLoadCount","rResetCurrentCount","rResetStatusInt0","rResetStatusInt1","rResetClearInt","rResetStatus","rResetTestMode"

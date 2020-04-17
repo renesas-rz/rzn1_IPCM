@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<flash_device>
+  <exe>RZN1_SerialFlash.out</exe>
+  <page>256</page>
+  <block>512 0x10000</block>
+  <flash_base>0x10000000</flash_base>
+  <aggregate>1</aggregate>
+  <args_doc>-f: fast operating mode (support for only RZ/N1L-DB)
+  </args_doc>
+</flash_device>

@@ -1,0 +1,98 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : DDRPHY
+;               DDRPHY
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "FUNCCTRL"                                                                               , "Memory", 0x4000E000,        4, base=16
+sfr = "FUNCCTRL.[0]FUNCRSTB"                                                                   , "Memory", 0x4000E000,        4, base=16, bitRange=0
+sfr = "FUNCCTRL.[9:8]IFSEL"                                                                    , "Memory", 0x4000E000,        4, base=16, bitRange=8-9
+sfr = "FUNCCTRL.[22:16]MASKSDLOFS"                                                             , "Memory", 0x4000E000,        4, base=16, bitRange=16-22
+sfr = "DLLCTRL"                                                                                , "Memory", 0x4000E004,        4, base=16
+sfr = "DLLCTRL.[0]MDLLSTBY"                                                                    , "Memory", 0x4000E004,        4, base=16, bitRange=0
+sfr = "DLLCTRL.[2:1]MFSL"                                                                      , "Memory", 0x4000E004,        4, base=16, bitRange=1-2
+sfr = "DLLCTRL.[3]DDMODE"                                                                      , "Memory", 0x4000E004,        4, base=16, bitRange=3
+sfr = "DLLCTRL.[4]MSATMODE"                                                                    , "Memory", 0x4000E004,        4, base=16, bitRange=4
+sfr = "DLLCTRL.[5]HSLMODE"                                                                     , "Memory", 0x4000E004,        4, base=16, bitRange=5
+sfr = "DLLCTRL.[17:8]MDACNT"                                                                   , "Memory", 0x4000E004,        4, base=16, bitRange=8-17
+sfr = "DLLCTRL.[20]DACNTUPD"                                                                   , "Memory", 0x4000E004,        4, base=16, bitRange=20
+sfr = "DLLCTRL.[21]SDLYCTRL"                                                                   , "Memory", 0x4000E004,        4, base=16, bitRange=21
+sfr = "DLLCTRL.[22]MDACNTM"                                                                    , "Memory", 0x4000E004,        4, base=16, bitRange=22
+sfr = "DLLCTRL.[24]MSATFG"                                                                     , "Memory", 0x4000E004,        4, base=16, bitRange=24
+sfr = "DLLCTRL.[25]MDLLOCK"                                                                    , "Memory", 0x4000E004,        4, base=16, bitRange=25
+sfr = "DLLCTRL.[26]ASDLLOCK"                                                                   , "Memory", 0x4000E004,        4, base=16, bitRange=26
+sfr = "ZQCALCTRL"                                                                              , "Memory", 0x4000E008,        4, base=16
+sfr = "ZQCALCTRL.[0]ZQCALRSTB"                                                                 , "Memory", 0x4000E008,        4, base=16, bitRange=0
+sfr = "ZQCALCTRL.[1]ZQCALSTRV"                                                                 , "Memory", 0x4000E008,        4, base=16, bitRange=1
+sfr = "ZQCALCTRL.[2]ZQCALMODE"                                                                 , "Memory", 0x4000E008,        4, base=16, bitRange=2
+sfr = "ZQCALCTRL.[7:4]ZQCALITVL"                                                               , "Memory", 0x4000E008,        4, base=16, bitRange=4-7
+sfr = "ZQCALCTRL.[9:8]ZQCALFREQ"                                                               , "Memory", 0x4000E008,        4, base=16, bitRange=8-9
+sfr = "ZQCALCTRL.[14]ZQCALINIT"                                                                , "Memory", 0x4000E008,        4, base=16, bitRange=14
+sfr = "ZQCALCTRL.[18:15]ZQCALNF"                                                               , "Memory", 0x4000E008,        4, base=16, bitRange=15-18
+sfr = "ZQCALCTRL.[21:19]ZQCALNC"                                                               , "Memory", 0x4000E008,        4, base=16, bitRange=19-21
+sfr = "ZQCALCTRL.[25:22]ZQCALPF"                                                               , "Memory", 0x4000E008,        4, base=16, bitRange=22-25
+sfr = "ZQCALCTRL.[28:26]ZQCALPC"                                                               , "Memory", 0x4000E008,        4, base=16, bitRange=26-28
+sfr = "ZQCALCTRL.[29]ZQCALGAP"                                                                 , "Memory", 0x4000E008,        4, base=16, bitRange=29
+sfr = "ZQCALCTRL.[30]ZQCALEND"                                                                 , "Memory", 0x4000E008,        4, base=16, bitRange=30
+sfr = "ZQCALCTRL.[31]ZQCALRUN"                                                                 , "Memory", 0x4000E008,        4, base=16, bitRange=31
+sfr = "ZQODTCTRL"                                                                              , "Memory", 0x4000E00C,        4, base=16
+sfr = "ZQODTCTRL.[1:0]DRAMIF"                                                                  , "Memory", 0x4000E00C,        4, base=16, bitRange=0-1
+sfr = "ZQODTCTRL.[4]PHYODTEN"                                                                  , "Memory", 0x4000E00C,        4, base=16, bitRange=4
+sfr = "ZQODTCTRL.[6:5]PHYODT"                                                                  , "Memory", 0x4000E00C,        4, base=16, bitRange=5-6
+sfr = "ZQODTCTRL.[9:8]SRCMDAD"                                                                 , "Memory", 0x4000E00C,        4, base=16, bitRange=8-9
+sfr = "ZQODTCTRL.[11:10]SRCK"                                                                  , "Memory", 0x4000E00C,        4, base=16, bitRange=10-11
+sfr = "ZQODTCTRL.[13:12]SRDQ"                                                                  , "Memory", 0x4000E00C,        4, base=16, bitRange=12-13
+sfr = "ZQODTCTRL.[18:15]ZQCMDAD"                                                               , "Memory", 0x4000E00C,        4, base=16, bitRange=15-18
+sfr = "ZQODTCTRL.[22:19]ZQCK"                                                                  , "Memory", 0x4000E00C,        4, base=16, bitRange=19-22
+sfr = "ZQODTCTRL.[26:23]ZQDATA"                                                                , "Memory", 0x4000E00C,        4, base=16, bitRange=23-26
+sfr = "ZQODTCTRL.[28:27]FIFORPINIT"                                                            , "Memory", 0x4000E00C,        4, base=16, bitRange=27-28
+sfr = "ZQODTCTRL.[29]WRFIFOEN"                                                                 , "Memory", 0x4000E00C,        4, base=16, bitRange=29
+sfr = "ZQODTCTRL.[31:30]CAPHASE"                                                               , "Memory", 0x4000E00C,        4, base=16, bitRange=30-31
+sfr = "RDCTRL"                                                                                 , "Memory", 0x4000E010,        4, base=16
+sfr = "RDCTRL.[3:0]PHYIENOFT"                                                                  , "Memory", 0x4000E010,        4, base=16, bitRange=0-3
+sfr = "RDCTRL.[7:4]PHYIENONT"                                                                  , "Memory", 0x4000E010,        4, base=16, bitRange=4-7
+sfr = "RDCTRL.[11:8]PHYBENOFT"                                                                 , "Memory", 0x4000E010,        4, base=16, bitRange=8-11
+sfr = "RDCTRL.[15:12]PHYBENONT"                                                                , "Memory", 0x4000E010,        4, base=16, bitRange=12-15
+sfr = "RDCTRL.[19:16]PDQODTOFT"                                                                , "Memory", 0x4000E010,        4, base=16, bitRange=16-19
+sfr = "RDCTRL.[23:20]PDQODTONT"                                                                , "Memory", 0x4000E010,        4, base=16, bitRange=20-23
+sfr = "RDCTRL.[27:24]PHYODTOFT"                                                                , "Memory", 0x4000E010,        4, base=16, bitRange=24-27
+sfr = "RDCTRL.[31:28]PHYODTONT"                                                                , "Memory", 0x4000E010,        4, base=16, bitRange=28-31
+sfr = "RDTMG"                                                                                  , "Memory", 0x4000E014,        4, base=16
+sfr = "RDTMG.[1:0]WDOMODE"                                                                     , "Memory", 0x4000E014,        4, base=16, bitRange=0-1
+sfr = "RDTMG.[7:4]RDENVALID"                                                                   , "Memory", 0x4000E014,        4, base=16, bitRange=4-7
+sfr = "FIFOINIT"                                                                               , "Memory", 0x4000E018,        4, base=16
+sfr = "FIFOINIT.[0]WRPTINITEXE"                                                                , "Memory", 0x4000E018,        4, base=16, bitRange=0
+sfr = "FIFOINIT.[8]RDPTINITEXE"                                                                , "Memory", 0x4000E018,        4, base=16, bitRange=8
+sfr = "OUTCTRL"                                                                                , "Memory", 0x4000E01C,        4, base=16
+sfr = "OUTCTRL.[0]ADCMDOE"                                                                     , "Memory", 0x4000E01C,        4, base=16, bitRange=0
+sfr = "OUTCTRL.[1]CKEODTOE"                                                                    , "Memory", 0x4000E01C,        4, base=16, bitRange=1
+sfr = "OUTCTRL.[2]RESETBOE"                                                                    , "Memory", 0x4000E01C,        4, base=16, bitRange=2
+sfr = "OUTCTRL.[5:4]DISOUT"                                                                    , "Memory", 0x4000E01C,        4, base=16, bitRange=4-5
+sfr = "OUTCTRL.[12:8]MWL"                                                                      , "Memory", 0x4000E01C,        4, base=16, bitRange=8-12
+sfr = "OUTCTRL.[20:16]MRL"                                                                     , "Memory", 0x4000E01C,        4, base=16, bitRange=16-20
+sfr = "OUTCTRL.[25:24]MBL"                                                                     , "Memory", 0x4000E01C,        4, base=16, bitRange=24-25
+sfr = "WLCTRL1"                                                                                , "Memory", 0x4000E040,        4, base=16
+sfr = "WLCTRL1.[6:0]WL1OFS"                                                                    , "Memory", 0x4000E040,        4, base=16, bitRange=0-6
+sfr = "WLCTRL1.[14:8]WL2OFS"                                                                   , "Memory", 0x4000E040,        4, base=16, bitRange=8-14
+sfr = "WLCTRL1.[24]WLSTR"                                                                      , "Memory", 0x4000E040,        4, base=16, bitRange=24
+sfr = "WLCTRL1.[26:25]WLSTATE"                                                                 , "Memory", 0x4000E040,        4, base=16, bitRange=25-26
+sfr = "WLCTRL1.[28]WLVEND"                                                                     , "Memory", 0x4000E040,        4, base=16, bitRange=28
+sfr = "WLCTRL1.[30]WLAUTO"                                                                     , "Memory", 0x4000E040,        4, base=16, bitRange=30
+sfr = "WLCTRL1.[31]WLEN"                                                                       , "Memory", 0x4000E040,        4, base=16, bitRange=31
+sfr = "DQCALOFS1"                                                                              , "Memory", 0x4000E0E8,        4, base=16
+sfr = "DQCALOFS1.[6:0]DQCAL1OFS"                                                               , "Memory", 0x4000E0E8,        4, base=16, bitRange=0-6
+sfr = "DQCALOFS1.[14:8]DQCAL2OFS"                                                              , "Memory", 0x4000E0E8,        4, base=16, bitRange=8-14
+sfr = "DQCALOFS1.[30]B1RSSAT"                                                                  , "Memory", 0x4000E0E8,        4, base=16, bitRange=30
+sfr = "DQCALOFS1.[31]B2RSSAT"                                                                  , "Memory", 0x4000E0E8,        4, base=16, bitRange=31
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// DDRPHY -----
+group = "DDRPHY","FUNCCTRL","DLLCTRL","ZQCALCTRL","ZQODTCTRL","RDCTRL","RDTMG","FIFOINIT","OUTCTRL","WLCTRL1","DQCALOFS1"

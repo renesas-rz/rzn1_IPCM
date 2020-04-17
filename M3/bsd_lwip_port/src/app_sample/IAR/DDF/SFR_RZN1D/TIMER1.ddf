@@ -1,0 +1,161 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : TIMER1
+;               TIMER1
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "Timer1/LoadCount_0"                                                                     , "Memory", 0x51001000,        4, base=16
+sfr = "Timer1/LoadCount_0.[15:0]LoadCount"                                                     , "Memory", 0x51001000,        4, base=16, bitRange=0-15
+sfr = "Timer1/CurrentCount_0"                                                                  , "Memory", 0x51001004,        4, base=16, readOnly
+sfr = "Timer1/CurrentCount_0.[15:0]CurrentCount"                                               , "Memory", 0x51001004,        4, base=16, readOnly, bitRange=0-15
+sfr = "Timer1/Control_0"                                                                       , "Memory", 0x51001008,        4, base=16
+sfr = "Timer1/Control_0.[0]Prescaler"                                                          , "Memory", 0x51001008,        4, base=16, bitRange=0
+sfr = "Timer1/Control_0.[1]Mode"                                                               , "Memory", 0x51001008,        4, base=16, bitRange=1
+sfr = "Timer1/Control_0.[2]Enable"                                                             , "Memory", 0x51001008,        4, base=16, bitRange=2
+sfr = "Timer1/Control_0.[3]MaskInt"                                                            , "Memory", 0x51001008,        4, base=16, bitRange=3
+sfr = "Timer1/Control_0.[4]DMAEnable"                                                          , "Memory", 0x51001008,        4, base=16, bitRange=4
+sfr = "Timer1/ClearInt_0"                                                                      , "Memory", 0x5100100C,        4, base=16, readOnly
+sfr = "Timer1/ClearInt_0.[0]ClearInt"                                                          , "Memory", 0x5100100C,        4, base=16, readOnly, bitRange=0
+sfr = "Timer1/StatusInt0_0"                                                                    , "Memory", 0x51001010,        4, base=16, readOnly
+sfr = "Timer1/StatusInt0_0.[0]StatusInt0"                                                      , "Memory", 0x51001010,        4, base=16, readOnly, bitRange=0
+sfr = "Timer1/StatusInt1_0"                                                                    , "Memory", 0x51001014,        4, base=16, readOnly
+sfr = "Timer1/StatusInt1_0.[0]StatusInt1"                                                      , "Memory", 0x51001014,        4, base=16, readOnly, bitRange=0
+sfr = "Timer1/LoadCount_1"                                                                     , "Memory", 0x51001020,        4, base=16
+sfr = "Timer1/LoadCount_1.[15:0]LoadCount"                                                     , "Memory", 0x51001020,        4, base=16, bitRange=0-15
+sfr = "Timer1/CurrentCount_1"                                                                  , "Memory", 0x51001024,        4, base=16, readOnly
+sfr = "Timer1/CurrentCount_1.[15:0]CurrentCount"                                               , "Memory", 0x51001024,        4, base=16, readOnly, bitRange=0-15
+sfr = "Timer1/Control_1"                                                                       , "Memory", 0x51001028,        4, base=16
+sfr = "Timer1/Control_1.[0]Prescaler"                                                          , "Memory", 0x51001028,        4, base=16, bitRange=0
+sfr = "Timer1/Control_1.[1]Mode"                                                               , "Memory", 0x51001028,        4, base=16, bitRange=1
+sfr = "Timer1/Control_1.[2]Enable"                                                             , "Memory", 0x51001028,        4, base=16, bitRange=2
+sfr = "Timer1/Control_1.[3]MaskInt"                                                            , "Memory", 0x51001028,        4, base=16, bitRange=3
+sfr = "Timer1/Control_1.[4]DMAEnable"                                                          , "Memory", 0x51001028,        4, base=16, bitRange=4
+sfr = "Timer1/ClearInt_1"                                                                      , "Memory", 0x5100102C,        4, base=16, readOnly
+sfr = "Timer1/ClearInt_1.[0]ClearInt"                                                          , "Memory", 0x5100102C,        4, base=16, readOnly, bitRange=0
+sfr = "Timer1/StatusInt0_1"                                                                    , "Memory", 0x51001030,        4, base=16, readOnly
+sfr = "Timer1/StatusInt0_1.[0]StatusInt0"                                                      , "Memory", 0x51001030,        4, base=16, readOnly, bitRange=0
+sfr = "Timer1/StatusInt1_1"                                                                    , "Memory", 0x51001034,        4, base=16, readOnly
+sfr = "Timer1/StatusInt1_1.[0]StatusInt1"                                                      , "Memory", 0x51001034,        4, base=16, readOnly, bitRange=0
+sfr = "Timer1/LoadCount_2"                                                                     , "Memory", 0x51001040,        4, base=16
+sfr = "Timer1/LoadCount_2.[15:0]LoadCount"                                                     , "Memory", 0x51001040,        4, base=16, bitRange=0-15
+sfr = "Timer1/CurrentCount_2"                                                                  , "Memory", 0x51001044,        4, base=16, readOnly
+sfr = "Timer1/CurrentCount_2.[15:0]CurrentCount"                                               , "Memory", 0x51001044,        4, base=16, readOnly, bitRange=0-15
+sfr = "Timer1/Control_2"                                                                       , "Memory", 0x51001048,        4, base=16
+sfr = "Timer1/Control_2.[0]Prescaler"                                                          , "Memory", 0x51001048,        4, base=16, bitRange=0
+sfr = "Timer1/Control_2.[1]Mode"                                                               , "Memory", 0x51001048,        4, base=16, bitRange=1
+sfr = "Timer1/Control_2.[2]Enable"                                                             , "Memory", 0x51001048,        4, base=16, bitRange=2
+sfr = "Timer1/Control_2.[3]MaskInt"                                                            , "Memory", 0x51001048,        4, base=16, bitRange=3
+sfr = "Timer1/Control_2.[4]DMAEnable"                                                          , "Memory", 0x51001048,        4, base=16, bitRange=4
+sfr = "Timer1/ClearInt_2"                                                                      , "Memory", 0x5100104C,        4, base=16, readOnly
+sfr = "Timer1/ClearInt_2.[0]ClearInt"                                                          , "Memory", 0x5100104C,        4, base=16, readOnly, bitRange=0
+sfr = "Timer1/StatusInt0_2"                                                                    , "Memory", 0x51001050,        4, base=16, readOnly
+sfr = "Timer1/StatusInt0_2.[0]StatusInt0"                                                      , "Memory", 0x51001050,        4, base=16, readOnly, bitRange=0
+sfr = "Timer1/StatusInt1_2"                                                                    , "Memory", 0x51001054,        4, base=16, readOnly
+sfr = "Timer1/StatusInt1_2.[0]StatusInt1"                                                      , "Memory", 0x51001054,        4, base=16, readOnly, bitRange=0
+sfr = "Timer1/LoadCount_3"                                                                     , "Memory", 0x51001060,        4, base=16
+sfr = "Timer1/LoadCount_3.[15:0]LoadCount"                                                     , "Memory", 0x51001060,        4, base=16, bitRange=0-15
+sfr = "Timer1/CurrentCount_3"                                                                  , "Memory", 0x51001064,        4, base=16, readOnly
+sfr = "Timer1/CurrentCount_3.[15:0]CurrentCount"                                               , "Memory", 0x51001064,        4, base=16, readOnly, bitRange=0-15
+sfr = "Timer1/Control_3"                                                                       , "Memory", 0x51001068,        4, base=16
+sfr = "Timer1/Control_3.[0]Prescaler"                                                          , "Memory", 0x51001068,        4, base=16, bitRange=0
+sfr = "Timer1/Control_3.[1]Mode"                                                               , "Memory", 0x51001068,        4, base=16, bitRange=1
+sfr = "Timer1/Control_3.[2]Enable"                                                             , "Memory", 0x51001068,        4, base=16, bitRange=2
+sfr = "Timer1/Control_3.[3]MaskInt"                                                            , "Memory", 0x51001068,        4, base=16, bitRange=3
+sfr = "Timer1/Control_3.[4]DMAEnable"                                                          , "Memory", 0x51001068,        4, base=16, bitRange=4
+sfr = "Timer1/ClearInt_3"                                                                      , "Memory", 0x5100106C,        4, base=16, readOnly
+sfr = "Timer1/ClearInt_3.[0]ClearInt"                                                          , "Memory", 0x5100106C,        4, base=16, readOnly, bitRange=0
+sfr = "Timer1/StatusInt0_3"                                                                    , "Memory", 0x51001070,        4, base=16, readOnly
+sfr = "Timer1/StatusInt0_3.[0]StatusInt0"                                                      , "Memory", 0x51001070,        4, base=16, readOnly, bitRange=0
+sfr = "Timer1/StatusInt1_3"                                                                    , "Memory", 0x51001074,        4, base=16, readOnly
+sfr = "Timer1/StatusInt1_3.[0]StatusInt1"                                                      , "Memory", 0x51001074,        4, base=16, readOnly, bitRange=0
+sfr = "Timer1/LoadCount_4"                                                                     , "Memory", 0x51001080,        4, base=16
+sfr = "Timer1/LoadCount_4.[15:0]LoadCount"                                                     , "Memory", 0x51001080,        4, base=16, bitRange=0-15
+sfr = "Timer1/CurrentCount_4"                                                                  , "Memory", 0x51001084,        4, base=16, readOnly
+sfr = "Timer1/CurrentCount_4.[15:0]CurrentCount"                                               , "Memory", 0x51001084,        4, base=16, readOnly, bitRange=0-15
+sfr = "Timer1/Control_4"                                                                       , "Memory", 0x51001088,        4, base=16
+sfr = "Timer1/Control_4.[0]Prescaler"                                                          , "Memory", 0x51001088,        4, base=16, bitRange=0
+sfr = "Timer1/Control_4.[1]Mode"                                                               , "Memory", 0x51001088,        4, base=16, bitRange=1
+sfr = "Timer1/Control_4.[2]Enable"                                                             , "Memory", 0x51001088,        4, base=16, bitRange=2
+sfr = "Timer1/Control_4.[3]MaskInt"                                                            , "Memory", 0x51001088,        4, base=16, bitRange=3
+sfr = "Timer1/Control_4.[4]DMAEnable"                                                          , "Memory", 0x51001088,        4, base=16, bitRange=4
+sfr = "Timer1/ClearInt_4"                                                                      , "Memory", 0x5100108C,        4, base=16, readOnly
+sfr = "Timer1/ClearInt_4.[0]ClearInt"                                                          , "Memory", 0x5100108C,        4, base=16, readOnly, bitRange=0
+sfr = "Timer1/StatusInt0_4"                                                                    , "Memory", 0x51001090,        4, base=16, readOnly
+sfr = "Timer1/StatusInt0_4.[0]StatusInt0"                                                      , "Memory", 0x51001090,        4, base=16, readOnly, bitRange=0
+sfr = "Timer1/StatusInt1_4"                                                                    , "Memory", 0x51001094,        4, base=16, readOnly
+sfr = "Timer1/StatusInt1_4.[0]StatusInt1"                                                      , "Memory", 0x51001094,        4, base=16, readOnly, bitRange=0
+sfr = "Timer1/LoadCount_5"                                                                     , "Memory", 0x510010A0,        4, base=16
+sfr = "Timer1/LoadCount_5.[15:0]LoadCount"                                                     , "Memory", 0x510010A0,        4, base=16, bitRange=0-15
+sfr = "Timer1/CurrentCount_5"                                                                  , "Memory", 0x510010A4,        4, base=16, readOnly
+sfr = "Timer1/CurrentCount_5.[15:0]CurrentCount"                                               , "Memory", 0x510010A4,        4, base=16, readOnly, bitRange=0-15
+sfr = "Timer1/Control_5"                                                                       , "Memory", 0x510010A8,        4, base=16
+sfr = "Timer1/Control_5.[0]Prescaler"                                                          , "Memory", 0x510010A8,        4, base=16, bitRange=0
+sfr = "Timer1/Control_5.[1]Mode"                                                               , "Memory", 0x510010A8,        4, base=16, bitRange=1
+sfr = "Timer1/Control_5.[2]Enable"                                                             , "Memory", 0x510010A8,        4, base=16, bitRange=2
+sfr = "Timer1/Control_5.[3]MaskInt"                                                            , "Memory", 0x510010A8,        4, base=16, bitRange=3
+sfr = "Timer1/Control_5.[4]DMAEnable"                                                          , "Memory", 0x510010A8,        4, base=16, bitRange=4
+sfr = "Timer1/ClearInt_5"                                                                      , "Memory", 0x510010AC,        4, base=16, readOnly
+sfr = "Timer1/ClearInt_5.[0]ClearInt"                                                          , "Memory", 0x510010AC,        4, base=16, readOnly, bitRange=0
+sfr = "Timer1/StatusInt0_5"                                                                    , "Memory", 0x510010B0,        4, base=16, readOnly
+sfr = "Timer1/StatusInt0_5.[0]StatusInt0"                                                      , "Memory", 0x510010B0,        4, base=16, readOnly, bitRange=0
+sfr = "Timer1/StatusInt1_5"                                                                    , "Memory", 0x510010B4,        4, base=16, readOnly
+sfr = "Timer1/StatusInt1_5.[0]StatusInt1"                                                      , "Memory", 0x510010B4,        4, base=16, readOnly, bitRange=0
+sfr = "Timer1/LoadCount_6"                                                                     , "Memory", 0x510010C0,        4, base=16
+sfr = "Timer1/LoadCount_6.[31:0]LoadCount"                                                     , "Memory", 0x510010C0,        4, base=16, bitRange=0-31
+sfr = "Timer1/CurrentCount_6"                                                                  , "Memory", 0x510010C4,        4, base=16, readOnly
+sfr = "Timer1/CurrentCount_6.[31:0]CurrentCount"                                               , "Memory", 0x510010C4,        4, base=16, readOnly, bitRange=0-31
+sfr = "Timer1/Control_6"                                                                       , "Memory", 0x510010C8,        4, base=16
+sfr = "Timer1/Control_6.[0]Prescaler"                                                          , "Memory", 0x510010C8,        4, base=16, bitRange=0
+sfr = "Timer1/Control_6.[1]Mode"                                                               , "Memory", 0x510010C8,        4, base=16, bitRange=1
+sfr = "Timer1/Control_6.[2]Enable"                                                             , "Memory", 0x510010C8,        4, base=16, bitRange=2
+sfr = "Timer1/Control_6.[3]MaskInt"                                                            , "Memory", 0x510010C8,        4, base=16, bitRange=3
+sfr = "Timer1/Control_6.[4]DMAEnable"                                                          , "Memory", 0x510010C8,        4, base=16, bitRange=4
+sfr = "Timer1/ClearInt_6"                                                                      , "Memory", 0x510010CC,        4, base=16, readOnly
+sfr = "Timer1/ClearInt_6.[0]ClearInt"                                                          , "Memory", 0x510010CC,        4, base=16, readOnly, bitRange=0
+sfr = "Timer1/StatusInt0_6"                                                                    , "Memory", 0x510010D0,        4, base=16, readOnly
+sfr = "Timer1/StatusInt0_6.[0]StatusInt0"                                                      , "Memory", 0x510010D0,        4, base=16, readOnly, bitRange=0
+sfr = "Timer1/StatusInt1_6"                                                                    , "Memory", 0x510010D4,        4, base=16, readOnly
+sfr = "Timer1/StatusInt1_6.[0]StatusInt1"                                                      , "Memory", 0x510010D4,        4, base=16, readOnly, bitRange=0
+sfr = "Timer1/LoadCount_7"                                                                     , "Memory", 0x510010E0,        4, base=16
+sfr = "Timer1/LoadCount_7.[31:0]LoadCount"                                                     , "Memory", 0x510010E0,        4, base=16, bitRange=0-31
+sfr = "Timer1/CurrentCount_7"                                                                  , "Memory", 0x510010E4,        4, base=16, readOnly
+sfr = "Timer1/CurrentCount_7.[31:0]CurrentCount"                                               , "Memory", 0x510010E4,        4, base=16, readOnly, bitRange=0-31
+sfr = "Timer1/Control_7"                                                                       , "Memory", 0x510010E8,        4, base=16
+sfr = "Timer1/Control_7.[0]Prescaler"                                                          , "Memory", 0x510010E8,        4, base=16, bitRange=0
+sfr = "Timer1/Control_7.[1]Mode"                                                               , "Memory", 0x510010E8,        4, base=16, bitRange=1
+sfr = "Timer1/Control_7.[2]Enable"                                                             , "Memory", 0x510010E8,        4, base=16, bitRange=2
+sfr = "Timer1/Control_7.[3]MaskInt"                                                            , "Memory", 0x510010E8,        4, base=16, bitRange=3
+sfr = "Timer1/Control_7.[4]DMAEnable"                                                          , "Memory", 0x510010E8,        4, base=16, bitRange=4
+sfr = "Timer1/ClearInt_7"                                                                      , "Memory", 0x510010EC,        4, base=16, readOnly
+sfr = "Timer1/ClearInt_7.[0]ClearInt"                                                          , "Memory", 0x510010EC,        4, base=16, readOnly, bitRange=0
+sfr = "Timer1/StatusInt0_7"                                                                    , "Memory", 0x510010F0,        4, base=16, readOnly
+sfr = "Timer1/StatusInt0_7.[0]StatusInt0"                                                      , "Memory", 0x510010F0,        4, base=16, readOnly, bitRange=0
+sfr = "Timer1/StatusInt1_7"                                                                    , "Memory", 0x510010F4,        4, base=16, readOnly
+sfr = "Timer1/StatusInt1_7.[0]StatusInt1"                                                      , "Memory", 0x510010F4,        4, base=16, readOnly, bitRange=0
+sfr = "Timer1/AllClearInt"                                                                     , "Memory", 0x51001100,        4, base=16, readOnly
+sfr = "Timer1/AllClearInt.[7:0]AllClearInt"                                                    , "Memory", 0x51001100,        4, base=16, readOnly, bitRange=0-7
+sfr = "Timer1/AllStatusInt0"                                                                   , "Memory", 0x51001104,        4, base=16, readOnly
+sfr = "Timer1/AllStatusInt0.[7:0]AllStatusInt0"                                                , "Memory", 0x51001104,        4, base=16, readOnly, bitRange=0-7
+sfr = "Timer1/AllStatusInt1"                                                                   , "Memory", 0x51001108,        4, base=16, readOnly
+sfr = "Timer1/AllStatusInt1.[7:0]AllStatusInt1"                                                , "Memory", 0x51001108,        4, base=16, readOnly, bitRange=0-7
+sfr = "Timer1/DMA_Pending"                                                                     , "Memory", 0x5100110C,        4, base=16, readOnly
+sfr = "Timer1/DMA_Pending.[6]DMA_Running_6"                                                    , "Memory", 0x5100110C,        4, base=16, readOnly, bitRange=6
+sfr = "Timer1/DMA_Pending.[7]DMA_Running_7"                                                    , "Memory", 0x5100110C,        4, base=16, readOnly, bitRange=7
+sfr = "Timer1/DMA_PendingOvf"                                                                  , "Memory", 0x51001110,        4, base=16, readOnly
+sfr = "Timer1/DMA_PendingOvf.[6]DMA_RunningOvf_6"                                              , "Memory", 0x51001110,        4, base=16, readOnly, bitRange=6
+sfr = "Timer1/DMA_PendingOvf.[7]DMA_RunningOvf_7"                                              , "Memory", 0x51001110,        4, base=16, readOnly, bitRange=7
+sfr = "Timer1/DMA_PendingClrOvf"                                                               , "Memory", 0x51001114,        4, base=16
+sfr = "Timer1/DMA_PendingClrOvf.[6]DMA_RunnningClrOvf_6"                                       , "Memory", 0x51001114,        4, base=16, bitRange=6
+sfr = "Timer1/DMA_PendingClrOvf.[7]DMA_RunningClrOvf_7"                                        , "Memory", 0x51001114,        4, base=16, bitRange=7
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// TIMER1 -----
+group = "TIMER1","Timer1/LoadCount_0","Timer1/CurrentCount_0","Timer1/Control_0","Timer1/ClearInt_0","Timer1/StatusInt0_0","Timer1/StatusInt1_0","Timer1/LoadCount_1","Timer1/CurrentCount_1","Timer1/Control_1","Timer1/ClearInt_1","Timer1/StatusInt0_1","Timer1/StatusInt1_1","Timer1/LoadCount_2","Timer1/CurrentCount_2","Timer1/Control_2","Timer1/ClearInt_2","Timer1/StatusInt0_2","Timer1/StatusInt1_2","Timer1/LoadCount_3","Timer1/CurrentCount_3","Timer1/Control_3","Timer1/ClearInt_3","Timer1/StatusInt0_3","Timer1/StatusInt1_3","Timer1/LoadCount_4","Timer1/CurrentCount_4","Timer1/Control_4","Timer1/ClearInt_4","Timer1/StatusInt0_4","Timer1/StatusInt1_4","Timer1/LoadCount_5","Timer1/CurrentCount_5","Timer1/Control_5","Timer1/ClearInt_5","Timer1/StatusInt0_5","Timer1/StatusInt1_5","Timer1/LoadCount_6","Timer1/CurrentCount_6","Timer1/Control_6","Timer1/ClearInt_6","Timer1/StatusInt0_6","Timer1/StatusInt1_6","Timer1/LoadCount_7","Timer1/CurrentCount_7","Timer1/Control_7","Timer1/ClearInt_7","Timer1/StatusInt0_7","Timer1/StatusInt1_7","Timer1/AllClearInt","Timer1/AllStatusInt0","Timer1/AllStatusInt1","Timer1/DMA_Pending","Timer1/DMA_PendingOvf","Timer1/DMA_PendingClrOvf"

@@ -1,0 +1,114 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : ETHACS
+;               Ethernet Accessory
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "PRCMD"                                                                                  , "Memory", 0x44030000,        4, base=16
+sfr = "PRCMD.[0]PRCMD"                                                                         , "Memory", 0x44030000,        4, base=16, bitRange=0
+sfr = "ESIDCODE"                                                                               , "Memory", 0x44030004,        4, base=16, readOnly
+sfr = "ESIDCODE.[31:0]ES_IDCODE"                                                               , "Memory", 0x44030004,        4, base=16, readOnly, bitRange=0-31
+sfr = "MODCTRL"                                                                                , "Memory", 0x44030008,        4, base=16
+sfr = "MODCTRL.[4:0]SW_MODE"                                                                   , "Memory", 0x44030008,        4, base=16, bitRange=0-4
+sfr = "PTPMCTRL"                                                                               , "Memory", 0x4403000C,        4, base=16
+sfr = "PTPMCTRL.[3:0]PTP_MODE"                                                                 , "Memory", 0x4403000C,        4, base=16, bitRange=0-3
+sfr = "PTPMCTRL.[4]RGMII_CLKSEL"                                                               , "Memory", 0x4403000C,        4, base=16, bitRange=4
+sfr = "PHYLNK"                                                                                 , "Memory", 0x44030014,        4, base=16
+sfr = "PHYLNK.[3:0]SWLNK"                                                                      , "Memory", 0x44030014,        4, base=16, bitRange=0-3
+sfr = "PHYLNK.[6:4]CATLNK"                                                                     , "Memory", 0x44030014,        4, base=16, bitRange=4-6
+sfr = "PHYLNK.[9:8]S3LNK"                                                                      , "Memory", 0x44030014,        4, base=16, bitRange=8-9
+sfr = "PTCTRL"                                                                                 , "Memory", 0x44030020,        4, base=16
+sfr = "PTCTRL.[2:0]TRG_SEL"                                                                    , "Memory", 0x44030020,        4, base=16, bitRange=0-2
+sfr = "DMACTRL"                                                                                , "Memory", 0x44030024,        4, base=16
+sfr = "DMACTRL.[6:0]DREQ_EN"                                                                   , "Memory", 0x44030024,        4, base=16, bitRange=0-6
+sfr = "DMACTRL.[7]DREQ_SEL"                                                                    , "Memory", 0x44030024,        4, base=16, bitRange=7
+sfr = "DMACTRL.[14:8]DREQ_BSY"                                                                 , "Memory", 0x44030024,        4, base=16, bitRange=8-14
+sfr = "DMACTRL.[22:16]DREQ_ERR"                                                                , "Memory", 0x44030024,        4, base=16, bitRange=16-22
+sfr = "DMACTRL.[31:24]DREQ_WCNT"                                                               , "Memory", 0x44030024,        4, base=16, bitRange=24-31
+sfr = "CONVCTRL1"                                                                              , "Memory", 0x44030100,        4, base=16
+sfr = "CONVCTRL1.[4:0]CONV_MODE"                                                               , "Memory", 0x44030100,        4, base=16, bitRange=0-4
+sfr = "CONVCTRL1.[8]FULLD"                                                                     , "Memory", 0x44030100,        4, base=16, bitRange=8
+sfr = "CONVCTRL1.[9]RMII_RX_ER_EN"                                                             , "Memory", 0x44030100,        4, base=16, bitRange=9
+sfr = "CONVCTRL1.[10]RMII_CRS_MODE"                                                            , "Memory", 0x44030100,        4, base=16, bitRange=10
+sfr = "CONVCTRL1.[12]RGMII_LINK"                                                               , "Memory", 0x44030100,        4, base=16, bitRange=12
+sfr = "CONVCTRL1.[13]RGMII_DUPLEX"                                                             , "Memory", 0x44030100,        4, base=16, bitRange=13
+sfr = "CONVCTRL1.[15:14]RGMII_SPEED"                                                           , "Memory", 0x44030100,        4, base=16, bitRange=14-15
+sfr = "CONVCTRL1.[25:24]RGMII_TX_TYPE"                                                         , "Memory", 0x44030100,        4, base=16, bitRange=24-25
+sfr = "CONVCTRL1.[27:26]RGMII_DLY_TYPE"                                                        , "Memory", 0x44030100,        4, base=16, bitRange=26-27
+sfr = "CONVCTRL2"                                                                              , "Memory", 0x44030104,        4, base=16
+sfr = "CONVCTRL2.[4:0]CONV_MODE"                                                               , "Memory", 0x44030104,        4, base=16, bitRange=0-4
+sfr = "CONVCTRL2.[8]FULLD"                                                                     , "Memory", 0x44030104,        4, base=16, bitRange=8
+sfr = "CONVCTRL2.[9]RMII_RX_ER_EN"                                                             , "Memory", 0x44030104,        4, base=16, bitRange=9
+sfr = "CONVCTRL2.[10]RMII_CRS_MODE"                                                            , "Memory", 0x44030104,        4, base=16, bitRange=10
+sfr = "CONVCTRL2.[12]RGMII_LINK"                                                               , "Memory", 0x44030104,        4, base=16, bitRange=12
+sfr = "CONVCTRL2.[13]RGMII_DUPLEX"                                                             , "Memory", 0x44030104,        4, base=16, bitRange=13
+sfr = "CONVCTRL2.[15:14]RGMII_SPEED"                                                           , "Memory", 0x44030104,        4, base=16, bitRange=14-15
+sfr = "CONVCTRL2.[25:24]RGMII_TX_TYPE"                                                         , "Memory", 0x44030104,        4, base=16, bitRange=24-25
+sfr = "CONVCTRL2.[27:26]RGMII_DLY_TYPE"                                                        , "Memory", 0x44030104,        4, base=16, bitRange=26-27
+sfr = "CONVCTRL3"                                                                              , "Memory", 0x44030108,        4, base=16
+sfr = "CONVCTRL3.[4:0]CONV_MODE"                                                               , "Memory", 0x44030108,        4, base=16, bitRange=0-4
+sfr = "CONVCTRL3.[8]FULLD"                                                                     , "Memory", 0x44030108,        4, base=16, bitRange=8
+sfr = "CONVCTRL3.[9]RMII_RX_ER_EN"                                                             , "Memory", 0x44030108,        4, base=16, bitRange=9
+sfr = "CONVCTRL3.[10]RMII_CRS_MODE"                                                            , "Memory", 0x44030108,        4, base=16, bitRange=10
+sfr = "CONVCTRL3.[12]RGMII_LINK"                                                               , "Memory", 0x44030108,        4, base=16, bitRange=12
+sfr = "CONVCTRL3.[13]RGMII_DUPLEX"                                                             , "Memory", 0x44030108,        4, base=16, bitRange=13
+sfr = "CONVCTRL3.[15:14]RGMII_SPEED"                                                           , "Memory", 0x44030108,        4, base=16, bitRange=14-15
+sfr = "CONVCTRL3.[25:24]RGMII_TX_TYPE"                                                         , "Memory", 0x44030108,        4, base=16, bitRange=24-25
+sfr = "CONVCTRL3.[27:26]RGMII_DLY_TYPE"                                                        , "Memory", 0x44030108,        4, base=16, bitRange=26-27
+sfr = "CONVCTRL4"                                                                              , "Memory", 0x4403010C,        4, base=16
+sfr = "CONVCTRL4.[4:0]CONV_MODE"                                                               , "Memory", 0x4403010C,        4, base=16, bitRange=0-4
+sfr = "CONVCTRL4.[8]FULLD"                                                                     , "Memory", 0x4403010C,        4, base=16, bitRange=8
+sfr = "CONVCTRL4.[9]RMII_RX_ER_EN"                                                             , "Memory", 0x4403010C,        4, base=16, bitRange=9
+sfr = "CONVCTRL4.[10]RMII_CRS_MODE"                                                            , "Memory", 0x4403010C,        4, base=16, bitRange=10
+sfr = "CONVCTRL4.[12]RGMII_LINK"                                                               , "Memory", 0x4403010C,        4, base=16, bitRange=12
+sfr = "CONVCTRL4.[13]RGMII_DUPLEX"                                                             , "Memory", 0x4403010C,        4, base=16, bitRange=13
+sfr = "CONVCTRL4.[15:14]RGMII_SPEED"                                                           , "Memory", 0x4403010C,        4, base=16, bitRange=14-15
+sfr = "CONVCTRL4.[25:24]RGMII_TX_TYPE"                                                         , "Memory", 0x4403010C,        4, base=16, bitRange=24-25
+sfr = "CONVCTRL4.[27:26]RGMII_DLY_TYPE"                                                        , "Memory", 0x4403010C,        4, base=16, bitRange=26-27
+sfr = "CONVCTRL5"                                                                              , "Memory", 0x44030110,        4, base=16
+sfr = "CONVCTRL5.[4:0]CONV_MODE"                                                               , "Memory", 0x44030110,        4, base=16, bitRange=0-4
+sfr = "CONVCTRL5.[8]FULLD"                                                                     , "Memory", 0x44030110,        4, base=16, bitRange=8
+sfr = "CONVCTRL5.[9]RMII_RX_ER_EN"                                                             , "Memory", 0x44030110,        4, base=16, bitRange=9
+sfr = "CONVCTRL5.[10]RMII_CRS_MODE"                                                            , "Memory", 0x44030110,        4, base=16, bitRange=10
+sfr = "CONVCTRL5.[12]RGMII_LINK"                                                               , "Memory", 0x44030110,        4, base=16, bitRange=12
+sfr = "CONVCTRL5.[13]RGMII_DUPLEX"                                                             , "Memory", 0x44030110,        4, base=16, bitRange=13
+sfr = "CONVCTRL5.[15:14]RGMII_SPEED"                                                           , "Memory", 0x44030110,        4, base=16, bitRange=14-15
+sfr = "CONVCTRL5.[25:24]RGMII_TX_TYPE"                                                         , "Memory", 0x44030110,        4, base=16, bitRange=24-25
+sfr = "CONVCTRL5.[27:26]RGMII_DLY_TYPE"                                                        , "Memory", 0x44030110,        4, base=16, bitRange=26-27
+sfr = "CONVRST"                                                                                , "Memory", 0x44030114,        4, base=16
+sfr = "CONVRST.[4:0]PHYIF_RSTn"                                                                , "Memory", 0x44030114,        4, base=16, bitRange=0-4
+sfr = "ECATOFFADR"                                                                             , "Memory", 0x44030200,        4, base=16
+sfr = "ECATOFFADR.[4:0]OADD"                                                                   , "Memory", 0x44030200,        4, base=16, bitRange=0-4
+sfr = "ECATOPMOD"                                                                              , "Memory", 0x44030204,        4, base=16
+sfr = "ECATOPMOD.[0]I2CSIZE"                                                                   , "Memory", 0x44030204,        4, base=16, bitRange=0
+sfr = "ECATDBGC"                                                                               , "Memory", 0x44030208,        4, base=16
+sfr = "ECATDBGC.[1:0]TXSFT0"                                                                   , "Memory", 0x44030208,        4, base=16, bitRange=0-1
+sfr = "ECATDBGC.[3:2]TXSFT1"                                                                   , "Memory", 0x44030208,        4, base=16, bitRange=2-3
+sfr = "ECATDBGC.[5:4]TXSFT2"                                                                   , "Memory", 0x44030208,        4, base=16, bitRange=4-5
+sfr = "SCINTCON"                                                                               , "Memory", 0x44030280,        4, base=16
+sfr = "SCINTCON.[1:0]SC_CON_SEL"                                                               , "Memory", 0x44030280,        4, base=16, bitRange=0-1
+sfr = "SCINTCON.[5:4]SC_DIV_SEL"                                                               , "Memory", 0x44030280,        4, base=16, bitRange=4-5
+sfr = "SWCTRL"                                                                                 , "Memory", 0x44030304,        4, base=16
+sfr = "SWCTRL.[3:0]SET10"                                                                      , "Memory", 0x44030304,        4, base=16, bitRange=0-3
+sfr = "SWCTRL.[7:4]SET1000"                                                                    , "Memory", 0x44030304,        4, base=16, bitRange=4-7
+sfr = "SWCTRL.[16]STRAP_SX_ENB"                                                                , "Memory", 0x44030304,        4, base=16, bitRange=16
+sfr = "SWCTRL.[17]STRAP_HUB_ENB"                                                               , "Memory", 0x44030304,        4, base=16, bitRange=17
+sfr = "SWDUPC"                                                                                 , "Memory", 0x44030308,        4, base=16
+sfr = "SWDUPC.[3:0]PHY_DUPLEX"                                                                 , "Memory", 0x44030308,        4, base=16, bitRange=0-3
+sfr = "RMTAGCTRL"                                                                              , "Memory", 0x44030500,        4, base=16
+sfr = "RMTAGCTRL.[0]MGMT_ENB"                                                                  , "Memory", 0x44030500,        4, base=16, bitRange=0
+sfr = "RMTAGCTRL.[31:16]MGMT_TAG"                                                              , "Memory", 0x44030500,        4, base=16, bitRange=16-31
+sfr = "HSRMOD"                                                                                 , "Memory", 0x44030600,        4, base=16, readOnly
+sfr = "HSRMOD.[0]HSR_SEL"                                                                      , "Memory", 0x44030600,        4, base=16, readOnly, bitRange=0
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// Ethernet Accessory -----
+group = "ETHACS","PRCMD","ESIDCODE","MODCTRL","PTPMCTRL","PHYLNK","PTCTRL","DMACTRL","CONVCTRL1","CONVCTRL2","CONVCTRL3","CONVCTRL4","CONVCTRL5","CONVRST","ECATOFFADR","ECATOPMOD","ECATDBGC","SCINTCON","SWCTRL","SWDUPC","RMTAGCTRL","HSRMOD"

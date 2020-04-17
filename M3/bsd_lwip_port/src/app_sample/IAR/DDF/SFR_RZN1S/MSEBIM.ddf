@@ -1,0 +1,192 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : MSEBIM
+;               MSEBI Master from CPU
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "rMSEBIM_CYCLESIZE_CS0_N"                                                                , "Memory", 0x400C0000,        4, base=16
+sfr = "rMSEBIM_CYCLESIZE_CS0_N.[0]ALEDATA"                                                     , "Memory", 0x400C0000,        4, base=16, bitRange=0
+sfr = "rMSEBIM_CYCLESIZE_CS0_N.[1]CLEDATA"                                                     , "Memory", 0x400C0000,        4, base=16, bitRange=1
+sfr = "rMSEBIM_CYCLESIZE_CS0_N.[9:8]RDDLEDATA_B"                                               , "Memory", 0x400C0000,        4, base=16, bitRange=8-9
+sfr = "rMSEBIM_CYCLESIZE_CS0_N.[13:12]WRDLEDATA_B"                                             , "Memory", 0x400C0000,        4, base=16, bitRange=12-13
+sfr = "rMSEBIM_CYCLESIZE_CS0_N.[23:16]RDDLEDATA_NB"                                            , "Memory", 0x400C0000,        4, base=16, bitRange=16-23
+sfr = "rMSEBIM_CYCLESIZE_CS0_N.[31:24]WRDLEDATA_NB"                                            , "Memory", 0x400C0000,        4, base=16, bitRange=24-31
+sfr = "rMSEBIM_SETUPHOLD_CS0_N"                                                                , "Memory", 0x400C0004,        4, base=16
+sfr = "rMSEBIM_SETUPHOLD_CS0_N.[5:0]RDDLESETUP"                                                , "Memory", 0x400C0004,        4, base=16, bitRange=0-5
+sfr = "rMSEBIM_SETUPHOLD_CS0_N.[13:8]WRDLESETUP"                                               , "Memory", 0x400C0004,        4, base=16, bitRange=8-13
+sfr = "rMSEBIM_SETUPHOLD_CS0_N.[21:16]RDDLEHOLD"                                               , "Memory", 0x400C0004,        4, base=16, bitRange=16-21
+sfr = "rMSEBIM_SETUPHOLD_CS0_N.[29:24]WRDLEHOLD"                                               , "Memory", 0x400C0004,        4, base=16, bitRange=24-29
+sfr = "rMSEBIM_TDMACR_CS0_N"                                                                   , "Memory", 0x400C0008,        4, base=16
+sfr = "rMSEBIM_TDMACR_CS0_N.[0]TDMAE1"                                                         , "Memory", 0x400C0008,        4, base=16, bitRange=0
+sfr = "rMSEBIM_TDMACR_CS0_N.[3:1]DEST_BURST_SIZE"                                              , "Memory", 0x400C0008,        4, base=16, bitRange=1-3
+sfr = "rMSEBIM_TDMACR_CS0_N.[16:4]DEST_BLOCK_SIZE"                                             , "Memory", 0x400C0008,        4, base=16, bitRange=4-16
+sfr = "rMSEBIM_TDMACR_CS0_N.[29:17]CURRENT_DEST_BLOCK_SIZE"                                    , "Memory", 0x400C0008,        4, base=16, bitRange=17-29
+sfr = "rMSEBIM_TDMACR_CS0_N.[30]SINGLE_DEST_WIDTH"                                             , "Memory", 0x400C0008,        4, base=16, bitRange=30
+sfr = "rMSEBIM_RDMACR_CS0_N"                                                                   , "Memory", 0x400C000C,        4, base=16
+sfr = "rMSEBIM_RDMACR_CS0_N.[0]RDMAE1"                                                         , "Memory", 0x400C000C,        4, base=16, bitRange=0
+sfr = "rMSEBIM_RDMACR_CS0_N.[3:1]SRC_BURST_SIZE"                                               , "Memory", 0x400C000C,        4, base=16, bitRange=1-3
+sfr = "rMSEBIM_RDMACR_CS0_N.[16:4]SRC_BLOCK_SIZE"                                              , "Memory", 0x400C000C,        4, base=16, bitRange=4-16
+sfr = "rMSEBIM_RDMACR_CS0_N.[29:17]CURRENT_SRC_BLOCK_SIZE"                                     , "Memory", 0x400C000C,        4, base=16, bitRange=17-29
+sfr = "rMSEBIM_RDMACR_CS0_N.[30]SINGLE_SRC_WIDTH"                                              , "Memory", 0x400C000C,        4, base=16, bitRange=30
+sfr = "rMSEBIM_ADDRDMA_READ_CS0_N"                                                             , "Memory", 0x400C0010,        4, base=16
+sfr = "rMSEBIM_ADDRDMA_READ_CS0_N.[2]ADDRDMA_READ_2"                                           , "Memory", 0x400C0010,        4, base=16, bitRange=2
+sfr = "rMSEBIM_ADDRDMA_READ_CS0_N.[31:3]ADDRDMA_READ"                                          , "Memory", 0x400C0010,        4, base=16, bitRange=3-31
+sfr = "rMSEBIM_ADDRDMA_CURRENTREAD_CS0_N"                                                      , "Memory", 0x400C0014,        4, base=16, readOnly
+sfr = "rMSEBIM_ADDRDMA_CURRENTREAD_CS0_N.[31:0]ADDRDMA_CURRENTREAD"                            , "Memory", 0x400C0014,        4, base=16, readOnly, bitRange=0-31
+sfr = "rMSEBIM_ADDRDMA_WRITE_CS0_N"                                                            , "Memory", 0x400C0018,        4, base=16
+sfr = "rMSEBIM_ADDRDMA_WRITE_CS0_N.[2]ADDRDMA_WRITE_2"                                         , "Memory", 0x400C0018,        4, base=16, bitRange=2
+sfr = "rMSEBIM_ADDRDMA_WRITE_CS0_N.[31:3]ADDRDMA_WRITE"                                        , "Memory", 0x400C0018,        4, base=16, bitRange=3-31
+sfr = "rMSEBIM_ADDRDMA_CURRENTWRITE_CS0_N"                                                     , "Memory", 0x400C001C,        4, base=16, readOnly
+sfr = "rMSEBIM_ADDRDMA_CURRENTWRITE_CS0_N.[31:0]ADDRDMA_CURRENTWRITE"                          , "Memory", 0x400C001C,        4, base=16, readOnly, bitRange=0-31
+sfr = "rMSEBIM_DMATDLR_CS0_N"                                                                  , "Memory", 0x400C0020,        4, base=16
+sfr = "rMSEBIM_DMATDLR_CS0_N.[4:0]DMATDLR"                                                     , "Memory", 0x400C0020,        4, base=16, bitRange=0-4
+sfr = "rMSEBIM_DMATDLR_CS0_N.[11:6]DMA_TRANSMIT_FIFOLEVEL"                                     , "Memory", 0x400C0020,        4, base=16, bitRange=6-11
+sfr = "rMSEBIM_DMATDLR_CS0_N.[15:13]BURST_SIZEMAX_DMAWRITE"                                    , "Memory", 0x400C0020,        4, base=16, bitRange=13-15
+sfr = "rMSEBIM_DMATDLR_CS0_N.[16]USE_EXT_WRDMA_REQ"                                            , "Memory", 0x400C0020,        4, base=16, bitRange=16
+sfr = "rMSEBIM_DMATDLR_CS0_N.[31]DMA_TRANSMIT_DISABLEBUS"                                      , "Memory", 0x400C0020,        4, base=16, bitRange=31
+sfr = "rMSEBIM_DMARDLR_CS0_N"                                                                  , "Memory", 0x400C0024,        4, base=16
+sfr = "rMSEBIM_DMARDLR_CS0_N.[4:0]DMARDLR"                                                     , "Memory", 0x400C0024,        4, base=16, bitRange=0-4
+sfr = "rMSEBIM_DMARDLR_CS0_N.[11:6]DMA_RECEIVE_FIFOLEVEL"                                      , "Memory", 0x400C0024,        4, base=16, bitRange=6-11
+sfr = "rMSEBIM_DMARDLR_CS0_N.[15:13]BURST_SIZEMAX_DMAREAD"                                     , "Memory", 0x400C0024,        4, base=16, bitRange=13-15
+sfr = "rMSEBIM_DMARDLR_CS0_N.[16]USE_EXT_RDDMA_REQ"                                            , "Memory", 0x400C0024,        4, base=16, bitRange=16
+sfr = "rMSEBIM_DMARDLR_CS0_N.[30]DMA_RECEIVE_DISABLE"                                          , "Memory", 0x400C0024,        4, base=16, bitRange=30
+sfr = "rMSEBIM_DMARDLR_CS0_N.[31]DMA_RECEIVE_DISABLEBUS"                                       , "Memory", 0x400C0024,        4, base=16, bitRange=31
+sfr = "rMSEBIM_CONFIG_CS0_N"                                                                   , "Memory", 0x400C0060,        4, base=16
+sfr = "rMSEBIM_CONFIG_CS0_N.[2:0]CONFIG"                                                       , "Memory", 0x400C0060,        4, base=16, bitRange=0-2
+sfr = "rMSEBIM_CONFIG_CS0_N.[6:5]MODE_WAIT"                                                    , "Memory", 0x400C0060,        4, base=16, bitRange=5-6
+sfr = "rMSEBIM_CONFIG_CS0_N.[7]BURST_ENABLE"                                                   , "Memory", 0x400C0060,        4, base=16, bitRange=7
+sfr = "rMSEBIM_CONFIG_CS0_N.[10:8]ALE_NUMBER"                                                  , "Memory", 0x400C0060,        4, base=16, bitRange=8-10
+sfr = "rMSEBIM_CONFIG_CS0_N.[11]ALE_MODE"                                                      , "Memory", 0x400C0060,        4, base=16, bitRange=11
+sfr = "rMSEBIM_CONFIG_CS0_N.[12]CSkN_ROUTING_CS1_N"                                            , "Memory", 0x400C0060,        4, base=16, bitRange=12
+sfr = "rMSEBIM_CONFIG_CS0_N.[13]CSkN_ROUTING_CS2_N"                                            , "Memory", 0x400C0060,        4, base=16, bitRange=13
+sfr = "rMSEBIM_CONFIG_CS0_N.[14]CSkN_ROUTING_CS3_N"                                            , "Memory", 0x400C0060,        4, base=16, bitRange=14
+sfr = "rMSEBIM_CONFIG_CS0_N.[15]MULTI_DLE"                                                     , "Memory", 0x400C0060,        4, base=16, bitRange=15
+sfr = "rMSEBIM_CONFIG_CS0_N.[31:27]EXTEND_ADDR"                                                , "Memory", 0x400C0060,        4, base=16, bitRange=27-31
+sfr = "rMSEBIM_CYCLESIZE_CS1_N"                                                                , "Memory", 0x400C0100,        4, base=16
+sfr = "rMSEBIM_CYCLESIZE_CS1_N.[0]ALEDATA"                                                     , "Memory", 0x400C0100,        4, base=16, bitRange=0
+sfr = "rMSEBIM_CYCLESIZE_CS1_N.[1]CLEDATA"                                                     , "Memory", 0x400C0100,        4, base=16, bitRange=1
+sfr = "rMSEBIM_CYCLESIZE_CS1_N.[9:8]RDDLEDATA_B"                                               , "Memory", 0x400C0100,        4, base=16, bitRange=8-9
+sfr = "rMSEBIM_CYCLESIZE_CS1_N.[13:12]WRDLEDATA_B"                                             , "Memory", 0x400C0100,        4, base=16, bitRange=12-13
+sfr = "rMSEBIM_CYCLESIZE_CS1_N.[23:16]RDDLEDATA_NB"                                            , "Memory", 0x400C0100,        4, base=16, bitRange=16-23
+sfr = "rMSEBIM_CYCLESIZE_CS1_N.[31:24]WRDLEDATA_NB"                                            , "Memory", 0x400C0100,        4, base=16, bitRange=24-31
+sfr = "rMSEBIM_SETUPHOLD_CS1_N"                                                                , "Memory", 0x400C0104,        4, base=16
+sfr = "rMSEBIM_SETUPHOLD_CS1_N.[5:0]RDDLESETUP"                                                , "Memory", 0x400C0104,        4, base=16, bitRange=0-5
+sfr = "rMSEBIM_SETUPHOLD_CS1_N.[13:8]WRDLESETUP"                                               , "Memory", 0x400C0104,        4, base=16, bitRange=8-13
+sfr = "rMSEBIM_SETUPHOLD_CS1_N.[21:16]RDDLEHOLD"                                               , "Memory", 0x400C0104,        4, base=16, bitRange=16-21
+sfr = "rMSEBIM_SETUPHOLD_CS1_N.[29:24]WRDLEHOLD"                                               , "Memory", 0x400C0104,        4, base=16, bitRange=24-29
+sfr = "rMSEBIM_TDMACR_CS1_N"                                                                   , "Memory", 0x400C0108,        4, base=16
+sfr = "rMSEBIM_TDMACR_CS1_N.[0]TDMAE1"                                                         , "Memory", 0x400C0108,        4, base=16, bitRange=0
+sfr = "rMSEBIM_TDMACR_CS1_N.[3:1]DEST_BURST_SIZE"                                              , "Memory", 0x400C0108,        4, base=16, bitRange=1-3
+sfr = "rMSEBIM_TDMACR_CS1_N.[16:4]DEST_BLOCK_SIZE"                                             , "Memory", 0x400C0108,        4, base=16, bitRange=4-16
+sfr = "rMSEBIM_TDMACR_CS1_N.[29:17]CURRENT_DEST_BLOCK_SIZE"                                    , "Memory", 0x400C0108,        4, base=16, bitRange=17-29
+sfr = "rMSEBIM_TDMACR_CS1_N.[30]SINGLE_DEST_WIDTH"                                             , "Memory", 0x400C0108,        4, base=16, bitRange=30
+sfr = "rMSEBIM_RDMACR_CS1_N"                                                                   , "Memory", 0x400C010C,        4, base=16
+sfr = "rMSEBIM_RDMACR_CS1_N.[0]RDMAE1"                                                         , "Memory", 0x400C010C,        4, base=16, bitRange=0
+sfr = "rMSEBIM_RDMACR_CS1_N.[3:1]SRC_BURST_SIZE"                                               , "Memory", 0x400C010C,        4, base=16, bitRange=1-3
+sfr = "rMSEBIM_RDMACR_CS1_N.[16:4]SRC_BLOCK_SIZE"                                              , "Memory", 0x400C010C,        4, base=16, bitRange=4-16
+sfr = "rMSEBIM_RDMACR_CS1_N.[29:17]CURRENT_SRC_BLOCK_SIZE"                                     , "Memory", 0x400C010C,        4, base=16, bitRange=17-29
+sfr = "rMSEBIM_RDMACR_CS1_N.[30]SINGLE_SRC_WIDTH"                                              , "Memory", 0x400C010C,        4, base=16, bitRange=30
+sfr = "rMSEBIM_ADDRDMA_READ_CS1_N"                                                             , "Memory", 0x400C0110,        4, base=16
+sfr = "rMSEBIM_ADDRDMA_READ_CS1_N.[2]ADDRDMA_READ_2"                                           , "Memory", 0x400C0110,        4, base=16, bitRange=2
+sfr = "rMSEBIM_ADDRDMA_READ_CS1_N.[31:3]ADDRDMA_READ"                                          , "Memory", 0x400C0110,        4, base=16, bitRange=3-31
+sfr = "rMSEBIM_ADDRDMA_CURRENTREAD_CS1_N"                                                      , "Memory", 0x400C0114,        4, base=16, readOnly
+sfr = "rMSEBIM_ADDRDMA_CURRENTREAD_CS1_N.[31:0]ADDRDMA_CURRENTREAD"                            , "Memory", 0x400C0114,        4, base=16, readOnly, bitRange=0-31
+sfr = "rMSEBIM_ADDRDMA_WRITE_CS1_N"                                                            , "Memory", 0x400C0118,        4, base=16
+sfr = "rMSEBIM_ADDRDMA_WRITE_CS1_N.[2]ADDRDMA_WRITE_2"                                         , "Memory", 0x400C0118,        4, base=16, bitRange=2
+sfr = "rMSEBIM_ADDRDMA_WRITE_CS1_N.[31:3]ADDRDMA_WRITE"                                        , "Memory", 0x400C0118,        4, base=16, bitRange=3-31
+sfr = "rMSEBIM_ADDRDMA_CURRENTWRITE_CS1_N"                                                     , "Memory", 0x400C011C,        4, base=16, readOnly
+sfr = "rMSEBIM_ADDRDMA_CURRENTWRITE_CS1_N.[31:0]ADDRDMA_CURRENTWRITE"                          , "Memory", 0x400C011C,        4, base=16, readOnly, bitRange=0-31
+sfr = "rMSEBIM_DMATDLR_CS1_N"                                                                  , "Memory", 0x400C0120,        4, base=16
+sfr = "rMSEBIM_DMATDLR_CS1_N.[4:0]DMATDLR"                                                     , "Memory", 0x400C0120,        4, base=16, bitRange=0-4
+sfr = "rMSEBIM_DMATDLR_CS1_N.[11:6]DMA_TRANSMIT_FIFOLEVEL"                                     , "Memory", 0x400C0120,        4, base=16, bitRange=6-11
+sfr = "rMSEBIM_DMATDLR_CS1_N.[15:13]BURST_SIZEMAX_DMAWRITE"                                    , "Memory", 0x400C0120,        4, base=16, bitRange=13-15
+sfr = "rMSEBIM_DMATDLR_CS1_N.[16]USE_EXT_WRDMA_REQ"                                            , "Memory", 0x400C0120,        4, base=16, bitRange=16
+sfr = "rMSEBIM_DMATDLR_CS1_N.[31]DMA_TRANSMIT_DISABLEBUS"                                      , "Memory", 0x400C0120,        4, base=16, bitRange=31
+sfr = "rMSEBIM_DMARDLR_CS1_N"                                                                  , "Memory", 0x400C0124,        4, base=16
+sfr = "rMSEBIM_DMARDLR_CS1_N.[4:0]DMARDLR"                                                     , "Memory", 0x400C0124,        4, base=16, bitRange=0-4
+sfr = "rMSEBIM_DMARDLR_CS1_N.[11:6]DMA_RECEIVE_FIFOLEVEL"                                      , "Memory", 0x400C0124,        4, base=16, bitRange=6-11
+sfr = "rMSEBIM_DMARDLR_CS1_N.[15:13]BURST_SIZEMAX_DMAREAD"                                     , "Memory", 0x400C0124,        4, base=16, bitRange=13-15
+sfr = "rMSEBIM_DMARDLR_CS1_N.[16]USE_EXT_RDDMA_REQ"                                            , "Memory", 0x400C0124,        4, base=16, bitRange=16
+sfr = "rMSEBIM_DMARDLR_CS1_N.[30]DMA_RECEIVE_DISABLE"                                          , "Memory", 0x400C0124,        4, base=16, bitRange=30
+sfr = "rMSEBIM_DMARDLR_CS1_N.[31]DMA_RECEIVE_DISABLEBUS"                                       , "Memory", 0x400C0124,        4, base=16, bitRange=31
+sfr = "rMSEBIM_CONFIG_CS1_N"                                                                   , "Memory", 0x400C0160,        4, base=16
+sfr = "rMSEBIM_CONFIG_CS1_N.[2:0]CONFIG"                                                       , "Memory", 0x400C0160,        4, base=16, bitRange=0-2
+sfr = "rMSEBIM_CONFIG_CS1_N.[6:5]MODE_WAIT"                                                    , "Memory", 0x400C0160,        4, base=16, bitRange=5-6
+sfr = "rMSEBIM_CONFIG_CS1_N.[7]BURST_ENABLE"                                                   , "Memory", 0x400C0160,        4, base=16, bitRange=7
+sfr = "rMSEBIM_CONFIG_CS1_N.[10:8]ALE_NUMBER"                                                  , "Memory", 0x400C0160,        4, base=16, bitRange=8-10
+sfr = "rMSEBIM_CONFIG_CS1_N.[11]ALE_MODE"                                                      , "Memory", 0x400C0160,        4, base=16, bitRange=11
+sfr = "rMSEBIM_CONFIG_CS1_N.[12]CSkN_ROUTING_CS1_N"                                            , "Memory", 0x400C0160,        4, base=16, bitRange=12
+sfr = "rMSEBIM_CONFIG_CS1_N.[13]CSkN_ROUTING_CS2_N"                                            , "Memory", 0x400C0160,        4, base=16, bitRange=13
+sfr = "rMSEBIM_CONFIG_CS1_N.[14]CSkN_ROUTING_CS3_N"                                            , "Memory", 0x400C0160,        4, base=16, bitRange=14
+sfr = "rMSEBIM_CONFIG_CS1_N.[15]MULTI_DLE"                                                     , "Memory", 0x400C0160,        4, base=16, bitRange=15
+sfr = "rMSEBIM_CONFIG_CS1_N.[31:27]EXTEND_ADDR"                                                , "Memory", 0x400C0160,        4, base=16, bitRange=27-31
+sfr = "rMSEBIM_CYCLESIZE_CS2_N"                                                                , "Memory", 0x400C0200,        4, base=16
+sfr = "rMSEBIM_CYCLESIZE_CS2_N.[0]ALEDATA"                                                     , "Memory", 0x400C0200,        4, base=16, bitRange=0
+sfr = "rMSEBIM_CYCLESIZE_CS2_N.[1]CLEDATA"                                                     , "Memory", 0x400C0200,        4, base=16, bitRange=1
+sfr = "rMSEBIM_CYCLESIZE_CS2_N.[9:8]RDDLEDATA_B"                                               , "Memory", 0x400C0200,        4, base=16, bitRange=8-9
+sfr = "rMSEBIM_CYCLESIZE_CS2_N.[13:12]WRDLEDATA_B"                                             , "Memory", 0x400C0200,        4, base=16, bitRange=12-13
+sfr = "rMSEBIM_CYCLESIZE_CS2_N.[23:16]RDDLEDATA_NB"                                            , "Memory", 0x400C0200,        4, base=16, bitRange=16-23
+sfr = "rMSEBIM_CYCLESIZE_CS2_N.[31:24]WRDLEDATA_NB"                                            , "Memory", 0x400C0200,        4, base=16, bitRange=24-31
+sfr = "rMSEBIM_SETUPHOLD_CS2_N"                                                                , "Memory", 0x400C0204,        4, base=16
+sfr = "rMSEBIM_SETUPHOLD_CS2_N.[5:0]RDDLESETUP"                                                , "Memory", 0x400C0204,        4, base=16, bitRange=0-5
+sfr = "rMSEBIM_SETUPHOLD_CS2_N.[13:8]WRDLESETUP"                                               , "Memory", 0x400C0204,        4, base=16, bitRange=8-13
+sfr = "rMSEBIM_SETUPHOLD_CS2_N.[21:16]RDDLEHOLD"                                               , "Memory", 0x400C0204,        4, base=16, bitRange=16-21
+sfr = "rMSEBIM_SETUPHOLD_CS2_N.[29:24]WRDLEHOLD"                                               , "Memory", 0x400C0204,        4, base=16, bitRange=24-29
+sfr = "rMSEBIM_CONFIG_CS2_N"                                                                   , "Memory", 0x400C0260,        4, base=16
+sfr = "rMSEBIM_CONFIG_CS2_N.[2:0]CONFIG"                                                       , "Memory", 0x400C0260,        4, base=16, bitRange=0-2
+sfr = "rMSEBIM_CONFIG_CS2_N.[6:5]MODE_WAIT"                                                    , "Memory", 0x400C0260,        4, base=16, bitRange=5-6
+sfr = "rMSEBIM_CONFIG_CS2_N.[7]BURST_ENABLE"                                                   , "Memory", 0x400C0260,        4, base=16, bitRange=7
+sfr = "rMSEBIM_CONFIG_CS2_N.[10:8]ALE_NUMBER"                                                  , "Memory", 0x400C0260,        4, base=16, bitRange=8-10
+sfr = "rMSEBIM_CONFIG_CS2_N.[11]ALE_MODE"                                                      , "Memory", 0x400C0260,        4, base=16, bitRange=11
+sfr = "rMSEBIM_CONFIG_CS2_N.[12]CSkN_ROUTING_CS1_N"                                            , "Memory", 0x400C0260,        4, base=16, bitRange=12
+sfr = "rMSEBIM_CONFIG_CS2_N.[13]CSkN_ROUTING_CS2_N"                                            , "Memory", 0x400C0260,        4, base=16, bitRange=13
+sfr = "rMSEBIM_CONFIG_CS2_N.[14]CSkN_ROUTING_CS3_N"                                            , "Memory", 0x400C0260,        4, base=16, bitRange=14
+sfr = "rMSEBIM_CONFIG_CS2_N.[15]MULTI_DLE"                                                     , "Memory", 0x400C0260,        4, base=16, bitRange=15
+sfr = "rMSEBIM_CONFIG_CS2_N.[31:27]EXTEND_ADDR"                                                , "Memory", 0x400C0260,        4, base=16, bitRange=27-31
+sfr = "rMSEBIM_CYCLESIZE_CS3_N"                                                                , "Memory", 0x400C0300,        4, base=16
+sfr = "rMSEBIM_CYCLESIZE_CS3_N.[0]ALEDATA"                                                     , "Memory", 0x400C0300,        4, base=16, bitRange=0
+sfr = "rMSEBIM_CYCLESIZE_CS3_N.[1]CLEDATA"                                                     , "Memory", 0x400C0300,        4, base=16, bitRange=1
+sfr = "rMSEBIM_CYCLESIZE_CS3_N.[9:8]RDDLEDATA_B"                                               , "Memory", 0x400C0300,        4, base=16, bitRange=8-9
+sfr = "rMSEBIM_CYCLESIZE_CS3_N.[13:12]WRDLEDATA_B"                                             , "Memory", 0x400C0300,        4, base=16, bitRange=12-13
+sfr = "rMSEBIM_CYCLESIZE_CS3_N.[23:16]RDDLEDATA_NB"                                            , "Memory", 0x400C0300,        4, base=16, bitRange=16-23
+sfr = "rMSEBIM_CYCLESIZE_CS3_N.[31:24]WRDLEDATA_NB"                                            , "Memory", 0x400C0300,        4, base=16, bitRange=24-31
+sfr = "rMSEBIM_SETUPHOLD_CS3_N"                                                                , "Memory", 0x400C0304,        4, base=16
+sfr = "rMSEBIM_SETUPHOLD_CS3_N.[5:0]RDDLESETUP"                                                , "Memory", 0x400C0304,        4, base=16, bitRange=0-5
+sfr = "rMSEBIM_SETUPHOLD_CS3_N.[13:8]WRDLESETUP"                                               , "Memory", 0x400C0304,        4, base=16, bitRange=8-13
+sfr = "rMSEBIM_SETUPHOLD_CS3_N.[21:16]RDDLEHOLD"                                               , "Memory", 0x400C0304,        4, base=16, bitRange=16-21
+sfr = "rMSEBIM_SETUPHOLD_CS3_N.[29:24]WRDLEHOLD"                                               , "Memory", 0x400C0304,        4, base=16, bitRange=24-29
+sfr = "rMSEBIM_CONFIG_CS3_N"                                                                   , "Memory", 0x400C0360,        4, base=16
+sfr = "rMSEBIM_CONFIG_CS3_N.[2:0]CONFIG"                                                       , "Memory", 0x400C0360,        4, base=16, bitRange=0-2
+sfr = "rMSEBIM_CONFIG_CS3_N.[6:5]MODE_WAIT"                                                    , "Memory", 0x400C0360,        4, base=16, bitRange=5-6
+sfr = "rMSEBIM_CONFIG_CS3_N.[7]BURST_ENABLE"                                                   , "Memory", 0x400C0360,        4, base=16, bitRange=7
+sfr = "rMSEBIM_CONFIG_CS3_N.[10:8]ALE_NUMBER"                                                  , "Memory", 0x400C0360,        4, base=16, bitRange=8-10
+sfr = "rMSEBIM_CONFIG_CS3_N.[11]ALE_MODE"                                                      , "Memory", 0x400C0360,        4, base=16, bitRange=11
+sfr = "rMSEBIM_CONFIG_CS3_N.[12]CSkN_ROUTING_CS1_N"                                            , "Memory", 0x400C0360,        4, base=16, bitRange=12
+sfr = "rMSEBIM_CONFIG_CS3_N.[13]CSkN_ROUTING_CS2_N"                                            , "Memory", 0x400C0360,        4, base=16, bitRange=13
+sfr = "rMSEBIM_CONFIG_CS3_N.[14]CSkN_ROUTING_CS3_N"                                            , "Memory", 0x400C0360,        4, base=16, bitRange=14
+sfr = "rMSEBIM_CONFIG_CS3_N.[15]MULTI_DLE"                                                     , "Memory", 0x400C0360,        4, base=16, bitRange=15
+sfr = "rMSEBIM_CONFIG_CS3_N.[31:27]EXTEND_ADDR"                                                , "Memory", 0x400C0360,        4, base=16, bitRange=27-31
+sfr = "rMSEBIM_CONFIG"                                                                         , "Memory", 0x400C0800,        4, base=16
+sfr = "rMSEBIM_CONFIG.[1:0]CLKL"                                                               , "Memory", 0x400C0800,        4, base=16, bitRange=0-1
+sfr = "rMSEBIM_CONFIG.[3:2]CLKH"                                                               , "Memory", 0x400C0800,        4, base=16, bitRange=2-3
+sfr = "rMSEBIM_CONFIG.[4]CLKENABLE"                                                            , "Memory", 0x400C0800,        4, base=16, bitRange=4
+sfr = "rMSEBIM_CONFIG.[7:5]BURST_SIZEMAX_CPUWRITE"                                             , "Memory", 0x400C0800,        4, base=16, bitRange=5-7
+sfr = "rMSEBIM_CONFIG.[10:8]BURST_SIZEMAX_CPUREAD"                                             , "Memory", 0x400C0800,        4, base=16, bitRange=8-10
+sfr = "rMSEBIM_CONFIG.[16:11]CPU_TRANSMIT_FIFOLEVEL"                                           , "Memory", 0x400C0800,        4, base=16, bitRange=11-16
+sfr = "rMSEBIM_CONFIG.[22:17]CPU_RECEIVE_FIFOLEVEL"                                            , "Memory", 0x400C0800,        4, base=16, bitRange=17-22
+sfr = "rMSEBIM_CONFIG.[30]CPU_TRANSMIT_DISABLEBUS"                                             , "Memory", 0x400C0800,        4, base=16, bitRange=30
+sfr = "rMSEBIM_CONFIG.[31]CPU_RECEIVE_DISABLEBUS"                                              , "Memory", 0x400C0800,        4, base=16, bitRange=31
+sfr = "rMSEBIM_CPU_FIFOREAD_FLUSH"                                                             , "Memory", 0x400C0808,        4, base=16
+sfr = "rMSEBIM_CPU_FIFOREAD_FLUSH.[31:0]CPU_FIFOREAD_FLUSH"                                    , "Memory", 0x400C0808,        4, base=16, bitRange=0-31
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// MSEBI Master from CPU -----
+group = "MSEBIM","rMSEBIM_CYCLESIZE_CS0_N","rMSEBIM_SETUPHOLD_CS0_N","rMSEBIM_TDMACR_CS0_N","rMSEBIM_RDMACR_CS0_N","rMSEBIM_ADDRDMA_READ_CS0_N","rMSEBIM_ADDRDMA_CURRENTREAD_CS0_N","rMSEBIM_ADDRDMA_WRITE_CS0_N","rMSEBIM_ADDRDMA_CURRENTWRITE_CS0_N","rMSEBIM_DMATDLR_CS0_N","rMSEBIM_DMARDLR_CS0_N","rMSEBIM_CONFIG_CS0_N","rMSEBIM_CYCLESIZE_CS1_N","rMSEBIM_SETUPHOLD_CS1_N","rMSEBIM_TDMACR_CS1_N","rMSEBIM_RDMACR_CS1_N","rMSEBIM_ADDRDMA_READ_CS1_N","rMSEBIM_ADDRDMA_CURRENTREAD_CS1_N","rMSEBIM_ADDRDMA_WRITE_CS1_N","rMSEBIM_ADDRDMA_CURRENTWRITE_CS1_N","rMSEBIM_DMATDLR_CS1_N","rMSEBIM_DMARDLR_CS1_N","rMSEBIM_CONFIG_CS1_N","rMSEBIM_CYCLESIZE_CS2_N","rMSEBIM_SETUPHOLD_CS2_N","rMSEBIM_CONFIG_CS2_N","rMSEBIM_CYCLESIZE_CS3_N","rMSEBIM_SETUPHOLD_CS3_N","rMSEBIM_CONFIG_CS3_N","rMSEBIM_CONFIG","rMSEBIM_CPU_FIFOREAD_FLUSH"

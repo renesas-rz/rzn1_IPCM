@@ -1,0 +1,52 @@
+# http://tonyballantyne.com/graphs.html
+# dot -Tpng sw_arch.txt -o sw_arch.png
+# http://www.graphviz.org/pdf/dotguide.pdf
+# http://graphviz.herokuapp.com/
+
+digraph graphname{
+				size ="12,12";
+                CTRL_RX [label="Controls receiver"]
+                WD [label="Watchdog Control"]
+                Configurator [label="Configurator"]
+                DATA_RPT [label="Data Reporter"]
+                POS_CTRL [label="Position Control"]
+                INP_MNGR [label="Physical Signals Input Manager"]
+                DATA_BUF_MNGR [label="Data Buffer Manager", shape=box]
+                ADCs [label="ADCs", shape=none]
+                ETH [label="Ethernet", shape=none]
+                LOG [label="Logger", shape=box]
+
+                ADCs->INP_MNGR
+
+				CTRL_RX->POS_CTRL
+				INP_MNGR->POS_CTRL
+			    POS_CTRL->DATA_BUF_MNGR
+
+				Configurator->DATA_BUF_MNGR
+				DATA_BUF_MNGR->Configurator
+
+				INP_MNGR->DATA_BUF_MNGR
+				DATA_BUF_MNGR->DATA_RPT
+
+				DATA_RPT->ETH
+
+				ETH->CTRL_RX
+
+    subgraph cluster_legend {
+        label = "Legend"
+        style="solid"
+        ranksep=0.05
+        nodesep=0.01
+        labelloc = b
+        len=0
+
+
+        HW [label="Hardware",  shape=none]
+        STATIC_SRV [label="Static Service", shape=box]
+        TASK [label="RT Task"]
+
+        HW -> STATIC_SRV -> TASK [style="invis"]
+    }
+
+}
+

@@ -1,0 +1,332 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : ADC
+;               AD Converter
+;    revision : 0.13 (15.September.2017)
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "rADC_INTSTATUS0"                                                                        , "Memory", 0x40065000,        4, base=16, readOnly
+sfr = "rADC_INTSTATUS0.[15:0]bADC_INTSTATUS0_VC"                                               , "Memory", 0x40065000,        4, base=16, readOnly, bitRange=0-15
+sfr = "rADC_INTSTATUS1"                                                                        , "Memory", 0x40065004,        4, base=16, readOnly
+sfr = "rADC_INTSTATUS1.[15:0]bADC_INTSTATUS1_VC"                                               , "Memory", 0x40065004,        4, base=16, readOnly, bitRange=0-15
+sfr = "rADC_INTCLR"                                                                            , "Memory", 0x40065008,        4, base=16, writeOnly
+sfr = "rADC_INTCLR.[15:0]bADC_INTCLR_VC"                                                       , "Memory", 0x40065008,        4, base=16, writeOnly, bitRange=0-15
+sfr = "rADC_INTMASK"                                                                           , "Memory", 0x4006500C,        4, base=16
+sfr = "rADC_INTMASK.[15:0]bADC_INTMASK_VC"                                                     , "Memory", 0x4006500C,        4, base=16, bitRange=0-15
+sfr = "rADC_INTOVFSTATUS0"                                                                     , "Memory", 0x40065010,        4, base=16, readOnly
+sfr = "rADC_INTOVFSTATUS0.[15:0]bADC_INTOVFSTATUS0_VC"                                         , "Memory", 0x40065010,        4, base=16, readOnly, bitRange=0-15
+sfr = "rADC_INTOVFSTATUS1"                                                                     , "Memory", 0x40065014,        4, base=16, readOnly
+sfr = "rADC_INTOVFSTATUS1.[15:0]bADC_INTOVFSTATUS1_VC"                                         , "Memory", 0x40065014,        4, base=16, readOnly, bitRange=0-15
+sfr = "rADC_INTCLROVF"                                                                         , "Memory", 0x40065018,        4, base=16, writeOnly
+sfr = "rADC_INTCLROVF.[15:0]bADC_INTCLROVF_VC"                                                 , "Memory", 0x40065018,        4, base=16, writeOnly, bitRange=0-15
+sfr = "rADC_INTOVFMASK"                                                                        , "Memory", 0x4006501C,        4, base=16
+sfr = "rADC_INTOVFMASK.[15:0]bADC_INTOVFMASK_VC"                                               , "Memory", 0x4006501C,        4, base=16, bitRange=0-15
+sfr = "rADC_PENDING"                                                                           , "Memory", 0x40065020,        4, base=16, readOnly
+sfr = "rADC_PENDING.[15:0]bADC_PENDING_VC"                                                     , "Memory", 0x40065020,        4, base=16, readOnly, bitRange=0-15
+sfr = "rADC_PENDING.[30]bADC_DMA0_RUNNING"                                                     , "Memory", 0x40065020,        4, base=16, readOnly, bitRange=30
+sfr = "rADC_PENDING.[31]bADC_DMA1_RUNNING"                                                     , "Memory", 0x40065020,        4, base=16, readOnly, bitRange=31
+sfr = "rADC_PENDINGOVF"                                                                        , "Memory", 0x40065024,        4, base=16, readOnly
+sfr = "rADC_PENDINGOVF.[15:0]bADC_PENDINGOVF_VC"                                               , "Memory", 0x40065024,        4, base=16, readOnly, bitRange=0-15
+sfr = "rADC_PENDINGOVF.[30]bADC_DMA0_RUNNINGOVF"                                               , "Memory", 0x40065024,        4, base=16, readOnly, bitRange=30
+sfr = "rADC_PENDINGOVF.[31]bADC_DMA1_RUNNINGOVF"                                               , "Memory", 0x40065024,        4, base=16, readOnly, bitRange=31
+sfr = "rADC_PENDINGCLROVF"                                                                     , "Memory", 0x40065028,        4, base=16, writeOnly
+sfr = "rADC_PENDINGCLROVF.[15:0]bADC_PENDINGCLROVF_VC"                                         , "Memory", 0x40065028,        4, base=16, writeOnly, bitRange=0-15
+sfr = "rADC_PENDINGCLROVF.[30]bADC_DMA0_RUNNINGCLROVF"                                         , "Memory", 0x40065028,        4, base=16, writeOnly, bitRange=30
+sfr = "rADC_PENDINGCLROVF.[31]bADC_DMA1_RUNNINGCLROVF"                                         , "Memory", 0x40065028,        4, base=16, writeOnly, bitRange=31
+sfr = "rADC_CONTROL"                                                                           , "Memory", 0x4006502C,        4, base=16, readOnly
+sfr = "rADC_CONTROL.[4:0]bADC_VC_RUN"                                                          , "Memory", 0x4006502C,        4, base=16, readOnly, bitRange=0-4
+sfr = "rADC_CONTROL.[5]bADC_VC_BUSY"                                                           , "Memory", 0x4006502C,        4, base=16, readOnly, bitRange=5
+sfr = "rADC_CONTROL.[6]bADC_BUSY"                                                              , "Memory", 0x4006502C,        4, base=16, readOnly, bitRange=6
+sfr = "rADC_FORCE"                                                                             , "Memory", 0x40065030,        4, base=16, readOnly
+sfr = "rADC_FORCE.[15:0]bADC_FORCE_VC"                                                         , "Memory", 0x40065030,        4, base=16, readOnly, bitRange=0-15
+sfr = "rADC_SETFORCE"                                                                          , "Memory", 0x40065034,        4, base=16, writeOnly
+sfr = "rADC_SETFORCE.[15:0]bADC_SETFORCE_VC"                                                   , "Memory", 0x40065034,        4, base=16, writeOnly, bitRange=0-15
+sfr = "rADC_CLRFORCE"                                                                          , "Memory", 0x40065038,        4, base=16, writeOnly
+sfr = "rADC_CLRFORCE.[15:0]bADC_CLRFORCE_VC"                                                   , "Memory", 0x40065038,        4, base=16, writeOnly, bitRange=0-15
+sfr = "rADC_PRIORITY"                                                                          , "Memory", 0x4006503C,        4, base=16
+sfr = "rADC_PRIORITY.[4:0]bADC_Priority"                                                       , "Memory", 0x4006503C,        4, base=16, bitRange=0-4
+sfr = "rADC_PRIORITY.[9:5]bADC_RR_Pointer"                                                     , "Memory", 0x4006503C,        4, base=16, readOnly, bitRange=5-9
+sfr = "rADC_CONFIG"                                                                            , "Memory", 0x40065040,        4, base=16
+sfr = "rADC_CONFIG.[2:0]bADC_SAMPLE_HOLD_ENABLE"                                               , "Memory", 0x40065040,        4, base=16, bitRange=0-2
+sfr = "rADC_CONFIG.[3]bADC_POWER_DOWN"                                                         , "Memory", 0x40065040,        4, base=16, bitRange=3
+sfr = "rADC_CONFIG.[4]bADC_DMA"                                                                , "Memory", 0x40065040,        4, base=16, bitRange=4
+sfr = "rADC_ACQS"                                                                              , "Memory", 0x400650AC,        4, base=16
+sfr = "rADC_ACQS.[4:0]bADC_TSHSAMP"                                                            , "Memory", 0x400650AC,        4, base=16, bitRange=0-4
+sfr = "rADC_ACQS.[6:5]bADC_TSHSET"                                                             , "Memory", 0x400650AC,        4, base=16, bitRange=5-6
+sfr = "rADC_ACQS.[9:7]bADC_TSHOH"                                                              , "Memory", 0x400650AC,        4, base=16, bitRange=7-9
+sfr = "rADC_MASKLOCK0"                                                                         , "Memory", 0x400650B0,        4, base=16
+sfr = "rADC_MASKLOCK0.[15:0]bADC_MASKLOCK"                                                     , "Memory", 0x400650B0,        4, base=16, bitRange=0-15
+sfr = "rADC_MASKLOCK1"                                                                         , "Memory", 0x400650B4,        4, base=16
+sfr = "rADC_MASKLOCK1.[15:0]bADC_MASKLOCK"                                                     , "Memory", 0x400650B4,        4, base=16, bitRange=0-15
+sfr = "rADC_MASKLOCK2"                                                                         , "Memory", 0x400650B8,        4, base=16
+sfr = "rADC_MASKLOCK2.[15:0]bADC_MASKLOCK"                                                     , "Memory", 0x400650B8,        4, base=16, bitRange=0-15
+sfr = "rADC_MASKLOCK3"                                                                         , "Memory", 0x400650BC,        4, base=16
+sfr = "rADC_MASKLOCK3.[15:0]bADC_MASKLOCK"                                                     , "Memory", 0x400650BC,        4, base=16, bitRange=0-15
+sfr = "rADC_VC0"                                                                               , "Memory", 0x400650C0,        4, base=16
+sfr = "rADC_VC0.[2:0]bADC1_ChannelSel"                                                         , "Memory", 0x400650C0,        4, base=16, bitRange=0-2
+sfr = "rADC_VC0.[5:3]bADC2_ChannelSel"                                                         , "Memory", 0x400650C0,        4, base=16, bitRange=3-5
+sfr = "rADC_VC0.[7:6]bADC_Mode"                                                                , "Memory", 0x400650C0,        4, base=16, bitRange=6-7
+sfr = "rADC_VC0.[12:8]bADC_TrigSel"                                                            , "Memory", 0x400650C0,        4, base=16, bitRange=8-12
+sfr = "rADC_VC0.[13]bADC_TrigEnable"                                                           , "Memory", 0x400650C0,        4, base=16, bitRange=13
+sfr = "rADC_VC0.[14]bADC_Continuous"                                                           , "Memory", 0x400650C0,        4, base=16, bitRange=14
+sfr = "rADC_VC0.[15]bADC1_Enable"                                                              , "Memory", 0x400650C0,        4, base=16, bitRange=15
+sfr = "rADC_VC0.[16]bADC2_Enable"                                                              , "Memory", 0x400650C0,        4, base=16, bitRange=16
+sfr = "rADC_VC0.[18:17]bADC_DMA_Request"                                                       , "Memory", 0x400650C0,        4, base=16, bitRange=17-18
+sfr = "rADC_VC1"                                                                               , "Memory", 0x400650C4,        4, base=16
+sfr = "rADC_VC1.[2:0]bADC1_ChannelSel"                                                         , "Memory", 0x400650C4,        4, base=16, bitRange=0-2
+sfr = "rADC_VC1.[5:3]bADC2_ChannelSel"                                                         , "Memory", 0x400650C4,        4, base=16, bitRange=3-5
+sfr = "rADC_VC1.[7:6]bADC_Mode"                                                                , "Memory", 0x400650C4,        4, base=16, bitRange=6-7
+sfr = "rADC_VC1.[12:8]bADC_TrigSel"                                                            , "Memory", 0x400650C4,        4, base=16, bitRange=8-12
+sfr = "rADC_VC1.[13]bADC_TrigEnable"                                                           , "Memory", 0x400650C4,        4, base=16, bitRange=13
+sfr = "rADC_VC1.[14]bADC_Continuous"                                                           , "Memory", 0x400650C4,        4, base=16, bitRange=14
+sfr = "rADC_VC1.[15]bADC1_Enable"                                                              , "Memory", 0x400650C4,        4, base=16, bitRange=15
+sfr = "rADC_VC1.[16]bADC2_Enable"                                                              , "Memory", 0x400650C4,        4, base=16, bitRange=16
+sfr = "rADC_VC1.[18:17]bADC_DMA_Request"                                                       , "Memory", 0x400650C4,        4, base=16, bitRange=17-18
+sfr = "rADC_VC2"                                                                               , "Memory", 0x400650C8,        4, base=16
+sfr = "rADC_VC2.[2:0]bADC1_ChannelSel"                                                         , "Memory", 0x400650C8,        4, base=16, bitRange=0-2
+sfr = "rADC_VC2.[5:3]bADC2_ChannelSel"                                                         , "Memory", 0x400650C8,        4, base=16, bitRange=3-5
+sfr = "rADC_VC2.[7:6]bADC_Mode"                                                                , "Memory", 0x400650C8,        4, base=16, bitRange=6-7
+sfr = "rADC_VC2.[12:8]bADC_TrigSel"                                                            , "Memory", 0x400650C8,        4, base=16, bitRange=8-12
+sfr = "rADC_VC2.[13]bADC_TrigEnable"                                                           , "Memory", 0x400650C8,        4, base=16, bitRange=13
+sfr = "rADC_VC2.[14]bADC_Continuous"                                                           , "Memory", 0x400650C8,        4, base=16, bitRange=14
+sfr = "rADC_VC2.[15]bADC1_Enable"                                                              , "Memory", 0x400650C8,        4, base=16, bitRange=15
+sfr = "rADC_VC2.[16]bADC2_Enable"                                                              , "Memory", 0x400650C8,        4, base=16, bitRange=16
+sfr = "rADC_VC2.[18:17]bADC_DMA_Request"                                                       , "Memory", 0x400650C8,        4, base=16, bitRange=17-18
+sfr = "rADC_VC3"                                                                               , "Memory", 0x400650CC,        4, base=16
+sfr = "rADC_VC3.[2:0]bADC1_ChannelSel"                                                         , "Memory", 0x400650CC,        4, base=16, bitRange=0-2
+sfr = "rADC_VC3.[5:3]bADC2_ChannelSel"                                                         , "Memory", 0x400650CC,        4, base=16, bitRange=3-5
+sfr = "rADC_VC3.[7:6]bADC_Mode"                                                                , "Memory", 0x400650CC,        4, base=16, bitRange=6-7
+sfr = "rADC_VC3.[12:8]bADC_TrigSel"                                                            , "Memory", 0x400650CC,        4, base=16, bitRange=8-12
+sfr = "rADC_VC3.[13]bADC_TrigEnable"                                                           , "Memory", 0x400650CC,        4, base=16, bitRange=13
+sfr = "rADC_VC3.[14]bADC_Continuous"                                                           , "Memory", 0x400650CC,        4, base=16, bitRange=14
+sfr = "rADC_VC3.[15]bADC1_Enable"                                                              , "Memory", 0x400650CC,        4, base=16, bitRange=15
+sfr = "rADC_VC3.[16]bADC2_Enable"                                                              , "Memory", 0x400650CC,        4, base=16, bitRange=16
+sfr = "rADC_VC3.[18:17]bADC_DMA_Request"                                                       , "Memory", 0x400650CC,        4, base=16, bitRange=17-18
+sfr = "rADC_VC4"                                                                               , "Memory", 0x400650D0,        4, base=16
+sfr = "rADC_VC4.[2:0]bADC1_ChannelSel"                                                         , "Memory", 0x400650D0,        4, base=16, bitRange=0-2
+sfr = "rADC_VC4.[5:3]bADC2_ChannelSel"                                                         , "Memory", 0x400650D0,        4, base=16, bitRange=3-5
+sfr = "rADC_VC4.[7:6]bADC_Mode"                                                                , "Memory", 0x400650D0,        4, base=16, bitRange=6-7
+sfr = "rADC_VC4.[12:8]bADC_TrigSel"                                                            , "Memory", 0x400650D0,        4, base=16, bitRange=8-12
+sfr = "rADC_VC4.[13]bADC_TrigEnable"                                                           , "Memory", 0x400650D0,        4, base=16, bitRange=13
+sfr = "rADC_VC4.[14]bADC_Continuous"                                                           , "Memory", 0x400650D0,        4, base=16, bitRange=14
+sfr = "rADC_VC4.[15]bADC1_Enable"                                                              , "Memory", 0x400650D0,        4, base=16, bitRange=15
+sfr = "rADC_VC4.[16]bADC2_Enable"                                                              , "Memory", 0x400650D0,        4, base=16, bitRange=16
+sfr = "rADC_VC4.[18:17]bADC_DMA_Request"                                                       , "Memory", 0x400650D0,        4, base=16, bitRange=17-18
+sfr = "rADC_VC5"                                                                               , "Memory", 0x400650D4,        4, base=16
+sfr = "rADC_VC5.[2:0]bADC1_ChannelSel"                                                         , "Memory", 0x400650D4,        4, base=16, bitRange=0-2
+sfr = "rADC_VC5.[5:3]bADC2_ChannelSel"                                                         , "Memory", 0x400650D4,        4, base=16, bitRange=3-5
+sfr = "rADC_VC5.[7:6]bADC_Mode"                                                                , "Memory", 0x400650D4,        4, base=16, bitRange=6-7
+sfr = "rADC_VC5.[12:8]bADC_TrigSel"                                                            , "Memory", 0x400650D4,        4, base=16, bitRange=8-12
+sfr = "rADC_VC5.[13]bADC_TrigEnable"                                                           , "Memory", 0x400650D4,        4, base=16, bitRange=13
+sfr = "rADC_VC5.[14]bADC_Continuous"                                                           , "Memory", 0x400650D4,        4, base=16, bitRange=14
+sfr = "rADC_VC5.[15]bADC1_Enable"                                                              , "Memory", 0x400650D4,        4, base=16, bitRange=15
+sfr = "rADC_VC5.[16]bADC2_Enable"                                                              , "Memory", 0x400650D4,        4, base=16, bitRange=16
+sfr = "rADC_VC5.[18:17]bADC_DMA_Request"                                                       , "Memory", 0x400650D4,        4, base=16, bitRange=17-18
+sfr = "rADC_VC6"                                                                               , "Memory", 0x400650D8,        4, base=16
+sfr = "rADC_VC6.[2:0]bADC1_ChannelSel"                                                         , "Memory", 0x400650D8,        4, base=16, bitRange=0-2
+sfr = "rADC_VC6.[5:3]bADC2_ChannelSel"                                                         , "Memory", 0x400650D8,        4, base=16, bitRange=3-5
+sfr = "rADC_VC6.[7:6]bADC_Mode"                                                                , "Memory", 0x400650D8,        4, base=16, bitRange=6-7
+sfr = "rADC_VC6.[12:8]bADC_TrigSel"                                                            , "Memory", 0x400650D8,        4, base=16, bitRange=8-12
+sfr = "rADC_VC6.[13]bADC_TrigEnable"                                                           , "Memory", 0x400650D8,        4, base=16, bitRange=13
+sfr = "rADC_VC6.[14]bADC_Continuous"                                                           , "Memory", 0x400650D8,        4, base=16, bitRange=14
+sfr = "rADC_VC6.[15]bADC1_Enable"                                                              , "Memory", 0x400650D8,        4, base=16, bitRange=15
+sfr = "rADC_VC6.[16]bADC2_Enable"                                                              , "Memory", 0x400650D8,        4, base=16, bitRange=16
+sfr = "rADC_VC6.[18:17]bADC_DMA_Request"                                                       , "Memory", 0x400650D8,        4, base=16, bitRange=17-18
+sfr = "rADC_VC7"                                                                               , "Memory", 0x400650DC,        4, base=16
+sfr = "rADC_VC7.[2:0]bADC1_ChannelSel"                                                         , "Memory", 0x400650DC,        4, base=16, bitRange=0-2
+sfr = "rADC_VC7.[5:3]bADC2_ChannelSel"                                                         , "Memory", 0x400650DC,        4, base=16, bitRange=3-5
+sfr = "rADC_VC7.[7:6]bADC_Mode"                                                                , "Memory", 0x400650DC,        4, base=16, bitRange=6-7
+sfr = "rADC_VC7.[12:8]bADC_TrigSel"                                                            , "Memory", 0x400650DC,        4, base=16, bitRange=8-12
+sfr = "rADC_VC7.[13]bADC_TrigEnable"                                                           , "Memory", 0x400650DC,        4, base=16, bitRange=13
+sfr = "rADC_VC7.[14]bADC_Continuous"                                                           , "Memory", 0x400650DC,        4, base=16, bitRange=14
+sfr = "rADC_VC7.[15]bADC1_Enable"                                                              , "Memory", 0x400650DC,        4, base=16, bitRange=15
+sfr = "rADC_VC7.[16]bADC2_Enable"                                                              , "Memory", 0x400650DC,        4, base=16, bitRange=16
+sfr = "rADC_VC7.[18:17]bADC_DMA_Request"                                                       , "Memory", 0x400650DC,        4, base=16, bitRange=17-18
+sfr = "rADC_VC8"                                                                               , "Memory", 0x400650E0,        4, base=16
+sfr = "rADC_VC8.[2:0]bADC1_ChannelSel"                                                         , "Memory", 0x400650E0,        4, base=16, bitRange=0-2
+sfr = "rADC_VC8.[5:3]bADC2_ChannelSel"                                                         , "Memory", 0x400650E0,        4, base=16, bitRange=3-5
+sfr = "rADC_VC8.[7:6]bADC_Mode"                                                                , "Memory", 0x400650E0,        4, base=16, bitRange=6-7
+sfr = "rADC_VC8.[12:8]bADC_TrigSel"                                                            , "Memory", 0x400650E0,        4, base=16, bitRange=8-12
+sfr = "rADC_VC8.[13]bADC_TrigEnable"                                                           , "Memory", 0x400650E0,        4, base=16, bitRange=13
+sfr = "rADC_VC8.[14]bADC_Continuous"                                                           , "Memory", 0x400650E0,        4, base=16, bitRange=14
+sfr = "rADC_VC8.[15]bADC1_Enable"                                                              , "Memory", 0x400650E0,        4, base=16, bitRange=15
+sfr = "rADC_VC8.[16]bADC2_Enable"                                                              , "Memory", 0x400650E0,        4, base=16, bitRange=16
+sfr = "rADC_VC8.[18:17]bADC_DMA_Request"                                                       , "Memory", 0x400650E0,        4, base=16, bitRange=17-18
+sfr = "rADC_VC9"                                                                               , "Memory", 0x400650E4,        4, base=16
+sfr = "rADC_VC9.[2:0]bADC1_ChannelSel"                                                         , "Memory", 0x400650E4,        4, base=16, bitRange=0-2
+sfr = "rADC_VC9.[5:3]bADC2_ChannelSel"                                                         , "Memory", 0x400650E4,        4, base=16, bitRange=3-5
+sfr = "rADC_VC9.[7:6]bADC_Mode"                                                                , "Memory", 0x400650E4,        4, base=16, bitRange=6-7
+sfr = "rADC_VC9.[12:8]bADC_TrigSel"                                                            , "Memory", 0x400650E4,        4, base=16, bitRange=8-12
+sfr = "rADC_VC9.[13]bADC_TrigEnable"                                                           , "Memory", 0x400650E4,        4, base=16, bitRange=13
+sfr = "rADC_VC9.[14]bADC_Continuous"                                                           , "Memory", 0x400650E4,        4, base=16, bitRange=14
+sfr = "rADC_VC9.[15]bADC1_Enable"                                                              , "Memory", 0x400650E4,        4, base=16, bitRange=15
+sfr = "rADC_VC9.[16]bADC2_Enable"                                                              , "Memory", 0x400650E4,        4, base=16, bitRange=16
+sfr = "rADC_VC9.[18:17]bADC_DMA_Request"                                                       , "Memory", 0x400650E4,        4, base=16, bitRange=17-18
+sfr = "rADC_VC10"                                                                              , "Memory", 0x400650E8,        4, base=16
+sfr = "rADC_VC10.[2:0]bADC1_ChannelSel"                                                        , "Memory", 0x400650E8,        4, base=16, bitRange=0-2
+sfr = "rADC_VC10.[5:3]bADC2_ChannelSel"                                                        , "Memory", 0x400650E8,        4, base=16, bitRange=3-5
+sfr = "rADC_VC10.[7:6]bADC_Mode"                                                               , "Memory", 0x400650E8,        4, base=16, bitRange=6-7
+sfr = "rADC_VC10.[12:8]bADC_TrigSel"                                                           , "Memory", 0x400650E8,        4, base=16, bitRange=8-12
+sfr = "rADC_VC10.[13]bADC_TrigEnable"                                                          , "Memory", 0x400650E8,        4, base=16, bitRange=13
+sfr = "rADC_VC10.[14]bADC_Continuous"                                                          , "Memory", 0x400650E8,        4, base=16, bitRange=14
+sfr = "rADC_VC10.[15]bADC1_Enable"                                                             , "Memory", 0x400650E8,        4, base=16, bitRange=15
+sfr = "rADC_VC10.[16]bADC2_Enable"                                                             , "Memory", 0x400650E8,        4, base=16, bitRange=16
+sfr = "rADC_VC10.[18:17]bADC_DMA_Request"                                                      , "Memory", 0x400650E8,        4, base=16, bitRange=17-18
+sfr = "rADC_VC11"                                                                              , "Memory", 0x400650EC,        4, base=16
+sfr = "rADC_VC11.[2:0]bADC1_ChannelSel"                                                        , "Memory", 0x400650EC,        4, base=16, bitRange=0-2
+sfr = "rADC_VC11.[5:3]bADC2_ChannelSel"                                                        , "Memory", 0x400650EC,        4, base=16, bitRange=3-5
+sfr = "rADC_VC11.[7:6]bADC_Mode"                                                               , "Memory", 0x400650EC,        4, base=16, bitRange=6-7
+sfr = "rADC_VC11.[12:8]bADC_TrigSel"                                                           , "Memory", 0x400650EC,        4, base=16, bitRange=8-12
+sfr = "rADC_VC11.[13]bADC_TrigEnable"                                                          , "Memory", 0x400650EC,        4, base=16, bitRange=13
+sfr = "rADC_VC11.[14]bADC_Continuous"                                                          , "Memory", 0x400650EC,        4, base=16, bitRange=14
+sfr = "rADC_VC11.[15]bADC1_Enable"                                                             , "Memory", 0x400650EC,        4, base=16, bitRange=15
+sfr = "rADC_VC11.[16]bADC2_Enable"                                                             , "Memory", 0x400650EC,        4, base=16, bitRange=16
+sfr = "rADC_VC11.[18:17]bADC_DMA_Request"                                                      , "Memory", 0x400650EC,        4, base=16, bitRange=17-18
+sfr = "rADC_VC12"                                                                              , "Memory", 0x400650F0,        4, base=16
+sfr = "rADC_VC12.[2:0]bADC1_ChannelSel"                                                        , "Memory", 0x400650F0,        4, base=16, bitRange=0-2
+sfr = "rADC_VC12.[5:3]bADC2_ChannelSel"                                                        , "Memory", 0x400650F0,        4, base=16, bitRange=3-5
+sfr = "rADC_VC12.[7:6]bADC_Mode"                                                               , "Memory", 0x400650F0,        4, base=16, bitRange=6-7
+sfr = "rADC_VC12.[12:8]bADC_TrigSel"                                                           , "Memory", 0x400650F0,        4, base=16, bitRange=8-12
+sfr = "rADC_VC12.[13]bADC_TrigEnable"                                                          , "Memory", 0x400650F0,        4, base=16, bitRange=13
+sfr = "rADC_VC12.[14]bADC_Continuous"                                                          , "Memory", 0x400650F0,        4, base=16, bitRange=14
+sfr = "rADC_VC12.[15]bADC1_Enable"                                                             , "Memory", 0x400650F0,        4, base=16, bitRange=15
+sfr = "rADC_VC12.[16]bADC2_Enable"                                                             , "Memory", 0x400650F0,        4, base=16, bitRange=16
+sfr = "rADC_VC12.[18:17]bADC_DMA_Request"                                                      , "Memory", 0x400650F0,        4, base=16, bitRange=17-18
+sfr = "rADC_VC13"                                                                              , "Memory", 0x400650F4,        4, base=16
+sfr = "rADC_VC13.[2:0]bADC1_ChannelSel"                                                        , "Memory", 0x400650F4,        4, base=16, bitRange=0-2
+sfr = "rADC_VC13.[5:3]bADC2_ChannelSel"                                                        , "Memory", 0x400650F4,        4, base=16, bitRange=3-5
+sfr = "rADC_VC13.[7:6]bADC_Mode"                                                               , "Memory", 0x400650F4,        4, base=16, bitRange=6-7
+sfr = "rADC_VC13.[12:8]bADC_TrigSel"                                                           , "Memory", 0x400650F4,        4, base=16, bitRange=8-12
+sfr = "rADC_VC13.[13]bADC_TrigEnable"                                                          , "Memory", 0x400650F4,        4, base=16, bitRange=13
+sfr = "rADC_VC13.[14]bADC_Continuous"                                                          , "Memory", 0x400650F4,        4, base=16, bitRange=14
+sfr = "rADC_VC13.[15]bADC1_Enable"                                                             , "Memory", 0x400650F4,        4, base=16, bitRange=15
+sfr = "rADC_VC13.[16]bADC2_Enable"                                                             , "Memory", 0x400650F4,        4, base=16, bitRange=16
+sfr = "rADC_VC13.[18:17]bADC_DMA_Request"                                                      , "Memory", 0x400650F4,        4, base=16, bitRange=17-18
+sfr = "rADC_VC14"                                                                              , "Memory", 0x400650F8,        4, base=16
+sfr = "rADC_VC14.[2:0]bADC1_ChannelSel"                                                        , "Memory", 0x400650F8,        4, base=16, bitRange=0-2
+sfr = "rADC_VC14.[5:3]bADC2_ChannelSel"                                                        , "Memory", 0x400650F8,        4, base=16, bitRange=3-5
+sfr = "rADC_VC14.[7:6]bADC_Mode"                                                               , "Memory", 0x400650F8,        4, base=16, bitRange=6-7
+sfr = "rADC_VC14.[12:8]bADC_TrigSel"                                                           , "Memory", 0x400650F8,        4, base=16, bitRange=8-12
+sfr = "rADC_VC14.[13]bADC_TrigEnable"                                                          , "Memory", 0x400650F8,        4, base=16, bitRange=13
+sfr = "rADC_VC14.[14]bADC_Continuous"                                                          , "Memory", 0x400650F8,        4, base=16, bitRange=14
+sfr = "rADC_VC14.[15]bADC1_Enable"                                                             , "Memory", 0x400650F8,        4, base=16, bitRange=15
+sfr = "rADC_VC14.[16]bADC2_Enable"                                                             , "Memory", 0x400650F8,        4, base=16, bitRange=16
+sfr = "rADC_VC14.[18:17]bADC_DMA_Request"                                                      , "Memory", 0x400650F8,        4, base=16, bitRange=17-18
+sfr = "rADC_VC15"                                                                              , "Memory", 0x400650FC,        4, base=16
+sfr = "rADC_VC15.[2:0]bADC1_ChannelSel"                                                        , "Memory", 0x400650FC,        4, base=16, bitRange=0-2
+sfr = "rADC_VC15.[5:3]bADC2_ChannelSel"                                                        , "Memory", 0x400650FC,        4, base=16, bitRange=3-5
+sfr = "rADC_VC15.[7:6]bADC_Mode"                                                               , "Memory", 0x400650FC,        4, base=16, bitRange=6-7
+sfr = "rADC_VC15.[12:8]bADC_TrigSel"                                                           , "Memory", 0x400650FC,        4, base=16, bitRange=8-12
+sfr = "rADC_VC15.[13]bADC_TrigEnable"                                                          , "Memory", 0x400650FC,        4, base=16, bitRange=13
+sfr = "rADC_VC15.[14]bADC_Continuous"                                                          , "Memory", 0x400650FC,        4, base=16, bitRange=14
+sfr = "rADC_VC15.[15]bADC1_Enable"                                                             , "Memory", 0x400650FC,        4, base=16, bitRange=15
+sfr = "rADC_VC15.[16]bADC2_Enable"                                                             , "Memory", 0x400650FC,        4, base=16, bitRange=16
+sfr = "rADC_VC15.[18:17]bADC_DMA_Request"                                                      , "Memory", 0x400650FC,        4, base=16, bitRange=17-18
+sfr = "rADC1_DATA0"                                                                            , "Memory", 0x40065100,        4, base=16, readOnly
+sfr = "rADC1_DATA0.[11:0]bADC1_DATA"                                                           , "Memory", 0x40065100,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATA0.[31]bADC1_DATA_Update"                                                      , "Memory", 0x40065100,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATA1"                                                                            , "Memory", 0x40065104,        4, base=16, readOnly
+sfr = "rADC1_DATA1.[11:0]bADC1_DATA"                                                           , "Memory", 0x40065104,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATA1.[31]bADC1_DATA_Update"                                                      , "Memory", 0x40065104,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATA2"                                                                            , "Memory", 0x40065108,        4, base=16, readOnly
+sfr = "rADC1_DATA2.[11:0]bADC1_DATA"                                                           , "Memory", 0x40065108,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATA2.[31]bADC1_DATA_Update"                                                      , "Memory", 0x40065108,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATA3"                                                                            , "Memory", 0x4006510C,        4, base=16, readOnly
+sfr = "rADC1_DATA3.[11:0]bADC1_DATA"                                                           , "Memory", 0x4006510C,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATA3.[31]bADC1_DATA_Update"                                                      , "Memory", 0x4006510C,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATA4"                                                                            , "Memory", 0x40065110,        4, base=16, readOnly
+sfr = "rADC1_DATA4.[11:0]bADC1_DATA"                                                           , "Memory", 0x40065110,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATA4.[31]bADC1_DATA_Update"                                                      , "Memory", 0x40065110,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATA5"                                                                            , "Memory", 0x40065114,        4, base=16, readOnly
+sfr = "rADC1_DATA5.[11:0]bADC1_DATA"                                                           , "Memory", 0x40065114,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATA5.[31]bADC1_DATA_Update"                                                      , "Memory", 0x40065114,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATA6"                                                                            , "Memory", 0x40065118,        4, base=16, readOnly
+sfr = "rADC1_DATA6.[11:0]bADC1_DATA"                                                           , "Memory", 0x40065118,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATA6.[31]bADC1_DATA_Update"                                                      , "Memory", 0x40065118,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATA7"                                                                            , "Memory", 0x4006511C,        4, base=16, readOnly
+sfr = "rADC1_DATA7.[11:0]bADC1_DATA"                                                           , "Memory", 0x4006511C,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATA7.[31]bADC1_DATA_Update"                                                      , "Memory", 0x4006511C,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATA8"                                                                            , "Memory", 0x40065120,        4, base=16, readOnly
+sfr = "rADC1_DATA8.[11:0]bADC1_DATA"                                                           , "Memory", 0x40065120,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATA8.[31]bADC1_DATA_Update"                                                      , "Memory", 0x40065120,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATA9"                                                                            , "Memory", 0x40065124,        4, base=16, readOnly
+sfr = "rADC1_DATA9.[11:0]bADC1_DATA"                                                           , "Memory", 0x40065124,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATA9.[31]bADC1_DATA_Update"                                                      , "Memory", 0x40065124,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATA10"                                                                           , "Memory", 0x40065128,        4, base=16, readOnly
+sfr = "rADC1_DATA10.[11:0]bADC1_DATA"                                                          , "Memory", 0x40065128,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATA10.[31]bADC1_DATA_Update"                                                     , "Memory", 0x40065128,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATA11"                                                                           , "Memory", 0x4006512C,        4, base=16, readOnly
+sfr = "rADC1_DATA11.[11:0]bADC1_DATA"                                                          , "Memory", 0x4006512C,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATA11.[31]bADC1_DATA_Update"                                                     , "Memory", 0x4006512C,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATA12"                                                                           , "Memory", 0x40065130,        4, base=16, readOnly
+sfr = "rADC1_DATA12.[11:0]bADC1_DATA"                                                          , "Memory", 0x40065130,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATA12.[31]bADC1_DATA_Update"                                                     , "Memory", 0x40065130,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATA13"                                                                           , "Memory", 0x40065134,        4, base=16, readOnly
+sfr = "rADC1_DATA13.[11:0]bADC1_DATA"                                                          , "Memory", 0x40065134,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATA13.[31]bADC1_DATA_Update"                                                     , "Memory", 0x40065134,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATA14"                                                                           , "Memory", 0x40065138,        4, base=16, readOnly
+sfr = "rADC1_DATA14.[11:0]bADC1_DATA"                                                          , "Memory", 0x40065138,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATA14.[31]bADC1_DATA_Update"                                                     , "Memory", 0x40065138,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATA15"                                                                           , "Memory", 0x4006513C,        4, base=16, readOnly
+sfr = "rADC1_DATA15.[11:0]bADC1_DATA"                                                          , "Memory", 0x4006513C,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATA15.[31]bADC1_DATA_Update"                                                     , "Memory", 0x4006513C,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATALOCK0"                                                                        , "Memory", 0x40065180,        4, base=16, readOnly
+sfr = "rADC1_DATALOCK0.[11:0]bADC1_DATALOCK"                                                   , "Memory", 0x40065180,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATALOCK0.[31]bADC1_DATALOCK_Update"                                              , "Memory", 0x40065180,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATALOCK1"                                                                        , "Memory", 0x40065184,        4, base=16, readOnly
+sfr = "rADC1_DATALOCK1.[11:0]bADC1_DATALOCK"                                                   , "Memory", 0x40065184,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATALOCK1.[31]bADC1_DATALOCK_Update"                                              , "Memory", 0x40065184,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATALOCK2"                                                                        , "Memory", 0x40065188,        4, base=16, readOnly
+sfr = "rADC1_DATALOCK2.[11:0]bADC1_DATALOCK"                                                   , "Memory", 0x40065188,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATALOCK2.[31]bADC1_DATALOCK_Update"                                              , "Memory", 0x40065188,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATALOCK3"                                                                        , "Memory", 0x4006518C,        4, base=16, readOnly
+sfr = "rADC1_DATALOCK3.[11:0]bADC1_DATALOCK"                                                   , "Memory", 0x4006518C,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATALOCK3.[31]bADC1_DATALOCK_Update"                                              , "Memory", 0x4006518C,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATALOCK4"                                                                        , "Memory", 0x40065190,        4, base=16, readOnly
+sfr = "rADC1_DATALOCK4.[11:0]bADC1_DATALOCK"                                                   , "Memory", 0x40065190,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATALOCK4.[31]bADC1_DATALOCK_Update"                                              , "Memory", 0x40065190,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATALOCK5"                                                                        , "Memory", 0x40065194,        4, base=16, readOnly
+sfr = "rADC1_DATALOCK5.[11:0]bADC1_DATALOCK"                                                   , "Memory", 0x40065194,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATALOCK5.[31]bADC1_DATALOCK_Update"                                              , "Memory", 0x40065194,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATALOCK6"                                                                        , "Memory", 0x40065198,        4, base=16, readOnly
+sfr = "rADC1_DATALOCK6.[11:0]bADC1_DATALOCK"                                                   , "Memory", 0x40065198,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATALOCK6.[31]bADC1_DATALOCK_Update"                                              , "Memory", 0x40065198,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATALOCK7"                                                                        , "Memory", 0x4006519C,        4, base=16, readOnly
+sfr = "rADC1_DATALOCK7.[11:0]bADC1_DATALOCK"                                                   , "Memory", 0x4006519C,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATALOCK7.[31]bADC1_DATALOCK_Update"                                              , "Memory", 0x4006519C,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATALOCK8"                                                                        , "Memory", 0x400651A0,        4, base=16, readOnly
+sfr = "rADC1_DATALOCK8.[11:0]bADC1_DATALOCK"                                                   , "Memory", 0x400651A0,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATALOCK8.[31]bADC1_DATALOCK_Update"                                              , "Memory", 0x400651A0,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATALOCK9"                                                                        , "Memory", 0x400651A4,        4, base=16, readOnly
+sfr = "rADC1_DATALOCK9.[11:0]bADC1_DATALOCK"                                                   , "Memory", 0x400651A4,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATALOCK9.[31]bADC1_DATALOCK_Update"                                              , "Memory", 0x400651A4,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATALOCK10"                                                                       , "Memory", 0x400651A8,        4, base=16, readOnly
+sfr = "rADC1_DATALOCK10.[11:0]bADC1_DATALOCK"                                                  , "Memory", 0x400651A8,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATALOCK10.[31]bADC1_DATALOCK_Update"                                             , "Memory", 0x400651A8,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATALOCK11"                                                                       , "Memory", 0x400651AC,        4, base=16, readOnly
+sfr = "rADC1_DATALOCK11.[11:0]bADC1_DATALOCK"                                                  , "Memory", 0x400651AC,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATALOCK11.[31]bADC1_DATALOCK_Update"                                             , "Memory", 0x400651AC,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATALOCK12"                                                                       , "Memory", 0x400651B0,        4, base=16, readOnly
+sfr = "rADC1_DATALOCK12.[11:0]bADC1_DATALOCK"                                                  , "Memory", 0x400651B0,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATALOCK12.[31]bADC1_DATALOCK_Update"                                             , "Memory", 0x400651B0,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATALOCK13"                                                                       , "Memory", 0x400651B4,        4, base=16, readOnly
+sfr = "rADC1_DATALOCK13.[11:0]bADC1_DATALOCK"                                                  , "Memory", 0x400651B4,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATALOCK13.[31]bADC1_DATALOCK_Update"                                             , "Memory", 0x400651B4,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATALOCK14"                                                                       , "Memory", 0x400651B8,        4, base=16, readOnly
+sfr = "rADC1_DATALOCK14.[11:0]bADC1_DATALOCK"                                                  , "Memory", 0x400651B8,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATALOCK14.[31]bADC1_DATALOCK_Update"                                             , "Memory", 0x400651B8,        4, base=16, readOnly, bitRange=31
+sfr = "rADC1_DATALOCK15"                                                                       , "Memory", 0x400651BC,        4, base=16, readOnly
+sfr = "rADC1_DATALOCK15.[11:0]bADC1_DATALOCK"                                                  , "Memory", 0x400651BC,        4, base=16, readOnly, bitRange=0-11
+sfr = "rADC1_DATALOCK15.[31]bADC1_DATALOCK_Update"                                             , "Memory", 0x400651BC,        4, base=16, readOnly, bitRange=31
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// AD Converter -----
+group = "ADC","rADC_INTSTATUS0","rADC_INTSTATUS1","rADC_INTCLR","rADC_INTMASK","rADC_INTOVFSTATUS0","rADC_INTOVFSTATUS1","rADC_INTCLROVF","rADC_INTOVFMASK","rADC_PENDING","rADC_PENDINGOVF","rADC_PENDINGCLROVF","rADC_CONTROL","rADC_FORCE","rADC_SETFORCE","rADC_CLRFORCE","rADC_PRIORITY","rADC_CONFIG","rADC_ACQS","rADC_MASKLOCK0","rADC_MASKLOCK1","rADC_MASKLOCK2","rADC_MASKLOCK3","rADC_VC0","rADC_VC1","rADC_VC2","rADC_VC3","rADC_VC4","rADC_VC5","rADC_VC6","rADC_VC7","rADC_VC8","rADC_VC9","rADC_VC10","rADC_VC11","rADC_VC12","rADC_VC13","rADC_VC14","rADC_VC15","rADC1_DATA0","rADC1_DATA1","rADC1_DATA2","rADC1_DATA3","rADC1_DATA4","rADC1_DATA5","rADC1_DATA6","rADC1_DATA7","rADC1_DATA8","rADC1_DATA9","rADC1_DATA10","rADC1_DATA11","rADC1_DATA12","rADC1_DATA13","rADC1_DATA14","rADC1_DATA15","rADC1_DATALOCK0","rADC1_DATALOCK1","rADC1_DATALOCK2","rADC1_DATALOCK3","rADC1_DATALOCK4","rADC1_DATALOCK5","rADC1_DATALOCK6","rADC1_DATALOCK7","rADC1_DATALOCK8","rADC1_DATALOCK9","rADC1_DATALOCK10","rADC1_DATALOCK11","rADC1_DATALOCK12","rADC1_DATALOCK13","rADC1_DATALOCK14","rADC1_DATALOCK15"

@@ -1,0 +1,29 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : RINACS
+;               R-IN_ENGINE Accessory
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "RINACS/MDMNT"                                                                           , "Memory", 0x400F2000,        4, base=16, readOnly
+sfr = "RINACS/MDMNT.[0]BOOT"                                                                   , "Memory", 0x400F2000,        4, base=16, readOnly, bitRange=0
+sfr = "RINACS/IDCODE"                                                                          , "Memory", 0x400F2004,        4, base=16, readOnly
+sfr = "RINACS/SCRATCH0"                                                                        , "Memory", 0x400F2010,        4, base=16
+sfr = "RINACS/SCRATCH1"                                                                        , "Memory", 0x400F2014,        4, base=16
+sfr = "RINACS/SCRATCH2"                                                                        , "Memory", 0x400F2018,        4, base=16
+sfr = "RINACS/SCRATCH3"                                                                        , "Memory", 0x400F201C,        4, base=16
+sfr = "RINACS/RINSPCMD"                                                                        , "Memory", 0x400F2100,        4, base=16
+sfr = "RINACS/RINSPCMD.[0]RINSPCMD"                                                            , "Memory", 0x400F2100,        4, base=16, bitRange=0
+sfr = "RINACS/RTOSRST"                                                                         , "Memory", 0x400F2110,        4, base=16
+sfr = "RINACS/RTOSRST.[0]OSRST"                                                                , "Memory", 0x400F2110,        4, base=16, bitRange=0
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// R-IN_ENGINE Accessory -----
+group = "RINACS","RINACS/MDMNT","RINACS/IDCODE","RINACS/SCRATCH0","RINACS/SCRATCH1","RINACS/SCRATCH2","RINACS/SCRATCH3","RINACS/RINSPCMD","RINACS/RTOSRST"

@@ -1,0 +1,217 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : SGPIO1
+;               SGPIO1 Fulll (Master)
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "SGPIO1/Input"                                                                           , "Memory", 0x4006D000,        4, base=16, readOnly
+sfr = "SGPIO1/Input.[31:0]Input"                                                               , "Memory", 0x4006D000,        4, base=16, readOnly, bitRange=0-31
+sfr = "SGPIO1/Output"                                                                          , "Memory", 0x4006D004,        4, base=16
+sfr = "SGPIO1/Output.[31:0]Output"                                                             , "Memory", 0x4006D004,        4, base=16, bitRange=0-31
+sfr = "SGPIO1/Control"                                                                         , "Memory", 0x4006D008,        4, base=16
+sfr = "SGPIO1/Control.[0]RefreshEnable"                                                        , "Memory", 0x4006D008,        4, base=16, bitRange=0
+sfr = "SGPIO1/Control.[1]OutputDisable"                                                        , "Memory", 0x4006D008,        4, base=16, bitRange=1
+sfr = "SGPIO1/Control.[2]OutputUpdate"                                                         , "Memory", 0x4006D008,        4, base=16, bitRange=2
+sfr = "SGPIO1/Control.[4]WaveformOnLatchCommand"                                               , "Memory", 0x4006D008,        4, base=16, bitRange=4
+sfr = "SGPIO1/Control.[15:8]TimeBase"                                                          , "Memory", 0x4006D008,        4, base=16, bitRange=8-15
+sfr = "SGPIO1/Control1"                                                                        , "Memory", 0x4006D00C,        4, base=16
+sfr = "SGPIO1/Control1.[4:0]PeriodTimeBase0"                                                   , "Memory", 0x4006D00C,        4, base=16, bitRange=0-4
+sfr = "SGPIO1/Control1.[7]ModeTimeBase0"                                                       , "Memory", 0x4006D00C,        4, base=16, bitRange=7
+sfr = "SGPIO1/Control1.[12:8]PeriodTimeBase1"                                                  , "Memory", 0x4006D00C,        4, base=16, bitRange=8-12
+sfr = "SGPIO1/Control1.[15]ModeTimeBase1"                                                      , "Memory", 0x4006D00C,        4, base=16, bitRange=15
+sfr = "SGPIO1/MuxOutput0"                                                                      , "Memory", 0x4006D010,        4, base=16
+sfr = "SGPIO1/MuxOutput0.[1:0]MuxOutput0_A"                                                    , "Memory", 0x4006D010,        4, base=16, bitRange=0-1
+sfr = "SGPIO1/MuxOutput0.[3:2]MuxOutput0_B"                                                    , "Memory", 0x4006D010,        4, base=16, bitRange=2-3
+sfr = "SGPIO1/MuxOutput0.[5:4]MuxOutput0_C"                                                    , "Memory", 0x4006D010,        4, base=16, bitRange=4-5
+sfr = "SGPIO1/MuxOutput0.[7:6]MuxOutput0_D"                                                    , "Memory", 0x4006D010,        4, base=16, bitRange=6-7
+sfr = "SGPIO1/MuxOutput0.[9:8]MuxOutput0_E"                                                    , "Memory", 0x4006D010,        4, base=16, bitRange=8-9
+sfr = "SGPIO1/MuxOutput0.[11:10]MuxOutput0_F"                                                  , "Memory", 0x4006D010,        4, base=16, bitRange=10-11
+sfr = "SGPIO1/MuxOutput0.[13:12]MuxOutput0_G"                                                  , "Memory", 0x4006D010,        4, base=16, bitRange=12-13
+sfr = "SGPIO1/MuxOutput0.[15:14]MuxOutput0_H"                                                  , "Memory", 0x4006D010,        4, base=16, bitRange=14-15
+sfr = "SGPIO1/MuxOutput0.[17:16]MuxOutput0_I"                                                  , "Memory", 0x4006D010,        4, base=16, bitRange=16-17
+sfr = "SGPIO1/MuxOutput0.[19:18]MuxOutput0_J"                                                  , "Memory", 0x4006D010,        4, base=16, bitRange=18-19
+sfr = "SGPIO1/MuxOutput0.[21:20]MuxOutput0_K"                                                  , "Memory", 0x4006D010,        4, base=16, bitRange=20-21
+sfr = "SGPIO1/MuxOutput0.[23:22]MuxOutput0_L"                                                  , "Memory", 0x4006D010,        4, base=16, bitRange=22-23
+sfr = "SGPIO1/MuxOutput0.[25:24]MuxOutput0_M"                                                  , "Memory", 0x4006D010,        4, base=16, bitRange=24-25
+sfr = "SGPIO1/MuxOutput0.[27:26]MuxOutput0_N"                                                  , "Memory", 0x4006D010,        4, base=16, bitRange=26-27
+sfr = "SGPIO1/MuxOutput0.[29:28]MuxOutput0_O"                                                  , "Memory", 0x4006D010,        4, base=16, bitRange=28-29
+sfr = "SGPIO1/MuxOutput0.[31:30]MuxOutput0_P"                                                  , "Memory", 0x4006D010,        4, base=16, bitRange=30-31
+sfr = "SGPIO1/MuxOutput1"                                                                      , "Memory", 0x4006D014,        4, base=16
+sfr = "SGPIO1/MuxOutput1.[1:0]MuxOutput1_A"                                                    , "Memory", 0x4006D014,        4, base=16, bitRange=0-1
+sfr = "SGPIO1/MuxOutput1.[3:2]MuxOutput1_B"                                                    , "Memory", 0x4006D014,        4, base=16, bitRange=2-3
+sfr = "SGPIO1/MuxOutput1.[5:4]MuxOutput1_C"                                                    , "Memory", 0x4006D014,        4, base=16, bitRange=4-5
+sfr = "SGPIO1/MuxOutput1.[7:6]MuxOutput1_D"                                                    , "Memory", 0x4006D014,        4, base=16, bitRange=6-7
+sfr = "SGPIO1/MuxOutput1.[9:8]MuxOutput1_E"                                                    , "Memory", 0x4006D014,        4, base=16, bitRange=8-9
+sfr = "SGPIO1/MuxOutput1.[11:10]MuxOutput1_F"                                                  , "Memory", 0x4006D014,        4, base=16, bitRange=10-11
+sfr = "SGPIO1/MuxOutput1.[13:12]MuxOutput1_G"                                                  , "Memory", 0x4006D014,        4, base=16, bitRange=12-13
+sfr = "SGPIO1/MuxOutput1.[15:14]MuxOutput1_H"                                                  , "Memory", 0x4006D014,        4, base=16, bitRange=14-15
+sfr = "SGPIO1/MuxOutput1.[17:16]MuxOutput1_I"                                                  , "Memory", 0x4006D014,        4, base=16, bitRange=16-17
+sfr = "SGPIO1/MuxOutput1.[19:18]MuxOutput1_J"                                                  , "Memory", 0x4006D014,        4, base=16, bitRange=18-19
+sfr = "SGPIO1/MuxOutput1.[21:20]MuxOutput1_K"                                                  , "Memory", 0x4006D014,        4, base=16, bitRange=20-21
+sfr = "SGPIO1/MuxOutput1.[23:22]MuxOutput1_L"                                                  , "Memory", 0x4006D014,        4, base=16, bitRange=22-23
+sfr = "SGPIO1/MuxOutput1.[25:24]MuxOutput1_M"                                                  , "Memory", 0x4006D014,        4, base=16, bitRange=24-25
+sfr = "SGPIO1/MuxOutput1.[27:26]MuxOutput1_N"                                                  , "Memory", 0x4006D014,        4, base=16, bitRange=26-27
+sfr = "SGPIO1/MuxOutput1.[29:28]MuxOutput1_O"                                                  , "Memory", 0x4006D014,        4, base=16, bitRange=28-29
+sfr = "SGPIO1/MuxOutput1.[31:30]MuxOutput1_P"                                                  , "Memory", 0x4006D014,        4, base=16, bitRange=30-31
+sfr = "SGPIO1/MuxOutput2"                                                                      , "Memory", 0x4006D018,        4, base=16
+sfr = "SGPIO1/MuxOutput2.[1:0]MuxOutput2_A"                                                    , "Memory", 0x4006D018,        4, base=16, bitRange=0-1
+sfr = "SGPIO1/MuxOutput2.[3:2]MuxOutput2_B"                                                    , "Memory", 0x4006D018,        4, base=16, bitRange=2-3
+sfr = "SGPIO1/MuxOutput2.[5:4]MuxOutput2_C"                                                    , "Memory", 0x4006D018,        4, base=16, bitRange=4-5
+sfr = "SGPIO1/MuxOutput2.[7:6]MuxOutput2_D"                                                    , "Memory", 0x4006D018,        4, base=16, bitRange=6-7
+sfr = "SGPIO1/MuxOutput2.[9:8]MuxOutput2_E"                                                    , "Memory", 0x4006D018,        4, base=16, bitRange=8-9
+sfr = "SGPIO1/MuxOutput2.[11:10]MuxOutput2_F"                                                  , "Memory", 0x4006D018,        4, base=16, bitRange=10-11
+sfr = "SGPIO1/MuxOutput2.[13:12]MuxOutput2_G"                                                  , "Memory", 0x4006D018,        4, base=16, bitRange=12-13
+sfr = "SGPIO1/MuxOutput2.[15:14]MuxOutput2_H"                                                  , "Memory", 0x4006D018,        4, base=16, bitRange=14-15
+sfr = "SGPIO1/MuxOutput2.[17:16]MuxOutput2_I"                                                  , "Memory", 0x4006D018,        4, base=16, bitRange=16-17
+sfr = "SGPIO1/MuxOutput2.[19:18]MuxOutput2_J"                                                  , "Memory", 0x4006D018,        4, base=16, bitRange=18-19
+sfr = "SGPIO1/MuxOutput2.[21:20]MuxOutput2_K"                                                  , "Memory", 0x4006D018,        4, base=16, bitRange=20-21
+sfr = "SGPIO1/MuxOutput2.[23:22]MuxOutput2_L"                                                  , "Memory", 0x4006D018,        4, base=16, bitRange=22-23
+sfr = "SGPIO1/MuxOutput2.[25:24]MuxOutput2_M"                                                  , "Memory", 0x4006D018,        4, base=16, bitRange=24-25
+sfr = "SGPIO1/MuxOutput2.[27:26]MuxOutput2_N"                                                  , "Memory", 0x4006D018,        4, base=16, bitRange=26-27
+sfr = "SGPIO1/MuxOutput2.[29:28]MuxOutput2_O"                                                  , "Memory", 0x4006D018,        4, base=16, bitRange=28-29
+sfr = "SGPIO1/MuxOutput2.[31:30]MuxOutput2_P"                                                  , "Memory", 0x4006D018,        4, base=16, bitRange=30-31
+sfr = "SGPIO1/MuxOutput3"                                                                      , "Memory", 0x4006D01C,        4, base=16
+sfr = "SGPIO1/MuxOutput3.[1:0]MuxOutput3_A"                                                    , "Memory", 0x4006D01C,        4, base=16, bitRange=0-1
+sfr = "SGPIO1/MuxOutput3.[3:2]MuxOutput3_B"                                                    , "Memory", 0x4006D01C,        4, base=16, bitRange=2-3
+sfr = "SGPIO1/MuxOutput3.[5:4]MuxOutput3_C"                                                    , "Memory", 0x4006D01C,        4, base=16, bitRange=4-5
+sfr = "SGPIO1/MuxOutput3.[7:6]MuxOutput3_D"                                                    , "Memory", 0x4006D01C,        4, base=16, bitRange=6-7
+sfr = "SGPIO1/MuxOutput3.[9:8]MuxOutput3_E"                                                    , "Memory", 0x4006D01C,        4, base=16, bitRange=8-9
+sfr = "SGPIO1/MuxOutput3.[11:10]MuxOutput3_F"                                                  , "Memory", 0x4006D01C,        4, base=16, bitRange=10-11
+sfr = "SGPIO1/MuxOutput3.[13:12]MuxOutput3_G"                                                  , "Memory", 0x4006D01C,        4, base=16, bitRange=12-13
+sfr = "SGPIO1/MuxOutput3.[15:14]MuxOutput3_H"                                                  , "Memory", 0x4006D01C,        4, base=16, bitRange=14-15
+sfr = "SGPIO1/MuxOutput3.[17:16]MuxOutput3_I"                                                  , "Memory", 0x4006D01C,        4, base=16, bitRange=16-17
+sfr = "SGPIO1/MuxOutput3.[19:18]MuxOutput3_J"                                                  , "Memory", 0x4006D01C,        4, base=16, bitRange=18-19
+sfr = "SGPIO1/MuxOutput3.[21:20]MuxOutput3_K"                                                  , "Memory", 0x4006D01C,        4, base=16, bitRange=20-21
+sfr = "SGPIO1/MuxOutput3.[23:22]MuxOutput3_L"                                                  , "Memory", 0x4006D01C,        4, base=16, bitRange=22-23
+sfr = "SGPIO1/MuxOutput3.[25:24]MuxOutput3_M"                                                  , "Memory", 0x4006D01C,        4, base=16, bitRange=24-25
+sfr = "SGPIO1/MuxOutput3.[27:26]MuxOutput3_N"                                                  , "Memory", 0x4006D01C,        4, base=16, bitRange=26-27
+sfr = "SGPIO1/MuxOutput3.[29:28]MuxOutput3_O"                                                  , "Memory", 0x4006D01C,        4, base=16, bitRange=28-29
+sfr = "SGPIO1/MuxOutput3.[31:30]MuxOutput3_P"                                                  , "Memory", 0x4006D01C,        4, base=16, bitRange=30-31
+sfr = "SGPIO1/ModeInput"                                                                       , "Memory", 0x4006D020,        4, base=16
+sfr = "SGPIO1/ModeInput.[9:8]ForceInput0"                                                      , "Memory", 0x4006D020,        4, base=16, bitRange=8-9
+sfr = "SGPIO1/ModeInput.[11:10]ForceInput1"                                                    , "Memory", 0x4006D020,        4, base=16, bitRange=10-11
+sfr = "SGPIO1/ModeInput.[13:12]ForceInput2"                                                    , "Memory", 0x4006D020,        4, base=16, bitRange=12-13
+sfr = "SGPIO1/ModeInput.[15:14]ForceInput3"                                                    , "Memory", 0x4006D020,        4, base=16, bitRange=14-15
+sfr = "SGPIO1/ModeInput.[16]TriggerTimeBase0"                                                  , "Memory", 0x4006D020,        4, base=16, bitRange=16
+sfr = "SGPIO1/ModeInput.[17]TriggerTimeBase1"                                                  , "Memory", 0x4006D020,        4, base=16, bitRange=17
+sfr = "SGPIO1/ModeOutputA"                                                                     , "Memory", 0x4006D024,        4, base=16
+sfr = "SGPIO1/ModeOutputA.[1:0]ModeOutput0_A"                                                  , "Memory", 0x4006D024,        4, base=16, bitRange=0-1
+sfr = "SGPIO1/ModeOutputA.[3:2]ModeOutput1_A"                                                  , "Memory", 0x4006D024,        4, base=16, bitRange=2-3
+sfr = "SGPIO1/ModeOutputA.[5:4]ModeOutput2_A"                                                  , "Memory", 0x4006D024,        4, base=16, bitRange=4-5
+sfr = "SGPIO1/ModeOutputA.[7:6]ModeOutput3_A"                                                  , "Memory", 0x4006D024,        4, base=16, bitRange=6-7
+sfr = "SGPIO1/ModeOutputA.[9:8]ModeOutput4_A"                                                  , "Memory", 0x4006D024,        4, base=16, bitRange=8-9
+sfr = "SGPIO1/ModeOutputA.[11:10]ModeOutput5_A"                                                , "Memory", 0x4006D024,        4, base=16, bitRange=10-11
+sfr = "SGPIO1/ModeOutputA.[13:12]ModeOutput6_A"                                                , "Memory", 0x4006D024,        4, base=16, bitRange=12-13
+sfr = "SGPIO1/ModeOutputA.[15:14]ModeOutput7_A"                                                , "Memory", 0x4006D024,        4, base=16, bitRange=14-15
+sfr = "SGPIO1/ModeOutputA.[17:16]ModeOutput8_A"                                                , "Memory", 0x4006D024,        4, base=16, bitRange=16-17
+sfr = "SGPIO1/ModeOutputA.[19:18]ModeOutput9_A"                                                , "Memory", 0x4006D024,        4, base=16, bitRange=18-19
+sfr = "SGPIO1/ModeOutputA.[21:20]ModeOutput10_A"                                               , "Memory", 0x4006D024,        4, base=16, bitRange=20-21
+sfr = "SGPIO1/ModeOutputA.[23:22]ModeOutput11_A"                                               , "Memory", 0x4006D024,        4, base=16, bitRange=22-23
+sfr = "SGPIO1/ModeOutputA.[25:24]ModeOutput12_A"                                               , "Memory", 0x4006D024,        4, base=16, bitRange=24-25
+sfr = "SGPIO1/ModeOutputA.[27:26]ModeOutput13_A"                                               , "Memory", 0x4006D024,        4, base=16, bitRange=26-27
+sfr = "SGPIO1/ModeOutputA.[29:28]ModeOutput14_A"                                               , "Memory", 0x4006D024,        4, base=16, bitRange=28-29
+sfr = "SGPIO1/ModeOutputA.[31:30]ModeOutput15_A"                                               , "Memory", 0x4006D024,        4, base=16, bitRange=30-31
+sfr = "SGPIO1/ModeOutputB"                                                                     , "Memory", 0x4006D028,        4, base=16
+sfr = "SGPIO1/ModeOutputB.[1:0]ModeOutput0_B"                                                  , "Memory", 0x4006D028,        4, base=16, bitRange=0-1
+sfr = "SGPIO1/ModeOutputB.[3:2]ModeOutput1_B"                                                  , "Memory", 0x4006D028,        4, base=16, bitRange=2-3
+sfr = "SGPIO1/ModeOutputB.[5:4]ModeOutput2_B"                                                  , "Memory", 0x4006D028,        4, base=16, bitRange=4-5
+sfr = "SGPIO1/ModeOutputB.[7:6]ModeOutput3_B"                                                  , "Memory", 0x4006D028,        4, base=16, bitRange=6-7
+sfr = "SGPIO1/ModeOutputB.[9:8]ModeOutput4_B"                                                  , "Memory", 0x4006D028,        4, base=16, bitRange=8-9
+sfr = "SGPIO1/ModeOutputB.[11:10]ModeOutput5_B"                                                , "Memory", 0x4006D028,        4, base=16, bitRange=10-11
+sfr = "SGPIO1/ModeOutputB.[13:12]ModeOutput6_B"                                                , "Memory", 0x4006D028,        4, base=16, bitRange=12-13
+sfr = "SGPIO1/ModeOutputB.[15:14]ModeOutput7_B"                                                , "Memory", 0x4006D028,        4, base=16, bitRange=14-15
+sfr = "SGPIO1/ModeOutputB.[17:16]ModeOutput8_B"                                                , "Memory", 0x4006D028,        4, base=16, bitRange=16-17
+sfr = "SGPIO1/ModeOutputB.[19:18]ModeOutput9_B"                                                , "Memory", 0x4006D028,        4, base=16, bitRange=18-19
+sfr = "SGPIO1/ModeOutputB.[21:20]ModeOutput10_B"                                               , "Memory", 0x4006D028,        4, base=16, bitRange=20-21
+sfr = "SGPIO1/ModeOutputB.[23:22]ModeOutput11_B"                                               , "Memory", 0x4006D028,        4, base=16, bitRange=22-23
+sfr = "SGPIO1/ModeOutputB.[25:24]ModeOutput12_B"                                               , "Memory", 0x4006D028,        4, base=16, bitRange=24-25
+sfr = "SGPIO1/ModeOutputB.[27:26]ModeOutput13_B"                                               , "Memory", 0x4006D028,        4, base=16, bitRange=26-27
+sfr = "SGPIO1/ModeOutputB.[29:28]ModeOutput14_B"                                               , "Memory", 0x4006D028,        4, base=16, bitRange=28-29
+sfr = "SGPIO1/ModeOutputB.[31:30]ModeOutput15_B"                                               , "Memory", 0x4006D028,        4, base=16, bitRange=30-31
+sfr = "SGPIO1/MuxInput0"                                                                       , "Memory", 0x4006D030,        4, base=16
+sfr = "SGPIO1/MuxInput0.[1:0]MuxIntput0_0"                                                     , "Memory", 0x4006D030,        4, base=16, bitRange=0-1
+sfr = "SGPIO1/MuxInput0.[5:4]MuxIntput0_1"                                                     , "Memory", 0x4006D030,        4, base=16, bitRange=4-5
+sfr = "SGPIO1/MuxInput0.[9:8]MuxIntput0_2"                                                     , "Memory", 0x4006D030,        4, base=16, bitRange=8-9
+sfr = "SGPIO1/MuxInput0.[13:12]MuxIntput0_3"                                                   , "Memory", 0x4006D030,        4, base=16, bitRange=12-13
+sfr = "SGPIO1/MuxInput1"                                                                       , "Memory", 0x4006D034,        4, base=16
+sfr = "SGPIO1/MuxInput1.[1:0]MuxIntput1_0"                                                     , "Memory", 0x4006D034,        4, base=16, bitRange=0-1
+sfr = "SGPIO1/MuxInput1.[5:4]MuxIntput1_1"                                                     , "Memory", 0x4006D034,        4, base=16, bitRange=4-5
+sfr = "SGPIO1/MuxInput1.[9:8]MuxIntput1_2"                                                     , "Memory", 0x4006D034,        4, base=16, bitRange=8-9
+sfr = "SGPIO1/MuxInput1.[13:12]MuxIntput1_3"                                                   , "Memory", 0x4006D034,        4, base=16, bitRange=12-13
+sfr = "SGPIO1/MuxInput2"                                                                       , "Memory", 0x4006D038,        4, base=16
+sfr = "SGPIO1/MuxInput2.[1:0]MuxIntput2_0"                                                     , "Memory", 0x4006D038,        4, base=16, bitRange=0-1
+sfr = "SGPIO1/MuxInput2.[5:4]MuxIntput2_1"                                                     , "Memory", 0x4006D038,        4, base=16, bitRange=4-5
+sfr = "SGPIO1/MuxInput2.[9:8]MuxIntput2_2"                                                     , "Memory", 0x4006D038,        4, base=16, bitRange=8-9
+sfr = "SGPIO1/MuxInput2.[13:12]MuxIntput2_3"                                                   , "Memory", 0x4006D038,        4, base=16, bitRange=12-13
+sfr = "SGPIO1/MuxInput3"                                                                       , "Memory", 0x4006D03C,        4, base=16
+sfr = "SGPIO1/MuxInput3.[1:0]MuxIntput3_0"                                                     , "Memory", 0x4006D03C,        4, base=16, bitRange=0-1
+sfr = "SGPIO1/MuxInput3.[5:4]MuxIntput3_1"                                                     , "Memory", 0x4006D03C,        4, base=16, bitRange=4-5
+sfr = "SGPIO1/MuxInput3.[9:8]MuxIntput3_2"                                                     , "Memory", 0x4006D03C,        4, base=16, bitRange=8-9
+sfr = "SGPIO1/MuxInput3.[13:12]MuxIntput3_3"                                                   , "Memory", 0x4006D03C,        4, base=16, bitRange=12-13
+sfr = "SGPIO1/ModeEdgeDetector"                                                                , "Memory", 0x4006D040,        4, base=16
+sfr = "SGPIO1/ModeEdgeDetector.[1:0]EdgeDetectorOnSgpioInput0"                                 , "Memory", 0x4006D040,        4, base=16, bitRange=0-1
+sfr = "SGPIO1/ModeEdgeDetector.[3:2]EdgeDetectorOnSgpioInput1"                                 , "Memory", 0x4006D040,        4, base=16, bitRange=2-3
+sfr = "SGPIO1/ModeEdgeDetector.[5:4]EdgeDetectorOnSgpioInput2"                                 , "Memory", 0x4006D040,        4, base=16, bitRange=4-5
+sfr = "SGPIO1/ModeEdgeDetector.[7:6]EdgeDetectorOnSgpioInput3"                                 , "Memory", 0x4006D040,        4, base=16, bitRange=6-7
+sfr = "SGPIO1/StatusInt0"                                                                      , "Memory", 0x4006D044,        4, base=16
+sfr = "SGPIO1/StatusInt0.[3:0]StatusInt0"                                                      , "Memory", 0x4006D044,        4, base=16, bitRange=0-3
+sfr = "SGPIO1/StatusInt1"                                                                      , "Memory", 0x4006D048,        4, base=16
+sfr = "SGPIO1/StatusInt1.[3:0]StatusInt1"                                                      , "Memory", 0x4006D048,        4, base=16, bitRange=0-3
+sfr = "SGPIO1/MaskInt"                                                                         , "Memory", 0x4006D04C,        4, base=16
+sfr = "SGPIO1/MaskInt.[3:0]MaskInt"                                                            , "Memory", 0x4006D04C,        4, base=16, bitRange=0-3
+sfr = "SGPIO1/ClearInt"                                                                        , "Memory", 0x4006D050,        4, base=16
+sfr = "SGPIO1/ClearInt.[3:0]ClearInt"                                                          , "Memory", 0x4006D050,        4, base=16, bitRange=0-3
+sfr = "SGPIO1/InputUpdate"                                                                     , "Memory", 0x4006D054,        4, base=16
+sfr = "SGPIO1/InputUpdate.[31:0]InputUpdate"                                                   , "Memory", 0x4006D054,        4, base=16, bitRange=0-31
+sfr = "SGPIO1/InputFilter0"                                                                    , "Memory", 0x4006D060,        4, base=16
+sfr = "SGPIO1/InputFilter0.[7:0]InputAFilter"                                                  , "Memory", 0x4006D060,        4, base=16, bitRange=0-7
+sfr = "SGPIO1/InputFilter0.[15:8]InputBFilter"                                                 , "Memory", 0x4006D060,        4, base=16, bitRange=8-15
+sfr = "SGPIO1/InputFilter0.[23:16]InputCFilter"                                                , "Memory", 0x4006D060,        4, base=16, bitRange=16-23
+sfr = "SGPIO1/InputFilter0.[31:24]InputDFilter"                                                , "Memory", 0x4006D060,        4, base=16, bitRange=24-31
+sfr = "SGPIO1/InputFilter1"                                                                    , "Memory", 0x4006D064,        4, base=16
+sfr = "SGPIO1/InputFilter1.[7:0]InputAFilter"                                                  , "Memory", 0x4006D064,        4, base=16, bitRange=0-7
+sfr = "SGPIO1/InputFilter1.[15:8]InputBFilter"                                                 , "Memory", 0x4006D064,        4, base=16, bitRange=8-15
+sfr = "SGPIO1/InputFilter1.[23:16]InputCFilter"                                                , "Memory", 0x4006D064,        4, base=16, bitRange=16-23
+sfr = "SGPIO1/InputFilter1.[31:24]InputDFilter"                                                , "Memory", 0x4006D064,        4, base=16, bitRange=24-31
+sfr = "SGPIO1/InputFilter2"                                                                    , "Memory", 0x4006D068,        4, base=16
+sfr = "SGPIO1/InputFilter2.[7:0]InputAFilter"                                                  , "Memory", 0x4006D068,        4, base=16, bitRange=0-7
+sfr = "SGPIO1/InputFilter2.[15:8]InputBFilter"                                                 , "Memory", 0x4006D068,        4, base=16, bitRange=8-15
+sfr = "SGPIO1/InputFilter2.[23:16]InputCFilter"                                                , "Memory", 0x4006D068,        4, base=16, bitRange=16-23
+sfr = "SGPIO1/InputFilter2.[31:24]InputDFilter"                                                , "Memory", 0x4006D068,        4, base=16, bitRange=24-31
+sfr = "SGPIO1/InputFilter3"                                                                    , "Memory", 0x4006D06C,        4, base=16
+sfr = "SGPIO1/InputFilter3.[7:0]InputAFilter"                                                  , "Memory", 0x4006D06C,        4, base=16, bitRange=0-7
+sfr = "SGPIO1/InputFilter3.[15:8]InputBFilter"                                                 , "Memory", 0x4006D06C,        4, base=16, bitRange=8-15
+sfr = "SGPIO1/InputFilter3.[23:16]InputCFilter"                                                , "Memory", 0x4006D06C,        4, base=16, bitRange=16-23
+sfr = "SGPIO1/InputFilter3.[31:24]InputDFilter"                                                , "Memory", 0x4006D06C,        4, base=16, bitRange=24-31
+sfr = "SGPIO1/InputFilter4"                                                                    , "Memory", 0x4006D070,        4, base=16
+sfr = "SGPIO1/InputFilter4.[7:0]InputAFilter"                                                  , "Memory", 0x4006D070,        4, base=16, bitRange=0-7
+sfr = "SGPIO1/InputFilter4.[15:8]InputBFilter"                                                 , "Memory", 0x4006D070,        4, base=16, bitRange=8-15
+sfr = "SGPIO1/InputFilter4.[23:16]InputCFilter"                                                , "Memory", 0x4006D070,        4, base=16, bitRange=16-23
+sfr = "SGPIO1/InputFilter4.[31:24]InputDFilter"                                                , "Memory", 0x4006D070,        4, base=16, bitRange=24-31
+sfr = "SGPIO1/InputFilter5"                                                                    , "Memory", 0x4006D074,        4, base=16
+sfr = "SGPIO1/InputFilter5.[7:0]InputAFilter"                                                  , "Memory", 0x4006D074,        4, base=16, bitRange=0-7
+sfr = "SGPIO1/InputFilter5.[15:8]InputBFilter"                                                 , "Memory", 0x4006D074,        4, base=16, bitRange=8-15
+sfr = "SGPIO1/InputFilter5.[23:16]InputCFilter"                                                , "Memory", 0x4006D074,        4, base=16, bitRange=16-23
+sfr = "SGPIO1/InputFilter5.[31:24]InputDFilter"                                                , "Memory", 0x4006D074,        4, base=16, bitRange=24-31
+sfr = "SGPIO1/InputFilter6"                                                                    , "Memory", 0x4006D078,        4, base=16
+sfr = "SGPIO1/InputFilter6.[7:0]InputAFilter"                                                  , "Memory", 0x4006D078,        4, base=16, bitRange=0-7
+sfr = "SGPIO1/InputFilter6.[15:8]InputBFilter"                                                 , "Memory", 0x4006D078,        4, base=16, bitRange=8-15
+sfr = "SGPIO1/InputFilter6.[23:16]InputCFilter"                                                , "Memory", 0x4006D078,        4, base=16, bitRange=16-23
+sfr = "SGPIO1/InputFilter6.[31:24]InputDFilter"                                                , "Memory", 0x4006D078,        4, base=16, bitRange=24-31
+sfr = "SGPIO1/InputFilter7"                                                                    , "Memory", 0x4006D07C,        4, base=16
+sfr = "SGPIO1/InputFilter7.[7:0]InputAFilter"                                                  , "Memory", 0x4006D07C,        4, base=16, bitRange=0-7
+sfr = "SGPIO1/InputFilter7.[15:8]InputBFilter"                                                 , "Memory", 0x4006D07C,        4, base=16, bitRange=8-15
+sfr = "SGPIO1/InputFilter7.[23:16]InputCFilter"                                                , "Memory", 0x4006D07C,        4, base=16, bitRange=16-23
+sfr = "SGPIO1/InputFilter7.[31:24]InputDFilter"                                                , "Memory", 0x4006D07C,        4, base=16, bitRange=24-31
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// SGPIO1 Fulll (Master) -----
+group = "SGPIO1","SGPIO1/Input","SGPIO1/Output","SGPIO1/Control","SGPIO1/Control1","SGPIO1/MuxOutput0","SGPIO1/MuxOutput1","SGPIO1/MuxOutput2","SGPIO1/MuxOutput3","SGPIO1/ModeInput","SGPIO1/ModeOutputA","SGPIO1/ModeOutputB","SGPIO1/MuxInput0","SGPIO1/MuxInput1","SGPIO1/MuxInput2","SGPIO1/MuxInput3","SGPIO1/ModeEdgeDetector","SGPIO1/StatusInt0","SGPIO1/StatusInt1","SGPIO1/MaskInt","SGPIO1/ClearInt","SGPIO1/InputUpdate","SGPIO1/InputFilter0","SGPIO1/InputFilter1","SGPIO1/InputFilter2","SGPIO1/InputFilter3","SGPIO1/InputFilter4","SGPIO1/InputFilter5","SGPIO1/InputFilter6","SGPIO1/InputFilter7"

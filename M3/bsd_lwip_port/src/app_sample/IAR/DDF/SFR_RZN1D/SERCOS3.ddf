@@ -1,0 +1,424 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : SERCOS3
+;               SERCOS3
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "IDR"                                                                                    , "Memory", 0x44020000,        4, base=16, readOnly
+sfr = "IDR.[4:0]Release"                                                                       , "Memory", 0x44020000,        4, base=16, readOnly, bitRange=0-4
+sfr = "IDR.[9:5]Version"                                                                       , "Memory", 0x44020000,        4, base=16, readOnly, bitRange=5-9
+sfr = "IDR.[12:10]Testversion"                                                                 , "Memory", 0x44020000,        4, base=16, readOnly, bitRange=10-12
+sfr = "IDR.[15:13]DeviceType"                                                                  , "Memory", 0x44020000,        4, base=16, readOnly, bitRange=13-15
+sfr = "IDR.[31:16]S3FrameType"                                                                 , "Memory", 0x44020000,        4, base=16, readOnly, bitRange=16-31
+sfr = "GCSFR"                                                                                  , "Memory", 0x44020004,        4, base=16
+sfr = "GCSFR.[0]SR"                                                                            , "Memory", 0x44020004,        4, base=16, bitRange=0
+sfr = "GCSFR.[1]PHYReset"                                                                      , "Memory", 0x44020004,        4, base=16, bitRange=1
+sfr = "GCSFR.[2]BCasRed"                                                                       , "Memory", 0x44020004,        4, base=16, bitRange=2
+sfr = "GCSFR.[3]BCastDis"                                                                      , "Memory", 0x44020004,        4, base=16, bitRange=3
+sfr = "GCSFR.[4]DescriptorFeedback"                                                            , "Memory", 0x44020004,        4, base=16, bitRange=4
+sfr = "GCSFR.[11:8]Line_break_sensitivity"                                                     , "Memory", 0x44020004,        4, base=16, bitRange=8-11
+sfr = "GCSFR.[15]Line_bread_mode"                                                              , "Memory", 0x44020004,        4, base=16, bitRange=15
+sfr = "GCSFR.[19:16]Size_of_memory_banks"                                                      , "Memory", 0x44020004,        4, base=16, bitRange=16-19
+sfr = "GCSFR.[31:24]HardwareVersionBus"                                                        , "Memory", 0x44020004,        4, base=16, bitRange=24-31
+sfr = "IER0"                                                                                   , "Memory", 0x44020008,        4, base=16
+sfr = "IER0.[31:0]IE"                                                                          , "Memory", 0x44020008,        4, base=16, bitRange=0-31
+sfr = "IMR0"                                                                                   , "Memory", 0x44020010,        4, base=16
+sfr = "IMR0.[31:0]IM"                                                                          , "Memory", 0x44020010,        4, base=16, bitRange=0-31
+sfr = "IRR0"                                                                                   , "Memory", 0x44020018,        4, base=16
+sfr = "IRR0.[31:0]IR"                                                                          , "Memory", 0x44020018,        4, base=16, bitRange=0-31
+sfr = "DFCSR"                                                                                  , "Memory", 0x44020020,        4, base=16
+sfr = "DFCSR.[1:0]Topology_Port"                                                               , "Memory", 0x44020020,        4, base=16, bitRange=0-1
+sfr = "DFCSR.[3:2]State_of_Inactive_Port"                                                      , "Memory", 0x44020020,        4, base=16, bitRange=2-3
+sfr = "DFCSR.[5:4]Topology_Primary_Secondary"                                                  , "Memory", 0x44020020,        4, base=16, bitRange=4-5
+sfr = "DFCSR.[6]Automatic_topology_detection"                                                  , "Memory", 0x44020020,        4, base=16, bitRange=6
+sfr = "DFCSR.[7]Topology_Write_Mode"                                                           , "Memory", 0x44020020,        4, base=16, bitRange=7
+sfr = "DFCSR.[8]Tx_Enable"                                                                     , "Memory", 0x44020020,        4, base=16, bitRange=8
+sfr = "DFCSR.[9]Rx_Enable"                                                                     , "Memory", 0x44020020,        4, base=16, bitRange=9
+sfr = "DFCSR.[10]DisableLengthCtrl"                                                            , "Memory", 0x44020020,        4, base=16, bitRange=10
+sfr = "DFCSR.[11]Tx_MDT_Enable"                                                                , "Memory", 0x44020020,        4, base=16, bitRange=11
+sfr = "DFCSR.[15:12]Topology_address_increment"                                                , "Memory", 0x44020020,        4, base=16, bitRange=12-15
+sfr = "DFCSR.[16]Port1_Line_Status"                                                            , "Memory", 0x44020020,        4, base=16, bitRange=16
+sfr = "DFCSR.[17]Port2_Line_Status"                                                            , "Memory", 0x44020020,        4, base=16, bitRange=17
+sfr = "DFCSR.[18]Port1_Link"                                                                   , "Memory", 0x44020020,        4, base=16, bitRange=18
+sfr = "DFCSR.[19]Port2_Link"                                                                   , "Memory", 0x44020020,        4, base=16, bitRange=19
+sfr = "DFCSR.[20]Ring_Topology"                                                                , "Memory", 0x44020020,        4, base=16, bitRange=20
+sfr = "DFCSR.[21]NRT_Forward"                                                                  , "Memory", 0x44020020,        4, base=16, bitRange=21
+sfr = "DFCSR.[22]Line_Topology"                                                                , "Memory", 0x44020020,        4, base=16, bitRange=22
+sfr = "DFCSR.[23]Swap_Counters"                                                                , "Memory", 0x44020020,        4, base=16, bitRange=23
+sfr = "DFCSR.[24]P1_T_xall_done"                                                               , "Memory", 0x44020020,        4, base=16, bitRange=24
+sfr = "DFCSR.[25]P1_Rx_all_done"                                                               , "Memory", 0x44020020,        4, base=16, bitRange=25
+sfr = "DFCSR.[26]P2_T_xall_done"                                                               , "Memory", 0x44020020,        4, base=16, bitRange=26
+sfr = "DFCSR.[27]P2_Rx_all_done"                                                               , "Memory", 0x44020020,        4, base=16, bitRange=27
+sfr = "DFCSR.[30]TxEnableFeedback"                                                             , "Memory", 0x44020020,        4, base=16, bitRange=30
+sfr = "DFCSR.[31]RxEnableFeedback"                                                             , "Memory", 0x44020020,        4, base=16, bitRange=31
+sfr = "PHASESR"                                                                                , "Memory", 0x44020024,        4, base=16, readOnly
+sfr = "PHASESR.[3:0]MST_Phase"                                                                 , "Memory", 0x44020024,        4, base=16, readOnly, bitRange=0-3
+sfr = "PHASESR.[7]CPS"                                                                         , "Memory", 0x44020024,        4, base=16, readOnly, bitRange=7
+sfr = "PHASESR.[15]Valid"                                                                      , "Memory", 0x44020024,        4, base=16, readOnly, bitRange=15
+sfr = "TGSR1"                                                                                  , "Memory", 0x44020028,        4, base=16
+sfr = "TGSR1.[0]MDT0"                                                                          , "Memory", 0x44020028,        4, base=16, bitRange=0
+sfr = "TGSR1.[1]MDT1"                                                                          , "Memory", 0x44020028,        4, base=16, bitRange=1
+sfr = "TGSR1.[2]MDT2"                                                                          , "Memory", 0x44020028,        4, base=16, bitRange=2
+sfr = "TGSR1.[3]MDT3"                                                                          , "Memory", 0x44020028,        4, base=16, bitRange=3
+sfr = "TGSR1.[4]AT0"                                                                           , "Memory", 0x44020028,        4, base=16, bitRange=4
+sfr = "TGSR1.[5]AT1"                                                                           , "Memory", 0x44020028,        4, base=16, bitRange=5
+sfr = "TGSR1.[6]AT2"                                                                           , "Memory", 0x44020028,        4, base=16, bitRange=6
+sfr = "TGSR1.[7]AT3"                                                                           , "Memory", 0x44020028,        4, base=16, bitRange=7
+sfr = "TGSR1.[8]MST_valide"                                                                    , "Memory", 0x44020028,        4, base=16, bitRange=8
+sfr = "TGSR1.[9]Primary_Secondary"                                                             , "Memory", 0x44020028,        4, base=16, bitRange=9
+sfr = "TGSR1.[10]MST_window_error"                                                             , "Memory", 0x44020028,        4, base=16, bitRange=10
+sfr = "TGSR1.[11]MST_miss"                                                                     , "Memory", 0x44020028,        4, base=16, bitRange=11
+sfr = "TGSR1.[12]MST_double_miss"                                                              , "Memory", 0x44020028,        4, base=16, bitRange=12
+sfr = "TGSR1.[13]AT0_misss"                                                                    , "Memory", 0x44020028,        4, base=16, bitRange=13
+sfr = "TGSR1.[26:24]Cycle_count"                                                               , "Memory", 0x44020028,        4, base=16, bitRange=24-26
+sfr = "TGSR1.[27]CycCnt_valid"                                                                 , "Memory", 0x44020028,        4, base=16, bitRange=27
+sfr = "TGSR1.[28]First_MST"                                                                    , "Memory", 0x44020028,        4, base=16, bitRange=28
+sfr = "TGSR2"                                                                                  , "Memory", 0x4402002C,        4, base=16
+sfr = "TGSR2.[0]MDT0"                                                                          , "Memory", 0x4402002C,        4, base=16, bitRange=0
+sfr = "TGSR2.[1]MDT1"                                                                          , "Memory", 0x4402002C,        4, base=16, bitRange=1
+sfr = "TGSR2.[2]MDT2"                                                                          , "Memory", 0x4402002C,        4, base=16, bitRange=2
+sfr = "TGSR2.[3]MDT3"                                                                          , "Memory", 0x4402002C,        4, base=16, bitRange=3
+sfr = "TGSR2.[4]AT0"                                                                           , "Memory", 0x4402002C,        4, base=16, bitRange=4
+sfr = "TGSR2.[5]AT1"                                                                           , "Memory", 0x4402002C,        4, base=16, bitRange=5
+sfr = "TGSR2.[6]AT2"                                                                           , "Memory", 0x4402002C,        4, base=16, bitRange=6
+sfr = "TGSR2.[7]AT3"                                                                           , "Memory", 0x4402002C,        4, base=16, bitRange=7
+sfr = "TGSR2.[8]MST_valide"                                                                    , "Memory", 0x4402002C,        4, base=16, bitRange=8
+sfr = "TGSR2.[9]Primary_Secondary"                                                             , "Memory", 0x4402002C,        4, base=16, bitRange=9
+sfr = "TGSR2.[10]MST_window_error"                                                             , "Memory", 0x4402002C,        4, base=16, bitRange=10
+sfr = "TGSR2.[11]MST_miss"                                                                     , "Memory", 0x4402002C,        4, base=16, bitRange=11
+sfr = "TGSR2.[12]MST_double_miss"                                                              , "Memory", 0x4402002C,        4, base=16, bitRange=12
+sfr = "TGSR2.[13]AT0_misss"                                                                    , "Memory", 0x4402002C,        4, base=16, bitRange=13
+sfr = "TGSR2.[26:24]Cycle_count"                                                               , "Memory", 0x4402002C,        4, base=16, bitRange=24-26
+sfr = "TGSR2.[27]CycCnt_valid"                                                                 , "Memory", 0x4402002C,        4, base=16, bitRange=27
+sfr = "TGSR2.[28]First_MST"                                                                    , "Memory", 0x4402002C,        4, base=16, bitRange=28
+sfr = "DESCR"                                                                                  , "Memory", 0x44020030,        4, base=16
+sfr = "DESCR.[13:2]Rx_IDXTBL_Offset"                                                           , "Memory", 0x44020030,        4, base=16, bitRange=2-13
+sfr = "DESCR.[29:18]Tx_IDXTBL_Offset"                                                          , "Memory", 0x44020030,        4, base=16, bitRange=18-29
+sfr = "STRBR"                                                                                  , "Memory", 0x44020034,        4, base=16, readOnly
+sfr = "STRBR.[25:0]TCNT"                                                                       , "Memory", 0x44020034,        4, base=16, readOnly, bitRange=0-25
+sfr = "TCSR"                                                                                   , "Memory", 0x44020038,        4, base=16
+sfr = "TCSR.[0]ET0"                                                                            , "Memory", 0x44020038,        4, base=16, bitRange=0
+sfr = "TCSR.[1]ET1_2"                                                                          , "Memory", 0x44020038,        4, base=16, bitRange=1
+sfr = "TCSR.[3]ET3"                                                                            , "Memory", 0x44020038,        4, base=16, bitRange=3
+sfr = "TCSR.[8]CON_En"                                                                         , "Memory", 0x44020038,        4, base=16, bitRange=8
+sfr = "TCSR.[9]CON_Pol"                                                                        , "Memory", 0x44020038,        4, base=16, bitRange=9
+sfr = "TCSR.[10]CONOE"                                                                         , "Memory", 0x44020038,        4, base=16, bitRange=10
+sfr = "TCSR.[11]ConClkPLLEn"                                                                   , "Memory", 0x44020038,        4, base=16, bitRange=11
+sfr = "TCSR.[12]DivClk_mode"                                                                   , "Memory", 0x44020038,        4, base=16, bitRange=12
+sfr = "TCSR.[13]DivClkPol"                                                                     , "Memory", 0x44020038,        4, base=16, bitRange=13
+sfr = "TCSR.[14]DivOD"                                                                         , "Memory", 0x44020038,        4, base=16, bitRange=14
+sfr = "TCSR.[15]TimeSync_Enable"                                                               , "Memory", 0x44020038,        4, base=16, bitRange=15
+sfr = "TCSR.[16]P1_MST_Dis"                                                                    , "Memory", 0x44020038,        4, base=16, bitRange=16
+sfr = "TCSR.[17]P2_MST_Dis"                                                                    , "Memory", 0x44020038,        4, base=16, bitRange=17
+sfr = "TCSR.[31]SysTimeUpdate"                                                                 , "Memory", 0x44020038,        4, base=16, bitRange=31
+sfr = "TRDLY"                                                                                  , "Memory", 0x4402003C,        4, base=16
+sfr = "TRDLY.[19:0]Ringdelay"                                                                  , "Memory", 0x4402003C,        4, base=16, bitRange=0-19
+sfr = "TDMST1"                                                                                 , "Memory", 0x44020040,        4, base=16
+sfr = "TDMST1.[19:0]Time_Delay_MST"                                                            , "Memory", 0x44020040,        4, base=16, bitRange=0-19
+sfr = "TDMST2"                                                                                 , "Memory", 0x44020044,        4, base=16
+sfr = "TDMST2.[19:0]Time_Delay_MST"                                                            , "Memory", 0x44020044,        4, base=16, bitRange=0-19
+sfr = "SCR1"                                                                                   , "Memory", 0x44020048,        4, base=16, readOnly
+sfr = "SCR1.[19:0]Sync_Count"                                                                  , "Memory", 0x44020048,        4, base=16, readOnly, bitRange=0-19
+sfr = "SCR2"                                                                                   , "Memory", 0x4402004C,        4, base=16, readOnly
+sfr = "SCR2.[19:0]Sync_Count"                                                                  , "Memory", 0x4402004C,        4, base=16, readOnly, bitRange=0-19
+sfr = "SVCCSR"                                                                                 , "Memory", 0x44020050,        4, base=16
+sfr = "SVCCSR.[0]SVC_enable"                                                                   , "Memory", 0x44020050,        4, base=16, bitRange=0
+sfr = "SVCCSR.[1]Port_select"                                                                  , "Memory", 0x44020050,        4, base=16, bitRange=1
+sfr = "SVCCSR.[3:2]MDT_select"                                                                 , "Memory", 0x44020050,        4, base=16, bitRange=2-3
+sfr = "SVCCSR.[7]Process_start"                                                                , "Memory", 0x44020050,        4, base=16, bitRange=7
+sfr = "SVCCSR.[8]Process_error"                                                                , "Memory", 0x44020050,        4, base=16, bitRange=8
+sfr = "SVCCSR.[9]SVC_Busy"                                                                     , "Memory", 0x44020050,        4, base=16, bitRange=9
+sfr = "DTDIVCLK"                                                                               , "Memory", 0x44020054,        4, base=16
+sfr = "DTDIVCLK.[25:0]DTDIVCLK"                                                                , "Memory", 0x44020054,        4, base=16, bitRange=0-25
+sfr = "TDIV_NDIVCLK"                                                                           , "Memory", 0x44020058,        4, base=16
+sfr = "TDIV_NDIVCLK.[23:0]TDIVCLK"                                                             , "Memory", 0x44020058,        4, base=16, bitRange=0-23
+sfr = "TDIV_NDIVCLK.[24]NDIVCLK"                                                               , "Memory", 0x44020058,        4, base=16, bitRange=24
+sfr = "S3LED"                                                                                  , "Memory", 0x4402005C,        4, base=16
+sfr = "S3LED.[1:0]Color_1"                                                                     , "Memory", 0x4402005C,        4, base=16, bitRange=0-1
+sfr = "S3LED.[4:3]Color_2"                                                                     , "Memory", 0x4402005C,        4, base=16, bitRange=3-4
+sfr = "S3LED.[9:8]Color_3"                                                                     , "Memory", 0x4402005C,        4, base=16, bitRange=8-9
+sfr = "S3LED.[13:12]Color_4"                                                                   , "Memory", 0x4402005C,        4, base=16, bitRange=12-13
+sfr = "S3LED.[18:16]CycSplit"                                                                  , "Memory", 0x4402005C,        4, base=16, bitRange=16-18
+sfr = "S3LED.[20]flash_2Hz"                                                                    , "Memory", 0x4402005C,        4, base=16, bitRange=20
+sfr = "S3LED.[22:21]CycSkip"                                                                   , "Memory", 0x4402005C,        4, base=16, bitRange=21-22
+sfr = "S3LED.[25:24]Color_5"                                                                   , "Memory", 0x4402005C,        4, base=16, bitRange=24-25
+sfr = "S3LED.[29:28]Color_6"                                                                   , "Memory", 0x4402005C,        4, base=16, bitRange=28-29
+sfr = "WDCSR"                                                                                  , "Memory", 0x44020068,        4, base=16
+sfr = "WDCSR.[15:0]magic_pattern"                                                              , "Memory", 0x44020068,        4, base=16, bitRange=0-15
+sfr = "WDCSR.[16]alarm"                                                                        , "Memory", 0x44020068,        4, base=16, bitRange=16
+sfr = "WDCSR.[17]active"                                                                       , "Memory", 0x44020068,        4, base=16, bitRange=17
+sfr = "WDCNT"                                                                                  , "Memory", 0x4402006C,        4, base=16
+sfr = "WDCNT.[15:0]reset_count"                                                                , "Memory", 0x4402006C,        4, base=16, bitRange=0-15
+sfr = "WDCNT.[31:16]actual_count"                                                              , "Memory", 0x4402006C,        4, base=16, bitRange=16-31
+sfr = "SFCR"                                                                                   , "Memory", 0x44020070,        4, base=16
+sfr = "SFCR.[1:0]FrameNumber1"                                                                 , "Memory", 0x44020070,        4, base=16, bitRange=0-1
+sfr = "SFCR.[4]PortSelect1"                                                                    , "Memory", 0x44020070,        4, base=16, bitRange=4
+sfr = "SFCR.[5]FrameType1"                                                                     , "Memory", 0x44020070,        4, base=16, bitRange=5
+sfr = "SFCR.[9:8]FrameNumber2"                                                                 , "Memory", 0x44020070,        4, base=16, bitRange=8-9
+sfr = "SFCR.[12]PortSelect2"                                                                   , "Memory", 0x44020070,        4, base=16, bitRange=12
+sfr = "SFCR.[13]Frame_type2"                                                                   , "Memory", 0x44020070,        4, base=16, bitRange=13
+sfr = "MIICSR"                                                                                 , "Memory", 0x44020074,        4, base=16
+sfr = "MIICSR.[0]MDC_P1"                                                                       , "Memory", 0x44020074,        4, base=16, bitRange=0
+sfr = "MIICSR.[1]MDIO_P1"                                                                      , "Memory", 0x44020074,        4, base=16, bitRange=1
+sfr = "MIICSR.[2]MDIO_En_P1"                                                                   , "Memory", 0x44020074,        4, base=16, bitRange=2
+sfr = "MIICSR.[8]MDC_P2"                                                                       , "Memory", 0x44020074,        4, base=16, bitRange=8
+sfr = "MIICSR.[9]MDIO_P2"                                                                      , "Memory", 0x44020074,        4, base=16, bitRange=9
+sfr = "MIICSR.[10]MDIO_En_P2"                                                                  , "Memory", 0x44020074,        4, base=16, bitRange=10
+sfr = "DBGOCR"                                                                                 , "Memory", 0x44020078,        4, base=16
+sfr = "DBGOCR.[4:0]TS1"                                                                        , "Memory", 0x44020078,        4, base=16, bitRange=0-4
+sfr = "DBGOCR.[12:8]TS2"                                                                       , "Memory", 0x44020078,        4, base=16, bitRange=8-12
+sfr = "SEQCNT"                                                                                 , "Memory", 0x4402007C,        4, base=16
+sfr = "SEQCNT.[15:0]SEQCNT_P1"                                                                 , "Memory", 0x4402007C,        4, base=16, bitRange=0-15
+sfr = "SEQCNT.[31:16]SEQCNT_P2"                                                                , "Memory", 0x4402007C,        4, base=16, bitRange=16-31
+sfr = "MAC1P1_0"                                                                               , "Memory", 0x44020080,        4, base=16
+sfr = "MAC1P1_0.[7:0]B5"                                                                       , "Memory", 0x44020080,        4, base=16, bitRange=0-7
+sfr = "MAC1P1_0.[15:8]B4"                                                                      , "Memory", 0x44020080,        4, base=16, bitRange=8-15
+sfr = "MAC1P1_0.[23:16]B3"                                                                     , "Memory", 0x44020080,        4, base=16, bitRange=16-23
+sfr = "MAC1P1_0.[31:24]B2"                                                                     , "Memory", 0x44020080,        4, base=16, bitRange=24-31
+sfr = "MAC1P1_1"                                                                               , "Memory", 0x44020084,        4, base=16
+sfr = "MAC1P1_1.[7:0]B1"                                                                       , "Memory", 0x44020084,        4, base=16, bitRange=0-7
+sfr = "MAC1P1_1.[15:8]B0"                                                                      , "Memory", 0x44020084,        4, base=16, bitRange=8-15
+sfr = "IPCSR1"                                                                                 , "Memory", 0x44020090,        4, base=16
+sfr = "IPCSR1.[0]IPTxEn"                                                                       , "Memory", 0x44020090,        4, base=16, bitRange=0
+sfr = "IPCSR1.[1]IPRxEn"                                                                       , "Memory", 0x44020090,        4, base=16, bitRange=1
+sfr = "IPCSR1.[2]S3FramdeFilter"                                                               , "Memory", 0x44020090,        4, base=16, bitRange=2
+sfr = "IPCSR1.[3]BrooadcastDisable"                                                            , "Memory", 0x44020090,        4, base=16, bitRange=3
+sfr = "IPCSR1.[4]MulticastDisable"                                                             , "Memory", 0x44020090,        4, base=16, bitRange=4
+sfr = "IPCSR1.[5]ColBufDisable"                                                                , "Memory", 0x44020090,        4, base=16, bitRange=5
+sfr = "IPCSR1.[6]Promiscuous"                                                                  , "Memory", 0x44020090,        4, base=16, bitRange=6
+sfr = "IPCSR1.[8]IPRxRdyIntn"                                                                  , "Memory", 0x44020090,        4, base=16, bitRange=8
+sfr = "IPCSR1.[9]IPRxBufFullIntEn"                                                             , "Memory", 0x44020090,        4, base=16, bitRange=9
+sfr = "IPCSR1.[10]IPTxBufRdyIntEn"                                                             , "Memory", 0x44020090,        4, base=16, bitRange=10
+sfr = "IPCSR1.[11]IPTxBufEmptyIntEn"                                                           , "Memory", 0x44020090,        4, base=16, bitRange=11
+sfr = "IPCSR1.[12]Auto_ColBufDis_S3FrameFilter"                                                , "Memory", 0x44020090,        4, base=16, bitRange=12
+sfr = "IPCSR1.[16]IPRxRdy"                                                                     , "Memory", 0x44020090,        4, base=16, bitRange=16
+sfr = "IPCSR1.[17]IPRxBufFull"                                                                 , "Memory", 0x44020090,        4, base=16, bitRange=17
+sfr = "IPCSR1.[18]IPTxBufRdy"                                                                  , "Memory", 0x44020090,        4, base=16, bitRange=18
+sfr = "IPCSR1.[19]IPTxBufEmpty"                                                                , "Memory", 0x44020090,        4, base=16, bitRange=19
+sfr = "IPCSR1.[31]Link"                                                                        , "Memory", 0x44020090,        4, base=16, bitRange=31
+sfr = "IPCSR2"                                                                                 , "Memory", 0x44020094,        4, base=16
+sfr = "IPCSR2.[0]IPTxEn"                                                                       , "Memory", 0x44020094,        4, base=16, bitRange=0
+sfr = "IPCSR2.[1]IPRxEn"                                                                       , "Memory", 0x44020094,        4, base=16, bitRange=1
+sfr = "IPCSR2.[2]S3FramdeFilter"                                                               , "Memory", 0x44020094,        4, base=16, bitRange=2
+sfr = "IPCSR2.[3]BrooadcastDisable"                                                            , "Memory", 0x44020094,        4, base=16, bitRange=3
+sfr = "IPCSR2.[4]MulticastDisable"                                                             , "Memory", 0x44020094,        4, base=16, bitRange=4
+sfr = "IPCSR2.[5]ColBufDisable"                                                                , "Memory", 0x44020094,        4, base=16, bitRange=5
+sfr = "IPCSR2.[6]Promiscuous"                                                                  , "Memory", 0x44020094,        4, base=16, bitRange=6
+sfr = "IPCSR2.[8]IPRxRdyIntn"                                                                  , "Memory", 0x44020094,        4, base=16, bitRange=8
+sfr = "IPCSR2.[9]IPRxBufFullIntEn"                                                             , "Memory", 0x44020094,        4, base=16, bitRange=9
+sfr = "IPCSR2.[10]IPTxBufRdyIntEn"                                                             , "Memory", 0x44020094,        4, base=16, bitRange=10
+sfr = "IPCSR2.[11]IPTxBufEmptyIntEn"                                                           , "Memory", 0x44020094,        4, base=16, bitRange=11
+sfr = "IPCSR2.[12]Auto_ColBufDis_S3FrameFilter"                                                , "Memory", 0x44020094,        4, base=16, bitRange=12
+sfr = "IPCSR2.[16]IPRxRdy"                                                                     , "Memory", 0x44020094,        4, base=16, bitRange=16
+sfr = "IPCSR2.[17]IPRxBufFull"                                                                 , "Memory", 0x44020094,        4, base=16, bitRange=17
+sfr = "IPCSR2.[18]IPTxBufRdy"                                                                  , "Memory", 0x44020094,        4, base=16, bitRange=18
+sfr = "IPCSR2.[19]IPTxBufEmpty"                                                                , "Memory", 0x44020094,        4, base=16, bitRange=19
+sfr = "IPCSR2.[31]Link"                                                                        , "Memory", 0x44020094,        4, base=16, bitRange=31
+sfr = "IPRRS1"                                                                                 , "Memory", 0x44020098,        4, base=16
+sfr = "IPRRS1.[15:0]Ram_segment_First"                                                         , "Memory", 0x44020098,        4, base=16, bitRange=0-15
+sfr = "IPRRS1.[31:16]Ram_segment_Last"                                                         , "Memory", 0x44020098,        4, base=16, bitRange=16-31
+sfr = "IPRRS2"                                                                                 , "Memory", 0x4402009C,        4, base=16
+sfr = "IPRRS2.[15:0]Ram_segment_First"                                                         , "Memory", 0x4402009C,        4, base=16, bitRange=0-15
+sfr = "IPRRS2.[31:16]Ram_segment_Last"                                                         , "Memory", 0x4402009C,        4, base=16, bitRange=16-31
+sfr = "IPRXS1"                                                                                 , "Memory", 0x440200A0,        4, base=16
+sfr = "IPRXS1.[15:0]Ram_segment_address"                                                       , "Memory", 0x440200A0,        4, base=16, bitRange=0-15
+sfr = "IPRXS1.[26:16]Data_length"                                                              , "Memory", 0x440200A0,        4, base=16, bitRange=16-26
+sfr = "IPRXS1.[31:27]Status"                                                                   , "Memory", 0x440200A0,        4, base=16, bitRange=27-31
+sfr = "IPRXS2"                                                                                 , "Memory", 0x440200A4,        4, base=16
+sfr = "IPRXS2.[15:0]Ram_segment_address"                                                       , "Memory", 0x440200A4,        4, base=16, bitRange=0-15
+sfr = "IPRXS2.[26:16]Data_length"                                                              , "Memory", 0x440200A4,        4, base=16, bitRange=16-26
+sfr = "IPRXS2.[31:27]Status"                                                                   , "Memory", 0x440200A4,        4, base=16, bitRange=27-31
+sfr = "IPTXS1"                                                                                 , "Memory", 0x440200A8,        4, base=16
+sfr = "IPTXS1.[15:0]Ram_segment_address"                                                       , "Memory", 0x440200A8,        4, base=16, bitRange=0-15
+sfr = "IPTXS1.[26:16]Data_length"                                                              , "Memory", 0x440200A8,        4, base=16, bitRange=16-26
+sfr = "IPTXS1.[30:28]Count"                                                                    , "Memory", 0x440200A8,        4, base=16, bitRange=28-30
+sfr = "IPTXS2"                                                                                 , "Memory", 0x440200AC,        4, base=16
+sfr = "IPTXS2.[15:0]Ram_segment_address"                                                       , "Memory", 0x440200AC,        4, base=16, bitRange=0-15
+sfr = "IPTXS2.[26:16]Data_length"                                                              , "Memory", 0x440200AC,        4, base=16, bitRange=16-26
+sfr = "IPTXS2.[30:28]Count"                                                                    , "Memory", 0x440200AC,        4, base=16, bitRange=28-30
+sfr = "IPLASTFL"                                                                               , "Memory", 0x440200B0,        4, base=16
+sfr = "IPLASTFL.[10:0]length"                                                                  , "Memory", 0x440200B0,        4, base=16, bitRange=0-10
+sfr = "IPFRXOK"                                                                                , "Memory", 0x440200C0,        4, base=16, readOnly
+sfr = "IPFRXOK.[15:0]aFramesReceivedOK_1"                                                      , "Memory", 0x440200C0,        4, base=16, readOnly, bitRange=0-15
+sfr = "IPFRXOK.[31:16]aFramesReceivedOK_2"                                                     , "Memory", 0x440200C0,        4, base=16, readOnly, bitRange=16-31
+sfr = "IPFTXOK"                                                                                , "Memory", 0x440200C4,        4, base=16, readOnly
+sfr = "IPFTXOK.[15:0]aFramesTransmittedOK_1"                                                   , "Memory", 0x440200C4,        4, base=16, readOnly, bitRange=0-15
+sfr = "IPFTXOK.[31:16]aFramesTransmittedOK_2"                                                  , "Memory", 0x440200C4,        4, base=16, readOnly, bitRange=16-31
+sfr = "IPFCSERR"                                                                               , "Memory", 0x440200C8,        4, base=16, readOnly
+sfr = "IPFCSERR.[15:0]aFCSErrors_Port_1"                                                       , "Memory", 0x440200C8,        4, base=16, readOnly, bitRange=0-15
+sfr = "IPFCSERR.[31:16]aFCSErrors_Port_2"                                                      , "Memory", 0x440200C8,        4, base=16, readOnly, bitRange=16-31
+sfr = "IPALGNERR"                                                                              , "Memory", 0x440200CC,        4, base=16, readOnly
+sfr = "IPALGNERR.[15:0]aFrameErrors_Port_1"                                                    , "Memory", 0x440200CC,        4, base=16, readOnly, bitRange=0-15
+sfr = "IPALGNERR.[31:16]aFrameErrors_Port_2"                                                   , "Memory", 0x440200CC,        4, base=16, readOnly, bitRange=16-31
+sfr = "IPDISRXB"                                                                               , "Memory", 0x440200D0,        4, base=16, readOnly
+sfr = "IPDISRXB.[15:0]aDiscardResRxBuf_Port_1"                                                 , "Memory", 0x440200D0,        4, base=16, readOnly, bitRange=0-15
+sfr = "IPDISRXB.[31:16]aDiscardResRxBuf_Port_2"                                                , "Memory", 0x440200D0,        4, base=16, readOnly, bitRange=16-31
+sfr = "IPDISCLB"                                                                               , "Memory", 0x440200D4,        4, base=16, readOnly
+sfr = "IPDISCLB.[15:0]aDiscardResColBuf_Port_1"                                                , "Memory", 0x440200D4,        4, base=16, readOnly, bitRange=0-15
+sfr = "IPDISCLB.[31:16]aDiscardResColBuf_Port_2"                                               , "Memory", 0x440200D4,        4, base=16, readOnly, bitRange=16-31
+sfr = "IPCHVIOL"                                                                               , "Memory", 0x440200D8,        4, base=16, readOnly
+sfr = "IPCHVIOL.[15:0]aIPChannelViolation_Port_1"                                              , "Memory", 0x440200D8,        4, base=16, readOnly, bitRange=0-15
+sfr = "IPCHVIOL.[31:16]aIPChannelViolation_Port_2"                                             , "Memory", 0x440200D8,        4, base=16, readOnly, bitRange=16-31
+sfr = "aSercosErrorCount"                                                                      , "Memory", 0x440200DC,        4, base=16
+sfr = "aSercosErrorCount.[15:0]aSercosErrorCount_Port_1"                                       , "Memory", 0x440200DC,        4, base=16, bitRange=0-15
+sfr = "aSercosErrorCount.[31:16]aSercosErrorCount_Port_2"                                      , "Memory", 0x440200DC,        4, base=16, bitRange=16-31
+sfr = "MSTLMAX"                                                                                , "Memory", 0x440200E0,        4, base=16
+sfr = "MSTLMAX.[15:0]value"                                                                    , "Memory", 0x440200E0,        4, base=16, bitRange=0-15
+sfr = "MSTLSUM"                                                                                , "Memory", 0x440200E4,        4, base=16
+sfr = "MSTLSUM.[15:0]value"                                                                    , "Memory", 0x440200E4,        4, base=16, bitRange=0-15
+sfr = "MSTACT"                                                                                 , "Memory", 0x440200E8,        4, base=16
+sfr = "MSTACT.[15:0]value"                                                                     , "Memory", 0x440200E8,        4, base=16, bitRange=0-15
+sfr = "TMDSCL"                                                                                 , "Memory", 0x44020100,        4, base=16
+sfr = "TMDSCL.[26:0]Event_TCNT_Value"                                                          , "Memory", 0x44020100,        4, base=16, bitRange=0-26
+sfr = "TMDSCU"                                                                                 , "Memory", 0x44020104,        4, base=16
+sfr = "TMDSCU.[7:0]SCC_Value"                                                                  , "Memory", 0x44020104,        4, base=16, bitRange=0-7
+sfr = "TMDSCU.[17:16]SCC_Select"                                                               , "Memory", 0x44020104,        4, base=16, bitRange=16-17
+sfr = "TMDSCU.[27:24]Event_type"                                                               , "Memory", 0x44020104,        4, base=16, bitRange=24-27
+sfr = "TMDSCSEL"                                                                               , "Memory", 0x44020108,        4, base=16
+sfr = "PTMDSCL"                                                                                , "Memory", 0x44020110,        4, base=16
+sfr = "PTMDSCL.[26:0]Event_TCNT_Value"                                                         , "Memory", 0x44020110,        4, base=16, bitRange=0-26
+sfr = "PTMDSCU"                                                                                , "Memory", 0x44020114,        4, base=16
+sfr = "PTMDSCU.[7:0]SCC_Value"                                                                 , "Memory", 0x44020114,        4, base=16, bitRange=0-7
+sfr = "PTMDSCU.[17:16]SCC_Select"                                                              , "Memory", 0x44020114,        4, base=16, bitRange=16-17
+sfr = "PTMDSCU.[27:24]Event_type"                                                              , "Memory", 0x44020114,        4, base=16, bitRange=24-27
+sfr = "PTMDSCSEL"                                                                              , "Memory", 0x44020118,        4, base=16
+sfr = "PLLCSR"                                                                                 , "Memory", 0x44020120,        4, base=16
+sfr = "PLLCSR.[7:0]Command"                                                                    , "Memory", 0x44020120,        4, base=16, bitRange=0-7
+sfr = "PLLCSR.[8]Init"                                                                         , "Memory", 0x44020120,        4, base=16, bitRange=8
+sfr = "PLLCSR.[9]Active"                                                                       , "Memory", 0x44020120,        4, base=16, bitRange=9
+sfr = "PLLCSR.[10]Locked"                                                                      , "Memory", 0x44020120,        4, base=16, bitRange=10
+sfr = "PLLCSR.[11]Sync_Error"                                                                  , "Memory", 0x44020120,        4, base=16, bitRange=11
+sfr = "PLLCSR.[15]CmdActive"                                                                   , "Memory", 0x44020120,        4, base=16, bitRange=15
+sfr = "TCNTCYCR"                                                                               , "Memory", 0x44020124,        4, base=16
+sfr = "TCNTCYCR.[25:0]TCNT_Cycletime"                                                          , "Memory", 0x44020124,        4, base=16, bitRange=0-25
+sfr = "STNS"                                                                                   , "Memory", 0x44020130,        4, base=16, readOnly
+sfr = "STNS.[29:0]Nanoseconds"                                                                 , "Memory", 0x44020130,        4, base=16, readOnly, bitRange=0-29
+sfr = "STSEC"                                                                                  , "Memory", 0x44020134,        4, base=16, readOnly
+sfr = "STSEC.[31:0]Seconds"                                                                    , "Memory", 0x44020134,        4, base=16, readOnly, bitRange=0-31
+sfr = "STNSTSR"                                                                                , "Memory", 0x44020138,        4, base=16, readOnly
+sfr = "STNSTSR.[29:0]Nanoseconds"                                                              , "Memory", 0x44020138,        4, base=16, readOnly, bitRange=0-29
+sfr = "STSECTSR"                                                                               , "Memory", 0x4402013C,        4, base=16, readOnly
+sfr = "STSECTSR.[31:0]Seconds"                                                                 , "Memory", 0x4402013C,        4, base=16, readOnly, bitRange=0-31
+sfr = "SCCAB"                                                                                  , "Memory", 0x44020140,        4, base=16
+sfr = "SCCAB.[7:0]SccMaxA"                                                                     , "Memory", 0x44020140,        4, base=16, bitRange=0-7
+sfr = "SCCAB.[15:8]SccMaxB"                                                                    , "Memory", 0x44020140,        4, base=16, bitRange=8-15
+sfr = "SCCAB.[23:16]SccValueA"                                                                 , "Memory", 0x44020140,        4, base=16, bitRange=16-23
+sfr = "SCCAB.[31:24]SccValueB"                                                                 , "Memory", 0x44020140,        4, base=16, bitRange=24-31
+sfr = "SCCMDT"                                                                                 , "Memory", 0x44020150,        4, base=16, readOnly
+sfr = "SCCMDT.[13:0]Maximum_count"                                                             , "Memory", 0x44020150,        4, base=16, readOnly, bitRange=0-13
+sfr = "SCCMDT.[29:16]Actual_counter"                                                           , "Memory", 0x44020150,        4, base=16, readOnly, bitRange=16-29
+sfr = "RXBUF0_P1A"                                                                             , "Memory", 0x44020180,        4, base=16
+sfr = "RXBUF1_P1A"                                                                             , "Memory", 0x44020184,        4, base=16
+sfr = "RXBUF2_P1A"                                                                             , "Memory", 0x44020188,        4, base=16
+sfr = "RXBUF0_P1B"                                                                             , "Memory", 0x44020190,        4, base=16
+sfr = "RXBUF1_P1B"                                                                             , "Memory", 0x44020194,        4, base=16
+sfr = "RXBUF2_P1B"                                                                             , "Memory", 0x44020198,        4, base=16
+sfr = "RXBUF_P1SVC"                                                                            , "Memory", 0x4402019C,        4, base=16
+sfr = "RXBUF0_P2A"                                                                             , "Memory", 0x440201A0,        4, base=16
+sfr = "RXBUF1_P2A"                                                                             , "Memory", 0x440201A4,        4, base=16
+sfr = "RXBUF2_P2A"                                                                             , "Memory", 0x440201A8,        4, base=16
+sfr = "RXBUF0_P2B"                                                                             , "Memory", 0x440201B0,        4, base=16
+sfr = "RXBUF1_P2B"                                                                             , "Memory", 0x440201B4,        4, base=16
+sfr = "RXBUF2_P2B"                                                                             , "Memory", 0x440201B8,        4, base=16
+sfr = "RXBUF_P2SVC"                                                                            , "Memory", 0x440201BC,        4, base=16
+sfr = "TXBUF0_A"                                                                               , "Memory", 0x440201C0,        4, base=16
+sfr = "TXBUF1_A"                                                                               , "Memory", 0x440201C4,        4, base=16
+sfr = "TXBUF2_A"                                                                               , "Memory", 0x440201C8,        4, base=16
+sfr = "TXBUF3_A"                                                                               , "Memory", 0x440201CC,        4, base=16
+sfr = "TXBUF0_B"                                                                               , "Memory", 0x440201D0,        4, base=16
+sfr = "TXBUF1_B"                                                                               , "Memory", 0x440201D4,        4, base=16
+sfr = "TXBUF2_B"                                                                               , "Memory", 0x440201D8,        4, base=16
+sfr = "TXBUF3_B"                                                                               , "Memory", 0x440201DC,        4, base=16
+sfr = "TXBUF_P1"                                                                               , "Memory", 0x440201F0,        4, base=16
+sfr = "TXBUF_P2"                                                                               , "Memory", 0x440201F4,        4, base=16
+sfr = "TXBUF_SVC"                                                                              , "Memory", 0x440201FC,        4, base=16
+sfr = "RXBUFCSR_A"                                                                             , "Memory", 0x44020200,        4, base=16
+sfr = "RXBUFCSR_A.[1:0]Buffer_Count"                                                           , "Memory", 0x44020200,        4, base=16, bitRange=0-1
+sfr = "RXBUFCSR_A.[17:16]RxBuf_Port_1"                                                         , "Memory", 0x44020200,        4, base=16, bitRange=16-17
+sfr = "RXBUFCSR_A.[20]Port_1_New_Data"                                                         , "Memory", 0x44020200,        4, base=16, bitRange=20
+sfr = "RXBUFCSR_A.[21]Port_1_Overflow"                                                         , "Memory", 0x44020200,        4, base=16, bitRange=21
+sfr = "RXBUFCSR_A.[25:24]RxBuf_Port_2"                                                         , "Memory", 0x44020200,        4, base=16, bitRange=24-25
+sfr = "RXBUFCSR_A.[28]Port_2_New_Data"                                                         , "Memory", 0x44020200,        4, base=16, bitRange=28
+sfr = "RXBUFCSR_A.[29]Port_2_Overflow"                                                         , "Memory", 0x44020200,        4, base=16, bitRange=29
+sfr = "RXBUFCSR_A.[31]RxRequest"                                                               , "Memory", 0x44020200,        4, base=16, bitRange=31
+sfr = "RXBUFTV_A"                                                                              , "Memory", 0x44020204,        4, base=16
+sfr = "RXBUFTV_A.[0]Port_1_MDT0"                                                               , "Memory", 0x44020204,        4, base=16, bitRange=0
+sfr = "RXBUFTV_A.[1]Port_1_MDT1"                                                               , "Memory", 0x44020204,        4, base=16, bitRange=1
+sfr = "RXBUFTV_A.[2]Port_1_MDT2"                                                               , "Memory", 0x44020204,        4, base=16, bitRange=2
+sfr = "RXBUFTV_A.[3]Port_1_MDT3"                                                               , "Memory", 0x44020204,        4, base=16, bitRange=3
+sfr = "RXBUFTV_A.[8]Port_1_AT0"                                                                , "Memory", 0x44020204,        4, base=16, bitRange=8
+sfr = "RXBUFTV_A.[9]Port_1_AT1"                                                                , "Memory", 0x44020204,        4, base=16, bitRange=9
+sfr = "RXBUFTV_A.[10]Port_1_AT2"                                                               , "Memory", 0x44020204,        4, base=16, bitRange=10
+sfr = "RXBUFTV_A.[11]Port_1_AT3"                                                               , "Memory", 0x44020204,        4, base=16, bitRange=11
+sfr = "RXBUFTV_A.[16]Port_2_MDT0"                                                              , "Memory", 0x44020204,        4, base=16, bitRange=16
+sfr = "RXBUFTV_A.[17]Port_2_MDT1"                                                              , "Memory", 0x44020204,        4, base=16, bitRange=17
+sfr = "RXBUFTV_A.[18]Port_2_MDT2"                                                              , "Memory", 0x44020204,        4, base=16, bitRange=18
+sfr = "RXBUFTV_A.[19]Port_2_MDT3"                                                              , "Memory", 0x44020204,        4, base=16, bitRange=19
+sfr = "RXBUFTV_A.[24]Port_2_AT0"                                                               , "Memory", 0x44020204,        4, base=16, bitRange=24
+sfr = "RXBUFTV_A.[25]Port_2_AT1"                                                               , "Memory", 0x44020204,        4, base=16, bitRange=25
+sfr = "RXBUFTV_A.[26]Port_2_AT2"                                                               , "Memory", 0x44020204,        4, base=16, bitRange=26
+sfr = "RXBUFTV_A.[27]Port_2_AT3"                                                               , "Memory", 0x44020204,        4, base=16, bitRange=27
+sfr = "RXBUFTR_A"                                                                              , "Memory", 0x44020208,        4, base=16
+sfr = "RXBUFTR_A.[0]MDT0_required"                                                             , "Memory", 0x44020208,        4, base=16, bitRange=0
+sfr = "RXBUFTR_A.[1]MDT1_required"                                                             , "Memory", 0x44020208,        4, base=16, bitRange=1
+sfr = "RXBUFTR_A.[2]MDT2_required"                                                             , "Memory", 0x44020208,        4, base=16, bitRange=2
+sfr = "RXBUFTR_A.[3]MDT3_required"                                                             , "Memory", 0x44020208,        4, base=16, bitRange=3
+sfr = "RXBUFTR_A.[8]AT0_required"                                                              , "Memory", 0x44020208,        4, base=16, bitRange=8
+sfr = "RXBUFTR_A.[9]AT1_required"                                                              , "Memory", 0x44020208,        4, base=16, bitRange=9
+sfr = "RXBUFTR_A.[10]AT2_required"                                                             , "Memory", 0x44020208,        4, base=16, bitRange=10
+sfr = "RXBUFTR_A.[11]AT3_required"                                                             , "Memory", 0x44020208,        4, base=16, bitRange=11
+sfr = "TXBUFCSR_A"                                                                             , "Memory", 0x4402020C,        4, base=16
+sfr = "TXBUFCSR_A.[1:0]Buffer_Count"                                                           , "Memory", 0x4402020C,        4, base=16, bitRange=0-1
+sfr = "TXBUFCSR_A.[17:16]TxBuf"                                                                , "Memory", 0x4402020C,        4, base=16, bitRange=16-17
+sfr = "TXBUFCSR_A.[31]TxRequest"                                                               , "Memory", 0x4402020C,        4, base=16, bitRange=31
+sfr = "RXBUFCSR_B"                                                                             , "Memory", 0x44020210,        4, base=16
+sfr = "RXBUFCSR_B.[1:0]Buffer_Count"                                                           , "Memory", 0x44020210,        4, base=16, bitRange=0-1
+sfr = "RXBUFCSR_B.[17:16]RxBuf_Port_1"                                                         , "Memory", 0x44020210,        4, base=16, bitRange=16-17
+sfr = "RXBUFCSR_B.[20]Port_1_New_Data"                                                         , "Memory", 0x44020210,        4, base=16, bitRange=20
+sfr = "RXBUFCSR_B.[21]Port_1_Overflow"                                                         , "Memory", 0x44020210,        4, base=16, bitRange=21
+sfr = "RXBUFCSR_B.[25:24]RxBuf_Port_2"                                                         , "Memory", 0x44020210,        4, base=16, bitRange=24-25
+sfr = "RXBUFCSR_B.[28]Port_2_New_Data"                                                         , "Memory", 0x44020210,        4, base=16, bitRange=28
+sfr = "RXBUFCSR_B.[29]Port_2_Overflow"                                                         , "Memory", 0x44020210,        4, base=16, bitRange=29
+sfr = "RXBUFCSR_B.[31]RxRequest"                                                               , "Memory", 0x44020210,        4, base=16, bitRange=31
+sfr = "RXBUFTV_B"                                                                              , "Memory", 0x44020214,        4, base=16
+sfr = "RXBUFTV_B.[0]Port_1_MDT0"                                                               , "Memory", 0x44020214,        4, base=16, bitRange=0
+sfr = "RXBUFTV_B.[1]Port_1_MDT1"                                                               , "Memory", 0x44020214,        4, base=16, bitRange=1
+sfr = "RXBUFTV_B.[2]Port_1_MDT2"                                                               , "Memory", 0x44020214,        4, base=16, bitRange=2
+sfr = "RXBUFTV_B.[3]Port_1_MDT3"                                                               , "Memory", 0x44020214,        4, base=16, bitRange=3
+sfr = "RXBUFTV_B.[8]Port_1_AT0"                                                                , "Memory", 0x44020214,        4, base=16, bitRange=8
+sfr = "RXBUFTV_B.[9]Port_1_AT1"                                                                , "Memory", 0x44020214,        4, base=16, bitRange=9
+sfr = "RXBUFTV_B.[10]Port_1_AT2"                                                               , "Memory", 0x44020214,        4, base=16, bitRange=10
+sfr = "RXBUFTV_B.[11]Port_1_AT3"                                                               , "Memory", 0x44020214,        4, base=16, bitRange=11
+sfr = "RXBUFTV_B.[16]Port_2_MDT0"                                                              , "Memory", 0x44020214,        4, base=16, bitRange=16
+sfr = "RXBUFTV_B.[17]Port_2_MDT1"                                                              , "Memory", 0x44020214,        4, base=16, bitRange=17
+sfr = "RXBUFTV_B.[18]Port_2_MDT2"                                                              , "Memory", 0x44020214,        4, base=16, bitRange=18
+sfr = "RXBUFTV_B.[19]Port_2_MDT3"                                                              , "Memory", 0x44020214,        4, base=16, bitRange=19
+sfr = "RXBUFTV_B.[24]Port_2_AT0"                                                               , "Memory", 0x44020214,        4, base=16, bitRange=24
+sfr = "RXBUFTV_B.[25]Port_2_AT1"                                                               , "Memory", 0x44020214,        4, base=16, bitRange=25
+sfr = "RXBUFTV_B.[26]Port_2_AT2"                                                               , "Memory", 0x44020214,        4, base=16, bitRange=26
+sfr = "RXBUFTV_B.[27]Port_2_AT3"                                                               , "Memory", 0x44020214,        4, base=16, bitRange=27
+sfr = "RXBUFTR_B"                                                                              , "Memory", 0x44020218,        4, base=16
+sfr = "RXBUFTR_B.[0]MDT0_required"                                                             , "Memory", 0x44020218,        4, base=16, bitRange=0
+sfr = "RXBUFTR_B.[1]MDT1_required"                                                             , "Memory", 0x44020218,        4, base=16, bitRange=1
+sfr = "RXBUFTR_B.[2]MDT2_required"                                                             , "Memory", 0x44020218,        4, base=16, bitRange=2
+sfr = "RXBUFTR_B.[3]MDT3_required"                                                             , "Memory", 0x44020218,        4, base=16, bitRange=3
+sfr = "RXBUFTR_B.[8]AT0_required"                                                              , "Memory", 0x44020218,        4, base=16, bitRange=8
+sfr = "RXBUFTR_B.[9]AT1_required"                                                              , "Memory", 0x44020218,        4, base=16, bitRange=9
+sfr = "RXBUFTR_B.[10]AT2_required"                                                             , "Memory", 0x44020218,        4, base=16, bitRange=10
+sfr = "RXBUFTR_B.[11]AT3_required"                                                             , "Memory", 0x44020218,        4, base=16, bitRange=11
+sfr = "TXBUFCSR_B"                                                                             , "Memory", 0x4402021C,        4, base=16
+sfr = "TXBUFCSR_B.[1:0]Buffer_Count"                                                           , "Memory", 0x4402021C,        4, base=16, bitRange=0-1
+sfr = "TXBUFCSR_B.[17:16]TxBuf"                                                                , "Memory", 0x4402021C,        4, base=16, bitRange=16-17
+sfr = "TXBUFCSR_B.[31]TxRequest"                                                               , "Memory", 0x4402021C,        4, base=16, bitRange=31
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// SERCOS3 -----
+group = "SERCOS3","IDR","GCSFR","IER0","IMR0","IRR0","DFCSR","PHASESR","TGSR1","TGSR2","DESCR","STRBR","TCSR","TRDLY","TDMST1","TDMST2","SCR1","SCR2","SVCCSR","DTDIVCLK","TDIV_NDIVCLK","S3LED","WDCSR","WDCNT","SFCR","MIICSR","DBGOCR","SEQCNT","MAC1P1_0","MAC1P1_1","IPCSR1","IPCSR2","IPRRS1","IPRRS2","IPRXS1","IPRXS2","IPTXS1","IPTXS2","IPLASTFL","IPFRXOK","IPFTXOK","IPFCSERR","IPALGNERR","IPDISRXB","IPDISCLB","IPCHVIOL","aSercosErrorCount","MSTLMAX","MSTLSUM","MSTACT","TMDSCL","TMDSCU","TMDSCSEL","PTMDSCL","PTMDSCU","PTMDSCSEL","PLLCSR","TCNTCYCR","STNS","STSEC","STNSTSR","STSECTSR","SCCAB","SCCMDT","RXBUF0_P1A","RXBUF1_P1A","RXBUF2_P1A","RXBUF0_P1B","RXBUF1_P1B","RXBUF2_P1B","RXBUF_P1SVC","RXBUF0_P2A","RXBUF1_P2A","RXBUF2_P2A","RXBUF0_P2B","RXBUF1_P2B","RXBUF2_P2B","RXBUF_P2SVC","TXBUF0_A","TXBUF1_A","TXBUF2_A","TXBUF3_A","TXBUF0_B","TXBUF1_B","TXBUF2_B","TXBUF3_B","TXBUF_P1","TXBUF_P2","TXBUF_SVC","RXBUFCSR_A","RXBUFTV_A","RXBUFTR_A","TXBUFCSR_A","RXBUFCSR_B","RXBUFTV_B","RXBUFTR_B","TXBUFCSR_B"

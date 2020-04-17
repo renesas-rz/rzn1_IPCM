@@ -1,0 +1,83 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : SGPIO4
+;               SGPIO4 Reduce (Master)
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "SGPIO4/Input"                                                                           , "Memory", 0x5000F000,        4, base=16, readOnly
+sfr = "SGPIO4/Input.[31:0]Input"                                                               , "Memory", 0x5000F000,        4, base=16, readOnly, bitRange=0-31
+sfr = "SGPIO4/Output"                                                                          , "Memory", 0x5000F004,        4, base=16
+sfr = "SGPIO4/Output.[31:0]Output"                                                             , "Memory", 0x5000F004,        4, base=16, bitRange=0-31
+sfr = "SGPIO4/Control"                                                                         , "Memory", 0x5000F008,        4, base=16
+sfr = "SGPIO4/Control.[0]RefreshEnable"                                                        , "Memory", 0x5000F008,        4, base=16, bitRange=0
+sfr = "SGPIO4/Control.[1]OutputDisable"                                                        , "Memory", 0x5000F008,        4, base=16, bitRange=1
+sfr = "SGPIO4/Control.[2]OutputUpdate"                                                         , "Memory", 0x5000F008,        4, base=16, bitRange=2
+sfr = "SGPIO4/Control.[4]WaveformOnLatchCommand"                                               , "Memory", 0x5000F008,        4, base=16, bitRange=4
+sfr = "SGPIO4/Control.[15:8]TimeBase"                                                          , "Memory", 0x5000F008,        4, base=16, bitRange=8-15
+sfr = "SGPIO4/ModeEdgeDetector"                                                                , "Memory", 0x5000F040,        4, base=16
+sfr = "SGPIO4/ModeEdgeDetector.[1:0]EdgeDetectorOnSgpioInput0"                                 , "Memory", 0x5000F040,        4, base=16, bitRange=0-1
+sfr = "SGPIO4/ModeEdgeDetector.[3:2]EdgeDetectorOnSgpioInput1"                                 , "Memory", 0x5000F040,        4, base=16, bitRange=2-3
+sfr = "SGPIO4/ModeEdgeDetector.[5:4]EdgeDetectorOnSgpioInput2"                                 , "Memory", 0x5000F040,        4, base=16, bitRange=4-5
+sfr = "SGPIO4/ModeEdgeDetector.[7:6]EdgeDetectorOnSgpioInput3"                                 , "Memory", 0x5000F040,        4, base=16, bitRange=6-7
+sfr = "SGPIO4/StatusInt0"                                                                      , "Memory", 0x5000F044,        4, base=16
+sfr = "SGPIO4/StatusInt0.[3:0]StatusInt0"                                                      , "Memory", 0x5000F044,        4, base=16, bitRange=0-3
+sfr = "SGPIO4/StatusInt1"                                                                      , "Memory", 0x5000F048,        4, base=16
+sfr = "SGPIO4/StatusInt1.[3:0]StatusInt1"                                                      , "Memory", 0x5000F048,        4, base=16, bitRange=0-3
+sfr = "SGPIO4/MaskInt"                                                                         , "Memory", 0x5000F04C,        4, base=16
+sfr = "SGPIO4/MaskInt.[3:0]MaskInt"                                                            , "Memory", 0x5000F04C,        4, base=16, bitRange=0-3
+sfr = "SGPIO4/ClearInt"                                                                        , "Memory", 0x5000F050,        4, base=16
+sfr = "SGPIO4/ClearInt.[3:0]ClearInt"                                                          , "Memory", 0x5000F050,        4, base=16, bitRange=0-3
+sfr = "SGPIO4/InputUpdate"                                                                     , "Memory", 0x5000F054,        4, base=16
+sfr = "SGPIO4/InputUpdate.[31:0]InputUpdate"                                                   , "Memory", 0x5000F054,        4, base=16, bitRange=0-31
+sfr = "SGPIO4/InputFilter0"                                                                    , "Memory", 0x5000F060,        4, base=16
+sfr = "SGPIO4/InputFilter0.[7:0]InputAFilter"                                                  , "Memory", 0x5000F060,        4, base=16, bitRange=0-7
+sfr = "SGPIO4/InputFilter0.[15:8]InputBFilter"                                                 , "Memory", 0x5000F060,        4, base=16, bitRange=8-15
+sfr = "SGPIO4/InputFilter0.[23:16]InputCFilter"                                                , "Memory", 0x5000F060,        4, base=16, bitRange=16-23
+sfr = "SGPIO4/InputFilter0.[31:24]InputDFilter"                                                , "Memory", 0x5000F060,        4, base=16, bitRange=24-31
+sfr = "SGPIO4/InputFilter1"                                                                    , "Memory", 0x5000F064,        4, base=16
+sfr = "SGPIO4/InputFilter1.[7:0]InputAFilter"                                                  , "Memory", 0x5000F064,        4, base=16, bitRange=0-7
+sfr = "SGPIO4/InputFilter1.[15:8]InputBFilter"                                                 , "Memory", 0x5000F064,        4, base=16, bitRange=8-15
+sfr = "SGPIO4/InputFilter1.[23:16]InputCFilter"                                                , "Memory", 0x5000F064,        4, base=16, bitRange=16-23
+sfr = "SGPIO4/InputFilter1.[31:24]InputDFilter"                                                , "Memory", 0x5000F064,        4, base=16, bitRange=24-31
+sfr = "SGPIO4/InputFilter2"                                                                    , "Memory", 0x5000F068,        4, base=16
+sfr = "SGPIO4/InputFilter2.[7:0]InputAFilter"                                                  , "Memory", 0x5000F068,        4, base=16, bitRange=0-7
+sfr = "SGPIO4/InputFilter2.[15:8]InputBFilter"                                                 , "Memory", 0x5000F068,        4, base=16, bitRange=8-15
+sfr = "SGPIO4/InputFilter2.[23:16]InputCFilter"                                                , "Memory", 0x5000F068,        4, base=16, bitRange=16-23
+sfr = "SGPIO4/InputFilter2.[31:24]InputDFilter"                                                , "Memory", 0x5000F068,        4, base=16, bitRange=24-31
+sfr = "SGPIO4/InputFilter3"                                                                    , "Memory", 0x5000F06C,        4, base=16
+sfr = "SGPIO4/InputFilter3.[7:0]InputAFilter"                                                  , "Memory", 0x5000F06C,        4, base=16, bitRange=0-7
+sfr = "SGPIO4/InputFilter3.[15:8]InputBFilter"                                                 , "Memory", 0x5000F06C,        4, base=16, bitRange=8-15
+sfr = "SGPIO4/InputFilter3.[23:16]InputCFilter"                                                , "Memory", 0x5000F06C,        4, base=16, bitRange=16-23
+sfr = "SGPIO4/InputFilter3.[31:24]InputDFilter"                                                , "Memory", 0x5000F06C,        4, base=16, bitRange=24-31
+sfr = "SGPIO4/InputFilter4"                                                                    , "Memory", 0x5000F070,        4, base=16
+sfr = "SGPIO4/InputFilter4.[7:0]InputAFilter"                                                  , "Memory", 0x5000F070,        4, base=16, bitRange=0-7
+sfr = "SGPIO4/InputFilter4.[15:8]InputBFilter"                                                 , "Memory", 0x5000F070,        4, base=16, bitRange=8-15
+sfr = "SGPIO4/InputFilter4.[23:16]InputCFilter"                                                , "Memory", 0x5000F070,        4, base=16, bitRange=16-23
+sfr = "SGPIO4/InputFilter4.[31:24]InputDFilter"                                                , "Memory", 0x5000F070,        4, base=16, bitRange=24-31
+sfr = "SGPIO4/InputFilter5"                                                                    , "Memory", 0x5000F074,        4, base=16
+sfr = "SGPIO4/InputFilter5.[7:0]InputAFilter"                                                  , "Memory", 0x5000F074,        4, base=16, bitRange=0-7
+sfr = "SGPIO4/InputFilter5.[15:8]InputBFilter"                                                 , "Memory", 0x5000F074,        4, base=16, bitRange=8-15
+sfr = "SGPIO4/InputFilter5.[23:16]InputCFilter"                                                , "Memory", 0x5000F074,        4, base=16, bitRange=16-23
+sfr = "SGPIO4/InputFilter5.[31:24]InputDFilter"                                                , "Memory", 0x5000F074,        4, base=16, bitRange=24-31
+sfr = "SGPIO4/InputFilter6"                                                                    , "Memory", 0x5000F078,        4, base=16
+sfr = "SGPIO4/InputFilter6.[7:0]InputAFilter"                                                  , "Memory", 0x5000F078,        4, base=16, bitRange=0-7
+sfr = "SGPIO4/InputFilter6.[15:8]InputBFilter"                                                 , "Memory", 0x5000F078,        4, base=16, bitRange=8-15
+sfr = "SGPIO4/InputFilter6.[23:16]InputCFilter"                                                , "Memory", 0x5000F078,        4, base=16, bitRange=16-23
+sfr = "SGPIO4/InputFilter6.[31:24]InputDFilter"                                                , "Memory", 0x5000F078,        4, base=16, bitRange=24-31
+sfr = "SGPIO4/InputFilter7"                                                                    , "Memory", 0x5000F07C,        4, base=16
+sfr = "SGPIO4/InputFilter7.[7:0]InputAFilter"                                                  , "Memory", 0x5000F07C,        4, base=16, bitRange=0-7
+sfr = "SGPIO4/InputFilter7.[15:8]InputBFilter"                                                 , "Memory", 0x5000F07C,        4, base=16, bitRange=8-15
+sfr = "SGPIO4/InputFilter7.[23:16]InputCFilter"                                                , "Memory", 0x5000F07C,        4, base=16, bitRange=16-23
+sfr = "SGPIO4/InputFilter7.[31:24]InputDFilter"                                                , "Memory", 0x5000F07C,        4, base=16, bitRange=24-31
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// SGPIO4 Reduce (Master) -----
+group = "SGPIO4","SGPIO4/Input","SGPIO4/Output","SGPIO4/Control","SGPIO4/ModeEdgeDetector","SGPIO4/StatusInt0","SGPIO4/StatusInt1","SGPIO4/MaskInt","SGPIO4/ClearInt","SGPIO4/InputUpdate","SGPIO4/InputFilter0","SGPIO4/InputFilter1","SGPIO4/InputFilter2","SGPIO4/InputFilter3","SGPIO4/InputFilter4","SGPIO4/InputFilter5","SGPIO4/InputFilter6","SGPIO4/InputFilter7"

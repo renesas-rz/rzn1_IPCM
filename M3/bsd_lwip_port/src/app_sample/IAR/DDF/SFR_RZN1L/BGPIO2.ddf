@@ -1,0 +1,47 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : BGPIO2
+;               BGPIO2 module
+;    revision : 0.13 (15.September.2017)
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "BGPIO2/swporta_dr"                                                                      , "Memory", 0x5000C000,        4, base=16
+sfr = "BGPIO2/swporta_dr.[31:0]port_dr"                                                        , "Memory", 0x5000C000,        4, base=16, bitRange=0-31
+sfr = "BGPIO2/swporta_ddr"                                                                     , "Memory", 0x5000C004,        4, base=16
+sfr = "BGPIO2/swporta_ddr.[31:0]port_ddr"                                                      , "Memory", 0x5000C004,        4, base=16, bitRange=0-31
+sfr = "BGPIO2/swportb_dr"                                                                      , "Memory", 0x5000C00C,        4, base=16
+sfr = "BGPIO2/swportb_dr.[31:0]port_dr"                                                        , "Memory", 0x5000C00C,        4, base=16, bitRange=0-31
+sfr = "BGPIO2/swportb_ddr"                                                                     , "Memory", 0x5000C010,        4, base=16
+sfr = "BGPIO2/swportb_ddr.[31:0]port_ddr"                                                      , "Memory", 0x5000C010,        4, base=16, bitRange=0-31
+sfr = "BGPIO2/inten"                                                                           , "Memory", 0x5000C030,        4, base=16
+sfr = "BGPIO2/inten.[31:0]inten"                                                               , "Memory", 0x5000C030,        4, base=16, bitRange=0-31
+sfr = "BGPIO2/intmask"                                                                         , "Memory", 0x5000C034,        4, base=16
+sfr = "BGPIO2/intmask.[31:0]intmask"                                                           , "Memory", 0x5000C034,        4, base=16, bitRange=0-31
+sfr = "BGPIO2/inttype_level"                                                                   , "Memory", 0x5000C038,        4, base=16
+sfr = "BGPIO2/inttype_level.[31:0]inttype_levell"                                              , "Memory", 0x5000C038,        4, base=16, bitRange=0-31
+sfr = "BGPIO2/int_polarity"                                                                    , "Memory", 0x5000C03C,        4, base=16
+sfr = "BGPIO2/int_polarity.[31:0]int_polarity"                                                 , "Memory", 0x5000C03C,        4, base=16, bitRange=0-31
+sfr = "BGPIO2/intstatus"                                                                       , "Memory", 0x5000C040,        4, base=16, readOnly
+sfr = "BGPIO2/intstatus.[31:0]intstatus"                                                       , "Memory", 0x5000C040,        4, base=16, readOnly, bitRange=0-31
+sfr = "BGPIO2/raw_intstatus"                                                                   , "Memory", 0x5000C044,        4, base=16, readOnly
+sfr = "BGPIO2/raw_intstatus.[31:0]raw_intstatus"                                               , "Memory", 0x5000C044,        4, base=16, readOnly, bitRange=0-31
+sfr = "BGPIO2/porta_eoi"                                                                       , "Memory", 0x5000C04C,        4, base=16, writeOnly
+sfr = "BGPIO2/porta_eoi.[31:0]porta_eoi"                                                       , "Memory", 0x5000C04C,        4, base=16, writeOnly, bitRange=0-31
+sfr = "BGPIO2/ext_porta"                                                                       , "Memory", 0x5000C050,        4, base=16, readOnly
+sfr = "BGPIO2/ext_porta.[31:0]ext_port"                                                        , "Memory", 0x5000C050,        4, base=16, readOnly, bitRange=0-31
+sfr = "BGPIO2/ext_portb"                                                                       , "Memory", 0x5000C054,        4, base=16, readOnly
+sfr = "BGPIO2/ext_portb.[31:0]ext_port"                                                        , "Memory", 0x5000C054,        4, base=16, readOnly, bitRange=0-31
+sfr = "BGPIO2/ls_sync"                                                                         , "Memory", 0x5000C060,        4, base=16
+sfr = "BGPIO2/ls_sync.[0]ls_sync"                                                              , "Memory", 0x5000C060,        4, base=16, bitRange=0
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// BGPIO2 module -----
+group = "BGPIO2","BGPIO2/swporta_dr","BGPIO2/swporta_ddr","BGPIO2/swportb_dr","BGPIO2/swportb_ddr","BGPIO2/inten","BGPIO2/intmask","BGPIO2/inttype_level","BGPIO2/int_polarity","BGPIO2/intstatus","BGPIO2/raw_intstatus","BGPIO2/porta_eoi","BGPIO2/ext_porta","BGPIO2/ext_portb","BGPIO2/ls_sync"

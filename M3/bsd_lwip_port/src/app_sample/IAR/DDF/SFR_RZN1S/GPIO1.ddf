@@ -1,0 +1,48 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : GPIO1
+;               GPIO1 module
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "GPIO1/swporta_dr"                                                                       , "Memory", 0x5000B000,        4, base=16
+sfr = "GPIO1/swporta_dr.[31:0]port_dr"                                                         , "Memory", 0x5000B000,        4, base=16, bitRange=0-31
+sfr = "GPIO1/swporta_ddr"                                                                      , "Memory", 0x5000B004,        4, base=16
+sfr = "GPIO1/swporta_ddr.[31:0]port_ddr"                                                       , "Memory", 0x5000B004,        4, base=16, bitRange=0-31
+sfr = "GPIO1/swportb_dr"                                                                       , "Memory", 0x5000B00C,        4, base=16
+sfr = "GPIO1/swportb_dr.[31:0]port_dr"                                                         , "Memory", 0x5000B00C,        4, base=16, bitRange=0-31
+sfr = "GPIO1/swportb_ddr"                                                                      , "Memory", 0x5000B010,        4, base=16
+sfr = "GPIO1/swportb_ddr.[31:0]port_ddr"                                                       , "Memory", 0x5000B010,        4, base=16, bitRange=0-31
+sfr = "GPIO1/inten"                                                                            , "Memory", 0x5000B030,        4, base=16
+sfr = "GPIO1/inten.[31:0]inten"                                                                , "Memory", 0x5000B030,        4, base=16, bitRange=0-31
+sfr = "GPIO1/intmask"                                                                          , "Memory", 0x5000B034,        4, base=16
+sfr = "GPIO1/intmask.[31:0]intmask"                                                            , "Memory", 0x5000B034,        4, base=16, bitRange=0-31
+sfr = "GPIO1/inttype_level"                                                                    , "Memory", 0x5000B038,        4, base=16
+sfr = "GPIO1/inttype_level.[31:0]inttype_levell"                                               , "Memory", 0x5000B038,        4, base=16, bitRange=0-31
+sfr = "GPIO1/int_polarity"                                                                     , "Memory", 0x5000B03C,        4, base=16
+sfr = "GPIO1/int_polarity.[31:0]int_polarity"                                                  , "Memory", 0x5000B03C,        4, base=16, bitRange=0-31
+sfr = "GPIO1/intstatus"                                                                        , "Memory", 0x5000B040,        4, base=16, readOnly
+sfr = "GPIO1/intstatus.[31:0]intstatus"                                                        , "Memory", 0x5000B040,        4, base=16, readOnly, bitRange=0-31
+sfr = "GPIO1/raw_intstatus"                                                                    , "Memory", 0x5000B044,        4, base=16, readOnly
+sfr = "GPIO1/raw_intstatus.[31:0]raw_intstatus"                                                , "Memory", 0x5000B044,        4, base=16, readOnly, bitRange=0-31
+sfr = "GPIO1/porta_eoi"                                                                        , "Memory", 0x5000B04C,        4, base=16
+sfr = "GPIO1/porta_eoi.[31:0]porta_eoi"                                                        , "Memory", 0x5000B04C,        4, base=16, bitRange=0-31
+sfr = "GPIO1/ext_porta"                                                                        , "Memory", 0x5000B050,        4, base=16, readOnly
+sfr = "GPIO1/ext_porta.[31:0]ext_port"                                                         , "Memory", 0x5000B050,        4, base=16, readOnly, bitRange=0-31
+sfr = "GPIO1/ext_portb"                                                                        , "Memory", 0x5000B054,        4, base=16, readOnly
+sfr = "GPIO1/ext_portb.[31:0]ext_port"                                                         , "Memory", 0x5000B054,        4, base=16, readOnly, bitRange=0-31
+sfr = "GPIO1/ls_sync"                                                                          , "Memory", 0x5000B060,        4, base=16
+sfr = "GPIO1/ls_sync.[0]ls_sync"                                                               , "Memory", 0x5000B060,        4, base=16, bitRange=0
+sfr = "GPIO1/ver_id_code"                                                                      , "Memory", 0x5000B06C,        4, base=16, readOnly
+sfr = "GPIO1/ver_id_code.[31:0]Version"                                                        , "Memory", 0x5000B06C,        4, base=16, readOnly, bitRange=0-31
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// GPIO1 module -----
+group = "GPIO1","GPIO1/swporta_dr","GPIO1/swporta_ddr","GPIO1/swportb_dr","GPIO1/swportb_ddr","GPIO1/inten","GPIO1/intmask","GPIO1/inttype_level","GPIO1/int_polarity","GPIO1/intstatus","GPIO1/raw_intstatus","GPIO1/porta_eoi","GPIO1/ext_porta","GPIO1/ext_portb","GPIO1/ls_sync","GPIO1/ver_id_code"

@@ -1,0 +1,63 @@
+__param DAP_AHB  = 0x01000000;
+__param DAP_APB  = 0x00000000;
+__param DAP_CM3  = 0x02000000;
+__param APSEL    = 0x8;
+__param AP_CSW   = 0x0;
+__param AP_TAR   = 0x4;
+__param AP_DRW   = 0xC;
+
+_ExecDeviceCoreConnect()
+{
+
+    if (__hasDAPRegs())
+    {
+        wake_CM3();
+    }
+}
+
+set_MEM_APB() {
+    __message "Write to AP Select(APB)";
+    __writeDPReg(DAP_APB, APSEL);
+}
+
+set_MEM_AHB() {
+    __message "Write to AP Select(AHB)";
+    __writeDPReg(DAP_AHB, APSEL);
+}
+
+set_MEM_CM3() {
+    __message "Write to AP Select(CM3)";
+    __writeDPReg(DAP_CM3, APSEL);  
+    __writeAPReg(0x23000042, AP_CSW); // set word
+}
+
+read_ap(addr) {
+    __writeAPReg(addr, AP_TAR);
+    return __readAPReg(AP_DRW);
+}
+
+write_ap(addr, data) {
+    __writeAPReg(addr, AP_TAR);
+    __writeAPReg(data, AP_DRW);
+}
+
+__param PWRCTRL_RINCTRL = 0x4000C184;
+__param PWRCTRL_CM3     = 0x4000C174;
+
+wake_CM3() {
+    __var data;
+
+    set_MEM_AHB();
+  
+    data = read_ap(PWRCTRL_RINCTRL);
+    __message "SYSCTRL->PWRCTRL_RINCTRL:  clock enable, reset deassert";
+    data |= 0x1;                      // clock enable
+    write_ap(PWRCTRL_RINCTRL, data);
+    data |= 0x2;                      // reset deassert
+    write_ap(PWRCTRL_RINCTRL, data);
+
+    __message "SYSCTRL->PWRCTRL_CM3    :  clock enable, reset deassert, MIREQ deassert";
+    write_ap(PWRCTRL_CM3, 0x5);       // init
+    write_ap(PWRCTRL_CM3, 0x7);       // reset deassert
+    write_ap(PWRCTRL_CM3, 0x3);       // MIREQ deassert
+}

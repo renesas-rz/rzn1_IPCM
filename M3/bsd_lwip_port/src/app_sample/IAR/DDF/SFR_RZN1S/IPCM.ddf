@@ -1,0 +1,154 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : IPCM
+;               IPCM (Mailbox)
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "IPCM0SOURCE"                                                                            , "Memory", 0x4000B000,        4, base=16
+sfr = "IPCM0SOURCE.[31:0]SRC_SET"                                                              , "Memory", 0x4000B000,        4, base=16, bitRange=0-31
+sfr = "IPCM0DSET"                                                                              , "Memory", 0x4000B004,        4, base=16, writeOnly
+sfr = "IPCM0DSET.[31:0]DEST_SET"                                                               , "Memory", 0x4000B004,        4, base=16, writeOnly, bitRange=0-31
+sfr = "IPCM0DCLEAR"                                                                            , "Memory", 0x4000B008,        4, base=16, writeOnly
+sfr = "IPCM0DCLEAR.[31:0]DEST_CLR"                                                             , "Memory", 0x4000B008,        4, base=16, writeOnly, bitRange=0-31
+sfr = "IPCM0DSTATUS"                                                                           , "Memory", 0x4000B00C,        4, base=16, readOnly
+sfr = "IPCM0DSTATUS.[31:0]DEST_STAT"                                                           , "Memory", 0x4000B00C,        4, base=16, readOnly, bitRange=0-31
+sfr = "IPCM0MODE"                                                                              , "Memory", 0x4000B010,        4, base=16
+sfr = "IPCM0MODE.[0]AUTO_ACK"                                                                  , "Memory", 0x4000B010,        4, base=16, bitRange=0
+sfr = "IPCM0MODE.[1]AUTO_LINK"                                                                 , "Memory", 0x4000B010,        4, base=16, bitRange=1
+sfr = "IPCM0MSET"                                                                              , "Memory", 0x4000B014,        4, base=16, writeOnly
+sfr = "IPCM0MSET.[31:0]MASK_SET"                                                               , "Memory", 0x4000B014,        4, base=16, writeOnly, bitRange=0-31
+sfr = "IPCM0MCLEAR"                                                                            , "Memory", 0x4000B018,        4, base=16, writeOnly
+sfr = "IPCM0MCLEAR.[31:0]MASK_CLR"                                                             , "Memory", 0x4000B018,        4, base=16, writeOnly, bitRange=0-31
+sfr = "IPCM0MSTATUS"                                                                           , "Memory", 0x4000B01C,        4, base=16, readOnly
+sfr = "IPCM0MSTATUS.[31:0]MASK_STAT"                                                           , "Memory", 0x4000B01C,        4, base=16, readOnly, bitRange=0-31
+sfr = "IPCM0SEND"                                                                              , "Memory", 0x4000B020,        4, base=16
+sfr = "IPCM0SEND.[1:0]SEND"                                                                    , "Memory", 0x4000B020,        4, base=16, bitRange=0-1
+sfr = "IPCM0DR0"                                                                               , "Memory", 0x4000B024,        4, base=16
+sfr = "IPCM0DR0.[31:0]DATA"                                                                    , "Memory", 0x4000B024,        4, base=16, bitRange=0-31
+sfr = "IPCM0DR1"                                                                               , "Memory", 0x4000B028,        4, base=16
+sfr = "IPCM0DR1.[31:0]DATA"                                                                    , "Memory", 0x4000B028,        4, base=16, bitRange=0-31
+sfr = "IPCM0DR2"                                                                               , "Memory", 0x4000B02C,        4, base=16
+sfr = "IPCM0DR2.[31:0]DATA"                                                                    , "Memory", 0x4000B02C,        4, base=16, bitRange=0-31
+sfr = "IPCM0DR3"                                                                               , "Memory", 0x4000B030,        4, base=16
+sfr = "IPCM0DR3.[31:0]DATA"                                                                    , "Memory", 0x4000B030,        4, base=16, bitRange=0-31
+sfr = "IPCM0DR4"                                                                               , "Memory", 0x4000B034,        4, base=16
+sfr = "IPCM0DR4.[31:0]DATA"                                                                    , "Memory", 0x4000B034,        4, base=16, bitRange=0-31
+sfr = "IPCM0DR5"                                                                               , "Memory", 0x4000B038,        4, base=16
+sfr = "IPCM0DR5.[31:0]DATA"                                                                    , "Memory", 0x4000B038,        4, base=16, bitRange=0-31
+sfr = "IPCM0DR6"                                                                               , "Memory", 0x4000B03C,        4, base=16
+sfr = "IPCM0DR6.[31:0]DATA"                                                                    , "Memory", 0x4000B03C,        4, base=16, bitRange=0-31
+sfr = "IPCM1SOURCE"                                                                            , "Memory", 0x4000B040,        4, base=16
+sfr = "IPCM1SOURCE.[31:0]SRC_SET"                                                              , "Memory", 0x4000B040,        4, base=16, bitRange=0-31
+sfr = "IPCM1DSET"                                                                              , "Memory", 0x4000B044,        4, base=16, writeOnly
+sfr = "IPCM1DSET.[31:0]DEST_SET"                                                               , "Memory", 0x4000B044,        4, base=16, writeOnly, bitRange=0-31
+sfr = "IPCM1DCLEAR"                                                                            , "Memory", 0x4000B048,        4, base=16, writeOnly
+sfr = "IPCM1DCLEAR.[31:0]DEST_CLR"                                                             , "Memory", 0x4000B048,        4, base=16, writeOnly, bitRange=0-31
+sfr = "IPCM1DSTATUS"                                                                           , "Memory", 0x4000B04C,        4, base=16, readOnly
+sfr = "IPCM1DSTATUS.[31:0]DEST_STAT"                                                           , "Memory", 0x4000B04C,        4, base=16, readOnly, bitRange=0-31
+sfr = "IPCM1MODE"                                                                              , "Memory", 0x4000B050,        4, base=16
+sfr = "IPCM1MODE.[0]AUTO_ACK"                                                                  , "Memory", 0x4000B050,        4, base=16, bitRange=0
+sfr = "IPCM1MODE.[1]AUTO_LINK"                                                                 , "Memory", 0x4000B050,        4, base=16, bitRange=1
+sfr = "IPCM1MSET"                                                                              , "Memory", 0x4000B054,        4, base=16, writeOnly
+sfr = "IPCM1MSET.[31:0]MASK_SET"                                                               , "Memory", 0x4000B054,        4, base=16, writeOnly, bitRange=0-31
+sfr = "IPCM1MCLEAR"                                                                            , "Memory", 0x4000B058,        4, base=16, writeOnly
+sfr = "IPCM1MCLEAR.[31:0]MASK_CLR"                                                             , "Memory", 0x4000B058,        4, base=16, writeOnly, bitRange=0-31
+sfr = "IPCM1MSTATUS"                                                                           , "Memory", 0x4000B05C,        4, base=16, readOnly
+sfr = "IPCM1MSTATUS.[31:0]MASK_STAT"                                                           , "Memory", 0x4000B05C,        4, base=16, readOnly, bitRange=0-31
+sfr = "IPCM1SEND"                                                                              , "Memory", 0x4000B060,        4, base=16
+sfr = "IPCM1SEND.[1:0]SEND"                                                                    , "Memory", 0x4000B060,        4, base=16, bitRange=0-1
+sfr = "IPCM1DR0"                                                                               , "Memory", 0x4000B064,        4, base=16
+sfr = "IPCM1DR0.[31:0]DATA"                                                                    , "Memory", 0x4000B064,        4, base=16, bitRange=0-31
+sfr = "IPCM1DR1"                                                                               , "Memory", 0x4000B068,        4, base=16
+sfr = "IPCM1DR1.[31:0]DATA"                                                                    , "Memory", 0x4000B068,        4, base=16, bitRange=0-31
+sfr = "IPCM1DR2"                                                                               , "Memory", 0x4000B06C,        4, base=16
+sfr = "IPCM1DR2.[31:0]DATA"                                                                    , "Memory", 0x4000B06C,        4, base=16, bitRange=0-31
+sfr = "IPCM1DR3"                                                                               , "Memory", 0x4000B070,        4, base=16
+sfr = "IPCM1DR3.[31:0]DATA"                                                                    , "Memory", 0x4000B070,        4, base=16, bitRange=0-31
+sfr = "IPCM1DR4"                                                                               , "Memory", 0x4000B074,        4, base=16
+sfr = "IPCM1DR4.[31:0]DATA"                                                                    , "Memory", 0x4000B074,        4, base=16, bitRange=0-31
+sfr = "IPCM1DR5"                                                                               , "Memory", 0x4000B078,        4, base=16
+sfr = "IPCM1DR5.[31:0]DATA"                                                                    , "Memory", 0x4000B078,        4, base=16, bitRange=0-31
+sfr = "IPCM1DR6"                                                                               , "Memory", 0x4000B07C,        4, base=16
+sfr = "IPCM1DR6.[31:0]DATA"                                                                    , "Memory", 0x4000B07C,        4, base=16, bitRange=0-31
+sfr = "IPCM2SOURCE"                                                                            , "Memory", 0x4000B080,        4, base=16
+sfr = "IPCM2SOURCE.[31:0]SRC_SET"                                                              , "Memory", 0x4000B080,        4, base=16, bitRange=0-31
+sfr = "IPCM2DSET"                                                                              , "Memory", 0x4000B084,        4, base=16, writeOnly
+sfr = "IPCM2DSET.[31:0]DEST_SET"                                                               , "Memory", 0x4000B084,        4, base=16, writeOnly, bitRange=0-31
+sfr = "IPCM2DCLEAR"                                                                            , "Memory", 0x4000B088,        4, base=16, writeOnly
+sfr = "IPCM2DCLEAR.[31:0]DEST_CLR"                                                             , "Memory", 0x4000B088,        4, base=16, writeOnly, bitRange=0-31
+sfr = "IPCM2DSTATUS"                                                                           , "Memory", 0x4000B08C,        4, base=16, readOnly
+sfr = "IPCM2DSTATUS.[31:0]DEST_STAT"                                                           , "Memory", 0x4000B08C,        4, base=16, readOnly, bitRange=0-31
+sfr = "IPCM2MODE"                                                                              , "Memory", 0x4000B090,        4, base=16
+sfr = "IPCM2MODE.[0]AUTO_ACK"                                                                  , "Memory", 0x4000B090,        4, base=16, bitRange=0
+sfr = "IPCM2MODE.[1]AUTO_LINK"                                                                 , "Memory", 0x4000B090,        4, base=16, bitRange=1
+sfr = "IPCM2MSET"                                                                              , "Memory", 0x4000B094,        4, base=16, writeOnly
+sfr = "IPCM2MSET.[31:0]MASK_SET"                                                               , "Memory", 0x4000B094,        4, base=16, writeOnly, bitRange=0-31
+sfr = "IPCM2MCLEAR"                                                                            , "Memory", 0x4000B098,        4, base=16, writeOnly
+sfr = "IPCM2MCLEAR.[31:0]MASK_CLR"                                                             , "Memory", 0x4000B098,        4, base=16, writeOnly, bitRange=0-31
+sfr = "IPCM2MSTATUS"                                                                           , "Memory", 0x4000B09C,        4, base=16, readOnly
+sfr = "IPCM2MSTATUS.[31:0]MASK_STAT"                                                           , "Memory", 0x4000B09C,        4, base=16, readOnly, bitRange=0-31
+sfr = "IPCM2SEND"                                                                              , "Memory", 0x4000B0A0,        4, base=16
+sfr = "IPCM2SEND.[1:0]SEND"                                                                    , "Memory", 0x4000B0A0,        4, base=16, bitRange=0-1
+sfr = "IPCM2DR0"                                                                               , "Memory", 0x4000B0A4,        4, base=16
+sfr = "IPCM2DR0.[31:0]DATA"                                                                    , "Memory", 0x4000B0A4,        4, base=16, bitRange=0-31
+sfr = "IPCM2DR1"                                                                               , "Memory", 0x4000B0A8,        4, base=16
+sfr = "IPCM2DR1.[31:0]DATA"                                                                    , "Memory", 0x4000B0A8,        4, base=16, bitRange=0-31
+sfr = "IPCM2DR2"                                                                               , "Memory", 0x4000B0AC,        4, base=16
+sfr = "IPCM2DR2.[31:0]DATA"                                                                    , "Memory", 0x4000B0AC,        4, base=16, bitRange=0-31
+sfr = "IPCM2DR3"                                                                               , "Memory", 0x4000B0B0,        4, base=16
+sfr = "IPCM2DR3.[31:0]DATA"                                                                    , "Memory", 0x4000B0B0,        4, base=16, bitRange=0-31
+sfr = "IPCM2DR4"                                                                               , "Memory", 0x4000B0B4,        4, base=16
+sfr = "IPCM2DR4.[31:0]DATA"                                                                    , "Memory", 0x4000B0B4,        4, base=16, bitRange=0-31
+sfr = "IPCM2DR5"                                                                               , "Memory", 0x4000B0B8,        4, base=16
+sfr = "IPCM2DR5.[31:0]DATA"                                                                    , "Memory", 0x4000B0B8,        4, base=16, bitRange=0-31
+sfr = "IPCM2DR6"                                                                               , "Memory", 0x4000B0BC,        4, base=16
+sfr = "IPCM2DR6.[31:0]DATA"                                                                    , "Memory", 0x4000B0BC,        4, base=16, bitRange=0-31
+sfr = "IPCMMIS0"                                                                               , "Memory", 0x4000B800,        4, base=16, readOnly
+sfr = "IPCMMIS0.[31:0]MASK_INT_STAT"                                                           , "Memory", 0x4000B800,        4, base=16, readOnly, bitRange=0-31
+sfr = "IPCMRIS0"                                                                               , "Memory", 0x4000B804,        4, base=16, readOnly
+sfr = "IPCMRIS0.[31:0]RAW_INT_STAT"                                                            , "Memory", 0x4000B804,        4, base=16, readOnly, bitRange=0-31
+sfr = "IPCMMIS1"                                                                               , "Memory", 0x4000B808,        4, base=16, readOnly
+sfr = "IPCMMIS1.[31:0]MASK_INT_STAT"                                                           , "Memory", 0x4000B808,        4, base=16, readOnly, bitRange=0-31
+sfr = "IPCMRIS1"                                                                               , "Memory", 0x4000B80C,        4, base=16, readOnly
+sfr = "IPCMRIS1.[31:0]RAW_INT_STAT"                                                            , "Memory", 0x4000B80C,        4, base=16, readOnly, bitRange=0-31
+sfr = "IPCMMIS2"                                                                               , "Memory", 0x4000B810,        4, base=16, readOnly
+sfr = "IPCMMIS2.[31:0]MASK_INT_STAT"                                                           , "Memory", 0x4000B810,        4, base=16, readOnly, bitRange=0-31
+sfr = "IPCMRIS2"                                                                               , "Memory", 0x4000B814,        4, base=16, readOnly
+sfr = "IPCMRIS2.[31:0]RAW_INT_STAT"                                                            , "Memory", 0x4000B814,        4, base=16, readOnly, bitRange=0-31
+sfr = "IPCMCFGSTAT"                                                                            , "Memory", 0x4000B900,        4, base=16, readOnly
+sfr = "IPCMCFGSTAT.[2:0]DATA_WORDS"                                                            , "Memory", 0x4000B900,        4, base=16, readOnly, bitRange=0-2
+sfr = "IPCMCFGSTAT.[13:8]INTERRUPTS"                                                           , "Memory", 0x4000B900,        4, base=16, readOnly, bitRange=8-13
+sfr = "IPCMCFGSTAT.[21:16]MAILBOXES"                                                           , "Memory", 0x4000B900,        4, base=16, readOnly, bitRange=16-21
+sfr = "IPCMTCR"                                                                                , "Memory", 0x4000BF00,        4, base=16
+sfr = "IPCMTCR.[0]ITEN"                                                                        , "Memory", 0x4000BF00,        4, base=16, bitRange=0
+sfr = "IPCMTOR"                                                                                , "Memory", 0x4000BF04,        4, base=16
+sfr = "IPCMTOR.[31:0]INTTEST"                                                                  , "Memory", 0x4000BF04,        4, base=16, bitRange=0-31
+sfr = "IPCMPERIPHID0"                                                                          , "Memory", 0x4000BFE0,        4, base=16, readOnly
+sfr = "IPCMPERIPHID0.[7:0]PARTNUMBER0"                                                         , "Memory", 0x4000BFE0,        4, base=16, readOnly, bitRange=0-7
+sfr = "IPCMPERIPHID1"                                                                          , "Memory", 0x4000BFE4,        4, base=16, readOnly
+sfr = "IPCMPERIPHID1.[3:0]PARTNUMBER1"                                                         , "Memory", 0x4000BFE4,        4, base=16, readOnly, bitRange=0-3
+sfr = "IPCMPERIPHID1.[7:4]DESIGNER0"                                                           , "Memory", 0x4000BFE4,        4, base=16, readOnly, bitRange=4-7
+sfr = "IPCMPERIPHID2"                                                                          , "Memory", 0x4000BFE8,        4, base=16, readOnly
+sfr = "IPCMPERIPHID2.[3:0]DESIGNER1"                                                           , "Memory", 0x4000BFE8,        4, base=16, readOnly, bitRange=0-3
+sfr = "IPCMPERIPHID2.[7:4]REVISION"                                                            , "Memory", 0x4000BFE8,        4, base=16, readOnly, bitRange=4-7
+sfr = "IPCMPERIPHID3"                                                                          , "Memory", 0x4000BFEC,        4, base=16, readOnly
+sfr = "IPCMPERIPHID3.[7:0]CONFIG"                                                              , "Memory", 0x4000BFEC,        4, base=16, readOnly, bitRange=0-7
+sfr = "IPCMPCELLID0"                                                                           , "Memory", 0x4000BFF0,        4, base=16, readOnly
+sfr = "IPCMPCELLID1"                                                                           , "Memory", 0x4000BFF4,        4, base=16, readOnly
+sfr = "IPCMPCELLID1.[7:0]IPCMPCELLID1"                                                         , "Memory", 0x4000BFF4,        4, base=16, readOnly, bitRange=0-7
+sfr = "IPCMPCELLID2"                                                                           , "Memory", 0x4000BFF8,        4, base=16, readOnly
+sfr = "IPCMPCELLID2.[7:0]IPCMPCELLID2"                                                         , "Memory", 0x4000BFF8,        4, base=16, readOnly, bitRange=0-7
+sfr = "IPCMPCELLID3"                                                                           , "Memory", 0x4000BFFC,        4, base=16, readOnly
+sfr = "IPCMPCELLID3.[7:0]IPCMPCELLID3"                                                         , "Memory", 0x4000BFFC,        4, base=16, readOnly, bitRange=0-7
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// IPCM (Mailbox) -----
+group = "IPCM","IPCM0SOURCE","IPCM0DSET","IPCM0DCLEAR","IPCM0DSTATUS","IPCM0MODE","IPCM0MSET","IPCM0MCLEAR","IPCM0MSTATUS","IPCM0SEND","IPCM0DR0","IPCM0DR1","IPCM0DR2","IPCM0DR3","IPCM0DR4","IPCM0DR5","IPCM0DR6","IPCM1SOURCE","IPCM1DSET","IPCM1DCLEAR","IPCM1DSTATUS","IPCM1MODE","IPCM1MSET","IPCM1MCLEAR","IPCM1MSTATUS","IPCM1SEND","IPCM1DR0","IPCM1DR1","IPCM1DR2","IPCM1DR3","IPCM1DR4","IPCM1DR5","IPCM1DR6","IPCM2SOURCE","IPCM2DSET","IPCM2DCLEAR","IPCM2DSTATUS","IPCM2MODE","IPCM2MSET","IPCM2MCLEAR","IPCM2MSTATUS","IPCM2SEND","IPCM2DR0","IPCM2DR1","IPCM2DR2","IPCM2DR3","IPCM2DR4","IPCM2DR5","IPCM2DR6","IPCMMIS0","IPCMRIS0","IPCMMIS1","IPCMRIS1","IPCMMIS2","IPCMRIS2","IPCMCFGSTAT","IPCMTCR","IPCMTOR","IPCMPERIPHID0","IPCMPERIPHID1","IPCMPERIPHID2","IPCMPERIPHID3","IPCMPCELLID0","IPCMPCELLID1","IPCMPCELLID2","IPCMPCELLID3"

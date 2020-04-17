@@ -1,0 +1,251 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : NAND
+;               NAND Flash Controller
+;    revision : 0.20 (2.Nov.2017)
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "NAND/COMMAND"                                                                           , "Memory", 0x40102000,        4, base=16
+sfr = "NAND/COMMAND.[5:0]cmd_seq"                                                              , "Memory", 0x40102000,        4, base=16, bitRange=0-5
+sfr = "NAND/COMMAND.[6]input_sel"                                                              , "Memory", 0x40102000,        4, base=16, bitRange=6
+sfr = "NAND/COMMAND.[7]data_sel"                                                               , "Memory", 0x40102000,        4, base=16, bitRange=7
+sfr = "NAND/COMMAND.[15:8]cmd_0"                                                               , "Memory", 0x40102000,        4, base=16, bitRange=8-15
+sfr = "NAND/COMMAND.[23:16]cmd_1_cmd_3"                                                        , "Memory", 0x40102000,        4, base=16, bitRange=16-23
+sfr = "NAND/COMMAND.[31:24]cmd_2"                                                              , "Memory", 0x40102000,        4, base=16, bitRange=24-31
+sfr = "NAND/CONTROL"                                                                           , "Memory", 0x40102004,        4, base=16
+sfr = "NAND/CONTROL.[0]read_status_en"                                                         , "Memory", 0x40102004,        4, base=16, bitRange=0
+sfr = "NAND/CONTROL.[2:1]ecc_block_size"                                                       , "Memory", 0x40102004,        4, base=16, bitRange=1-2
+sfr = "NAND/CONTROL.[4]int_en"                                                                 , "Memory", 0x40102004,        4, base=16, bitRange=4
+sfr = "NAND/CONTROL.[5]ecc_en"                                                                 , "Memory", 0x40102004,        4, base=16, bitRange=5
+sfr = "NAND/CONTROL.[7:6]block_size"                                                           , "Memory", 0x40102004,        4, base=16, bitRange=6-7
+sfr = "NAND/CONTROL.[12]io_width"                                                              , "Memory", 0x40102004,        4, base=16, bitRange=12
+sfr = "NAND/CONTROL.[13]bbm_en"                                                                , "Memory", 0x40102004,        4, base=16, bitRange=13
+sfr = "NAND/CONTROL.[14]prot_en"                                                               , "Memory", 0x40102004,        4, base=16, bitRange=14
+sfr = "NAND/CONTROL.[16]addr0_auto_incr"                                                       , "Memory", 0x40102004,        4, base=16, bitRange=16
+sfr = "NAND/CONTROL.[17]addr1_auto_incr"                                                       , "Memory", 0x40102004,        4, base=16, bitRange=17
+sfr = "NAND/CONTROL.[21]small_block_en"                                                        , "Memory", 0x40102004,        4, base=16, bitRange=21
+sfr = "NAND/CONTROL.[22]mlun_en"                                                               , "Memory", 0x40102004,        4, base=16, bitRange=22
+sfr = "NAND/CONTROL.[23]auto_read_stat_en"                                                     , "Memory", 0x40102004,        4, base=16, bitRange=23
+sfr = "NAND/STATUS"                                                                            , "Memory", 0x40102008,        4, base=16, readOnly
+sfr = "NAND/STATUS.[0]mem0_st"                                                                 , "Memory", 0x40102008,        4, base=16, readOnly, bitRange=0
+sfr = "NAND/STATUS.[1]mem1_st"                                                                 , "Memory", 0x40102008,        4, base=16, readOnly, bitRange=1
+sfr = "NAND/STATUS.[2]mem2_st"                                                                 , "Memory", 0x40102008,        4, base=16, readOnly, bitRange=2
+sfr = "NAND/STATUS.[3]mem3_st"                                                                 , "Memory", 0x40102008,        4, base=16, readOnly, bitRange=3
+sfr = "NAND/STATUS.[8]ctrl_stat"                                                               , "Memory", 0x40102008,        4, base=16, readOnly, bitRange=8
+sfr = "NAND/STATUS.[9]datasize_error_st"                                                       , "Memory", 0x40102008,        4, base=16, readOnly, bitRange=9
+sfr = "NAND/STATUS.[10]data_reg_st"                                                            , "Memory", 0x40102008,        4, base=16, readOnly, bitRange=10
+sfr = "NAND/STATUS.[23:16]cmd_id"                                                              , "Memory", 0x40102008,        4, base=16, readOnly, bitRange=16-23
+sfr = "NAND/STATUS_MASK"                                                                       , "Memory", 0x4010200C,        4, base=16
+sfr = "NAND/STATUS_MASK.[7:0]state_mask"                                                       , "Memory", 0x4010200C,        4, base=16, bitRange=0-7
+sfr = "NAND/STATUS_MASK.[15:8]error_mask"                                                      , "Memory", 0x4010200C,        4, base=16, bitRange=8-15
+sfr = "NAND/INT_MASK"                                                                          , "Memory", 0x40102010,        4, base=16
+sfr = "NAND/INT_MASK.[0]prot_int_en"                                                           , "Memory", 0x40102010,        4, base=16, bitRange=0
+sfr = "NAND/INT_MASK.[1]cmd_end_int_en"                                                        , "Memory", 0x40102010,        4, base=16, bitRange=1
+sfr = "NAND/INT_MASK.[2]data_reg_int_en"                                                       , "Memory", 0x40102010,        4, base=16, bitRange=2
+sfr = "NAND/INT_MASK.[3]dma_int_en"                                                            , "Memory", 0x40102010,        4, base=16, bitRange=3
+sfr = "NAND/INT_MASK.[6]pg_sz_err_int_en"                                                      , "Memory", 0x40102010,        4, base=16, bitRange=6
+sfr = "NAND/INT_MASK.[8]mem0_rdy_int_en"                                                       , "Memory", 0x40102010,        4, base=16, bitRange=8
+sfr = "NAND/INT_MASK.[9]mem1_rdy_int_en"                                                       , "Memory", 0x40102010,        4, base=16, bitRange=9
+sfr = "NAND/INT_MASK.[10]mem2_rdy_int_en"                                                      , "Memory", 0x40102010,        4, base=16, bitRange=10
+sfr = "NAND/INT_MASK.[11]mem3_rdy_int_en"                                                      , "Memory", 0x40102010,        4, base=16, bitRange=11
+sfr = "NAND/INT_MASK.[16]stat_err_int0_en"                                                     , "Memory", 0x40102010,        4, base=16, bitRange=16
+sfr = "NAND/INT_MASK.[17]stat_err_int1_en"                                                     , "Memory", 0x40102010,        4, base=16, bitRange=17
+sfr = "NAND/INT_MASK.[18]stat_err_int2_en"                                                     , "Memory", 0x40102010,        4, base=16, bitRange=18
+sfr = "NAND/INT_MASK.[19]stat_err_int3_en"                                                     , "Memory", 0x40102010,        4, base=16, bitRange=19
+sfr = "NAND/INT_MASK.[24]ecc_int0_en"                                                          , "Memory", 0x40102010,        4, base=16, bitRange=24
+sfr = "NAND/INT_MASK.[25]ecc_int1_en"                                                          , "Memory", 0x40102010,        4, base=16, bitRange=25
+sfr = "NAND/INT_MASK.[26]ecc_int2_en"                                                          , "Memory", 0x40102010,        4, base=16, bitRange=26
+sfr = "NAND/INT_MASK.[27]ecc_int3_en"                                                          , "Memory", 0x40102010,        4, base=16, bitRange=27
+sfr = "NAND/INT_STATUS"                                                                        , "Memory", 0x40102014,        4, base=16
+sfr = "NAND/INT_STATUS.[0]prot_int_fl"                                                         , "Memory", 0x40102014,        4, base=16, bitRange=0
+sfr = "NAND/INT_STATUS.[1]cmd_end_int_fl"                                                      , "Memory", 0x40102014,        4, base=16, bitRange=1
+sfr = "NAND/INT_STATUS.[2]data_reg_int_fl"                                                     , "Memory", 0x40102014,        4, base=16, bitRange=2
+sfr = "NAND/INT_STATUS.[3]dma_int_fl"                                                          , "Memory", 0x40102014,        4, base=16, bitRange=3
+sfr = "NAND/INT_STATUS.[6]pg_sz_err_int_fl"                                                    , "Memory", 0x40102014,        4, base=16, bitRange=6
+sfr = "NAND/INT_STATUS.[8]mem0_rdy_int_fl"                                                     , "Memory", 0x40102014,        4, base=16, bitRange=8
+sfr = "NAND/INT_STATUS.[9]mem1_rdy_int_fl"                                                     , "Memory", 0x40102014,        4, base=16, bitRange=9
+sfr = "NAND/INT_STATUS.[10]mem2_rdy_int_fl"                                                    , "Memory", 0x40102014,        4, base=16, bitRange=10
+sfr = "NAND/INT_STATUS.[11]mem3_rdy_int_fl"                                                    , "Memory", 0x40102014,        4, base=16, bitRange=11
+sfr = "NAND/INT_STATUS.[16]stat_err_int0_fl"                                                   , "Memory", 0x40102014,        4, base=16, bitRange=16
+sfr = "NAND/INT_STATUS.[17]stat_err_int1_fl"                                                   , "Memory", 0x40102014,        4, base=16, bitRange=17
+sfr = "NAND/INT_STATUS.[18]stat_err_int2_fl"                                                   , "Memory", 0x40102014,        4, base=16, bitRange=18
+sfr = "NAND/INT_STATUS.[19]stat_err_int3_fl"                                                   , "Memory", 0x40102014,        4, base=16, bitRange=19
+sfr = "NAND/INT_STATUS.[24]ecc_int0_fl"                                                        , "Memory", 0x40102014,        4, base=16, bitRange=24
+sfr = "NAND/INT_STATUS.[25]ecc_int1_fl"                                                        , "Memory", 0x40102014,        4, base=16, bitRange=25
+sfr = "NAND/INT_STATUS.[26]ecc_int2_fl"                                                        , "Memory", 0x40102014,        4, base=16, bitRange=26
+sfr = "NAND/INT_STATUS.[27]ecc_int3_fl"                                                        , "Memory", 0x40102014,        4, base=16, bitRange=27
+sfr = "NAND/ECC_CTRL"                                                                          , "Memory", 0x40102018,        4, base=16
+sfr = "NAND/ECC_CTRL.[2:0]ecc_cap"                                                             , "Memory", 0x40102018,        4, base=16, bitRange=0-2
+sfr = "NAND/ECC_CTRL.[13:8]err_threshold"                                                      , "Memory", 0x40102018,        4, base=16, bitRange=8-13
+sfr = "NAND/ECC_CTRL.[17:16]ecc_sel"                                                           , "Memory", 0x40102018,        4, base=16, bitRange=16-17
+sfr = "NAND/ECC_OFFSET"                                                                        , "Memory", 0x4010201C,        4, base=16
+sfr = "NAND/ECC_OFFSET.[15:0]ecc_offset"                                                       , "Memory", 0x4010201C,        4, base=16, bitRange=0-15
+sfr = "NAND/ECC_STAT"                                                                          , "Memory", 0x40102020,        4, base=16
+sfr = "NAND/ECC_STAT.[0]ecc_error_0"                                                           , "Memory", 0x40102020,        4, base=16, bitRange=0
+sfr = "NAND/ECC_STAT.[1]ecc_error_1"                                                           , "Memory", 0x40102020,        4, base=16, bitRange=1
+sfr = "NAND/ECC_STAT.[2]ecc_error_2"                                                           , "Memory", 0x40102020,        4, base=16, bitRange=2
+sfr = "NAND/ECC_STAT.[3]ecc_error_3"                                                           , "Memory", 0x40102020,        4, base=16, bitRange=3
+sfr = "NAND/ECC_STAT.[8]ecc_unc_0"                                                             , "Memory", 0x40102020,        4, base=16, bitRange=8
+sfr = "NAND/ECC_STAT.[9]ecc_unc_1"                                                             , "Memory", 0x40102020,        4, base=16, bitRange=9
+sfr = "NAND/ECC_STAT.[10]ecc_unc_2"                                                            , "Memory", 0x40102020,        4, base=16, bitRange=10
+sfr = "NAND/ECC_STAT.[11]ecc_unc_3"                                                            , "Memory", 0x40102020,        4, base=16, bitRange=11
+sfr = "NAND/ECC_STAT.[16]ecc_over_0"                                                           , "Memory", 0x40102020,        4, base=16, bitRange=16
+sfr = "NAND/ECC_STAT.[17]ecc_over_1"                                                           , "Memory", 0x40102020,        4, base=16, bitRange=17
+sfr = "NAND/ECC_STAT.[18]ecc_over_2"                                                           , "Memory", 0x40102020,        4, base=16, bitRange=18
+sfr = "NAND/ECC_STAT.[19]ecc_over_3"                                                           , "Memory", 0x40102020,        4, base=16, bitRange=19
+sfr = "NAND/ADDR0_COL"                                                                         , "Memory", 0x40102024,        4, base=16
+sfr = "NAND/ADDR0_COL.[15:0]addr0_col"                                                         , "Memory", 0x40102024,        4, base=16, bitRange=0-15
+sfr = "NAND/ADDR0_ROW"                                                                         , "Memory", 0x40102028,        4, base=16
+sfr = "NAND/ADDR0_ROW.[23:0]addr0_row"                                                         , "Memory", 0x40102028,        4, base=16, bitRange=0-23
+sfr = "NAND/ADDR1_COL"                                                                         , "Memory", 0x4010202C,        4, base=16
+sfr = "NAND/ADDR1_COL.[15:0]addr1_col"                                                         , "Memory", 0x4010202C,        4, base=16, bitRange=0-15
+sfr = "NAND/ADDR1_ROW"                                                                         , "Memory", 0x40102030,        4, base=16
+sfr = "NAND/ADDR1_ROW.[23:0]addr1_row"                                                         , "Memory", 0x40102030,        4, base=16, bitRange=0-23
+sfr = "NAND/PROTECT"                                                                           , "Memory", 0x40102034,        4, base=16
+sfr = "NAND/PROTECT.[15:0]prot_down"                                                           , "Memory", 0x40102034,        4, base=16, bitRange=0-15
+sfr = "NAND/PROTECT.[31:16]prot_up"                                                            , "Memory", 0x40102034,        4, base=16, bitRange=16-31
+sfr = "NAND/FIFO_DATA"                                                                         , "Memory", 0x40102038,        4, base=16
+sfr = "NAND/FIFO_DATA.[31:0]fifo_data"                                                         , "Memory", 0x40102038,        4, base=16, bitRange=0-31
+sfr = "NAND/DATA_REG"                                                                          , "Memory", 0x4010203C,        4, base=16, readOnly
+sfr = "NAND/DATA_REG.[31:0]data_reg"                                                           , "Memory", 0x4010203C,        4, base=16, readOnly, bitRange=0-31
+sfr = "NAND/DATA_REG_SIZE"                                                                     , "Memory", 0x40102040,        4, base=16
+sfr = "NAND/DATA_REG_SIZE.[1:0]data_reg_size"                                                  , "Memory", 0x40102040,        4, base=16, bitRange=0-1
+sfr = "NAND/DEV0_PTR"                                                                          , "Memory", 0x40102044,        4, base=16
+sfr = "NAND/DEV0_PTR.[31:0]ptr_addr"                                                           , "Memory", 0x40102044,        4, base=16, bitRange=0-31
+sfr = "NAND/DEV1_PTR"                                                                          , "Memory", 0x40102048,        4, base=16
+sfr = "NAND/DEV1_PTR.[31:0]ptr_addr"                                                           , "Memory", 0x40102048,        4, base=16, bitRange=0-31
+sfr = "NAND/DEV2_PTR"                                                                          , "Memory", 0x4010204C,        4, base=16
+sfr = "NAND/DEV2_PTR.[31:0]ptr_addr"                                                           , "Memory", 0x4010204C,        4, base=16, bitRange=0-31
+sfr = "NAND/DEV3_PTR"                                                                          , "Memory", 0x40102050,        4, base=16
+sfr = "NAND/DEV3_PTR.[31:0]ptr_addr"                                                           , "Memory", 0x40102050,        4, base=16, bitRange=0-31
+sfr = "NAND/DMA_ADDR"                                                                          , "Memory", 0x40102064,        4, base=16
+sfr = "NAND/DMA_ADDR.[31:0]dma_addr_l"                                                         , "Memory", 0x40102064,        4, base=16, bitRange=0-31
+sfr = "NAND/DMA_CNT"                                                                           , "Memory", 0x4010206C,        4, base=16
+sfr = "NAND/DMA_CNT.[31:0]cnt_init"                                                            , "Memory", 0x4010206C,        4, base=16, bitRange=0-31
+sfr = "NAND/DMA_CTRL"                                                                          , "Memory", 0x40102070,        4, base=16
+sfr = "NAND/DMA_CTRL.[0]dma_ready"                                                             , "Memory", 0x40102070,        4, base=16, readOnly, bitRange=0
+sfr = "NAND/DMA_CTRL.[1]err_flag"                                                              , "Memory", 0x40102070,        4, base=16, readOnly, bitRange=1
+sfr = "NAND/DMA_CTRL.[4:2]dma_burst"                                                           , "Memory", 0x40102070,        4, base=16, bitRange=2-4
+sfr = "NAND/DMA_CTRL.[5]dma_mode"                                                              , "Memory", 0x40102070,        4, base=16, bitRange=5
+sfr = "NAND/DMA_CTRL.[7]dma_start"                                                             , "Memory", 0x40102070,        4, base=16, bitRange=7
+sfr = "NAND/BBM_CTRL"                                                                          , "Memory", 0x40102074,        4, base=16
+sfr = "NAND/BBM_CTRL.[0]rmp_init"                                                              , "Memory", 0x40102074,        4, base=16, bitRange=0
+sfr = "NAND/MEM_CTRL"                                                                          , "Memory", 0x40102080,        4, base=16
+sfr = "NAND/MEM_CTRL.[1:0]mem_ce"                                                              , "Memory", 0x40102080,        4, base=16, bitRange=0-1
+sfr = "NAND/MEM_CTRL.[8]mem0_wp"                                                               , "Memory", 0x40102080,        4, base=16, bitRange=8
+sfr = "NAND/MEM_CTRL.[9]mem1_wp"                                                               , "Memory", 0x40102080,        4, base=16, bitRange=9
+sfr = "NAND/MEM_CTRL.[10]mem2_wp"                                                              , "Memory", 0x40102080,        4, base=16, bitRange=10
+sfr = "NAND/MEM_CTRL.[11]mem3_wp"                                                              , "Memory", 0x40102080,        4, base=16, bitRange=11
+sfr = "NAND/DATA_SIZE"                                                                         , "Memory", 0x40102084,        4, base=16
+sfr = "NAND/DATA_SIZE.[14:0]data_size"                                                         , "Memory", 0x40102084,        4, base=16, bitRange=0-14
+sfr = "NAND/TIMINGS_ASYN"                                                                      , "Memory", 0x40102088,        4, base=16
+sfr = "NAND/TIMINGS_ASYN.[3:0]trwp"                                                            , "Memory", 0x40102088,        4, base=16, bitRange=0-3
+sfr = "NAND/TIMINGS_ASYN.[7:4]trwh"                                                            , "Memory", 0x40102088,        4, base=16, bitRange=4-7
+sfr = "NAND/TIME_SEQ_0"                                                                        , "Memory", 0x40102090,        4, base=16
+sfr = "NAND/TIME_SEQ_0.[5:0]tccs"                                                              , "Memory", 0x40102090,        4, base=16, bitRange=0-5
+sfr = "NAND/TIME_SEQ_0.[13:8]tadl"                                                             , "Memory", 0x40102090,        4, base=16, bitRange=8-13
+sfr = "NAND/TIME_SEQ_0.[21:16]trhw"                                                            , "Memory", 0x40102090,        4, base=16, bitRange=16-21
+sfr = "NAND/TIME_SEQ_0.[29:24]twhr"                                                            , "Memory", 0x40102090,        4, base=16, bitRange=24-29
+sfr = "NAND/TIME_SEQ_1"                                                                        , "Memory", 0x40102094,        4, base=16
+sfr = "NAND/TIME_SEQ_1.[5:0]twb"                                                               , "Memory", 0x40102094,        4, base=16, bitRange=0-5
+sfr = "NAND/TIME_SEQ_1.[13:8]trr"                                                              , "Memory", 0x40102094,        4, base=16, bitRange=8-13
+sfr = "NAND/TIME_SEQ_1.[21:16]tww"                                                             , "Memory", 0x40102094,        4, base=16, bitRange=16-21
+sfr = "NAND/TIME_GEN_SEQ_0"                                                                    , "Memory", 0x40102098,        4, base=16
+sfr = "NAND/TIME_GEN_SEQ_0.[5:0]t0_d0"                                                         , "Memory", 0x40102098,        4, base=16, bitRange=0-5
+sfr = "NAND/TIME_GEN_SEQ_0.[13:8]t0_d1"                                                        , "Memory", 0x40102098,        4, base=16, bitRange=8-13
+sfr = "NAND/TIME_GEN_SEQ_0.[21:16]t0_d2"                                                       , "Memory", 0x40102098,        4, base=16, bitRange=16-21
+sfr = "NAND/TIME_GEN_SEQ_0.[29:24]t0_d3"                                                       , "Memory", 0x40102098,        4, base=16, bitRange=24-29
+sfr = "NAND/TIME_GEN_SEQ_1"                                                                    , "Memory", 0x4010209C,        4, base=16
+sfr = "NAND/TIME_GEN_SEQ_1.[5:0]t0_d4"                                                         , "Memory", 0x4010209C,        4, base=16, bitRange=0-5
+sfr = "NAND/TIME_GEN_SEQ_1.[13:8]t0_d5"                                                        , "Memory", 0x4010209C,        4, base=16, bitRange=8-13
+sfr = "NAND/TIME_GEN_SEQ_1.[21:16]t0_d6"                                                       , "Memory", 0x4010209C,        4, base=16, bitRange=16-21
+sfr = "NAND/TIME_GEN_SEQ_1.[29:24]t0_d7"                                                       , "Memory", 0x4010209C,        4, base=16, bitRange=24-29
+sfr = "NAND/TIME_GEN_SEQ_2"                                                                    , "Memory", 0x401020A0,        4, base=16
+sfr = "NAND/TIME_GEN_SEQ_2.[5:0]t0_d8"                                                         , "Memory", 0x401020A0,        4, base=16, bitRange=0-5
+sfr = "NAND/TIME_GEN_SEQ_2.[13:8]t0_d9"                                                        , "Memory", 0x401020A0,        4, base=16, bitRange=8-13
+sfr = "NAND/TIME_GEN_SEQ_2.[21:16]t0_d10"                                                      , "Memory", 0x401020A0,        4, base=16, bitRange=16-21
+sfr = "NAND/TIME_GEN_SEQ_2.[29:24]t0_d11"                                                      , "Memory", 0x401020A0,        4, base=16, bitRange=24-29
+sfr = "NAND/FIFO_INIT"                                                                         , "Memory", 0x401020B0,        4, base=16, writeOnly
+sfr = "NAND/FIFO_INIT.[0]fifo_init"                                                            , "Memory", 0x401020B0,        4, base=16, writeOnly, bitRange=0
+sfr = "NAND/FIFO_STATE"                                                                        , "Memory", 0x401020B4,        4, base=16, readOnly
+sfr = "NAND/FIFO_STATE.[0]df_r_empty"                                                          , "Memory", 0x401020B4,        4, base=16, readOnly, bitRange=0
+sfr = "NAND/FIFO_STATE.[1]df_w_full"                                                           , "Memory", 0x401020B4,        4, base=16, readOnly, bitRange=1
+sfr = "NAND/FIFO_STATE.[2]cf_empty"                                                            , "Memory", 0x401020B4,        4, base=16, readOnly, bitRange=2
+sfr = "NAND/FIFO_STATE.[3]cf_full"                                                             , "Memory", 0x401020B4,        4, base=16, readOnly, bitRange=3
+sfr = "NAND/FIFO_STATE.[4]cf_accept_r"                                                         , "Memory", 0x401020B4,        4, base=16, readOnly, bitRange=4
+sfr = "NAND/FIFO_STATE.[5]cf_accept_w"                                                         , "Memory", 0x401020B4,        4, base=16, readOnly, bitRange=5
+sfr = "NAND/FIFO_STATE.[6]df_r_full"                                                           , "Memory", 0x401020B4,        4, base=16, readOnly, bitRange=6
+sfr = "NAND/FIFO_STATE.[7]df_w_empty"                                                          , "Memory", 0x401020B4,        4, base=16, readOnly, bitRange=7
+sfr = "NAND/GEN_SEQ_CTRL"                                                                      , "Memory", 0x401020B8,        4, base=16
+sfr = "NAND/GEN_SEQ_CTRL.[0]cmd0_en"                                                           , "Memory", 0x401020B8,        4, base=16, bitRange=0
+sfr = "NAND/GEN_SEQ_CTRL.[1]cmd1_en"                                                           , "Memory", 0x401020B8,        4, base=16, bitRange=1
+sfr = "NAND/GEN_SEQ_CTRL.[2]cmd2_en"                                                           , "Memory", 0x401020B8,        4, base=16, bitRange=2
+sfr = "NAND/GEN_SEQ_CTRL.[3]cmd3_en"                                                           , "Memory", 0x401020B8,        4, base=16, bitRange=3
+sfr = "NAND/GEN_SEQ_CTRL.[5:4]col_a0"                                                          , "Memory", 0x401020B8,        4, base=16, bitRange=4-5
+sfr = "NAND/GEN_SEQ_CTRL.[7:6]col_a1"                                                          , "Memory", 0x401020B8,        4, base=16, bitRange=6-7
+sfr = "NAND/GEN_SEQ_CTRL.[9:8]row_a0"                                                          , "Memory", 0x401020B8,        4, base=16, bitRange=8-9
+sfr = "NAND/GEN_SEQ_CTRL.[11:10]row_a1"                                                        , "Memory", 0x401020B8,        4, base=16, bitRange=10-11
+sfr = "NAND/GEN_SEQ_CTRL.[12]data_en"                                                          , "Memory", 0x401020B8,        4, base=16, bitRange=12
+sfr = "NAND/GEN_SEQ_CTRL.[14:13]delay_en"                                                      , "Memory", 0x401020B8,        4, base=16, bitRange=13-14
+sfr = "NAND/GEN_SEQ_CTRL.[15]imd_seq"                                                          , "Memory", 0x401020B8,        4, base=16, bitRange=15
+sfr = "NAND/GEN_SEQ_CTRL.[23:16]cmd3"                                                          , "Memory", 0x401020B8,        4, base=16, bitRange=16-23
+sfr = "NAND/MLUN"                                                                              , "Memory", 0x401020BC,        4, base=16
+sfr = "NAND/MLUN.[2:0]mlun_idx"                                                                , "Memory", 0x401020BC,        4, base=16, bitRange=0-2
+sfr = "NAND/MLUN.[9:8]mlun_sel"                                                                , "Memory", 0x401020BC,        4, base=16, bitRange=8-9
+sfr = "NAND/DEV0_SIZE"                                                                         , "Memory", 0x401020C0,        4, base=16
+sfr = "NAND/DEV0_SIZE.[11:0]dev_size"                                                          , "Memory", 0x401020C0,        4, base=16, bitRange=0-11
+sfr = "NAND/DEV1_SIZE"                                                                         , "Memory", 0x401020C4,        4, base=16
+sfr = "NAND/DEV1_SIZE.[11:0]dev_size"                                                          , "Memory", 0x401020C4,        4, base=16, bitRange=0-11
+sfr = "NAND/DEV2_SIZE"                                                                         , "Memory", 0x401020C8,        4, base=16
+sfr = "NAND/DEV2_SIZE.[11:0]dev_size"                                                          , "Memory", 0x401020C8,        4, base=16, bitRange=0-11
+sfr = "NAND/DEV3_SIZE"                                                                         , "Memory", 0x401020CC,        4, base=16
+sfr = "NAND/DEV3_SIZE.[11:0]dev_size"                                                          , "Memory", 0x401020CC,        4, base=16, bitRange=0-11
+sfr = "NAND/DMA_TLVL"                                                                          , "Memory", 0x40102114,        4, base=16
+sfr = "NAND/DMA_TLVL.[7:0]dma_tlvl"                                                            , "Memory", 0x40102114,        4, base=16, bitRange=0-7
+sfr = "NAND/CMD_MARK"                                                                          , "Memory", 0x40102124,        4, base=16, writeOnly
+sfr = "NAND/CMD_MARK.[7:0]cmd_id"                                                              , "Memory", 0x40102124,        4, base=16, writeOnly, bitRange=0-7
+sfr = "NAND/LUN_STATUS_0"                                                                      , "Memory", 0x40102128,        4, base=16, readOnly
+sfr = "NAND/LUN_STATUS_0.[7:0]mem0_lun"                                                        , "Memory", 0x40102128,        4, base=16, readOnly, bitRange=0-7
+sfr = "NAND/LUN_STATUS_0.[15:8]mem1_lun"                                                       , "Memory", 0x40102128,        4, base=16, readOnly, bitRange=8-15
+sfr = "NAND/LUN_STATUS_0.[23:16]mem2_lun"                                                      , "Memory", 0x40102128,        4, base=16, readOnly, bitRange=16-23
+sfr = "NAND/LUN_STATUS_0.[31:24]mem3_lun"                                                      , "Memory", 0x40102128,        4, base=16, readOnly, bitRange=24-31
+sfr = "NAND/TIME_GEN_SEQ_3"                                                                    , "Memory", 0x40102134,        4, base=16
+sfr = "NAND/TIME_GEN_SEQ_3.[5:0]t0_d12"                                                        , "Memory", 0x40102134,        4, base=16, bitRange=0-5
+sfr = "NAND/INT_STAT"                                                                          , "Memory", 0x40102148,        4, base=16
+sfr = "NAND/INT_STAT.[7:0]stat_value"                                                          , "Memory", 0x40102148,        4, base=16, bitRange=0-7
+sfr = "NAND/INT_STAT.[9:8]seq_id"                                                              , "Memory", 0x40102148,        4, base=16, bitRange=8-9
+sfr = "NAND/ECC_CNT"                                                                           , "Memory", 0x4010214C,        4, base=16
+sfr = "NAND/ECC_CNT.[5:0]err_lvl0"                                                             , "Memory", 0x4010214C,        4, base=16, bitRange=0-5
+sfr = "NAND/ECC_CNT.[13:8]err_lvl1"                                                            , "Memory", 0x4010214C,        4, base=16, bitRange=8-13
+sfr = "NAND/ECC_CNT.[21:16]err_lvl2"                                                           , "Memory", 0x4010214C,        4, base=16, bitRange=16-21
+sfr = "NAND/ECC_CNT.[29:24]err_lvl3"                                                           , "Memory", 0x4010214C,        4, base=16, bitRange=24-29
+sfr = "NAND/PARAM_REG"                                                                         , "Memory", 0x40102150,        4, base=16, readOnly
+sfr = "NAND/PARAM_REG.[1:0]bank_num"                                                           , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=0-1
+sfr = "NAND/PARAM_REG.[3:2]device_per_bank"                                                    , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=2-3
+sfr = "NAND/PARAM_REG.[4]boot_implement"                                                       , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=4
+sfr = "NAND/PARAM_REG.[5]bbm_implement"                                                        , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=5
+sfr = "NAND/PARAM_REG.[6]bbm_int_implement"                                                    , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=6
+sfr = "NAND/PARAM_REG.[7]protect_implement"                                                    , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=7
+sfr = "NAND/PARAM_REG.[8]syn_mode_implement"                                                   , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=8
+sfr = "NAND/PARAM_REG.[9]toggle_mode_implement"                                                , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=9
+sfr = "NAND/PARAM_REG.[10]clearnand_implement"                                                 , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=10
+sfr = "NAND/PARAM_REG.[11]big_endian_implement"                                                , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=11
+sfr = "NAND/PARAM_REG.[12]bch32_conf_implement"                                                , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=12
+sfr = "NAND/PARAM_REG.[19]noecc_implement"                                                     , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=19
+sfr = "NAND/PARAM_REG.[20]ss_implement"                                                        , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=20
+sfr = "NAND/PARAM_REG.[22]gen_seq_implement"                                                   , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=22
+sfr = "NAND/PARAM_REG.[23]small_block_implement"                                               , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=23
+sfr = "NAND/PARAM_REG.[24]dma_implement"                                                       , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=24
+sfr = "NAND/PARAM_REG.[29]asyn_reset_implement"                                                , "Memory", 0x40102150,        4, base=16, readOnly, bitRange=29
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// NAND Flash Controller -----
+group = "NAND","NAND/COMMAND","NAND/CONTROL","NAND/STATUS","NAND/STATUS_MASK","NAND/INT_MASK","NAND/INT_STATUS","NAND/ECC_CTRL","NAND/ECC_OFFSET","NAND/ECC_STAT","NAND/ADDR0_COL","NAND/ADDR0_ROW","NAND/ADDR1_COL","NAND/ADDR1_ROW","NAND/PROTECT","NAND/FIFO_DATA","NAND/DATA_REG","NAND/DATA_REG_SIZE","NAND/DEV0_PTR","NAND/DEV1_PTR","NAND/DEV2_PTR","NAND/DEV3_PTR","NAND/DMA_ADDR","NAND/DMA_CNT","NAND/DMA_CTRL","NAND/BBM_CTRL","NAND/MEM_CTRL","NAND/DATA_SIZE","NAND/TIMINGS_ASYN","NAND/TIME_SEQ_0","NAND/TIME_SEQ_1","NAND/TIME_GEN_SEQ_0","NAND/TIME_GEN_SEQ_1","NAND/TIME_GEN_SEQ_2","NAND/FIFO_INIT","NAND/FIFO_STATE","NAND/GEN_SEQ_CTRL","NAND/MLUN","NAND/DEV0_SIZE","NAND/DEV1_SIZE","NAND/DEV2_SIZE","NAND/DEV3_SIZE","NAND/DMA_TLVL","NAND/CMD_MARK","NAND/LUN_STATUS_0","NAND/TIME_GEN_SEQ_3","NAND/INT_STAT","NAND/ECC_CNT","NAND/PARAM_REG"

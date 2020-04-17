@@ -1,0 +1,329 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : SD2
+;               SD2
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "SD2/sdmasysaddrlo"                                                                      , "Memory", 0x40101000,        2, base=16
+sfr = "SD2/sdmasysaddrlo.[15:0]sdma_sysaddress"                                                , "Memory", 0x40101000,        2, base=16, bitRange=0-15
+sfr = "SD2/sdmasysaddrhi"                                                                      , "Memory", 0x40101002,        2, base=16
+sfr = "SD2/sdmasysaddrhi.[15:0]sdma_sysaddress"                                                , "Memory", 0x40101002,        2, base=16, bitRange=0-15
+sfr = "SD2/blocksize"                                                                          , "Memory", 0x40101004,        2, base=16
+sfr = "SD2/blocksize.[11:0]xfer_blocksize"                                                     , "Memory", 0x40101004,        2, base=16, bitRange=0-11
+sfr = "SD2/blocksize.[14:12]sdma_bufboundary"                                                  , "Memory", 0x40101004,        2, base=16, bitRange=12-14
+sfr = "SD2/blockcount"                                                                         , "Memory", 0x40101006,        2, base=16
+sfr = "SD2/blockcount.[15:0]xfer_blockcount"                                                   , "Memory", 0x40101006,        2, base=16, bitRange=0-15
+sfr = "SD2/argument1lo"                                                                        , "Memory", 0x40101008,        2, base=16
+sfr = "SD2/argument1lo.[15:0]command_argument1"                                                , "Memory", 0x40101008,        2, base=16, bitRange=0-15
+sfr = "SD2/argument1hi"                                                                        , "Memory", 0x4010100A,        2, base=16
+sfr = "SD2/argument1hi.[15:0]command_argument1"                                                , "Memory", 0x4010100A,        2, base=16, bitRange=0-15
+sfr = "SD2/transfermode"                                                                       , "Memory", 0x4010100C,        2, base=16
+sfr = "SD2/transfermode.[0]xfermode_dmaenable"                                                 , "Memory", 0x4010100C,        2, base=16, bitRange=0
+sfr = "SD2/transfermode.[1]xfermode_blkcntena"                                                 , "Memory", 0x4010100C,        2, base=16, bitRange=1
+sfr = "SD2/transfermode.[3:2]xfermode_autocmdena"                                              , "Memory", 0x4010100C,        2, base=16, bitRange=2-3
+sfr = "SD2/transfermode.[4]xfermode_dataxferdir"                                               , "Memory", 0x4010100C,        2, base=16, bitRange=4
+sfr = "SD2/transfermode.[5]xfermode_multiblksel"                                               , "Memory", 0x4010100C,        2, base=16, bitRange=5
+sfr = "SD2/command"                                                                            , "Memory", 0x4010100E,        2, base=16
+sfr = "SD2/command.[1:0]command_responsetype"                                                  , "Memory", 0x4010100E,        2, base=16, bitRange=0-1
+sfr = "SD2/command.[3]command_crcchkena"                                                       , "Memory", 0x4010100E,        2, base=16, bitRange=3
+sfr = "SD2/command.[4]command_indexchkena"                                                     , "Memory", 0x4010100E,        2, base=16, bitRange=4
+sfr = "SD2/command.[5]command_datapresent"                                                     , "Memory", 0x4010100E,        2, base=16, bitRange=5
+sfr = "SD2/command.[7:6]command_cmdtype"                                                       , "Memory", 0x4010100E,        2, base=16, bitRange=6-7
+sfr = "SD2/command.[13:8]command_cmdindex"                                                     , "Memory", 0x4010100E,        2, base=16, bitRange=8-13
+sfr = "SD2/response0"                                                                          , "Memory", 0x40101010,        2, base=16, readOnly
+sfr = "SD2/response0.[15:0]command_response"                                                   , "Memory", 0x40101010,        2, base=16, readOnly, bitRange=0-15
+sfr = "SD2/response1"                                                                          , "Memory", 0x40101012,        2, base=16, readOnly
+sfr = "SD2/response1.[15:0]command_response"                                                   , "Memory", 0x40101012,        2, base=16, readOnly, bitRange=0-15
+sfr = "SD2/response2"                                                                          , "Memory", 0x40101014,        2, base=16, readOnly
+sfr = "SD2/response2.[15:0]command_response"                                                   , "Memory", 0x40101014,        2, base=16, readOnly, bitRange=0-15
+sfr = "SD2/response3"                                                                          , "Memory", 0x40101016,        2, base=16, readOnly
+sfr = "SD2/response3.[15:0]command_response"                                                   , "Memory", 0x40101016,        2, base=16, readOnly, bitRange=0-15
+sfr = "SD2/response4"                                                                          , "Memory", 0x40101018,        2, base=16, readOnly
+sfr = "SD2/response4.[15:0]command_response"                                                   , "Memory", 0x40101018,        2, base=16, readOnly, bitRange=0-15
+sfr = "SD2/response5"                                                                          , "Memory", 0x4010101A,        2, base=16, readOnly
+sfr = "SD2/response5.[15:0]command_response"                                                   , "Memory", 0x4010101A,        2, base=16, readOnly, bitRange=0-15
+sfr = "SD2/response6"                                                                          , "Memory", 0x4010101C,        2, base=16, readOnly
+sfr = "SD2/response6.[15:0]command_response"                                                   , "Memory", 0x4010101C,        2, base=16, readOnly, bitRange=0-15
+sfr = "SD2/response7"                                                                          , "Memory", 0x4010101E,        2, base=16, readOnly
+sfr = "SD2/response7.[15:0]command_response"                                                   , "Memory", 0x4010101E,        2, base=16, readOnly, bitRange=0-15
+sfr = "SD2/dataport"                                                                           , "Memory", 0x40101020,        4, base=16
+sfr = "SD2/dataport.[31:0]sdhcdmactrl_piobufrddata"                                            , "Memory", 0x40101020,        4, base=16, bitRange=0-31
+sfr = "SD2/presentstate"                                                                       , "Memory", 0x40101024,        4, base=16, readOnly
+sfr = "SD2/presentstate.[0]presentstate_inhibitcmd"                                            , "Memory", 0x40101024,        4, base=16, readOnly, bitRange=0
+sfr = "SD2/presentstate.[1]presentstate_inhibitdat"                                            , "Memory", 0x40101024,        4, base=16, readOnly, bitRange=1
+sfr = "SD2/presentstate.[2]sdhcdmactrl_datalineactive"                                         , "Memory", 0x40101024,        4, base=16, readOnly, bitRange=2
+sfr = "SD2/presentstate.[3]sdhcsdctrl_retuningreq_dsync"                                       , "Memory", 0x40101024,        4, base=16, readOnly, bitRange=3
+sfr = "SD2/presentstate.[8]sdhcdmactrl_wrxferactive"                                           , "Memory", 0x40101024,        4, base=16, readOnly, bitRange=8
+sfr = "SD2/presentstate.[9]sdhcdmactrl_rdxferactive"                                           , "Memory", 0x40101024,        4, base=16, readOnly, bitRange=9
+sfr = "SD2/presentstate.[10]sdhcdmactrl_piobufwrena"                                           , "Memory", 0x40101024,        4, base=16, readOnly, bitRange=10
+sfr = "SD2/presentstate.[11]sdhcdmactrl_piobufrdena"                                           , "Memory", 0x40101024,        4, base=16, readOnly, bitRange=11
+sfr = "SD2/presentstate.[16]sdhccarddet_inserted_dsync"                                        , "Memory", 0x40101024,        4, base=16, readOnly, bitRange=16
+sfr = "SD2/presentstate.[17]sdhccarddet_statestable_dsync"                                     , "Memory", 0x40101024,        4, base=16, readOnly, bitRange=17
+sfr = "SD2/presentstate.[18]sdif_cd_n_dsync"                                                   , "Memory", 0x40101024,        4, base=16, readOnly, bitRange=18
+sfr = "SD2/presentstate.[19]sdif_wp_dsync"                                                     , "Memory", 0x40101024,        4, base=16, readOnly, bitRange=19
+sfr = "SD2/presentstate.[20]sdif_dat0in_dsync"                                                 , "Memory", 0x40101024,        4, base=16, readOnly, bitRange=20
+sfr = "SD2/presentstate.[21]sdif_dat1in_dsync"                                                 , "Memory", 0x40101024,        4, base=16, readOnly, bitRange=21
+sfr = "SD2/presentstate.[22]sdif_dat2in_dsync"                                                 , "Memory", 0x40101024,        4, base=16, readOnly, bitRange=22
+sfr = "SD2/presentstate.[23]sdif_dat3in_dsync"                                                 , "Memory", 0x40101024,        4, base=16, readOnly, bitRange=23
+sfr = "SD2/presentstate.[24]sdif_cmdin_dsync"                                                  , "Memory", 0x40101024,        4, base=16, readOnly, bitRange=24
+sfr = "SD2/presentstate.[25]sdif_dat4in_dsync"                                                 , "Memory", 0x40101024,        4, base=16, readOnly, bitRange=25
+sfr = "SD2/presentstate.[26]sdif_dat5in_dsync"                                                 , "Memory", 0x40101024,        4, base=16, readOnly, bitRange=26
+sfr = "SD2/presentstate.[27]sdif_dat6in_dsync"                                                 , "Memory", 0x40101024,        4, base=16, readOnly, bitRange=27
+sfr = "SD2/presentstate.[28]sdif_dat7in_dsync"                                                 , "Memory", 0x40101024,        4, base=16, readOnly, bitRange=28
+sfr = "SD2/hostcontrol1"                                                                       , "Memory", 0x40101028,        1, base=16
+sfr = "SD2/hostcontrol1.[0]hostctrl1_ledcontrol"                                               , "Memory", 0x40101028,        1, base=16, bitRange=0
+sfr = "SD2/hostcontrol1.[1]hostctrl1_datawidth"                                                , "Memory", 0x40101028,        1, base=16, bitRange=1
+sfr = "SD2/hostcontrol1.[2]hostctrl1_highspeedena"                                             , "Memory", 0x40101028,        1, base=16, bitRange=2
+sfr = "SD2/hostcontrol1.[4:3]hostctrl1_dmaselect"                                              , "Memory", 0x40101028,        1, base=16, bitRange=3-4
+sfr = "SD2/hostcontrol1.[5]hostctrl1_extdatawidth"                                             , "Memory", 0x40101028,        1, base=16, bitRange=5
+sfr = "SD2/hostcontrol1.[6]hostctrl1_cdtestlevel"                                              , "Memory", 0x40101028,        1, base=16, bitRange=6
+sfr = "SD2/hostcontrol1.[7]hostctrl1_cdsigselect"                                              , "Memory", 0x40101028,        1, base=16, bitRange=7
+sfr = "SD2/powercontrol"                                                                       , "Memory", 0x40101029,        1, base=16
+sfr = "SD2/powercontrol.[0]pwrctrl_sdbuspower"                                                 , "Memory", 0x40101029,        1, base=16, bitRange=0
+sfr = "SD2/powercontrol.[3:1]pwrctrl_sdbusvoltage"                                             , "Memory", 0x40101029,        1, base=16, bitRange=1-3
+sfr = "SD2/powercontrol.[4]emmc_hwreset"                                                       , "Memory", 0x40101029,        1, base=16, bitRange=4
+sfr = "SD2/blockgapcontrol"                                                                    , "Memory", 0x4010102A,        1, base=16
+sfr = "SD2/blockgapcontrol.[0]blkgapctrl_stopatblkgap"                                         , "Memory", 0x4010102A,        1, base=16, bitRange=0
+sfr = "SD2/blockgapcontrol.[1]blkgapctrl_continue"                                             , "Memory", 0x4010102A,        1, base=16, bitRange=1
+sfr = "SD2/blockgapcontrol.[2]blkgapctrl_rdwaitctrl"                                           , "Memory", 0x4010102A,        1, base=16, bitRange=2
+sfr = "SD2/blockgapcontrol.[3]blkgapctrl_interrupt"                                            , "Memory", 0x4010102A,        1, base=16, bitRange=3
+sfr = "SD2/blockgapcontrol.[4]blkgapctrl_spimode"                                              , "Memory", 0x4010102A,        1, base=16, bitRange=4
+sfr = "SD2/blockgapcontrol.[5]blkgapctrl_bootenable"                                           , "Memory", 0x4010102A,        1, base=16, bitRange=5
+sfr = "SD2/blockgapcontrol.[6]blkgapctrl_altbootmode"                                          , "Memory", 0x4010102A,        1, base=16, bitRange=6
+sfr = "SD2/blockgapcontrol.[7]blkgapctrl_bootackena"                                           , "Memory", 0x4010102A,        1, base=16, bitRange=7
+sfr = "SD2/wakeupcontrol"                                                                      , "Memory", 0x4010102B,        1, base=16
+sfr = "SD2/wakeupcontrol.[0]wkupctrl_cardinterrupt"                                            , "Memory", 0x4010102B,        1, base=16, bitRange=0
+sfr = "SD2/wakeupcontrol.[1]wkupctrl_cardinsertion"                                            , "Memory", 0x4010102B,        1, base=16, bitRange=1
+sfr = "SD2/wakeupcontrol.[2]wkupctrl_cardremoval"                                              , "Memory", 0x4010102B,        1, base=16, bitRange=2
+sfr = "SD2/clockcontrol"                                                                       , "Memory", 0x4010102C,        2, base=16
+sfr = "SD2/clockcontrol.[0]clkctrl_intclkena"                                                  , "Memory", 0x4010102C,        2, base=16, bitRange=0
+sfr = "SD2/clockcontrol.[1]sdhcclkgen_intclkstable_dsync"                                      , "Memory", 0x4010102C,        2, base=16, bitRange=1
+sfr = "SD2/clockcontrol.[2]clkctrl_sdclkena"                                                   , "Memory", 0x4010102C,        2, base=16, bitRange=2
+sfr = "SD2/clockcontrol.[5]clkctrl_clkgensel"                                                  , "Memory", 0x4010102C,        2, base=16, bitRange=5
+sfr = "SD2/clockcontrol.[7:6]clkctrl_sdclkfreqsel_upperbits"                                   , "Memory", 0x4010102C,        2, base=16, bitRange=6-7
+sfr = "SD2/clockcontrol.[15:8]clkctrl_sdclkfreqsel"                                            , "Memory", 0x4010102C,        2, base=16, bitRange=8-15
+sfr = "SD2/timeoutcontrol"                                                                     , "Memory", 0x4010102E,        1, base=16
+sfr = "SD2/timeoutcontrol.[3:0]timeout_ctrvalue"                                               , "Memory", 0x4010102E,        1, base=16, bitRange=0-3
+sfr = "SD2/softwarereset"                                                                      , "Memory", 0x4010102F,        1, base=16
+sfr = "SD2/softwarereset.[0]swreset_for_all"                                                   , "Memory", 0x4010102F,        1, base=16, bitRange=0
+sfr = "SD2/softwarereset.[1]swreset_for_cmd"                                                   , "Memory", 0x4010102F,        1, base=16, bitRange=1
+sfr = "SD2/softwarereset.[2]swreset_for_dat"                                                   , "Memory", 0x4010102F,        1, base=16, bitRange=2
+sfr = "SD2/normalintrsts"                                                                      , "Memory", 0x40101030,        2, base=16
+sfr = "SD2/normalintrsts.[0]normalintrsts_cmdcomplete"                                         , "Memory", 0x40101030,        2, base=16, bitRange=0
+sfr = "SD2/normalintrsts.[1]normalintrsts_xfercomplete"                                        , "Memory", 0x40101030,        2, base=16, bitRange=1
+sfr = "SD2/normalintrsts.[2]normalintrsts_blkgapevent"                                         , "Memory", 0x40101030,        2, base=16, bitRange=2
+sfr = "SD2/normalintrsts.[3]normalintrsts_dmainterrupt"                                        , "Memory", 0x40101030,        2, base=16, bitRange=3
+sfr = "SD2/normalintrsts.[4]normalintrsts_bufwrready"                                          , "Memory", 0x40101030,        2, base=16, bitRange=4
+sfr = "SD2/normalintrsts.[5]normalintrsts_bufrdready"                                          , "Memory", 0x40101030,        2, base=16, bitRange=5
+sfr = "SD2/normalintrsts.[6]normalintrsts_cardinssts"                                          , "Memory", 0x40101030,        2, base=16, bitRange=6
+sfr = "SD2/normalintrsts.[7]normalintrsts_cardremsts"                                          , "Memory", 0x40101030,        2, base=16, bitRange=7
+sfr = "SD2/normalintrsts.[8]normalintrsts_cardintsts"                                          , "Memory", 0x40101030,        2, base=16, bitRange=8
+sfr = "SD2/normalintrsts.[9]normalintrsts_inta"                                                , "Memory", 0x40101030,        2, base=16, bitRange=9
+sfr = "SD2/normalintrsts.[10]normalintrsts_intb"                                               , "Memory", 0x40101030,        2, base=16, bitRange=10
+sfr = "SD2/normalintrsts.[11]normalintrsts_intc"                                               , "Memory", 0x40101030,        2, base=16, bitRange=11
+sfr = "SD2/normalintrsts.[12]normalintrsts_retuningevent"                                      , "Memory", 0x40101030,        2, base=16, bitRange=12
+sfr = "SD2/normalintrsts.[13]normalintrsts_rcvbootack"                                         , "Memory", 0x40101030,        2, base=16, bitRange=13
+sfr = "SD2/normalintrsts.[14]normalintrsts_bootcomplete"                                       , "Memory", 0x40101030,        2, base=16, bitRange=14
+sfr = "SD2/normalintrsts.[15]reg_errorintrsts"                                                 , "Memory", 0x40101030,        2, base=16, bitRange=15
+sfr = "SD2/errorintrsts"                                                                       , "Memory", 0x40101032,        2, base=16
+sfr = "SD2/errorintrsts.[0]errorintrsts_cmdtimeouterror"                                       , "Memory", 0x40101032,        2, base=16, bitRange=0
+sfr = "SD2/errorintrsts.[1]errorintrsts_cmdcrcerror"                                           , "Memory", 0x40101032,        2, base=16, bitRange=1
+sfr = "SD2/errorintrsts.[2]errorintrsts_cmdendbiterror"                                        , "Memory", 0x40101032,        2, base=16, bitRange=2
+sfr = "SD2/errorintrsts.[3]errorintrsts_cmdindexerror"                                         , "Memory", 0x40101032,        2, base=16, bitRange=3
+sfr = "SD2/errorintrsts.[4]errorintrsts_datatimeouterror"                                      , "Memory", 0x40101032,        2, base=16, bitRange=4
+sfr = "SD2/errorintrsts.[5]errorintrsts_datacrcerror"                                          , "Memory", 0x40101032,        2, base=16, bitRange=5
+sfr = "SD2/errorintrsts.[6]errorintrsts_dataendbiterror"                                       , "Memory", 0x40101032,        2, base=16, bitRange=6
+sfr = "SD2/errorintrsts.[7]errorintrsts_currlimiterror"                                        , "Memory", 0x40101032,        2, base=16, bitRange=7
+sfr = "SD2/errorintrsts.[8]errorintrsts_autocmderror"                                          , "Memory", 0x40101032,        2, base=16, bitRange=8
+sfr = "SD2/errorintrsts.[9]errorintrsts_admaerror"                                             , "Memory", 0x40101032,        2, base=16, bitRange=9
+sfr = "SD2/errorintrsts.[12]errorintrsts_hosterror"                                            , "Memory", 0x40101032,        2, base=16, bitRange=12
+sfr = "SD2/normalintrstsena"                                                                   , "Memory", 0x40101034,        2, base=16
+sfr = "SD2/normalintrstsena.[0]normalintrsts_enableregbit0"                                    , "Memory", 0x40101034,        2, base=16, bitRange=0
+sfr = "SD2/normalintrstsena.[1]normalintrsts_enableregbit1"                                    , "Memory", 0x40101034,        2, base=16, bitRange=1
+sfr = "SD2/normalintrstsena.[2]normalintrsts_enableregbit2"                                    , "Memory", 0x40101034,        2, base=16, bitRange=2
+sfr = "SD2/normalintrstsena.[3]normalintrsts_enableregbit3"                                    , "Memory", 0x40101034,        2, base=16, bitRange=3
+sfr = "SD2/normalintrstsena.[4]normalintrsts_enableregbit4"                                    , "Memory", 0x40101034,        2, base=16, bitRange=4
+sfr = "SD2/normalintrstsena.[5]normalintrsts_enableregbit5"                                    , "Memory", 0x40101034,        2, base=16, bitRange=5
+sfr = "SD2/normalintrstsena.[6]sdhcregset_cardinsstsena"                                       , "Memory", 0x40101034,        2, base=16, bitRange=6
+sfr = "SD2/normalintrstsena.[7]sdhcregset_cardremstsena"                                       , "Memory", 0x40101034,        2, base=16, bitRange=7
+sfr = "SD2/normalintrstsena.[8]sdhcregset_cardintstsena"                                       , "Memory", 0x40101034,        2, base=16, bitRange=8
+sfr = "SD2/normalintrstsena.[9]normalintrsts_enableregbit9"                                    , "Memory", 0x40101034,        2, base=16, bitRange=9
+sfr = "SD2/normalintrstsena.[10]normalintrsts_enableregbit10"                                  , "Memory", 0x40101034,        2, base=16, bitRange=10
+sfr = "SD2/normalintrstsena.[11]normalintrsts_enableregbit11"                                  , "Memory", 0x40101034,        2, base=16, bitRange=11
+sfr = "SD2/normalintrstsena.[12]normalintrsts_enableregbit12"                                  , "Memory", 0x40101034,        2, base=16, bitRange=12
+sfr = "SD2/normalintrstsena.[13]normalintrsts_enableregbit13"                                  , "Memory", 0x40101034,        2, base=16, bitRange=13
+sfr = "SD2/normalintrstsena.[14]normalintrsts_enableregbit14"                                  , "Memory", 0x40101034,        2, base=16, bitRange=14
+sfr = "SD2/normalintrstsena.[15]normalintrsts_enableregbit15"                                  , "Memory", 0x40101034,        2, base=16, bitRange=15
+sfr = "SD2/errorintrstsena"                                                                    , "Memory", 0x40101036,        2, base=16
+sfr = "SD2/errorintrstsena.[0]errorintrsts_enableregbit0"                                      , "Memory", 0x40101036,        2, base=16, bitRange=0
+sfr = "SD2/errorintrstsena.[1]errorintrsts_enableregbit1"                                      , "Memory", 0x40101036,        2, base=16, bitRange=1
+sfr = "SD2/errorintrstsena.[2]errorintrsts_enableregbit2"                                      , "Memory", 0x40101036,        2, base=16, bitRange=2
+sfr = "SD2/errorintrstsena.[3]errorintrsts_enableregbit3"                                      , "Memory", 0x40101036,        2, base=16, bitRange=3
+sfr = "SD2/errorintrstsena.[4]errorintrsts_enableregbit4"                                      , "Memory", 0x40101036,        2, base=16, bitRange=4
+sfr = "SD2/errorintrstsena.[5]errorintrsts_enableregbit5"                                      , "Memory", 0x40101036,        2, base=16, bitRange=5
+sfr = "SD2/errorintrstsena.[6]errorintrsts_enableregbit6"                                      , "Memory", 0x40101036,        2, base=16, bitRange=6
+sfr = "SD2/errorintrstsena.[7]errorintrsts_enableregbit7"                                      , "Memory", 0x40101036,        2, base=16, bitRange=7
+sfr = "SD2/errorintrstsena.[8]errorintrsts_enableregbit8"                                      , "Memory", 0x40101036,        2, base=16, bitRange=8
+sfr = "SD2/errorintrstsena.[9]errorintrsts_enableregbit9"                                      , "Memory", 0x40101036,        2, base=16, bitRange=9
+sfr = "SD2/errorintrstsena.[10]errorintrsts_enableregbit10"                                    , "Memory", 0x40101036,        2, base=16, bitRange=10
+sfr = "SD2/errorintrstsena.[12]errorintrsts_enableregbit12"                                    , "Memory", 0x40101036,        2, base=16, bitRange=12
+sfr = "SD2/normalintrsigena"                                                                   , "Memory", 0x40101038,        2, base=16
+sfr = "SD2/normalintrsigena.[0]normalintrsig_enableregbit0"                                    , "Memory", 0x40101038,        2, base=16, bitRange=0
+sfr = "SD2/normalintrsigena.[1]normalintrsig_enableregbit1"                                    , "Memory", 0x40101038,        2, base=16, bitRange=1
+sfr = "SD2/normalintrsigena.[2]normalintrsig_enableregbit2"                                    , "Memory", 0x40101038,        2, base=16, bitRange=2
+sfr = "SD2/normalintrsigena.[3]normalintrsig_enableregbit3"                                    , "Memory", 0x40101038,        2, base=16, bitRange=3
+sfr = "SD2/normalintrsigena.[4]normalintrsig_enableregbit4"                                    , "Memory", 0x40101038,        2, base=16, bitRange=4
+sfr = "SD2/normalintrsigena.[5]normalintrsig_enableregbit5"                                    , "Memory", 0x40101038,        2, base=16, bitRange=5
+sfr = "SD2/normalintrsigena.[6]normalintrsig_enableregbit6"                                    , "Memory", 0x40101038,        2, base=16, bitRange=6
+sfr = "SD2/normalintrsigena.[7]normalintrsig_enableregbit7"                                    , "Memory", 0x40101038,        2, base=16, bitRange=7
+sfr = "SD2/normalintrsigena.[8]normalintrsig_enableregbit8"                                    , "Memory", 0x40101038,        2, base=16, bitRange=8
+sfr = "SD2/normalintrsigena.[9]normalintrsig_enableregbit9"                                    , "Memory", 0x40101038,        2, base=16, bitRange=9
+sfr = "SD2/normalintrsigena.[10]normalintrsig_enableregbit10"                                  , "Memory", 0x40101038,        2, base=16, bitRange=10
+sfr = "SD2/normalintrsigena.[11]normalintrsig_enableregbit11"                                  , "Memory", 0x40101038,        2, base=16, bitRange=11
+sfr = "SD2/normalintrsigena.[12]normalintrsig_enableregbit12"                                  , "Memory", 0x40101038,        2, base=16, bitRange=12
+sfr = "SD2/normalintrsigena.[13]normalintrsig_enableregbit13"                                  , "Memory", 0x40101038,        2, base=16, bitRange=13
+sfr = "SD2/normalintrsigena.[14]normalintrsig_enableregbit14"                                  , "Memory", 0x40101038,        2, base=16, bitRange=14
+sfr = "SD2/normalintrsigena.[15]normalintrsig_enableregbit15"                                  , "Memory", 0x40101038,        2, base=16, bitRange=15
+sfr = "SD2/errorintrsigena"                                                                    , "Memory", 0x4010103A,        2, base=16
+sfr = "SD2/errorintrsigena.[0]errorintrsig_enableregbit0"                                      , "Memory", 0x4010103A,        2, base=16, bitRange=0
+sfr = "SD2/errorintrsigena.[1]errorintrsig_enableregbit1"                                      , "Memory", 0x4010103A,        2, base=16, bitRange=1
+sfr = "SD2/errorintrsigena.[2]errorintrsig_enableregbit2"                                      , "Memory", 0x4010103A,        2, base=16, bitRange=2
+sfr = "SD2/errorintrsigena.[3]errorintrsig_enableregbit3"                                      , "Memory", 0x4010103A,        2, base=16, bitRange=3
+sfr = "SD2/errorintrsigena.[4]errorintrsig_enableregbit4"                                      , "Memory", 0x4010103A,        2, base=16, bitRange=4
+sfr = "SD2/errorintrsigena.[5]errorintrsig_enableregbit5"                                      , "Memory", 0x4010103A,        2, base=16, bitRange=5
+sfr = "SD2/errorintrsigena.[6]errorintrsig_enableregbit6"                                      , "Memory", 0x4010103A,        2, base=16, bitRange=6
+sfr = "SD2/errorintrsigena.[7]errorintrsig_enableregbit7"                                      , "Memory", 0x4010103A,        2, base=16, bitRange=7
+sfr = "SD2/errorintrsigena.[8]errorintrsig_enableregbit8"                                      , "Memory", 0x4010103A,        2, base=16, bitRange=8
+sfr = "SD2/errorintrsigena.[9]errorintrsig_enableregbit9"                                      , "Memory", 0x4010103A,        2, base=16, bitRange=9
+sfr = "SD2/errorintrsigena.[10]errorintrsig_enableregbit10"                                    , "Memory", 0x4010103A,        2, base=16, bitRange=10
+sfr = "SD2/errorintrsigena.[12]errorintrsig_enableregbit12"                                    , "Memory", 0x4010103A,        2, base=16, bitRange=12
+sfr = "SD2/autocmderrsts"                                                                      , "Memory", 0x4010103C,        2, base=16, readOnly
+sfr = "SD2/autocmderrsts.[0]autocmderrsts_notexecerror"                                        , "Memory", 0x4010103C,        2, base=16, readOnly, bitRange=0
+sfr = "SD2/autocmderrsts.[1]autocmderrsts_timeouterror"                                        , "Memory", 0x4010103C,        2, base=16, readOnly, bitRange=1
+sfr = "SD2/autocmderrsts.[2]autocmderrsts_crcerror"                                            , "Memory", 0x4010103C,        2, base=16, readOnly, bitRange=2
+sfr = "SD2/autocmderrsts.[3]autocmderrsts_endbiterror"                                         , "Memory", 0x4010103C,        2, base=16, readOnly, bitRange=3
+sfr = "SD2/autocmderrsts.[4]autocmderrsts_indexerror"                                          , "Memory", 0x4010103C,        2, base=16, readOnly, bitRange=4
+sfr = "SD2/autocmderrsts.[7]autocmderrsts_nexterror"                                           , "Memory", 0x4010103C,        2, base=16, readOnly, bitRange=7
+sfr = "SD2/hostcontrol2"                                                                       , "Memory", 0x4010103E,        2, base=16
+sfr = "SD2/hostcontrol2.[2:0]hostctrl2_uhsmodeselect"                                          , "Memory", 0x4010103E,        2, base=16, bitRange=0-2
+sfr = "SD2/hostcontrol2.[3]hostctrl2_1p8vsignallingena"                                        , "Memory", 0x4010103E,        2, base=16, bitRange=3
+sfr = "SD2/hostcontrol2.[5:4]hostctrl2_driverstrength"                                         , "Memory", 0x4010103E,        2, base=16, bitRange=4-5
+sfr = "SD2/hostcontrol2.[6]hostctrl2_executetuning"                                            , "Memory", 0x4010103E,        2, base=16, bitRange=6
+sfr = "SD2/hostcontrol2.[7]hostctrl2_samplingclkselect"                                        , "Memory", 0x4010103E,        2, base=16, bitRange=7
+sfr = "SD2/hostcontrol2.[14]hostctrl2_asynchintrenable"                                        , "Memory", 0x4010103E,        2, base=16, bitRange=14
+sfr = "SD2/hostcontrol2.[15]hostctrl2_presetvalueenable"                                       , "Memory", 0x4010103E,        2, base=16, bitRange=15
+sfr = "SD2/capabilities"                                                                       , "Memory", 0x40101040,        4, base=16, readOnly
+sfr = "SD2/capabilities.[5:0]corecfg_timeoutclkfreq"                                           , "Memory", 0x40101040,        4, base=16, readOnly, bitRange=0-5
+sfr = "SD2/capabilities.[7]corecfg_timeoutclkunit"                                             , "Memory", 0x40101040,        4, base=16, readOnly, bitRange=7
+sfr = "SD2/capabilities.[15:8]corecfg_baseclkfreq"                                             , "Memory", 0x40101040,        4, base=16, readOnly, bitRange=8-15
+sfr = "SD2/capabilities.[17:16]corecfg_maxblklength"                                           , "Memory", 0x40101040,        4, base=16, readOnly, bitRange=16-17
+sfr = "SD2/capabilities.[18]corecfg_8bitsupport"                                               , "Memory", 0x40101040,        4, base=16, readOnly, bitRange=18
+sfr = "SD2/capabilities.[19]corecfg_adma2support"                                              , "Memory", 0x40101040,        4, base=16, readOnly, bitRange=19
+sfr = "SD2/capabilities.[21]corecfg_highspeedsupport"                                          , "Memory", 0x40101040,        4, base=16, readOnly, bitRange=21
+sfr = "SD2/capabilities.[22]corecfg_sdmasupport"                                               , "Memory", 0x40101040,        4, base=16, readOnly, bitRange=22
+sfr = "SD2/capabilities.[23]corecfg_suspressupport"                                            , "Memory", 0x40101040,        4, base=16, readOnly, bitRange=23
+sfr = "SD2/capabilities.[24]corecfg_3p3voltsupport"                                            , "Memory", 0x40101040,        4, base=16, readOnly, bitRange=24
+sfr = "SD2/capabilities.[25]corecfg_3p0voltsupport"                                            , "Memory", 0x40101040,        4, base=16, readOnly, bitRange=25
+sfr = "SD2/capabilities.[26]corecfg_1p8voltsupport"                                            , "Memory", 0x40101040,        4, base=16, readOnly, bitRange=26
+sfr = "SD2/capabilities.[28]corecfg_64bitsupport"                                              , "Memory", 0x40101040,        4, base=16, readOnly, bitRange=28
+sfr = "SD2/capabilities.[29]corecfg_asynchintrsupport"                                         , "Memory", 0x40101040,        4, base=16, readOnly, bitRange=29
+sfr = "SD2/capabilities.[31:30]corecfg_slottype"                                               , "Memory", 0x40101040,        4, base=16, readOnly, bitRange=30-31
+sfr = "SD2/capabilities_cont"                                                                  , "Memory", 0x40101044,        4, base=16, readOnly
+sfr = "SD2/capabilities_cont.[0]corecfg_sdr50support"                                          , "Memory", 0x40101044,        4, base=16, readOnly, bitRange=0
+sfr = "SD2/capabilities_cont.[1]corecfg_sdr104support"                                         , "Memory", 0x40101044,        4, base=16, readOnly, bitRange=1
+sfr = "SD2/capabilities_cont.[2]corecfg_ddr50support"                                          , "Memory", 0x40101044,        4, base=16, readOnly, bitRange=2
+sfr = "SD2/capabilities_cont.[4]corecfg_adriversupport"                                        , "Memory", 0x40101044,        4, base=16, readOnly, bitRange=4
+sfr = "SD2/capabilities_cont.[5]corecfg_cdriversupport"                                        , "Memory", 0x40101044,        4, base=16, readOnly, bitRange=5
+sfr = "SD2/capabilities_cont.[6]corecfg_ddriversupport"                                        , "Memory", 0x40101044,        4, base=16, readOnly, bitRange=6
+sfr = "SD2/capabilities_cont.[11:8]corecfg_retuningtimercnt"                                   , "Memory", 0x40101044,        4, base=16, readOnly, bitRange=8-11
+sfr = "SD2/capabilities_cont.[13]corecfg_tuningforsdr50"                                       , "Memory", 0x40101044,        4, base=16, readOnly, bitRange=13
+sfr = "SD2/capabilities_cont.[15:14]corecfg_retuningmodes"                                     , "Memory", 0x40101044,        4, base=16, readOnly, bitRange=14-15
+sfr = "SD2/capabilities_cont.[23:16]corecfg_clockmultiplier"                                   , "Memory", 0x40101044,        4, base=16, readOnly, bitRange=16-23
+sfr = "SD2/capabilities_cont.[24]corecfg_spisupport"                                           , "Memory", 0x40101044,        4, base=16, readOnly, bitRange=24
+sfr = "SD2/capabilities_cont.[25]corecfg_spiblkmode"                                           , "Memory", 0x40101044,        4, base=16, readOnly, bitRange=25
+sfr = "SD2/maxcurrentcap"                                                                      , "Memory", 0x40101048,        4, base=16, readOnly
+sfr = "SD2/maxcurrentcap.[7:0]corecfg_maxcurrent3p3v"                                          , "Memory", 0x40101048,        4, base=16, readOnly, bitRange=0-7
+sfr = "SD2/maxcurrentcap.[15:8]corecfg_maxcurrent3p0v"                                         , "Memory", 0x40101048,        4, base=16, readOnly, bitRange=8-15
+sfr = "SD2/maxcurrentcap.[23:16]corecfg_maxcurrent1p8v"                                        , "Memory", 0x40101048,        4, base=16, readOnly, bitRange=16-23
+sfr = "SD2/maxcurrentcap_cont"                                                                 , "Memory", 0x4010104C,        4, base=16, readOnly
+sfr = "SD2/ForceEventforAUTOCMDErrorStatus"                                                    , "Memory", 0x40101050,        2, base=16, writeOnly
+sfr = "SD2/ForceEventforAUTOCMDErrorStatus.[0]forceautocmdnotexec"                             , "Memory", 0x40101050,        2, base=16, writeOnly, bitRange=0
+sfr = "SD2/ForceEventforAUTOCMDErrorStatus.[1]forceautocmdtimeouterr"                          , "Memory", 0x40101050,        2, base=16, writeOnly, bitRange=1
+sfr = "SD2/ForceEventforAUTOCMDErrorStatus.[2]forceautocmdcrcerr"                              , "Memory", 0x40101050,        2, base=16, writeOnly, bitRange=2
+sfr = "SD2/ForceEventforAUTOCMDErrorStatus.[3]forceautocmdendbiterr"                           , "Memory", 0x40101050,        2, base=16, writeOnly, bitRange=3
+sfr = "SD2/ForceEventforAUTOCMDErrorStatus.[4]forceautocmdindexerr"                            , "Memory", 0x40101050,        2, base=16, writeOnly, bitRange=4
+sfr = "SD2/ForceEventforAUTOCMDErrorStatus.[7]forcecmdnotissuedbyautocmd12err"                 , "Memory", 0x40101050,        2, base=16, writeOnly, bitRange=7
+sfr = "SD2/forceeventforerrintsts"                                                             , "Memory", 0x40101052,        2, base=16, writeOnly
+sfr = "SD2/forceeventforerrintsts.[0]forcecmdtimeouterr"                                       , "Memory", 0x40101052,        2, base=16, writeOnly, bitRange=0
+sfr = "SD2/forceeventforerrintsts.[1]forcecmdcrcerr"                                           , "Memory", 0x40101052,        2, base=16, writeOnly, bitRange=1
+sfr = "SD2/forceeventforerrintsts.[2]forcecmdendbiterr"                                        , "Memory", 0x40101052,        2, base=16, writeOnly, bitRange=2
+sfr = "SD2/forceeventforerrintsts.[3]forcecmdindexerr"                                         , "Memory", 0x40101052,        2, base=16, writeOnly, bitRange=3
+sfr = "SD2/forceeventforerrintsts.[4]forcedattimeouterr"                                       , "Memory", 0x40101052,        2, base=16, writeOnly, bitRange=4
+sfr = "SD2/forceeventforerrintsts.[5]forcedatcrcerr"                                           , "Memory", 0x40101052,        2, base=16, writeOnly, bitRange=5
+sfr = "SD2/forceeventforerrintsts.[6]forcedatendbiterr"                                        , "Memory", 0x40101052,        2, base=16, writeOnly, bitRange=6
+sfr = "SD2/forceeventforerrintsts.[7]forcecurrlimerr"                                          , "Memory", 0x40101052,        2, base=16, writeOnly, bitRange=7
+sfr = "SD2/forceeventforerrintsts.[8]forceautocmderr"                                          , "Memory", 0x40101052,        2, base=16, writeOnly, bitRange=8
+sfr = "SD2/forceeventforerrintsts.[9]forceadmaerr"                                             , "Memory", 0x40101052,        2, base=16, writeOnly, bitRange=9
+sfr = "SD2/forceeventforerrintsts.[10]forcetuningerr"                                          , "Memory", 0x40101052,        2, base=16, writeOnly, bitRange=10
+sfr = "SD2/admaerrsts"                                                                         , "Memory", 0x40101054,        1, base=16, readOnly
+sfr = "SD2/admaerrsts.[1:0]admaerrsts_admaerrorstate"                                          , "Memory", 0x40101054,        1, base=16, readOnly, bitRange=0-1
+sfr = "SD2/admaerrsts.[2]admaerrsts_admalenmismatcherr"                                        , "Memory", 0x40101054,        1, base=16, readOnly, bitRange=2
+sfr = "SD2/admasysaddr0"                                                                       , "Memory", 0x40101058,        2, base=16
+sfr = "SD2/admasysaddr0.[15:0]adma_sysaddress0"                                                , "Memory", 0x40101058,        2, base=16, bitRange=0-15
+sfr = "SD2/admasysaddr1"                                                                       , "Memory", 0x4010105A,        2, base=16
+sfr = "SD2/admasysaddr1.[15:0]adma_sysaddress1"                                                , "Memory", 0x4010105A,        2, base=16, bitRange=0-15
+sfr = "SD2/admasysaddr2"                                                                       , "Memory", 0x4010105C,        2, base=16
+sfr = "SD2/admasysaddr2.[15:0]adma_sysaddress2"                                                , "Memory", 0x4010105C,        2, base=16, bitRange=0-15
+sfr = "SD2/admasysaddr3"                                                                       , "Memory", 0x4010105E,        2, base=16
+sfr = "SD2/admasysaddr3.[15:0]adma_sysaddress3"                                                , "Memory", 0x4010105E,        2, base=16, bitRange=0-15
+sfr = "SD2/presetvalue0"                                                                       , "Memory", 0x40101060,        2, base=16, readOnly
+sfr = "SD2/presetvalue0.[9:0]SDCLKFrequencySelectValue"                                        , "Memory", 0x40101060,        2, base=16, readOnly, bitRange=0-9
+sfr = "SD2/presetvalue0.[10]ClockGeneratorSelectValue"                                         , "Memory", 0x40101060,        2, base=16, readOnly, bitRange=10
+sfr = "SD2/presetvalue0.[15:14]DriverStrengthSelectValue"                                      , "Memory", 0x40101060,        2, base=16, readOnly, bitRange=14-15
+sfr = "SD2/presetvalue1"                                                                       , "Memory", 0x40101062,        2, base=16, readOnly
+sfr = "SD2/presetvalue1.[9:0]SDCLKFrequencySelectValue"                                        , "Memory", 0x40101062,        2, base=16, readOnly, bitRange=0-9
+sfr = "SD2/presetvalue1.[10]ClockGeneratorSelectValue"                                         , "Memory", 0x40101062,        2, base=16, readOnly, bitRange=10
+sfr = "SD2/presetvalue1.[15:14]DriverStrengthSelectValue"                                      , "Memory", 0x40101062,        2, base=16, readOnly, bitRange=14-15
+sfr = "SD2/presetvalue2"                                                                       , "Memory", 0x40101064,        2, base=16, readOnly
+sfr = "SD2/presetvalue2.[9:0]SDCLKFrequencySelectValue"                                        , "Memory", 0x40101064,        2, base=16, readOnly, bitRange=0-9
+sfr = "SD2/presetvalue2.[10]ClockGeneratorSelectValue"                                         , "Memory", 0x40101064,        2, base=16, readOnly, bitRange=10
+sfr = "SD2/presetvalue2.[15:14]DriverStrengthSelectValue"                                      , "Memory", 0x40101064,        2, base=16, readOnly, bitRange=14-15
+sfr = "SD2/presetvalue3"                                                                       , "Memory", 0x40101066,        2, base=16, readOnly
+sfr = "SD2/presetvalue3.[9:0]SDCLKFrequencySelectValue"                                        , "Memory", 0x40101066,        2, base=16, readOnly, bitRange=0-9
+sfr = "SD2/presetvalue3.[10]ClockGeneratorSelectValue"                                         , "Memory", 0x40101066,        2, base=16, readOnly, bitRange=10
+sfr = "SD2/presetvalue3.[15:14]DriverStrengthSelectValue"                                      , "Memory", 0x40101066,        2, base=16, readOnly, bitRange=14-15
+sfr = "SD2/presetvalue4"                                                                       , "Memory", 0x40101068,        2, base=16, readOnly
+sfr = "SD2/presetvalue4.[9:0]SDCLKFrequencySelectValue"                                        , "Memory", 0x40101068,        2, base=16, readOnly, bitRange=0-9
+sfr = "SD2/presetvalue4.[10]ClockGeneratorSelectValue"                                         , "Memory", 0x40101068,        2, base=16, readOnly, bitRange=10
+sfr = "SD2/presetvalue4.[15:14]DriverStrengthSelectValue"                                      , "Memory", 0x40101068,        2, base=16, readOnly, bitRange=14-15
+sfr = "SD2/presetvalue5"                                                                       , "Memory", 0x4010106A,        2, base=16, readOnly
+sfr = "SD2/presetvalue5.[9:0]SDCLKFrequencySelectValue"                                        , "Memory", 0x4010106A,        2, base=16, readOnly, bitRange=0-9
+sfr = "SD2/presetvalue5.[10]ClockGeneratorSelectValue"                                         , "Memory", 0x4010106A,        2, base=16, readOnly, bitRange=10
+sfr = "SD2/presetvalue5.[15:14]DriverStrengthSelectValue"                                      , "Memory", 0x4010106A,        2, base=16, readOnly, bitRange=14-15
+sfr = "SD2/presetvalue6"                                                                       , "Memory", 0x4010106C,        2, base=16, readOnly
+sfr = "SD2/presetvalue6.[9:0]SDCLKFrequencySelectValue"                                        , "Memory", 0x4010106C,        2, base=16, readOnly, bitRange=0-9
+sfr = "SD2/presetvalue6.[10]ClockGeneratorSelectValue"                                         , "Memory", 0x4010106C,        2, base=16, readOnly, bitRange=10
+sfr = "SD2/presetvalue6.[15:14]DriverStrengthSelectValue"                                      , "Memory", 0x4010106C,        2, base=16, readOnly, bitRange=14-15
+sfr = "SD2/presetvalue7"                                                                       , "Memory", 0x4010106E,        2, base=16, readOnly
+sfr = "SD2/presetvalue7.[9:0]SDCLKFrequencySelectValue"                                        , "Memory", 0x4010106E,        2, base=16, readOnly, bitRange=0-9
+sfr = "SD2/presetvalue7.[10]ClockGeneratorSelectValue"                                         , "Memory", 0x4010106E,        2, base=16, readOnly, bitRange=10
+sfr = "SD2/presetvalue7.[15:14]DriverStrengthSelectValue"                                      , "Memory", 0x4010106E,        2, base=16, readOnly, bitRange=14-15
+sfr = "SD2/boottimeoutcnt"                                                                     , "Memory", 0x40101070,        4, base=16
+sfr = "SD2/boottimeoutcnt.[31:0]boot_timeoutcnt"                                               , "Memory", 0x40101070,        4, base=16, bitRange=0-31
+sfr = "SD2/slotintrsts"                                                                        , "Memory", 0x401010FC,        2, base=16, readOnly
+sfr = "SD2/slotintrsts.[7:0]sdhchostif_slotintrsts"                                            , "Memory", 0x401010FC,        2, base=16, readOnly, bitRange=0-7
+sfr = "SD2/hostcontrollerver"                                                                  , "Memory", 0x401010FE,        2, base=16, readOnly
+sfr = "SD2/hostcontrollerver.[7:0]SpecificationVersionNumber"                                  , "Memory", 0x401010FE,        2, base=16, readOnly, bitRange=0-7
+sfr = "SD2/hostcontrollerver.[15:8]SDHC_VENVERNUM"                                             , "Memory", 0x401010FE,        2, base=16, readOnly, bitRange=8-15
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// SD2 -----
+group = "SD2","SD2/sdmasysaddrlo","SD2/sdmasysaddrhi","SD2/blocksize","SD2/blockcount","SD2/argument1lo","SD2/argument1hi","SD2/transfermode","SD2/command","SD2/response0","SD2/response1","SD2/response2","SD2/response3","SD2/response4","SD2/response5","SD2/response6","SD2/response7","SD2/dataport","SD2/presentstate","SD2/hostcontrol1","SD2/powercontrol","SD2/blockgapcontrol","SD2/wakeupcontrol","SD2/clockcontrol","SD2/timeoutcontrol","SD2/softwarereset","SD2/normalintrsts","SD2/errorintrsts","SD2/normalintrstsena","SD2/errorintrstsena","SD2/normalintrsigena","SD2/errorintrsigena","SD2/autocmderrsts","SD2/hostcontrol2","SD2/capabilities","SD2/capabilities_cont","SD2/maxcurrentcap","SD2/maxcurrentcap_cont","SD2/ForceEventforAUTOCMDErrorStatus","SD2/forceeventforerrintsts","SD2/admaerrsts","SD2/admasysaddr0","SD2/admasysaddr1","SD2/admasysaddr2","SD2/admasysaddr3","SD2/presetvalue0","SD2/presetvalue1","SD2/presetvalue2","SD2/presetvalue3","SD2/presetvalue4","SD2/presetvalue5","SD2/presetvalue6","SD2/presetvalue7","SD2/boottimeoutcnt","SD2/slotintrsts","SD2/hostcontrollerver"

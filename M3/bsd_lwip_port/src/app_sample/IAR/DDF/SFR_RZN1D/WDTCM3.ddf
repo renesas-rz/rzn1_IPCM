@@ -1,0 +1,22 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : WDTCM3
+;               Watcgdog (CM3)
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "WDT_CM3/CTRL_RETRIGGER"                                                                 , "Memory", 0x4000A000,        4, base=16
+sfr = "WDT_CM3/CTRL_RETRIGGER.[11:0]reload"                                                    , "Memory", 0x4000A000,        4, base=16, bitRange=0-11
+sfr = "WDT_CM3/CTRL_RETRIGGER.[12]Test"                                                        , "Memory", 0x4000A000,        4, base=16, bitRange=12
+sfr = "WDT_CM3/CTRL_RETRIGGER.[15:13]KEY"                                                      , "Memory", 0x4000A000,        4, base=16, bitRange=13-15
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// Watcgdog (CM3) -----
+group = "WDTCM3","WDT_CM3/CTRL_RETRIGGER"

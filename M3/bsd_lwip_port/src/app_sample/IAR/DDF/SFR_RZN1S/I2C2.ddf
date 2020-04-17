@@ -1,0 +1,186 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : I2C2
+;               I2C2
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "I2C2/IC_CON"                                                                            , "Memory", 0x40064000,        4, base=16
+sfr = "I2C2/IC_CON.[0]MASTER_MODE"                                                             , "Memory", 0x40064000,        4, base=16, bitRange=0
+sfr = "I2C2/IC_CON.[2:1]SPEED"                                                                 , "Memory", 0x40064000,        4, base=16, bitRange=1-2
+sfr = "I2C2/IC_CON.[3]IC_10BITADDR_SLAVE"                                                      , "Memory", 0x40064000,        4, base=16, bitRange=3
+sfr = "I2C2/IC_CON.[4]IC_10BITADDR_MASTER_rd_only"                                             , "Memory", 0x40064000,        4, base=16, bitRange=4
+sfr = "I2C2/IC_CON.[5]IC_RESTART_EN"                                                           , "Memory", 0x40064000,        4, base=16, bitRange=5
+sfr = "I2C2/IC_CON.[6]IC_SLAVE_DISABLE"                                                        , "Memory", 0x40064000,        4, base=16, bitRange=6
+sfr = "I2C2/IC_CON.[7]STOP_DET_IFADDRESSED"                                                    , "Memory", 0x40064000,        4, base=16, bitRange=7
+sfr = "I2C2/IC_CON.[8]TX_EMPTY_CTRL"                                                           , "Memory", 0x40064000,        4, base=16, bitRange=8
+sfr = "I2C2/IC_CON.[9]RX_FIFO_FULL_HLD_CTRL"                                                   , "Memory", 0x40064000,        4, base=16, bitRange=9
+sfr = "I2C2/IC_CON.[10]STOP_DET_IF_MASTER_ACTIVE"                                              , "Memory", 0x40064000,        4, base=16, bitRange=10
+sfr = "I2C2/IC_CON.[31:11]RSVD_IC_CON_31to11"                                                  , "Memory", 0x40064000,        4, base=16, bitRange=11-31
+sfr = "I2C2/IC_TAR"                                                                            , "Memory", 0x40064004,        4, base=16
+sfr = "I2C2/IC_TAR.[9:0]IC_TAR"                                                                , "Memory", 0x40064004,        4, base=16, bitRange=0-9
+sfr = "I2C2/IC_TAR.[10]GC_OR_START"                                                            , "Memory", 0x40064004,        4, base=16, bitRange=10
+sfr = "I2C2/IC_TAR.[11]SPECIAL"                                                                , "Memory", 0x40064004,        4, base=16, bitRange=11
+sfr = "I2C2/IC_TAR.[12]IC_10BITADDR_MASTER"                                                    , "Memory", 0x40064004,        4, base=16, bitRange=12
+sfr = "I2C2/IC_SAR"                                                                            , "Memory", 0x40064008,        4, base=16
+sfr = "I2C2/IC_SAR.[9:0]IC_SAR"                                                                , "Memory", 0x40064008,        4, base=16, bitRange=0-9
+sfr = "I2C2/IC_DATA_CMD"                                                                       , "Memory", 0x40064010,        4, base=16
+sfr = "I2C2/IC_DATA_CMD.[7:0]DAT"                                                              , "Memory", 0x40064010,        4, base=16, bitRange=0-7
+sfr = "I2C2/IC_DATA_CMD.[8]CMD"                                                                , "Memory", 0x40064010,        4, base=16, bitRange=8
+sfr = "I2C2/IC_DATA_CMD.[9]STOP"                                                               , "Memory", 0x40064010,        4, base=16, bitRange=9
+sfr = "I2C2/IC_DATA_CMD.[10]RESTART"                                                           , "Memory", 0x40064010,        4, base=16, bitRange=10
+sfr = "I2C2/IC_SS_SCL_HCNT"                                                                    , "Memory", 0x40064014,        4, base=16
+sfr = "I2C2/IC_SS_SCL_HCNT.[15:0]IC_SS_SCL_HCNT"                                               , "Memory", 0x40064014,        4, base=16, bitRange=0-15
+sfr = "I2C2/IC_SS_SCL_LCNT"                                                                    , "Memory", 0x40064018,        4, base=16
+sfr = "I2C2/IC_SS_SCL_LCNT.[15:0]IC_SS_SCL_LCNT"                                               , "Memory", 0x40064018,        4, base=16, bitRange=0-15
+sfr = "I2C2/IC_FS_SCL_HCNT"                                                                    , "Memory", 0x4006401C,        4, base=16
+sfr = "I2C2/IC_FS_SCL_HCNT.[15:0]IC_FS_SCL_HCNT"                                               , "Memory", 0x4006401C,        4, base=16, bitRange=0-15
+sfr = "I2C2/IC_FS_SCL_LCNT"                                                                    , "Memory", 0x40064020,        4, base=16
+sfr = "I2C2/IC_FS_SCL_LCNT.[15:0]IC_FS_SCL_LCNT"                                               , "Memory", 0x40064020,        4, base=16, bitRange=0-15
+sfr = "I2C2/IC_INTR_STAT"                                                                      , "Memory", 0x4006402C,        4, base=16, readOnly
+sfr = "I2C2/IC_INTR_STAT.[0]R_RX_UNDER"                                                        , "Memory", 0x4006402C,        4, base=16, readOnly, bitRange=0
+sfr = "I2C2/IC_INTR_STAT.[1]R_RX_OVER"                                                         , "Memory", 0x4006402C,        4, base=16, readOnly, bitRange=1
+sfr = "I2C2/IC_INTR_STAT.[2]R_RX_FULL"                                                         , "Memory", 0x4006402C,        4, base=16, readOnly, bitRange=2
+sfr = "I2C2/IC_INTR_STAT.[3]R_TX_OVER"                                                         , "Memory", 0x4006402C,        4, base=16, readOnly, bitRange=3
+sfr = "I2C2/IC_INTR_STAT.[4]R_TX_EMPTY"                                                        , "Memory", 0x4006402C,        4, base=16, readOnly, bitRange=4
+sfr = "I2C2/IC_INTR_STAT.[5]R_RD_REQ"                                                          , "Memory", 0x4006402C,        4, base=16, readOnly, bitRange=5
+sfr = "I2C2/IC_INTR_STAT.[6]R_TX_ABRT"                                                         , "Memory", 0x4006402C,        4, base=16, readOnly, bitRange=6
+sfr = "I2C2/IC_INTR_STAT.[7]R_RX_DONE"                                                         , "Memory", 0x4006402C,        4, base=16, readOnly, bitRange=7
+sfr = "I2C2/IC_INTR_STAT.[8]R_ACTIVITY"                                                        , "Memory", 0x4006402C,        4, base=16, readOnly, bitRange=8
+sfr = "I2C2/IC_INTR_STAT.[9]R_STOP_DET"                                                        , "Memory", 0x4006402C,        4, base=16, readOnly, bitRange=9
+sfr = "I2C2/IC_INTR_STAT.[10]R_START_DET"                                                      , "Memory", 0x4006402C,        4, base=16, readOnly, bitRange=10
+sfr = "I2C2/IC_INTR_STAT.[11]R_GEN_CALL"                                                       , "Memory", 0x4006402C,        4, base=16, readOnly, bitRange=11
+sfr = "I2C2/IC_INTR_STAT.[12]R_RESTART_DET"                                                    , "Memory", 0x4006402C,        4, base=16, readOnly, bitRange=12
+sfr = "I2C2/IC_INTR_STAT.[13]R_MASTER_ON_HOLD"                                                 , "Memory", 0x4006402C,        4, base=16, readOnly, bitRange=13
+sfr = "I2C2/IC_INTR_MASK"                                                                      , "Memory", 0x40064030,        4, base=16
+sfr = "I2C2/IC_INTR_MASK.[0]M_RX_UNDER"                                                        , "Memory", 0x40064030,        4, base=16, bitRange=0
+sfr = "I2C2/IC_INTR_MASK.[1]M_RX_OVER"                                                         , "Memory", 0x40064030,        4, base=16, bitRange=1
+sfr = "I2C2/IC_INTR_MASK.[2]M_RX_FULL"                                                         , "Memory", 0x40064030,        4, base=16, bitRange=2
+sfr = "I2C2/IC_INTR_MASK.[3]M_TX_OVER"                                                         , "Memory", 0x40064030,        4, base=16, bitRange=3
+sfr = "I2C2/IC_INTR_MASK.[4]M_TX_EMPTY"                                                        , "Memory", 0x40064030,        4, base=16, bitRange=4
+sfr = "I2C2/IC_INTR_MASK.[5]M_RD_REQ"                                                          , "Memory", 0x40064030,        4, base=16, bitRange=5
+sfr = "I2C2/IC_INTR_MASK.[6]M_TX_ABRT"                                                         , "Memory", 0x40064030,        4, base=16, bitRange=6
+sfr = "I2C2/IC_INTR_MASK.[7]M_RX_DONE"                                                         , "Memory", 0x40064030,        4, base=16, bitRange=7
+sfr = "I2C2/IC_INTR_MASK.[8]M_ACTIVITY"                                                        , "Memory", 0x40064030,        4, base=16, bitRange=8
+sfr = "I2C2/IC_INTR_MASK.[9]M_STOP_DET"                                                        , "Memory", 0x40064030,        4, base=16, bitRange=9
+sfr = "I2C2/IC_INTR_MASK.[10]M_START_DET"                                                      , "Memory", 0x40064030,        4, base=16, bitRange=10
+sfr = "I2C2/IC_INTR_MASK.[11]M_GEN_CALL"                                                       , "Memory", 0x40064030,        4, base=16, bitRange=11
+sfr = "I2C2/IC_INTR_MASK.[12]M_RESTART_DET"                                                    , "Memory", 0x40064030,        4, base=16, bitRange=12
+sfr = "I2C2/IC_INTR_MASK.[13]M_MASTER_ON_HOLD"                                                 , "Memory", 0x40064030,        4, base=16, bitRange=13
+sfr = "I2C2/IC_RAW_INTR_STAT"                                                                  , "Memory", 0x40064034,        4, base=16, readOnly
+sfr = "I2C2/IC_RAW_INTR_STAT.[0]RX_UNDER"                                                      , "Memory", 0x40064034,        4, base=16, readOnly, bitRange=0
+sfr = "I2C2/IC_RAW_INTR_STAT.[1]RX_OVER"                                                       , "Memory", 0x40064034,        4, base=16, readOnly, bitRange=1
+sfr = "I2C2/IC_RAW_INTR_STAT.[2]RX_FULL"                                                       , "Memory", 0x40064034,        4, base=16, readOnly, bitRange=2
+sfr = "I2C2/IC_RAW_INTR_STAT.[3]TX_OVER"                                                       , "Memory", 0x40064034,        4, base=16, readOnly, bitRange=3
+sfr = "I2C2/IC_RAW_INTR_STAT.[4]TX_EMPTY"                                                      , "Memory", 0x40064034,        4, base=16, readOnly, bitRange=4
+sfr = "I2C2/IC_RAW_INTR_STAT.[5]RD_REQ"                                                        , "Memory", 0x40064034,        4, base=16, readOnly, bitRange=5
+sfr = "I2C2/IC_RAW_INTR_STAT.[6]TX_ABRT"                                                       , "Memory", 0x40064034,        4, base=16, readOnly, bitRange=6
+sfr = "I2C2/IC_RAW_INTR_STAT.[7]RX_DONE"                                                       , "Memory", 0x40064034,        4, base=16, readOnly, bitRange=7
+sfr = "I2C2/IC_RAW_INTR_STAT.[8]RAW_INTR_ACTIVITY"                                             , "Memory", 0x40064034,        4, base=16, readOnly, bitRange=8
+sfr = "I2C2/IC_RAW_INTR_STAT.[9]STOP_DET"                                                      , "Memory", 0x40064034,        4, base=16, readOnly, bitRange=9
+sfr = "I2C2/IC_RAW_INTR_STAT.[10]START_DET"                                                    , "Memory", 0x40064034,        4, base=16, readOnly, bitRange=10
+sfr = "I2C2/IC_RAW_INTR_STAT.[11]GEN_CALL"                                                     , "Memory", 0x40064034,        4, base=16, readOnly, bitRange=11
+sfr = "I2C2/IC_RAW_INTR_STAT.[12]RESTART_DET"                                                  , "Memory", 0x40064034,        4, base=16, readOnly, bitRange=12
+sfr = "I2C2/IC_RAW_INTR_STAT.[13]MASTER_ON_HOLD"                                               , "Memory", 0x40064034,        4, base=16, readOnly, bitRange=13
+sfr = "I2C2/IC_RX_TL"                                                                          , "Memory", 0x40064038,        4, base=16
+sfr = "I2C2/IC_RX_TL.[7:0]RX_TL"                                                               , "Memory", 0x40064038,        4, base=16, bitRange=0-7
+sfr = "I2C2/IC_TX_TL"                                                                          , "Memory", 0x4006403C,        4, base=16
+sfr = "I2C2/IC_TX_TL.[7:0]TX_TL"                                                               , "Memory", 0x4006403C,        4, base=16, bitRange=0-7
+sfr = "I2C2/IC_CLR_INTR"                                                                       , "Memory", 0x40064040,        4, base=16, readOnly
+sfr = "I2C2/IC_CLR_INTR.[0]CLR_INTR"                                                           , "Memory", 0x40064040,        4, base=16, readOnly, bitRange=0
+sfr = "I2C2/IC_CLR_RX_UNDER"                                                                   , "Memory", 0x40064044,        4, base=16, readOnly
+sfr = "I2C2/IC_CLR_RX_UNDER.[0]CLR_RX_UNDER"                                                   , "Memory", 0x40064044,        4, base=16, readOnly, bitRange=0
+sfr = "I2C2/IC_CLR_RX_OVER"                                                                    , "Memory", 0x40064048,        4, base=16, readOnly
+sfr = "I2C2/IC_CLR_RX_OVER.[0]CLR_RX_OVER"                                                     , "Memory", 0x40064048,        4, base=16, readOnly, bitRange=0
+sfr = "I2C2/IC_CLR_TX_OVER"                                                                    , "Memory", 0x4006404C,        4, base=16, readOnly
+sfr = "I2C2/IC_CLR_TX_OVER.[0]CLR_TX_OVER"                                                     , "Memory", 0x4006404C,        4, base=16, readOnly, bitRange=0
+sfr = "I2C2/IC_CLR_RD_REQ"                                                                     , "Memory", 0x40064050,        4, base=16, readOnly
+sfr = "I2C2/IC_CLR_RD_REQ.[0]CLR_RD_REQ"                                                       , "Memory", 0x40064050,        4, base=16, readOnly, bitRange=0
+sfr = "I2C2/IC_CLR_TX_ABRT"                                                                    , "Memory", 0x40064054,        4, base=16, readOnly
+sfr = "I2C2/IC_CLR_TX_ABRT.[0]CLR_TX_ABRT"                                                     , "Memory", 0x40064054,        4, base=16, readOnly, bitRange=0
+sfr = "I2C2/IC_CLR_RX_DONE"                                                                    , "Memory", 0x40064058,        4, base=16, readOnly
+sfr = "I2C2/IC_CLR_RX_DONE.[0]CLR_RX_DONE"                                                     , "Memory", 0x40064058,        4, base=16, readOnly, bitRange=0
+sfr = "I2C2/IC_CLR_ACTIVITY"                                                                   , "Memory", 0x4006405C,        4, base=16, readOnly
+sfr = "I2C2/IC_CLR_ACTIVITY.[0]CLR_ACTIVITY"                                                   , "Memory", 0x4006405C,        4, base=16, readOnly, bitRange=0
+sfr = "I2C2/IC_CLR_STOP_DET"                                                                   , "Memory", 0x40064060,        4, base=16, readOnly
+sfr = "I2C2/IC_CLR_STOP_DET.[0]CLR_STOP_DET"                                                   , "Memory", 0x40064060,        4, base=16, readOnly, bitRange=0
+sfr = "I2C2/IC_CLR_START_DET"                                                                  , "Memory", 0x40064064,        4, base=16, readOnly
+sfr = "I2C2/IC_CLR_START_DET.[0]CLR_START_DET"                                                 , "Memory", 0x40064064,        4, base=16, readOnly, bitRange=0
+sfr = "I2C2/IC_CLR_GEN_CALL"                                                                   , "Memory", 0x40064068,        4, base=16, readOnly
+sfr = "I2C2/IC_CLR_GEN_CALL.[0]CLR_GEN_CALL"                                                   , "Memory", 0x40064068,        4, base=16, readOnly, bitRange=0
+sfr = "I2C2/IC_ENABLE"                                                                         , "Memory", 0x4006406C,        4, base=16
+sfr = "I2C2/IC_ENABLE.[0]ENABLE"                                                               , "Memory", 0x4006406C,        4, base=16, bitRange=0
+sfr = "I2C2/IC_ENABLE.[1]ABORT"                                                                , "Memory", 0x4006406C,        4, base=16, bitRange=1
+sfr = "I2C2/IC_ENABLE.[2]TX_CMD_BLOCK"                                                         , "Memory", 0x4006406C,        4, base=16, bitRange=2
+sfr = "I2C2/IC_STATUS"                                                                         , "Memory", 0x40064070,        4, base=16, readOnly
+sfr = "I2C2/IC_STATUS.[0]IC_STATUS_ACTIVITY"                                                   , "Memory", 0x40064070,        4, base=16, readOnly, bitRange=0
+sfr = "I2C2/IC_STATUS.[1]TFNF"                                                                 , "Memory", 0x40064070,        4, base=16, readOnly, bitRange=1
+sfr = "I2C2/IC_STATUS.[2]TFE"                                                                  , "Memory", 0x40064070,        4, base=16, readOnly, bitRange=2
+sfr = "I2C2/IC_STATUS.[3]RFNE"                                                                 , "Memory", 0x40064070,        4, base=16, readOnly, bitRange=3
+sfr = "I2C2/IC_STATUS.[4]RFF"                                                                  , "Memory", 0x40064070,        4, base=16, readOnly, bitRange=4
+sfr = "I2C2/IC_STATUS.[5]MST_ACTIVITY"                                                         , "Memory", 0x40064070,        4, base=16, readOnly, bitRange=5
+sfr = "I2C2/IC_STATUS.[6]SLV_ACTIVITY"                                                         , "Memory", 0x40064070,        4, base=16, readOnly, bitRange=6
+sfr = "I2C2/IC_TXFLR"                                                                          , "Memory", 0x40064074,        4, base=16, readOnly
+sfr = "I2C2/IC_TXFLR.[3:0]TXFLR"                                                               , "Memory", 0x40064074,        4, base=16, readOnly, bitRange=0-3
+sfr = "I2C2/IC_RXFLR"                                                                          , "Memory", 0x40064078,        4, base=16, readOnly
+sfr = "I2C2/IC_RXFLR.[3:0]RXFLR"                                                               , "Memory", 0x40064078,        4, base=16, readOnly, bitRange=0-3
+sfr = "I2C2/IC_SDA_HOLD"                                                                       , "Memory", 0x4006407C,        4, base=16
+sfr = "I2C2/IC_SDA_HOLD.[15:0]IC_SDA_TX_HOLD"                                                  , "Memory", 0x4006407C,        4, base=16, bitRange=0-15
+sfr = "I2C2/IC_SDA_HOLD.[23:16]IC_SDA_RX_HOLD"                                                 , "Memory", 0x4006407C,        4, base=16, bitRange=16-23
+sfr = "I2C2/IC_TX_ABRT_SOURCE"                                                                 , "Memory", 0x40064080,        4, base=16, readOnly
+sfr = "I2C2/IC_TX_ABRT_SOURCE.[0]ABRT_7B_ADDR_NOACK"                                           , "Memory", 0x40064080,        4, base=16, readOnly, bitRange=0
+sfr = "I2C2/IC_TX_ABRT_SOURCE.[1]ABRT_10ADDR1_NOACK"                                           , "Memory", 0x40064080,        4, base=16, readOnly, bitRange=1
+sfr = "I2C2/IC_TX_ABRT_SOURCE.[2]ABRT_10ADDR2_NOACK"                                           , "Memory", 0x40064080,        4, base=16, readOnly, bitRange=2
+sfr = "I2C2/IC_TX_ABRT_SOURCE.[3]ABRT_TXDATA_NOACK"                                            , "Memory", 0x40064080,        4, base=16, readOnly, bitRange=3
+sfr = "I2C2/IC_TX_ABRT_SOURCE.[4]ABRT_GCALL_NOACK"                                             , "Memory", 0x40064080,        4, base=16, readOnly, bitRange=4
+sfr = "I2C2/IC_TX_ABRT_SOURCE.[5]ABRT_GCALL_READ"                                              , "Memory", 0x40064080,        4, base=16, readOnly, bitRange=5
+sfr = "I2C2/IC_TX_ABRT_SOURCE.[6]ABRT_HS_ACKDET"                                               , "Memory", 0x40064080,        4, base=16, readOnly, bitRange=6
+sfr = "I2C2/IC_TX_ABRT_SOURCE.[7]ABRT_SBYTE_ACKDET"                                            , "Memory", 0x40064080,        4, base=16, readOnly, bitRange=7
+sfr = "I2C2/IC_TX_ABRT_SOURCE.[8]ABRT_HS_NORSTRT"                                              , "Memory", 0x40064080,        4, base=16, readOnly, bitRange=8
+sfr = "I2C2/IC_TX_ABRT_SOURCE.[9]ABRT_SBYTE_NORSTRT"                                           , "Memory", 0x40064080,        4, base=16, readOnly, bitRange=9
+sfr = "I2C2/IC_TX_ABRT_SOURCE.[10]ABRT_10B_RD_NORSTRT"                                         , "Memory", 0x40064080,        4, base=16, readOnly, bitRange=10
+sfr = "I2C2/IC_TX_ABRT_SOURCE.[11]ABRT_MASTER_DIS"                                             , "Memory", 0x40064080,        4, base=16, readOnly, bitRange=11
+sfr = "I2C2/IC_TX_ABRT_SOURCE.[12]ARB_LOST"                                                    , "Memory", 0x40064080,        4, base=16, readOnly, bitRange=12
+sfr = "I2C2/IC_TX_ABRT_SOURCE.[13]ABRT_SLVFLUSH_TXFIFO"                                        , "Memory", 0x40064080,        4, base=16, readOnly, bitRange=13
+sfr = "I2C2/IC_TX_ABRT_SOURCE.[14]ABRT_SLV_ARBLOST"                                            , "Memory", 0x40064080,        4, base=16, readOnly, bitRange=14
+sfr = "I2C2/IC_TX_ABRT_SOURCE.[15]ABRT_SLVRD_INTX"                                             , "Memory", 0x40064080,        4, base=16, readOnly, bitRange=15
+sfr = "I2C2/IC_TX_ABRT_SOURCE.[16]ABRT_USER_ABRT"                                              , "Memory", 0x40064080,        4, base=16, readOnly, bitRange=16
+sfr = "I2C2/IC_TX_ABRT_SOURCE.[22:17]RSVD_IC_TX_ABRT_SOURCE_22to17"                            , "Memory", 0x40064080,        4, base=16, readOnly, bitRange=17-22
+sfr = "I2C2/IC_TX_ABRT_SOURCE.[31:23]TX_FLUSH_CNT"                                             , "Memory", 0x40064080,        4, base=16, readOnly, bitRange=23-31
+sfr = "I2C2/IC_SLV_DATA_NACK_ONLY"                                                             , "Memory", 0x40064084,        4, base=16
+sfr = "I2C2/IC_SLV_DATA_NACK_ONLY.[0]NACK"                                                     , "Memory", 0x40064084,        4, base=16, bitRange=0
+sfr = "I2C2/IC_SDA_SETUP"                                                                      , "Memory", 0x40064094,        4, base=16
+sfr = "I2C2/IC_SDA_SETUP.[7:0]SDA_SETUP"                                                       , "Memory", 0x40064094,        4, base=16, bitRange=0-7
+sfr = "I2C2/IC_ACK_GENERAL_CALL"                                                               , "Memory", 0x40064098,        4, base=16
+sfr = "I2C2/IC_ACK_GENERAL_CALL.[0]ACK_GEN_CALL"                                               , "Memory", 0x40064098,        4, base=16, bitRange=0
+sfr = "I2C2/IC_ACK_GENERAL_CALL.[31:1]RSVD_IC_ACK_GEN_31to1"                                   , "Memory", 0x40064098,        4, base=16, bitRange=1-31
+sfr = "I2C2/IC_ENABLE_STATUS"                                                                  , "Memory", 0x4006409C,        4, base=16, readOnly
+sfr = "I2C2/IC_ENABLE_STATUS.[0]IC_EN"                                                         , "Memory", 0x4006409C,        4, base=16, readOnly, bitRange=0
+sfr = "I2C2/IC_ENABLE_STATUS.[1]SLV_DISABLED_WHILE_BUSY"                                       , "Memory", 0x4006409C,        4, base=16, readOnly, bitRange=1
+sfr = "I2C2/IC_ENABLE_STATUS.[2]SLV_RX_DATA_LOST"                                              , "Memory", 0x4006409C,        4, base=16, readOnly, bitRange=2
+sfr = "I2C2/IC_FS_SPKLEN"                                                                      , "Memory", 0x400640A0,        4, base=16
+sfr = "I2C2/IC_FS_SPKLEN.[7:0]IC_FS_SPKLEN"                                                    , "Memory", 0x400640A0,        4, base=16, bitRange=0-7
+sfr = "I2C2/IC_CLR_RESTART_DET"                                                                , "Memory", 0x400640A8,        4, base=16, readOnly
+sfr = "I2C2/IC_CLR_RESTART_DET.[0]CLR_RESTART_DET"                                             , "Memory", 0x400640A8,        4, base=16, readOnly, bitRange=0
+sfr = "I2C2/IC_COMP_PARAM_1"                                                                   , "Memory", 0x400640F4,        4, base=16, readOnly
+sfr = "I2C2/IC_COMP_PARAM_1.[1:0]APB_DATA_WIDTH"                                               , "Memory", 0x400640F4,        4, base=16, readOnly, bitRange=0-1
+sfr = "I2C2/IC_COMP_PARAM_1.[3:2]MAX_SPEED_MODE"                                               , "Memory", 0x400640F4,        4, base=16, readOnly, bitRange=2-3
+sfr = "I2C2/IC_COMP_PARAM_1.[4]HC_COUNT_VALUES"                                                , "Memory", 0x400640F4,        4, base=16, readOnly, bitRange=4
+sfr = "I2C2/IC_COMP_PARAM_1.[5]INTR_IO"                                                        , "Memory", 0x400640F4,        4, base=16, readOnly, bitRange=5
+sfr = "I2C2/IC_COMP_PARAM_1.[6]HAS_DMA"                                                        , "Memory", 0x400640F4,        4, base=16, readOnly, bitRange=6
+sfr = "I2C2/IC_COMP_PARAM_1.[7]ADD_ENCODED_PARAMS"                                             , "Memory", 0x400640F4,        4, base=16, readOnly, bitRange=7
+sfr = "I2C2/IC_COMP_PARAM_1.[15:8]RX_BUFFER_DEPTH"                                             , "Memory", 0x400640F4,        4, base=16, readOnly, bitRange=8-15
+sfr = "I2C2/IC_COMP_PARAM_1.[23:16]TX_BUFFER_DEPTH"                                            , "Memory", 0x400640F4,        4, base=16, readOnly, bitRange=16-23
+sfr = "I2C2/IC_COMP_VERSION"                                                                   , "Memory", 0x400640F8,        4, base=16, readOnly
+sfr = "I2C2/IC_COMP_TYPE"                                                                      , "Memory", 0x400640FC,        4, base=16, readOnly
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// I2C2 -----
+group = "I2C2","I2C2/IC_CON","I2C2/IC_TAR","I2C2/IC_SAR","I2C2/IC_DATA_CMD","I2C2/IC_SS_SCL_HCNT","I2C2/IC_SS_SCL_LCNT","I2C2/IC_FS_SCL_HCNT","I2C2/IC_FS_SCL_LCNT","I2C2/IC_INTR_STAT","I2C2/IC_INTR_MASK","I2C2/IC_RAW_INTR_STAT","I2C2/IC_RX_TL","I2C2/IC_TX_TL","I2C2/IC_CLR_INTR","I2C2/IC_CLR_RX_UNDER","I2C2/IC_CLR_RX_OVER","I2C2/IC_CLR_TX_OVER","I2C2/IC_CLR_RD_REQ","I2C2/IC_CLR_TX_ABRT","I2C2/IC_CLR_RX_DONE","I2C2/IC_CLR_ACTIVITY","I2C2/IC_CLR_STOP_DET","I2C2/IC_CLR_START_DET","I2C2/IC_CLR_GEN_CALL","I2C2/IC_ENABLE","I2C2/IC_STATUS","I2C2/IC_TXFLR","I2C2/IC_RXFLR","I2C2/IC_SDA_HOLD","I2C2/IC_TX_ABRT_SOURCE","I2C2/IC_SLV_DATA_NACK_ONLY","I2C2/IC_SDA_SETUP","I2C2/IC_ACK_GENERAL_CALL","I2C2/IC_ENABLE_STATUS","I2C2/IC_FS_SPKLEN","I2C2/IC_CLR_RESTART_DET","I2C2/IC_COMP_PARAM_1","I2C2/IC_COMP_VERSION","I2C2/IC_COMP_TYPE"

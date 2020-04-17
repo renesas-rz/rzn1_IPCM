@@ -1,0 +1,142 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : DSIG
+;               DeltaSigma
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "MUXTRIG_CREST"                                                                          , "Memory", 0x4006C000,        4, base=16
+sfr = "MUXTRIG_CREST.[2:0]MUXTRIG_CREST0"                                                      , "Memory", 0x4006C000,        4, base=16, bitRange=0-2
+sfr = "MUXTRIG_CREST.[5:3]MUXTRIG_CREST1"                                                      , "Memory", 0x4006C000,        4, base=16, bitRange=3-5
+sfr = "MUXTRIG_CREST.[8:6]MUXTRIG_CREST2"                                                      , "Memory", 0x4006C000,        4, base=16, bitRange=6-8
+sfr = "MUXTRIG_CREST.[11:9]MUXTRIG_CREST3"                                                     , "Memory", 0x4006C000,        4, base=16, bitRange=9-11
+sfr = "MUXTRIG_CREST.[14:12]MUXTRIG_CREST4"                                                    , "Memory", 0x4006C000,        4, base=16, bitRange=12-14
+sfr = "MUXTRIG_CREST.[17:15]MUXTRIG_CREST5"                                                    , "Memory", 0x4006C000,        4, base=16, bitRange=15-17
+sfr = "MUXTRIG_CREST.[23:18]CREST_ENABLE"                                                      , "Memory", 0x4006C000,        4, base=16, bitRange=18-23
+sfr = "MUXTRIG_VALLEY"                                                                         , "Memory", 0x4006C004,        4, base=16
+sfr = "MUXTRIG_VALLEY.[2:0]MUXTRIG_VALLEY0"                                                    , "Memory", 0x4006C004,        4, base=16, bitRange=0-2
+sfr = "MUXTRIG_VALLEY.[5:3]MUXTRIG_VALLEY1"                                                    , "Memory", 0x4006C004,        4, base=16, bitRange=3-5
+sfr = "MUXTRIG_VALLEY.[8:6]MUXTRIG_VALLEY2"                                                    , "Memory", 0x4006C004,        4, base=16, bitRange=6-8
+sfr = "MUXTRIG_VALLEY.[11:9]MUXTRIG_VALLEY3"                                                   , "Memory", 0x4006C004,        4, base=16, bitRange=9-11
+sfr = "MUXTRIG_VALLEY.[14:12]MUXTRIG_VALLEY4"                                                  , "Memory", 0x4006C004,        4, base=16, bitRange=12-14
+sfr = "MUXTRIG_VALLEY.[17:15]MUXTRIG_VALLEY5"                                                  , "Memory", 0x4006C004,        4, base=16, bitRange=15-17
+sfr = "MUXTRIG_VALLEY.[23:18]VALLEY_ENABLE"                                                    , "Memory", 0x4006C004,        4, base=16, bitRange=18-23
+sfr = "INT_CTRL"                                                                               , "Memory", 0x4006C008,        4, base=16
+sfr = "INT_CTRL.[5:0]IRQ_MASK"                                                                 , "Memory", 0x4006C008,        4, base=16, bitRange=0-5
+sfr = "INT_CTRL.[6]IRQ_CLEAR"                                                                  , "Memory", 0x4006C008,        4, base=16, bitRange=6
+sfr = "MCLK_EDGECTRL"                                                                          , "Memory", 0x4006C00C,        4, base=16
+sfr = "MCLK_EDGECTRL.[5:0]MCLKIN_EDGECTRL"                                                     , "Memory", 0x4006C00C,        4, base=16, bitRange=0-5
+sfr = "MCLK_EDGECTRL.[11:6]MCLKOUT_EDGECTRL"                                                   , "Memory", 0x4006C00C,        4, base=16, bitRange=6-11
+sfr = "CTRL_UVW"                                                                               , "Memory", 0x4006C200,        4, base=16
+sfr = "CTRL_UVW.[0]MCLK_ENABLE"                                                                , "Memory", 0x4006C200,        4, base=16, bitRange=0
+sfr = "CTRL_UVW.[1]MCLK_SRC"                                                                   , "Memory", 0x4006C200,        4, base=16, bitRange=1
+sfr = "CTRL_UVW.[2]MCLK_POL"                                                                   , "Memory", 0x4006C200,        4, base=16, bitRange=2
+sfr = "CTRL_UVW.[7:4]MCLK_DIV"                                                                 , "Memory", 0x4006C200,        4, base=16, bitRange=4-7
+sfr = "CTRL_UVW.[9:8]SINC_1_SEL"                                                               , "Memory", 0x4006C200,        4, base=16, bitRange=8-9
+sfr = "CTRL_UVW.[14:12]WORD_1_GEN"                                                             , "Memory", 0x4006C200,        4, base=16, bitRange=12-14
+sfr = "CTRL_UVW.[19:16]BITSHIFT_1"                                                             , "Memory", 0x4006C200,        4, base=16, bitRange=16-19
+sfr = "CTRL_UVW.[21:20]SINC_2_SEL"                                                             , "Memory", 0x4006C200,        4, base=16, bitRange=20-21
+sfr = "CTRL_UVW.[26:24]WORD_2_GEN"                                                             , "Memory", 0x4006C200,        4, base=16, bitRange=24-26
+sfr = "CTRL_UVW.[31:28]BITSHIFT_2"                                                             , "Memory", 0x4006C200,        4, base=16, bitRange=28-31
+sfr = "STATUS_INT_UVW"                                                                         , "Memory", 0x4006C204,        4, base=16
+sfr = "STATUS_INT_UVW.[2:0]StatusInt_I"                                                        , "Memory", 0x4006C204,        4, base=16, bitRange=0-2
+sfr = "STATUS_INT_UVW.[6:4]StatusInt_HZ"                                                       , "Memory", 0x4006C204,        4, base=16, bitRange=4-6
+sfr = "STATUS_INT_UVW.[8]StatusInt_IGND"                                                       , "Memory", 0x4006C204,        4, base=16, bitRange=8
+sfr = "CMP_UVW_I_Under"                                                                        , "Memory", 0x4006C208,        4, base=16
+sfr = "CMP_UVW_I_Under.[15:0]CMP_I_Under"                                                      , "Memory", 0x4006C208,        4, base=16, bitRange=0-15
+sfr = "CMP_UVW_I_Over"                                                                         , "Memory", 0x4006C20C,        4, base=16
+sfr = "CMP_UVW_I_Over.[15:0]CMP_I_Over"                                                        , "Memory", 0x4006C20C,        4, base=16, bitRange=0-15
+sfr = "CMP_UVW_HZ_Under"                                                                       , "Memory", 0x4006C210,        4, base=16
+sfr = "CMP_UVW_HZ_Under.[12:0]CMP_HZ_Under"                                                    , "Memory", 0x4006C210,        4, base=16, bitRange=0-12
+sfr = "CMP_UVW_HZ_Over"                                                                        , "Memory", 0x4006C214,        4, base=16
+sfr = "CMP_UVW_HZ_Over.[12:0]CMP_HZ_Over"                                                      , "Memory", 0x4006C214,        4, base=16, bitRange=0-12
+sfr = "CMP_UVW_IGND_Under"                                                                     , "Memory", 0x4006C218,        4, base=16
+sfr = "CMP_UVW_IGND_Under.[17:0]CMP_IGND_Under"                                                , "Memory", 0x4006C218,        4, base=16, bitRange=0-17
+sfr = "CMP_UVW_IGND_Over"                                                                      , "Memory", 0x4006C21C,        4, base=16
+sfr = "CMP_UVW_IGND_Over.[17:0]CMP_IGND_Over"                                                  , "Memory", 0x4006C21C,        4, base=16, bitRange=0-17
+sfr = "DATA_U1"                                                                                , "Memory", 0x4006C220,        4, base=16, readOnly
+sfr = "DATA_U1.[15:0]DATA1"                                                                    , "Memory", 0x4006C220,        4, base=16, readOnly, bitRange=0-15
+sfr = "DATA_U1_CREST"                                                                          , "Memory", 0x4006C224,        4, base=16, readOnly
+sfr = "DATA_U1_CREST.[15:0]DATA1_CREST"                                                        , "Memory", 0x4006C224,        4, base=16, readOnly, bitRange=0-15
+sfr = "DATA_U1_VALLEY"                                                                         , "Memory", 0x4006C228,        4, base=16, readOnly
+sfr = "DATA_U1_VALLEY.[15:0]DATA1_VALLEY"                                                      , "Memory", 0x4006C228,        4, base=16, readOnly, bitRange=0-15
+sfr = "DATA_U2"                                                                                , "Memory", 0x4006C22C,        4, base=16, readOnly
+sfr = "DATA_U2.[15:0]DATA2"                                                                    , "Memory", 0x4006C22C,        4, base=16, readOnly, bitRange=0-15
+sfr = "DATA_V1"                                                                                , "Memory", 0x4006C230,        4, base=16, readOnly
+sfr = "DATA_V1.[15:0]DATA1"                                                                    , "Memory", 0x4006C230,        4, base=16, readOnly, bitRange=0-15
+sfr = "DATA_V1_CREST"                                                                          , "Memory", 0x4006C234,        4, base=16, readOnly
+sfr = "DATA_V1_CREST.[15:0]DATA1_CREST"                                                        , "Memory", 0x4006C234,        4, base=16, readOnly, bitRange=0-15
+sfr = "DATA_V1_VALLEY"                                                                         , "Memory", 0x4006C238,        4, base=16, readOnly
+sfr = "DATA_V1_VALLEY.[15:0]DATA1_VALLEY"                                                      , "Memory", 0x4006C238,        4, base=16, readOnly, bitRange=0-15
+sfr = "DATA_V2"                                                                                , "Memory", 0x4006C23C,        4, base=16, readOnly
+sfr = "DATA_V2.[15:0]DATA2"                                                                    , "Memory", 0x4006C23C,        4, base=16, readOnly, bitRange=0-15
+sfr = "DATA_W1"                                                                                , "Memory", 0x4006C240,        4, base=16, readOnly
+sfr = "DATA_W1.[15:0]DATA1"                                                                    , "Memory", 0x4006C240,        4, base=16, readOnly, bitRange=0-15
+sfr = "DATA_W1_CREST"                                                                          , "Memory", 0x4006C244,        4, base=16, readOnly
+sfr = "DATA_W1_CREST.[15:0]DATA1_CREST"                                                        , "Memory", 0x4006C244,        4, base=16, readOnly, bitRange=0-15
+sfr = "DATA_W1_VALLEY"                                                                         , "Memory", 0x4006C248,        4, base=16, readOnly
+sfr = "DATA_W1_VALLEY.[15:0]DATA1_VALLEY"                                                      , "Memory", 0x4006C248,        4, base=16, readOnly, bitRange=0-15
+sfr = "DATA_W2"                                                                                , "Memory", 0x4006C24C,        4, base=16, readOnly
+sfr = "DATA_W2.[15:0]DATA2"                                                                    , "Memory", 0x4006C24C,        4, base=16, readOnly, bitRange=0-15
+sfr = "CTRL_XYZ"                                                                               , "Memory", 0x4006C280,        4, base=16
+sfr = "CTRL_XYZ.[0]MCLK_ENABLE"                                                                , "Memory", 0x4006C280,        4, base=16, bitRange=0
+sfr = "CTRL_XYZ.[1]MCLK_SRC"                                                                   , "Memory", 0x4006C280,        4, base=16, bitRange=1
+sfr = "CTRL_XYZ.[2]MCLK_POL"                                                                   , "Memory", 0x4006C280,        4, base=16, bitRange=2
+sfr = "CTRL_XYZ.[7:4]MCLK_DIV"                                                                 , "Memory", 0x4006C280,        4, base=16, bitRange=4-7
+sfr = "CTRL_XYZ.[9:8]SINC_1_SEL"                                                               , "Memory", 0x4006C280,        4, base=16, bitRange=8-9
+sfr = "CTRL_XYZ.[14:12]WORD_1_GEN"                                                             , "Memory", 0x4006C280,        4, base=16, bitRange=12-14
+sfr = "CTRL_XYZ.[19:16]BITSHIFT_1"                                                             , "Memory", 0x4006C280,        4, base=16, bitRange=16-19
+sfr = "CTRL_XYZ.[21:20]SINC_2_SEL"                                                             , "Memory", 0x4006C280,        4, base=16, bitRange=20-21
+sfr = "CTRL_XYZ.[26:24]WORD_2_GEN"                                                             , "Memory", 0x4006C280,        4, base=16, bitRange=24-26
+sfr = "CTRL_XYZ.[31:28]BITSHIFT_2"                                                             , "Memory", 0x4006C280,        4, base=16, bitRange=28-31
+sfr = "STATUS_INT_XYZ"                                                                         , "Memory", 0x4006C284,        4, base=16
+sfr = "STATUS_INT_XYZ.[2:0]StatusInt_I"                                                        , "Memory", 0x4006C284,        4, base=16, bitRange=0-2
+sfr = "STATUS_INT_XYZ.[6:4]StatusInt_HZ"                                                       , "Memory", 0x4006C284,        4, base=16, bitRange=4-6
+sfr = "STATUS_INT_XYZ.[8]StatusInt_IGND"                                                       , "Memory", 0x4006C284,        4, base=16, bitRange=8
+sfr = "CMP_XYZ_I_Under"                                                                        , "Memory", 0x4006C288,        4, base=16
+sfr = "CMP_XYZ_I_Under.[15:0]CMP_I_Under"                                                      , "Memory", 0x4006C288,        4, base=16, bitRange=0-15
+sfr = "CMP_XYZ_I_Over"                                                                         , "Memory", 0x4006C28C,        4, base=16
+sfr = "CMP_XYZ_I_Over.[15:0]CMP_I_Over"                                                        , "Memory", 0x4006C28C,        4, base=16, bitRange=0-15
+sfr = "CMP_XYZ_HZ_Under"                                                                       , "Memory", 0x4006C290,        4, base=16
+sfr = "CMP_XYZ_HZ_Under.[12:0]CMP_HZ_Under"                                                    , "Memory", 0x4006C290,        4, base=16, bitRange=0-12
+sfr = "CMP_XYZ_HZ_Over"                                                                        , "Memory", 0x4006C294,        4, base=16
+sfr = "CMP_XYZ_HZ_Over.[12:0]CMP_HZ_Over"                                                      , "Memory", 0x4006C294,        4, base=16, bitRange=0-12
+sfr = "CMP_XYZ_IGND_Under"                                                                     , "Memory", 0x4006C298,        4, base=16
+sfr = "CMP_XYZ_IGND_Under.[17:0]CMP_IGND_Under"                                                , "Memory", 0x4006C298,        4, base=16, bitRange=0-17
+sfr = "CMP_XYZ_IGND_Over"                                                                      , "Memory", 0x4006C29C,        4, base=16
+sfr = "CMP_XYZ_IGND_Over.[17:0]CMP_IGND_Over"                                                  , "Memory", 0x4006C29C,        4, base=16, bitRange=0-17
+sfr = "DATA_X1"                                                                                , "Memory", 0x4006C2A0,        4, base=16, readOnly
+sfr = "DATA_X1.[15:0]DATA1"                                                                    , "Memory", 0x4006C2A0,        4, base=16, readOnly, bitRange=0-15
+sfr = "DATA_X1_CREST"                                                                          , "Memory", 0x4006C2A4,        4, base=16, readOnly
+sfr = "DATA_X1_CREST.[15:0]DATA1_CREST"                                                        , "Memory", 0x4006C2A4,        4, base=16, readOnly, bitRange=0-15
+sfr = "DATA_X1_VALLEY"                                                                         , "Memory", 0x4006C2A8,        4, base=16, readOnly
+sfr = "DATA_X1_VALLEY.[15:0]DATA1_VALLEY"                                                      , "Memory", 0x4006C2A8,        4, base=16, readOnly, bitRange=0-15
+sfr = "DATA_X2"                                                                                , "Memory", 0x4006C2AC,        4, base=16, readOnly
+sfr = "DATA_X2.[15:0]DATA2"                                                                    , "Memory", 0x4006C2AC,        4, base=16, readOnly, bitRange=0-15
+sfr = "DATA_Y1"                                                                                , "Memory", 0x4006C2B0,        4, base=16, readOnly
+sfr = "DATA_Y1.[15:0]DATA1"                                                                    , "Memory", 0x4006C2B0,        4, base=16, readOnly, bitRange=0-15
+sfr = "DATA_Y1_CREST"                                                                          , "Memory", 0x4006C2B4,        4, base=16, readOnly
+sfr = "DATA_Y1_CREST.[15:0]DATA1_CREST"                                                        , "Memory", 0x4006C2B4,        4, base=16, readOnly, bitRange=0-15
+sfr = "DATA_Y1_VALLEY"                                                                         , "Memory", 0x4006C2B8,        4, base=16, readOnly
+sfr = "DATA_Y1_VALLEY.[15:0]DATA1_VALLEY"                                                      , "Memory", 0x4006C2B8,        4, base=16, readOnly, bitRange=0-15
+sfr = "DATA_Y2"                                                                                , "Memory", 0x4006C2BC,        4, base=16, readOnly
+sfr = "DATA_Y2.[15:0]DATA2"                                                                    , "Memory", 0x4006C2BC,        4, base=16, readOnly, bitRange=0-15
+sfr = "DATA_Z1"                                                                                , "Memory", 0x4006C2C0,        4, base=16, readOnly
+sfr = "DATA_Z1.[15:0]DATA1"                                                                    , "Memory", 0x4006C2C0,        4, base=16, readOnly, bitRange=0-15
+sfr = "DATA_Z1_CREST"                                                                          , "Memory", 0x4006C2C4,        4, base=16, readOnly
+sfr = "DATA_Z1_CREST.[15:0]DATA1_CREST"                                                        , "Memory", 0x4006C2C4,        4, base=16, readOnly, bitRange=0-15
+sfr = "DATA_Z1_VALLEY"                                                                         , "Memory", 0x4006C2C8,        4, base=16, readOnly
+sfr = "DATA_Z1_VALLEY.[15:0]DATA1_VALLEY"                                                      , "Memory", 0x4006C2C8,        4, base=16, readOnly, bitRange=0-15
+sfr = "DATA_Z2"                                                                                , "Memory", 0x4006C2CC,        4, base=16, readOnly
+sfr = "DATA_Z2.[15:0]DATA2"                                                                    , "Memory", 0x4006C2CC,        4, base=16, readOnly, bitRange=0-15
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// DeltaSigma -----
+group = "DSIG","MUXTRIG_CREST","MUXTRIG_VALLEY","INT_CTRL","MCLK_EDGECTRL","CTRL_UVW","STATUS_INT_UVW","CMP_UVW_I_Under","CMP_UVW_I_Over","CMP_UVW_HZ_Under","CMP_UVW_HZ_Over","CMP_UVW_IGND_Under","CMP_UVW_IGND_Over","DATA_U1","DATA_U1_CREST","DATA_U1_VALLEY","DATA_U2","DATA_V1","DATA_V1_CREST","DATA_V1_VALLEY","DATA_V2","DATA_W1","DATA_W1_CREST","DATA_W1_VALLEY","DATA_W2","CTRL_XYZ","STATUS_INT_XYZ","CMP_XYZ_I_Under","CMP_XYZ_I_Over","CMP_XYZ_HZ_Under","CMP_XYZ_HZ_Over","CMP_XYZ_IGND_Under","CMP_XYZ_IGND_Over","DATA_X1","DATA_X1_CREST","DATA_X1_VALLEY","DATA_X2","DATA_Y1","DATA_Y1_CREST","DATA_Y1_VALLEY","DATA_Y2","DATA_Z1","DATA_Z1_CREST","DATA_Z1_VALLEY","DATA_Z2"

@@ -1,0 +1,38 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : SGPIO5
+;               SGPIO5 (Slave)
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "SGPIO5/Input"                                                                           , "Memory", 0x50010000,        4, base=16, readOnly
+sfr = "SGPIO5/Input.[31:0]Input"                                                               , "Memory", 0x50010000,        4, base=16, readOnly, bitRange=0-31
+sfr = "SGPIO5/Output"                                                                          , "Memory", 0x50010004,        4, base=16
+sfr = "SGPIO5/Output.[31:0]Output"                                                             , "Memory", 0x50010004,        4, base=16, bitRange=0-31
+sfr = "SGPIO5/Control"                                                                         , "Memory", 0x50010008,        4, base=16
+sfr = "SGPIO5/Control.[0]RefreshEnable"                                                        , "Memory", 0x50010008,        4, base=16, bitRange=0
+sfr = "SGPIO5/Control.[1]Update"                                                               , "Memory", 0x50010008,        4, base=16, bitRange=1
+sfr = "SGPIO5/ModeEdgeDetector"                                                                , "Memory", 0x5001000C,        4, base=16
+sfr = "SGPIO5/ModeEdgeDetector.[1:0]EdgeDetectorOnSgpioInput0"                                 , "Memory", 0x5001000C,        4, base=16, bitRange=0-1
+sfr = "SGPIO5/ModeEdgeDetector.[3:2]EdgeDetectorOnSgpioInput1"                                 , "Memory", 0x5001000C,        4, base=16, bitRange=2-3
+sfr = "SGPIO5/ModeEdgeDetector.[5:4]EdgeDetectorOnSgpioInput2"                                 , "Memory", 0x5001000C,        4, base=16, bitRange=4-5
+sfr = "SGPIO5/ModeEdgeDetector.[7:6]EdgeDetectorOnSgpioInput3"                                 , "Memory", 0x5001000C,        4, base=16, bitRange=6-7
+sfr = "SGPIO5/StatusInt0"                                                                      , "Memory", 0x50010010,        4, base=16
+sfr = "SGPIO5/StatusInt0.[3:0]StatusInt0"                                                      , "Memory", 0x50010010,        4, base=16, bitRange=0-3
+sfr = "SGPIO5/StatusInt1"                                                                      , "Memory", 0x50010014,        4, base=16
+sfr = "SGPIO5/StatusInt1.[3:0]StatusInt1"                                                      , "Memory", 0x50010014,        4, base=16, bitRange=0-3
+sfr = "SGPIO5/MaskInt"                                                                         , "Memory", 0x50010018,        4, base=16
+sfr = "SGPIO5/MaskInt.[3:0]MaskInt"                                                            , "Memory", 0x50010018,        4, base=16, bitRange=0-3
+sfr = "SGPIO5/ClearInt"                                                                        , "Memory", 0x5001001C,        4, base=16
+sfr = "SGPIO5/ClearInt.[3:0]ClearInt"                                                          , "Memory", 0x5001001C,        4, base=16, bitRange=0-3
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// SGPIO5 (Slave) -----
+group = "SGPIO5","SGPIO5/Input","SGPIO5/Output","SGPIO5/Control","SGPIO5/ModeEdgeDetector","SGPIO5/StatusInt0","SGPIO5/StatusInt1","SGPIO5/MaskInt","SGPIO5/ClearInt"

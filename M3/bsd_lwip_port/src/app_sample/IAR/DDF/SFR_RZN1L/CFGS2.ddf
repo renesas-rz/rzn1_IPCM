@@ -1,0 +1,382 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : CFGS2
+;               ConfigSys2(IO Mux Level2)
+;    revision : 0.20 (2.Nov.2017)
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "Level2_Config_0"                                                                        , "Memory", 0x51000000,        4, base=16
+sfr = "Level2_Config_0.[5:0]IOFunction"                                                        , "Memory", 0x51000000,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_1"                                                                        , "Memory", 0x51000004,        4, base=16
+sfr = "Level2_Config_1.[5:0]IOFunction"                                                        , "Memory", 0x51000004,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_2"                                                                        , "Memory", 0x51000008,        4, base=16
+sfr = "Level2_Config_2.[5:0]IOFunction"                                                        , "Memory", 0x51000008,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_3"                                                                        , "Memory", 0x5100000C,        4, base=16
+sfr = "Level2_Config_3.[5:0]IOFunction"                                                        , "Memory", 0x5100000C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_4"                                                                        , "Memory", 0x51000010,        4, base=16
+sfr = "Level2_Config_4.[5:0]IOFunction"                                                        , "Memory", 0x51000010,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_5"                                                                        , "Memory", 0x51000014,        4, base=16
+sfr = "Level2_Config_5.[5:0]IOFunction"                                                        , "Memory", 0x51000014,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_6"                                                                        , "Memory", 0x51000018,        4, base=16
+sfr = "Level2_Config_6.[5:0]IOFunction"                                                        , "Memory", 0x51000018,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_7"                                                                        , "Memory", 0x5100001C,        4, base=16
+sfr = "Level2_Config_7.[5:0]IOFunction"                                                        , "Memory", 0x5100001C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_8"                                                                        , "Memory", 0x51000020,        4, base=16
+sfr = "Level2_Config_8.[5:0]IOFunction"                                                        , "Memory", 0x51000020,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_9"                                                                        , "Memory", 0x51000024,        4, base=16
+sfr = "Level2_Config_9.[5:0]IOFunction"                                                        , "Memory", 0x51000024,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_10"                                                                       , "Memory", 0x51000028,        4, base=16
+sfr = "Level2_Config_10.[5:0]IOFunction"                                                       , "Memory", 0x51000028,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_11"                                                                       , "Memory", 0x5100002C,        4, base=16
+sfr = "Level2_Config_11.[5:0]IOFunction"                                                       , "Memory", 0x5100002C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_12"                                                                       , "Memory", 0x51000030,        4, base=16
+sfr = "Level2_Config_12.[5:0]IOFunction"                                                       , "Memory", 0x51000030,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_13"                                                                       , "Memory", 0x51000034,        4, base=16
+sfr = "Level2_Config_13.[5:0]IOFunction"                                                       , "Memory", 0x51000034,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_14"                                                                       , "Memory", 0x51000038,        4, base=16
+sfr = "Level2_Config_14.[5:0]IOFunction"                                                       , "Memory", 0x51000038,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_15"                                                                       , "Memory", 0x5100003C,        4, base=16
+sfr = "Level2_Config_15.[5:0]IOFunction"                                                       , "Memory", 0x5100003C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_16"                                                                       , "Memory", 0x51000040,        4, base=16
+sfr = "Level2_Config_16.[5:0]IOFunction"                                                       , "Memory", 0x51000040,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_17"                                                                       , "Memory", 0x51000044,        4, base=16
+sfr = "Level2_Config_17.[5:0]IOFunction"                                                       , "Memory", 0x51000044,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_18"                                                                       , "Memory", 0x51000048,        4, base=16
+sfr = "Level2_Config_18.[5:0]IOFunction"                                                       , "Memory", 0x51000048,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_19"                                                                       , "Memory", 0x5100004C,        4, base=16
+sfr = "Level2_Config_19.[5:0]IOFunction"                                                       , "Memory", 0x5100004C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_20"                                                                       , "Memory", 0x51000050,        4, base=16
+sfr = "Level2_Config_20.[5:0]IOFunction"                                                       , "Memory", 0x51000050,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_21"                                                                       , "Memory", 0x51000054,        4, base=16
+sfr = "Level2_Config_21.[5:0]IOFunction"                                                       , "Memory", 0x51000054,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_22"                                                                       , "Memory", 0x51000058,        4, base=16
+sfr = "Level2_Config_22.[5:0]IOFunction"                                                       , "Memory", 0x51000058,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_23"                                                                       , "Memory", 0x5100005C,        4, base=16
+sfr = "Level2_Config_23.[5:0]IOFunction"                                                       , "Memory", 0x5100005C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_24"                                                                       , "Memory", 0x51000060,        4, base=16
+sfr = "Level2_Config_24.[5:0]IOFunction"                                                       , "Memory", 0x51000060,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_25"                                                                       , "Memory", 0x51000064,        4, base=16
+sfr = "Level2_Config_25.[5:0]IOFunction"                                                       , "Memory", 0x51000064,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_26"                                                                       , "Memory", 0x51000068,        4, base=16
+sfr = "Level2_Config_26.[5:0]IOFunction"                                                       , "Memory", 0x51000068,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_27"                                                                       , "Memory", 0x5100006C,        4, base=16
+sfr = "Level2_Config_27.[5:0]IOFunction"                                                       , "Memory", 0x5100006C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_28"                                                                       , "Memory", 0x51000070,        4, base=16
+sfr = "Level2_Config_28.[5:0]IOFunction"                                                       , "Memory", 0x51000070,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_29"                                                                       , "Memory", 0x51000074,        4, base=16
+sfr = "Level2_Config_29.[5:0]IOFunction"                                                       , "Memory", 0x51000074,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_30"                                                                       , "Memory", 0x51000078,        4, base=16
+sfr = "Level2_Config_30.[5:0]IOFunction"                                                       , "Memory", 0x51000078,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_31"                                                                       , "Memory", 0x5100007C,        4, base=16
+sfr = "Level2_Config_31.[5:0]IOFunction"                                                       , "Memory", 0x5100007C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_32"                                                                       , "Memory", 0x51000080,        4, base=16
+sfr = "Level2_Config_32.[5:0]IOFunction"                                                       , "Memory", 0x51000080,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_33"                                                                       , "Memory", 0x51000084,        4, base=16
+sfr = "Level2_Config_33.[5:0]IOFunction"                                                       , "Memory", 0x51000084,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_34"                                                                       , "Memory", 0x51000088,        4, base=16
+sfr = "Level2_Config_34.[5:0]IOFunction"                                                       , "Memory", 0x51000088,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_35"                                                                       , "Memory", 0x5100008C,        4, base=16
+sfr = "Level2_Config_35.[5:0]IOFunction"                                                       , "Memory", 0x5100008C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_36"                                                                       , "Memory", 0x51000090,        4, base=16
+sfr = "Level2_Config_36.[5:0]IOFunction"                                                       , "Memory", 0x51000090,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_37"                                                                       , "Memory", 0x51000094,        4, base=16
+sfr = "Level2_Config_37.[5:0]IOFunction"                                                       , "Memory", 0x51000094,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_38"                                                                       , "Memory", 0x51000098,        4, base=16
+sfr = "Level2_Config_38.[5:0]IOFunction"                                                       , "Memory", 0x51000098,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_39"                                                                       , "Memory", 0x5100009C,        4, base=16
+sfr = "Level2_Config_39.[5:0]IOFunction"                                                       , "Memory", 0x5100009C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_40"                                                                       , "Memory", 0x510000A0,        4, base=16
+sfr = "Level2_Config_40.[5:0]IOFunction"                                                       , "Memory", 0x510000A0,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_41"                                                                       , "Memory", 0x510000A4,        4, base=16
+sfr = "Level2_Config_41.[5:0]IOFunction"                                                       , "Memory", 0x510000A4,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_42"                                                                       , "Memory", 0x510000A8,        4, base=16
+sfr = "Level2_Config_42.[5:0]IOFunction"                                                       , "Memory", 0x510000A8,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_43"                                                                       , "Memory", 0x510000AC,        4, base=16
+sfr = "Level2_Config_43.[5:0]IOFunction"                                                       , "Memory", 0x510000AC,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_44"                                                                       , "Memory", 0x510000B0,        4, base=16
+sfr = "Level2_Config_44.[5:0]IOFunction"                                                       , "Memory", 0x510000B0,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_45"                                                                       , "Memory", 0x510000B4,        4, base=16
+sfr = "Level2_Config_45.[5:0]IOFunction"                                                       , "Memory", 0x510000B4,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_46"                                                                       , "Memory", 0x510000B8,        4, base=16
+sfr = "Level2_Config_46.[5:0]IOFunction"                                                       , "Memory", 0x510000B8,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_47"                                                                       , "Memory", 0x510000BC,        4, base=16
+sfr = "Level2_Config_47.[5:0]IOFunction"                                                       , "Memory", 0x510000BC,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_48"                                                                       , "Memory", 0x510000C0,        4, base=16
+sfr = "Level2_Config_48.[5:0]IOFunction"                                                       , "Memory", 0x510000C0,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_49"                                                                       , "Memory", 0x510000C4,        4, base=16
+sfr = "Level2_Config_49.[5:0]IOFunction"                                                       , "Memory", 0x510000C4,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_50"                                                                       , "Memory", 0x510000C8,        4, base=16
+sfr = "Level2_Config_50.[5:0]IOFunction"                                                       , "Memory", 0x510000C8,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_51"                                                                       , "Memory", 0x510000CC,        4, base=16
+sfr = "Level2_Config_51.[5:0]IOFunction"                                                       , "Memory", 0x510000CC,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_52"                                                                       , "Memory", 0x510000D0,        4, base=16
+sfr = "Level2_Config_52.[5:0]IOFunction"                                                       , "Memory", 0x510000D0,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_53"                                                                       , "Memory", 0x510000D4,        4, base=16
+sfr = "Level2_Config_53.[5:0]IOFunction"                                                       , "Memory", 0x510000D4,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_54"                                                                       , "Memory", 0x510000D8,        4, base=16
+sfr = "Level2_Config_54.[5:0]IOFunction"                                                       , "Memory", 0x510000D8,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_55"                                                                       , "Memory", 0x510000DC,        4, base=16
+sfr = "Level2_Config_55.[5:0]IOFunction"                                                       , "Memory", 0x510000DC,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_56"                                                                       , "Memory", 0x510000E0,        4, base=16
+sfr = "Level2_Config_56.[5:0]IOFunction"                                                       , "Memory", 0x510000E0,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_57"                                                                       , "Memory", 0x510000E4,        4, base=16
+sfr = "Level2_Config_57.[5:0]IOFunction"                                                       , "Memory", 0x510000E4,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_58"                                                                       , "Memory", 0x510000E8,        4, base=16
+sfr = "Level2_Config_58.[5:0]IOFunction"                                                       , "Memory", 0x510000E8,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_59"                                                                       , "Memory", 0x510000EC,        4, base=16
+sfr = "Level2_Config_59.[5:0]IOFunction"                                                       , "Memory", 0x510000EC,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_60"                                                                       , "Memory", 0x510000F0,        4, base=16
+sfr = "Level2_Config_60.[5:0]IOFunction"                                                       , "Memory", 0x510000F0,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_61"                                                                       , "Memory", 0x510000F4,        4, base=16
+sfr = "Level2_Config_61.[5:0]IOFunction"                                                       , "Memory", 0x510000F4,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_62"                                                                       , "Memory", 0x510000F8,        4, base=16
+sfr = "Level2_Config_62.[5:0]IOFunction"                                                       , "Memory", 0x510000F8,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_63"                                                                       , "Memory", 0x510000FC,        4, base=16
+sfr = "Level2_Config_63.[5:0]IOFunction"                                                       , "Memory", 0x510000FC,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_64"                                                                       , "Memory", 0x51000100,        4, base=16
+sfr = "Level2_Config_64.[5:0]IOFunction"                                                       , "Memory", 0x51000100,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_65"                                                                       , "Memory", 0x51000104,        4, base=16
+sfr = "Level2_Config_65.[5:0]IOFunction"                                                       , "Memory", 0x51000104,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_66"                                                                       , "Memory", 0x51000108,        4, base=16
+sfr = "Level2_Config_66.[5:0]IOFunction"                                                       , "Memory", 0x51000108,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_67"                                                                       , "Memory", 0x5100010C,        4, base=16
+sfr = "Level2_Config_67.[5:0]IOFunction"                                                       , "Memory", 0x5100010C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_68"                                                                       , "Memory", 0x51000110,        4, base=16
+sfr = "Level2_Config_68.[5:0]IOFunction"                                                       , "Memory", 0x51000110,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_69"                                                                       , "Memory", 0x51000114,        4, base=16
+sfr = "Level2_Config_69.[5:0]IOFunction"                                                       , "Memory", 0x51000114,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_70"                                                                       , "Memory", 0x51000118,        4, base=16
+sfr = "Level2_Config_70.[5:0]IOFunction"                                                       , "Memory", 0x51000118,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_71"                                                                       , "Memory", 0x5100011C,        4, base=16
+sfr = "Level2_Config_71.[5:0]IOFunction"                                                       , "Memory", 0x5100011C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_72"                                                                       , "Memory", 0x51000120,        4, base=16
+sfr = "Level2_Config_72.[5:0]IOFunction"                                                       , "Memory", 0x51000120,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_73"                                                                       , "Memory", 0x51000124,        4, base=16
+sfr = "Level2_Config_73.[5:0]IOFunction"                                                       , "Memory", 0x51000124,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_74"                                                                       , "Memory", 0x51000128,        4, base=16
+sfr = "Level2_Config_74.[5:0]IOFunction"                                                       , "Memory", 0x51000128,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_75"                                                                       , "Memory", 0x5100012C,        4, base=16
+sfr = "Level2_Config_75.[5:0]IOFunction"                                                       , "Memory", 0x5100012C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_76"                                                                       , "Memory", 0x51000130,        4, base=16
+sfr = "Level2_Config_76.[5:0]IOFunction"                                                       , "Memory", 0x51000130,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_77"                                                                       , "Memory", 0x51000134,        4, base=16
+sfr = "Level2_Config_77.[5:0]IOFunction"                                                       , "Memory", 0x51000134,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_78"                                                                       , "Memory", 0x51000138,        4, base=16
+sfr = "Level2_Config_78.[5:0]IOFunction"                                                       , "Memory", 0x51000138,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_79"                                                                       , "Memory", 0x5100013C,        4, base=16
+sfr = "Level2_Config_79.[5:0]IOFunction"                                                       , "Memory", 0x5100013C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_80"                                                                       , "Memory", 0x51000140,        4, base=16
+sfr = "Level2_Config_80.[5:0]IOFunction"                                                       , "Memory", 0x51000140,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_81"                                                                       , "Memory", 0x51000144,        4, base=16
+sfr = "Level2_Config_81.[5:0]IOFunction"                                                       , "Memory", 0x51000144,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_82"                                                                       , "Memory", 0x51000148,        4, base=16
+sfr = "Level2_Config_82.[5:0]IOFunction"                                                       , "Memory", 0x51000148,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_83"                                                                       , "Memory", 0x5100014C,        4, base=16
+sfr = "Level2_Config_83.[5:0]IOFunction"                                                       , "Memory", 0x5100014C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_84"                                                                       , "Memory", 0x51000150,        4, base=16
+sfr = "Level2_Config_84.[5:0]IOFunction"                                                       , "Memory", 0x51000150,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_85"                                                                       , "Memory", 0x51000154,        4, base=16
+sfr = "Level2_Config_85.[5:0]IOFunction"                                                       , "Memory", 0x51000154,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_86"                                                                       , "Memory", 0x51000158,        4, base=16
+sfr = "Level2_Config_86.[5:0]IOFunction"                                                       , "Memory", 0x51000158,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_87"                                                                       , "Memory", 0x5100015C,        4, base=16
+sfr = "Level2_Config_87.[5:0]IOFunction"                                                       , "Memory", 0x5100015C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_88"                                                                       , "Memory", 0x51000160,        4, base=16
+sfr = "Level2_Config_88.[5:0]IOFunction"                                                       , "Memory", 0x51000160,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_89"                                                                       , "Memory", 0x51000164,        4, base=16
+sfr = "Level2_Config_89.[5:0]IOFunction"                                                       , "Memory", 0x51000164,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_90"                                                                       , "Memory", 0x51000168,        4, base=16
+sfr = "Level2_Config_90.[5:0]IOFunction"                                                       , "Memory", 0x51000168,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_91"                                                                       , "Memory", 0x5100016C,        4, base=16
+sfr = "Level2_Config_91.[5:0]IOFunction"                                                       , "Memory", 0x5100016C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_92"                                                                       , "Memory", 0x51000170,        4, base=16
+sfr = "Level2_Config_92.[5:0]IOFunction"                                                       , "Memory", 0x51000170,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_93"                                                                       , "Memory", 0x51000174,        4, base=16
+sfr = "Level2_Config_93.[5:0]IOFunction"                                                       , "Memory", 0x51000174,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_94"                                                                       , "Memory", 0x51000178,        4, base=16
+sfr = "Level2_Config_94.[5:0]IOFunction"                                                       , "Memory", 0x51000178,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_95"                                                                       , "Memory", 0x5100017C,        4, base=16
+sfr = "Level2_Config_95.[5:0]IOFunction"                                                       , "Memory", 0x5100017C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_96"                                                                       , "Memory", 0x51000180,        4, base=16
+sfr = "Level2_Config_96.[5:0]IOFunction"                                                       , "Memory", 0x51000180,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_97"                                                                       , "Memory", 0x51000184,        4, base=16
+sfr = "Level2_Config_97.[5:0]IOFunction"                                                       , "Memory", 0x51000184,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_98"                                                                       , "Memory", 0x51000188,        4, base=16
+sfr = "Level2_Config_98.[5:0]IOFunction"                                                       , "Memory", 0x51000188,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_99"                                                                       , "Memory", 0x5100018C,        4, base=16
+sfr = "Level2_Config_99.[5:0]IOFunction"                                                       , "Memory", 0x5100018C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_100"                                                                      , "Memory", 0x51000190,        4, base=16
+sfr = "Level2_Config_100.[5:0]IOFunction"                                                      , "Memory", 0x51000190,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_101"                                                                      , "Memory", 0x51000194,        4, base=16
+sfr = "Level2_Config_101.[5:0]IOFunction"                                                      , "Memory", 0x51000194,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_102"                                                                      , "Memory", 0x51000198,        4, base=16
+sfr = "Level2_Config_102.[5:0]IOFunction"                                                      , "Memory", 0x51000198,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_103"                                                                      , "Memory", 0x5100019C,        4, base=16
+sfr = "Level2_Config_103.[5:0]IOFunction"                                                      , "Memory", 0x5100019C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_104"                                                                      , "Memory", 0x510001A0,        4, base=16
+sfr = "Level2_Config_104.[5:0]IOFunction"                                                      , "Memory", 0x510001A0,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_105"                                                                      , "Memory", 0x510001A4,        4, base=16
+sfr = "Level2_Config_105.[5:0]IOFunction"                                                      , "Memory", 0x510001A4,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_106"                                                                      , "Memory", 0x510001A8,        4, base=16
+sfr = "Level2_Config_106.[5:0]IOFunction"                                                      , "Memory", 0x510001A8,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_107"                                                                      , "Memory", 0x510001AC,        4, base=16
+sfr = "Level2_Config_107.[5:0]IOFunction"                                                      , "Memory", 0x510001AC,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_108"                                                                      , "Memory", 0x510001B0,        4, base=16
+sfr = "Level2_Config_108.[5:0]IOFunction"                                                      , "Memory", 0x510001B0,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_109"                                                                      , "Memory", 0x510001B4,        4, base=16
+sfr = "Level2_Config_109.[5:0]IOFunction"                                                      , "Memory", 0x510001B4,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_110"                                                                      , "Memory", 0x510001B8,        4, base=16
+sfr = "Level2_Config_110.[5:0]IOFunction"                                                      , "Memory", 0x510001B8,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_111"                                                                      , "Memory", 0x510001BC,        4, base=16
+sfr = "Level2_Config_111.[5:0]IOFunction"                                                      , "Memory", 0x510001BC,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_112"                                                                      , "Memory", 0x510001C0,        4, base=16
+sfr = "Level2_Config_112.[5:0]IOFunction"                                                      , "Memory", 0x510001C0,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_113"                                                                      , "Memory", 0x510001C4,        4, base=16
+sfr = "Level2_Config_113.[5:0]IOFunction"                                                      , "Memory", 0x510001C4,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_114"                                                                      , "Memory", 0x510001C8,        4, base=16
+sfr = "Level2_Config_114.[5:0]IOFunction"                                                      , "Memory", 0x510001C8,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_115"                                                                      , "Memory", 0x510001CC,        4, base=16
+sfr = "Level2_Config_115.[5:0]IOFunction"                                                      , "Memory", 0x510001CC,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_116"                                                                      , "Memory", 0x510001D0,        4, base=16
+sfr = "Level2_Config_116.[5:0]IOFunction"                                                      , "Memory", 0x510001D0,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_117"                                                                      , "Memory", 0x510001D4,        4, base=16
+sfr = "Level2_Config_117.[5:0]IOFunction"                                                      , "Memory", 0x510001D4,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_118"                                                                      , "Memory", 0x510001D8,        4, base=16
+sfr = "Level2_Config_118.[5:0]IOFunction"                                                      , "Memory", 0x510001D8,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_119"                                                                      , "Memory", 0x510001DC,        4, base=16
+sfr = "Level2_Config_119.[5:0]IOFunction"                                                      , "Memory", 0x510001DC,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_120"                                                                      , "Memory", 0x510001E0,        4, base=16
+sfr = "Level2_Config_120.[5:0]IOFunction"                                                      , "Memory", 0x510001E0,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_121"                                                                      , "Memory", 0x510001E4,        4, base=16
+sfr = "Level2_Config_121.[5:0]IOFunction"                                                      , "Memory", 0x510001E4,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_122"                                                                      , "Memory", 0x510001E8,        4, base=16
+sfr = "Level2_Config_122.[5:0]IOFunction"                                                      , "Memory", 0x510001E8,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_123"                                                                      , "Memory", 0x510001EC,        4, base=16
+sfr = "Level2_Config_123.[5:0]IOFunction"                                                      , "Memory", 0x510001EC,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_124"                                                                      , "Memory", 0x510001F0,        4, base=16
+sfr = "Level2_Config_124.[5:0]IOFunction"                                                      , "Memory", 0x510001F0,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_125"                                                                      , "Memory", 0x510001F4,        4, base=16
+sfr = "Level2_Config_125.[5:0]IOFunction"                                                      , "Memory", 0x510001F4,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_126"                                                                      , "Memory", 0x510001F8,        4, base=16
+sfr = "Level2_Config_126.[5:0]IOFunction"                                                      , "Memory", 0x510001F8,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_127"                                                                      , "Memory", 0x510001FC,        4, base=16
+sfr = "Level2_Config_127.[5:0]IOFunction"                                                      , "Memory", 0x510001FC,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_128"                                                                      , "Memory", 0x51000200,        4, base=16
+sfr = "Level2_Config_128.[5:0]IOFunction"                                                      , "Memory", 0x51000200,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_129"                                                                      , "Memory", 0x51000204,        4, base=16
+sfr = "Level2_Config_129.[5:0]IOFunction"                                                      , "Memory", 0x51000204,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_130"                                                                      , "Memory", 0x51000208,        4, base=16
+sfr = "Level2_Config_130.[5:0]IOFunction"                                                      , "Memory", 0x51000208,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_131"                                                                      , "Memory", 0x5100020C,        4, base=16
+sfr = "Level2_Config_131.[5:0]IOFunction"                                                      , "Memory", 0x5100020C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_132"                                                                      , "Memory", 0x51000210,        4, base=16
+sfr = "Level2_Config_132.[5:0]IOFunction"                                                      , "Memory", 0x51000210,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_133"                                                                      , "Memory", 0x51000214,        4, base=16
+sfr = "Level2_Config_133.[5:0]IOFunction"                                                      , "Memory", 0x51000214,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_134"                                                                      , "Memory", 0x51000218,        4, base=16
+sfr = "Level2_Config_134.[5:0]IOFunction"                                                      , "Memory", 0x51000218,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_135"                                                                      , "Memory", 0x5100021C,        4, base=16
+sfr = "Level2_Config_135.[5:0]IOFunction"                                                      , "Memory", 0x5100021C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_136"                                                                      , "Memory", 0x51000220,        4, base=16
+sfr = "Level2_Config_136.[5:0]IOFunction"                                                      , "Memory", 0x51000220,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_137"                                                                      , "Memory", 0x51000224,        4, base=16
+sfr = "Level2_Config_137.[5:0]IOFunction"                                                      , "Memory", 0x51000224,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_138"                                                                      , "Memory", 0x51000228,        4, base=16
+sfr = "Level2_Config_138.[5:0]IOFunction"                                                      , "Memory", 0x51000228,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_139"                                                                      , "Memory", 0x5100022C,        4, base=16
+sfr = "Level2_Config_139.[5:0]IOFunction"                                                      , "Memory", 0x5100022C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_140"                                                                      , "Memory", 0x51000230,        4, base=16
+sfr = "Level2_Config_140.[5:0]IOFunction"                                                      , "Memory", 0x51000230,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_141"                                                                      , "Memory", 0x51000234,        4, base=16
+sfr = "Level2_Config_141.[5:0]IOFunction"                                                      , "Memory", 0x51000234,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_142"                                                                      , "Memory", 0x51000238,        4, base=16
+sfr = "Level2_Config_142.[5:0]IOFunction"                                                      , "Memory", 0x51000238,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_143"                                                                      , "Memory", 0x5100023C,        4, base=16
+sfr = "Level2_Config_143.[5:0]IOFunction"                                                      , "Memory", 0x5100023C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_144"                                                                      , "Memory", 0x51000240,        4, base=16
+sfr = "Level2_Config_144.[5:0]IOFunction"                                                      , "Memory", 0x51000240,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_145"                                                                      , "Memory", 0x51000244,        4, base=16
+sfr = "Level2_Config_145.[5:0]IOFunction"                                                      , "Memory", 0x51000244,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_146"                                                                      , "Memory", 0x51000248,        4, base=16
+sfr = "Level2_Config_146.[5:0]IOFunction"                                                      , "Memory", 0x51000248,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_147"                                                                      , "Memory", 0x5100024C,        4, base=16
+sfr = "Level2_Config_147.[5:0]IOFunction"                                                      , "Memory", 0x5100024C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_148"                                                                      , "Memory", 0x51000250,        4, base=16
+sfr = "Level2_Config_148.[5:0]IOFunction"                                                      , "Memory", 0x51000250,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_149"                                                                      , "Memory", 0x51000254,        4, base=16
+sfr = "Level2_Config_149.[5:0]IOFunction"                                                      , "Memory", 0x51000254,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_150"                                                                      , "Memory", 0x51000258,        4, base=16
+sfr = "Level2_Config_150.[5:0]IOFunction"                                                      , "Memory", 0x51000258,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_151"                                                                      , "Memory", 0x5100025C,        4, base=16
+sfr = "Level2_Config_151.[5:0]IOFunction"                                                      , "Memory", 0x5100025C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_152"                                                                      , "Memory", 0x51000260,        4, base=16
+sfr = "Level2_Config_152.[5:0]IOFunction"                                                      , "Memory", 0x51000260,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_153"                                                                      , "Memory", 0x51000264,        4, base=16
+sfr = "Level2_Config_153.[5:0]IOFunction"                                                      , "Memory", 0x51000264,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_154"                                                                      , "Memory", 0x51000268,        4, base=16
+sfr = "Level2_Config_154.[5:0]IOFunction"                                                      , "Memory", 0x51000268,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_155"                                                                      , "Memory", 0x5100026C,        4, base=16
+sfr = "Level2_Config_155.[5:0]IOFunction"                                                      , "Memory", 0x5100026C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_156"                                                                      , "Memory", 0x51000270,        4, base=16
+sfr = "Level2_Config_156.[5:0]IOFunction"                                                      , "Memory", 0x51000270,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_157"                                                                      , "Memory", 0x51000274,        4, base=16
+sfr = "Level2_Config_157.[5:0]IOFunction"                                                      , "Memory", 0x51000274,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_158"                                                                      , "Memory", 0x51000278,        4, base=16
+sfr = "Level2_Config_158.[5:0]IOFunction"                                                      , "Memory", 0x51000278,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_159"                                                                      , "Memory", 0x5100027C,        4, base=16
+sfr = "Level2_Config_159.[5:0]IOFunction"                                                      , "Memory", 0x5100027C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_160"                                                                      , "Memory", 0x51000280,        4, base=16
+sfr = "Level2_Config_160.[5:0]IOFunction"                                                      , "Memory", 0x51000280,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_161"                                                                      , "Memory", 0x51000284,        4, base=16
+sfr = "Level2_Config_161.[5:0]IOFunction"                                                      , "Memory", 0x51000284,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_162"                                                                      , "Memory", 0x51000288,        4, base=16
+sfr = "Level2_Config_162.[5:0]IOFunction"                                                      , "Memory", 0x51000288,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_163"                                                                      , "Memory", 0x5100028C,        4, base=16
+sfr = "Level2_Config_163.[5:0]IOFunction"                                                      , "Memory", 0x5100028C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_164"                                                                      , "Memory", 0x51000290,        4, base=16
+sfr = "Level2_Config_164.[5:0]IOFunction"                                                      , "Memory", 0x51000290,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_165"                                                                      , "Memory", 0x51000294,        4, base=16
+sfr = "Level2_Config_165.[5:0]IOFunction"                                                      , "Memory", 0x51000294,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_166"                                                                      , "Memory", 0x51000298,        4, base=16
+sfr = "Level2_Config_166.[5:0]IOFunction"                                                      , "Memory", 0x51000298,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_167"                                                                      , "Memory", 0x5100029C,        4, base=16
+sfr = "Level2_Config_167.[5:0]IOFunction"                                                      , "Memory", 0x5100029C,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_168"                                                                      , "Memory", 0x510002A0,        4, base=16
+sfr = "Level2_Config_168.[5:0]IOFunction"                                                      , "Memory", 0x510002A0,        4, base=16, bitRange=0-5
+sfr = "Level2_Config_169"                                                                      , "Memory", 0x510002A4,        4, base=16
+sfr = "Level2_Config_169.[5:0]IOFunction"                                                      , "Memory", 0x510002A4,        4, base=16, bitRange=0-5
+sfr = "Level2_StatusProtect"                                                                   , "Memory", 0x51000400,        4, base=16
+sfr = "Level2_StatusProtect.[0]Config_StatusProtect"                                           , "Memory", 0x51000400,        4, base=16, bitRange=0
+sfr = "Level2_StatusProtect.[4]BadSequence"                                                    , "Memory", 0x51000400,        4, base=16, bitRange=4
+sfr = "Level2_Config_MDIO1"                                                                    , "Memory", 0x51000404,        4, base=16
+sfr = "Level2_Config_MDIO1.[2:0]Config_MDIO1"                                                  , "Memory", 0x51000404,        4, base=16, bitRange=0-2
+sfr = "Level2_Config_MDIO2"                                                                    , "Memory", 0x51000408,        4, base=16
+sfr = "Level2_Config_MDIO2.[2:0]Config_MDIO2"                                                  , "Memory", 0x51000408,        4, base=16, bitRange=0-2
+sfr = "Level2_GPIO_Int_0"                                                                      , "Memory", 0x51000480,        4, base=16
+sfr = "Level2_GPIO_Int_0.[6:0]GPIO_Int"                                                        , "Memory", 0x51000480,        4, base=16, bitRange=0-6
+sfr = "Level2_GPIO_Int_1"                                                                      , "Memory", 0x51000484,        4, base=16
+sfr = "Level2_GPIO_Int_1.[6:0]GPIO_Int"                                                        , "Memory", 0x51000484,        4, base=16, bitRange=0-6
+sfr = "Level2_GPIO_Int_2"                                                                      , "Memory", 0x51000488,        4, base=16
+sfr = "Level2_GPIO_Int_2.[6:0]GPIO_Int"                                                        , "Memory", 0x51000488,        4, base=16, bitRange=0-6
+sfr = "Level2_GPIO_Int_3"                                                                      , "Memory", 0x5100048C,        4, base=16
+sfr = "Level2_GPIO_Int_3.[6:0]GPIO_Int"                                                        , "Memory", 0x5100048C,        4, base=16, bitRange=0-6
+sfr = "Level2_GPIO_Int_4"                                                                      , "Memory", 0x51000490,        4, base=16
+sfr = "Level2_GPIO_Int_4.[6:0]GPIO_Int"                                                        , "Memory", 0x51000490,        4, base=16, bitRange=0-6
+sfr = "Level2_GPIO_Int_5"                                                                      , "Memory", 0x51000494,        4, base=16
+sfr = "Level2_GPIO_Int_5.[6:0]GPIO_Int"                                                        , "Memory", 0x51000494,        4, base=16, bitRange=0-6
+sfr = "Level2_GPIO_Int_6"                                                                      , "Memory", 0x51000498,        4, base=16
+sfr = "Level2_GPIO_Int_6.[6:0]GPIO_Int"                                                        , "Memory", 0x51000498,        4, base=16, bitRange=0-6
+sfr = "Level2_GPIO_Int_7"                                                                      , "Memory", 0x5100049C,        4, base=16
+sfr = "Level2_GPIO_Int_7.[6:0]GPIO_Int"                                                        , "Memory", 0x5100049C,        4, base=16, bitRange=0-6
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// ConfigSys2(IO Mux Level2) -----
+group = "CFGS2","Level2_Config_0","Level2_Config_1","Level2_Config_2","Level2_Config_3","Level2_Config_4","Level2_Config_5","Level2_Config_6","Level2_Config_7","Level2_Config_8","Level2_Config_9","Level2_Config_10","Level2_Config_11","Level2_Config_12","Level2_Config_13","Level2_Config_14","Level2_Config_15","Level2_Config_16","Level2_Config_17","Level2_Config_18","Level2_Config_19","Level2_Config_20","Level2_Config_21","Level2_Config_22","Level2_Config_23","Level2_Config_24","Level2_Config_25","Level2_Config_26","Level2_Config_27","Level2_Config_28","Level2_Config_29","Level2_Config_30","Level2_Config_31","Level2_Config_32","Level2_Config_33","Level2_Config_34","Level2_Config_35","Level2_Config_36","Level2_Config_37","Level2_Config_38","Level2_Config_39","Level2_Config_40","Level2_Config_41","Level2_Config_42","Level2_Config_43","Level2_Config_44","Level2_Config_45","Level2_Config_46","Level2_Config_47","Level2_Config_48","Level2_Config_49","Level2_Config_50","Level2_Config_51","Level2_Config_52","Level2_Config_53","Level2_Config_54","Level2_Config_55","Level2_Config_56","Level2_Config_57","Level2_Config_58","Level2_Config_59","Level2_Config_60","Level2_Config_61","Level2_Config_62","Level2_Config_63","Level2_Config_64","Level2_Config_65","Level2_Config_66","Level2_Config_67","Level2_Config_68","Level2_Config_69","Level2_Config_70","Level2_Config_71","Level2_Config_72","Level2_Config_73","Level2_Config_74","Level2_Config_75","Level2_Config_76","Level2_Config_77","Level2_Config_78","Level2_Config_79","Level2_Config_80","Level2_Config_81","Level2_Config_82","Level2_Config_83","Level2_Config_84","Level2_Config_85","Level2_Config_86","Level2_Config_87","Level2_Config_88","Level2_Config_89","Level2_Config_90","Level2_Config_91","Level2_Config_92","Level2_Config_93","Level2_Config_94","Level2_Config_95","Level2_Config_96","Level2_Config_97","Level2_Config_98","Level2_Config_99","Level2_Config_100","Level2_Config_101","Level2_Config_102","Level2_Config_103","Level2_Config_104","Level2_Config_105","Level2_Config_106","Level2_Config_107","Level2_Config_108","Level2_Config_109","Level2_Config_110","Level2_Config_111","Level2_Config_112","Level2_Config_113","Level2_Config_114","Level2_Config_115","Level2_Config_116","Level2_Config_117","Level2_Config_118","Level2_Config_119","Level2_Config_120","Level2_Config_121","Level2_Config_122","Level2_Config_123","Level2_Config_124","Level2_Config_125","Level2_Config_126","Level2_Config_127","Level2_Config_128","Level2_Config_129","Level2_Config_130","Level2_Config_131","Level2_Config_132","Level2_Config_133","Level2_Config_134","Level2_Config_135","Level2_Config_136","Level2_Config_137","Level2_Config_138","Level2_Config_139","Level2_Config_140","Level2_Config_141","Level2_Config_142","Level2_Config_143","Level2_Config_144","Level2_Config_145","Level2_Config_146","Level2_Config_147","Level2_Config_148","Level2_Config_149","Level2_Config_150","Level2_Config_151","Level2_Config_152","Level2_Config_153","Level2_Config_154","Level2_Config_155","Level2_Config_156","Level2_Config_157","Level2_Config_158","Level2_Config_159","Level2_Config_160","Level2_Config_161","Level2_Config_162","Level2_Config_163","Level2_Config_164","Level2_Config_165","Level2_Config_166","Level2_Config_167","Level2_Config_168","Level2_Config_169","Level2_StatusProtect","Level2_Config_MDIO1","Level2_Config_MDIO2","Level2_GPIO_Int_0","Level2_GPIO_Int_1","Level2_GPIO_Int_2","Level2_GPIO_Int_3","Level2_GPIO_Int_4","Level2_GPIO_Int_5","Level2_GPIO_Int_6","Level2_GPIO_Int_7"

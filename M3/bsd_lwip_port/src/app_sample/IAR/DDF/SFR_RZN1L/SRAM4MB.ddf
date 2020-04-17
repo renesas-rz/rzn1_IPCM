@@ -1,0 +1,38 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : SRAM4MB
+;               SRAM4MB
+;    revision : 0.13 (15.September.2017)
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "SR4PCMD"                                                                                , "Memory", 0x80400000,        4, base=16
+sfr = "SR4PCMD.[0]PROTREL"                                                                     , "Memory", 0x80400000,        4, base=16, bitRange=0
+sfr = "SR4EDC"                                                                                 , "Memory", 0x80400100,        4, base=16
+sfr = "SR4EDC.[0]ECC_ENABLE"                                                                   , "Memory", 0x80400100,        4, base=16, bitRange=0
+sfr = "SR4EEC"                                                                                 , "Memory", 0x80400104,        4, base=16
+sfr = "SR4EEC.[0]DBE_DIST0"                                                                    , "Memory", 0x80400104,        4, base=16, bitRange=0
+sfr = "SR4EEC.[1]DBE_DIST1"                                                                    , "Memory", 0x80400104,        4, base=16, bitRange=1
+sfr = "SR4EEC.[2]DBE_DIST2"                                                                    , "Memory", 0x80400104,        4, base=16, bitRange=2
+sfr = "SR4EEC.[3]DBE_DIST3"                                                                    , "Memory", 0x80400104,        4, base=16, bitRange=3
+sfr = "SR4DBEST"                                                                               , "Memory", 0x80400108,        4, base=16, readOnly
+sfr = "SR4DBEST.[0]DBE_RAM0"                                                                   , "Memory", 0x80400108,        4, base=16, readOnly, bitRange=0
+sfr = "SR4DBEST.[1]DBE_RAM1"                                                                   , "Memory", 0x80400108,        4, base=16, readOnly, bitRange=1
+sfr = "SR4DBEST.[2]DBE_RAM2"                                                                   , "Memory", 0x80400108,        4, base=16, readOnly, bitRange=2
+sfr = "SR4DBEST.[3]DBE_RAM3"                                                                   , "Memory", 0x80400108,        4, base=16, readOnly, bitRange=3
+sfr = "SR4DBEAD"                                                                               , "Memory", 0x8040010C,        4, base=16, readOnly
+sfr = "SR4DBEAD.[0]LOCK"                                                                       , "Memory", 0x8040010C,        4, base=16, readOnly, bitRange=0
+sfr = "SR4DBEAD.[21:4]ADDRESS"                                                                 , "Memory", 0x8040010C,        4, base=16, readOnly, bitRange=4-21
+sfr = "SR4DBECNT"                                                                              , "Memory", 0x80400110,        4, base=16, readOnly
+sfr = "SR4DBECNT.[3:0]ERRCOUNT"                                                                , "Memory", 0x80400110,        4, base=16, readOnly, bitRange=0-3
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// SRAM4MB -----
+group = "SRAM4MB","SR4PCMD","SR4EDC","SR4EEC","SR4DBEST","SR4DBEAD","SR4DBECNT"

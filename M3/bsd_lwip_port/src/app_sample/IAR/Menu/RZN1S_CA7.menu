@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<optionMenuItem>
+  <tag>RZN1S_CA7</tag>
+  <display>Renesas RZN1S(CA7)</display>
+  <data>$CUR_DIR$\RZN1S_CA7.i79</data>
+</optionMenuItem>
+

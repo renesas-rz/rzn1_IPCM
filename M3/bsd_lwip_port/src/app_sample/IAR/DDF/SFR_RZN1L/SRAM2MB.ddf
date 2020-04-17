@@ -1,0 +1,63 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : SRAM2MB
+;               SRAM2MB
+;    revision : 0.13 (15.September.2017)
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "RAMPCMD"                                                                                , "Memory", 0x400F3000,        4, base=16
+sfr = "RAMPCMD.[0]PROTREL"                                                                     , "Memory", 0x400F3000,        4, base=16, bitRange=0
+sfr = "RAMEDC"                                                                                 , "Memory", 0x400F3100,        4, base=16
+sfr = "RAMEDC.[0]ECC_ENABLE"                                                                   , "Memory", 0x400F3100,        4, base=16, bitRange=0
+sfr = "RAMEEC"                                                                                 , "Memory", 0x400F3104,        4, base=16
+sfr = "RAMEEC.[0]DBE_DIST0"                                                                    , "Memory", 0x400F3104,        4, base=16, bitRange=0
+sfr = "RAMEEC.[1]DBE_DIST1"                                                                    , "Memory", 0x400F3104,        4, base=16, bitRange=1
+sfr = "RAMEEC.[2]DBE_DIST2"                                                                    , "Memory", 0x400F3104,        4, base=16, bitRange=2
+sfr = "RAMEEC.[3]DBE_DIST3"                                                                    , "Memory", 0x400F3104,        4, base=16, bitRange=3
+sfr = "RAMEEC.[4]DBE_DIST4"                                                                    , "Memory", 0x400F3104,        4, base=16, bitRange=4
+sfr = "RAMEEC.[5]DBE_DIST5"                                                                    , "Memory", 0x400F3104,        4, base=16, bitRange=5
+sfr = "RAMEEC.[6]DBE_DIST6"                                                                    , "Memory", 0x400F3104,        4, base=16, bitRange=6
+sfr = "RAMEEC.[7]DBE_DIST7"                                                                    , "Memory", 0x400F3104,        4, base=16, bitRange=7
+sfr = "RAMEEC.[8]DBE_DIST8"                                                                    , "Memory", 0x400F3104,        4, base=16, bitRange=8
+sfr = "RAMEEC.[9]DBE_DIST9"                                                                    , "Memory", 0x400F3104,        4, base=16, bitRange=9
+sfr = "RAMEEC.[10]DBE_DIST10"                                                                  , "Memory", 0x400F3104,        4, base=16, bitRange=10
+sfr = "RAMEEC.[11]DBE_DIST11"                                                                  , "Memory", 0x400F3104,        4, base=16, bitRange=11
+sfr = "RAMEEC.[12]DBE_DIST12"                                                                  , "Memory", 0x400F3104,        4, base=16, bitRange=12
+sfr = "RAMEEC.[13]DBE_DIST13"                                                                  , "Memory", 0x400F3104,        4, base=16, bitRange=13
+sfr = "RAMEEC.[14]DBE_DIST14"                                                                  , "Memory", 0x400F3104,        4, base=16, bitRange=14
+sfr = "RAMEEC.[15]DBE_DIST15"                                                                  , "Memory", 0x400F3104,        4, base=16, bitRange=15
+sfr = "RAMDBEST"                                                                               , "Memory", 0x400F3108,        4, base=16, readOnly
+sfr = "RAMDBEST.[0]DBE_RAM0"                                                                   , "Memory", 0x400F3108,        4, base=16, readOnly, bitRange=0
+sfr = "RAMDBEST.[1]DBE_RAM1"                                                                   , "Memory", 0x400F3108,        4, base=16, readOnly, bitRange=1
+sfr = "RAMDBEST.[2]DBE_RAM2"                                                                   , "Memory", 0x400F3108,        4, base=16, readOnly, bitRange=2
+sfr = "RAMDBEST.[3]DBE_RAM3"                                                                   , "Memory", 0x400F3108,        4, base=16, readOnly, bitRange=3
+sfr = "RAMDBEST.[4]DBE_RAM4"                                                                   , "Memory", 0x400F3108,        4, base=16, readOnly, bitRange=4
+sfr = "RAMDBEST.[5]DBE_RAM5"                                                                   , "Memory", 0x400F3108,        4, base=16, readOnly, bitRange=5
+sfr = "RAMDBEST.[6]DBE_RAM6"                                                                   , "Memory", 0x400F3108,        4, base=16, readOnly, bitRange=6
+sfr = "RAMDBEST.[7]DBE_RAM7"                                                                   , "Memory", 0x400F3108,        4, base=16, readOnly, bitRange=7
+sfr = "RAMDBEST.[8]DBE_RAM8"                                                                   , "Memory", 0x400F3108,        4, base=16, readOnly, bitRange=8
+sfr = "RAMDBEST.[9]DBE_RAM9"                                                                   , "Memory", 0x400F3108,        4, base=16, readOnly, bitRange=9
+sfr = "RAMDBEST.[10]DBE_RAM10"                                                                 , "Memory", 0x400F3108,        4, base=16, readOnly, bitRange=10
+sfr = "RAMDBEST.[11]DBE_RAM11"                                                                 , "Memory", 0x400F3108,        4, base=16, readOnly, bitRange=11
+sfr = "RAMDBEST.[12]DBE_RAM12"                                                                 , "Memory", 0x400F3108,        4, base=16, readOnly, bitRange=12
+sfr = "RAMDBEST.[13]DBE_RAM13"                                                                 , "Memory", 0x400F3108,        4, base=16, readOnly, bitRange=13
+sfr = "RAMDBEST.[14]DBE_RAM14"                                                                 , "Memory", 0x400F3108,        4, base=16, readOnly, bitRange=14
+sfr = "RAMDBEST.[15]DBE_RAM15"                                                                 , "Memory", 0x400F3108,        4, base=16, readOnly, bitRange=15
+sfr = "RAMDBEAD"                                                                               , "Memory", 0x400F310C,        4, base=16, readOnly
+sfr = "RAMDBEAD.[0]LOCK"                                                                       , "Memory", 0x400F310C,        4, base=16, readOnly, bitRange=0
+sfr = "RAMDBEAD.[18:2]ADDRESS"                                                                 , "Memory", 0x400F310C,        4, base=16, readOnly, bitRange=2-18
+sfr = "RAMDBEAD.[20:19]BANK"                                                                   , "Memory", 0x400F310C,        4, base=16, readOnly, bitRange=19-20
+sfr = "RAMDBECNT"                                                                              , "Memory", 0x400F3110,        4, base=16, readOnly
+sfr = "RAMDBECNT.[3:0]ERRCOUNT"                                                                , "Memory", 0x400F3110,        4, base=16, readOnly, bitRange=0-3
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// SRAM2MB -----
+group = "SRAM2MB","RAMPCMD","RAMEDC","RAMEEC","RAMDBEST","RAMDBEAD","RAMDBECNT"

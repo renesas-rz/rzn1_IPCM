@@ -1,0 +1,154 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : UART8
+;               UART8 Full
+;    revision : 0.13 (15.September.2017)
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "UART8/RBR_THR"                                                                          , "Memory", 0x50004000,        4, base=16
+sfr = "UART8/RBR_THR.[7:0]RBR_THR"                                                             , "Memory", 0x50004000,        4, base=16, bitRange=0-7
+sfr = "UART8/DLL"                                                                              , "Memory", 0x50004000,        4, base=16
+sfr = "UART8/DLL.[7:0]DLL"                                                                     , "Memory", 0x50004000,        4, base=16, bitRange=0-7
+sfr = "UART8/IER"                                                                              , "Memory", 0x50004004,        4, base=16
+sfr = "UART8/IER.[0]ERBFI"                                                                     , "Memory", 0x50004004,        4, base=16, bitRange=0
+sfr = "UART8/IER.[1]ETBEI"                                                                     , "Memory", 0x50004004,        4, base=16, bitRange=1
+sfr = "UART8/IER.[2]ELSI"                                                                      , "Memory", 0x50004004,        4, base=16, bitRange=2
+sfr = "UART8/IER.[3]EDSSI"                                                                     , "Memory", 0x50004004,        4, base=16, bitRange=3
+sfr = "UART8/IER.[7]PTIME"                                                                     , "Memory", 0x50004004,        4, base=16, bitRange=7
+sfr = "UART8/IER.[8]ETIMEOUT0"                                                                 , "Memory", 0x50004004,        4, base=16, bitRange=8
+sfr = "UART8/IER.[9]ETIMEOUT1"                                                                 , "Memory", 0x50004004,        4, base=16, bitRange=9
+sfr = "UART8/IER.[10]ETIMEOUT2"                                                                , "Memory", 0x50004004,        4, base=16, bitRange=10
+sfr = "UART8/IER.[11]ETIMEOUT3"                                                                , "Memory", 0x50004004,        4, base=16, bitRange=11
+sfr = "UART8/DLH"                                                                              , "Memory", 0x50004004,        4, base=16
+sfr = "UART8/DLH.[7:0]DLH"                                                                     , "Memory", 0x50004004,        4, base=16, bitRange=0-7
+sfr = "UART8/FCR"                                                                              , "Memory", 0x50004008,        4, base=16, writeOnly
+sfr = "UART8/FCR.[0]FIFOE"                                                                     , "Memory", 0x50004008,        4, base=16, writeOnly, bitRange=0
+sfr = "UART8/FCR.[1]RFIFOR"                                                                    , "Memory", 0x50004008,        4, base=16, writeOnly, bitRange=1
+sfr = "UART8/FCR.[2]XFIFOR"                                                                    , "Memory", 0x50004008,        4, base=16, writeOnly, bitRange=2
+sfr = "UART8/FCR.[5:4]TET"                                                                     , "Memory", 0x50004008,        4, base=16, writeOnly, bitRange=4-5
+sfr = "UART8/FCR.[7:6]RCVR"                                                                    , "Memory", 0x50004008,        4, base=16, writeOnly, bitRange=6-7
+sfr = "UART8/IIR"                                                                              , "Memory", 0x50004008,        4, base=16, readOnly
+sfr = "UART8/IIR.[3:0]IID"                                                                     , "Memory", 0x50004008,        4, base=16, readOnly, bitRange=0-3
+sfr = "UART8/IIR.[7:6]FIFOSE"                                                                  , "Memory", 0x50004008,        4, base=16, readOnly, bitRange=6-7
+sfr = "UART8/LCR"                                                                              , "Memory", 0x5000400C,        4, base=16
+sfr = "UART8/LCR.[1:0]DLS"                                                                     , "Memory", 0x5000400C,        4, base=16, bitRange=0-1
+sfr = "UART8/LCR.[2]STOP"                                                                      , "Memory", 0x5000400C,        4, base=16, bitRange=2
+sfr = "UART8/LCR.[3]PEN"                                                                       , "Memory", 0x5000400C,        4, base=16, bitRange=3
+sfr = "UART8/LCR.[4]EPS"                                                                       , "Memory", 0x5000400C,        4, base=16, bitRange=4
+sfr = "UART8/LCR.[5]StickParity"                                                               , "Memory", 0x5000400C,        4, base=16, bitRange=5
+sfr = "UART8/LCR.[6]BC"                                                                        , "Memory", 0x5000400C,        4, base=16, bitRange=6
+sfr = "UART8/LCR.[7]DLAB"                                                                      , "Memory", 0x5000400C,        4, base=16, bitRange=7
+sfr = "UART8/MCR"                                                                              , "Memory", 0x50004010,        4, base=16
+sfr = "UART8/MCR.[0]DTR"                                                                       , "Memory", 0x50004010,        4, base=16, bitRange=0
+sfr = "UART8/MCR.[1]RTS"                                                                       , "Memory", 0x50004010,        4, base=16, bitRange=1
+sfr = "UART8/MCR.[2]OUT1"                                                                      , "Memory", 0x50004010,        4, base=16, bitRange=2
+sfr = "UART8/MCR.[3]OUT2"                                                                      , "Memory", 0x50004010,        4, base=16, bitRange=3
+sfr = "UART8/MCR.[4]LB"                                                                        , "Memory", 0x50004010,        4, base=16, bitRange=4
+sfr = "UART8/MCR.[5]AFCE"                                                                      , "Memory", 0x50004010,        4, base=16, bitRange=5
+sfr = "UART8/LSR"                                                                              , "Memory", 0x50004014,        4, base=16, readOnly
+sfr = "UART8/LSR.[0]DR"                                                                        , "Memory", 0x50004014,        4, base=16, readOnly, bitRange=0
+sfr = "UART8/LSR.[1]OE"                                                                        , "Memory", 0x50004014,        4, base=16, readOnly, bitRange=1
+sfr = "UART8/LSR.[2]PE"                                                                        , "Memory", 0x50004014,        4, base=16, readOnly, bitRange=2
+sfr = "UART8/LSR.[3]FE"                                                                        , "Memory", 0x50004014,        4, base=16, readOnly, bitRange=3
+sfr = "UART8/LSR.[4]BI"                                                                        , "Memory", 0x50004014,        4, base=16, readOnly, bitRange=4
+sfr = "UART8/LSR.[5]THRE"                                                                      , "Memory", 0x50004014,        4, base=16, readOnly, bitRange=5
+sfr = "UART8/LSR.[6]TEMT"                                                                      , "Memory", 0x50004014,        4, base=16, readOnly, bitRange=6
+sfr = "UART8/LSR.[7]RFE"                                                                       , "Memory", 0x50004014,        4, base=16, readOnly, bitRange=7
+sfr = "UART8/MSR"                                                                              , "Memory", 0x50004018,        4, base=16, readOnly
+sfr = "UART8/MSR.[0]DCTS"                                                                      , "Memory", 0x50004018,        4, base=16, readOnly, bitRange=0
+sfr = "UART8/MSR.[1]DDSR"                                                                      , "Memory", 0x50004018,        4, base=16, readOnly, bitRange=1
+sfr = "UART8/MSR.[2]TERI"                                                                      , "Memory", 0x50004018,        4, base=16, readOnly, bitRange=2
+sfr = "UART8/MSR.[3]DDCD"                                                                      , "Memory", 0x50004018,        4, base=16, readOnly, bitRange=3
+sfr = "UART8/MSR.[4]CTS"                                                                       , "Memory", 0x50004018,        4, base=16, readOnly, bitRange=4
+sfr = "UART8/MSR.[5]DSR"                                                                       , "Memory", 0x50004018,        4, base=16, readOnly, bitRange=5
+sfr = "UART8/MSR.[6]RI"                                                                        , "Memory", 0x50004018,        4, base=16, readOnly, bitRange=6
+sfr = "UART8/MSR.[7]DCD"                                                                       , "Memory", 0x50004018,        4, base=16, readOnly, bitRange=7
+sfr = "UART8/SCR"                                                                              , "Memory", 0x5000401C,        4, base=16
+sfr = "UART8/SCR.[7:0]SCR"                                                                     , "Memory", 0x5000401C,        4, base=16, bitRange=0-7
+sfr = "UART8/SRBR_STHR"                                                                        , "Memory", 0x50004030,        4, base=16
+sfr = "UART8/SRBR_STHR.[7:0]SRBR_STHR"                                                         , "Memory", 0x50004030,        4, base=16, bitRange=0-7
+sfr = "UART8/FAR"                                                                              , "Memory", 0x50004070,        4, base=16
+sfr = "UART8/FAR.[0]FAR"                                                                       , "Memory", 0x50004070,        4, base=16, bitRange=0
+sfr = "UART8/TFR"                                                                              , "Memory", 0x50004074,        4, base=16, readOnly
+sfr = "UART8/TFR.[7:0]TFR"                                                                     , "Memory", 0x50004074,        4, base=16, readOnly, bitRange=0-7
+sfr = "UART8/RFW"                                                                              , "Memory", 0x50004078,        4, base=16, writeOnly
+sfr = "UART8/RFW.[7:0]RFWD"                                                                    , "Memory", 0x50004078,        4, base=16, writeOnly, bitRange=0-7
+sfr = "UART8/RFW.[8]RFPE"                                                                      , "Memory", 0x50004078,        4, base=16, writeOnly, bitRange=8
+sfr = "UART8/RFW.[9]RFFE"                                                                      , "Memory", 0x50004078,        4, base=16, writeOnly, bitRange=9
+sfr = "UART8/USR"                                                                              , "Memory", 0x5000407C,        4, base=16, readOnly
+sfr = "UART8/USR.[0]BUSY"                                                                      , "Memory", 0x5000407C,        4, base=16, readOnly, bitRange=0
+sfr = "UART8/USR.[1]TFNF"                                                                      , "Memory", 0x5000407C,        4, base=16, readOnly, bitRange=1
+sfr = "UART8/USR.[2]TFE"                                                                       , "Memory", 0x5000407C,        4, base=16, readOnly, bitRange=2
+sfr = "UART8/USR.[3]RFNE"                                                                      , "Memory", 0x5000407C,        4, base=16, readOnly, bitRange=3
+sfr = "UART8/USR.[4]RFF"                                                                       , "Memory", 0x5000407C,        4, base=16, readOnly, bitRange=4
+sfr = "UART8/TFL"                                                                              , "Memory", 0x50004080,        4, base=16, readOnly
+sfr = "UART8/TFL.[4:0]TFL"                                                                     , "Memory", 0x50004080,        4, base=16, readOnly, bitRange=0-4
+sfr = "UART8/RFL"                                                                              , "Memory", 0x50004084,        4, base=16, readOnly
+sfr = "UART8/RFL.[4:0]RFL"                                                                     , "Memory", 0x50004084,        4, base=16, readOnly, bitRange=0-4
+sfr = "UART8/SRR"                                                                              , "Memory", 0x50004088,        4, base=16, writeOnly
+sfr = "UART8/SRR.[0]UR"                                                                        , "Memory", 0x50004088,        4, base=16, writeOnly, bitRange=0
+sfr = "UART8/SRR.[1]RFR"                                                                       , "Memory", 0x50004088,        4, base=16, writeOnly, bitRange=1
+sfr = "UART8/SRR.[2]XFR"                                                                       , "Memory", 0x50004088,        4, base=16, writeOnly, bitRange=2
+sfr = "UART8/SRTS"                                                                             , "Memory", 0x5000408C,        4, base=16
+sfr = "UART8/SRTS.[0]SRTS"                                                                     , "Memory", 0x5000408C,        4, base=16, bitRange=0
+sfr = "UART8/SBCR"                                                                             , "Memory", 0x50004090,        4, base=16
+sfr = "UART8/SBCR.[0]SBCR"                                                                     , "Memory", 0x50004090,        4, base=16, bitRange=0
+sfr = "UART8/SFE"                                                                              , "Memory", 0x50004098,        4, base=16
+sfr = "UART8/SFE.[0]SFE"                                                                       , "Memory", 0x50004098,        4, base=16, bitRange=0
+sfr = "UART8/SRT"                                                                              , "Memory", 0x5000409C,        4, base=16
+sfr = "UART8/SRT.[1:0]SRCVR"                                                                   , "Memory", 0x5000409C,        4, base=16, bitRange=0-1
+sfr = "UART8/STET"                                                                             , "Memory", 0x500040A0,        4, base=16
+sfr = "UART8/STET.[1:0]STET"                                                                   , "Memory", 0x500040A0,        4, base=16, bitRange=0-1
+sfr = "UART8/HTX"                                                                              , "Memory", 0x500040A4,        4, base=16
+sfr = "UART8/HTX.[0]HTX"                                                                       , "Memory", 0x500040A4,        4, base=16, bitRange=0
+sfr = "UART8/DMASA"                                                                            , "Memory", 0x500040A8,        4, base=16, writeOnly
+sfr = "UART8/DMASA.[0]DMASA"                                                                   , "Memory", 0x500040A8,        4, base=16, writeOnly, bitRange=0
+sfr = "UART8/TO"                                                                               , "Memory", 0x50004100,        4, base=16
+sfr = "UART8/TO.[7:0]TO0"                                                                      , "Memory", 0x50004100,        4, base=16, bitRange=0-7
+sfr = "UART8/TO.[15:8]TO1"                                                                     , "Memory", 0x50004100,        4, base=16, bitRange=8-15
+sfr = "UART8/TO.[23:16]TO2"                                                                    , "Memory", 0x50004100,        4, base=16, bitRange=16-23
+sfr = "UART8/TO.[31:24]TO3"                                                                    , "Memory", 0x50004100,        4, base=16, bitRange=24-31
+sfr = "UART8/CTRLTO"                                                                           , "Memory", 0x50004104,        4, base=16
+sfr = "UART8/CTRLTO.[0]STARTTO0"                                                               , "Memory", 0x50004104,        4, base=16, bitRange=0
+sfr = "UART8/CTRLTO.[1]STARTTO1"                                                               , "Memory", 0x50004104,        4, base=16, bitRange=1
+sfr = "UART8/CTRLTO.[2]STARTTO2"                                                               , "Memory", 0x50004104,        4, base=16, bitRange=2
+sfr = "UART8/CTRLTO.[3]STARTTO3"                                                               , "Memory", 0x50004104,        4, base=16, bitRange=3
+sfr = "UART8/CTRLTO.[4]REARMTO0"                                                               , "Memory", 0x50004104,        4, base=16, bitRange=4
+sfr = "UART8/CTRLTO.[5]REARMTO1"                                                               , "Memory", 0x50004104,        4, base=16, bitRange=5
+sfr = "UART8/CTRLTO.[6]REARMTO2"                                                               , "Memory", 0x50004104,        4, base=16, bitRange=6
+sfr = "UART8/CTRLTO.[7]REARMTO3"                                                               , "Memory", 0x50004104,        4, base=16, bitRange=7
+sfr = "UART8/CTRLTO.[8]EnableDE"                                                               , "Memory", 0x50004104,        4, base=16, bitRange=8
+sfr = "UART8/CTRLTO.[9]EnableFilteringRXD"                                                     , "Memory", 0x50004104,        4, base=16, bitRange=9
+sfr = "UART8/CTRLTO.[23:16]TG"                                                                 , "Memory", 0x50004104,        4, base=16, bitRange=16-23
+sfr = "UART8/STATUSTO"                                                                         , "Memory", 0x50004108,        4, base=16
+sfr = "UART8/STATUSTO.[0]TIMEOUTInt0"                                                          , "Memory", 0x50004108,        4, base=16, bitRange=0
+sfr = "UART8/STATUSTO.[1]TIMEOUTInt1"                                                          , "Memory", 0x50004108,        4, base=16, bitRange=1
+sfr = "UART8/STATUSTO.[2]TIMEOUTInt2"                                                          , "Memory", 0x50004108,        4, base=16, bitRange=2
+sfr = "UART8/STATUSTO.[3]TIMEOUTInt3"                                                          , "Memory", 0x50004108,        4, base=16, bitRange=3
+sfr = "UART8/STATUSTO.[4]TIMEOUTStatus0"                                                       , "Memory", 0x50004108,        4, base=16, readOnly, bitRange=4
+sfr = "UART8/STATUSTO.[5]TIMEOUTStatus1"                                                       , "Memory", 0x50004108,        4, base=16, readOnly, bitRange=5
+sfr = "UART8/STATUSTO.[6]TIMEOUTStatus2"                                                       , "Memory", 0x50004108,        4, base=16, readOnly, bitRange=6
+sfr = "UART8/STATUSTO.[7]TIMEOUTStatus3"                                                       , "Memory", 0x50004108,        4, base=16, readOnly, bitRange=7
+sfr = "UART8/STATUSTO.[8]DE"                                                                   , "Memory", 0x50004108,        4, base=16, readOnly, bitRange=8
+sfr = "UART8/TDMACR"                                                                           , "Memory", 0x5000410C,        4, base=16
+sfr = "UART8/TDMACR.[0]TDMAE"                                                                  , "Memory", 0x5000410C,        4, base=16, bitRange=0
+sfr = "UART8/TDMACR.[2:1]DEST_BURST_SIZE"                                                      , "Memory", 0x5000410C,        4, base=16, bitRange=1-2
+sfr = "UART8/TDMACR.[15:3]DEST_BLOCK_SIZE"                                                     , "Memory", 0x5000410C,        4, base=16, bitRange=3-15
+sfr = "UART8/TDMACR.[28:16]CURRENT_DEST_BLOCK_SIZE"                                            , "Memory", 0x5000410C,        4, base=16, readOnly, bitRange=16-28
+sfr = "UART8/RDMACR"                                                                           , "Memory", 0x50004110,        4, base=16
+sfr = "UART8/RDMACR.[0]RDMAE"                                                                  , "Memory", 0x50004110,        4, base=16, bitRange=0
+sfr = "UART8/RDMACR.[2:1]SRC_BURST_SIZE"                                                       , "Memory", 0x50004110,        4, base=16, bitRange=1-2
+sfr = "UART8/RDMACR.[15:3]SRC_BLOCK_SIZE"                                                      , "Memory", 0x50004110,        4, base=16, bitRange=3-15
+sfr = "UART8/RDMACR.[28:16]CURRENT_SRC_BLOCK_SIZE"                                             , "Memory", 0x50004110,        4, base=16, readOnly, bitRange=16-28
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// UART8 Full -----
+group = "UART8","UART8/RBR_THR","UART8/DLL","UART8/IER","UART8/DLH","UART8/FCR","UART8/IIR","UART8/LCR","UART8/MCR","UART8/LSR","UART8/MSR","UART8/SCR","UART8/SRBR_STHR","UART8/FAR","UART8/TFR","UART8/RFW","UART8/USR","UART8/TFL","UART8/RFL","UART8/SRR","UART8/SRTS","UART8/SBCR","UART8/SFE","UART8/SRT","UART8/STET","UART8/HTX","UART8/DMASA","UART8/TO","UART8/CTRLTO","UART8/STATUSTO","UART8/TDMACR","UART8/RDMACR"

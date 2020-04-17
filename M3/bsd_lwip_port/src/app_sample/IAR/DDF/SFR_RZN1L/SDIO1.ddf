@@ -1,0 +1,261 @@
+;
+; Start of SFR definition.
+;
+[Sfr]
+
+;/////////////////////////////////////////////////////////////////////////////////////
+; Module Name : SDIO1
+;               SDIO1
+;    revision : 0.13 (15.September.2017)
+;     Name                                                                                        Zone     Address     Bytesize  Displaybase Bitrange
+;     ----                                                                                        ----     -------     --------  ----------- --------
+sfr = "SDIO1/sdmasysaddrlo"                                                                    , "Memory", 0x40100000,        2, base=16
+sfr = "SDIO1/sdmasysaddrlo.[15:0]sdma_sysaddress"                                              , "Memory", 0x40100000,        2, base=16, bitRange=0-15
+sfr = "SDIO1/sdmasysaddrhi"                                                                    , "Memory", 0x40100002,        2, base=16
+sfr = "SDIO1/sdmasysaddrhi.[15:0]sdma_sysaddress"                                              , "Memory", 0x40100002,        2, base=16, bitRange=0-15
+sfr = "SDIO1/blocksize"                                                                        , "Memory", 0x40100004,        2, base=16
+sfr = "SDIO1/blocksize.[11:0]xfer_blocksize"                                                   , "Memory", 0x40100004,        2, base=16, bitRange=0-11
+sfr = "SDIO1/blocksize.[14:12]sdma_bufboundary"                                                , "Memory", 0x40100004,        2, base=16, bitRange=12-14
+sfr = "SDIO1/blockcount"                                                                       , "Memory", 0x40100006,        2, base=16
+sfr = "SDIO1/blockcount.[15:0]xfer_blockcount"                                                 , "Memory", 0x40100006,        2, base=16, bitRange=0-15
+sfr = "SDIO1/argument1lo"                                                                      , "Memory", 0x40100008,        2, base=16
+sfr = "SDIO1/argument1lo.[15:0]command_argument1"                                              , "Memory", 0x40100008,        2, base=16, bitRange=0-15
+sfr = "SDIO1/argument1hi"                                                                      , "Memory", 0x4010000A,        2, base=16
+sfr = "SDIO1/argument1hi.[15:0]command_argument1"                                              , "Memory", 0x4010000A,        2, base=16, bitRange=0-15
+sfr = "SDIO1/transfermode"                                                                     , "Memory", 0x4010000C,        2, base=16
+sfr = "SDIO1/transfermode.[0]xfermode_dmaenable"                                               , "Memory", 0x4010000C,        2, base=16, bitRange=0
+sfr = "SDIO1/transfermode.[1]xfermode_blkcntena"                                               , "Memory", 0x4010000C,        2, base=16, bitRange=1
+sfr = "SDIO1/transfermode.[3:2]xfermode_autocmdena"                                            , "Memory", 0x4010000C,        2, base=16, bitRange=2-3
+sfr = "SDIO1/transfermode.[4]xfermode_dataxferdir"                                             , "Memory", 0x4010000C,        2, base=16, bitRange=4
+sfr = "SDIO1/transfermode.[5]xfermode_multiblksel"                                             , "Memory", 0x4010000C,        2, base=16, bitRange=5
+sfr = "SDIO1/command"                                                                          , "Memory", 0x4010000E,        2, base=16
+sfr = "SDIO1/command.[1:0]command_responsetype"                                                , "Memory", 0x4010000E,        2, base=16, bitRange=0-1
+sfr = "SDIO1/command.[3]command_crcchkena"                                                     , "Memory", 0x4010000E,        2, base=16, bitRange=3
+sfr = "SDIO1/command.[4]command_indexchkena"                                                   , "Memory", 0x4010000E,        2, base=16, bitRange=4
+sfr = "SDIO1/command.[5]command_datapresent"                                                   , "Memory", 0x4010000E,        2, base=16, bitRange=5
+sfr = "SDIO1/command.[7:6]command_cmdtype"                                                     , "Memory", 0x4010000E,        2, base=16, bitRange=6-7
+sfr = "SDIO1/command.[13:8]command_cmdindex"                                                   , "Memory", 0x4010000E,        2, base=16, bitRange=8-13
+sfr = "SDIO1/response0"                                                                        , "Memory", 0x40100010,        2, base=16, readOnly
+sfr = "SDIO1/response0.[15:0]command_response"                                                 , "Memory", 0x40100010,        2, base=16, readOnly, bitRange=0-15
+sfr = "SDIO1/response1"                                                                        , "Memory", 0x40100012,        2, base=16, readOnly
+sfr = "SDIO1/response1.[15:0]command_response"                                                 , "Memory", 0x40100012,        2, base=16, readOnly, bitRange=0-15
+sfr = "SDIO1/response2"                                                                        , "Memory", 0x40100014,        2, base=16, readOnly
+sfr = "SDIO1/response2.[15:0]command_response"                                                 , "Memory", 0x40100014,        2, base=16, readOnly, bitRange=0-15
+sfr = "SDIO1/response3"                                                                        , "Memory", 0x40100016,        2, base=16, readOnly
+sfr = "SDIO1/response3.[15:0]command_response"                                                 , "Memory", 0x40100016,        2, base=16, readOnly, bitRange=0-15
+sfr = "SDIO1/response4"                                                                        , "Memory", 0x40100018,        2, base=16, readOnly
+sfr = "SDIO1/response4.[15:0]command_response"                                                 , "Memory", 0x40100018,        2, base=16, readOnly, bitRange=0-15
+sfr = "SDIO1/response5"                                                                        , "Memory", 0x4010001A,        2, base=16, readOnly
+sfr = "SDIO1/response5.[15:0]command_response"                                                 , "Memory", 0x4010001A,        2, base=16, readOnly, bitRange=0-15
+sfr = "SDIO1/response6"                                                                        , "Memory", 0x4010001C,        2, base=16, readOnly
+sfr = "SDIO1/response6.[15:0]command_response"                                                 , "Memory", 0x4010001C,        2, base=16, readOnly, bitRange=0-15
+sfr = "SDIO1/response7"                                                                        , "Memory", 0x4010001E,        2, base=16, readOnly
+sfr = "SDIO1/response7.[15:0]command_response"                                                 , "Memory", 0x4010001E,        2, base=16, readOnly, bitRange=0-15
+sfr = "SDIO1/dataport"                                                                         , "Memory", 0x40100020,        4, base=16
+sfr = "SDIO1/dataport.[31:0]sdhcdmactrl_piobufrddata"                                          , "Memory", 0x40100020,        4, base=16, bitRange=0-31
+sfr = "SDIO1/presentstate"                                                                     , "Memory", 0x40100024,        4, base=16, readOnly
+sfr = "SDIO1/presentstate.[0]presentstate_inhibitcmd"                                          , "Memory", 0x40100024,        4, base=16, readOnly, bitRange=0
+sfr = "SDIO1/presentstate.[1]presentstate_inhibitdat"                                          , "Memory", 0x40100024,        4, base=16, readOnly, bitRange=1
+sfr = "SDIO1/presentstate.[2]sdhcdmactrl_datalineactive"                                       , "Memory", 0x40100024,        4, base=16, readOnly, bitRange=2
+sfr = "SDIO1/presentstate.[8]sdhcdmactrl_wrxferactive"                                         , "Memory", 0x40100024,        4, base=16, readOnly, bitRange=8
+sfr = "SDIO1/presentstate.[9]sdhcdmactrl_rdxferactive"                                         , "Memory", 0x40100024,        4, base=16, readOnly, bitRange=9
+sfr = "SDIO1/presentstate.[10]sdhcdmactrl_piobufwrena"                                         , "Memory", 0x40100024,        4, base=16, readOnly, bitRange=10
+sfr = "SDIO1/presentstate.[11]sdhcdmactrl_piobufrdena"                                         , "Memory", 0x40100024,        4, base=16, readOnly, bitRange=11
+sfr = "SDIO1/presentstate.[16]sdhccarddet_inserted_dsync"                                      , "Memory", 0x40100024,        4, base=16, readOnly, bitRange=16
+sfr = "SDIO1/presentstate.[17]sdhccarddet_statestable_dsync"                                   , "Memory", 0x40100024,        4, base=16, readOnly, bitRange=17
+sfr = "SDIO1/presentstate.[18]sdif_cd_n_dsync"                                                 , "Memory", 0x40100024,        4, base=16, readOnly, bitRange=18
+sfr = "SDIO1/presentstate.[19]sdif_wp_dsync"                                                   , "Memory", 0x40100024,        4, base=16, readOnly, bitRange=19
+sfr = "SDIO1/presentstate.[20]sdif_dat0in_dsync"                                               , "Memory", 0x40100024,        4, base=16, readOnly, bitRange=20
+sfr = "SDIO1/presentstate.[21]sdif_dat1in_dsync"                                               , "Memory", 0x40100024,        4, base=16, readOnly, bitRange=21
+sfr = "SDIO1/presentstate.[22]sdif_dat2in_dsync"                                               , "Memory", 0x40100024,        4, base=16, readOnly, bitRange=22
+sfr = "SDIO1/presentstate.[23]sdif_dat3in_dsync"                                               , "Memory", 0x40100024,        4, base=16, readOnly, bitRange=23
+sfr = "SDIO1/presentstate.[24]sdif_cmdin_dsync"                                                , "Memory", 0x40100024,        4, base=16, readOnly, bitRange=24
+sfr = "SDIO1/presentstate.[25]sdif_dat4in_dsync"                                               , "Memory", 0x40100024,        4, base=16, readOnly, bitRange=25
+sfr = "SDIO1/presentstate.[26]sdif_dat5in_dsync"                                               , "Memory", 0x40100024,        4, base=16, readOnly, bitRange=26
+sfr = "SDIO1/presentstate.[27]sdif_dat6in_dsync"                                               , "Memory", 0x40100024,        4, base=16, readOnly, bitRange=27
+sfr = "SDIO1/presentstate.[28]sdif_dat7in_dsync"                                               , "Memory", 0x40100024,        4, base=16, readOnly, bitRange=28
+sfr = "SDIO1/hostcontrol1"                                                                     , "Memory", 0x40100028,        1, base=16
+sfr = "SDIO1/hostcontrol1.[0]hostctrl1_ledcontrol"                                             , "Memory", 0x40100028,        1, base=16, bitRange=0
+sfr = "SDIO1/hostcontrol1.[1]hostctrl1_datawidth"                                              , "Memory", 0x40100028,        1, base=16, bitRange=1
+sfr = "SDIO1/hostcontrol1.[2]hostctrl1_highspeedena"                                           , "Memory", 0x40100028,        1, base=16, bitRange=2
+sfr = "SDIO1/hostcontrol1.[4:3]hostctrl1_dmaselect"                                            , "Memory", 0x40100028,        1, base=16, bitRange=3-4
+sfr = "SDIO1/hostcontrol1.[5]hostctrl1_extdatawidth"                                           , "Memory", 0x40100028,        1, base=16, bitRange=5
+sfr = "SDIO1/hostcontrol1.[6]hostctrl1_cdtestlevel"                                            , "Memory", 0x40100028,        1, base=16, bitRange=6
+sfr = "SDIO1/hostcontrol1.[7]hostctrl1_cdsigselect"                                            , "Memory", 0x40100028,        1, base=16, bitRange=7
+sfr = "SDIO1/powercontrol"                                                                     , "Memory", 0x40100029,        1, base=16
+sfr = "SDIO1/powercontrol.[0]pwrctrl_sdbuspower"                                               , "Memory", 0x40100029,        1, base=16, bitRange=0
+sfr = "SDIO1/powercontrol.[3:1]pwrctrl_sdbusvoltage"                                           , "Memory", 0x40100029,        1, base=16, bitRange=1-3
+sfr = "SDIO1/powercontrol.[4]emmc_hwreset"                                                     , "Memory", 0x40100029,        1, base=16, bitRange=4
+sfr = "SDIO1/blockgapcontrol"                                                                  , "Memory", 0x4010002A,        1, base=16
+sfr = "SDIO1/blockgapcontrol.[0]blkgapctrl_stopatblkgap"                                       , "Memory", 0x4010002A,        1, base=16, bitRange=0
+sfr = "SDIO1/blockgapcontrol.[1]blkgapctrl_continue"                                           , "Memory", 0x4010002A,        1, base=16, bitRange=1
+sfr = "SDIO1/blockgapcontrol.[2]blkgapctrl_rdwaitctrl"                                         , "Memory", 0x4010002A,        1, base=16, bitRange=2
+sfr = "SDIO1/blockgapcontrol.[3]blkgapctrl_interrupt"                                          , "Memory", 0x4010002A,        1, base=16, bitRange=3
+sfr = "SDIO1/blockgapcontrol.[4]blkgapctrl_spimode"                                            , "Memory", 0x4010002A,        1, base=16, bitRange=4
+sfr = "SDIO1/wakeupcontrol"                                                                    , "Memory", 0x4010002B,        1, base=16
+sfr = "SDIO1/wakeupcontrol.[0]wkupctrl_cardinterrupt"                                          , "Memory", 0x4010002B,        1, base=16, bitRange=0
+sfr = "SDIO1/wakeupcontrol.[1]wkupctrl_cardinsertion"                                          , "Memory", 0x4010002B,        1, base=16, bitRange=1
+sfr = "SDIO1/wakeupcontrol.[2]wkupctrl_cardremoval"                                            , "Memory", 0x4010002B,        1, base=16, bitRange=2
+sfr = "SDIO1/clockcontrol"                                                                     , "Memory", 0x4010002C,        2, base=16
+sfr = "SDIO1/clockcontrol.[0]clkctrl_intclkena"                                                , "Memory", 0x4010002C,        2, base=16, bitRange=0
+sfr = "SDIO1/clockcontrol.[1]sdhcclkgen_intclkstable_dsync"                                    , "Memory", 0x4010002C,        2, base=16, readOnly, bitRange=1
+sfr = "SDIO1/clockcontrol.[2]clkctrl_sdclkena"                                                 , "Memory", 0x4010002C,        2, base=16, bitRange=2
+sfr = "SDIO1/clockcontrol.[5]clkctrl_clkgensel"                                                , "Memory", 0x4010002C,        2, base=16, readOnly, bitRange=5
+sfr = "SDIO1/clockcontrol.[7:6]clkctrl_sdclkfreqsel_upperbits"                                 , "Memory", 0x4010002C,        2, base=16, bitRange=6-7
+sfr = "SDIO1/clockcontrol.[15:8]clkctrl_sdclkfreqsel"                                          , "Memory", 0x4010002C,        2, base=16, bitRange=8-15
+sfr = "SDIO1/timeoutcontrol"                                                                   , "Memory", 0x4010002E,        1, base=16
+sfr = "SDIO1/timeoutcontrol.[3:0]timeout_ctrvalue"                                             , "Memory", 0x4010002E,        1, base=16, bitRange=0-3
+sfr = "SDIO1/softwarereset"                                                                    , "Memory", 0x4010002F,        1, base=16
+sfr = "SDIO1/softwarereset.[0]swreset_for_all"                                                 , "Memory", 0x4010002F,        1, base=16, bitRange=0
+sfr = "SDIO1/softwarereset.[1]swreset_for_cmd"                                                 , "Memory", 0x4010002F,        1, base=16, bitRange=1
+sfr = "SDIO1/softwarereset.[2]swreset_for_dat"                                                 , "Memory", 0x4010002F,        1, base=16, bitRange=2
+sfr = "SDIO1/normalintrsts"                                                                    , "Memory", 0x40100030,        2, base=16
+sfr = "SDIO1/normalintrsts.[0]normalintrsts_cmdcomplete"                                       , "Memory", 0x40100030,        2, base=16, bitRange=0
+sfr = "SDIO1/normalintrsts.[1]normalintrsts_xfercomplete"                                      , "Memory", 0x40100030,        2, base=16, bitRange=1
+sfr = "SDIO1/normalintrsts.[2]normalintrsts_blkgapevent"                                       , "Memory", 0x40100030,        2, base=16, bitRange=2
+sfr = "SDIO1/normalintrsts.[3]normalintrsts_dmainterrupt"                                      , "Memory", 0x40100030,        2, base=16, bitRange=3
+sfr = "SDIO1/normalintrsts.[4]normalintrsts_bufwrready"                                        , "Memory", 0x40100030,        2, base=16, bitRange=4
+sfr = "SDIO1/normalintrsts.[5]normalintrsts_bufrdready"                                        , "Memory", 0x40100030,        2, base=16, bitRange=5
+sfr = "SDIO1/normalintrsts.[6]normalintrsts_cardinssts"                                        , "Memory", 0x40100030,        2, base=16, bitRange=6
+sfr = "SDIO1/normalintrsts.[7]normalintrsts_cardremsts"                                        , "Memory", 0x40100030,        2, base=16, bitRange=7
+sfr = "SDIO1/normalintrsts.[8]normalintrsts_cardintsts"                                        , "Memory", 0x40100030,        2, base=16, readOnly, bitRange=8
+sfr = "SDIO1/normalintrsts.[15]reg_errorintrsts"                                               , "Memory", 0x40100030,        2, base=16, readOnly, bitRange=15
+sfr = "SDIO1/errorintrsts"                                                                     , "Memory", 0x40100032,        2, base=16
+sfr = "SDIO1/errorintrsts.[0]errorintrsts_cmdtimeouterror"                                     , "Memory", 0x40100032,        2, base=16, bitRange=0
+sfr = "SDIO1/errorintrsts.[1]errorintrsts_cmdcrcerror"                                         , "Memory", 0x40100032,        2, base=16, bitRange=1
+sfr = "SDIO1/errorintrsts.[2]errorintrsts_cmdendbiterror"                                      , "Memory", 0x40100032,        2, base=16, bitRange=2
+sfr = "SDIO1/errorintrsts.[3]errorintrsts_cmdindexerror"                                       , "Memory", 0x40100032,        2, base=16, bitRange=3
+sfr = "SDIO1/errorintrsts.[4]errorintrsts_datatimeouterror"                                    , "Memory", 0x40100032,        2, base=16, bitRange=4
+sfr = "SDIO1/errorintrsts.[5]errorintrsts_datacrcerror"                                        , "Memory", 0x40100032,        2, base=16, bitRange=5
+sfr = "SDIO1/errorintrsts.[6]errorintrsts_dataendbiterror"                                     , "Memory", 0x40100032,        2, base=16, bitRange=6
+sfr = "SDIO1/errorintrsts.[7]errorintrsts_currlimiterror"                                      , "Memory", 0x40100032,        2, base=16, bitRange=7
+sfr = "SDIO1/errorintrsts.[8]errorintrsts_autocmderror"                                        , "Memory", 0x40100032,        2, base=16, bitRange=8
+sfr = "SDIO1/errorintrsts.[9]errorintrsts_admaerror"                                           , "Memory", 0x40100032,        2, base=16, bitRange=9
+sfr = "SDIO1/errorintrsts.[12]errorintrsts_hosterror"                                          , "Memory", 0x40100032,        2, base=16, bitRange=12
+sfr = "SDIO1/normalintrstsena"                                                                 , "Memory", 0x40100034,        2, base=16
+sfr = "SDIO1/normalintrstsena.[0]normalintrsts_enableregbit0"                                  , "Memory", 0x40100034,        2, base=16, bitRange=0
+sfr = "SDIO1/normalintrstsena.[1]normalintrsts_enableregbit1"                                  , "Memory", 0x40100034,        2, base=16, bitRange=1
+sfr = "SDIO1/normalintrstsena.[2]normalintrsts_enableregbit2"                                  , "Memory", 0x40100034,        2, base=16, bitRange=2
+sfr = "SDIO1/normalintrstsena.[3]normalintrsts_enableregbit3"                                  , "Memory", 0x40100034,        2, base=16, bitRange=3
+sfr = "SDIO1/normalintrstsena.[4]normalintrsts_enableregbit4"                                  , "Memory", 0x40100034,        2, base=16, bitRange=4
+sfr = "SDIO1/normalintrstsena.[5]normalintrsts_enableregbit5"                                  , "Memory", 0x40100034,        2, base=16, bitRange=5
+sfr = "SDIO1/normalintrstsena.[6]sdhcregset_cardinsstsena"                                     , "Memory", 0x40100034,        2, base=16, bitRange=6
+sfr = "SDIO1/normalintrstsena.[7]sdhcregset_cardremstsena"                                     , "Memory", 0x40100034,        2, base=16, bitRange=7
+sfr = "SDIO1/normalintrstsena.[8]sdhcregset_cardintstsena"                                     , "Memory", 0x40100034,        2, base=16, bitRange=8
+sfr = "SDIO1/normalintrstsena.[15]normalintrsts_enableregbit15"                                , "Memory", 0x40100034,        2, base=16, readOnly, bitRange=15
+sfr = "SDIO1/errorintrstsena"                                                                  , "Memory", 0x40100036,        2, base=16
+sfr = "SDIO1/errorintrstsena.[0]errorintrsts_enableregbit0"                                    , "Memory", 0x40100036,        2, base=16, bitRange=0
+sfr = "SDIO1/errorintrstsena.[1]errorintrsts_enableregbit1"                                    , "Memory", 0x40100036,        2, base=16, bitRange=1
+sfr = "SDIO1/errorintrstsena.[2]errorintrsts_enableregbit2"                                    , "Memory", 0x40100036,        2, base=16, bitRange=2
+sfr = "SDIO1/errorintrstsena.[3]errorintrsts_enableregbit3"                                    , "Memory", 0x40100036,        2, base=16, bitRange=3
+sfr = "SDIO1/errorintrstsena.[4]errorintrsts_enableregbit4"                                    , "Memory", 0x40100036,        2, base=16, bitRange=4
+sfr = "SDIO1/errorintrstsena.[5]errorintrsts_enableregbit5"                                    , "Memory", 0x40100036,        2, base=16, bitRange=5
+sfr = "SDIO1/errorintrstsena.[6]errorintrsts_enableregbit6"                                    , "Memory", 0x40100036,        2, base=16, bitRange=6
+sfr = "SDIO1/errorintrstsena.[7]errorintrsts_enableregbit7"                                    , "Memory", 0x40100036,        2, base=16, bitRange=7
+sfr = "SDIO1/errorintrstsena.[8]errorintrsts_enableregbit8"                                    , "Memory", 0x40100036,        2, base=16, bitRange=8
+sfr = "SDIO1/errorintrstsena.[9]errorintrsts_enableregbit9"                                    , "Memory", 0x40100036,        2, base=16, bitRange=9
+sfr = "SDIO1/errorintrstsena.[12]errorintrsts_enableregbit12"                                  , "Memory", 0x40100036,        2, base=16, readOnly, bitRange=12
+sfr = "SDIO1/normalintrsigena"                                                                 , "Memory", 0x40100038,        2, base=16
+sfr = "SDIO1/normalintrsigena.[0]normalintrsig_enableregbit0"                                  , "Memory", 0x40100038,        2, base=16, bitRange=0
+sfr = "SDIO1/normalintrsigena.[1]normalintrsig_enableregbit1"                                  , "Memory", 0x40100038,        2, base=16, bitRange=1
+sfr = "SDIO1/normalintrsigena.[2]normalintrsig_enableregbit2"                                  , "Memory", 0x40100038,        2, base=16, bitRange=2
+sfr = "SDIO1/normalintrsigena.[3]normalintrsig_enableregbit3"                                  , "Memory", 0x40100038,        2, base=16, bitRange=3
+sfr = "SDIO1/normalintrsigena.[4]normalintrsig_enableregbit4"                                  , "Memory", 0x40100038,        2, base=16, bitRange=4
+sfr = "SDIO1/normalintrsigena.[5]normalintrsig_enableregbit5"                                  , "Memory", 0x40100038,        2, base=16, bitRange=5
+sfr = "SDIO1/normalintrsigena.[6]normalintrsig_enableregbit6"                                  , "Memory", 0x40100038,        2, base=16, bitRange=6
+sfr = "SDIO1/normalintrsigena.[7]normalintrsig_enableregbit7"                                  , "Memory", 0x40100038,        2, base=16, bitRange=7
+sfr = "SDIO1/normalintrsigena.[8]normalintrsig_enableregbit8"                                  , "Memory", 0x40100038,        2, base=16, bitRange=8
+sfr = "SDIO1/normalintrsigena.[15]normalintrsig_enableregbit15"                                , "Memory", 0x40100038,        2, base=16, readOnly, bitRange=15
+sfr = "SDIO1/errorintrsigena"                                                                  , "Memory", 0x4010003A,        2, base=16
+sfr = "SDIO1/errorintrsigena.[0]errorintrsig_enableregbit0"                                    , "Memory", 0x4010003A,        2, base=16, bitRange=0
+sfr = "SDIO1/errorintrsigena.[1]errorintrsig_enableregbit1"                                    , "Memory", 0x4010003A,        2, base=16, bitRange=1
+sfr = "SDIO1/errorintrsigena.[2]errorintrsig_enableregbit2"                                    , "Memory", 0x4010003A,        2, base=16, bitRange=2
+sfr = "SDIO1/errorintrsigena.[3]errorintrsig_enableregbit3"                                    , "Memory", 0x4010003A,        2, base=16, bitRange=3
+sfr = "SDIO1/errorintrsigena.[4]errorintrsig_enableregbit4"                                    , "Memory", 0x4010003A,        2, base=16, bitRange=4
+sfr = "SDIO1/errorintrsigena.[5]errorintrsig_enableregbit5"                                    , "Memory", 0x4010003A,        2, base=16, bitRange=5
+sfr = "SDIO1/errorintrsigena.[6]errorintrsig_enableregbit6"                                    , "Memory", 0x4010003A,        2, base=16, bitRange=6
+sfr = "SDIO1/errorintrsigena.[7]errorintrsig_enableregbit7"                                    , "Memory", 0x4010003A,        2, base=16, bitRange=7
+sfr = "SDIO1/errorintrsigena.[8]errorintrsig_enableregbit8"                                    , "Memory", 0x4010003A,        2, base=16, bitRange=8
+sfr = "SDIO1/errorintrsigena.[9]errorintrsig_enableregbit9"                                    , "Memory", 0x4010003A,        2, base=16, bitRange=9
+sfr = "SDIO1/errorintrsigena.[12]errorintrsig_enableregbit12"                                  , "Memory", 0x4010003A,        2, base=16, readOnly, bitRange=12
+sfr = "SDIO1/autocmderrsts"                                                                    , "Memory", 0x4010003C,        2, base=16, readOnly
+sfr = "SDIO1/autocmderrsts.[0]autocmderrsts_notexecerror"                                      , "Memory", 0x4010003C,        2, base=16, readOnly, bitRange=0
+sfr = "SDIO1/autocmderrsts.[1]autocmderrsts_timeouterror"                                      , "Memory", 0x4010003C,        2, base=16, readOnly, bitRange=1
+sfr = "SDIO1/autocmderrsts.[2]autocmderrsts_crcerror"                                          , "Memory", 0x4010003C,        2, base=16, readOnly, bitRange=2
+sfr = "SDIO1/autocmderrsts.[3]autocmderrsts_endbiterror"                                       , "Memory", 0x4010003C,        2, base=16, readOnly, bitRange=3
+sfr = "SDIO1/autocmderrsts.[4]autocmderrsts_indexerror"                                        , "Memory", 0x4010003C,        2, base=16, readOnly, bitRange=4
+sfr = "SDIO1/autocmderrsts.[7]autocmderrsts_nexterror"                                         , "Memory", 0x4010003C,        2, base=16, readOnly, bitRange=7
+sfr = "SDIO1/hostcontrol2"                                                                     , "Memory", 0x4010003E,        2, base=16
+sfr = "SDIO1/hostcontrol2.[14]hostctrl2_asynchintrenable"                                      , "Memory", 0x4010003E,        2, base=16, bitRange=14
+sfr = "SDIO1/hostcontrol2.[15]hostctrl2_presetvalueenable"                                     , "Memory", 0x4010003E,        2, base=16, bitRange=15
+sfr = "SDIO1/capabilities"                                                                     , "Memory", 0x40100040,        4, base=16, readOnly
+sfr = "SDIO1/capabilities.[5:0]corecfg_timeoutclkfreq"                                         , "Memory", 0x40100040,        4, base=16, readOnly, bitRange=0-5
+sfr = "SDIO1/capabilities.[7]corecfg_timeoutclkunit"                                           , "Memory", 0x40100040,        4, base=16, readOnly, bitRange=7
+sfr = "SDIO1/capabilities.[15:8]corecfg_baseclkfreq"                                           , "Memory", 0x40100040,        4, base=16, readOnly, bitRange=8-15
+sfr = "SDIO1/capabilities.[17:16]corecfg_maxblklength"                                         , "Memory", 0x40100040,        4, base=16, readOnly, bitRange=16-17
+sfr = "SDIO1/capabilities.[18]corecfg_8bitsupport"                                             , "Memory", 0x40100040,        4, base=16, readOnly, bitRange=18
+sfr = "SDIO1/capabilities.[19]corecfg_adma2support"                                            , "Memory", 0x40100040,        4, base=16, readOnly, bitRange=19
+sfr = "SDIO1/capabilities.[21]corecfg_highspeedsupport"                                        , "Memory", 0x40100040,        4, base=16, readOnly, bitRange=21
+sfr = "SDIO1/capabilities.[22]corecfg_sdmasupport"                                             , "Memory", 0x40100040,        4, base=16, readOnly, bitRange=22
+sfr = "SDIO1/capabilities.[23]corecfg_suspressupport"                                          , "Memory", 0x40100040,        4, base=16, readOnly, bitRange=23
+sfr = "SDIO1/capabilities.[24]corecfg_3p3voltsupport"                                          , "Memory", 0x40100040,        4, base=16, readOnly, bitRange=24
+sfr = "SDIO1/capabilities.[25]corecfg_3p0voltsupport"                                          , "Memory", 0x40100040,        4, base=16, readOnly, bitRange=25
+sfr = "SDIO1/capabilities.[26]corecfg_1p8voltsupport"                                          , "Memory", 0x40100040,        4, base=16, readOnly, bitRange=26
+sfr = "SDIO1/capabilities.[28]corecfg_64bitsupport"                                            , "Memory", 0x40100040,        4, base=16, readOnly, bitRange=28
+sfr = "SDIO1/capabilities.[29]corecfg_asynchintrsupport"                                       , "Memory", 0x40100040,        4, base=16, readOnly, bitRange=29
+sfr = "SDIO1/capabilities.[31:30]corecfg_slottype"                                             , "Memory", 0x40100040,        4, base=16, readOnly, bitRange=30-31
+sfr = "SDIO1/capabilities_cont"                                                                , "Memory", 0x40100044,        4, base=16, readOnly
+sfr = "SDIO1/capabilities_cont.[23:16]corecfg_clockmultiplier"                                 , "Memory", 0x40100044,        4, base=16, readOnly, bitRange=16-23
+sfr = "SDIO1/capabilities_cont.[24]corecfg_spisupport"                                         , "Memory", 0x40100044,        4, base=16, readOnly, bitRange=24
+sfr = "SDIO1/capabilities_cont.[25]corecfg_spiblkmode"                                         , "Memory", 0x40100044,        4, base=16, readOnly, bitRange=25
+sfr = "SDIO1/maxcurrentcap"                                                                    , "Memory", 0x40100048,        4, base=16, readOnly
+sfr = "SDIO1/maxcurrentcap.[7:0]corecfg_maxcurrent3p3v"                                        , "Memory", 0x40100048,        4, base=16, readOnly, bitRange=0-7
+sfr = "SDIO1/maxcurrentcap.[15:8]corecfg_maxcurrent3p0v"                                       , "Memory", 0x40100048,        4, base=16, readOnly, bitRange=8-15
+sfr = "SDIO1/maxcurrentcap.[23:16]corecfg_maxcurrent1p8v"                                      , "Memory", 0x40100048,        4, base=16, readOnly, bitRange=16-23
+sfr = "SDIO1/ForceEventforAUTOCMDErrorStatus"                                                  , "Memory", 0x40100050,        2, base=16, writeOnly
+sfr = "SDIO1/ForceEventforAUTOCMDErrorStatus.[0]forceautocmdnotexec"                           , "Memory", 0x40100050,        2, base=16, writeOnly, bitRange=0
+sfr = "SDIO1/ForceEventforAUTOCMDErrorStatus.[1]forceautocmdtimeouterr"                        , "Memory", 0x40100050,        2, base=16, writeOnly, bitRange=1
+sfr = "SDIO1/ForceEventforAUTOCMDErrorStatus.[2]forceautocmdcrcerr"                            , "Memory", 0x40100050,        2, base=16, writeOnly, bitRange=2
+sfr = "SDIO1/ForceEventforAUTOCMDErrorStatus.[3]forceautocmdendbiterr"                         , "Memory", 0x40100050,        2, base=16, writeOnly, bitRange=3
+sfr = "SDIO1/ForceEventforAUTOCMDErrorStatus.[4]forceautocmdindexerr"                          , "Memory", 0x40100050,        2, base=16, writeOnly, bitRange=4
+sfr = "SDIO1/ForceEventforAUTOCMDErrorStatus.[7]forcecmdnotissuedbyautocmd12err"               , "Memory", 0x40100050,        2, base=16, writeOnly, bitRange=7
+sfr = "SDIO1/forceeventforerrintsts"                                                           , "Memory", 0x40100052,        2, base=16, writeOnly
+sfr = "SDIO1/forceeventforerrintsts.[0]forcecmdtimeouterr"                                     , "Memory", 0x40100052,        2, base=16, writeOnly, bitRange=0
+sfr = "SDIO1/forceeventforerrintsts.[1]forcecmdcrcerr"                                         , "Memory", 0x40100052,        2, base=16, writeOnly, bitRange=1
+sfr = "SDIO1/forceeventforerrintsts.[2]forcecmdendbiterr"                                      , "Memory", 0x40100052,        2, base=16, writeOnly, bitRange=2
+sfr = "SDIO1/forceeventforerrintsts.[3]forcecmdindexerr"                                       , "Memory", 0x40100052,        2, base=16, writeOnly, bitRange=3
+sfr = "SDIO1/forceeventforerrintsts.[4]forcedattimeouterr"                                     , "Memory", 0x40100052,        2, base=16, writeOnly, bitRange=4
+sfr = "SDIO1/forceeventforerrintsts.[5]forcedatcrcerr"                                         , "Memory", 0x40100052,        2, base=16, writeOnly, bitRange=5
+sfr = "SDIO1/forceeventforerrintsts.[6]forcedatendbiterr"                                      , "Memory", 0x40100052,        2, base=16, writeOnly, bitRange=6
+sfr = "SDIO1/forceeventforerrintsts.[7]forcecurrlimerr"                                        , "Memory", 0x40100052,        2, base=16, writeOnly, bitRange=7
+sfr = "SDIO1/forceeventforerrintsts.[8]forceautocmderr"                                        , "Memory", 0x40100052,        2, base=16, writeOnly, bitRange=8
+sfr = "SDIO1/forceeventforerrintsts.[9]forceadmaerr"                                           , "Memory", 0x40100052,        2, base=16, writeOnly, bitRange=9
+sfr = "SDIO1/admaerrsts"                                                                       , "Memory", 0x40100054,        1, base=16, readOnly
+sfr = "SDIO1/admaerrsts.[1:0]admaerrsts_admaerrorstate"                                        , "Memory", 0x40100054,        1, base=16, readOnly, bitRange=0-1
+sfr = "SDIO1/admaerrsts.[2]admaerrsts_admalenmismatcherr"                                      , "Memory", 0x40100054,        1, base=16, readOnly, bitRange=2
+sfr = "SDIO1/admasysaddr0"                                                                     , "Memory", 0x40100058,        2, base=16
+sfr = "SDIO1/admasysaddr0.[15:0]adma_sysaddress0"                                              , "Memory", 0x40100058,        2, base=16, bitRange=0-15
+sfr = "SDIO1/admasysaddr1"                                                                     , "Memory", 0x4010005A,        2, base=16
+sfr = "SDIO1/admasysaddr1.[15:0]adma_sysaddress1"                                              , "Memory", 0x4010005A,        2, base=16, bitRange=0-15
+sfr = "SDIO1/presetvalue0"                                                                     , "Memory", 0x40100060,        2, base=16, readOnly
+sfr = "SDIO1/presetvalue0.[9:0]SDCLKFrequencySelectValue"                                      , "Memory", 0x40100060,        2, base=16, readOnly, bitRange=0-9
+sfr = "SDIO1/presetvalue0.[10]ClockGeneratorSelectValue"                                       , "Memory", 0x40100060,        2, base=16, readOnly, bitRange=10
+sfr = "SDIO1/presetvalue1"                                                                     , "Memory", 0x40100062,        2, base=16, readOnly
+sfr = "SDIO1/presetvalue1.[9:0]SDCLKFrequencySelectValue"                                      , "Memory", 0x40100062,        2, base=16, readOnly, bitRange=0-9
+sfr = "SDIO1/presetvalue1.[10]ClockGeneratorSelectValue"                                       , "Memory", 0x40100062,        2, base=16, readOnly, bitRange=10
+sfr = "SDIO1/presetvalue2"                                                                     , "Memory", 0x40100064,        2, base=16, readOnly
+sfr = "SDIO1/presetvalue2.[9:0]SDCLKFrequencySelectValue"                                      , "Memory", 0x40100064,        2, base=16, readOnly, bitRange=0-9
+sfr = "SDIO1/presetvalue2.[10]ClockGeneratorSelectValue"                                       , "Memory", 0x40100064,        2, base=16, readOnly, bitRange=10
+sfr = "SDIO1/slotintrsts"                                                                      , "Memory", 0x401000FC,        2, base=16, readOnly
+sfr = "SDIO1/slotintrsts.[0]sdhchostif_slotintrsts"                                            , "Memory", 0x401000FC,        2, base=16, readOnly, bitRange=0
+sfr = "SDIO1/hostcontrollerver"                                                                , "Memory", 0x401000FE,        2, base=16, readOnly
+sfr = "SDIO1/hostcontrollerver.[7:0]SpecificationVersionNumber"                                , "Memory", 0x401000FE,        2, base=16, readOnly, bitRange=0-7
+sfr = "SDIO1/hostcontrollerver.[15:8]SDHC_VENVERNUM"                                           , "Memory", 0x401000FE,        2, base=16, readOnly, bitRange=8-15
+
+;;
+;; Group info for SFR Window.
+;;
+[SfrGroupInfo]
+
+// SDIO1 -----
+group = "SDIO1","SDIO1/sdmasysaddrlo","SDIO1/sdmasysaddrhi","SDIO1/blocksize","SDIO1/blockcount","SDIO1/argument1lo","SDIO1/argument1hi","SDIO1/transfermode","SDIO1/command","SDIO1/response0","SDIO1/response1","SDIO1/response2","SDIO1/response3","SDIO1/response4","SDIO1/response5","SDIO1/response6","SDIO1/response7","SDIO1/dataport","SDIO1/presentstate","SDIO1/hostcontrol1","SDIO1/powercontrol","SDIO1/blockgapcontrol","SDIO1/wakeupcontrol","SDIO1/clockcontrol","SDIO1/timeoutcontrol","SDIO1/softwarereset","SDIO1/normalintrsts","SDIO1/errorintrsts","SDIO1/normalintrstsena","SDIO1/errorintrstsena","SDIO1/normalintrsigena","SDIO1/errorintrsigena","SDIO1/autocmderrsts","SDIO1/hostcontrol2","SDIO1/capabilities","SDIO1/capabilities_cont","SDIO1/maxcurrentcap","SDIO1/ForceEventforAUTOCMDErrorStatus","SDIO1/forceeventforerrintsts","SDIO1/admaerrsts","SDIO1/admasysaddr0","SDIO1/admasysaddr1","SDIO1/presetvalue0","SDIO1/presetvalue1","SDIO1/presetvalue2","SDIO1/slotintrsts","SDIO1/hostcontrollerver"
