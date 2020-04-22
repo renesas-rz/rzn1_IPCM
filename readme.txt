@@ -30,3 +30,5 @@ Memory region A7->M3 messages @ 0x200F8000.
 -------------------------------------------------------------
 <linux/interrupt.h> is included from ../rzn1_linux/drivers/mailbox/pl320-ipc.c
 See also ./rzn1_linux/drivers/char/mailbox/mailbox.c
+
+C:\temp\IPCM> git clone https://github.com/CarlStenquist/IPCM
