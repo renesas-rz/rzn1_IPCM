@@ -1,6 +1,6 @@
 ----------------------------------------------------------
-N1D: Use rzn_lwip_socket_gmac.eww.
-N1L: FLASH_xxx is the project for our RZ/N1L based product.
+Use rzn_lwip_socket_gmac.eww for the N1D IPCM test on CM3.
+(FLASH_xxx is the project for our RZ/N1L based product.)
 ----------------------------------------------------------
 Linux main arguments:
   int sleep_time_microsec = atoi(argv[1]);

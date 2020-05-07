@@ -1,6 +1,5 @@
 /**********************************************************************************************************************
     $REA IPCM project notes.
-    + The project name implies it is not from BMD. Let's rename it?
     + Warning[Pa181]: incompatible redefinition of macro "GMAC2" (declared at line 131 of "C:\Workspace\RZN\3rd-party_customers\Pivotal\CTC\IPCM\V2.0\M3\bsd_lwip_port\src\fit_modules\r_bsp\inc\iodefines/RZN1L_iodefine.h") C:\Workspace\RZN\3rd-party_customers\Pivotal\CTC\IPCM\V2.0\M3\bsd_lwip_port\src\fit_modules\r_bsp\inc\iodefines\RZN1D_iodefine.h 148
     + Which folders/files of workspace delete..
 ***********************************************************************************************************************/
@@ -50,12 +49,15 @@ Includes
 /*******************************************************************************
 Defines
 ********************************************************************************/
-#define SHM_SIZE          0x8000
-#define SHM_ADDR          ((unsigned int *)0x200F8000)
-#define TX_SLEEP_TIME_MS  1000L
+#define SHM_SIZE                      0x8000
+#define SHM_ADDR                      ((unsigned int*)0x200F8000)
+#define SHM_ADDR_M3_TO_A7_OFFSET      ((SHM_SIZE/2)/4)
+
+#define TX_SLEEP_TIME_MS              1000L
+#define M3_TO_A7_MEM_WRITE_SIZE_BYTES 0x80  //#bytes write chunks to A7 shared mem.
 
 /* For IAR Terminal I/O updates if desired. You could even set to 1 but will slow system down alot. */
-#define DISPLAY_UPDATE_MAXCOUNT   10000
+#define DISPLAY_UPDATE_TRIGCOUNT      10000
 
 /********************************************************************************
 Types, structs
@@ -79,12 +81,12 @@ static int  init_task_cnt = 0;
 
 /* Globals to show in IAR Live Watch. */
 static int            error = 0;
-static int            write_cnt = 0;
+static int            read_cnt = 0;
 static unsigned int   M3_to_A7_mem_write_cnt = 0;
 static unsigned int   M3_to_A7_mem_write_try_cnt = 0;
 static unsigned int   M3_to_A7_mem_write_delta_cnt = 0;
 static unsigned int   M3_to_A7_mem_write_sleep_cnt = 0;
-static int            M3_to_A7_mem_write_size_bytes = 100; //Perhaps change to macro. $REA
+//static unsigned int   M3_TO_A7_MEM_WRITE_SIZE_BYTES = 100; //Perhaps change to macro. $REA
 
 /***********************************************************************************************************************
 External functions
@@ -133,13 +135,15 @@ Functione define: write_to_shm()
 *******************************************************************************/
 void write_to_shm(int cnt, int shm_region_size_bytes)
 {
-  M3_to_A7_mem_write_cnt++;
+  unsigned int*  addr_p;
 
-  unsigned int *addr = SHM_ADDR + (SHM_SIZE/2/4);
+  addr_p = SHM_ADDR + SHM_ADDR_M3_TO_A7_OFFSET; //0x200FC000
+
+  M3_to_A7_mem_write_cnt++;
 
   for(int i = 0 ; i < shm_region_size_bytes/4 ; i++)
   {
-    *(((unsigned long *) addr) + i) = cnt++;
+    *(((unsigned long*) addr_p) + i) = cnt++;
   }
 }/* end write_to_shm() */
 
@@ -171,7 +175,7 @@ void check_memory(unsigned int ipcm_d1, unsigned int ipcm_d2, unsigned int shm_s
     error++;
   }
 
-  write_cnt++;
+  read_cnt++;
 
   free(mem_content_p);
 }/* end check_memory() */
@@ -187,6 +191,7 @@ void init_task(int exinf)
   {
     tslp_tsk(TX_SLEEP_TIME_MS);
   }
+
   ext_tsk();
 }/* end init_task() */
 
@@ -195,15 +200,16 @@ Function define: pl320_tx_task()
 *******************************************************************************/
 void pl320_tx_task(int exinf)
 {
-  int                     cycle = 0;
+  int cycle = 0;
 
   while(1)
   {
     tslp_tsk(TX_SLEEP_TIME_MS);
 
-    cycle = cycle + M3_to_A7_mem_write_size_bytes/4;
-    write_to_shm(cycle, M3_to_A7_mem_write_size_bytes);
+    cycle = cycle + M3_TO_A7_MEM_WRITE_SIZE_BYTES/4;
+    write_to_shm(cycle, M3_TO_A7_MEM_WRITE_SIZE_BYTES);
 
+    /* Detect if writes did not happen. E.g. use to show M3_to_A7_mem_write_delta_cnt in debugger. */
     M3_to_A7_mem_write_try_cnt++;
     M3_to_A7_mem_write_delta_cnt = M3_to_A7_mem_write_try_cnt - M3_to_A7_mem_write_cnt;
 
@@ -214,7 +220,7 @@ void pl320_tx_task(int exinf)
       M3_to_A7_mem_write_sleep_cnt++;
     }
     /* Send status is 0; mailbox is inactive.
-    /* Currently the Linux kernel requires to fill data reg. 0 with destination
+    Currently the Linux kernel requires to fill data reg. 0 with destination
     core ID. Should be investigated why this seems be practise. */
     IPCM->IPCM0DR0.LONG = 2;
 
@@ -223,7 +229,7 @@ void pl320_tx_task(int exinf)
     IPCM->IPCM0DR2.LONG = cycle + 1;
 
     /* Passing the memory size through IPCM data register #3. */
-    IPCM->IPCM0DR3.LONG = M3_to_A7_mem_write_size_bytes;
+    IPCM->IPCM0DR3.LONG = M3_TO_A7_MEM_WRITE_SIZE_BYTES;
     IPCM->IPCM0DR4.LONG = 0x04;
     IPCM->IPCM0DR5.LONG = 0x05;
     IPCM->IPCM0DR6.LONG = 0x06;
@@ -241,13 +247,17 @@ Function define: pl320_rx_task()
 *******************************************************************************/
 void pl320_rx_task(int exinf)
 {
-  // FLGPTN wait_ptn = 0xFFFF;  $REA
-  // ER hwos_err, res;
-  // unsigned long mask_out;
   int ipcm_rx_cnt = 0;
   unsigned int d0, d1, d2, d3, d4, d5, d6;
-  unsigned int i0, i1, i2;
   unsigned int display_update_counter = 0;
+
+  /* Interrupt status not used for now.
+  unsigned int i0, i1, i2;  */
+
+    /* In case ISRs for the mailboxes are used, using flahs is a usage possibility.
+    For now we are using HW-ISR; see static_hwisr_table (RZN1_IRQ_IPCM_0).
+    FLGPTN wait_ptn = 0xFFFF;
+    ER hwos_err, res; */
 
   /* See linux ../rzn1_linux/drivers/mailbox/pl320-ipc.c for example init of mailbox. */
 
@@ -277,7 +287,7 @@ void pl320_rx_task(int exinf)
     /* Sleep task until task woken up by RZN1_IRQ_IPCM_0. HWISR used. */
     slp_tsk();
 
-    /* In case ISRs for the mailboxes are used, this is a usage possibility. For now
+    /* In case ISRs for the mailboxes are used, using flahs is a usage possibility.
     For now we are using HW-ISR; see static_hwisr_table (RZN1_IRQ_IPCM_0).
     hwos_err = wai_flg(ID_FLG_PL320_IRQ, wait_ptn, TWF_ORW, (FLGPTN*)&mask_out);
     hwos_err = clr_flg(ID_FLG_PL320_IRQ, (FLGPTN)~mask_out); */
@@ -312,9 +322,8 @@ void pl320_rx_task(int exinf)
         printf("d5=0x%X, ", d5);
         printf("d6=0x%X\n", d6);
       }
-      if (display_update_counter++ == DISPLAY_UPDATE_MAXCOUNT)
+      if (display_update_counter++ > DISPLAY_UPDATE_TRIGCOUNT)
         display_update_counter = 0;
-
     #endif
 
     /* M3 starts to run much earlier than Linux. So have to wait until the data
