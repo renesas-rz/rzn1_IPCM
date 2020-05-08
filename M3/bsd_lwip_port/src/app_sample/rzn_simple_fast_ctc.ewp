@@ -2143,15 +2143,6 @@
     <group>
         <name>App</name>
         <file>
-            <name>$PROJ_DIR$\..\fit_modules\r_iomux_rzn1\src\clock.c</name>
-            <excluded>
-                <configuration>Debug</configuration>
-            </excluded>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\hw_func\eth\eth_hwfnc.c</name>
-        </file>
-        <file>
             <name>$PROJ_DIR$\..\fit_modules\r_iomux_rzn1\src\pinmux.c</name>
         </file>
         <file>
@@ -2237,6 +2228,21 @@
         </group>
         <file>
             <name>$PROJ_DIR$\..\fit_modules\r_bsp\board\rzn1l-db\hwsetup_l.c</name>
+        </file>
+    </group>
+    <group>
+        <name>unused</name>
+        <file>
+            <name>$PROJ_DIR$\..\fit_modules\r_iomux_rzn1\src\clock.c</name>
+            <excluded>
+                <configuration>Debug</configuration>
+            </excluded>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\hw_func\eth\eth_hwfnc.c</name>
+            <excluded>
+                <configuration>Debug</configuration>
+            </excluded>
         </file>
     </group>
     <file>

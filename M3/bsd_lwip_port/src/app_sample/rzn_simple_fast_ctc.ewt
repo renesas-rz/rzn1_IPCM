@@ -18,7 +18,7 @@
                     <analyzeTimeoutEnabled>1</analyzeTimeoutEnabled>
                     <analyzeTimeout>600</analyzeTimeout>
                     <enableParallel>1</enableParallel>
-                    <parallelThreads>6</parallelThreads>
+                    <parallelThreads>4</parallelThreads>
                     <enableFalsePositives>0</enableFalsePositives>
                     <messagesLimitEnabled>1</messagesLimitEnabled>
                     <messagesLimit>100</messagesLimit>
@@ -1202,7 +1202,7 @@
                     <analyzeTimeoutEnabled>1</analyzeTimeoutEnabled>
                     <analyzeTimeout>600</analyzeTimeout>
                     <enableParallel>1</enableParallel>
-                    <parallelThreads>6</parallelThreads>
+                    <parallelThreads>4</parallelThreads>
                     <enableFalsePositives>0</enableFalsePositives>
                     <messagesLimitEnabled>1</messagesLimitEnabled>
                     <messagesLimit>100</messagesLimit>
@@ -2372,12 +2372,6 @@
     <group>
         <name>App</name>
         <file>
-            <name>$PROJ_DIR$\..\fit_modules\r_iomux_rzn1\src\clock.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\hw_func\eth\eth_hwfnc.c</name>
-        </file>
-        <file>
             <name>$PROJ_DIR$\..\fit_modules\r_iomux_rzn1\src\pinmux.c</name>
         </file>
         <file>
@@ -2399,27 +2393,6 @@
             <name>A5PSW</name>
             <file>
                 <name>$PROJ_DIR$\..\fit_modules\r_a5psw_rzn1\src\r_a5psw_rzn1.c</name>
-            </file>
-        </group>
-        <group>
-            <name>DMA</name>
-            <file>
-                <name>$PROJ_DIR$\..\fit_modules\r_dma_rzn1\src\r_dma_rzn1.c</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\..\fit_modules\r_dma_rzn1\src\r_dma_rzn1_if.c</name>
-            </file>
-        </group>
-        <group>
-            <name>GMAC</name>
-            <file>
-                <name>$PROJ_DIR$\..\fit_modules\r_gmac_rzn1\src\r_gmac_rzn1.c</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\..\fit_modules\r_gmac_rzn1\src\r_gmac_rzn1_if.c</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\..\fit_modules\r_gmac_rzn1\src\r_phy_rzn1.c</name>
             </file>
         </group>
         <group>
@@ -2484,6 +2457,15 @@
         </group>
         <file>
             <name>$PROJ_DIR$\..\fit_modules\r_bsp\board\rzn1l-db\hwsetup_l.c</name>
+        </file>
+    </group>
+    <group>
+        <name>unused</name>
+        <file>
+            <name>$PROJ_DIR$\..\fit_modules\r_iomux_rzn1\src\clock.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\hw_func\eth\eth_hwfnc.c</name>
         </file>
     </group>
     <file>
