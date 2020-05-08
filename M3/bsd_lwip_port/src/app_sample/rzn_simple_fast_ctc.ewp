@@ -66,7 +66,7 @@
                 </option>
                 <option>
                     <name>OGLastSavedByProductVersion</name>
-                    <state>8.32.2.19370</state>
+                    <state>8.32.1.18618</state>
                 </option>
                 <option>
                     <name>GeneralEnableMisra</name>
@@ -116,7 +116,7 @@
                 </option>
                 <option>
                     <name>GBECoreSlave</name>
-                    <version>27</version>
+                    <version>26</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -133,7 +133,7 @@
                 </option>
                 <option>
                     <name>CoreVariant</name>
-                    <version>27</version>
+                    <version>26</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -156,7 +156,7 @@
                 </option>
                 <option>
                     <name>GFPUCoreSlave2</name>
-                    <version>27</version>
+                    <version>26</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -708,7 +708,7 @@
                 </option>
                 <option>
                     <name>OOCOutputFile</name>
-                    <state>rzn_lwip_socket_gmac.bin</state>
+                    <state>rzn_simple_fast_ctc.bin</state>
                 </option>
                 <option>
                     <name>OOCCommandLineProducer</name>
@@ -1215,7 +1215,7 @@
                 </option>
                 <option>
                     <name>GBECoreSlave</name>
-                    <version>27</version>
+                    <version>26</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -1232,7 +1232,7 @@
                 </option>
                 <option>
                     <name>CoreVariant</name>
-                    <version>27</version>
+                    <version>26</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -1255,7 +1255,7 @@
                 </option>
                 <option>
                     <name>GFPUCoreSlave2</name>
-                    <version>27</version>
+                    <version>26</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -2173,42 +2173,6 @@
             <name>A5PSW</name>
             <file>
                 <name>$PROJ_DIR$\..\fit_modules\r_a5psw_rzn1\src\r_a5psw_rzn1.c</name>
-            </file>
-        </group>
-        <group>
-            <name>DMA</name>
-            <file>
-                <name>$PROJ_DIR$\..\fit_modules\r_dma_rzn1\src\r_dma_rzn1.c</name>
-                <excluded>
-                    <configuration>Debug</configuration>
-                </excluded>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\..\fit_modules\r_dma_rzn1\src\r_dma_rzn1_if.c</name>
-                <excluded>
-                    <configuration>Debug</configuration>
-                </excluded>
-            </file>
-        </group>
-        <group>
-            <name>GMAC</name>
-            <file>
-                <name>$PROJ_DIR$\..\fit_modules\r_gmac_rzn1\src\r_gmac_rzn1.c</name>
-                <excluded>
-                    <configuration>Debug</configuration>
-                </excluded>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\..\fit_modules\r_gmac_rzn1\src\r_gmac_rzn1_if.c</name>
-                <excluded>
-                    <configuration>Debug</configuration>
-                </excluded>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\..\fit_modules\r_gmac_rzn1\src\r_phy_rzn1.c</name>
-                <excluded>
-                    <configuration>Debug</configuration>
-                </excluded>
             </file>
         </group>
         <group>

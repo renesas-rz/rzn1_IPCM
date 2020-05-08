@@ -34,15 +34,7 @@ Includes
 #include "timer.h"
 #include "kernel.h"
 #include "kernel_id.h"
-
-#include "lwip/tcpip.h"
-
-#include "r_gmac_rzn1_if.h"
-#include "r_gpio_rzn1_if.h"
-#include "r_gpio_rzn1l.h"
-
 #include "serial_log.h"
-#include "lwip/apps/snmp.h"
 #include "asb_low_level_init.h"
 #include "iodefines\RZN1D_iodefine.h"
 
