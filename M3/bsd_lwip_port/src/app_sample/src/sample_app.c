@@ -192,14 +192,14 @@ Function define: pl320_tx_task()
 *******************************************************************************/
 void pl320_tx_task(int exinf)
 {
-  int cycle = 0;
+  int tx_cycle = 0;
 
   while(1)
   {
     tslp_tsk(TX_SLEEP_TIME_MS);
 
-    cycle = cycle + M3_TO_A7_MEM_WRITE_SIZE_BYTES/4;
-    write_to_shm(cycle, M3_TO_A7_MEM_WRITE_SIZE_BYTES);
+    tx_cycle = tx_cycle + M3_TO_A7_MEM_WRITE_SIZE_BYTES/4;
+    write_to_shm(tx_cycle, M3_TO_A7_MEM_WRITE_SIZE_BYTES);
 
     /* Detect if writes did not happen. E.g. use to show M3_to_A7_mem_write_delta_cnt in debugger. */
     M3_to_A7_mem_write_try_cnt++;
@@ -216,9 +216,9 @@ void pl320_tx_task(int exinf)
     core ID. Should be investigated why this seems be practise. */
     IPCM->IPCM0DR0.LONG = 2;
 
-    /* Filling IPCM data registers 1 and 2 with cycle pattern to verify the consistency on A7 side. */
-    IPCM->IPCM0DR1.LONG = cycle;
-    IPCM->IPCM0DR2.LONG = cycle + 1;
+    /* Filling IPCM data registers 1 and 2 with tx_cycle pattern to verify the consistency on A7 side. */
+    IPCM->IPCM0DR1.LONG = tx_cycle;
+    IPCM->IPCM0DR2.LONG = tx_cycle + 1;
 
     /* Passing the memory size through IPCM data register #3. */
     IPCM->IPCM0DR3.LONG = M3_TO_A7_MEM_WRITE_SIZE_BYTES;

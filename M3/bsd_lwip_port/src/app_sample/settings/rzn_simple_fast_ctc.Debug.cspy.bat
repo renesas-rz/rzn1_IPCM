@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\common\bin\cspybat" -f "C:\Workspace\RZN\3rd-party_customers\Pivotal\CTC\IPCM\V2.0\M3\bsd_lwip_port\src\app_sample\settings\rzn_simple_ipcm.Debug.general.xcl" --backend -f "C:\Workspace\RZN\3rd-party_customers\Pivotal\CTC\IPCM\V2.0\M3\bsd_lwip_port\src\app_sample\settings\rzn_simple_ipcm.Debug.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\common\bin\cspybat" -f "C:\Workspace\RZN\IPCM\Spring-2020\IPCM\M3\bsd_lwip_port\src\app_sample\settings\rzn_simple_fast_ctc.Debug.general.xcl" --backend -f "C:\Workspace\RZN\IPCM\Spring-2020\IPCM\M3\bsd_lwip_port\src\app_sample\settings\rzn_simple_fast_ctc.Debug.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\common\bin\cspybat" -f "C:\Workspace\RZN\3rd-party_customers\Pivotal\CTC\IPCM\V2.0\M3\bsd_lwip_port\src\app_sample\settings\rzn_simple_ipcm.Debug.general.xcl" "--debug_file=%~1" --backend -f "C:\Workspace\RZN\3rd-party_customers\Pivotal\CTC\IPCM\V2.0\M3\bsd_lwip_port\src\app_sample\settings\rzn_simple_ipcm.Debug.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\common\bin\cspybat" -f "C:\Workspace\RZN\IPCM\Spring-2020\IPCM\M3\bsd_lwip_port\src\app_sample\settings\rzn_simple_fast_ctc.Debug.general.xcl" "--debug_file=%~1" --backend -f "C:\Workspace\RZN\IPCM\Spring-2020\IPCM\M3\bsd_lwip_port\src\app_sample\settings\rzn_simple_fast_ctc.Debug.driver.xcl" 
 
 @echo off 
 :end
