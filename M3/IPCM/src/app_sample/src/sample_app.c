@@ -1,9 +1,4 @@
 /**********************************************************************************************************************
-    $REA IPCM project notes.
-    + Warning[Pa181]: incompatible redefinition of macro "GMAC2" (declared at line 131 of "C:\Workspace\RZN\3rd-party_customers\Pivotal\CTC\IPCM\V2.0\M3\bsd_lwip_port\src\fit_modules\r_bsp\inc\iodefines/RZN1L_iodefine.h") C:\Workspace\RZN\3rd-party_customers\Pivotal\CTC\IPCM\V2.0\M3\bsd_lwip_port\src\fit_modules\r_bsp\inc\iodefines\RZN1D_iodefine.h 148
-    + Which folders/files of workspace delete..
-***********************************************************************************************************************/
-/**********************************************************************************************************************
 * DISCLAIMER
 * This software is supplied by Renesas Electronics Corporation and is only intended for use with Renesas products. No
 * other uses are authorized. This software is owned by Renesas Electronics Corporation and is protected under all
@@ -43,13 +38,13 @@ Defines
 ********************************************************************************/
 #define SHM_SIZE                      0x8000
 #define SHM_ADDR                      ((unsigned int*)0x200F8000)
-#define SHM_ADDR_M3_TO_A7_OFFSET      ((SHM_SIZE/2)/4)
-
+#define SHM_ADDR_M3_TO_A7_OFFSET      ((SHM_SIZE/2)/4)  // 4B per int type.
 #define TX_SLEEP_TIME_MS              1000L
 #define M3_TO_A7_MEM_WRITE_SIZE_BYTES 0x80  //#bytes write chunks to A7 shared mem.
 
 /* For IAR Terminal I/O updates if desired. You could even set to 1 but will slow system down alot. */
 #define DISPLAY_UPDATE_TRIGCOUNT      10000
+#define MONITOR_TASK_SLEEP_MS         5000
 
 /********************************************************************************
 Types, structs
@@ -78,7 +73,8 @@ static unsigned int   M3_to_A7_mem_write_cnt = 0;
 static unsigned int   M3_to_A7_mem_write_try_cnt = 0;
 static unsigned int   M3_to_A7_mem_write_delta_cnt = 0;
 static unsigned int   M3_to_A7_mem_write_sleep_cnt = 0;
-//static unsigned int   M3_TO_A7_MEM_WRITE_SIZE_BYTES = 100; //Perhaps change to macro. $REA
+
+static unsigned int   monitor_cnt = 0;
 
 /***********************************************************************************************************************
 External functions
@@ -208,8 +204,10 @@ void pl320_tx_task(int exinf)
     /* Wait for send register to become inactive. */
     while (IPCM->IPCM0SEND.LONG != 0)
     {
-      tslp_tsk(1LL);  //$REA: Investigate need/value of this sleep.
-      M3_to_A7_mem_write_sleep_cnt++;
+      tslp_tsk(1);
+      M3_to_A7_mem_write_sleep_cnt++; //Always 0 if sleep 1.
+      if (M3_to_A7_mem_write_sleep_cnt > 1) //$REA REMOVE!
+        while (1);
     }
     /* Send status is 0; mailbox is inactive.
     Currently the Linux kernel requires to fill data reg. 0 with destination
@@ -276,7 +274,7 @@ void pl320_rx_task(int exinf)
 
   while (1)
   {
-    /* Sleep task until task woken up by RZN1_IRQ_IPCM_0. HWISR used. */
+    /* Sleep task until woken up by RZN1_IRQ_IPCM_0. HWISR used. */
     slp_tsk();
 
     /* In case ISRs for the mailboxes are used, using flahs is a usage possibility.
@@ -335,6 +333,19 @@ void pl320_rx_task(int exinf)
 }/* end pl320_rx_task() */
 
 /*******************************************************************************
+Function define: monitor_task()
+*******************************************************************************/
+void monitor_task(int extinf)
+{
+  while(1)
+  {
+    tslp_tsk(MONITOR_TASK_SLEEP_MS);
+    //cpu_load = get_latest_cpu_load();
+    monitor_cnt++;
+  }
+}/* end monitor_task() */
+
+/*******************************************************************************
 Functione define: idle_task()
 *******************************************************************************/
 void idle_task(int exinf)
@@ -343,4 +354,7 @@ void idle_task(int exinf)
   {
   }
 }/* end idle_task() */
+/*   $REA fast IPCM notes.
+    + Warning[Pa181]: incompatible redefinition of macro "GMAC2" (declared at line 131 of "C:\Workspace\RZN\3rd-party_customers\Pivotal\CTC\IPCM\V2.0\M3\bsd_lwip_port\src\fit_modules\r_bsp\inc\iodefines/RZN1L_iodefine.h") C:\Workspace\RZN\3rd-party_customers\Pivotal\CTC\IPCM\V2.0\M3\bsd_lwip_port\src\fit_modules\r_bsp\inc\iodefines\RZN1D_iodefine.h 148
+    + Which folders/files of workspace delete..
 /* file end */

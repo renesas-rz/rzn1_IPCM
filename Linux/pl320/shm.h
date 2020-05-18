@@ -30,10 +30,10 @@ Includes
 Defines
 ********************************************************************************/
 /* Memory regions: M3->A7 = 0x200fc000, A7->M3 = 0x200f8000. */
-#define SHM_ADDRESS 0x200F8000
-#define SHM_SIZE 0x8000UL
-#define MAP_MASK (SHM_SIZE- 1)
-#define UNUSED(x) (void)(x)
+#define SHM_ADDRESS     0x200F8000
+#define SHM_SIZE        0x8000UL
+#define MAP_MASK        (SHM_SIZE - 1)
+#define UNUSED(x)       (void)(x)
 
 /********************************************************************************
 Types, structs

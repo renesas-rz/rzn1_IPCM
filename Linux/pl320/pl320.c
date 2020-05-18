@@ -116,7 +116,7 @@ int main(int argc, char *argv[])
   int sleep_time_us = (int)atoi(argv[1]);
   int shm_size_bytes = atoi(argv[2]);
   //if ((atoi(argv[3] != 0)) && (atoi(argv[3] != 1)))
-    //printf("argumet 3 show_M3_to_A7_content_flag must 0 or 1.\n");
+    //printf("argumet 3 show_M3_to_A7_content_flag must be 0 or 1.\n");
   show_M3_to_A7_content_flag = atoi(argv[3]);
   
   /* Check arguments. */
@@ -138,7 +138,7 @@ int main(int argc, char *argv[])
     return -1;
   }
 
-  /* Create new mailbox device. Core is #2 of the RZ/N; 2xA7 running in SMP mode. */
+  /* Create new mailbox device. Core is #2 of the RZ/N. There are two A7 cores running in SMP mode. */
   result = ioctl(main_fd, MBOX_IOCTL_CREATE, 2);
   printf("ioctl result MBOX_IOCTL_CREATE (core #2) = %d\n", result);
   close(main_fd);

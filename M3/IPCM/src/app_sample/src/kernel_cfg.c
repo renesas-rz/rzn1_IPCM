@@ -40,7 +40,6 @@ Includes
 Defines
 *******************************************************************************/
 #define SHM_ADDR                  ((unsigned int *)0x200F8000)
-#define TASK_SLEEP_MS             5000
 
 /*******************************************************************************
 Types, structs
@@ -52,6 +51,7 @@ extern void   init_task(int exinf);
 extern void   pl320_tx_task(int exinf);
 extern void   pl320_rx_task(int exinf);
 extern void   idle_task(int exinf);
+extern void   monitor_task(int exinf);
 
 //extern void sample_app_printf(const char *message); //$REA
 extern int    printf(const char *_Restrict, ...);
@@ -68,7 +68,6 @@ Static (private) variables
 static uint32_t idle_ticks = 0;
 static uint32_t non_idle_ticks = 0;
 
-static unsigned int monitor_cnt = 0;
 
 //static uint32_t get_latest_cpu_load();
 //static uint32_t cpu_load;
@@ -95,22 +94,6 @@ void systick_handler(void)
         break;
   }
 }/* end systick_handler() */
-
-/*******************************************************************************
-Function define: systick_handler()
-*******************************************************************************/
-void monitor_task(int extinf)
-{
-  while(1)
-  {
-    tslp_tsk(TASK_SLEEP_MS);
-
-    //cpu_load = get_latest_cpu_load();
-
-    monitor_cnt++;
-
-  }
-}/* end monitor_task() */
 
 /*******************************************************************************
 Function define: systick_handler()
