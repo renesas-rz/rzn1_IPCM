@@ -16,15 +16,15 @@
                 <debug>1</debug>
                 <option>
                     <name>ExePath</name>
-                    <state>rzn1l_debug\Exe</state>
+                    <state>rzn1d_debug\Exe</state>
                 </option>
                 <option>
                     <name>ObjPath</name>
-                    <state>rzn1l_debug\Obj</state>
+                    <state>rzn1d_debug\Obj</state>
                 </option>
                 <option>
                     <name>ListPath</name>
-                    <state>rzn1l_debug\List</state>
+                    <state>rzn1d_debug\List</state>
                 </option>
                 <option>
                     <name>GEndianMode</name>
@@ -78,7 +78,7 @@
                 </option>
                 <option>
                     <name>OGChipSelectEditMenu</name>
-                    <state>R9A06G034_M3	Renesas R9A06G034_M3</state>
+                    <state>R9A06G032_M3	Renesas R9A06G032_M3</state>
                 </option>
                 <option>
                     <name>GenLowLevelInterface</name>
@@ -138,7 +138,7 @@
                 </option>
                 <option>
                     <name>GFPUDeviceSlave</name>
-                    <state>R9A06G034_M3	Renesas R9A06G034_M3</state>
+                    <state>R9A06G032_M3	Renesas R9A06G032_M3</state>
                 </option>
                 <option>
                     <name>FPU2</name>
@@ -224,7 +224,7 @@
                 </option>
                 <option>
                     <name>CCDefines</name>
-                    <state>BSP_PLAT_RZN1LDB</state>
+                    <state>BSP_PLAT_RZN1DDB</state>
                     <state>CORE_CM3</state>
                     <state>GOAL_CONFIG_IP_STATS=1</state>
                 </option>
@@ -369,10 +369,10 @@
                     <state>$PROJ_DIR$\..\fit_modules\r_iomux_rzn1\src</state>
                     <state>$PROJ_DIR$\..\fit_modules\r_gpio_rzn1</state>
                     <state>$PROJ_DIR$\..\fit_modules\r_gpio_rzn1\src</state>
-                    <state>$PROJ_DIR$\..\fit_modules\r_gpio_rzn1\src\targets\rzn1l</state>
+                    <state>$PROJ_DIR$\..\fit_modules\r_gpio_rzn1\src\targets\rzn1d</state>
                     <state>$PROJ_DIR$\..\fit_modules\r_bsp</state>
                     <state>$PROJ_DIR$\..\fit_modules\r_bsp\inc</state>
-                    <state>$PROJ_DIR$\..\fit_modules\r_bsp\board\rzn1l-db</state>
+                    <state>$PROJ_DIR$\..\fit_modules\r_bsp\board\rzn1d-db</state>
                     <state>$PROJ_DIR$\..\fit_modules\r_bsp\mcu\all</state>
                     <state>$PROJ_DIR$\..\fit_modules\r_bsp\mcu\rzn1</state>
                     <state>$PROJ_DIR$\..\fit_modules\r_bsp\mcu\rzn1\cm3</state>
@@ -2161,9 +2161,12 @@
     <group>
         <name>Drivers</name>
         <group>
-            <name>A5PSW</name>
+            <name>DMA</name>
             <file>
-                <name>$PROJ_DIR$\..\fit_modules\r_a5psw_rzn1\src\r_a5psw_rzn1.c</name>
+                <name>$PROJ_DIR$\..\fit_modules\r_dma_rzn1\src\r_dma_rzn1.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\fit_modules\r_dma_rzn1\src\r_dma_rzn1_if.c</name>
             </file>
         </group>
         <group>
@@ -2226,12 +2229,39 @@
                 <name>$PROJ_DIR$\..\fit_modules\r_bsp\mcu\rzn1\cm3\system_RZN1.c</name>
             </file>
         </group>
+        <group>
+            <name>DDR</name>
+            <file>
+                <name>$PROJ_DIR$\..\fit_modules\r_bsp\mcu\rzn1\ddr\ddr_ctrl.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\fit_modules\r_bsp\mcu\rzn1\ddr\ddr_init.c</name>
+            </file>
+        </group>
         <file>
             <name>$PROJ_DIR$\..\fit_modules\r_bsp\board\rzn1l-db\hwsetup_l.c</name>
         </file>
     </group>
     <group>
         <name>unused</name>
+        <group>
+            <name>A5PSW</name>
+            <file>
+                <name>$PROJ_DIR$\..\fit_modules\r_a5psw_rzn1\src\r_a5psw_rzn1.c</name>
+                <excluded>
+                    <configuration>Debug</configuration>
+                </excluded>
+            </file>
+        </group>
+        <group>
+            <name>USB</name>
+            <file>
+                <name>$PROJ_DIR$\..\fit_modules\r_usb_rzn1\r_usb_common_rzn1\src\r_usb_rzn1_if.c</name>
+                <excluded>
+                    <configuration>Debug</configuration>
+                </excluded>
+            </file>
+        </group>
         <file>
             <name>$PROJ_DIR$\..\fit_modules\r_iomux_rzn1\src\clock.c</name>
             <excluded>

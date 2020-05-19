@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\common\bin\cspybat" -f "C:\Workspace\RZN\IPCM\Spring-2020\IPCM\M3\bsd_lwip_port\src\app_sample\settings\rzn_simple_fast_ctc.Debug.general.xcl" --backend -f "C:\Workspace\RZN\IPCM\Spring-2020\IPCM\M3\bsd_lwip_port\src\app_sample\settings\rzn_simple_fast_ctc.Debug.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\common\bin\cspybat" -f "C:\Workspace\RZN\IPCM\Spring-2020\IPCM\M3\IPCM\src\app_sample\settings\rzn_simple_fast_ctc.Debug.general.xcl" --backend -f "C:\Workspace\RZN\IPCM\Spring-2020\IPCM\M3\IPCM\src\app_sample\settings\rzn_simple_fast_ctc.Debug.driver.xcl" 
 }
 else
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\common\bin\cspybat" -f "C:\Workspace\RZN\IPCM\Spring-2020\IPCM\M3\bsd_lwip_port\src\app_sample\settings\rzn_simple_fast_ctc.Debug.general.xcl" --debug_file=$debugfile --backend -f "C:\Workspace\RZN\IPCM\Spring-2020\IPCM\M3\bsd_lwip_port\src\app_sample\settings\rzn_simple_fast_ctc.Debug.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\common\bin\cspybat" -f "C:\Workspace\RZN\IPCM\Spring-2020\IPCM\M3\IPCM\src\app_sample\settings\rzn_simple_fast_ctc.Debug.general.xcl" --debug_file=$debugfile --backend -f "C:\Workspace\RZN\IPCM\Spring-2020\IPCM\M3\IPCM\src\app_sample\settings\rzn_simple_fast_ctc.Debug.driver.xcl" 
 }

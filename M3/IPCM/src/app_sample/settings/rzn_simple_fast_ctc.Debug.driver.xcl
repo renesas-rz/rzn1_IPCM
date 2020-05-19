@@ -6,11 +6,11 @@
 
 "-p" 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\CONFIG\debugger\Renesas\R9A06G034_M3.ddf" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\CONFIG\debugger\Renesas\R9A06G032_M3.ddf" 
 
 "--semihosting" 
 
-"--device=R9A06G034_M3" 
+"--device=R9A06G032_M3" 
 
 "--multicore_nr_of_cores=1" 
 
@@ -30,7 +30,7 @@
 
 "--drv_catch_exceptions=0xff0" 
 
-"--jet_board_cfg=C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\config\debugger\Renesas\RZN1L.ProbeConfig" 
+"--jet_board_cfg=C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\config\debugger\Renesas\RZN1D.ProbeConfig" 
 
 
 

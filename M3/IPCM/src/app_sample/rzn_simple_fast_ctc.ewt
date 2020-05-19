@@ -2390,9 +2390,12 @@
     <group>
         <name>Drivers</name>
         <group>
-            <name>A5PSW</name>
+            <name>DMA</name>
             <file>
-                <name>$PROJ_DIR$\..\fit_modules\r_a5psw_rzn1\src\r_a5psw_rzn1.c</name>
+                <name>$PROJ_DIR$\..\fit_modules\r_dma_rzn1\src\r_dma_rzn1.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\fit_modules\r_dma_rzn1\src\r_dma_rzn1_if.c</name>
             </file>
         </group>
         <group>
@@ -2455,12 +2458,33 @@
                 <name>$PROJ_DIR$\..\fit_modules\r_bsp\mcu\rzn1\cm3\system_RZN1.c</name>
             </file>
         </group>
+        <group>
+            <name>DDR</name>
+            <file>
+                <name>$PROJ_DIR$\..\fit_modules\r_bsp\mcu\rzn1\ddr\ddr_ctrl.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\fit_modules\r_bsp\mcu\rzn1\ddr\ddr_init.c</name>
+            </file>
+        </group>
         <file>
             <name>$PROJ_DIR$\..\fit_modules\r_bsp\board\rzn1l-db\hwsetup_l.c</name>
         </file>
     </group>
     <group>
         <name>unused</name>
+        <group>
+            <name>A5PSW</name>
+            <file>
+                <name>$PROJ_DIR$\..\fit_modules\r_a5psw_rzn1\src\r_a5psw_rzn1.c</name>
+            </file>
+        </group>
+        <group>
+            <name>USB</name>
+            <file>
+                <name>$PROJ_DIR$\..\fit_modules\r_usb_rzn1\r_usb_common_rzn1\src\r_usb_rzn1_if.c</name>
+            </file>
+        </group>
         <file>
             <name>$PROJ_DIR$\..\fit_modules\r_iomux_rzn1\src\clock.c</name>
         </file>

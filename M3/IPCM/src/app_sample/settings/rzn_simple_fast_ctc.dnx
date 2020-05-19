@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <settings>
     <DebugChecksum>
-        <Checksum>3221688846</Checksum>
+        <Checksum>594138424</Checksum>
     </DebugChecksum>
     <CodeCoverage>
         <Enabled>_ 0</Enabled>
@@ -62,14 +62,14 @@
         <JetConnSerialNo>13526</JetConnSerialNo>
         <JetConnFoundProbes />
         <PrevWtdReset>System</PrevWtdReset>
+        <OnlineReset>Software</OnlineReset>
         <DisableInterrupts>0</DisableInterrupts>
         <LeaveRunning>0</LeaveRunning>
         <MultiCoreRunAll>0</MultiCoreRunAll>
-        <OnlineReset>Software</OnlineReset>
     </Jet>
     <PlDriver>
         <FirstRun>0</FirstRun>
-        <MemConfigValue>C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\CONFIG\debugger\Renesas\R9A06G034_M3.ddf</MemConfigValue>
+        <MemConfigValue>C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\CONFIG\debugger\Renesas\R9A06G032_M3.ddf</MemConfigValue>
     </PlDriver>
     <SWOManager>
         <SamplingDivider>8192</SamplingDivider>
@@ -117,13 +117,6 @@
         <EventLSU>0</EventLSU>
         <EventSLEEP>0</EventSLEEP>
     </SWOTraceWindow>
-    <DisassembleMode>
-        <mode>0</mode>
-    </DisassembleMode>
-    <Breakpoints2>
-        <Bp0>_ 0 "EMUL_CODE" "{$PROJ_DIR$\src\sample_app.c}.184.5" 0 0 1 "" 0 "" 0</Bp0>
-        <Count>1</Count>
-    </Breakpoints2>
     <DriverProfiling>
         <Enabled>0</Enabled>
         <Mode>1</Mode>
@@ -146,8 +139,19 @@
         <LogFile>_ ""</LogFile>
         <Category>_ 0</Category>
     </LogFile>
+    <DisassembleMode>
+        <mode>0</mode>
+    </DisassembleMode>
+    <Breakpoints2>
+        <Bp0>_ 0 "EMUL_CODE" "{$PROJ_DIR$\src\sample_app.c}.189.7" 0 0 1 "" 0 "" 0</Bp0>
+        <Count>1</Count>
+    </Breakpoints2>
     <Aliases>
-        <Count>0</Count>
+        <A0>_ "C:\Workspace\RZN\IPCM\Spring-2020\IPCM\M3\bsd_lwip_port\src\app_sample\src\sample_app.c" ""</A0>
+        <A1>_ "C:\Workspace\RZN\IPCM\Spring-2020\IPCM\M3\bsd_lwip_port\src\fit_modules\r_bsp\mcu\rzn1\cm3\core_cm3.h" ""</A1>
+        <A2>_ "C:\Workspace\RZN\IPCM\Spring-2020\IPCM\M3\bsd_lwip_port\src\fit_modules\r_bsp\mcu\rzn1\cm3\mcu_interrupts.c" ""</A2>
+        <A3>_ "C:\Workspace\RZN\IPCM\Spring-2020\IPCM\M3\bsd_lwip_port\src\fit_modules\r_timer_rzn1\src\timer.c" ""</A3>
+        <Count>4</Count>
         <SuppressDialog>0</SuppressDialog>
     </Aliases>
 </settings>
