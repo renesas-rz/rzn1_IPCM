@@ -179,8 +179,6 @@ void init_task(int exinf)
   {
     tslp_tsk(TX_SLEEP_TIME_MS);
   }
-
-  ext_tsk();
 }/* end init_task() */
 
 /*******************************************************************************
@@ -357,4 +355,4 @@ void idle_task(int exinf)
 /*   $REA fast IPCM notes.
     + Warning[Pa181]: incompatible redefinition of macro "GMAC2" (declared at line 131 of "C:\Workspace\RZN\3rd-party_customers\Pivotal\CTC\IPCM\V2.0\M3\bsd_lwip_port\src\fit_modules\r_bsp\inc\iodefines/RZN1L_iodefine.h") C:\Workspace\RZN\3rd-party_customers\Pivotal\CTC\IPCM\V2.0\M3\bsd_lwip_port\src\fit_modules\r_bsp\inc\iodefines\RZN1D_iodefine.h 148
     + Which folders/files of workspace delete..
-/* file end */
+ file end */
