@@ -708,7 +708,7 @@
                 </option>
                 <option>
                     <name>OOCOutputFile</name>
-                    <state>rzn_simple_fast_ctc.bin</state>
+                    <state>rzn1d_simple_fast_ctc.bin</state>
                 </option>
                 <option>
                     <name>OOCCommandLineProducer</name>
@@ -2246,6 +2246,9 @@
         <name>unused</name>
         <group>
             <name>A5PSW</name>
+            <excluded>
+                <configuration>Debug</configuration>
+            </excluded>
             <file>
                 <name>$PROJ_DIR$\..\fit_modules\r_a5psw_rzn1\src\r_a5psw_rzn1.c</name>
                 <excluded>
