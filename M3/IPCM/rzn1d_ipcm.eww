@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspace>
     <project>
-        <path>$WS_DIR$\src\app_sample\rzn_simple_fast_ctc.ewp</path>
+        <path>$WS_DIR$\src\app_sample\rzn1d_simple_fast_ctc.ewp</path>
     </project>
     <batchBuild />
 </workspace>
