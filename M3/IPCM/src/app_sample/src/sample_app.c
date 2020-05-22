@@ -29,8 +29,6 @@ Includes
 #include "timer.h"
 #include "kernel.h"
 #include "kernel_id.h"
-#include "serial_log.h"
-#include "asb_low_level_init.h"
 #include "iodefines\RZN1D_iodefine.h"
 #include  <stdlib.h>
 
