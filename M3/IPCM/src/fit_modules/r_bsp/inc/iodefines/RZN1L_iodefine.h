@@ -126,7 +126,6 @@
 #include "GMAC1_SFR.h"
 #define GMAC1               ((volatile GMAC1_Type *) 0x44000000UL)
 
-// $REA
 #include "GMAC2_SFR.h"
 #define GMAC2               ((volatile GMAC1_Type *) 0x44002000UL)
 

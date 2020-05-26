@@ -50,7 +50,6 @@ extern void   pl320_rx_task(int exinf);
 extern void   idle_task(int exinf);
 extern void   monitor_task(int exinf);
 
-//extern void sample_app_printf(const char *message); //$REA
 extern int    printf(const char *_Restrict, ...);
 
 /*******************************************************************************
@@ -169,7 +168,7 @@ const HWISR_TBL static_hwisr_table[] = {
   {HWISR_TBL_END,	      0,			        0,		         0}
 };
 
-#if 0 //$REA
+#if 0 //If you want to add ISRs to the IPCM interrupts, exaample below.
     static volatile int A,B,C = 0;
 
     /*******************************************************************************

@@ -43,7 +43,7 @@ Defines
 
 /* For IAR Terminal I/O updates if desired. You could even set to 1 but will slow system down alot. */
 #define DISPLAY_UPDATE_TRIGCOUNT      10000
-#define MONITOR_TASK_SLEEP_MS         5000
+#define MONITOR_TASK_SLEEP_MS         10000
 
 /********************************************************************************
 Types, structs
@@ -80,6 +80,8 @@ static unsigned int   monitor_cnt = 0;
 /***********************************************************************************************************************
 External functions
 **********************************************************************************************************************/
+uint32_t get_latest_cpu_load();
+
 /***********************************************************************************************************************
 Static (private) functions
 **********************************************************************************************************************/
@@ -204,9 +206,9 @@ void pl320_tx_task(int exinf)
     while (IPCM->IPCM0SEND.LONG != 0)
     {
       tslp_tsk(1);
-      M3_to_A7_mem_write_sleep_cnt++; //Always 0 if sleep 1.
-      if (M3_to_A7_mem_write_sleep_cnt > 1) //$REA REMOVE!
-        while (1);
+      M3_to_A7_mem_write_sleep_cnt++; //Seems always 0 if sleep is 1 ms.
+      if (M3_to_A7_mem_write_sleep_cnt > 0)
+        printf("M3_to_A7_mem_write_sleep_cnt > 0\n");
     }
     /* Send status is 0; mailbox is inactive.
     Currently the Linux kernel requires to fill data reg. 0 with destination
@@ -264,7 +266,7 @@ void pl320_rx_task(int exinf)
   IPCM->IPCM0MSET.BIT.MASK_SET = 2;
 
 
-  /*** Set up mailbox 1 = IPCM1. *****/ //$REA: Doesn't linux side set up this mbox?
+  /*** Set up mailbox 1 = IPCM1. *****/
   /* Set bit 1 for second core which will be A7. */
   IPCM->IPCM1SOURCE.BIT.SRC_SET = 2;
 
@@ -336,10 +338,15 @@ Function define: monitor_task()
 *******************************************************************************/
 void monitor_task(int extinf)
 {
+  uint32_t cpu_load;
+
   while(1)
   {
+    /* Print load once in a while. */
     tslp_tsk(MONITOR_TASK_SLEEP_MS);
-    //cpu_load = get_latest_cpu_load();
+    cpu_load = get_latest_cpu_load();
+    printf("cpu_load = %d\n", cpu_load);
+
     monitor_cnt++;
   }
 }/* end monitor_task() */
@@ -353,7 +360,4 @@ void idle_task(int exinf)
   {
   }
 }/* end idle_task() */
-/*   $REA fast IPCM notes.
-    + Warning[Pa181]: incompatible redefinition of macro "GMAC2" (declared at line 131 of "C:\Workspace\RZN\3rd-party_customers\Pivotal\CTC\IPCM\V2.0\M3\bsd_lwip_port\src\fit_modules\r_bsp\inc\iodefines/RZN1L_iodefine.h") C:\Workspace\RZN\3rd-party_customers\Pivotal\CTC\IPCM\V2.0\M3\bsd_lwip_port\src\fit_modules\r_bsp\inc\iodefines\RZN1D_iodefine.h 148
-    + Which folders/files of workspace delete..
- file end */
+/* file end */
