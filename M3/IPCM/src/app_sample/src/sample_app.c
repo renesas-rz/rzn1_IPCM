@@ -266,10 +266,10 @@ void pl320_rx_task(int exinf)
   IPCM->IPCM0MSET.BIT.MASK_SET = 2;
 
 
-  /*** Set up mailbox 1 = IPCM1. *****/
+  /*** Set up mailbox 1 = IPCM1.  *****/
+  /* Linux kernel does the same as it starts, so should be able to remove. */
   /* Set bit 1 for second core which will be A7. */
   IPCM->IPCM1SOURCE.BIT.SRC_SET = 2;
-
   IPCM->IPCM1DSET.BIT.DEST_SET = 1;
   IPCM->IPCM1MSET.BIT.MASK_SET = 1;
 
