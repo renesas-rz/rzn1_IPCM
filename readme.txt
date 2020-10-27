@@ -12,13 +12,13 @@ $/usr/bin/ipcm/pl320 1000 32 1
 Comments on arguments
 ---------------------
 - sleep_time_us: 
+number of microseconds between transmission A7=>M3.
 
 - shm_size_bytes: 
 Should be at least 8 since two first four bytes are transferred via two data registers of IPCM for verification.
 
 - show_M3_to_A7_content_flag:
-A flag controlling whether to present the 
-memory content received from M3. SHM_ADDRESS is 0x200F8000 (shm.h).
+A flag, 0 or 1, controlling whether to output start of memory content received from M3. SHM_ADDRESS is 0x200F8000 (shm.h).
 
 Memory region A7->M3 messages @ 0x200F8000.
 "-            M3->A7 messages @ 0x200FC000.
